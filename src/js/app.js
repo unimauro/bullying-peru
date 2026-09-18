@@ -17,12 +17,30 @@
 
   function echartsTheme() {
     const dark = window.OBS_isDark();
+    const line = dark ? "rgba(255,255,255,.08)" : "rgba(20,32,46,.07)";
     return {
       textStyle: { color: dark ? "#a3b3c4" : "#5a6a7d",
         fontFamily: "-apple-system, Segoe UI, Roboto, sans-serif" },
+      splitLine: { lineStyle: { color: line, type: "dashed" } },
+      tooltip: {
+        backgroundColor: dark ? "#1c2a38" : "#ffffff",
+        borderColor: dark ? "#29394a" : "#dce4ee",
+        borderWidth: 1, padding: 10,
+        textStyle: { color: dark ? "#eaf1f8" : "#16202e", fontSize: 12 },
+        extraCssText: "box-shadow:0 8px 24px rgba(18,32,46,.16);border-radius:10px;"
+      },
       grid: { left: 48, right: 20, top: 30, bottom: 40 }
     };
   }
+  // Degradado vertical (barras) u horizontal, para embellecer.
+  function grad(color, dir) {
+    const c2 = "color-mix(in srgb, " + color + " 55%, transparent)";
+    const stops = [{ offset: 0, color }, { offset: 1, color: c2 }];
+    return dir === "h"
+      ? new echarts.graphic.LinearGradient(0, 0, 1, 0, stops)
+      : new echarts.graphic.LinearGradient(0, 0, 0, 1, stops);
+  }
+  const TOOLBOX = { feature: { saveAsImage: { title: "Descargar PNG", pixelRatio: 2, backgroundColor: window.OBS_isDark() ? "#16212d" : "#ffffff" } }, right: 8, top: 4 };
   function mkChart(id) {
     const el = document.getElementById(id);
     if (!el) return null;
@@ -105,17 +123,22 @@
     }
     const t = echartsTheme();
     const mk = (name, key, color) => ({
-      name, type: "line", smooth: true, symbol: "circle", symbolSize: 6,
-      connectNulls: false, data: ts.series[key] || [], itemStyle: { color }, lineStyle: { width: 3, color }
+      name, type: "line", smooth: true, symbol: "circle", symbolSize: 7,
+      connectNulls: false, data: ts.series[key] || [],
+      itemStyle: { color, borderColor: "#fff", borderWidth: 1.5 },
+      lineStyle: { width: 3, color, shadowBlur: 8, shadowColor: "color-mix(in srgb," + color + " 40%,transparent)" },
+      areaStyle: key === "violencia" ? { color: grad(color), opacity: .5 } : undefined,
+      emphasis: { focus: "series" }
     });
     const marks = (ts.annotations || []).map((a) => ({ xAxis: String(a.year) }));
     ch.setOption({
       textStyle: t.textStyle,
-      tooltip: { trigger: "axis" },
+      tooltip: Object.assign({ trigger: "axis" }, t.tooltip),
+      toolbox: TOOLBOX,
       legend: { top: 0 },
       grid: { left: 56, right: 24, top: 36, bottom: 40 },
-      xAxis: { type: "category", data: ts.years.map(String), boundaryGap: false },
-      yAxis: { type: "value", name: "reportes" },
+      xAxis: { type: "category", data: ts.years.map(String), boundaryGap: false, axisLine: { lineStyle: { color: t.splitLine.lineStyle.color } } },
+      yAxis: { type: "value", name: "reportes", splitLine: t.splitLine },
       series: [
         mk("Violencia escolar", "violencia", C.colors.violencia),
         mk("Bullying", "bullying", C.colors.bullying),
@@ -157,11 +180,13 @@
     const chA = mkChart("chart-abs"), chR = mkChart("chart-rate");
     const t = echartsTheme();
     const barOpt = (data, color, unit) => ({
-      textStyle: t.textStyle, grid: { left: 110, right: 24, top: 10, bottom: 30 },
-      tooltip: { trigger: "axis", valueFormatter: (v) => (unit === "rate" ? v.toFixed(1) : fmt(v)) },
-      xAxis: { type: "value" },
-      yAxis: { type: "category", data: data.map(d => d.name), inverse: true, axisLabel: { fontSize: 11 } },
-      series: [{ type: "bar", data: data.map(d => d.value), itemStyle: { color, borderRadius: [0, 4, 4, 0] }, barMaxWidth: 16 }]
+      textStyle: t.textStyle, grid: { left: 118, right: 30, top: 8, bottom: 28 },
+      tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => (unit === "rate" ? v.toFixed(1) : fmt(v)) }, t.tooltip),
+      toolbox: TOOLBOX,
+      xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10 } },
+      yAxis: { type: "category", data: data.map(d => d.name), inverse: true, axisLabel: { fontSize: 11 }, axisLine: { show: false }, axisTick: { show: false } },
+      series: [{ type: "bar", data: data.map(d => d.value), itemStyle: { color: grad(color, "h"), borderRadius: [0, 6, 6, 0] }, barMaxWidth: 18,
+        label: { show: true, position: "right", fontSize: 10, color: t.textStyle.color, formatter: (p) => unit === "rate" ? p.value.toFixed(1) : fmt(p.value) } }]
     });
     if (!rows.length) {
       [chA, chR].forEach(ch => ch && ch.setOption({ title: { text: "Pendiente datos SíseVe", left: "center", top: "middle", textStyle: { color: "#8494a6", fontWeight: "normal", fontSize: 13 } } }));
@@ -177,13 +202,14 @@
   let map, geoLayer, mapMetric = "cases", mapYear;
   async function initMap() {
     const geo = await loadJSON(C.geojson);
-    map = L.map("map", { scrollWheelZoom: false }).setView([-9.2, -75], 5);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-      attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: "abcd", maxZoom: 12
-    }).addTo(map);
+    // Sin teselas externas (CARTO/OSM piden API key o tienen límites): coroplético
+    // de departamentos sobre fondo limpio. Cero dependencias de mapas base.
+    map = L.map("map", { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+    map.attributionControl.setPrefix('GeoJSON: juaneladio/peru-geojson (MPL-2.0)');
     if (!geo) { document.getElementById("map").innerHTML = '<div class="loading">No se pudo cargar el GeoJSON.</div>'; return; }
     store.geo = geo;
     drawMap();
+    try { map.fitBounds(geoLayer.getBounds(), { padding: [12, 12] }); } catch (e) {}
     // Leyenda
     const legend = L.control({ position: "bottomright" });
     legend.onAdd = function () { const div = L.DomUtil.create("div", "legend"); div.id = "map-legend"; return div; };
@@ -260,12 +286,13 @@
     const t = echartsTheme();
     const items = ctx.prevalence_surveys || [];
     ch.setOption({
-      textStyle: t.textStyle, grid: { left: 60, right: 30, top: 20, bottom: 90 },
-      tooltip: { trigger: "axis", valueFormatter: (v) => v + "%" },
+      textStyle: t.textStyle, grid: { left: 46, right: 20, top: 20, bottom: 96 },
+      tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => v + "%" }, t.tooltip),
+      toolbox: TOOLBOX,
       xAxis: { type: "category", data: items.map(i => i.indicator.replace(/ en el entorno escolar/gi, "").replace(/violencia (psicológica y\/o física|física y psicológica)/gi, "").trim().slice(0, 30) + "…"), axisLabel: { interval: 0, rotate: 30, fontSize: 9 } },
-      yAxis: { type: "value", max: 100, name: "%" },
-      series: [{ type: "bar", data: items.map(i => i.value_pct), itemStyle: { color: C.colors.exposicion, borderRadius: [4, 4, 0, 0] }, barMaxWidth: 40,
-        label: { show: true, position: "top", formatter: "{c}%", fontSize: 11 } }]
+      yAxis: { type: "value", max: 100, name: "%", splitLine: t.splitLine },
+      series: [{ type: "bar", data: items.map(i => i.value_pct), itemStyle: { color: grad(C.colors.exposicion), borderRadius: [6, 6, 0, 0] }, barMaxWidth: 46,
+        label: { show: true, position: "top", formatter: "{c}%", fontSize: 11, fontWeight: 700 } }]
     });
     const s = ctx.sources && ctx.sources.inei_enares_2019;
     if (s) src.innerHTML = `Fuente: ${s.name} — ${s.institution}. <a href="${s.url}" target="_blank" rel="noopener">Ver fuente</a>`;
@@ -279,13 +306,15 @@
     const src = document.getElementById("sses-source");
     if (!s) { ch.setOption({ title: { text: "Sin datos SSES", left: "center", top: "middle", textStyle: { color: "#8494a6", fontWeight: "normal", fontSize: 13 } } }); return; }
     const r = s.roles;
+    const tt = echartsTheme();
     ch.setOption({
-      textStyle: echartsTheme().textStyle,
-      tooltip: { trigger: "item", valueFormatter: (v) => v + "%" },
+      textStyle: tt.textStyle,
+      tooltip: Object.assign({ trigger: "item", valueFormatter: (v) => v + "%" }, tt.tooltip),
       legend: { bottom: 0, textStyle: { fontSize: 10 } },
       series: [{
         type: "pie", radius: ["45%", "70%"], center: ["50%", "42%"], avoidLabelOverlap: true,
-        label: { formatter: "{d}%", fontSize: 11 },
+        itemStyle: { borderColor: window.OBS_isDark() ? "#16212d" : "#fff", borderWidth: 2, borderRadius: 4 },
+        label: { formatter: "{d}%", fontSize: 11, fontWeight: 700 },
         data: [
           { name: "Víctima y agresor", value: r.victima_y_agresor, itemStyle: { color: C.colors.bullying } },
           { name: "Solo víctima", value: r.solo_victima, itemStyle: { color: C.colors.ciber } },
@@ -310,6 +339,57 @@
         <td style="font-size:.82rem">${s.findings}</td>
         <td><a href="${s.url}" target="_blank" rel="noopener">↗</a></td>
       </tr>`).join("");
+  }
+
+  /* ---------- Desgloses (tipología, escuela, género) ---------- */
+  function renderBreakdowns(bd) {
+    if (!bd) return;
+    const t = echartsTheme();
+    const pie = (id, data, colors) => {
+      const ch = mkChart(id); if (!ch) return;
+      ch.setOption({
+        textStyle: t.textStyle,
+        tooltip: Object.assign({ trigger: "item", valueFormatter: (v) => fmt(v) }, t.tooltip),
+        legend: { bottom: 0, textStyle: { fontSize: 10 } },
+        series: [{ type: "pie", radius: ["40%", "68%"], center: ["50%", "44%"],
+          itemStyle: { borderColor: window.OBS_isDark() ? "#16212d" : "#fff", borderWidth: 2, borderRadius: 4 },
+          label: { formatter: "{d}%", fontSize: 11, fontWeight: 700 },
+          data: data.map((d, i) => ({ name: d.name, value: d.value, itemStyle: { color: colors[i % colors.length] } })) }]
+      });
+    };
+    const hbar = (id, data, color, unit) => {
+      const ch = mkChart(id); if (!ch) return;
+      ch.setOption({
+        textStyle: t.textStyle, grid: { left: 90, right: 44, top: 8, bottom: 24 },
+        tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => unit === "pct" ? v + "%" : fmt(v) }, t.tooltip),
+        xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10 } },
+        yAxis: { type: "category", inverse: true, data: data.map(d => d.name), axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 11 } },
+        series: [{ type: "bar", data: data.map(d => d.value), barMaxWidth: 20, itemStyle: { color: grad(color, "h"), borderRadius: [0, 6, 6, 0] },
+          label: { show: true, position: "right", fontSize: 10, color: t.textStyle.color, formatter: (p) => unit === "pct" ? p.value + "%" : fmt(p.value) } }]
+      });
+    };
+    const CB = ["#f97316", "#8b5cf6", "#2f80c4", "#12a594", "#e0b13a"];
+    pie("bd-tipologia", (bd.tipologia["2026_ene_ago"] || []).map(x => ({ name: x.tipo, value: x.casos })), CB);
+    hbar("bd-nivel", (bd.nivel_educativo_2013_2018 || []).map(x => ({ name: x.nivel, value: x.casos })), C.colors.violencia, "abs");
+    pie("bd-gestion", (bd.gestion_2013_2018 || []).map(x => ({ name: x.gestion, value: x.casos })), ["#2f80c4", "#f97316"]);
+    pie("bd-area", (bd.area_2013_2018 || []).map(x => ({ name: x.area, value: x.casos })), ["#12a594", "#e0b13a"]);
+  }
+
+  /* ---------- Marquee vertical de casos ---------- */
+  function renderMarquee(news) {
+    const track = document.getElementById("marquee-track");
+    if (!track || !news || !news.data) return;
+    const palette = ["#f97316", "#2f80c4", "#12a594", "#8b5cf6", "#d4553a", "#0e8a7d"];
+    const tile = (n, i) => {
+      const initials = (n.media || "?").replace(/[^A-Za-zÁÉÍÓÚñ0-9 ]/g, "").split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+      const color = palette[i % palette.length];
+      return `<a class="mq-item" href="${n.url}" target="_blank" rel="noopener">
+        <div class="mq-thumb" style="background:linear-gradient(135deg,${color},color-mix(in srgb,${color} 60%,#000))">${initials}</div>
+        <div class="mq-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.department}</div></div></a>`;
+    };
+    const items = news.data.map(tile).join("");
+    // duplicado para bucle continuo
+    track.innerHTML = items + items;
   }
 
   /* ---------- Noticias ---------- */
@@ -388,12 +468,12 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
-      loadJSON(C.data.studies)
+      loadJSON(C.data.studies), loadJSON(C.data.breakdowns)
     ]);
-    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies });
+    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns });
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -408,8 +488,10 @@
     safe("serie", () => renderSeries(ts));
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
+    safe("desgloses", () => renderBreakdowns(breakdowns));
     safe("estudios", () => renderStudies(studies));
     safe("noticias", () => renderNews(news));
+    safe("marquee", () => renderMarquee(news));
     safe("timeline", () => renderTimeline(leg));
     safe("fuentes", () => renderSources(sources));
     safe("territorio", () => renderTerritory(defaultYear));

@@ -27,7 +27,8 @@ window.OBS_CONFIG = {
     legislation: "data/processed/legislation.json",
     news: "data/news/news.json",
     sources: "data/processed/sources.json",
-    studies: "data/processed/studies.json"
+    studies: "data/processed/studies.json",
+    breakdowns: "data/processed/breakdowns.json"
   }
 };
 

@@ -1,0 +1,41 @@
+{
+  "dataset": "Desgloses de casos SíseVe (perfil)",
+  "retrieval_date": "2026-09-18",
+  "note": "Datos oficiales (fuente A) del Informe SíseVe 2013-2018 (acumulado 26,285 casos) y del corte 2026 ene-ago (11,791). SíseVe registra reportes de presuntos hechos, no la prevalencia real. Respetamos la clasificación de la fuente.",
+  "source_2013_2018": "https://repositorio.minedu.gob.pe/handle/20.500.12799/6670",
+  "source_2026": "https://www.infobae.com/peru/2026/09/15/el-mapa-de-la-violencia-escolar-en-peru-las-regiones-que-concentran-mas-reportes-en-2026/",
+  "tipologia": {
+    "2013_2018": [
+      { "tipo": "Física", "casos": 13792, "pct": 52.5 },
+      { "tipo": "Psicológica", "casos": 5397, "pct": 20.5 },
+      { "tipo": "Sexual", "casos": 3738, "pct": 14.2 },
+      { "tipo": "Otros (verbal, internet, con armas, hurto)", "casos": 3358, "pct": 12.8 }
+    ],
+    "2026_ene_ago": [
+      { "tipo": "Física", "casos": 5187, "pct": 44.0 },
+      { "tipo": "Psicológica", "casos": 4545, "pct": 38.5 },
+      { "tipo": "Sexual", "casos": 2059, "pct": 17.5 }
+    ]
+  },
+  "tipo_reporte_2013_2018": [
+    { "tipo": "Entre escolares", "casos": 14215, "pct": 54 },
+    { "tipo": "De personal de la IE hacia escolar", "casos": 12070, "pct": 46 }
+  ],
+  "nivel_educativo_2013_2018": [
+    { "nivel": "Secundaria", "casos": 14408 },
+    { "nivel": "Primaria", "casos": 9548 },
+    { "nivel": "Inicial", "casos": 2329 }
+  ],
+  "gestion_2013_2018": [
+    { "gestion": "Pública", "casos": 22090, "pct": 84 },
+    { "gestion": "Privada", "casos": 4195, "pct": 16 }
+  ],
+  "area_2013_2018": [
+    { "area": "Urbana", "casos": 24369, "pct": 93 },
+    { "area": "Rural", "casos": 1916, "pct": 7 }
+  ],
+  "sexo_victima_entre_escolares_2013_2018": [
+    { "sexo": "Varón", "pct": 57 },
+    { "sexo": "Mujer", "pct": 43 }
+  ]
+}
