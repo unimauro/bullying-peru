@@ -75,6 +75,26 @@ es el scraper headless de `/Web/App/MapaDetalle` (ya escrito, sin ejecutar).
 | B9 | P2 | feature | Serie mensual y estacionalidad. |
 | B10 | P2 | infra | GitHub Actions de actualización + data_quality_report. |
 
+## Solicitudes recientes (estado)
+
+| Pedido | Estado |
+|---|---|
+| Google Analytics (gtag G-YD3GKLZX0T) | ✅ hecho |
+| Favicon + Open Graph (imagen 1200×630) | ✅ hecho |
+| Gráficos más estilizados (degradados, PNG) | ✅ hecho |
+| Más datos reales (Perfil: tipología/nivel/gestión/área) | ✅ hecho |
+| Enfoque a familias + arte | ✅ hecho |
+| Botón "Denunciar" (SíseVe) | ✅ hecho |
+| Marquee vertical de casos | ✅ hecho (miniaturas por medio) |
+| Footer con Yape | ⏳ falta **número/QR de Yape** (dármelo) |
+| Colores anti-bullying | ✅ hecho |
+| Mapa (fallaba: API key CARTO) | ✅ corregido |
+| **Miniaturas reales de noticias (OG scraping)** | 🔜 requiere Action/CORS-proxy |
+| **Cron para auto-actualizar y contar casos** | 🔜 GitHub Actions (a implementar) |
+| **Más bases: ONG, ONU/UNESCO/UNICEF, colegios** | 🔶 parcial (UNESCO/UNICEF ya); sumar OCDE/PISA, Bullying Sin Fronteras, etc. |
+| Teléfono gratuito de SíseVe | ⛔ NO publicado: fuentes en conflicto (0800 77090 vs 0800 76 888); verificar en portal |
+| Sidebar / navegación móvil tipo dashboard | 🔜 pendiente (hoy nav superior scrollable) |
+
 ## Quick wins (bajo esfuerzo, alto impacto)
 - B1 (KPI bullying con último dato) · B3 (tooltip Lima) · favicon + OG tags · toolbox de
   export PNG en ECharts (una línea por gráfico).
