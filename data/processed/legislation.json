@@ -1,0 +1,69 @@
+{
+  "dataset": "Marco normativo y políticas públicas sobre convivencia y violencia escolar",
+  "retrieval_date": "2026-09-18",
+  "data": [
+    {
+      "law": "Ley N.º 29719",
+      "date": "2011-06-25",
+      "institution": "Congreso de la República",
+      "description": "Ley que promueve la convivencia sin violencia en las instituciones educativas ('Ley Antibullying'). Mecanismos para diagnosticar, prevenir, sancionar y erradicar el acoso entre alumnos; psicólogo por IE; rol del CONEI; plan de sana convivencia.",
+      "status": "vigente (modificada por Ley 31902)",
+      "url": "https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/118447-29719",
+      "reliability_level": "A"
+    },
+    {
+      "law": "DS N.º 010-2012-ED",
+      "date": "2012-01-01",
+      "institution": "MINEDU",
+      "description": "Reglamento de la Ley N.º 29719.",
+      "status": "vigente",
+      "url": "https://www.gob.pe/institucion/minedu/normas-legales/118255-010-2012-ed",
+      "reliability_level": "A"
+    },
+    {
+      "law": "RM N.º 0519-2012-ED",
+      "date": "2012-01-01",
+      "institution": "MINEDU",
+      "description": "Lineamientos de prevención y protección contra la violencia ejercida por personal de las IIEE.",
+      "status": "antecedente",
+      "url": "https://ugel06.gob.pe/portal/images/servicios/Recursos-materiales/toe/rm-minedu-519-2012.pdf",
+      "reliability_level": "A"
+    },
+    {
+      "law": "Creación del SíseVe",
+      "date": "2013-01-01",
+      "institution": "MINEDU",
+      "description": "Sistema Especializado en reporte de casos sobre Violencia Escolar. Plataforma virtual para reportar de forma confidencial violencia escolar (física/psicológica/sexual). Fecha sustentada en informe institucional MINEDU 2013-2018.",
+      "status": "vigente",
+      "url": "https://www.gob.pe/62013-reportar-casos-de-violencia-escolar-en-la-plataforma-siseve-del-minedu",
+      "reliability_level": "A"
+    },
+    {
+      "law": "DS N.º 004-2018-MINEDU",
+      "date": "2018-05-13",
+      "institution": "MINEDU",
+      "description": "Lineamientos para la Gestión de la Convivencia Escolar, la Prevención y la Atención de la Violencia contra NNA. Marco de gestión de convivencia escolar vigente.",
+      "status": "vigente",
+      "url": "https://www.gob.pe/institucion/minedu/normas-legales/273491-004-2018-minedu",
+      "reliability_level": "A"
+    },
+    {
+      "law": "Ley N.º 31902",
+      "date": "2023-10-16",
+      "institution": "Congreso de la República",
+      "description": "Modifica la Ley 29719 (fortalece la prevención del acoso escolar) y el DL 1218 (videovigilancia incorpora el acoso escolar). Psicólogo por IE de forma progresiva; herramientas tecnológicas y cámaras de videovigilancia en zonas comunes coordinadas con APAFA.",
+      "status": "vigente",
+      "url": "https://busquedas.elperuano.pe/dispositivo/NL/2226137-5",
+      "reliability_level": "A"
+    },
+    {
+      "law": "Estrategia de prevención de la violencia escolar",
+      "date": "2024-01-01",
+      "institution": "Defensoría del Pueblo",
+      "description": "Estrategia nacional / campaña 'Colegios más seguros y sin violencia'. Reconocida como Buena Práctica en Gestión Pública 2025; supervisión de +1,000 IIEE (42% sin planes de convivencia).",
+      "status": "vigente",
+      "url": "https://www.defensoria.gob.pe/mas-del-40-de-centros-educativos-en-zonas-urbanas-no-tiene-planes-para-combatir-el-bullying/",
+      "reliability_level": "A"
+    }
+  ]
+}

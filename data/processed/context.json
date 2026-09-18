@@ -1,0 +1,113 @@
+{
+  "dataset": "Indicadores de contexto y prevalencia (complementarios a SíseVe)",
+  "retrieval_date": "2026-09-18",
+  "note": "Estos indicadores NO son registros administrativos de SíseVe. Miden exposición/prevalencia declarada o son contexto. No se agregan ni se comparan directamente con los reportes de SíseVe.",
+  "sses_2023": {
+    "title": "SSES 2023 — Estudio sobre Habilidades Sociales y Emocionales (exposición al acoso, autorreporte)",
+    "institution": "UMC/MINEDU + OCDE",
+    "data_nature": "exposicion_medida",
+    "population": "Estudiantes de 15 años; muestra 3,057 en 93 escuelas; representatividad nacional (expandible a 515,775).",
+    "period": "últimos 12 meses (2023)",
+    "source_id": "minedu_sses_2023",
+    "roles": { "victima_y_agresor": 28.9, "solo_victima": 24.8, "solo_agresor": 7.1, "no_implicados": 39.2 },
+    "victim_indicators": [
+      { "label": "Difunden rumores malintencionados", "value_pct": 29.5 },
+      { "label": "Me excluyen de actividades a propósito", "value_pct": 27.1 },
+      { "label": "Se burlan de mí", "value_pct": 27.0 },
+      { "label": "Violencia física / dañan mis cosas", "value_pct": 11.1 },
+      { "label": "Me amenazan", "value_pct": 7.2 }
+    ],
+    "note": "El propio SSES 2023 advierte que el alza de denuncias en SíseVe refleja mayor identificación y visibilización (más cultura de reporte), no necesariamente más violencia. Por eso MINEDU distingue el registro (SíseVe) de la medición por evaluación (SSES)."
+  },
+  "prevalence_surveys": [
+    {
+      "indicator": "Niñas/niños 9-11 años: violencia psicológica y/o física en el entorno escolar, alguna vez en la vida",
+      "value_pct": 66.2,
+      "breakdown": { "solo_psicologica": 37.2, "fisica_y_psicologica": 26.7, "solo_fisica": 2.3 },
+      "period": "alguna vez en la vida (medición 2019)",
+      "source_id": "inei_enares_2019",
+      "data_nature": "exposicion_medida"
+    },
+    {
+      "indicator": "Niñas/niños 9-11 años: violencia física y psicológica en el entorno escolar, últimos 12 meses",
+      "value_pct": 47.4,
+      "period": "últimos 12 meses (2019)",
+      "source_id": "inei_enares_2019",
+      "data_nature": "exposicion_medida"
+    },
+    {
+      "indicator": "Adolescentes 12-17 años: violencia psicológica y/o física en el entorno escolar, alguna vez en la vida",
+      "value_pct": 68.5,
+      "breakdown": { "solo_psicologica": 41.0, "fisica_y_psicologica": 24.6, "solo_fisica": 2.9 },
+      "period": "alguna vez en la vida (2019)",
+      "source_id": "inei_enares_2019",
+      "data_nature": "exposicion_medida"
+    },
+    {
+      "indicator": "Adolescentes 12-17 años: violencia física y psicológica en el entorno escolar, últimos 12 meses",
+      "value_pct": 44.7,
+      "period": "últimos 12 meses (2019)",
+      "source_id": "inei_enares_2019",
+      "data_nature": "exposicion_medida"
+    }
+  ],
+  "international_context": [
+    {
+      "indicator": "Estudiantes que sufrieron acoso de pares en el último mes (32%, ~1 de cada 3)",
+      "value_pct": 32,
+      "scope": "Global (144 países)",
+      "period": "2019",
+      "source_id": "unesco_behind_numbers_2019",
+      "reliability_level": "B"
+    },
+    {
+      "indicator": "NNA víctima de violencia física/psicológica en hogar/escuela alguna vez (más del 80%)",
+      "value_pct": 80,
+      "scope": "Perú",
+      "period": "base ENARES 2013/2015 (citado por UNICEF Perú 2019)",
+      "source_id": "unicef_peru_2019",
+      "reliability_level": "B"
+    }
+  ],
+  "mental_health_context": {
+    "warning": "Atenciones administrativas de salud mental (MINSA). NO miden bullying ni establecen causalidad. Solo contexto de bienestar de NNA.",
+    "items": [
+      { "indicator": "Atenciones por trastornos mentales/problemas psicosociales (NNA ~40% del total)", "value": 1844531, "year": 2023, "source_id": "minsa_salud_mental_2023" }
+    ]
+  },
+  "sources": {
+    "inei_enares_2019": {
+      "name": "ENARES 2019 (Encuesta Nacional sobre Relaciones Sociales)",
+      "institution": "INEI",
+      "url": "https://www.inei.gob.pe/media/MenuRecursivo/boletines/presentacion_enares_2019.pdf",
+      "url_np": "https://www.inei.gob.pe/media/MenuRecursivo/noticias/np102_2020.pdf",
+      "reliability_level": "A",
+      "note": "Medición nacional más reciente publicada. No desagrega por departamento (solo nacional / urbano-rural)."
+    },
+    "minedu_sses_2023": {
+      "name": "El Perú en SSES 2023. Informe nacional de resultados",
+      "institution": "UMC/MINEDU + OCDE",
+      "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/10772",
+      "reliability_level": "A",
+      "note": "Exposición al acoso por autorreporte de estudiantes de 15 años."
+    },
+    "unesco_behind_numbers_2019": {
+      "name": "Behind the numbers: ending school violence and bullying",
+      "institution": "UNESCO",
+      "url": "https://www.unesco.org/en/articles/behind-numbers-ending-school-violence-and-bullying",
+      "reliability_level": "B"
+    },
+    "unicef_peru_2019": {
+      "name": "Cifras de la violencia hacia NNA en el Perú",
+      "institution": "UNICEF Perú",
+      "url": "https://www.unicef.org/peru/sites/unicef.org.peru/files/2019-09/cifras-violencia-ninas-ninos-adolescentes-peru-2019.pdf",
+      "reliability_level": "B"
+    },
+    "minsa_salud_mental_2023": {
+      "name": "Atenciones en salud mental 2023",
+      "institution": "MINSA",
+      "url": "https://www.gob.pe/institucion/minsa/noticias/1037025-mas-de-1-300-000-casos-atendidos-por-trastornos-de-salud-mental-y-problemas-psicosociales",
+      "reliability_level": "A"
+    }
+  }
+}

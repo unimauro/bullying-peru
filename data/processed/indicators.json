@@ -1,0 +1,119 @@
+{
+  "dataset": "Indicadores (tasa por 10,000 estudiantes)",
+  "generated_at": "2026-09-18",
+  "population_year": 2024,
+  "by_year": {
+    "2026": [
+      {
+        "department": "Arequipa",
+        "cases": 730,
+        "students": 410412,
+        "rate_per_10k": 17.79
+      },
+      {
+        "department": "Lima Metropolitana",
+        "cases": 4058,
+        "students": 2431170,
+        "rate_per_10k": 16.69
+      },
+      {
+        "department": "Áncash",
+        "cases": 540,
+        "students": 325959,
+        "rate_per_10k": 16.57
+      },
+      {
+        "department": "Ica",
+        "cases": 414,
+        "students": 284256,
+        "rate_per_10k": 14.56
+      },
+      {
+        "department": "Junín",
+        "cases": 552,
+        "students": 406862,
+        "rate_per_10k": 13.57
+      },
+      {
+        "department": "Lambayeque",
+        "cases": 490,
+        "students": 375579,
+        "rate_per_10k": 13.05
+      },
+      {
+        "department": "Región Lima",
+        "cases": 379,
+        "students": 304246,
+        "rate_per_10k": 12.46
+      },
+      {
+        "department": "Piura",
+        "cases": 692,
+        "students": 619519,
+        "rate_per_10k": 11.17
+      },
+      {
+        "department": "Cusco",
+        "cases": 411,
+        "students": 393765,
+        "rate_per_10k": 10.44
+      },
+      {
+        "department": "La Libertad",
+        "cases": 530,
+        "students": 553276,
+        "rate_per_10k": 9.58
+      },
+      {
+        "department": "Madre de Dios",
+        "cases": 55,
+        "students": 69579,
+        "rate_per_10k": 7.9
+      }
+    ],
+    "2024": [
+      {
+        "department": "Prov. Const. del Callao",
+        "cases": 1082,
+        "students": 260176,
+        "rate_per_10k": 41.59
+      },
+      {
+        "department": "Arequipa",
+        "cases": 1573,
+        "students": 410412,
+        "rate_per_10k": 38.33
+      },
+      {
+        "department": "Lima Metropolitana",
+        "cases": 6925,
+        "students": 2431170,
+        "rate_per_10k": 28.48
+      },
+      {
+        "department": "Áncash",
+        "cases": 814,
+        "students": 325959,
+        "rate_per_10k": 24.97
+      },
+      {
+        "department": "Cusco",
+        "cases": 838,
+        "students": 393765,
+        "rate_per_10k": 21.28
+      },
+      {
+        "department": "Junín",
+        "cases": 655,
+        "students": 406862,
+        "rate_per_10k": 16.1
+      },
+      {
+        "department": "Piura",
+        "cases": 997,
+        "students": 619519,
+        "rate_per_10k": 16.09
+      }
+    ]
+  }
+}

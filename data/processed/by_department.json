@@ -1,0 +1,30 @@
+{
+  "dataset": "Reportes SíseVe por departamento",
+  "retrieval_date": "2026-09-18",
+  "note": "Cobertura PARCIAL. Estas cifras provienen de prensa citando a SíseVe/MINEDU (fuente B). Para 2026 solo se publicó el top de regiones (más Madre de Dios, la más baja); las regiones sin cifra publicada quedan como 'sin dato' y NO se estiman. El detalle exacto de las 26 regiones (fuente A) se obtiene ejecutando scripts/scrape_siseve.py sobre /Web/App/MapaDetalle. 2026 es año parcial (enero-agosto).",
+  "reliability_level": "B",
+  "source_2026_url": "https://www.infobae.com/peru/2026/09/15/el-mapa-de-la-violencia-escolar-en-peru-las-regiones-que-concentran-mas-reportes-en-2026/",
+  "source_2024_url": "https://www.infobae.com/peru/2025/02/25/inicio-del-ano-escolar-2025-mas-de-19-mil-casos-de-violencia-escolar-fueron-reportados-en-2024-segun-minedu/",
+  "2026": {
+    "Lima Metropolitana": { "cases": 4058 },
+    "Arequipa": { "cases": 730 },
+    "Piura": { "cases": 692 },
+    "Junín": { "cases": 552 },
+    "Áncash": { "cases": 540 },
+    "La Libertad": { "cases": 530 },
+    "Lambayeque": { "cases": 490 },
+    "Ica": { "cases": 414 },
+    "Cusco": { "cases": 411 },
+    "Región Lima": { "cases": 379 },
+    "Madre de Dios": { "cases": 55 }
+  },
+  "2024": {
+    "Lima Metropolitana": { "cases": 6925 },
+    "Arequipa": { "cases": 1573 },
+    "Prov. Const. del Callao": { "cases": 1082 },
+    "Piura": { "cases": 997 },
+    "Cusco": { "cases": 838 },
+    "Áncash": { "cases": 814 },
+    "Junín": { "cases": 655 }
+  }
+}

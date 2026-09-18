@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Observatorio Nacional del Bullying — Perú</title>
+<meta name="description" content="Datos, tendencias y evidencia sobre acoso escolar y ciberbullying en el Perú. Solo fuentes verificables.">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="src/css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1>Observatorio Nacional del Bullying — Perú</h1>
+    <p class="sub">Datos, tendencias y evidencia sobre acoso escolar y ciberbullying</p>
+    <p class="updated">Última actualización: <b id="last-updated">—</b> · Datos de fuentes oficiales peruanas · <span class="pill">No se inventan cifras</span></p>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#resumen">Resumen</a>
+    <a href="#mapa">Mapa</a>
+    <a href="#serie">Serie histórica</a>
+    <a href="#territorio">Territorio</a>
+    <a href="#prevalencia">Prevalencia</a>
+    <a href="#comparacion">Comparación de fuentes</a>
+    <a href="#academica">Investigación</a>
+    <a href="#noticias">Noticias</a>
+    <a href="#politicas">Políticas</a>
+    <a href="#datos">Datos</a>
+    <a href="#metodologia">Metodología</a>
+    <a href="#limitaciones">Limitaciones</a>
+  </div>
+</nav>
+
+<!-- RESUMEN / KPIs -->
+<section id="resumen">
+  <div class="wrap">
+    <h2>Situación general</h2>
+    <p class="lead">Indicadores principales del acoso escolar y la violencia escolar en el Perú. Recuerda: las cifras de SíseVe son <b>reportes de presuntos hechos</b>, no la prevalencia real.</p>
+    <div class="kpi-grid" id="kpi-grid">
+      <div class="loading">Cargando indicadores…</div>
+    </div>
+    <div class="callout" id="siseve-warning">
+      <b>Importante:</b> SíseVe registra <b>reportes</b> (puede haber más de un reporte por caso y existe subregistro). Un aumento de reportes no equivale necesariamente a un aumento real de casos.
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="mapa" style="background:var(--surface-2)">
+  <div class="wrap">
+    <h2>Mapa nacional</h2>
+    <p class="lead">Distribución territorial de los reportes. Distingue <b>número absoluto</b> de <b>tasa por 10,000 estudiantes</b>: una región grande tiende a más reportes solo por tener más estudiantes.</p>
+    <div class="controls">
+      <label>Año
+        <select id="map-year"></select>
+      </label>
+      <div class="seg" id="map-metric">
+        <button data-metric="cases" class="active">N.º de reportes</button>
+        <button data-metric="rate">Tasa /10 000</button>
+      </div>
+    </div>
+    <div id="map"></div>
+    <p class="source" id="map-source">Fuente: MINEDU — SíseVe · Matrícula: INEI 2024 · GeoJSON departamental (juaneladio/peru-geojson, MPL-2.0).</p>
+  </div>
+</section>
+
+<!-- SERIE HISTÓRICA -->
+<section id="serie">
+  <div class="wrap">
+    <h2>Evolución histórica</h2>
+    <p class="lead">Reportes por año. Las anotaciones marcan hitos (pandemia, cambios normativos). El tramo 2020–2021 no debe leerse como reducción real del bullying.</p>
+    <div class="panel">
+      <div class="chart tall" id="chart-series"></div>
+      <p class="source" id="series-source"></p>
+    </div>
+  </div>
+</section>
+
+<!-- TERRITORIO -->
+<section id="territorio" style="background:var(--surface-2)">
+  <div class="wrap">
+    <h2>Análisis territorial</h2>
+    <p class="lead">Dos rankings <b>descriptivos</b> y distintos. No son rankings de "mejores" o "peores" regiones.</p>
+    <div class="grid-2">
+      <div class="panel">
+        <h3 style="margin-top:0;font-size:1rem">Mayor número de reportes</h3>
+        <div class="chart" id="chart-abs"></div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;font-size:1rem">Mayor tasa por 10 000 estudiantes</h3>
+        <div class="chart" id="chart-rate"></div>
+      </div>
+    </div>
+    <p class="source">Reportes: SíseVe · Denominador: matrícula INEI 2024.</p>
+  </div>
+</section>
+
+<!-- PREVALENCIA -->
+<section id="prevalencia">
+  <div class="wrap">
+    <h2>Exposición medida (encuestas)</h2>
+    <p class="lead">A diferencia de los <b>reportes</b> de SíseVe, las encuestas a estudiantes miden <b>exposición declarada</b> sobre una muestra representativa. Son naturalezas de dato distintas y <b>no se suman</b>.</p>
+    <div class="grid-2">
+      <div class="panel">
+        <h3 style="margin-top:0;font-size:1rem">ENARES 2019 (INEI) — % de estudiantes que declara violencia en el entorno escolar</h3>
+        <div class="chart" id="chart-prevalence"></div>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;font-size:1rem">SSES 2023 (MINEDU + OCDE) — roles en el acoso, estudiantes de 15 años</h3>
+        <div class="chart" id="chart-sses"></div>
+        <p class="source" id="sses-source"></p>
+      </div>
+    </div>
+    <div class="callout info">Un registro administrativo depende de que alguien denuncie; una encuesta pregunta directamente a los estudiantes. Por eso ENARES (44–68%) y SSES (~6 de cada 10 involucrados) reflejan mucho más de lo que capta SíseVe: la mayoría de los hechos no llega a un reporte.</div>
+    <p class="source" id="prevalence-source"></p>
+  </div>
+</section>
+
+<!-- COMPARACIÓN DE FUENTES -->
+<section id="comparacion" style="background:var(--surface-2)">
+  <div class="wrap">
+    <h2>Comparación entre fuentes</h2>
+    <p class="lead">Qué mide cada fuente, con qué población y método. No se combinan cifras incompatibles.</p>
+    <div class="table-scroll">
+      <table class="data">
+        <thead><tr><th>Fuente</th><th>Qué mide</th><th>Naturaleza</th><th>Cobertura</th><th>Período</th><th>Calidad</th></tr></thead>
+        <tbody>
+          <tr><td><b>SíseVe</b> (MINEDU)</td><td>Reportes de presuntos hechos de violencia escolar</td><td>Registro administrativo</td><td>Nacional / departamental</td><td>2013–actual</td><td><span class="badge b-A">A</span></td></tr>
+          <tr><td><b>ENARES</b> (INEI)</td><td>Exposición declarada a violencia en la escuela</td><td>Encuesta a muestra</td><td>Nacional, urbano/rural</td><td>2019</td><td><span class="badge b-A">A</span></td></tr>
+          <tr><td><b>Defensoría</b></td><td>Cumplimiento normativo, supervisión de IIEE</td><td>Supervisión</td><td>Nacional (muestra IIEE)</td><td>2018–actual</td><td><span class="badge b-A">A</span></td></tr>
+          <tr><td><b>MINSA</b></td><td>Atenciones de salud mental de NNA (contexto)</td><td>Registro administrativo (contextual)</td><td>Nacional</td><td>2023–actual</td><td><span class="badge b-A">A</span></td></tr>
+          <tr><td><b>UNESCO / UNICEF</b></td><td>Contexto internacional / regional</td><td>Informe</td><td>Global / LAC / Perú</td><td>2019</td><td><span class="badge b-B">B</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIGACIÓN ACADÉMICA -->
+<section id="academica">
+  <div class="wrap">
+    <h2>Investigación académica</h2>
+    <p class="lead">Estudios científicos sobre bullying y ciberbullying en el Perú (fuente B). No se combinan automáticamente con los registros de SíseVe.</p>
+    <div class="table-scroll">
+      <table class="data" id="studies-table">
+        <thead><tr><th>Estudio</th><th>Año</th><th>Muestra / Región</th><th>Hallazgo</th><th></th></tr></thead>
+        <tbody><tr><td colspan="5" class="loading">Cargando…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- NOTICIAS -->
+<section id="noticias">
+  <div class="wrap">
+    <h2>Actualidad</h2>
+    <p class="lead">Casos y reportajes recientes. Nivel de verificación explícito; nada "reportado" se presenta como "confirmado".</p>
+    <div class="news-list" id="news-list"><div class="loading">Cargando…</div></div>
+  </div>
+</section>
+
+<!-- POLÍTICAS -->
+<section id="politicas" style="background:var(--surface-2)">
+  <div class="wrap">
+    <h2>Políticas públicas</h2>
+    <p class="lead">Línea de tiempo normativa de la convivencia y la violencia escolar en el Perú.</p>
+    <ul class="timeline" id="timeline"><li class="loading">Cargando…</li></ul>
+  </div>
+</section>
+
+<!-- DATOS -->
+<section id="datos">
+  <div class="wrap">
+    <h2>Explorador de datos</h2>
+    <p class="lead">Datos por departamento del año seleccionado. Ordena por columna y exporta.</p>
+    <div class="controls">
+      <label>Año <select id="table-year"></select></label>
+      <button id="export-csv">⬇ Descargar CSV</button>
+    </div>
+    <div class="table-scroll">
+      <table class="data" id="data-table">
+        <thead><tr>
+          <th data-k="department">Departamento</th>
+          <th data-k="cases" class="num">Reportes</th>
+          <th data-k="students" class="num">Matrícula</th>
+          <th data-k="rate" class="num">Tasa /10 000</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="source">Reportes: SíseVe · Matrícula: INEI 2024.</p>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia" style="background:var(--surface-2)">
+  <div class="wrap">
+    <h2>Metodología y fuentes</h2>
+    <div class="grid-2">
+      <div class="panel">
+        <h3 style="margin-top:0;font-size:1rem">Tres conceptos que no son sinónimos</h3>
+        <p style="font-size:.9rem"><b style="color:var(--c-bullying)">Bullying / acoso escolar:</b> agresión entre estudiantes con intencionalidad, repetición y desequilibrio de poder.</p>
+        <p style="font-size:.9rem"><b style="color:var(--c-ciber)">Ciberbullying:</b> acoso mediante internet, redes, mensajería o dispositivos.</p>
+        <p style="font-size:.9rem"><b style="color:var(--c-violencia)">Violencia escolar:</b> categoría amplia que incluye violencia física, psicológica, sexual, el bullying, el ciberbullying y la violencia de personal educativo hacia estudiantes.</p>
+      </div>
+      <div class="panel">
+        <h3 style="margin-top:0;font-size:1rem">Cómo construimos estos datos</h3>
+        <ol style="font-size:.9rem;color:var(--text-muted);padding-left:18px">
+          <li>Investigación y catálogo de fuentes oficiales.</li>
+          <li>Descarga/extracción documentada (con fecha).</li>
+          <li>Limpieza y normalización territorial (UBIGEO).</li>
+          <li>Cálculo de indicadores y tasas.</li>
+          <li>Publicación con cita y enlace en cada gráfico.</li>
+        </ol>
+        <p class="source">Detalle completo en <a href="docs/METHODOLOGY.md">METHODOLOGY.md</a> y <a href="docs/SOURCE_CATALOG.md">SOURCE_CATALOG.md</a>.</p>
+      </div>
+    </div>
+    <div class="table-scroll" style="margin-top:16px">
+      <table class="data" id="sources-table">
+        <thead><tr><th>Fuente</th><th>Institución</th><th>Período</th><th>Calidad</th><th>Enlace</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- LIMITACIONES -->
+<section id="limitaciones">
+  <div class="wrap">
+    <h2>Limitaciones de los datos</h2>
+    <div class="panel">
+      <ul style="margin:0;padding-left:18px;color:var(--text-muted)">
+        <li><b>Subregistro:</b> SíseVe depende del reporte ciudadano/institucional; no capta todos los hechos.</li>
+        <li><b>Reportes ≠ prevalencia:</b> el número de SíseVe no es la prevalencia real del bullying en la población escolar.</li>
+        <li><b>Duplicidad:</b> puede existir más de un reporte sobre un mismo caso.</li>
+        <li><b>Pandemia 2020–2021:</b> la no presencialidad alteró exposición y mecanismos de reporte; series no directamente comparables.</li>
+        <li><b>Registro vs encuesta:</b> SíseVe y ENARES miden cosas distintas; no se agregan.</li>
+        <li><b>Matrícula:</b> las tasas usan matrícula total (todos los niveles), no solo secundaria.</li>
+        <li><b>Año en curso:</b> 2026 es parcial (enero–agosto); no se compara con años completos sin advertencia.</li>
+      </ul>
+      <p class="source">Vacíos de datos detallados en <a href="docs/DATA_GAPS.md">DATA_GAPS.md</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap cols">
+    <div>
+      <b style="color:#fff">Observatorio Nacional del Bullying — Perú</b>
+      <p>Proyecto de datos abiertos. Los datos pertenecen a sus fuentes originales (MINEDU/SíseVe, INEI, Defensoría). Nunca se publican datos personales de menores.</p>
+    </div>
+    <div>
+      <b style="color:#fff">Fuentes</b>
+      <p><a href="https://siseve.minedu.gob.pe/">SíseVe MINEDU</a> · <a href="https://www.inei.gob.pe/">INEI</a> · <a href="https://www.defensoria.gob.pe/">Defensoría del Pueblo</a></p>
+    </div>
+    <div>
+      <b style="color:#fff">Documentación</b>
+      <p><a href="docs/METHODOLOGY.md">Metodología</a> · <a href="docs/SOURCE_CATALOG.md">Catálogo de fuentes</a> · <a href="docs/DATA_GAPS.md">Vacíos de datos</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<button class="chat-fab" id="chat-fab">💬 Pregúntale al Observatorio</button>
+<div class="chat-panel" id="chat-panel" hidden>
+  <header>Pregúntale al Observatorio <button id="chat-close" aria-label="Cerrar">×</button></header>
+  <div class="chat-log" id="chat-log">
+    <div class="msg bot">Hola 👋 Puedo responder sobre los datos de bullying y violencia escolar en el Perú, citando la fuente. No invento cifras: si un dato no está en el observatorio, te lo diré.</div>
+  </div>
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button>¿Cómo evolucionó el bullying en el Perú?</button>
+    <button>¿Qué diferencia hay entre reporte y prevalencia?</button>
+    <button>¿Qué dice ENARES?</button>
+  </div>
+  <div class="chat-input">
+    <input id="chat-input" type="text" placeholder="Escribe tu pregunta…" autocomplete="off">
+    <button id="chat-send">Enviar</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.1/echarts.min.js"></script>
+<script src="src/js/config.js"></script>
+<script src="src/js/app.js"></script>
+<script src="src/js/chatbot.js"></script>
+</body>
+</html>

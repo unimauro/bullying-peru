@@ -1,0 +1,67 @@
+{
+  "dataset": "Investigación académica sobre bullying/ciberbullying en el Perú",
+  "retrieval_date": "2026-09-18",
+  "note": "Fuente B (académica). No se combinan automáticamente con las estadísticas administrativas de SíseVe. Cada estudio indica su población, muestra y limitaciones.",
+  "data": [
+    {
+      "title": "Factores asociados con la agresión entre pares (Bullying)",
+      "authors": "R. Valle",
+      "year": 2022,
+      "journal": "Rev. Cuerpo Médico HNAAA 15(1)",
+      "method": "Transversal, datos secundarios (IV Estudio Nacional DEVIDA 2012)",
+      "population": "48,025 escolares 11-20 años, ciudades >30k hab.",
+      "region": "Nacional (Costa/Sierra/Selva)",
+      "findings": "Agresión 10.5%, victimización 15.8%, agresión-victimización 21.7%. Sexo masculino RP 1.87 (agresor).",
+      "limitations": "Transversal; autoinforme; datos de 2012.",
+      "url": "http://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S2227-47312022000100003"
+    },
+    {
+      "title": "Exposición a violencia en el hogar y victimización por acoso escolar",
+      "authors": "Lazo-Legrand et al.",
+      "year": 2022,
+      "journal": "Cad. Saúde Pública 38(8)",
+      "method": "Transversal, datos secundarios ENARES 2019",
+      "population": "1,569 adolescentes 12-17 años",
+      "region": "Perú",
+      "findings": "Victimización 63.7% (37.9% solo psicológica, 22.4% ambas). Violencia doméstica frecuente → RRR 4.80.",
+      "limitations": "Deseabilidad/recuerdo; transversal.",
+      "url": "https://www.scielo.br/j/csp/a/qqkTwRw64ypHpkLdfRBgnms/?lang=es"
+    },
+    {
+      "title": "Acoso escolar y conductas alimentarias de riesgo",
+      "authors": "Padilla Lay & Robles Arana",
+      "year": 2025,
+      "journal": "Rev. Neuro-Psiquiatría 88(2)",
+      "method": "Transversal, cuestionario UNICEF/Defensoría mod. INSM",
+      "population": "1,490 adolescentes 12-17 años",
+      "region": "Lima Metropolitana y Callao",
+      "findings": "Prevalencia de acoso 43.8%. Acosados: OR 2.6 de conductas alimentarias de riesgo.",
+      "limitations": "Transversal; muestra urbana.",
+      "url": "http://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S0034-85972025000200116"
+    },
+    {
+      "title": "Parenting styles and the role in bullying (EBIP-Q)",
+      "authors": "Zegarra-Chapoñan et al.",
+      "year": 2023,
+      "journal": "Rev. Cuidarte",
+      "method": "Transversal, EBIP-Q + escala Steinberg",
+      "population": "563 adolescentes, 10 colegios públicos",
+      "region": "9 distritos de Lima",
+      "findings": "Roles: no implicados 40.3%, víctimas 25.0%, víctima-agresor 18.7%, agresores 16.0%. Crianza negligente → OR 2.72.",
+      "limitations": "Muestreo por conveniencia; autoinforme.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11559304/"
+    },
+    {
+      "title": "Cyberbullying en escolares de secundaria de Lima Metropolitana",
+      "authors": "UNMSM (cuest. Ortega/Calmaestra/Mora-Merchán)",
+      "year": null,
+      "journal": "UNMSM / ResearchGate",
+      "method": "Descriptivo",
+      "population": "1,703 estudiantes 3°-5° secundaria, colegios públicos",
+      "region": "Lima",
+      "findings": "Ciberacoso mayor por internet que por celular; mujeres más victimizadas.",
+      "limitations": "Muestra local.",
+      "url": "https://www.researchgate.net/publication/319473463"
+    }
+  ]
+}

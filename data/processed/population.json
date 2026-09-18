@@ -1,0 +1,49 @@
+{
+  "dataset": "Matrícula estudiantil por departamento",
+  "description": "Alumnos matriculados en el sistema educativo nacional (todos los niveles), por departamento. Denominador para el cálculo de tasas por 10,000 estudiantes.",
+  "unit": "personas",
+  "year": 2024,
+  "source_id": "inei_matricula_2024",
+  "source": {
+    "institution": "INEI (fuente primaria: MINEDU – Censo Educativo)",
+    "table": "Alumnos matriculados en el sistema educativo nacional, según departamento, 2009-2024",
+    "url_xlsx": "https://www.inei.gob.pe/media/MenuRecursivo/indices_tematicos/cd1_81.xlsx",
+    "url_page": "https://www.inei.gob.pe/estadisticas/indice-tematico/education/",
+    "reliability_level": "A",
+    "retrieval_date": "2026-09-18"
+  },
+  "notes": [
+    "Matrícula TOTAL del sistema educativo (todos los niveles). El desglose por nivel (inicial/primaria/secundaria) por departamento no está disponible como descarga directa (solo vía módulo interactivo ESCALE-MINEDU Magnitudes).",
+    "Lima aparece desagregada en 'Lima Metropolitana' (43 distritos) y 'Región Lima' (provincias). Si la fuente de casos reporta 'Lima' agregado, sumar ambas (2,735,416).",
+    "is_estimated: false — cifras oficiales, no estimadas."
+  ],
+  "data": [
+    { "department": "Amazonas", "ubigeo": "01", "students": 155655 },
+    { "department": "Áncash", "ubigeo": "02", "students": 325959 },
+    { "department": "Apurímac", "ubigeo": "03", "students": 135064 },
+    { "department": "Arequipa", "ubigeo": "04", "students": 410412 },
+    { "department": "Ayacucho", "ubigeo": "05", "students": 211616 },
+    { "department": "Cajamarca", "ubigeo": "06", "students": 439893 },
+    { "department": "Prov. Const. del Callao", "ubigeo": "07", "students": 260176 },
+    { "department": "Cusco", "ubigeo": "08", "students": 393765 },
+    { "department": "Huancavelica", "ubigeo": "09", "students": 112237 },
+    { "department": "Huánuco", "ubigeo": "10", "students": 251935 },
+    { "department": "Ica", "ubigeo": "11", "students": 284256 },
+    { "department": "Junín", "ubigeo": "12", "students": 406862 },
+    { "department": "La Libertad", "ubigeo": "13", "students": 553276 },
+    { "department": "Lambayeque", "ubigeo": "14", "students": 375579 },
+    { "department": "Lima Metropolitana", "ubigeo": "15", "students": 2431170, "note": "43 distritos de la provincia de Lima" },
+    { "department": "Región Lima", "ubigeo": "15P", "students": 304246, "note": "provincias de Lima (Barranca, Cajatambo, Canta, Cañete, Huaral, Huarochirí, Huaura, Oyón, Yauyos)" },
+    { "department": "Loreto", "ubigeo": "16", "students": 420318 },
+    { "department": "Madre de Dios", "ubigeo": "17", "students": 69579 },
+    { "department": "Moquegua", "ubigeo": "18", "students": 50744 },
+    { "department": "Pasco", "ubigeo": "19", "students": 85733 },
+    { "department": "Piura", "ubigeo": "20", "students": 619519 },
+    { "department": "Puno", "ubigeo": "21", "students": 319844 },
+    { "department": "San Martín", "ubigeo": "22", "students": 303430 },
+    { "department": "Tacna", "ubigeo": "23", "students": 96855 },
+    { "department": "Tumbes", "ubigeo": "24", "students": 81188 },
+    { "department": "Ucayali", "ubigeo": "25", "students": 232752 }
+  ],
+  "total_nacional": 9332063
+}

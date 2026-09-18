@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+data/raw/*
+!data/raw/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
