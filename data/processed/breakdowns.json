@@ -4,19 +4,32 @@
   "note": "Datos oficiales (fuente A) del Informe SíseVe 2013-2018 (acumulado 26,285 casos) y del corte 2026 ene-ago (11,791). SíseVe registra reportes de presuntos hechos, no la prevalencia real. Respetamos la clasificación de la fuente.",
   "source_2013_2018": "https://repositorio.minedu.gob.pe/handle/20.500.12799/6670",
   "source_2026": "https://www.infobae.com/peru/2026/09/15/el-mapa-de-la-violencia-escolar-en-peru-las-regiones-que-concentran-mas-reportes-en-2026/",
+  "year": 2022,
   "tipologia": {
+    "2022": [
+      { "tipo": "Física", "casos": 5150, "pct": 42.57 },
+      { "tipo": "Psicológica", "casos": 4511, "pct": 37.28 },
+      { "tipo": "Sexual", "casos": 2438, "pct": 20.15 }
+    ],
     "2013_2018": [
       { "tipo": "Física", "casos": 13792, "pct": 52.5 },
       { "tipo": "Psicológica", "casos": 5397, "pct": 20.5 },
       { "tipo": "Sexual", "casos": 3738, "pct": 14.2 },
       { "tipo": "Otros (verbal, internet, con armas, hurto)", "casos": 3358, "pct": 12.8 }
-    ],
-    "2026_ene_ago": [
-      { "tipo": "Física", "casos": 5187, "pct": 44.0 },
-      { "tipo": "Psicológica", "casos": 4545, "pct": 38.5 },
-      { "tipo": "Sexual", "casos": 2059, "pct": 17.5 }
     ]
   },
+  "gestion_2022": [
+    { "gestion": "Pública", "casos": 8628, "pct": 71.32 },
+    { "gestion": "Privada", "casos": 3471, "pct": 28.68 }
+  ],
+  "area_2022": [
+    { "area": "Urbana", "casos": 10275, "pct": 84.92 },
+    { "area": "Rural", "casos": 1824, "pct": 15.08 }
+  ],
+  "sexo_agredido_2022": [
+    { "sexo": "Mujer", "pct": 52.54 },
+    { "sexo": "Varón", "pct": 47.46 }
+  ],
   "tipo_reporte_2013_2018": [
     { "tipo": "Entre escolares", "casos": 14215, "pct": 54 },
     { "tipo": "De personal de la IE hacia escolar", "casos": 12070, "pct": 46 }

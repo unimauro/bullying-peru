@@ -1,0 +1,49 @@
+{
+  "dataset": "El bullying en el mundo",
+  "retrieval_date": "2026-09-18",
+  "source": "Ranking: Hosozawa et al., eClinicalMedicine (Lancet) 2021, sobre microdatos PISA 2018 (OCDE). % de estudiantes de 15 años víctimas frecuentes de bullying (varias veces al mes o más). Perú 22.4% NO es comparable con SíseVe (metodología distinta).",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8517283/",
+  "metric_note": "% de estudiantes de 15 años víctimas frecuentes de bullying (PISA 2018).",
+  "countries": [
+    { "country": "Filipinas", "value_pct": 64.8 },
+    { "country": "Rep. Dominicana", "value_pct": 44.0 },
+    { "country": "Marruecos", "value_pct": 42.2 },
+    { "country": "Indonesia", "value_pct": 41.0 },
+    { "country": "Colombia", "value_pct": 32.1 },
+    { "country": "Argentina", "value_pct": 32.0 },
+    { "country": "Nueva Zelanda", "value_pct": 31.4 },
+    { "country": "Panamá", "value_pct": 31.0 },
+    { "country": "Australia", "value_pct": 29.4 },
+    { "country": "Brasil", "value_pct": 28.2 },
+    { "country": "Reino Unido", "value_pct": 27.0 },
+    { "country": "Estados Unidos", "value_pct": 25.9 },
+    { "country": "Canadá", "value_pct": 25.1 },
+    { "country": "Uruguay", "value_pct": 25.0 },
+    { "country": "Costa Rica", "value_pct": 23.9 },
+    { "country": "Chile", "value_pct": 23.8 },
+    { "country": "Italia", "value_pct": 23.1 },
+    { "country": "México", "value_pct": 22.9 },
+    { "country": "Perú", "value_pct": 22.4 },
+    { "country": "Alemania", "value_pct": 22.3 },
+    { "country": "Francia", "value_pct": 19.5 },
+    { "country": "Japón", "value_pct": 17.3 },
+    { "country": "Portugal", "value_pct": 13.6 },
+    { "country": "Países Bajos", "value_pct": 12.2 },
+    { "country": "Corea del Sur", "value_pct": 9.3 }
+  ],
+  "global_context": [
+    { "text": "~1 de cada 3 estudiantes (32%) fue acosado por pares al menos una vez en el último mes (144 países).", "url": "https://www.unesco.org/en/articles/behind-numbers-ending-school-violence-and-bullying" },
+    { "text": "~1 de cada 10 niños es afectado por ciberacoso; las víctimas tienen el doble de riesgo de soledad severa, insomnio e ideación suicida (UNESCO, 2024).", "url": "https://news.un.org/en/story/2024/11/1156591" },
+    { "text": "Solo 16% de los países cuenta con un marco legal integral contra la violencia escolar (UNESCO/GEM, 2024).", "url": "https://news.un.org/en/story/2024/11/1156591" }
+  ],
+  "news": [
+    { "date": "2026-09-11", "media": "Infobae España", "country": "España", "title": "El acoso escolar se cronifica: 1 de cada 4 víctimas lo sufre más de un año", "url": "https://www.infobae.com/espana/agencias/2026/09/11/el-acoso-escolar-se-cronifica-y-una-de-cada-cuatro-victimas-lo-sufre-durante-mas-de-un-ano/" },
+    { "date": "2026-09-10", "media": "El Debate", "country": "España", "title": "La Fiscalía alerta: los delitos de acoso escolar aumentaron 17,6% en 2025", "url": "https://www.eldebate.com/educacion/20260910/fiscalia-ve-preocupante-incremento-delitos-acoso-escolar-aumentaron-176-2025_457424.html" },
+    { "date": "2026-09-01", "media": "Semanario Universidad", "country": "Costa Rica", "title": "Aumenta el acoso escolar entre estudiantes de 15 años, alerta PISA", "url": "https://semanariouniversidad.com/pais/aumenta-el-acoso-escolar-entre-estudiantes-de-15-anos-en-costa-rica-alerta-pisa/" },
+    { "date": "2025-11-06", "media": "Infobae", "country": "América Latina", "title": "El drama de las agresiones anónimas, virales y difíciles de detener", "url": "https://www.infobae.com/salud/2025/11/06/dia-contra-la-violencia-y-el-acoso-escolar-el-drama-de-las-agresiones-anonimas-virales-y-dificiles-de-detener/" },
+    { "date": "2025-11-06", "media": "Comisión Europea", "country": "Unión Europea", "title": "Encuesta UE: 29% de 6,300 niños sufrió ciberacoso", "url": "https://learning-corner.learning.europa.eu/news-and-competitions/international-day-against-violence-and-bullying-school-childrens-voices-and-recommendations-2025-11-06_en" },
+    { "date": "2025-05-03", "media": "La Jornada", "country": "México", "title": "Condenan el bullying en el Día Internacional contra el Acoso Escolar", "url": "https://www.jornada.com.mx/noticia/2025/05/03/sociedad/condenan-bullying-en-el-dia-internacional-contra-el-acoso-escolar" },
+    { "date": "2024-11-06", "media": "UN News", "country": "Global", "title": "UNESCO urge más acción para combatir la violencia y el acoso escolar", "url": "https://news.un.org/en/story/2024/11/1156591" },
+    { "date": "2024-09-04", "media": "Euronews", "country": "Francia", "title": "Francia prueba la prohibición de smartphones en 200 colegios", "url": "https://www.euronews.com/my-europe/2024/09/04/back-to-school-france-tests-smartphone-ban-in-200-middle-schools" }
+  ]
+}

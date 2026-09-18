@@ -57,51 +57,47 @@
       return;
     }
     const years = ts.years;
-    const last = years[years.length - 1];
-    const prev = years.length > 1 ? years[years.length - 2] : null;
-    const get = (key, y) => (ts.series[key] && ts.series[key][years.indexOf(y)]) ?? null;
-    const delta = (key) => {
-      if (!prev) return null;
-      const a = get(key, prev), b = get(key, last);
-      if (a == null || b == null || a === 0) return null;
-      return ((b - a) / a) * 100;
-    };
-    const partial = ts.partial_year === last;
-    // Para la comparación interanual usamos el último par de años COMPLETOS y comparables.
-    // Si el último año es parcial, no comparamos contra un año completo (sería engañoso).
+    const S = ts.series;
+    // Último punto disponible por serie (puede no ser el último año).
+    function lastPoint(key) {
+      const arr = S[key] || [];
+      for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return { i, year: years[i], value: arr[i] };
+      return null;
+    }
     const cards = [
-      { label: "Violencia escolar (reportes)", key: "violencia", tag: "violencia" },
-      { label: "Bullying (reportes)", key: "bullying", tag: "bullying" },
-      { label: "Ciberbullying (reportes)", key: "ciberbullying", tag: "ciber" }
+      { label: "Violencia escolar (reportes)", key: "violencia", tag: "violencia", cls: "k-violencia" },
+      { label: "Bullying (reportes)", key: "bullying", tag: "bullying", cls: "k-bullying" },
+      { label: "Ciberbullying (reportes)", key: "ciberbullying", tag: "ciber", cls: "k-ciber" }
     ];
     let html = "";
     cards.forEach((c) => {
-      const v = get(c.key, last);
-      if (v == null) {
-        if (c.key === "ciberbullying") {
-          html += `<div class="kpi"><span class="tag tag-${c.tag}">${c.tag}</span>
-            <div class="label">${c.label}</div><div class="value" style="font-size:1rem;color:var(--text-soft)">Sin serie anual</div>
-            <div class="meta">SíseVe no publica el desglose anual de ciberbullying</div></div>`;
-        }
-        return;
+      const p = lastPoint(c.key);
+      if (!p) return;
+      const partial = ts.partial_year === p.year;
+      // Delta solo entre el punto y el anterior disponible, y solo si ninguno es parcial.
+      let dHtml = "";
+      const prevArr = S[c.key] || [];
+      let pi = p.i - 1; while (pi >= 0 && prevArr[pi] == null) pi--;
+      if (!partial && pi >= 0 && prevArr[pi] !== 0) {
+        const d = ((p.value - prevArr[pi]) / prevArr[pi]) * 100;
+        dHtml = `<span class="delta ${d >= 0 ? "up" : "down"}">${d >= 0 ? "▲" : "▼"} ${Math.abs(d).toFixed(1)}%</span> vs ${years[pi]}`;
+      } else if (partial) {
+        dHtml = `<span class="pill" style="background:var(--surface-2);color:var(--text-muted)">año parcial</span>`;
       }
-      const d = partial ? null : delta(c.key);
-      const dHtml = d == null ?
-        (partial ? `<span class="pill">año parcial — sin comparación</span>` : "") :
-        `<span class="delta ${d >= 0 ? "up" : "down"}">${d >= 0 ? "▲" : "▼"} ${Math.abs(d).toFixed(1)}%</span> vs ${prev}`;
-      html += `<div class="kpi"><span class="tag tag-${c.tag}">${c.tag}</span>
+      html += `<div class="kpi ${c.cls}"><span class="tag tag-${c.tag}">${c.tag}</span>
         <div class="label">${c.label}</div>
-        <div class="value">${fmt(v)}</div>
-        <div class="meta">${last}${partial ? " (parcial ene–ago)" : ""} · ${dHtml}</div></div>`;
+        <div class="value">${fmt(p.value)}</div>
+        <div class="meta">${p.year}${partial ? " (parcial ene–ago)" : ""} · ${dHtml}</div></div>`;
     });
-    // KPI tasa nacional: total oficial del año / matrícula nacional (no sumar departamentos parciales)
+    // KPI tasa nacional: último total disponible / matrícula nacional
     if (store.population) {
-      const totalCases = get("violencia", last);
-      if (totalCases != null) {
-        const rate = (totalCases / store.population.total_nacional) * 10000;
-        html += `<div class="kpi"><div class="label">Tasa nacional /10 000</div>
+      const p = lastPoint("violencia");
+      if (p) {
+        const rate = (p.value / store.population.total_nacional) * 10000;
+        const partial = ts.partial_year === p.year;
+        html += `<div class="kpi k-rate"><div class="label">Tasa nacional /10 000</div>
           <div class="value">${rate.toFixed(1)}</div>
-          <div class="meta">${last}${partial ? " parcial" : ""} · reportes por 10 000 estudiantes (matrícula ${store.population.year})</div></div>`;
+          <div class="meta">${p.year}${partial ? " parcial" : ""} · reportes por 10 000 estudiantes (matrícula ${store.population.year})</div></div>`;
       }
     }
     grid.innerHTML = html || '<div class="callout">Sin datos para el último año.</div>';
@@ -369,10 +365,10 @@
       });
     };
     const CB = ["#f97316", "#8b5cf6", "#2f80c4", "#12a594", "#e0b13a"];
-    pie("bd-tipologia", (bd.tipologia["2026_ene_ago"] || []).map(x => ({ name: x.tipo, value: x.casos })), CB);
+    pie("bd-tipologia", (bd.tipologia["2022"] || bd.tipologia["2026_ene_ago"] || []).map(x => ({ name: x.tipo, value: x.casos })), CB);
     hbar("bd-nivel", (bd.nivel_educativo_2013_2018 || []).map(x => ({ name: x.nivel, value: x.casos })), C.colors.violencia, "abs");
-    pie("bd-gestion", (bd.gestion_2013_2018 || []).map(x => ({ name: x.gestion, value: x.casos })), ["#2f80c4", "#f97316"]);
-    pie("bd-area", (bd.area_2013_2018 || []).map(x => ({ name: x.area, value: x.casos })), ["#12a594", "#e0b13a"]);
+    pie("bd-gestion", (bd.gestion_2022 || bd.gestion_2013_2018 || []).map(x => ({ name: x.gestion, value: x.casos })), ["#2f80c4", "#f97316"]);
+    pie("bd-area", (bd.area_2022 || bd.area_2013_2018 || []).map(x => ({ name: x.area, value: x.casos })), ["#12a594", "#e0b13a"]);
   }
 
   const NEWS_PALETTE = ["#f97316", "#2f80c4", "#12a594", "#8b5cf6", "#d4553a", "#0e8a7d"];
@@ -424,14 +420,20 @@
     const el = document.getElementById("books-grid");
     if (!el) return;
     if (!books || !books.data) { el.innerHTML = '<div class="callout info"><span>📚</span><span>Lista de libros en preparación.</span></div>'; return; }
-    el.innerHTML = books.data.map(b => `
+    const card = (b) => `
       <div class="book">
         <div class="cover"></div>
         <h4>${b.url ? `<a href="${b.url}" target="_blank" rel="noopener">${b.title}</a>` : b.title}</h4>
         <div class="by">${b.authors || ""}${b.year ? " · " + b.year : ""}</div>
         ${b.audience ? `<span class="aud">${b.audience}</span>` : ""}
         <p>${b.note || ""}</p>
-      </div>`).join("");
+      </div>`;
+    let html = books.data.map(card).join("");
+    if (books.resources && books.resources.length) {
+      html += `<div style="grid-column:1/-1;margin-top:6px;font-weight:800;font-size:.95rem">📥 Recursos oficiales gratuitos</div>`;
+      html += books.resources.map(card).join("");
+    }
+    el.innerHTML = html;
   }
 
   /* ---------- Ticker horizontal de casos (banda superior) ---------- */
@@ -513,12 +515,14 @@
     const years = (store.byDepartment && Object.keys(store.byDepartment)) ||
       (ts && ts.years && ts.years.map(String)) || [];
     const sorted = years.map(Number).filter(n => !isNaN(n)).sort((a, b) => b - a);
+    // Año por defecto: el más completo/oficial (default_year), si existe.
+    const def = (store.byDepartment && store.byDepartment.default_year) || sorted[0];
     ["map-year", "table-year"].forEach(id => {
       const sel = document.getElementById(id);
       if (!sel) return;
-      sel.innerHTML = sorted.map(y => `<option value="${y}">${y}</option>`).join("") || '<option>—</option>';
+      sel.innerHTML = sorted.map(y => `<option value="${y}"${y === def ? " selected" : ""}>${y}${y === def ? " ★" : ""}</option>`).join("") || '<option>—</option>';
     });
-    return sorted[0];
+    return def;
   }
 
   /* ---------- Init ---------- */

@@ -1,31 +1,32 @@
 {
   "dataset": "Serie histórica de reportes SíseVe",
-  "source": "MINEDU — SíseVe",
-  "source_url": "https://siseve.minedu.gob.pe/web/",
+  "source": "MINEDU — SíseVe (Boletín 'SíseVe en cifras', 2013–2022)",
+  "source_url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/9786",
   "retrieval_date": "2026-09-18",
   "partial_year": 2026,
-  "note": "SíseVe registra REPORTES de presuntos hechos, no la prevalencia real. Cada año lleva su nivel de confiabilidad: A = fuente oficial primaria (Informe SíseVe 2013-2018 y Boletín 'SíseVe en cifras' 2022); B = prensa citando a MINEDU (pendiente de re-verificar ejecutando el scraping oficial de /Web/App/MapaDetalle por año). 2020 y 2021 NO se muestran porque no hay cifra confirmada por fuente oficial (la caída de la educación remota alteró el reporte). El ciberbullying ('violencia por Internet') es uno de los 7 tipos, pero NO existe publicada una serie anual desagregada.",
+  "note": "SíseVe registra REPORTES de presuntos hechos, no la prevalencia real. La serie 2013–2022 es OFICIAL (Boletín 'SíseVe en cifras', fuente A) e incluye bullying y ciberbullying por año. 2020 y 2021 son cifras oficiales bajas por el cierre de escuelas (educación remota): la caída NO significa menos violencia real. Los años 2023–2026 provienen de prensa citando a MINEDU (B), pendientes del próximo boletín. 2026 es parcial (enero–agosto).",
   "years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
   "series": {
-    "violencia":     [207, 2029, 3642, 5304, 5591, 9512, 13007, null, null, 12099, 19762, 19684, 19666, 11791],
-    "bullying":      [53,  null, null, null, null, null, null,  112,  118,  2498,  null,  null,  null,  null],
-    "ciberbullying": [null,null, null, null, null, null, null,  null, null, null,  null,  null,  null,  null]
+    "violencia":     [207, 2029, 3635, 5288, 5553, 9384, 13006, 756, 768, 12099, 19762, 19684, 19666, 11791],
+    "bullying":      [53,  574,  718,  1051, 1044, 1478, 2118,  54,  52,  2498,  null,  null,  null,  null],
+    "ciberbullying": [4,   33,   53,   66,   82,   122,  126,   58,  66,  140,   null,  null,  null,  null]
   },
   "reliability": {
-    "violencia":     ["A","A","A","A","A","A","B",null,null,"A","B","B","B","B"],
-    "bullying":      ["aprox",null,null,null,null,null,null,"B","B","B",null,null,null,null]
+    "violencia":     ["A","A","A","A","A","A","A","A","A","A","B","B","B","B"],
+    "bullying":      ["A","A","A","A","A","A","A","A","A","A",null,null,null,null],
+    "ciberbullying": ["A","A","A","A","A","A","A","A","A","A",null,null,null,null]
   },
   "year_notes": {
-    "2013": "Año parcial (desde setiembre). Bullying ~53 es aproximado, no confirmado en fuente oficial.",
-    "2019": "Incluye 2,341 casos de tipo sexual (prensa citando MINEDU).",
-    "2020": "Sin cifra oficial confirmada. Educación remota por COVID-19: la caída de reportes NO equivale a menos violencia.",
-    "2021": "Sin cifra oficial confirmada. Educación remota por COVID-19.",
-    "2022": "12,099 (Boletín 'SíseVe en cifras', fuente A). El subconjunto de bullying cerró en ~2,498, 'la cifra más alta en 9 años'.",
-    "2026": "Parcial (enero-agosto). No comparable con años completos."
+    "2019": "13,006 casos (Boletín SíseVe). Máximo previo a la pandemia.",
+    "2020": "756 casos (oficial). Escuelas cerradas por COVID-19: la fuerte caída refleja la educación remota y menos mecanismos de reporte, no menos violencia real.",
+    "2021": "768 casos (oficial). Continúa la educación remota.",
+    "2022": "12,099 casos (Boletín 'SíseVe en cifras'). Retorno a la presencialidad; el bullying cerró en 2,498.",
+    "2023": "Cifra de prensa citando a MINEDU (pendiente de boletín).",
+    "2026": "Parcial (enero–agosto). No comparable con años completos."
   },
   "annotations": [
     { "year": 2018, "label": "DS 004-2018 Lineamientos" },
-    { "year": 2020, "label": "Pandemia (educación remota)" },
+    { "year": 2020, "label": "Pandemia (escuelas cerradas)" },
     { "year": 2023, "label": "Ley 31902" }
   ]
 }
