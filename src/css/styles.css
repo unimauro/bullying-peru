@@ -75,6 +75,7 @@ body {
 img { max-width: 100%; }
 a { color: var(--brand); text-underline-offset: 2px; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: 20px; }
+.ic { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
 
 /* ---------- HERO ---------- */
 .hero {

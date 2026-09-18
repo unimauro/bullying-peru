@@ -31,6 +31,19 @@
 </head>
 <body>
 
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M20 4H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h3v3l4-3h9a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/></symbol>
+  <symbol id="ic-map" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 20v-6M12 20v-9M16 20v-4"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24"><path d="M12 6v14"/><path d="M12 6C10 4 7 4 4 5v13c3-1 6-1 8 1 2-2 5-2 8-1V5c-3-1-6-1-8 1z"/></symbol>
+  <symbol id="ic-alert" viewBox="0 0 24 24"><path d="M12 3l10 17H2z"/><path d="M12 10v4"/><path d="M12 17v.01"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 18h4"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 21C7 16.5 4 13 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 7.5-8 12z"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24"><path d="M12 4v15"/><path d="M9 19h6"/><path d="M4 7h16"/><path d="M1.5 12l2.5-5 2.5 5a2.5 2 0 0 1-5 0z"/><path d="M17.5 12l2.5-5 2.5 5a2.5 2 0 0 1-5 0z"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a6 6 0 0 1 14 0v2"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/><path d="M22 21v-2a6 6 0 0 0-4.5-5.8"/></symbol>
+</svg>
+
 <header class="hero">
   <div class="wrap">
     <div class="hero-text">
@@ -45,24 +58,46 @@
       <p class="updated">Última actualización: <b id="last-updated">—</b> · <span class="pill">No se inventan cifras</span></p>
     </div>
     <div class="hero-art" id="hero-art">
-      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" role="img" aria-label="Ilustración de protección escolar">
+      <svg viewBox="0 0 400 320" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escuela segura y comunidad protegida contra el bullying">
         <defs>
-          <linearGradient id="hg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#dbeafe" stop-opacity=".85"/></linearGradient>
-          <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+          <radialGradient id="obGlow" cx="50%" cy="36%" r="62%">
+            <stop offset="0%" stop-color="#12a594" stop-opacity=".38"/>
+            <stop offset="55%" stop-color="#1f6fb2" stop-opacity=".14"/>
+            <stop offset="100%" stop-color="#1f6fb2" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="obShield" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity=".24"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity=".06"/>
+          </linearGradient>
+          <linearGradient id="obRoof" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f97316"/>
+            <stop offset="100%" stop-color="#ea6a0f"/>
+          </linearGradient>
         </defs>
-        <circle cx="200" cy="160" r="140" fill="#ffffff" opacity=".08"/>
-        <circle cx="200" cy="160" r="100" fill="#ffffff" opacity=".08"/>
-        <!-- escudo -->
-        <path d="M200 40 120 74v70c0 60 40 92 80 108 40-16 80-48 80-108V74z" fill="url(#hg1)"/>
-        <path d="M200 40 120 74v70c0 60 40 92 80 108 40-16 80-48 80-108V74z" fill="none" stroke="#f97316" stroke-width="4" opacity=".9"/>
-        <!-- corazón -->
-        <path d="M200 118c-12-15-40-9-40 12 0 16 20 30 40 44 20-14 40-28 40-44 0-21-28-27-40-12z" fill="url(#hg2)"/>
-        <!-- figuras -->
-        <g fill="#12a594"><circle cx="168" cy="205" r="12"/><rect x="158" y="219" width="20" height="30" rx="8"/></g>
-        <g fill="#2f80c4"><circle cx="200" cy="200" r="13"/><rect x="189" y="215" width="22" height="34" rx="9"/></g>
-        <g fill="#f97316"><circle cx="232" cy="205" r="12"/><rect x="222" y="219" width="20" height="30" rx="8"/></g>
-        <!-- barras de datos -->
-        <g opacity=".9"><rect x="300" y="230" width="12" height="26" rx="3" fill="#ffffff" opacity=".8"/><rect x="316" y="216" width="12" height="40" rx="3" fill="#12a594"/><rect x="332" y="200" width="12" height="56" rx="3" fill="#f97316"/></g>
+        <ellipse cx="200" cy="118" rx="192" ry="122" fill="url(#obGlow)"/>
+        <path d="M40 252 Q120 190 200 214 T362 194" fill="none" stroke="#12a594" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <g fill="#12a594" fill-opacity=".6"><circle cx="40" cy="252" r="3"/><circle cx="200" cy="214" r="3"/><circle cx="362" cy="194" r="3"/></g>
+        <g opacity=".55">
+          <rect x="300" y="150" width="10" height="34" rx="3" fill="#fff" fill-opacity=".28"/>
+          <rect x="316" y="134" width="10" height="50" rx="3" fill="#12a594"/>
+          <rect x="332" y="118" width="10" height="66" rx="3" fill="#f97316"/>
+        </g>
+        <path d="M200 40 L296 74 V150 C296 206 254 244 200 262 C146 244 104 206 104 150 V74 Z" fill="url(#obShield)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+        <path d="M200 96 c-8 -14 -30 -12 -30 6 c0 14 18 24 30 32 c12 -8 30 -18 30 -32 c0 -18 -22 -20 -30 -6 z" fill="#f97316"/>
+        <g>
+          <path d="M44 250 L70 235 L96 250 Z" fill="url(#obRoof)"/>
+          <rect x="49" y="250" width="42" height="30" rx="3" fill="#fff" fill-opacity=".18" stroke="#fff" stroke-opacity=".4" stroke-width="1.5"/>
+          <rect x="64" y="264" width="12" height="16" rx="2" fill="#12a594" fill-opacity=".8"/>
+          <rect x="54" y="256" width="7" height="7" rx="1.5" fill="#fff" fill-opacity=".35"/>
+          <rect x="79" y="256" width="7" height="7" rx="1.5" fill="#fff" fill-opacity=".35"/>
+          <path d="M70 235 V225" stroke="#fff" stroke-opacity=".5" stroke-width="1.5"/>
+          <path d="M70 225 h9 v5 h-9 z" fill="#12a594"/>
+        </g>
+        <g fill="#0b2a44" fill-opacity=".18"><ellipse cx="165" cy="256" rx="15" ry="4"/><ellipse cx="200" cy="258" rx="15" ry="4"/><ellipse cx="235" cy="256" rx="15" ry="4"/></g>
+        <g fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="5" stroke-linecap="round"><path d="M176 233 Q182 227 189 233"/><path d="M211 233 Q218 227 224 233"/></g>
+        <g><rect x="154" y="220" width="22" height="34" rx="11" fill="#12a594"/><circle cx="165" cy="205" r="10" fill="#f6c9a8"/><path d="M155 202 a10 10 0 0 1 20 0 a24 24 0 0 0 -20 0 z" fill="#5a3a2e"/></g>
+        <g><rect x="189" y="218" width="22" height="36" rx="11" fill="#f97316"/><circle cx="200" cy="203" r="10" fill="#8d5a3c"/><path d="M190 200 a10 10 0 0 1 20 0 a26 26 0 0 0 -20 0 z" fill="#20140f"/></g>
+        <g><rect x="224" y="220" width="22" height="34" rx="11" fill="#1f6fb2"/><circle cx="235" cy="205" r="10" fill="#f0b892"/><path d="M226 205 a9 9 0 0 1 18 0 a9 9 0 0 0 -18 0 z" fill="#c98a3a"/></g>
       </svg>
     </div>
   </div>
@@ -112,10 +147,12 @@
         <h3>Señales de alerta</h3>
         <ul>
           <li>No quiere ir al colegio o finge estar enfermo.</li>
-          <li>Cambios de ánimo, tristeza o irritabilidad.</li>
-          <li>Pertenencias dañadas o "perdidas".</li>
-          <li>Baja en el rendimiento o deja de tener amigos.</li>
-          <li>Problemas de sueño o de apetito.</li>
+          <li>Se aísla, está triste, irritable o ansioso/a.</li>
+          <li>Pertenencias dañadas o "perdidas" sin explicación.</li>
+          <li>Golpes o moretones que no sabe explicar.</li>
+          <li>Baja el rendimiento o pierde amistades.</li>
+          <li>Duerme o come mal; tiene pesadillas.</li>
+          <li><b>Ideas de no querer vivir → atención urgente.</b></li>
         </ul>
       </div>
       <div class="pcard">
@@ -133,8 +170,10 @@
         <div class="pico" style="background:var(--c-exposicion)">📞</div>
         <h3>A dónde acudir</h3>
         <ul id="ayuda-list">
-          <li><b>SíseVe</b> (MINEDU) — reporta en línea.</li>
-          <li><b>Línea 100</b> (MIMP) — orientación ante violencia.</li>
+          <li><b><a href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">SíseVe</a></b> (MINEDU) — reporte en línea · <span style="color:var(--text-soft)">siseve@minedu.gob.pe</span></li>
+          <li><b>Línea 100</b> (MIMP) — marca <b>100</b>, gratuito 24 h, en español/quechua/aymara.</li>
+          <li><b><a href="https://chat100.aurora.gob.pe/" target="_blank" rel="noopener">Chat 100</a></b> (MIMP) — orientación en línea para adolescentes.</li>
+          <li><b><a href="https://www.gob.pe/479" target="_blank" rel="noopener">CEM</a></b> — Centro Emergencia Mujer (vía Línea 100).</li>
           <li>La <b>institución educativa</b> y su responsable de convivencia.</li>
         </ul>
         <a class="hero-cta" style="display:inline-block;margin-top:10px" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener"><span class="primary" style="display:inline-block;padding:9px 15px;border-radius:30px;color:#fff;font-weight:700">🚨 Denunciar en SíseVe</span></a>
@@ -143,6 +182,7 @@
     <div class="help-line" id="help-line">
       <span class="chip">📱 SíseVe: <b>siseve.minedu.gob.pe</b></span>
       <span class="chip">☎️ Línea <b>100</b> (MIMP)</span>
+      <span class="chip">💬 <b>Chat 100</b> (adolescentes)</span>
     </div>
     <p class="source">Canales y guías: MINEDU / MIMP. Reportar en SíseVe es sobre <b>presuntos hechos</b>; buscar ayuda temprana protege al estudiante.</p>
   </div>
