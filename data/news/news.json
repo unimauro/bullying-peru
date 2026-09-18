@@ -1,7 +1,12 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
   "retrieval_date": "2026-09-18",
-  "verification_levels": ["REPORTADO", "INVESTIGACION_PERIODISTICA", "CONFIRMADO_OFICIAL", "NO_VERIFICADO"],
+  "verification_levels": [
+    "REPORTADO",
+    "INVESTIGACION_PERIODISTICA",
+    "CONFIRMADO_OFICIAL",
+    "NO_VERIFICADO"
+  ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
     {
@@ -12,7 +17,8 @@
       "topic": "violencia_escolar",
       "summary": "Investigación periodística sobre un caso en el Liceo Naval (San Borja) que vincularía agresión sexual con hostigamiento previo.",
       "verification_level": "INVESTIGACION_PERIODISTICA",
-      "url": "https://larepublica.pe/sociedad/2026/09/18/victima-de-presunta-agresion-sexual-ya-habria-sufrido-bullying-y-hostigamiento-antes-del-ataque-en-liceo-naval-1035936"
+      "url": "https://larepublica.pe/sociedad/2026/09/18/victima-de-presunta-agresion-sexual-ya-habria-sufrido-bullying-y-hostigamiento-antes-del-ataque-en-liceo-naval-1035936",
+      "image": "assets/news/n0.jpg"
     },
     {
       "date": "2026-09-17",
@@ -22,7 +28,8 @@
       "topic": "violencia_escolar",
       "summary": "Cobertura de cifras SíseVe (ene-ago 2026). Cifra a validar contra el boletín oficial SíseVe.",
       "verification_level": "REPORTADO",
-      "url": "https://www.infobae.com/peru/2026/09/17/violencia-escolar-las-agresiones-escolares-crecieron-185-y-superaron-los-11800-casos-en-2026/"
+      "url": "https://www.infobae.com/peru/2026/09/17/violencia-escolar-las-agresiones-escolares-crecieron-185-y-superaron-los-11800-casos-en-2026/",
+      "image": "assets/news/n1.jpg"
     },
     {
       "date": "2026-09-15",
@@ -32,7 +39,8 @@
       "topic": "violencia_escolar",
       "summary": "Cobertura de cifras SíseVe enero-agosto 2026 (año parcial). No comparable directamente con años completos.",
       "verification_level": "REPORTADO",
-      "url": "https://www.infobae.com/peru/2026/09/15/violencia-escolar-alcanza-un-record-en-peru-mas-de-11-mil-reportes-entre-enero-y-agosto-de-2026/"
+      "url": "https://www.infobae.com/peru/2026/09/15/violencia-escolar-alcanza-un-record-en-peru-mas-de-11-mil-reportes-entre-enero-y-agosto-de-2026/",
+      "image": "assets/news/n2.jpg"
     },
     {
       "date": "2025-08-12",
@@ -42,7 +50,8 @@
       "topic": "bullying",
       "summary": "Caso de muerte de escolar por presunto bullying; se investiga presunta omisión de reporte.",
       "verification_level": "INVESTIGACION_PERIODISTICA",
-      "url": "https://www.infobae.com/peru/2025/08/12/escolar-muere-por-presunto-caso-de-bullying-en-colegio-de-arequipa-investigan-si-director-reporto-denuncia-de-hace-meses/"
+      "url": "https://www.infobae.com/peru/2025/08/12/escolar-muere-por-presunto-caso-de-bullying-en-colegio-de-arequipa-investigan-si-director-reporto-denuncia-de-hace-meses/",
+      "image": "assets/news/n3.png"
     },
     {
       "date": "2025-01-01",
@@ -52,7 +61,8 @@
       "topic": "bullying",
       "summary": "Reportaje sobre subregistro y miedo a denunciar. Cifra a validar contra boletín SíseVe.",
       "verification_level": "REPORTADO",
-      "url": "https://peru21.pe/lima/19-mil-casos-de-bullying-escolar-en-2025-miedo-denunciar/"
+      "url": "https://peru21.pe/lima/19-mil-casos-de-bullying-escolar-en-2025-miedo-denunciar/",
+      "image": null
     },
     {
       "date": "2025-01-01",
@@ -62,7 +72,8 @@
       "topic": "bullying",
       "summary": "Cobertura de cifras mensuales de reportes.",
       "verification_level": "REPORTADO",
-      "url": "https://rpp.pe/peru/actualidad/cada-mes-se-reportan-mas-de-160-casos-de-bullying-en-los-colegios-publicos-y-privados-a-nivel-nacional-noticia-1631474"
+      "url": "https://rpp.pe/peru/actualidad/cada-mes-se-reportan-mas-de-160-casos-de-bullying-en-los-colegios-publicos-y-privados-a-nivel-nacional-noticia-1631474",
+      "image": "assets/news/n5.jpg"
     }
   ]
 }

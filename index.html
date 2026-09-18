@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -42,7 +42,34 @@
   <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 21C7 16.5 4 13 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 7.5-8 12z"/></symbol>
   <symbol id="ic-scale" viewBox="0 0 24 24"><path d="M12 4v15"/><path d="M9 19h6"/><path d="M4 7h16"/><path d="M1.5 12l2.5-5 2.5 5a2.5 2 0 0 1-5 0z"/><path d="M17.5 12l2.5-5 2.5 5a2.5 2 0 0 1-5 0z"/></symbol>
   <symbol id="ic-users" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a6 6 0 0 1 14 0v2"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/><path d="M22 21v-2a6 6 0 0 0-4.5-5.8"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
 </svg>
+
+<button class="menu-toggle" id="menu-toggle" aria-label="Menú">☰</button>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <a class="side-brand" href="#top">
+      <span class="side-logo">🎗️</span>
+      <span>Observatorio<br><small>Bullying · Perú</small></span>
+    </a>
+    <nav class="side-nav" id="side-nav">
+      <a href="#familias"><svg class="ic"><use href="#ic-heart"/></svg> Para las familias</a>
+      <a href="#territorio"><svg class="ic"><use href="#ic-map"/></svg> Dónde ocurre</a>
+      <a href="#resumen"><svg class="ic"><use href="#ic-chart"/></svg> Cifras clave</a>
+      <a href="#mapa"><svg class="ic"><use href="#ic-map"/></svg> Mapa</a>
+      <a href="#serie"><svg class="ic"><use href="#ic-chart"/></svg> Serie histórica</a>
+      <a href="#perfil"><svg class="ic"><use href="#ic-users"/></svg> Perfil de casos</a>
+      <a href="#prevalencia"><svg class="ic"><use href="#ic-scale"/></svg> Prevalencia</a>
+      <a href="#mundo"><svg class="ic"><use href="#ic-globe"/></svg> En el mundo</a>
+      <a href="#noticias"><svg class="ic"><use href="#ic-alert"/></svg> Noticias</a>
+      <a href="#libros"><svg class="ic"><use href="#ic-book"/></svg> Libros</a>
+      <a href="#politicas"><svg class="ic"><use href="#ic-scale"/></svg> Políticas</a>
+      <a href="#datos"><svg class="ic"><use href="#ic-chart"/></svg> Datos</a>
+      <a href="#metodologia"><svg class="ic"><use href="#ic-book"/></svg> Metodología</a>
+    </nav>
+    <a class="side-denuncia" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">🚨 Denunciar en SíseVe</a>
+  </aside>
+  <main class="main" id="top">
 
 <header class="hero">
   <div class="wrap">
@@ -103,24 +130,13 @@
   </div>
 </header>
 
-<nav class="nav">
+<!-- ÚLTIMOS CASOS (banda superior) -->
+<section id="ultimos" class="section-tint" style="padding-block:20px">
   <div class="wrap">
-    <a href="#resumen">Resumen</a>
-    <a href="#familias">Familias</a>
-    <a href="#mapa">Mapa</a>
-    <a href="#serie">Serie histórica</a>
-    <a href="#territorio">Territorio</a>
-    <a href="#perfil">Perfil</a>
-    <a href="#prevalencia">Prevalencia</a>
-    <a href="#comparacion">Comparación de fuentes</a>
-    <a href="#academica">Investigación</a>
-    <a href="#noticias">Noticias</a>
-    <a href="#politicas">Políticas</a>
-    <a href="#datos">Datos</a>
-    <a href="#metodologia">Metodología</a>
-    <a href="#limitaciones">Limitaciones</a>
+    <h3 class="ticker-title">🔴 Últimos casos en los medios</h3>
+    <div class="ticker" id="ticker"><div class="loading">Cargando…</div></div>
   </div>
-</nav>
+</section>
 
 <!-- RESUMEN / KPIs -->
 <section id="resumen">
@@ -275,6 +291,32 @@
   </div>
 </section>
 
+<!-- EN EL MUNDO -->
+<section id="mundo">
+  <div class="wrap">
+    <h2><svg class="ic"><use href="#ic-globe"/></svg> El bullying en el mundo</h2>
+    <p class="lead">Cómo se compara el Perú con otros países. Datos internacionales (UNESCO/OCDE); no son directamente comparables con los reportes de SíseVe.</p>
+    <div class="grid-2">
+      <div class="panel"><h3>Países con mayor exposición al bullying</h3><div class="chart" id="chart-world"></div></div>
+      <div class="panel">
+        <h3>Contexto global</h3>
+        <div id="world-context"><div class="loading">Cargando…</div></div>
+        <div class="ticker-vert" id="intl-news"></div>
+      </div>
+    </div>
+    <p class="source" id="world-source"></p>
+  </div>
+</section>
+
+<!-- LIBROS -->
+<section id="libros" class="section-tint">
+  <div class="wrap">
+    <h2><svg class="ic"><use href="#ic-book"/></svg> Libros y recursos</h2>
+    <p class="lead">Lecturas y guías sobre bullying y ciberbullying para familias, docentes y estudiantes.</p>
+    <div class="books-grid" id="books-grid"><div class="loading">Cargando…</div></div>
+  </div>
+</section>
+
 <!-- COMPARACIÓN DE FUENTES -->
 <section id="comparacion" style="background:var(--surface-2)">
   <div class="wrap">
@@ -314,13 +356,7 @@
   <div class="wrap">
     <h2>Actualidad</h2>
     <p class="lead">Casos y reportajes recientes en medios. Nivel de verificación explícito; nada "reportado" se presenta como "confirmado".</p>
-    <div class="news-layout">
-      <div class="marquee" aria-label="Últimos casos en medios">
-        <div class="marquee-head">🔴 Últimos casos en medios</div>
-        <div class="marquee-viewport"><div class="marquee-track" id="marquee-track"></div></div>
-      </div>
-      <div class="news-list" id="news-list"><div class="loading">Cargando…</div></div>
-    </div>
+    <div class="news-list" id="news-list"><div class="loading">Cargando…</div></div>
   </div>
 </section>
 
@@ -444,6 +480,9 @@
     </div>
   </div>
 </footer>
+  </main>
+</div>
+<div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
 
 <!-- CHATBOT -->
 <button class="chat-fab" id="chat-fab">💬 Pregúntale al Observatorio</button>
@@ -468,5 +507,22 @@
 <script src="src/js/config.js"></script>
 <script src="src/js/app.js"></script>
 <script src="src/js/chatbot.js"></script>
+<script>
+(function(){
+  var sb = document.getElementById('sidebar'), tg = document.getElementById('menu-toggle'), bd = document.getElementById('sidebar-backdrop');
+  function open(){ sb.classList.add('open'); bd.hidden = false; }
+  function close(){ sb.classList.remove('open'); bd.hidden = true; }
+  if (tg) tg.addEventListener('click', function(){ sb.classList.contains('open') ? close() : open(); });
+  if (bd) bd.addEventListener('click', close);
+  document.querySelectorAll('.side-nav a').forEach(function(a){ a.addEventListener('click', function(){ if (window.innerWidth <= 960) close(); }); });
+  // Resaltar sección activa en el scroll
+  var links = [].slice.call(document.querySelectorAll('.side-nav a'));
+  var map = {}; links.forEach(function(a){ var id = a.getAttribute('href').slice(1); var s = document.getElementById(id); if (s) map[id] = a; });
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ links.forEach(function(l){ l.classList.remove('active'); }); var a = map[e.target.id]; if (a) a.classList.add('active'); } });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  Object.keys(map).forEach(function(id){ obs.observe(document.getElementById(id)); });
+})();
+</script>
 </body>
 </html>

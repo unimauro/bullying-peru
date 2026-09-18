@@ -375,34 +375,89 @@
     pie("bd-area", (bd.area_2013_2018 || []).map(x => ({ name: x.area, value: x.casos })), ["#12a594", "#e0b13a"]);
   }
 
-  /* ---------- Marquee vertical de casos ---------- */
-  function renderMarquee(news) {
-    const track = document.getElementById("marquee-track");
-    if (!track || !news || !news.data) return;
-    const palette = ["#f97316", "#2f80c4", "#12a594", "#8b5cf6", "#d4553a", "#0e8a7d"];
-    const tile = (n, i) => {
-      const initials = (n.media || "?").replace(/[^A-Za-zÁÉÍÓÚñ0-9 ]/g, "").split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
-      const color = palette[i % palette.length];
-      return `<a class="mq-item" href="${n.url}" target="_blank" rel="noopener">
-        <div class="mq-thumb" style="background:linear-gradient(135deg,${color},color-mix(in srgb,${color} 60%,#000))">${initials}</div>
-        <div class="mq-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.department}</div></div></a>`;
-    };
-    const items = news.data.map(tile).join("");
-    // duplicado para bucle continuo
-    track.innerHTML = items + items;
+  const NEWS_PALETTE = ["#f97316", "#2f80c4", "#12a594", "#8b5cf6", "#d4553a", "#0e8a7d"];
+  function newsThumb(n, i, cls) {
+    if (n.image) return `<div class="${cls}" style="background-image:url('${n.image}')"></div>`;
+    const initials = (n.media || "?").replace(/[^A-Za-zÁÉÍÓÚñ0-9 ]/g, "").split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+    const color = NEWS_PALETTE[i % NEWS_PALETTE.length];
+    return `<div class="${cls} ph" style="background:linear-gradient(135deg,${color},color-mix(in srgb,${color} 60%,#000))">${initials}</div>`;
   }
 
-  /* ---------- Noticias ---------- */
+  /* ---------- El bullying en el mundo ---------- */
+  function renderWorld(world) {
+    const ctxEl = document.getElementById("world-context");
+    const intlEl = document.getElementById("intl-news");
+    const srcEl = document.getElementById("world-source");
+    const ch = mkChart("chart-world");
+    if (!world) {
+      if (ctxEl) ctxEl.innerHTML = '<div class="callout info"><span>🌎</span><span>Datos internacionales en preparación.</span></div>';
+      if (ch) ch.setOption({ title: { text: "En preparación", left: "center", top: "middle", textStyle: { color: "#9c8b76", fontWeight: "normal", fontSize: 13 } } });
+      return;
+    }
+    const t = echartsTheme();
+    if (ch && world.countries) {
+      const data = [...world.countries].sort((a, b) => a.value_pct - b.value_pct);
+      ch.setOption({
+        textStyle: t.textStyle, grid: { left: 96, right: 40, top: 8, bottom: 28 },
+        tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => v + "%" }, t.tooltip),
+        toolbox: TOOLBOX,
+        xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10, formatter: "{value}%" } },
+        yAxis: { type: "category", data: data.map(d => d.country), axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 11 } },
+        series: [{ type: "bar", data: data.map(d => ({ value: d.value_pct, itemStyle: { color: grad(/per/i.test(d.country) ? C.colors.bullying : C.colors.violencia, "h"), borderRadius: [0, 6, 6, 0] } })), barMaxWidth: 16,
+          label: { show: true, position: "right", fontSize: 10, color: t.textStyle.color, formatter: (p) => p.value + "%" } }]
+      });
+    }
+    if (ctxEl && world.global_context) {
+      ctxEl.innerHTML = world.global_context.map(g => `<div class="callout info" style="margin:8px 0"><span>🌍</span><span>${g.text} <a href="${g.url}" target="_blank" rel="noopener">↗</a></span></div>`).join("");
+    }
+    if (intlEl && world.news) {
+      intlEl.innerHTML = "<h4 style='margin:14px 0 6px;font-size:.9rem'>Noticias internacionales</h4>" +
+        world.news.map((n, i) => `<a class="tk-item" style="width:auto" href="${n.url}" target="_blank" rel="noopener">
+          ${newsThumb(n, i, "tk-thumb")}
+          <div class="tk-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.country || ""}</div></div></a>`).join("");
+    }
+    if (srcEl) srcEl.innerHTML = world.source ? `Fuente: ${world.source}` : "";
+  }
+
+  /* ---------- Libros ---------- */
+  function renderBooks(books) {
+    const el = document.getElementById("books-grid");
+    if (!el) return;
+    if (!books || !books.data) { el.innerHTML = '<div class="callout info"><span>📚</span><span>Lista de libros en preparación.</span></div>'; return; }
+    el.innerHTML = books.data.map(b => `
+      <div class="book">
+        <div class="cover"></div>
+        <h4>${b.url ? `<a href="${b.url}" target="_blank" rel="noopener">${b.title}</a>` : b.title}</h4>
+        <div class="by">${b.authors || ""}${b.year ? " · " + b.year : ""}</div>
+        ${b.audience ? `<span class="aud">${b.audience}</span>` : ""}
+        <p>${b.note || ""}</p>
+      </div>`).join("");
+  }
+
+  /* ---------- Ticker horizontal de casos (banda superior) ---------- */
+  function renderTicker(news) {
+    const el = document.getElementById("ticker");
+    if (!el || !news || !news.data) return;
+    const card = (n, i) => `<a class="tk-item" href="${n.url}" target="_blank" rel="noopener">
+        ${newsThumb(n, i, "tk-thumb")}
+        <div class="tk-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.department}</div></div></a>`;
+    el.innerHTML = `<div class="tk-track">${news.data.map(card).join("")}</div>`;
+  }
+
+  /* ---------- Noticias (grid con foto) ---------- */
   function renderNews(news) {
     const el = document.getElementById("news-list");
     if (!news || !news.data) { el.innerHTML = '<div class="loading">Sin noticias.</div>'; return; }
-    el.innerHTML = news.data.map(n => `
-      <div class="news-item">
-        <div class="meta"><span class="badge lv-${n.verification_level}">${n.verification_level.replace(/_/g, " ")}</span>
-          <span>${n.date}</span> · <span>${n.media}</span> · <span>${n.department}</span></div>
-        <h4><a href="${n.url}" target="_blank" rel="noopener">${n.title}</a></h4>
-        <p style="margin:0;font-size:.85rem;color:var(--text-muted)">${n.summary}</p>
-      </div>`).join("");
+    el.innerHTML = news.data.map((n, i) => `
+      <a class="news-item" href="${n.url}" target="_blank" rel="noopener">
+        ${newsThumb(n, i, "news-thumb")}
+        <div class="news-body">
+          <div class="meta"><span class="badge lv-${n.verification_level}">${n.verification_level.replace(/_/g, " ")}</span>
+            <span>${n.date}</span> · <span>${n.media}</span> · <span>${n.department}</span></div>
+          <h4>${n.title}</h4>
+          <p style="margin:0;font-size:.85rem;color:var(--text-muted)">${n.summary}</p>
+        </div>
+      </a>`).join("");
   }
 
   /* ---------- Timeline ---------- */
@@ -468,12 +523,12 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
-      loadJSON(C.data.studies), loadJSON(C.data.breakdowns)
+      loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books)
     ]);
-    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns });
+    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books });
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -491,7 +546,9 @@
     safe("desgloses", () => renderBreakdowns(breakdowns));
     safe("estudios", () => renderStudies(studies));
     safe("noticias", () => renderNews(news));
-    safe("marquee", () => renderMarquee(news));
+    safe("ticker", () => renderTicker(news));
+    safe("mundo", () => renderWorld(world));
+    safe("libros", () => renderBooks(books));
     safe("timeline", () => renderTimeline(leg));
     safe("fuentes", () => renderSources(sources));
     safe("territorio", () => renderTerritory(defaultYear));
