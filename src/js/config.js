@@ -1,13 +1,12 @@
 /* Configuración global del Observatorio */
 window.OBS_CONFIG = {
   // Gateway de IA para el chatbot "Pregúntale al Observatorio".
-  // El token X-Client-Token se sirve por el gateway según allowlist de Origin
-  // (unimauro.github.io ya está incluido). No se coloca ningún secreto en el repo.
+  // clientToken es un token PÚBLICO de front acotado por allowlist de Origin
+  // (unimauro.github.io), el mismo que usan los otros observatorios. No es un secreto:
+  // el gateway solo acepta peticiones desde los orígenes permitidos.
   gateway: {
     url: "https://ai.tunky.net/v1/chat",
-    // Si el gateway exige token por header desde el cliente, colócalo aquí SOLO si es
-    // un token público de front acotado por Origin. Pídelo a Carlos.
-    clientToken: "", // p. ej. "bully_xxx" (acotado por Origin), o "" si el gateway lo inyecta
+    clientToken: "obs_5356ba138c2761b3c84faf38bd82e4e4",
     model: "claude-haiku-4-5"
   },
   // Paleta semántica (coincide con styles.css)
