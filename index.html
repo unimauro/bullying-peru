@@ -130,24 +130,36 @@
   </div>
 </header>
 
-<!-- ÚLTIMOS CASOS (banda superior) -->
-<section id="ultimos" class="section-tint" style="padding-block:20px">
+<!-- BARRA DE AYUDA (top, fundamental) -->
+<div class="helpbar">
   <div class="wrap">
-    <h3 class="ticker-title">🔴 Últimos casos en los medios</h3>
-    <div class="ticker" id="ticker"><div class="loading">Cargando…</div></div>
+    <span class="hb-label">🆘 ¿Necesitas ayuda?</span>
+    <a class="hb-chip" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">📱 SíseVe</a>
+    <span class="hb-chip">☎️ Línea <b>100</b> (MIMP)</span>
+    <a class="hb-chip" href="https://chat100.aurora.gob.pe/" target="_blank" rel="noopener">💬 Chat 100</a>
+    <a class="hb-denuncia" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">🚨 Denunciar ahora</a>
   </div>
-</section>
+</div>
 
 <!-- RESUMEN / KPIs -->
 <section id="resumen">
   <div class="wrap">
-    <h2>Situación general</h2>
+    <h2><svg class="ic"><use href="#ic-chart"/></svg> Cifras clave</h2>
     <p class="lead">Indicadores principales del acoso escolar y la violencia escolar en el Perú. Recuerda: las cifras de SíseVe son <b>reportes de presuntos hechos</b>, no la prevalencia real.</p>
-    <div class="kpi-grid" id="kpi-grid">
-      <div class="loading">Cargando indicadores…</div>
-    </div>
-    <div class="callout" id="siseve-warning">
-      <b>Importante:</b> SíseVe registra <b>reportes</b> (puede haber más de un reporte por caso y existe subregistro). Un aumento de reportes no equivale necesariamente a un aumento real de casos.
+    <div class="top-grid">
+      <div class="top-main">
+        <div class="kpi-grid" id="kpi-grid">
+          <div class="loading">Cargando indicadores…</div>
+        </div>
+        <div class="callout" id="siseve-warning">
+          <b>Importante:</b> SíseVe registra <b>reportes</b> (puede haber más de un reporte por caso y existe subregistro). Un aumento de reportes no equivale necesariamente a un aumento real de casos.
+        </div>
+      </div>
+      <aside class="news-rail">
+        <div class="rail-head">🔴 Últimos casos en medios</div>
+        <div class="rail-viewport"><div class="rail-track" id="rail-track"><div class="loading">Cargando…</div></div></div>
+        <div class="rail-foot">🔄 Se actualiza a diario</div>
+      </aside>
     </div>
   </div>
 </section>

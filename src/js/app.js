@@ -76,13 +76,17 @@
       const partial = ts.partial_year === p.year;
       // Delta solo entre el punto y el anterior disponible, y solo si ninguno es parcial.
       let dHtml = "";
+      const PANDEMIC = [2020, 2021];
       const prevArr = S[c.key] || [];
       let pi = p.i - 1; while (pi >= 0 && prevArr[pi] == null) pi--;
-      if (!partial && pi >= 0 && prevArr[pi] !== 0) {
+      // No comparar contra 2020/2021 (escuelas cerradas): la variación sería engañosa.
+      if (!partial && pi >= 0 && prevArr[pi] !== 0 && !PANDEMIC.includes(years[pi]) && !PANDEMIC.includes(p.year)) {
         const d = ((p.value - prevArr[pi]) / prevArr[pi]) * 100;
         dHtml = `<span class="delta ${d >= 0 ? "up" : "down"}">${d >= 0 ? "▲" : "▼"} ${Math.abs(d).toFixed(1)}%</span> vs ${years[pi]}`;
       } else if (partial) {
         dHtml = `<span class="pill" style="background:var(--surface-2);color:var(--text-muted)">año parcial</span>`;
+      } else {
+        dHtml = `<span style="color:var(--text-soft)">dato oficial (Boletín SíseVe)</span>`;
       }
       html += `<div class="kpi ${c.cls}"><span class="tag tag-${c.tag}">${c.tag}</span>
         <div class="label">${c.label}</div>
@@ -227,11 +231,19 @@
     return mapMetric === "rate" ? match.rate : match.cases;
   }
 
-  function colorScale(v, max) {
-    if (v == null) return "#d7dee7";
-    const ramp = ["#e3eef6", "#bcd8ea", "#8fbcd9", "#5f9cc5", "#3778ab", "#1f5f8b"];
-    const i = Math.min(ramp.length - 1, Math.floor((v / (max || 1)) * ramp.length));
-    return ramp[i];
+  const MAP_RAMP = ["#e6eef7", "#c2d8ec", "#98bcdd", "#6b9dc9", "#4179b0", "#255f8f", "#163f5c"];
+  // Escala por CUANTILES: reparte los colores por ranking, no por magnitud, para que
+  // todos los departamentos con datos se distingan aunque Lima sea un valor atípico.
+  function makeScale() {
+    const rows = deptRows(mapYear);
+    const vals = rows.map(r => (mapMetric === "rate" ? r.rate : r.cases)).filter(v => v != null).sort((a, b) => a - b);
+    return function (v) {
+      if (v == null) return "#e7ded0"; // sin dato (cálido)
+      if (vals.length <= 1) return MAP_RAMP[MAP_RAMP.length - 1];
+      let lo = 0; while (lo < vals.length && vals[lo] < v) lo++;
+      const frac = lo / (vals.length - 1);
+      return MAP_RAMP[Math.min(MAP_RAMP.length - 1, Math.round(frac * (MAP_RAMP.length - 1)))];
+    };
   }
   function currentMax() {
     const rows = deptRows(mapYear);
@@ -242,11 +254,11 @@
   function drawMap() {
     if (!store.geo) return;
     if (geoLayer) map.removeLayer(geoLayer);
-    const max = currentMax();
+    const scale = makeScale();
     geoLayer = L.geoJSON(store.geo, {
       style: (f) => {
         const name = f.properties.NOMBDEP || f.properties.name || "";
-        return { color: "#fff", weight: 1, fillOpacity: 0.85, fillColor: colorScale(metricValue(name), max) };
+        return { color: "#fff", weight: 1, fillOpacity: 0.9, fillColor: scale(metricValue(name)) };
       },
       onEachFeature: (f, layer) => {
         const name = f.properties.NOMBDEP || "";
@@ -268,7 +280,7 @@
   function updateLegend() {
     const el = document.getElementById("map-legend"); if (!el) return;
     const max = currentMax();
-    const ramp = ["#e3eef6", "#8fbcd9", "#3778ab", "#1f5f8b"];
+    const ramp = [MAP_RAMP[0], MAP_RAMP[2], MAP_RAMP[4], MAP_RAMP[6]];
     const labels = mapMetric === "rate"
       ? ["bajo", "", "", "alto"] : ["pocos", "", "", "muchos"];
     el.innerHTML = `<b>${mapMetric === "rate" ? "Tasa /10 000" : "N.º reportes"}</b><br>` +
@@ -438,14 +450,18 @@
     el.innerHTML = html;
   }
 
-  /* ---------- Ticker horizontal de casos (banda superior) ---------- */
+  /* ---------- Marquee vertical animado de casos (rail derecho) ---------- */
   function renderTicker(news) {
-    const el = document.getElementById("ticker");
-    if (!el || !news || !news.data) return;
-    const card = (n, i) => `<a class="tk-item" href="${n.url}" target="_blank" rel="noopener">
-        ${newsThumb(n, i, "tk-thumb")}
-        <div class="tk-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.department}</div></div></a>`;
-    el.innerHTML = `<div class="tk-track">${news.data.map(card).join("")}</div>`;
+    const track = document.getElementById("rail-track");
+    if (!track || !news || !news.data) return;
+    const card = (n, i) => `<a class="rail-item" href="${n.url}" target="_blank" rel="noopener">
+        ${newsThumb(n, i, "rail-thumb")}
+        <div class="rail-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.department}</div></div></a>`;
+    const items = news.data.map(card).join("");
+    // Duplicado para el bucle vertical continuo.
+    track.innerHTML = items + items;
+    // Duración proporcional al número de casos (más suave).
+    track.style.animationDuration = Math.max(18, news.data.length * 4) + "s";
   }
 
   /* ---------- Noticias (grid con foto) ---------- */
