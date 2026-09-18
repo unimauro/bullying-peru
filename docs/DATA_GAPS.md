@@ -6,18 +6,23 @@ Registro **explícito** de lo que no existe, no se encontró o no es comparable.
 aquí es parte del rigor: el observatorio prefiere declarar un vacío antes que rellenarlo
 con una estimación disfrazada de dato oficial.
 
-## Datos buscados y no hallados (Fase 1)
+## Resuelto con el Boletín oficial "SíseVe en cifras" (fuente A)
 
-- **API/endpoint JSON o CSV oficial de SíseVe:** NO EXISTE público. Solo HTML server-side con reCAPTCHA; requiere scraping con navegador headless de `/Web/App/MapaDetalle`.
-- **Totales SíseVe de fuente A para 2019–2025:** NO confirmados por documento oficial; las cifras usadas provienen de prensa que cita a MINEDU (nivel B) y están marcadas como tales en `timeseries.json`. Pendiente: ejecutar el scraper por año.
-- **Totales SíseVe 2020 y 2021:** NO CONFIRMADOS por ninguna fuente (educación remota). Se dejan como `null` (no se estiman).
-- **Serie anual de ciberbullying ('violencia por Internet'):** NO EXISTE desagregada por año. Es uno de los 7 tipos, pero no se publica su serie temporal.
-- **Cifra exacta de bullying 2013 (~53):** aproximada, NO confirmada en fuente A.
-- **Desglose departamento × tipo de violencia:** NO publicado; requiere scraping de MapaDetalle.
-- **Datos SíseVe por departamento completos (26 regiones):** solo se tiene el top publicado en prensa para 2026 (11 regiones) y 7 para 2024. El resto queda 'sin dato' en el mapa (no se rellena).
-- **Matrícula por NIVEL (inicial/primaria/secundaria) por departamento:** NO hay descarga directa; solo el total por departamento (INEI XLSX). El desglose está en el módulo interactivo ESCALE Magnitudes.
-- **ENARES / SSES por departamento:** NO se publican desagregados regionalmente (solo nacional / urbano-rural / estratos).
-- **ENARES posterior a 2019 y SSES posterior a 2023:** NO publicados a la fecha de consulta.
+- ✅ **Serie 2013–2022** de violencia, **bullying y ciberbullying** por año: OFICIAL (Boletín SíseVe).
+- ✅ **2020 y 2021**: cifras oficiales (756 y 768) — caída por cierre de escuelas.
+- ✅ **Bullying 2013 = 53**: confirmado oficialmente.
+- ✅ **26 departamentos de 2022**: oficiales y completos (mapa por defecto en 2022).
+
+## Datos buscados y no hallados
+
+- **API/endpoint JSON o CSV oficial de SíseVe:** NO EXISTE público. El dashboard tiene endpoints internos **cifrados en AES** y devuelven 403 sin sesión de navegador; el Excel solo se baja manualmente desde la UI. datosabiertos.gob.pe NO tiene SíseVe.
+- **Totales SíseVe 2023–2026:** aún sin boletín oficial; las cifras usadas son de prensa citando a MINEDU (nivel B), marcadas como tales en `timeseries.json`.
+- **Datos por INSTITUCIÓN EDUCATIVA / colegio:** NO EXISTE dataset abierto (protección de datos; el dashboard corta en UGEL). No hay ranking oficial de colegios.
+- **Datos MENSUALES:** NO EXISTE open dataset mensual.
+- **Detalle por departamento 2024/2026:** solo el top publicado en prensa; el resto queda 'sin dato' (no se estima). El nivel UGEL 2024/2025 existe en el dashboard pero solo por descarga manual de Excel.
+- **Matrícula por NIVEL por departamento:** solo total por departamento (INEI XLSX); el desglose está en ESCALE Magnitudes.
+- **ENARES / SSES por departamento:** no se publican desagregados regionalmente.
+- **ENARES posterior a 2019 y SSES posterior a 2023:** no publicados a la fecha de consulta.
 
 ## Limitaciones estructurales conocidas
 

@@ -101,9 +101,11 @@
       }
     }
     grid.innerHTML = html || '<div class="callout">Sin datos para el último año.</div>';
-    if (partial) {
-      document.getElementById("siseve-warning").insertAdjacentHTML("beforeend",
-        ` <br><b>${last}</b> es un año <b>parcial</b> (enero–agosto); no es comparable con años completos.`);
+    const pv = lastPoint("violencia");
+    if (pv && ts.partial_year === pv.year) {
+      const w = document.getElementById("siseve-warning");
+      if (w) w.insertAdjacentHTML("beforeend",
+        ` <br><b>${pv.year}</b> es un año <b>parcial</b> (enero–agosto); no es comparable con años completos.`);
     }
   }
 
