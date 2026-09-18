@@ -402,17 +402,19 @@
     const defaultYear = fillYearSelectors(ts);
     mapYear = defaultYear;
 
-    renderKPIs(ts);
-    renderSeries(ts);
-    renderPrevalence(ctx);
-    renderSSES(ctx);
-    renderStudies(studies);
-    renderNews(news);
-    renderTimeline(leg);
-    renderSources(sources);
-    renderTerritory(defaultYear);
-    renderTable(defaultYear);
-    await initMap();
+    // Cada bloque en su propio try/catch: un fallo aislado no debe tumbar el resto.
+    const safe = (label, fn) => { try { fn(); } catch (e) { console.error("[obs] fallo en " + label, e); } };
+    safe("KPIs", () => renderKPIs(ts));
+    safe("serie", () => renderSeries(ts));
+    safe("prevalencia", () => renderPrevalence(ctx));
+    safe("sses", () => renderSSES(ctx));
+    safe("estudios", () => renderStudies(studies));
+    safe("noticias", () => renderNews(news));
+    safe("timeline", () => renderTimeline(leg));
+    safe("fuentes", () => renderSources(sources));
+    safe("territorio", () => renderTerritory(defaultYear));
+    safe("tabla", () => renderTable(defaultYear));
+    try { await initMap(); } catch (e) { console.error("[obs] fallo en mapa", e); }
 
     // eventos
     document.getElementById("map-year").addEventListener("change", (e) => { mapYear = +e.target.value; drawMap(); updateLegend(); });
