@@ -105,21 +105,30 @@ def main():
     items = doc.get("data", [])
     seen = {norm(x.get("title")) for x in items} | {x.get("url") for x in items}
 
-    added = 0
+    # 1) recolecta candidatos nuevos (sin descargar imágenes todavía)
+    candidates = []
     for q in QUERIES:
         for it in google_news(q):
             key = norm(it["title"])
             if key in seen or it["url"] in seen:
                 continue
             seen.add(key); seen.add(it["url"])
+            candidates.append(it)
+
+    # 2) une con existentes, ordena por fecha desc y recorta a MAX_ITEMS
+    all_items = items + candidates
+    all_items.sort(key=lambda x: (x.get("date", ""), 0 if x.get("auto") else 1), reverse=True)
+    kept = all_items[:MAX_ITEMS]
+
+    # 3) descarga imágenes SOLO de los nuevos que se conservan (best-effort)
+    added = 0
+    for it in kept:
+        if it.get("auto") and not it.get("image"):
             h = hashlib.md5(it["url"].encode()).hexdigest()[:8]
             it["image"] = download_img(it["url"], it["url"], "auto_" + h)
-            items.append(it)
             added += 1
 
-    # ordena por fecha desc, mantiene curados primero en empates
-    items.sort(key=lambda x: (x.get("date", ""), 0 if x.get("auto") else 1), reverse=True)
-    doc["data"] = items[:MAX_ITEMS]
+    doc["data"] = kept
     doc["retrieval_date"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     doc["last_auto_update"] = datetime.now(timezone.utc).isoformat()
     json.dump(doc, open(NEWS, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
