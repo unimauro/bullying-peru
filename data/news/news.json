@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-18",
+  "retrieval_date": "2026-09-19",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,138 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-19",
+      "media": "Perú 21",
+      "title": "¡Atentos padres de familia! Aprenda a reconocer las señales de bullying en niños y cómo abordarlas",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSjJLSmdKQzlMSlg3VnVNZW5vQVFNMGs5c2N0Tm5wSS1GdlRkbmhZQzZKYWRVWmMzcm5fMHlOYkJKb0pmTzRNYXdrOXVzQUtwZVJMaUwtSnYtS19STXcycjB6ZExfMWlQaDNqd3QzMGdQTXU4Qkp3SXV6Z1FKa3NxaTRXcnlaVkxkTklQUmZiUWtsWUl1ZUVJ?oc=5",
+      "image": "assets/news/auto_a22e99b1.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "Agencia Andina",
+      "title": "Más de 11 mil casos de violencia escolar en lo que va del 2026: cifras por tipo y región",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSXFONUtUdEMtNHA1UVhmWk9xcGt0cnFHSUFlMFl5RTlLY2dTMW8zckZ1SFdkUzdYbG5OSzd1YnZVNGRCbURsajRtVW83bUxkaU9oNU9CUnFpemRnVnA2NHQ5djBoNVZiSzAtYmhfS3IwTWt5UHVDQzViVDJaNHM4ZzlXSG12bVoxWVFCZVhHaFZXME9QRkRpeE9uNlB0Mi1KRjRoMkp6RzU0RE8wUW1HTmtzQ0pWMkdF?oc=5",
+      "image": "assets/news/auto_44c83c54.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "Willax",
+      "title": "Liceo Naval figura entre los colegios con más denuncias por violencia escolar en Lima",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOYWJyc01kX1AwOGhDZk1mWGlGTHNQb1FJek91SHhYenRMdVAtMjVPbUN4V1BLa1l6dkNLeXpMVEFPWHphUllrOHRVanNiMFpza1RNb1BfZnU3UXpoVms2NnFMS2p1XzN3Q3FMSkRHVzhDbXBoYVhLNG1ab2dLSFU1bkNCVlNJSkFOR0tZZi11UQ?oc=5",
+      "image": "assets/news/auto_0cb79c15.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "latinanoticias.pe",
+      "title": "Violencia escolar en Perú: más de 11 mil casos fueron reportados entre enero y agosto de 2026",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVzBIS1FPd012M3FrdXBnbUhvcG54RW5uaGZWU3hCclB5NGVPbFRSZkpXdE5VR3VvaVlJZkpUaWNxQzV3eFhmNlVaaVVMV1E5c3NpaVk2dDdoU3hfa3A4RmxWS1dJU2hDbGNUZm12Y2dqU0dDamRtaWlrZmNLM0tkRk9Ldm8xallzV0NnTGxFbW5KaVV4c3AyTkk1eHdQd3ZmN0ptM3p6Sl9sMHFHZ3ptYVd4MS1xSHREMExPTjZEVjhodHBTU3RFcEE2bUE1dw?oc=5",
+      "image": "assets/news/auto_a3509e51.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "apnoticias.pe",
+      "title": "¿Cómo identificar si un menor es víctima de bullying en el colegio?",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUE5oOTdpT01OazE3ZjVDazUxaDVBSGtUcFkteE9OSFdEU0xZd1pGVEp1SDFmZGxfOHBhbGlUbmVzR1dlb2JzaW5PX3FmTy0xR1pfXy12eXREQ2ZPaUNENWRMY2RHeHQzRjJDVl9BYXplQlVwRktpVUw1QU5BalBuZFZBOWMzNmJFczNKbXF1VkZnYXFTNXpKMXI5NEdPd09rVEpZNHNnMXBLbjd4eVViamFPZXM?oc=5",
+      "image": "assets/news/auto_7932523b.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "infobae.com",
+      "title": "“Nico y las bolitas de arena”: Un cuento infantil propone hablar sobre exclusión, empatía, violencia escolar y el derecho de los niños a pertenecer",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPRURaZDh6dWFidkpDXzYtRXIxa015cl9CZ085ekRUbzFSTkNQZ3cwZG9DeF9VVldVM1g3cXJSZURYR0xPMFcybWM5cUtOSXFZc2ZaWWhrMktEOUx4NVp0dzAyWm5FRGRlMFY1NFp6dHdpbWI5bzF2VFV4SEt3aXNEVUNKOE1TNXpOUXpOcnRhYVAxTEdQNG02TkFXUWVLTnpHVElUTTBLNndRZHNnZEtQdFQ2V2VGZW9ua2VrT2ZyRzB1bEY2eDhfZlkzZDBzT3ZGdU9NN0JMWGgydEV0M2ZRQUoxSm5ILVpDSkpRdEpnZVZfMlVkQ0ZjdWdXaDhhLV81WV9pV3cxc08xUDJEZFRMeA?oc=5",
+      "image": "assets/news/auto_c5a0d770.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "lalupa.pe",
+      "title": "Ica registra 59 casos de violencia sexual escolar en 2026, la mayoría entre alumnos",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNczB5Sl92MGdJcDVsdzBCa3I5RzhvQ1gtNDlhV2syejc3WG5mYkdGWUpSZXUxdXdJTTJWZHRCZEk2aG0wZUtNaU1tUElqZTRSQ1JWa0hsQ01kN1Jwa3BTMU8xU3cwTXh1VDAxWGdjTGFzWmlzY2owWE5VUFVPU3dBVjZnU0tCVk1NRHd1WFdabDRaMEZ3NzhpTzVxU1lwalBPaE9aM2ExR1hCSW41UVBubQ?oc=5",
+      "image": "assets/news/auto_e90c9e5e.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "Evidencia.pe",
+      "title": "Violencia sexual en colegios del sur superan los 300 casos en lo que va del 2026",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNQmJjcDk2ZDZpMUhhRTFuM3QxM1BUQzFVeHR4UWZxOU9kUWYxODZlS2ZoM0t0eEFQVFIwTHp3ZG9PNno3MTZPal9ham1fd0VmVGlIWXVJcS1qN052ajBnUktNQXEwSjU5Z0ZrVXlCQzloTFdQUUI4OFBfbG50VkZTdy00SG5ZYldSalRyWVV4SmtfcVBfV1llZm94SFp5ZHZldlRoZdIBqgFBVV95cUxQV0tsUmFZaDJmV1dxdjFMQmMtWDRIV2g5RHZIaUFDQzBPVy1fYmFWSWc0enNlWEZNN25UM3BkWTBsNFNyUXJ6QWh5OVdrcWdSdEhrTE9GenR0bXVTRTBGeWh3MGhqYTVUNWQ3eUZ5UlVfWnIxRTJua3IxRVFBQzd1WE1wSk5TVXZ5NDF4VjZWN285aU52MU15bENETFVHd0dNU0tHYkczellmUQ?oc=5",
+      "image": "assets/news/auto_8063a1fd.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "infobae.com",
+      "title": "Christopher Gianotti se pronuncia por caso del Liceo Naval y revela experiencia de bullying con sus hijas: “Tuve que cambiarlas de colegio”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOUnNOcGVlNExSWW9CVjQ2UndteDZsTG4xTGM0WkRweGYxS3NOcnNmT0pVQmpkYlptc0kzLUplRzRMSFhvOUx3YjhTbGFuY29sLWp2VkJaNWcwRWNaWGZZbVh3WVVUbkdNbmhVUUYyM2toZVRGQjdMZGxjU3ZvNlY5MlozVDhBTFlZeG9qX0pSZlRYQ0Zzc1AzZERHTXJCYWVWYmRPblk5VjRVb2xLVmJsWnlENEMzSFFsWHZFdThIY0hQTUhUa1YwbWJURmlVdWM3ak8yNWttZmhTQzhpa0ZLeG92VUFxMVBzc01KZXVNUjlHbFBlMkY2ZWFVb1ZYME93bXdhN2NBSjbSAaMCQVVfeXFMUGE2TlBTX0RzcHFiRTlNM3NsMV9VcHh1ek1SMkV5bGlpQUI5czhpcm5ZWktVRzVSSE9oM1c5OXRrV3lpRVlvT09SUUJuQ0M2eExQa1U1WlFzVDNtcjh4UVZpa0NGVVlWNEhIUF9kWTFRRHFBVm9oeU45Y3lJRG10aF9qUnJDZzNMYVIwc2VqRnB4T3pDNzQxRjhTMFBZOFpfOTR0cW5WOFM4Z0tBc1B1WG05ek4zOTNjRzcyU0RGM3VjMFBsNDBFMjNjMFk2NEE0VTUza0h5SnU2azVTd0taaGpuSURueGtjMVo5dmFscmdaamFxMjh0N1VNNXJGa2cwdnhBQ1gtMW9iU0h2N3ZFNGhMdWx5UHZINVUtUU5SbTYxSzRV?oc=5",
+      "image": "assets/news/auto_465a9f39.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "infobae.com",
+      "title": "Los seis adolescentes del caso Liceo Naval en ‘Maranguita’: ¿qué es el centro donde pasarán 120 días y cómo funciona?",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOTGl5VnZkUmRlWWk4MVZ2U2N2Vjd0b3Nmb2JnOEQyWmY1c2wxWFYxaVdKRnZGNkxpMnVXVTFpaEtGVy1mZUw1ZERIb2syRVZxeTJWaEVyeERlSjFVdHMyUllSVTlvR0NsX1NXOVI1WU95S3lLbXdOVm50ajZtUjBac3Z3UnA4b1ZBWm1lVVl1VFhWMVJFOTZjYXUtcno2YkdvNzVHeEpxT3lWMnJuc21OdmhsbGxYV1lmVExhUGF2SzA2ZG5HVFNGNTFNZXBVQ0FFeUQtZHpuTmZCSm1aZE51akE3Z05ZeUFLOWZmSlJ30gGIAkFVX3lxTE9XcGt0VkpzUFQ1RkplTkdiTU9wZzlYVmtoeUlJSXhpWkwxNDd1eXZmZE5rM2xVSDNDakkwQkhyNldMNDNkY0c4blluVk91bFFKTFA5S2RjTVZuWlRHclo3WWJmLWNhZi01OGV0Qlc0UGNMS013TE4xd2RzaU96a0hIYVRjR3Rmbkx0MjE3b01Xc2FRcGxJMXR3M2RoZFVsdXNDZjdDRWJVc2FZVThCMmNXTUxUVkhJUjRLY3VzcGttXzZQdENKMFlpbUFWYk9pTVZKREdwSGR0aEp2ZHVtMXV2X1B0Rk1Yck56MGlWeEZaZ3FRM2tBVGhNSTBQZE53WmhWc2pBN0ZCRg?oc=5",
+      "image": "assets/news/auto_a5e5dc8d.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "Perú 21",
+      "title": "¡INDIGNANTE! Escolar fue golpeado por un compañero durante un ensayo de danza (VIDEO)",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObVhfZUhNSW0zTzYyNDI4WlRCOGJYempRM3VZOVU5c195YTNFRVV5aVNPTnFQU3A5UzI3X3dqVVp0Qnp1WnJPcFBuZElQeWwwSE9pTFF3Q1dfcHVvUUROWXJTa24wWTZEX2NYT3dYSFU5cW9WWHF6d3pEQ2ZZUDlMVDloSnpSSnJMV21oYXI1dnZtakMzN2QwLWo4UE9Mdw?oc=5",
+      "image": "assets/news/auto_d239c67a.jpg",
+      "auto": true
+    },
     {
       "date": "2026-09-18",
       "media": "La República",
@@ -21,59 +153,29 @@
       "image": "assets/news/n0.jpg"
     },
     {
-      "date": "2026-09-17",
-      "media": "Infobae Perú",
-      "title": "Agresiones escolares crecieron 18,5% y superaron 11.800 casos en 2026",
+      "date": "2026-09-18",
+      "media": "La República",
+      "title": "Madres de colegio Liceo Naval tras presunta agresión sexual: “Es el reflejo de múltiples situaciones de bullying y discriminación”",
       "department": "Nacional",
       "topic": "violencia_escolar",
-      "summary": "Cobertura de cifras SíseVe (ene-ago 2026). Cifra a validar contra el boletín oficial SíseVe.",
+      "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://www.infobae.com/peru/2026/09/17/violencia-escolar-las-agresiones-escolares-crecieron-185-y-superaron-los-11800-casos-en-2026/",
-      "image": "assets/news/n1.jpg"
+      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOX1ZSdGdaTVNlWTJaNlloZlViRFZ4NjFQSFJMbHN5U0o3WnVHYTRNR0RQUTA4ZEZoLXhuTFZmVlQ0c1NieXdWbkZmWDZkaFVwQVpmYjk1RXVUVmp2aTUtbkR5c09iU25DOGVCVmc2aUZtRVdTRHlqb0E4NEUyUzRCVzdPbWVJT3R3WHdlaDdwVFJSdkxkaFBrSlkydUlaQnA0Mng5ODNCaWU3MEg5YjZoNXdmekd6bmQ1UzBNdC1yWmxJSEdxdHFBckMwRTVjcTI0VXJ2OVZ0dE9JbGhqNXlBaTU4aHVvVmFEUXcyWURfRVlGanJIOG9OcGhCaWVXV04xNjVOamZJU0bSAY4CQVVfeXFMTkNUSWZJeU83djM2cXpjbDRySE5ZUU9naUJfVGl2am1fdFVsWjBmenpCX1J0M1RrSktiazJ2ZkRWaHhGZGtFcnZ1U0JvVEp4MFI0X0VpSFJjU1dFUGlyQWQ2b3B6UEREWWd1b3FaSVhSdk03eTNJdmxaVXdwZTc2X01DbkVCNFM3dXQzQW1QZ19QaVJXZ0ZiUERDQWhLMy1LYjFON2VmMnFnbHo0UVZuaDRyeFBZR2tUcjdHUzY0aFNXMzZ4V2ZGQzRBOXh3TEdWWU5McllWSnprdFFxMG9KNnNuR1BtbExxaUlqdndiNlRXSWlncUt0SS1ObkRLbEc0WmI2TGI5X2lJNkhZOWln?oc=5",
+      "image": "assets/news/auto_8eedb461.jpg",
+      "auto": true
     },
     {
-      "date": "2026-09-15",
-      "media": "Infobae Perú",
-      "title": "Violencia escolar récord: +11 mil reportes ene-ago 2026",
+      "date": "2026-09-18",
+      "media": "infobae.com",
+      "title": "Otra víctima, otro silencio: la violación en Punta Cana que el Liceo Naval Almirante Guise nunca resolvió",
       "department": "Nacional",
       "topic": "violencia_escolar",
-      "summary": "Cobertura de cifras SíseVe enero-agosto 2026 (año parcial). No comparable directamente con años completos.",
+      "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://www.infobae.com/peru/2026/09/15/violencia-escolar-alcanza-un-record-en-peru-mas-de-11-mil-reportes-entre-enero-y-agosto-de-2026/",
-      "image": "assets/news/n2.jpg"
-    },
-    {
-      "date": "2025-08-12",
-      "media": "Infobae Perú",
-      "title": "Escolar muere por presunto bullying en Arequipa; investigan si el director reportó la denuncia",
-      "department": "Arequipa",
-      "topic": "bullying",
-      "summary": "Caso de muerte de escolar por presunto bullying; se investiga presunta omisión de reporte.",
-      "verification_level": "INVESTIGACION_PERIODISTICA",
-      "url": "https://www.infobae.com/peru/2025/08/12/escolar-muere-por-presunto-caso-de-bullying-en-colegio-de-arequipa-investigan-si-director-reporto-denuncia-de-hace-meses/",
-      "image": "assets/news/n3.png"
-    },
-    {
-      "date": "2025-01-01",
-      "media": "Perú21",
-      "title": "19 mil casos de bullying escolar en 2025: miedo a denunciar",
-      "department": "Nacional",
-      "topic": "bullying",
-      "summary": "Reportaje sobre subregistro y miedo a denunciar. Cifra a validar contra boletín SíseVe.",
-      "verification_level": "REPORTADO",
-      "url": "https://peru21.pe/lima/19-mil-casos-de-bullying-escolar-en-2025-miedo-denunciar/",
-      "image": null
-    },
-    {
-      "date": "2025-01-01",
-      "media": "RPP",
-      "title": "Cada mes se reportan más de 160 casos de bullying en colegios a nivel nacional",
-      "department": "Nacional",
-      "topic": "bullying",
-      "summary": "Cobertura de cifras mensuales de reportes.",
-      "verification_level": "REPORTADO",
-      "url": "https://rpp.pe/peru/actualidad/cada-mes-se-reportan-mas-de-160-casos-de-bullying-en-los-colegios-publicos-y-privados-a-nivel-nacional-noticia-1631474",
-      "image": "assets/news/n5.jpg"
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQMTZvRlhCQzNYbnE0azVPcDBza3E2dFhydm5DQ1EwYm5KX2cteTBNcFZvclBEZWNydlIxYk44SGpIVGwzMDZzLWJkSUxCM3lnanpVeUpkUEhJQk9OUmF3ZTU5NmdLWXhvMUl6YVFLNktzLTFHNE9mNDBrNUxhQ3oyQlBvaW9TOFZ2U3RtQkRjSTM2alI3SFc2V04tc0trQzFRNld6bk1pZl9CX1d4SDJsYTBzenh3OFRyNDdWTUtES1g4UU8wWGtnaUVzYkhwUV9xbW9RSHZ6VlpIR1J30gH3AUFVX3lxTFB2ek1wR3dTQ2F0MEFrOWNFc094REdXNm9vQ1Fla0ZEanowd3R0cS0wNU9WbVhWU3lITEtrU3VsRVR3YTI3Njd0VWJqaHhtR2tIX3N2SG52M1pTOEF1OVYtOHZLN0VxQ0ZJamE4Ym5EekpzOG9JcUVtc2JXVUdSSWFScFY4dWJNeVU1Uk1mVUJNa3NzaXRiak9mYzdhVGxpOXlSaW51RTd1cjBES0JZMldFS2VxREtlRi1qT3NjZWF1Wlhtb3F6Z2Q3YXpFdTlITnN4M3J6b2RoWFNUYUJRdU5WZ1daWnhDSVQ0LXV2SnUwOEVUZHZ1cjQ?oc=5",
+      "image": "assets/news/auto_bf6b7bc2.jpg",
+      "auto": true
     }
-  ]
+  ],
+  "last_auto_update": "2026-09-19T14:12:22.746939+00:00"
 }
