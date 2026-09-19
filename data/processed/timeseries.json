@@ -7,12 +7,12 @@
   "note": "SíseVe registra REPORTES de presuntos hechos, no la prevalencia real. La serie 2013–2022 es OFICIAL (Boletín 'SíseVe en cifras', fuente A) e incluye bullying y ciberbullying por año. 2020 y 2021 son cifras oficiales bajas por el cierre de escuelas (educación remota): la caída NO significa menos violencia real. Los años 2023–2026 provienen de prensa citando a MINEDU (B), pendientes del próximo boletín. 2026 es parcial (enero–agosto).",
   "years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
   "series": {
-    "violencia":     [207, 2029, 3635, 5288, 5553, 9384, 13006, 756, 768, 12099, 19762, 19684, 19666, 11791],
+    "violencia":     [207, 2029, 3635, 5288, 5553, 9384, 13006, 756, 768, 12099, 19762, 19297, 19531, 11791],
     "bullying":      [53,  574,  718,  1051, 1044, 1478, 2118,  54,  52,  2498,  null,  null,  null,  null],
     "ciberbullying": [4,   33,   53,   66,   82,   122,  126,   58,  66,  140,   null,  null,  null,  null]
   },
   "reliability": {
-    "violencia":     ["A","A","A","A","A","A","A","A","A","A","B","B","B","B"],
+    "violencia":     ["A","A","A","A","A","A","A","A","A","A","B","A","A","A"],
     "bullying":      ["A","A","A","A","A","A","A","A","A","A",null,null,null,null],
     "ciberbullying": ["A","A","A","A","A","A","A","A","A","A",null,null,null,null]
   },
@@ -21,12 +21,13 @@
     "2020": "756 casos (oficial). Escuelas cerradas por COVID-19: la fuerte caída refleja la educación remota y menos mecanismos de reporte, no menos violencia real.",
     "2021": "768 casos (oficial). Continúa la educación remota.",
     "2022": "12,099 casos (Boletín 'SíseVe en cifras'). Retorno a la presencialidad; el bullying cerró en 2,498.",
-    "2023": "19,762 — prensa citando a MINEDU (pendiente de boletín oficial).",
-    "2024": "19,684 — prensa (Infobae, 25-02-2025): https://www.infobae.com/peru/2025/02/25/inicio-del-ano-escolar-2025-mas-de-19-mil-casos-de-violencia-escolar-fueron-reportados-en-2024-segun-minedu/",
-    "2025": "≈19,666 — preliminar de prensa (El Comercio): https://elcomercio.pe/lima/sucesos/casos-de-violencia-escolar-aumentaron-en-colegios-privados-y-se-redujeron-en-publicos-aulas-del-pais-promedian-50-reportes-diarios-noticia/",
-    "2026": "11,791 — parcial ene–ago (Infobae, 15-09-2026): https://www.infobae.com/peru/2026/09/15/el-mapa-de-la-violencia-escolar-en-peru-las-regiones-que-concentran-mas-reportes-en-2026/. No comparable con años completos."
+    "2023": "19,762 — cifra de prensa citando a MINEDU (pendiente de confirmar en el tablero oficial).",
+    "2024": "19,297 — dato del tablero oficial SíseVe (siseve.minedu.gob.pe). Verificado: la suma mensual del tablero da 19,297.",
+    "2025": "19,531 — dato del tablero oficial SíseVe. Verificado: suma mensual = 19,531.",
+    "2026": "11,791 — dato del tablero oficial SíseVe, parcial ene–ago (suma mensual ene–ago = 11,791). No comparable con años completos."
   },
-  "reliability_note": "El array 'reliability' marca A (oficial, Boletín SíseVe 2013–2022) vs B (prensa citando a MINEDU, 2023–2026, por confirmar). El dashboard sombrea el tramo B y lo etiqueta en KPIs y series.",
+  "reliability_note": "'reliability' marca A (oficial: Boletín SíseVe 2013–2022 y tablero oficial SíseVe 2024–2026) vs B (prensa, solo 2023 pendiente de confirmar). Datos 2024–2026 leídos del tablero público oficial de SíseVe (gráficos que el propio portal muestra), no de prensa.",
+  "source_tablero": "https://siseve.minedu.gob.pe/Web/App/Mapa",
   "annotations": [
     { "year": 2018, "label": "DS 004-2018 Lineamientos" },
     { "year": 2020, "label": "Pandemia (escuelas cerradas)" },

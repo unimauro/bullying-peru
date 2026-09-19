@@ -22,6 +22,17 @@ Uso:
 
 IMPORTANTE (metodología): SíseVe registra REPORTES de presuntos hechos, no la prevalencia
 real. No sobrescribas datos oficiales con estimaciones. Marca la fecha de cosecha.
+
+MÉTODO QUE FUNCIONA (verificado 2026-09-19):
+- La página usa reCAPTCHA v3 INVISIBLE (sin puzzle) y sus endpoints internos
+  (/Web/TableroControl/Listar*) responden 200 pero el BODY viene CIFRADO en AES.
+- NO se descifra el payload (sería circunvención). En su lugar, se lee el dato que el
+  propio portal YA MUESTRA a cualquier visitante: la página lo descifra y lo pinta con
+  Chart.js. Con navegador real (headless) se leen las instancias del gráfico:
+      window.Chart.instances → data.datasets → {label, data}
+  Ejemplo nacional 2022: "casos reportados" = [2024, 2025, 2026] anuales, y datasets
+  mensuales por año. Las sumas mensuales cuadran con las anuales (2024=19,297, etc.).
+- Hacerlo con moderación (una lectura por página), no un scraping agresivo.
 """
 import argparse
 import base64

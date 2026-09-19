@@ -1,0 +1,13 @@
+{
+  "dataset": "Reportes mensuales de violencia escolar",
+  "source": "MINEDU — tablero oficial SíseVe",
+  "source_url": "https://siseve.minedu.gob.pe/Web/App/Mapa",
+  "retrieval_date": "2026-09-19",
+  "note": "Datos mensuales que publica el tablero oficial SíseVe. 2026 es parcial (enero–agosto). Se observa estacionalidad: los reportes caen en verano (enero–febrero, vacaciones) y suben durante el año escolar. Verificado: la suma anual coincide (2024=19,297; 2025=19,531; 2026 ene–ago=11,791).",
+  "months": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+  "series": {
+    "2024": [138, 79, 539, 2118, 2208, 2216, 1700, 1610, 2592, 2422, 2107, 1568],
+    "2025": [135, 71, 677, 1987, 1502, 2303, 2108, 1676, 2789, 2057, 2630, 1596],
+    "2026": [90, 96, 757, 2170, 1812, 2246, 2249, 2371, null, null, null, null]
+  }
+}

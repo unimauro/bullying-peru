@@ -186,10 +186,11 @@
         if (s.name === "Violencia escolar") {
           const relArr = (ts.reliability && ts.reliability.violencia) || [];
           const firstB = relArr.indexOf("B");
-          if (firstB > 0) s.markArea = {
-            silent: true, itemStyle: { color: "rgba(212,85,58,.07)" },
-            label: { show: true, position: "top", color: "#b3421f", fontSize: 10, formatter: "prensa (B) · por confirmar" },
-            data: [[{ xAxis: String(ts.years[firstB]) }, { xAxis: String(ts.years[ts.years.length - 1]) }]]
+          let lastB = -1; for (let k = relArr.length - 1; k >= 0; k--) if (relArr[k] === "B") { lastB = k; break; }
+          if (firstB >= 0) s.markArea = {
+            silent: true, itemStyle: { color: "rgba(212,85,58,.09)" },
+            label: { show: true, position: "insideTop", color: "#b3421f", fontSize: 9, formatter: "prensa" },
+            data: [[{ xAxis: String(ts.years[firstB]) }, { xAxis: String(ts.years[lastB]) }]]
           };
         }
         return s;
@@ -197,7 +198,31 @@
     });
     src.innerHTML = `Fuente 2013–2022: ${esc(ts.source || "MINEDU — SíseVe")} ` +
       (ts.source_url ? `<a href="${safeUrl(ts.source_url)}" target="_blank" rel="noopener">(oficial)</a>` : "") +
-      `. Tramo 2023–2026 (sombreado): prensa citando a MINEDU, <b>por confirmar</b> con el próximo boletín; 2026 parcial.`;
+      `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
+  }
+
+  /* ---------- Estacionalidad (mensual) ---------- */
+  function renderMonthly(m) {
+    const ch = mkChart("chart-monthly");
+    const src = document.getElementById("monthly-source");
+    if (!ch) return;
+    if (!m || !m.series) { ch.setOption({ title: { text: "Sin datos mensuales", left: "center", top: "middle", textStyle: { color: "#9c8b76", fontWeight: "normal", fontSize: 13 } } }); return; }
+    const t = echartsTheme();
+    const colors = { "2024": "#93b8d6", "2025": "#2f80c4", "2026": "#f97316" };
+    const series = Object.keys(m.series).map((y) => ({
+      name: y, type: "line", smooth: true, symbol: "circle", symbolSize: 6, connectNulls: false,
+      data: m.series[y], itemStyle: { color: colors[y] || C.colors.violencia }, lineStyle: { width: y === "2026" ? 3.5 : 2.5, color: colors[y] || C.colors.violencia },
+      areaStyle: y === "2026" ? { color: grad(colors[y]), opacity: .35 } : undefined
+    }));
+    ch.setOption({
+      textStyle: t.textStyle, grid: { left: 52, right: 20, top: 34, bottom: 34 },
+      tooltip: Object.assign({ trigger: "axis" }, t.tooltip),
+      toolbox: TOOLBOX, legend: { top: 0 },
+      xAxis: { type: "category", data: m.months, boundaryGap: false, axisLine: { lineStyle: { color: t.splitLine.lineStyle.color } } },
+      yAxis: { type: "value", name: "reportes/mes", splitLine: t.splitLine },
+      series
+    });
+    if (src) src.innerHTML = `Fuente: ${esc(m.source)} · <a href="${safeUrl(m.source_url)}" target="_blank" rel="noopener">tablero SíseVe</a>. 2026 parcial (ene–ago).`;
   }
 
   /* ---------- Territorio ---------- */
@@ -648,12 +673,13 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
-      loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books)
+      loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books),
+      loadJSON(C.data.monthly)
     ]);
-    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books });
+    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly });
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -666,6 +692,7 @@
     const safe = (label, fn) => { try { fn(); } catch (e) { console.error("[obs] fallo en " + label, e); } };
     safe("KPIs", () => renderKPIs(ts));
     safe("serie", () => renderSeries(ts));
+    safe("mensual", () => renderMonthly(monthly));
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
     safe("desgloses", () => renderBreakdowns(breakdowns));

@@ -31,7 +31,8 @@ window.OBS_CONFIG = {
     studies: "data/processed/studies.json",
     breakdowns: "data/processed/breakdowns.json",
     world: "data/processed/world.json",
-    books: "data/processed/books.json"
+    books: "data/processed/books.json",
+    monthly: "data/processed/monthly.json"
   }
 };
 
