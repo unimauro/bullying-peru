@@ -24,6 +24,14 @@ QUERIES = [
     "bullying colegio Perú", "acoso escolar Perú", "ciberbullying Perú",
     "violencia escolar SíseVe", "bullying escolar Perú",
 ]
+# Solo se aceptan titulares de estos medios (evita fuentes poco confiables o irrelevantes).
+TRUSTED_MEDIA = [
+    "rpp", "el comercio", "la republica", "infobae", "andina", "gestion",
+    "peru21", "tv peru", "america tv", "america noticias", "latina", "atv",
+    "ojo publico", "convoca", "exitosa", "canal n", "el peruano", "epa",
+    "wayka", "idl", "la encerrona", "diario correo", "correo", "expreso",
+    "ipe", "unicef", "unesco", "defensoria",
+]
 CTX = ssl.create_default_context()
 CTX.check_hostname = False
 CTX.verify_mode = ssl.CERT_NONE
@@ -72,6 +80,17 @@ def norm(s):
     return re.sub(r"[^a-z0-9]", "", (s or "").lower())
 
 
+def _strip(s):
+    import unicodedata
+    s = unicodedata.normalize("NFD", s or "")
+    return "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
+
+
+def is_trusted(media):
+    m = re.sub(r"[^a-z0-9]", "", _strip(media))  # solo alfanumérico, sin espacios/acentos
+    return any(re.sub(r"[^a-z0-9]", "", t) in m for t in TRUSTED_MEDIA)
+
+
 def og_image(url):
     try:
         html = fetch(url, timeout=20).decode("utf-8", "ignore")
@@ -103,17 +122,27 @@ def download_img(url, ref, dest_base):
 def main():
     doc = json.load(open(NEWS, encoding="utf-8"))
     items = doc.get("data", [])
+    # Limpia items automáticos previos de medios no confiables (los curados a mano se conservan).
+    before = len(items)
+    items = [x for x in items if (not x.get("auto")) or is_trusted(x.get("media"))]
+    if before != len(items):
+        print(f"[limpieza] removidos {before - len(items)} items auto de medios no confiables")
     seen = {norm(x.get("title")) for x in items} | {x.get("url") for x in items}
 
     # 1) recolecta candidatos nuevos (sin descargar imágenes todavía)
     candidates = []
+    skipped = 0
     for q in QUERIES:
         for it in google_news(q):
             key = norm(it["title"])
             if key in seen or it["url"] in seen:
                 continue
+            if not is_trusted(it["media"]):
+                skipped += 1
+                continue
             seen.add(key); seen.add(it["url"])
             candidates.append(it)
+    print(f"[filtro] candidatos confiables: {len(candidates)}, descartados por medio: {skipped}")
 
     # 2) une con existentes, ordena por fecha desc y recorta a MAX_ITEMS
     all_items = items + candidates

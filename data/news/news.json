@@ -35,18 +35,6 @@
     },
     {
       "date": "2026-09-19",
-      "media": "Willax",
-      "title": "Liceo Naval figura entre los colegios con más denuncias por violencia escolar en Lima",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOYWJyc01kX1AwOGhDZk1mWGlGTHNQb1FJek91SHhYenRMdVAtMjVPbUN4V1BLa1l6dkNLeXpMVEFPWHphUllrOHRVanNiMFpza1RNb1BfZnU3UXpoVms2NnFMS2p1XzN3Q3FMSkRHVzhDbXBoYVhLNG1ab2dLSFU1bkNCVlNJSkFOR0tZZi11UQ?oc=5",
-      "image": "assets/news/auto_0cb79c15.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
       "media": "latinanoticias.pe",
       "title": "Violencia escolar en Perú: más de 11 mil casos fueron reportados entre enero y agosto de 2026",
       "department": "Nacional",
@@ -59,18 +47,6 @@
     },
     {
       "date": "2026-09-19",
-      "media": "apnoticias.pe",
-      "title": "¿Cómo identificar si un menor es víctima de bullying en el colegio?",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUE5oOTdpT01OazE3ZjVDazUxaDVBSGtUcFkteE9OSFdEU0xZd1pGVEp1SDFmZGxfOHBhbGlUbmVzR1dlb2JzaW5PX3FmTy0xR1pfXy12eXREQ2ZPaUNENWRMY2RHeHQzRjJDVl9BYXplQlVwRktpVUw1QU5BalBuZFZBOWMzNmJFczNKbXF1VkZnYXFTNXpKMXI5NEdPd09rVEpZNHNnMXBLbjd4eVViamFPZXM?oc=5",
-      "image": "assets/news/auto_7932523b.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
       "media": "infobae.com",
       "title": "“Nico y las bolitas de arena”: Un cuento infantil propone hablar sobre exclusión, empatía, violencia escolar y el derecho de los niños a pertenecer",
       "department": "Nacional",
@@ -79,30 +55,6 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPRURaZDh6dWFidkpDXzYtRXIxa015cl9CZ085ekRUbzFSTkNQZ3cwZG9DeF9VVldVM1g3cXJSZURYR0xPMFcybWM5cUtOSXFZc2ZaWWhrMktEOUx4NVp0dzAyWm5FRGRlMFY1NFp6dHdpbWI5bzF2VFV4SEt3aXNEVUNKOE1TNXpOUXpOcnRhYVAxTEdQNG02TkFXUWVLTnpHVElUTTBLNndRZHNnZEtQdFQ2V2VGZW9ua2VrT2ZyRzB1bEY2eDhfZlkzZDBzT3ZGdU9NN0JMWGgydEV0M2ZRQUoxSm5ILVpDSkpRdEpnZVZfMlVkQ0ZjdWdXaDhhLV81WV9pV3cxc08xUDJEZFRMeA?oc=5",
       "image": "assets/news/auto_c5a0d770.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "lalupa.pe",
-      "title": "Ica registra 59 casos de violencia sexual escolar en 2026, la mayoría entre alumnos",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNczB5Sl92MGdJcDVsdzBCa3I5RzhvQ1gtNDlhV2syejc3WG5mYkdGWUpSZXUxdXdJTTJWZHRCZEk2aG0wZUtNaU1tUElqZTRSQ1JWa0hsQ01kN1Jwa3BTMU8xU3cwTXh1VDAxWGdjTGFzWmlzY2owWE5VUFVPU3dBVjZnU0tCVk1NRHd1WFdabDRaMEZ3NzhpTzVxU1lwalBPaE9aM2ExR1hCSW41UVBubQ?oc=5",
-      "image": "assets/news/auto_e90c9e5e.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "Evidencia.pe",
-      "title": "Violencia sexual en colegios del sur superan los 300 casos en lo que va del 2026",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNQmJjcDk2ZDZpMUhhRTFuM3QxM1BUQzFVeHR4UWZxOU9kUWYxODZlS2ZoM0t0eEFQVFIwTHp3ZG9PNno3MTZPal9ham1fd0VmVGlIWXVJcS1qN052ajBnUktNQXEwSjU5Z0ZrVXlCQzloTFdQUUI4OFBfbG50VkZTdy00SG5ZYldSalRyWVV4SmtfcVBfV1llZm94SFp5ZHZldlRoZdIBqgFBVV95cUxQV0tsUmFZaDJmV1dxdjFMQmMtWDRIV2g5RHZIaUFDQzBPVy1fYmFWSWc0enNlWEZNN25UM3BkWTBsNFNyUXJ6QWh5OVdrcWdSdEhrTE9GenR0bXVTRTBGeWh3MGhqYTVUNWQ3eUZ5UlVfWnIxRTJua3IxRVFBQzd1WE1wSk5TVXZ5NDF4VjZWN285aU52MU15bENETFVHd0dNU0tHYkczellmUQ?oc=5",
-      "image": "assets/news/auto_8063a1fd.jpg",
       "auto": true
     },
     {
