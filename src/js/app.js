@@ -19,6 +19,16 @@
   // Solo enlaces http(s) (evita javascript: en href)
   const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//i.test(u.trim())) ? u.trim() : "#";
 
+  // Banderas para el ranking mundial
+  const FLAGS = {
+    "Filipinas": "🇵🇭", "Rep. Dominicana": "🇩🇴", "Marruecos": "🇲🇦", "Indonesia": "🇮🇩",
+    "Colombia": "🇨🇴", "Argentina": "🇦🇷", "Nueva Zelanda": "🇳🇿", "Panamá": "🇵🇦",
+    "Australia": "🇦🇺", "Brasil": "🇧🇷", "Reino Unido": "🇬🇧", "Estados Unidos": "🇺🇸",
+    "Canadá": "🇨🇦", "Uruguay": "🇺🇾", "Costa Rica": "🇨🇷", "Chile": "🇨🇱", "Italia": "🇮🇹",
+    "México": "🇲🇽", "Perú": "🇵🇪", "Alemania": "🇩🇪", "Francia": "🇫🇷", "Japón": "🇯🇵",
+    "Portugal": "🇵🇹", "Países Bajos": "🇳🇱", "Corea del Sur": "🇰🇷", "Grecia": "🇬🇷", "Polonia": "🇵🇱"
+  };
+
   async function loadJSON(url) {
     try {
       const r = await fetch(url, { cache: "no-cache" });
@@ -276,7 +286,8 @@
     return mapMetric === "rate" ? a.rate : a.cases;
   }
 
-  const MAP_RAMP = ["#e6eef7", "#c2d8ec", "#98bcdd", "#6b9dc9", "#4179b0", "#255f8f", "#163f5c"];
+  // Rampa multicolor (azul → teal → verde → ámbar → naranja) para el coroplético.
+  const MAP_RAMP = ["#dbeafe", "#93cdea", "#57bfc0", "#7fcf7a", "#e3cf5a", "#ec9a4e", "#d4553a"];
   // Escala por CUANTILES: reparte los colores por ranking, no por magnitud, para que
   // todos los departamentos con datos se distingan aunque Lima sea un valor atípico.
   function makeScale() {
@@ -341,13 +352,19 @@
   }
   function updateLegend() {
     const el = document.getElementById("map-legend"); if (!el) return;
-    const max = currentMax();
-    const ramp = [MAP_RAMP[0], MAP_RAMP[2], MAP_RAMP[4], MAP_RAMP[6]];
-    const labels = mapMetric === "rate"
-      ? ["bajo", "", "", "alto"] : ["pocos", "", "", "muchos"];
-    el.innerHTML = `<b>${mapMetric === "rate" ? "Tasa /10 000" : "N.º reportes"}</b><br>` +
-      ramp.map((c, i) => `<i style="background:${c}"></i>${labels[i]}`).join(" ") +
-      `<br><span style="color:#8494a6">máx: ${mapMetric === "rate" ? max.toFixed(1) : fmt(Math.round(max))}</span>`;
+    const rows = deptRows(mapYear);
+    const vals = rows.map(r => (mapMetric === "rate" ? r.rate : r.cases)).filter(v => v != null).sort((a, b) => a - b);
+    const fmtV = (v) => v == null ? "—" : (mapMetric === "rate" ? v.toFixed(1) : fmt(Math.round(v)));
+    const lo = vals[0], mid = vals[Math.floor((vals.length - 1) / 2)], hi = vals[vals.length - 1];
+    const title = mapMetric === "rate" ? "Tasa por 10 000 estudiantes" : "N.º de reportes";
+    const bar = MAP_RAMP.map(c => `<span style="flex:1;height:12px;background:${c}"></span>`).join("");
+    el.innerHTML =
+      `<b>${title}</b>` +
+      `<div style="display:flex;gap:1px;border-radius:4px;overflow:hidden;margin:6px 0 3px;width:150px">${bar}</div>` +
+      `<div style="display:flex;justify-content:space-between;width:150px;color:var(--text-soft);font-size:.68rem">` +
+        `<span>${fmtV(lo)}</span><span>${fmtV(mid)}</span><span>${fmtV(hi)}</span></div>` +
+      `<div style="margin-top:6px"><i style="background:#e7ded0"></i>sin dato</div>` +
+      `<div style="color:var(--text-soft);font-size:.66rem;margin-top:3px">Escala por cuantiles (ranking), ${vals.length}/26 regiones</div>`;
   }
 
   /* ---------- Prevalencia ---------- */
@@ -470,14 +487,34 @@
     const t = echartsTheme();
     if (ch && world.countries) {
       const data = [...world.countries].sort((a, b) => a.value_pct - b.value_pct);
+      const vmin = data[0].value_pct, vmax = data[data.length - 1].value_pct;
+      const WRAMP = ["#57bfc0", "#7fcf7a", "#e3cf5a", "#ec9a4e", "#e0663a", "#cc3b52"];
+      const colorFor = (d) => {
+        if (/per[uú]/i.test(d.country)) return "#f97316"; // Perú resaltado (naranja)
+        const frac = vmax > vmin ? (d.value_pct - vmin) / (vmax - vmin) : 0;
+        return WRAMP[Math.min(WRAMP.length - 1, Math.round(frac * (WRAMP.length - 1)))];
+      };
       ch.setOption({
-        textStyle: t.textStyle, grid: { left: 96, right: 40, top: 8, bottom: 28 },
+        textStyle: t.textStyle, grid: { left: 130, right: 44, top: 8, bottom: 28 },
         tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => v + "%" }, t.tooltip),
         toolbox: TOOLBOX,
         xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10, formatter: "{value}%" } },
-        yAxis: { type: "category", data: data.map(d => d.country), axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 11 } },
-        series: [{ type: "bar", data: data.map(d => ({ value: d.value_pct, itemStyle: { color: grad(/per/i.test(d.country) ? C.colors.bullying : C.colors.violencia, "h"), borderRadius: [0, 6, 6, 0] } })), barMaxWidth: 16,
-          label: { show: true, position: "right", fontSize: 10, color: t.textStyle.color, formatter: (p) => p.value + "%" } }]
+        yAxis: {
+          type: "category", data: data.map(d => d.country), axisLine: { show: false }, axisTick: { show: false },
+          axisLabel: { fontSize: 11, formatter: (name) => (FLAGS[name] || "🏳️") + "  " + name }
+        },
+        series: [{
+          type: "bar", barMaxWidth: 18,
+          data: data.map(d => ({
+            value: d.value_pct,
+            itemStyle: {
+              color: grad(colorFor(d), "h"), borderRadius: [0, 6, 6, 0],
+              borderColor: /per[uú]/i.test(d.country) ? "#b45309" : "transparent",
+              borderWidth: /per[uú]/i.test(d.country) ? 1.5 : 0
+            }
+          })),
+          label: { show: true, position: "right", fontSize: 10, color: t.textStyle.color, formatter: (p) => p.value + "%" }
+        }]
       });
     }
     if (ctxEl && world.global_context) {

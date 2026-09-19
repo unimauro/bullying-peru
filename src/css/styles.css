@@ -209,6 +209,8 @@ section > .wrap > .lead { color: var(--text-muted); margin: 0 0 22px; max-width:
 .chart { width: 100%; height: 360px; }
 .chart.tall { height: 440px; }
 .chart.sm { height: 280px; }
+#chart-world { height: 640px; }
+@media (max-width: 860px) { #chart-world { height: 560px; } }
 .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
 .controls label { font-size: .84rem; color: var(--text-muted); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
 .controls select, .controls button { font: inherit; font-size: .85rem; padding: 7px 12px; border-radius: 30px; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; }
