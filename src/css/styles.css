@@ -80,7 +80,8 @@ a { color: var(--brand); text-underline-offset: 2px; }
 
 /* ---------- App layout / sidebar ---------- */
 .app { display: grid; grid-template-columns: 244px minmax(0, 1fr); }
-.main { min-width: 0; display: flex; flex-direction: column; }
+.main { min-width: 0; display: flex; flex-direction: column; overflow-x: clip; }
+html, body { overflow-x: clip; }
 /* Orden de secciones (prioriza acción y lo más completo arriba) */
 .main > .hero { order: 0; }
 .main > .helpbar { order: 1; }
