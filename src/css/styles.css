@@ -281,13 +281,13 @@ table.data tr:hover td { background: var(--surface-2); }
 .rail-track { display: flex; flex-direction: column; gap: 10px; padding: 12px; animation: rail-scroll 28s linear infinite; }
 .news-rail:hover .rail-track { animation-play-state: paused; }
 @keyframes rail-scroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
-.rail-item { display: flex; gap: 10px; text-decoration: none; color: inherit; padding: 8px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-tint); }
+.rail-item { display: flex; gap: 10px; text-decoration: none; color: var(--text); padding: 8px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); }
 .rail-item:hover { background: var(--surface-2); }
 .rail-thumb { flex: none; width: 56px; height: 56px; border-radius: 9px; background-size: cover; background-position: center; }
 .rail-thumb.ph { display: grid; place-items: center; color: #fff; font-weight: 800; }
 .rail-body { min-width: 0; }
-.rail-body .t { font-size: .8rem; font-weight: 700; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.rail-body .m { font-size: .67rem; color: var(--text-soft); margin-top: 3px; }
+.rail-body .t { font-size: .8rem; font-weight: 700; line-height: 1.25; color: var(--text); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.rail-body .m { font-size: .67rem; color: var(--text-muted); margin-top: 3px; }
 @media (prefers-reduced-motion: reduce) { .rail-track { animation: none; } .rail-viewport { overflow-y: auto; } }
 
 /* ---------- Books ---------- */
