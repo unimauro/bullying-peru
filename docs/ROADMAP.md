@@ -95,6 +95,23 @@ es el scraper headless de `/Web/App/MapaDetalle` (ya escrito, sin ejecutar).
 | Teléfono gratuito de SíseVe | ⛔ NO publicado: fuentes en conflicto (0800 77090 vs 0800 76 888); verificar en portal |
 | Sidebar / navegación móvil tipo dashboard | 🔜 pendiente (hoy nav superior scrollable) |
 
+## Revisión adversarial (2026-09-18) — 15 hallazgos, todos atendidos
+
+**ALTA:** (1) tramo 2023–2026 de prensa ahora trazable con URL por año + sombreado; (2) KPI
+de prensa marcado "prensa · no oficial"; (3) **XSS del pipeline de noticias cerrado**
+(escape de todo texto JSON + validación de imágenes/URLs); (4) nota de fuente del mapa
+cambia por año (A/B/parcial/cobertura N/26); (5) ranking de tasa avisa "muestra incompleta".
+**MEDIA:** (6) serie sombrea el tramo B; (7) **bug de Lima corregido** (mapa suma Metro +
+Región Lima, coherente con la tabla); (8) tasa nacional usa el último año completo y oficial
+(2022); (9) contraste del texto de fuentes subido a ~AA; (10) etiqueta "oficial" derivada de
+reliability; (11) ENARES (violencia escolar) deslindada de SSES (acoso); (12) cifra MINSA
+corregida a su fuente. **BAJA:** (13) aria-hidden en iconos; (14) foco visible + aria-pressed;
+(15) GeoJSON vendorizado local (sin SPOF externo).
+
+Verificado por el revisor: aritmética interna cuadra (2022=12,099 = suma departamental;
+matrícula 9,332,063 = suma de 26 filas); reduced-motion, rel=noopener, deslinde PISA/SíseVe
+y chatbot con textContent ya estaban bien.
+
 ## Quick wins (bajo esfuerzo, alto impacto)
 - B1 (KPI bullying con último dato) · B3 (tooltip Lima) · favicon + OG tags · toolbox de
   export PNG en ECharts (una línea por gráfico).
