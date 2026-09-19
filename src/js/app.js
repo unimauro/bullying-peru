@@ -90,6 +90,8 @@
       if (!p) return;
       const partial = ts.partial_year === p.year;
       // Delta solo entre el punto y el anterior disponible, y solo si ninguno es parcial.
+      const rel = (ts.reliability && ts.reliability[c.key] && ts.reliability[c.key][p.i]) || null;
+      const relTag = rel === "B" ? ` <span class="pill" style="background:#fbeede;color:#8a5a00">prensa · no oficial</span>` : "";
       let dHtml = "";
       const PANDEMIC = [2020, 2021];
       const prevArr = S[c.key] || [];
@@ -100,25 +102,27 @@
         dHtml = `<span class="delta ${d >= 0 ? "up" : "down"}">${d >= 0 ? "▲" : "▼"} ${Math.abs(d).toFixed(1)}%</span> vs ${years[pi]}`;
       } else if (partial) {
         dHtml = `<span class="pill" style="background:var(--surface-2);color:var(--text-muted)">año parcial</span>`;
-      } else {
+      } else if (rel === "A") {
         dHtml = `<span style="color:var(--text-soft)">dato oficial (Boletín SíseVe)</span>`;
       }
-      const rel = (ts.reliability && ts.reliability[c.key] && ts.reliability[c.key][p.i]) || null;
-      const relTag = rel === "B" ? ` <span class="pill" style="background:#fbeede;color:#8a5a00">prensa · no oficial</span>` : "";
       html += `<div class="kpi ${c.cls}"><span class="tag tag-${c.tag}">${c.tag}</span>
         <div class="label">${c.label}</div>
         <div class="value">${fmt(p.value)}</div>
         <div class="meta">${p.year}${partial ? " (parcial ene–ago)" : ""} · ${dHtml}${relTag}</div></div>`;
     });
-    // KPI tasa nacional: último total disponible / matrícula nacional
+    // KPI tasa nacional: usa el último año COMPLETO y OFICIAL (evita numerador parcial sobre matrícula anual).
     if (store.population) {
-      const p = lastPoint("violencia");
-      if (p) {
-        const rate = (p.value / store.population.total_nacional) * 10000;
-        const partial = ts.partial_year === p.year;
+      const relV = (ts.reliability && ts.reliability.violencia) || [];
+      const vArr = S.violencia || [];
+      let bi = -1;
+      for (let i = vArr.length - 1; i >= 0; i--) {
+        if (vArr[i] != null && relV[i] === "A" && ts.partial_year !== years[i]) { bi = i; break; }
+      }
+      if (bi >= 0) {
+        const rate = (vArr[bi] / store.population.total_nacional) * 10000;
         html += `<div class="kpi k-rate"><div class="label">Tasa nacional /10 000</div>
           <div class="value">${rate.toFixed(1)}</div>
-          <div class="meta">${p.year}${partial ? " parcial" : ""} · reportes por 10 000 estudiantes (matrícula ${store.population.year})</div></div>`;
+          <div class="meta">${years[bi]} (oficial, año completo) · reportes por 10 000 estudiantes (matrícula ${store.population.year})</div></div>`;
       }
     }
     grid.innerHTML = html || '<div class="callout">Sin datos para el último año.</div>';
@@ -251,16 +255,25 @@
     updateLegend();
   }
 
-  function metricValue(depName) {
+  const _norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace("PROV. CONST. DEL ", "").trim();
+  // Devuelve {cases, students, rate} para el polígono del GeoJSON, agregando Lima Metropolitana + Región Lima.
+  function metricAgg(depName) {
     const rows = deptRows(mapYear);
-    // normaliza nombre GeoJSON (MAYÚSCULAS, sin tildes) contra datos
-    const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace("PROV. CONST. DEL ", "").trim();
-    const target = norm(depName);
-    let match = rows.find(r => norm(r.department) === target);
-    if (!match && target === "LIMA") match = rows.find(r => /LIMA/.test(norm(r.department)));
-    if (!match && target === "CALLAO") match = rows.find(r => /CALLAO/.test(norm(r.department)));
-    if (!match) return null;
-    return mapMetric === "rate" ? match.rate : match.cases;
+    const target = _norm(depName);
+    let matches;
+    if (target === "LIMA") matches = rows.filter(r => /LIMA/.test(_norm(r.department))); // Metro + Región Lima
+    else if (target === "CALLAO") matches = rows.filter(r => /CALLAO/.test(_norm(r.department)));
+    else matches = rows.filter(r => _norm(r.department) === target);
+    if (!matches.length) return null;
+    const cases = matches.reduce((a, r) => a + (r.cases || 0), 0);
+    const students = matches.reduce((a, r) => a + (r.students || 0), 0);
+    const rate = students ? (cases / students) * 10000 : null;
+    return { cases, students, rate };
+  }
+  function metricValue(depName) {
+    const a = metricAgg(depName);
+    if (!a) return null;
+    return mapMetric === "rate" ? a.rate : a.cases;
   }
 
   const MAP_RAMP = ["#e6eef7", "#c2d8ec", "#98bcdd", "#6b9dc9", "#4179b0", "#255f8f", "#163f5c"];
@@ -312,15 +325,13 @@
       },
       onEachFeature: (f, layer) => {
         const name = f.properties.NOMBDEP || "";
-        const v = metricValue(name);
-        const rows = deptRows(mapYear);
-        const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase();
-        const row = rows.find(r => norm(r.department).includes(norm(name)) || norm(name).includes(norm(r.department)));
+        const agg = metricAgg(name);
+        const nm = /^LIMA$/.test(_norm(name)) ? "Lima (Metropolitana + Región)" : name;
         layer.bindTooltip(
-          `<b>${name}</b><br>` +
-          (v == null ? "Sin dato SíseVe" :
-            (mapMetric === "rate" ? `Tasa: ${v.toFixed(1)} /10 000` : `Reportes: ${fmt(v)}`)) +
-          (row && row.students ? `<br>Matrícula: ${fmt(row.students)}` : ""),
+          `<b>${esc(nm)}</b><br>` +
+          (!agg ? "Sin dato SíseVe" :
+            (`Reportes: ${fmt(agg.cases)}` + (agg.rate != null ? `<br>Tasa: ${agg.rate.toFixed(1)} /10 000` : "") +
+             (agg.students ? `<br>Matrícula: ${fmt(agg.students)}` : ""))),
           { sticky: true });
         layer.on("mouseover", () => layer.setStyle({ weight: 2.5, color: "#14202e" }));
         layer.on("mouseout", () => geoLayer.resetStyle(layer));

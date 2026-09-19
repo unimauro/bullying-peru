@@ -72,7 +72,7 @@
   "mental_health_context": {
     "warning": "Atenciones administrativas de salud mental (MINSA). NO miden bullying ni establecen causalidad. Solo contexto de bienestar de NNA.",
     "items": [
-      { "indicator": "Atenciones por trastornos mentales/problemas psicosociales (NNA ~40% del total)", "value": 1844531, "year": 2023, "source_id": "minsa_salud_mental_2023" }
+      { "indicator": "Atenciones por trastornos mentales/problemas psicosociales (más de 1,300,000; NNA ~40% del total)", "value": 1300000, "value_prefix": "más de", "year": 2023, "source_id": "minsa_salud_mental_2023", "note": "La fuente oficial reporta 'más de 1 300 000' casos atendidos." }
     ]
   },
   "sources": {

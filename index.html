@@ -294,7 +294,7 @@
         <p class="source" id="sses-source"></p>
       </div>
     </div>
-    <div class="callout info">Un registro administrativo depende de que alguien denuncie; una encuesta pregunta directamente a los estudiantes. Por eso ENARES (44–68%) y SSES (~6 de cada 10 involucrados) reflejan mucho más de lo que capta SíseVe: la mayoría de los hechos no llega a un reporte.</div>
+    <div class="callout info"><span>ℹ️</span><span>Son <b>tres cosas distintas</b> y no se suman: <b>SíseVe</b> cuenta <b>reportes</b> de violencia escolar; <b>ENARES</b> (INEI) mide <b>violencia en el entorno escolar</b> por cualquier actor (categoría amplia, <b>no solo bullying</b>): 44–68% de estudiantes; <b>SSES</b> (MINEDU/OCDE) mide <b>acoso entre pares</b> por autorreporte: ~6 de cada 10 involucrados. Ambas encuestas reflejan que la mayoría de los hechos <b>no llega a un reporte</b> de SíseVe.</span></div>
     <p class="source" id="prevalence-source"></p>
   </div>
 </section>
@@ -519,6 +519,12 @@
 <script src="src/js/chatbot.js"></script>
 <script>
 (function(){
+  // A11y: iconos SVG decorativos ocultos para lectores de pantalla
+  document.querySelectorAll('svg.ic').forEach(function(s){ s.setAttribute('aria-hidden','true'); s.setAttribute('focusable','false'); });
+  // A11y: estado de los toggles de segmento
+  function syncSeg(){ document.querySelectorAll('.seg').forEach(function(seg){ seg.setAttribute('role','group'); seg.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'); }); }); }
+  syncSeg();
+  document.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click', function(){ setTimeout(syncSeg, 0); }); });
   var sb = document.getElementById('sidebar'), tg = document.getElementById('menu-toggle'), bd = document.getElementById('sidebar-backdrop');
   function open(){ sb.classList.add('open'); bd.hidden = false; }
   function close(){ sb.classList.remove('open'); bd.hidden = true; }

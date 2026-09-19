@@ -17,7 +17,9 @@ window.OBS_CONFIG = {
     exposicion: "#0f9d92",
     brand: "#1f5f8b"
   },
-  geojson: "https://raw.githubusercontent.com/juaneladio/peru-geojson/master/peru_departamental_simple.geojson",
+  // GeoJSON vendorizado localmente (evita depender de raw.githubusercontent en runtime).
+  // Origen: juaneladio/peru-geojson (MPL-2.0), peru_departamental_simple.geojson.
+  geojson: "data/geo/peru-departamental.geojson",
   data: {
     timeseries: "data/processed/timeseries.json",
     byDepartment: "data/processed/by_department.json",

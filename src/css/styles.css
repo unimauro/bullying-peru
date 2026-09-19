@@ -11,7 +11,7 @@
   --border: #ecdfca;
   --text: #2c2419;
   --text-muted: #6d5f4d;
-  --text-soft: #9c8b76;
+  --text-soft: #7a6a55;
 
   /* Marca / datos */
   --brand: #1f6fb2;
@@ -64,6 +64,8 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 6px; }
+a:focus-visible, button:focus-visible, .side-nav a:focus-visible, .hb-chip:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
