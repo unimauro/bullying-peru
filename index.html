@@ -57,6 +57,7 @@
       <a href="#territorio"><svg class="ic"><use href="#ic-map"/></svg> Dónde ocurre</a>
       <a href="#resumen"><svg class="ic"><use href="#ic-chart"/></svg> Cifras clave</a>
       <a href="#mapa"><svg class="ic"><use href="#ic-map"/></svg> Mapa</a>
+      <a href="#colegios"><svg class="ic"><use href="#ic-alert"/></svg> ¿Y por colegio?</a>
       <a href="#serie"><svg class="ic"><use href="#ic-chart"/></svg> Serie histórica</a>
       <a href="#perfil"><svg class="ic"><use href="#ic-users"/></svg> Perfil de casos</a>
       <a href="#prevalencia"><svg class="ic"><use href="#ic-scale"/></svg> Prevalencia</a>
@@ -228,6 +229,38 @@
     </div>
     <div id="map"></div>
     <p class="source" id="map-source">Fuente: MINEDU — SíseVe · Matrícula: INEI 2024 · GeoJSON departamental (juaneladio/peru-geojson, MPL-2.0).</p>
+  </div>
+</section>
+
+<!-- COLEGIOS / UGEL -->
+<section id="colegios">
+  <div class="wrap">
+    <h2><svg class="ic"><use href="#ic-map"/></svg> ¿Y por colegio?</h2>
+    <p class="lead">La pregunta más frecuente de las familias. Esto es lo que existe — y lo que no.</p>
+    <div class="callout"><span>⚠️</span><span><b>Más denuncias en un colegio NO significa que sea "peor".</b> Suele reflejar que ese colegio <b>reporta mejor</b>. Un colegio sin reportes puede estar ocultando casos. Por eso <b>no publicamos un ranking de colegios</b>: castigaría justo a los que sí denuncian.</span></div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3>Lo que NO existe</h3>
+        <ul style="color:var(--text-muted);font-size:.9rem;padding-left:18px">
+          <li>MINEDU/SíseVe <b>no publica datos por institución educativa</b> (protección de datos). Su máximo detalle público es la <b>UGEL</b>, no el colegio.</li>
+          <li>No hay dataset abierto ni descargable por colegio en datosabiertos.gob.pe.</li>
+          <li>No hay serie por colegio ni a nivel nacional.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Lo que SÍ hay (prensa, parcial)</h3>
+        <ul style="color:var(--text-muted);font-size:.9rem;padding-left:18px">
+          <li>En <b>2023</b>, más de <b>60 colegios privados de Lima</b> acumularon <b>10 o más</b> reportes de violencia entre estudiantes (datos DRELM). <span class="badge b-C">C</span></li>
+          <li>UGEL con más reportes en Lima: <b>Lima Cercado, San Borja y Rímac</b>.</li>
+          <li>Cifras <b>solo de Lima, solo privados, solo 2023</b> — no comparables ni completas.</li>
+        </ul>
+        <p class="source">Consulta los nombres en los reportajes:
+          <a href="https://www.infobae.com/peru/2024/02/11/este-es-el-ranking-de-escuelas-privadas-en-lima-con-mas-casos-de-violencia-escolar/" target="_blank" rel="noopener">Infobae ↗</a> ·
+          <a href="https://elcomercio.pe/ecdata/colegios-cuantas-denuncias-hay-por-violencia-escolar-bullying-abuso-sexual-psicologico-aulas-tus-hijos-seguridad-siseve-institucion-educativa-nivel-nacional-especdis-noticia/" target="_blank" rel="noopener">El Comercio – buscador por IE ↗</a>
+        </p>
+      </div>
+    </div>
+    <div class="callout info"><span>💡</span><span>¿Quieres saber cómo está un colegio en particular? Pregunta directamente a la <b>dirección</b> por su <b>plan de convivencia</b> y sus reportes en SíseVe: por ley debe tener uno y atender los casos.</span></div>
   </div>
 </section>
 

@@ -91,6 +91,7 @@ html, body { overflow-x: clip; }
 .main > #familias { order: 3; }
 .main > #territorio { order: 4; }
 .main > #mapa { order: 5; }
+.main > #colegios { order: 5; }
 .main > #serie { order: 6; }
 .main > #perfil { order: 7; }
 .main > #prevalencia { order: 8; }
