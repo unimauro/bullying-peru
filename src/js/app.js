@@ -4,6 +4,21 @@
   const fmt = (n) => (n == null ? "—" : n.toLocaleString("es-PE"));
   const store = window.OBS_DATA = {}; // datasets cargados (usados por el chatbot)
 
+  // Seguridad: escapa TODO texto proveniente de JSON antes de inyectarlo con innerHTML
+  // (las noticias se auto-actualizan desde fuentes externas vía cron → posible XSS).
+  const ESC = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ESC[c]);
+  // Solo acepta imágenes locales de assets o URLs https de imagen; nada más (evita inyección en style url()).
+  const safeImg = (u) => {
+    if (typeof u !== "string") return null;
+    u = u.trim();
+    if (/^assets\/news\/[\w.\-]+\.(jpg|jpeg|png|webp)$/i.test(u)) return u;
+    if (/^https:\/\/[^\s"'()<>]+\.(jpg|jpeg|png|webp)(\?[^\s"'()<>]*)?$/i.test(u)) return u;
+    return null;
+  };
+  // Solo enlaces http(s) (evita javascript: en href)
+  const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//i.test(u.trim())) ? u.trim() : "#";
+
   async function loadJSON(url) {
     try {
       const r = await fetch(url, { cache: "no-cache" });
@@ -88,10 +103,12 @@
       } else {
         dHtml = `<span style="color:var(--text-soft)">dato oficial (Boletín SíseVe)</span>`;
       }
+      const rel = (ts.reliability && ts.reliability[c.key] && ts.reliability[c.key][p.i]) || null;
+      const relTag = rel === "B" ? ` <span class="pill" style="background:#fbeede;color:#8a5a00">prensa · no oficial</span>` : "";
       html += `<div class="kpi ${c.cls}"><span class="tag tag-${c.tag}">${c.tag}</span>
         <div class="label">${c.label}</div>
         <div class="value">${fmt(p.value)}</div>
-        <div class="meta">${p.year}${partial ? " (parcial ene–ago)" : ""} · ${dHtml}</div></div>`;
+        <div class="meta">${p.year}${partial ? " (parcial ene–ago)" : ""} · ${dHtml}${relTag}</div></div>`;
     });
     // KPI tasa nacional: último total disponible / matrícula nacional
     if (store.population) {
@@ -151,11 +168,22 @@
           label: { formatter: (p) => (ts.annotations.find(a => String(a.year) === p.value) || {}).label || "", color: "#8494a6", fontSize: 10 },
           data: marks
         };
+        // Sombrea el tramo de prensa (fuente B) en la serie de violencia para no confundirlo con lo oficial.
+        if (s.name === "Violencia escolar") {
+          const relArr = (ts.reliability && ts.reliability.violencia) || [];
+          const firstB = relArr.indexOf("B");
+          if (firstB > 0) s.markArea = {
+            silent: true, itemStyle: { color: "rgba(212,85,58,.07)" },
+            label: { show: true, position: "top", color: "#b3421f", fontSize: 10, formatter: "prensa (B) · por confirmar" },
+            data: [[{ xAxis: String(ts.years[firstB]) }, { xAxis: String(ts.years[ts.years.length - 1]) }]]
+          };
+        }
         return s;
       })
     });
-    src.innerHTML = `Fuente: ${ts.source || "MINEDU — SíseVe"}. ` +
-      (ts.source_url ? `<a href="${ts.source_url}" target="_blank" rel="noopener">Ver fuente</a>` : "");
+    src.innerHTML = `Fuente 2013–2022: ${esc(ts.source || "MINEDU — SíseVe")} ` +
+      (ts.source_url ? `<a href="${safeUrl(ts.source_url)}" target="_blank" rel="noopener">(oficial)</a>` : "") +
+      `. Tramo 2023–2026 (sombreado): prensa citando a MINEDU, <b>por confirmar</b> con el próximo boletín; 2026 parcial.`;
   }
 
   /* ---------- Territorio ---------- */
@@ -198,6 +226,10 @@
     const topRate = [...rows].filter(d => d.rate != null).sort((a, b) => b.rate - a.rate).slice(0, 10).map(d => ({ name: d.department, value: +d.rate.toFixed(1) }));
     chA.setOption(barOpt(topAbs, C.colors.violencia, "abs"));
     chR.setOption(barOpt(topRate, C.colors.exposicion, "rate"));
+    // Aviso: si el año está incompleto (prensa/parcial, pocas regiones), no es un ranking nacional.
+    const info = yearInfo(year);
+    const warn = (ch, on) => ch.setOption({ graphic: on ? [{ type: "text", right: 10, top: 6, style: { text: "⚠ muestra incompleta (" + info.n + " regiones) — no es ranking nacional", fill: "#b3421f", font: "600 10px -apple-system, sans-serif" } }] : [] });
+    warn(chA, info.incomplete); warn(chR, info.incomplete);
   }
 
   /* ---------- Mapa ---------- */
@@ -250,6 +282,24 @@
     const vals = rows.map(r => (mapMetric === "rate" ? r.rate : r.cases)).filter(v => v != null);
     return vals.length ? Math.max(...vals) : 1;
   }
+  // Nota de fuente y cobertura según el año seleccionado (oficial A vs prensa B, parcial/incompleto).
+  function yearInfo(year) {
+    const bd = store.byDepartment || {};
+    const rel = (bd.reliability_by_year && bd.reliability_by_year[year]) || "B";
+    const n = bd[year] && typeof bd[year] === "object" ? Object.keys(bd[year]).length : 0;
+    const partial = store.timeseries && store.timeseries.partial_year === +year;
+    return { rel, n, partial, incomplete: rel !== "A" || n < 20 };
+  }
+  function updateMapSource() {
+    const el = document.getElementById("map-source"); if (!el) return;
+    const info = yearInfo(mapYear);
+    let s = info.rel === "A"
+      ? `Fuente: MINEDU — Boletín "SíseVe en cifras" ${mapYear} (oficial, 26 regiones).`
+      : `Fuente: prensa citando a MINEDU (nivel B)${info.partial ? ", " + mapYear + " parcial (ene–ago)" : ""}.`;
+    if (info.incomplete) s += ` Cobertura parcial: ${info.n} de 26 regiones; el resto queda "sin dato".`;
+    s += " Matrícula: INEI 2024 · GeoJSON: juaneladio/peru-geojson (MPL-2.0). Colores por cuantiles (ranking), no proporcionales.";
+    el.textContent = s;
+  }
 
   function drawMap() {
     if (!store.geo) return;
@@ -276,6 +326,7 @@
         layer.on("mouseout", () => geoLayer.resetStyle(layer));
       }
     }).addTo(map);
+    updateMapSource();
   }
   function updateLegend() {
     const el = document.getElementById("map-legend"); if (!el) return;
@@ -343,11 +394,11 @@
     if (!studies || !studies.data) { tbody.innerHTML = '<tr><td colspan="5" class="loading">Sin estudios.</td></tr>'; return; }
     tbody.innerHTML = studies.data.map(s => `
       <tr>
-        <td><b>${s.title}</b><br><span style="color:var(--text-soft);font-size:.78rem">${s.authors} · ${s.journal}</span></td>
-        <td class="num">${s.year || "—"}</td>
-        <td style="font-size:.8rem">${s.population}<br><span style="color:var(--text-soft)">${s.region}</span></td>
-        <td style="font-size:.82rem">${s.findings}</td>
-        <td><a href="${s.url}" target="_blank" rel="noopener">↗</a></td>
+        <td><b>${esc(s.title)}</b><br><span style="color:var(--text-soft);font-size:.78rem">${esc(s.authors)} · ${esc(s.journal)}</span></td>
+        <td class="num">${esc(s.year || "—")}</td>
+        <td style="font-size:.8rem">${esc(s.population)}<br><span style="color:var(--text-soft)">${esc(s.region)}</span></td>
+        <td style="font-size:.82rem">${esc(s.findings)}</td>
+        <td><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">↗</a></td>
       </tr>`).join("");
   }
 
@@ -387,8 +438,9 @@
 
   const NEWS_PALETTE = ["#f97316", "#2f80c4", "#12a594", "#8b5cf6", "#d4553a", "#0e8a7d"];
   function newsThumb(n, i, cls) {
-    if (n.image) return `<div class="${cls}" style="background-image:url('${n.image}')"></div>`;
-    const initials = (n.media || "?").replace(/[^A-Za-zÁÉÍÓÚñ0-9 ]/g, "").split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+    const img = safeImg(n.image);
+    if (img) return `<div class="${cls}" style="background-image:url('${encodeURI(img)}')"></div>`;
+    const initials = esc((n.media || "?").replace(/[^A-Za-zÁÉÍÓÚñ0-9 ]/g, "").split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase());
     const color = NEWS_PALETTE[i % NEWS_PALETTE.length];
     return `<div class="${cls} ph" style="background:linear-gradient(135deg,${color},color-mix(in srgb,${color} 60%,#000))">${initials}</div>`;
   }
@@ -418,15 +470,15 @@
       });
     }
     if (ctxEl && world.global_context) {
-      ctxEl.innerHTML = world.global_context.map(g => `<div class="callout info" style="margin:8px 0"><span>🌍</span><span>${g.text} <a href="${g.url}" target="_blank" rel="noopener">↗</a></span></div>`).join("");
+      ctxEl.innerHTML = world.global_context.map(g => `<div class="callout info" style="margin:8px 0"><span>🌍</span><span>${esc(g.text)} <a href="${safeUrl(g.url)}" target="_blank" rel="noopener">↗</a></span></div>`).join("");
     }
     if (intlEl && world.news) {
       intlEl.innerHTML = "<h4 style='margin:14px 0 6px;font-size:.9rem'>Noticias internacionales</h4>" +
-        world.news.map((n, i) => `<a class="tk-item" style="width:auto" href="${n.url}" target="_blank" rel="noopener">
-          ${newsThumb(n, i, "tk-thumb")}
-          <div class="tk-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.country || ""}</div></div></a>`).join("");
+        world.news.map((n, i) => `<a class="rail-item" style="margin-bottom:8px" href="${safeUrl(n.url)}" target="_blank" rel="noopener">
+          ${newsThumb(n, i, "rail-thumb")}
+          <div class="rail-body"><div class="t">${esc(n.title)}</div><div class="m">${esc(n.media)} · ${esc(n.date)} · ${esc(n.country || "")}</div></div></a>`).join("");
     }
-    if (srcEl) srcEl.innerHTML = world.source ? `Fuente: ${world.source}` : "";
+    if (srcEl) srcEl.innerHTML = world.source ? "Fuente: " + esc(world.source) : "";
   }
 
   /* ---------- Libros ---------- */
@@ -437,10 +489,10 @@
     const card = (b) => `
       <div class="book">
         <div class="cover"></div>
-        <h4>${b.url ? `<a href="${b.url}" target="_blank" rel="noopener">${b.title}</a>` : b.title}</h4>
-        <div class="by">${b.authors || ""}${b.year ? " · " + b.year : ""}</div>
-        ${b.audience ? `<span class="aud">${b.audience}</span>` : ""}
-        <p>${b.note || ""}</p>
+        <h4>${b.url ? `<a href="${safeUrl(b.url)}" target="_blank" rel="noopener">${esc(b.title)}</a>` : esc(b.title)}</h4>
+        <div class="by">${esc(b.authors || "")}${b.year ? " · " + esc(b.year) : ""}</div>
+        ${b.audience ? `<span class="aud">${esc(b.audience)}</span>` : ""}
+        <p>${esc(b.note || "")}</p>
       </div>`;
     let html = books.data.map(card).join("");
     if (books.resources && books.resources.length) {
@@ -454,9 +506,9 @@
   function renderTicker(news) {
     const track = document.getElementById("rail-track");
     if (!track || !news || !news.data) return;
-    const card = (n, i) => `<a class="rail-item" href="${n.url}" target="_blank" rel="noopener">
+    const card = (n, i) => `<a class="rail-item" href="${safeUrl(n.url)}" target="_blank" rel="noopener">
         ${newsThumb(n, i, "rail-thumb")}
-        <div class="rail-body"><div class="t">${n.title}</div><div class="m">${n.media} · ${n.date} · ${n.department}</div></div></a>`;
+        <div class="rail-body"><div class="t">${esc(n.title)}</div><div class="m">${esc(n.media)} · ${esc(n.date)} · ${esc(n.department)}</div></div></a>`;
     const items = news.data.map(card).join("");
     // Duplicado para el bucle vertical continuo.
     track.innerHTML = items + items;
@@ -468,16 +520,18 @@
   function renderNews(news) {
     const el = document.getElementById("news-list");
     if (!news || !news.data) { el.innerHTML = '<div class="loading">Sin noticias.</div>'; return; }
-    el.innerHTML = news.data.map((n, i) => `
-      <a class="news-item" href="${n.url}" target="_blank" rel="noopener">
+    el.innerHTML = news.data.map((n, i) => {
+      const lv = /^[A-Z_]+$/.test(n.verification_level || "") ? n.verification_level : "REPORTADO";
+      return `
+      <a class="news-item" href="${safeUrl(n.url)}" target="_blank" rel="noopener">
         ${newsThumb(n, i, "news-thumb")}
         <div class="news-body">
-          <div class="meta"><span class="badge lv-${n.verification_level}">${n.verification_level.replace(/_/g, " ")}</span>
-            <span>${n.date}</span> · <span>${n.media}</span> · <span>${n.department}</span></div>
-          <h4>${n.title}</h4>
-          <p style="margin:0;font-size:.85rem;color:var(--text-muted)">${n.summary}</p>
+          <div class="meta"><span class="badge lv-${lv}">${esc(lv.replace(/_/g, " "))}</span>
+            <span>${esc(n.date)}</span> · <span>${esc(n.media)}</span> · <span>${esc(n.department)}</span></div>
+          <h4>${esc(n.title)}</h4>
+          <p style="margin:0;font-size:.85rem;color:var(--text-muted)">${esc(n.summary)}</p>
         </div>
-      </a>`).join("");
+      </a>`; }).join("");
   }
 
   /* ---------- Timeline ---------- */
@@ -485,9 +539,9 @@
     const el = document.getElementById("timeline");
     if (!leg || !leg.data) { el.innerHTML = '<li class="loading">Sin datos.</li>'; return; }
     el.innerHTML = leg.data.map(l => `
-      <li><span class="date">${l.date.slice(0, 4)}</span>
-        <div class="ev-title">${l.law}</div>
-        <div class="ev-desc">${l.description} <a href="${l.url}" target="_blank" rel="noopener">↗</a></div>
+      <li><span class="date">${esc(String(l.date).slice(0, 4))}</span>
+        <div class="ev-title">${esc(l.law)}</div>
+        <div class="ev-desc">${esc(l.description)} <a href="${safeUrl(l.url)}" target="_blank" rel="noopener">↗</a></div>
       </li>`).join("");
   }
 
@@ -522,10 +576,11 @@
   function renderSources(sources) {
     const tbody = document.querySelector("#sources-table tbody");
     if (!sources || !sources.data) { tbody.innerHTML = '<tr><td colspan="5" class="loading">Catálogo de fuentes en construcción.</td></tr>'; return; }
-    tbody.innerHTML = sources.data.map(s => `
-      <tr><td>${s.source_name}</td><td>${s.institution}</td><td>${s.data_period || "—"}</td>
-        <td><span class="badge b-${s.reliability_level}">${s.reliability_level}</span></td>
-        <td><a href="${s.url}" target="_blank" rel="noopener">↗</a></td></tr>`).join("");
+    tbody.innerHTML = sources.data.map(s => {
+      const rl = /^[ABCD]$/.test(s.reliability_level || "") ? s.reliability_level : "D";
+      return `<tr><td>${esc(s.source_name)}</td><td>${esc(s.institution)}</td><td>${esc(s.data_period || "—")}</td>
+        <td><span class="badge b-${rl}">${rl}</span></td>
+        <td><a href="${safeUrl(s.url)}" target="_blank" rel="noopener">↗</a></td></tr>`; }).join("");
   }
 
   /* ---------- Selectores de año ---------- */
