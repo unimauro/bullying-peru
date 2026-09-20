@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-19",
+  "retrieval_date": "2026-09-20",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,42 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-20",
+      "media": "Perú 21",
+      "title": "Actor Mario Cortijo revela que sufrió bullying en colegio de San Borja: \"Vengo a hablar como un sobreviviente\"",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOY2dDV1c2OVpSZHU3d3ZWZGhfdVJHTU5OWUJoQnVDQW9oTVE1T1JjRm9xMTQyekMxREhxQmJkMkJkcnRJUmVyYWtWRG9Mb000WktVUGkzMXR5bWhVMkpQdnRSTFRhWEVMdXlmdUdXSzVMWGxjUWFWcF9uU1gyeTJmLXZ5bUtKMUpuQUdiVHYzV0tHWExBT3ZMOVdQOGZpamUyZ0ViVWdBNE82MUVPQlV0VlA4ZV9EazBkY3o1dFdYZ0tzdw?oc=5",
+      "image": "assets/news/auto_676ecd62.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-20",
+      "media": "Infobae",
+      "title": "Mario Cortijo y su duro testimonio sobre el bullying tras caso en Liceo Naval: “Soy un sobreviviente de violencia física, psicológica y sexual”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNcWQ2dHdhNmlYWkVJWEhGQk0xS3JsOG0wQWtycVlhN2IzMWdvcDVUMURReW9PRjQ5MzRzR1NiSGdMNXV0RDk0TWhqeHpZVGxSUVlFa3FHV1M4OWFyV3NBQW9CVXdoc0h0T09GQ2RGWVNoejB5S216OXY4ZjRCcjdnWHNoWXAtOUdjWFF1NGpuRGI1Mkp1ajNDWGp6UlpQa1drSHczN2xRUklmQmNnVkNzUTZBNEJzcFFaZk5yX25mNkFYNXdBN0tDYUdjcl9vS1lVZEpQYlg3UEJxNHNKNThuSUZ1TW9mVlpvRnBGNGV30gGIAkFVX3lxTFBVV1kwZ2dINzY3MmpjZVNUbkIzbVNwUkRCckJLQWV3WU02SkxKYzN3NHlSam5lc1hDX3hDNFlCbnJYQXpCS3BpRTRSOXg4bndndzVCNG5uaUFEdGxKUHNwUlV2aVphZko2Tnp1ckNXSGtzbU51YlMxTEpRcm5MQ09vVERPVWM4M25XVi1XdWZyYUZZV0ZsYnNyUjNoc3B5dWRMaHFhNmpBMGpxMXIxSVNTVTFaUDRpQU1Sa2hjYlRlUVVWOGh3T0tBd3lFVlJXX1NaNmdJemtnNkNYMUFKSVVaSUN2NExPa2FLR2h2eGtiRTlpOHFyeGstSThhbEc1N1RiVzNBQzZIUA?oc=5",
+      "image": "assets/news/auto_74d2b189.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-20",
+      "media": "Infobae",
+      "title": "Marina Gold muestra pruebas de como sufría hostigamiento por alumnas del Liceo Naval Almirante Guise",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQWURhcXJjazJ0UEFGNmdLSkdVeGZWeHdYMlYyWXJ2eTMza2lTM0tYWkxQTk12emh2eGFSblpUUEtOcGtGTGFrVDFkdjdmMGtHWmtHMHhOMGRrWjJ2N1o5SV9FTGVHa19sTTRZR1N4YWk1SmJLc29kMThDSXcySTN4VFkyYzVGYVc4WTBuY2RqMm92YnFUNTkwbUl3VkRuTkZmcG5KQjhCVDBQUlpTWFg1Vk1mTXRkT3RUNklMRWRucE9sWUJOZUdGVC1CS0pELTRucGo4UHNDMXfSAfMBQVVfeXFMT1VjU0E2XzNTdFRmekdYeGZhNTdFNjNiVkZkdXk1T1RMdkJMT3VJelA4SHlOVE9DNC1kam05RXhlT1dOdG5jbHB6c2tMZVhaQWJYOXhYMWhXdkJ4WkFLRW9hMUxXMmp3Q18xeXNmU0tIeVpyaWF0N1NjQlNLdURYdlRCY1BwcDNsVUk5RUZGcUV1cUdGcm5KZ25NaHVvb3dsZmMzS0lxS3lVdzNVa3I2M2pwOEFvNldEOGo3alVGTUZiMXFfaGgxdFdCVjltY09va09KQW1ta1k4SVB2NnVnemNzM3JZY051dlpFdVVNQ3o5TjFV?oc=5",
+      "image": "assets/news/auto_0bf146fb.jpg",
+      "auto": true
+    },
     {
       "date": "2026-09-19",
       "media": "Perú 21",
@@ -94,40 +130,53 @@
       "auto": true
     },
     {
-      "date": "2026-09-18",
-      "media": "La República",
-      "title": "Víctima de presunta agresión sexual en Liceo Naval ya habría sufrido bullying previo",
-      "department": "Lima",
-      "topic": "violencia_escolar",
-      "summary": "Investigación periodística sobre un caso en el Liceo Naval (San Borja) que vincularía agresión sexual con hostigamiento previo.",
-      "verification_level": "INVESTIGACION_PERIODISTICA",
-      "url": "https://larepublica.pe/sociedad/2026/09/18/victima-de-presunta-agresion-sexual-ya-habria-sufrido-bullying-y-hostigamiento-antes-del-ataque-en-liceo-naval-1035936",
-      "image": "assets/news/n0.jpg"
-    },
-    {
-      "date": "2026-09-18",
-      "media": "La República",
-      "title": "Madres de colegio Liceo Naval tras presunta agresión sexual: “Es el reflejo de múltiples situaciones de bullying y discriminación”",
+      "date": "2026-09-19",
+      "media": "Infobae",
+      "title": "Milan también exige justicia: el escolar de 13 años que murió en manos de sus compañeros antes del caso Liceo Naval",
       "department": "Nacional",
       "topic": "violencia_escolar",
       "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOX1ZSdGdaTVNlWTJaNlloZlViRFZ4NjFQSFJMbHN5U0o3WnVHYTRNR0RQUTA4ZEZoLXhuTFZmVlQ0c1NieXdWbkZmWDZkaFVwQVpmYjk1RXVUVmp2aTUtbkR5c09iU25DOGVCVmc2aUZtRVdTRHlqb0E4NEUyUzRCVzdPbWVJT3R3WHdlaDdwVFJSdkxkaFBrSlkydUlaQnA0Mng5ODNCaWU3MEg5YjZoNXdmekd6bmQ1UzBNdC1yWmxJSEdxdHFBckMwRTVjcTI0VXJ2OVZ0dE9JbGhqNXlBaTU4aHVvVmFEUXcyWURfRVlGanJIOG9OcGhCaWVXV04xNjVOamZJU0bSAY4CQVVfeXFMTkNUSWZJeU83djM2cXpjbDRySE5ZUU9naUJfVGl2am1fdFVsWjBmenpCX1J0M1RrSktiazJ2ZkRWaHhGZGtFcnZ1U0JvVEp4MFI0X0VpSFJjU1dFUGlyQWQ2b3B6UEREWWd1b3FaSVhSdk03eTNJdmxaVXdwZTc2X01DbkVCNFM3dXQzQW1QZ19QaVJXZ0ZiUERDQWhLMy1LYjFON2VmMnFnbHo0UVZuaDRyeFBZR2tUcjdHUzY0aFNXMzZ4V2ZGQzRBOXh3TEdWWU5McllWSnprdFFxMG9KNnNuR1BtbExxaUlqdndiNlRXSWlncUt0SS1ObkRLbEc0WmI2TGI5X2lJNkhZOWln?oc=5",
-      "image": "assets/news/auto_8eedb461.jpg",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS2FlMWtod3Z6cEtzZjdDaHpRbmc4OTEwaU9EbjNJV0dQMGQ1UGlZb0J1TEY2ZEZQV3hOVGVIQ01YeDcwM3Jjek1ZZUNad28yamJlYkUzaEpwTVdJZmpwTGJEeDVHejh4TjYwY0gwRkNyTXZKWWdRSUREYTQ4Wi1tZU1fQVNldGF2bldyOFhWbHVkZVFpNTB4akdnRzdVZVFyeGx1N1FfU254bjNQMWZMbWp4aDBOMDMwcFlTV2NYNWtzbHFsLVpmN18zTk5XWjZkYnl2WHJxQnpOTnBPUU81NzgyUC1XRWlLZklF0gGGAkFVX3lxTFBGZ3IwcUdJd1ZhZzI5OUNYU1dWdFo4QjJpYmhNWC04RUpxYXpGTjJZYi02NEZuX003VHJRUDFXYWg0ZVBtNTVVS3JjMldpaFFweEkxLVNWa3gtQkxRYkJ6aDhMVXV0eGN0c3REcTJGTmZIblc1MVBLeTYyRHBVU01jUWlxZ0FHOWQwMF9RX1htVmt4THNFSFYxTlUtWE9tcUNQaklfTUhWSHRuMmtxTG1oNmdzZGFPZk9hUEkyYnlmb2ZlZXR4MEZ2U2wxV3lYU3FxUFQxZU1CdHhKMzZPTFBFbTZ5bllnVk9RSlAwX0J6cm4xRHpJQlB0ZE5oU0R3QmpRNEF6cEE?oc=5",
+      "image": "assets/news/auto_6669e8da.jpg",
       "auto": true
     },
     {
-      "date": "2026-09-18",
-      "media": "infobae.com",
-      "title": "Otra víctima, otro silencio: la violación en Punta Cana que el Liceo Naval Almirante Guise nunca resolvió",
+      "date": "2026-09-19",
+      "media": "Infobae",
+      "title": "Caso Liceo Naval: cronología de lo ocurrido y las acciones tomadas tras la denuncia",
       "department": "Nacional",
       "topic": "violencia_escolar",
       "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQMTZvRlhCQzNYbnE0azVPcDBza3E2dFhydm5DQ1EwYm5KX2cteTBNcFZvclBEZWNydlIxYk44SGpIVGwzMDZzLWJkSUxCM3lnanpVeUpkUEhJQk9OUmF3ZTU5NmdLWXhvMUl6YVFLNktzLTFHNE9mNDBrNUxhQ3oyQlBvaW9TOFZ2U3RtQkRjSTM2alI3SFc2V04tc0trQzFRNld6bk1pZl9CX1d4SDJsYTBzenh3OFRyNDdWTUtES1g4UU8wWGtnaUVzYkhwUV9xbW9RSHZ6VlpIR1J30gH3AUFVX3lxTFB2ek1wR3dTQ2F0MEFrOWNFc094REdXNm9vQ1Fla0ZEanowd3R0cS0wNU9WbVhWU3lITEtrU3VsRVR3YTI3Njd0VWJqaHhtR2tIX3N2SG52M1pTOEF1OVYtOHZLN0VxQ0ZJamE4Ym5EekpzOG9JcUVtc2JXVUdSSWFScFY4dWJNeVU1Uk1mVUJNa3NzaXRiak9mYzdhVGxpOXlSaW51RTd1cjBES0JZMldFS2VxREtlRi1qT3NjZWF1Wlhtb3F6Z2Q3YXpFdTlITnN4M3J6b2RoWFNUYUJRdU5WZ1daWnhDSVQ0LXV2SnUwOEVUZHZ1cjQ?oc=5",
-      "image": "assets/news/auto_bf6b7bc2.jpg",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMHZBQ2I1NFNXUkxLQlpZamgyZlFWXzcyb3otQkkza0QxZ0JISzVYZjVGUGFUcVl2V2xVWW5iM1pWeUJhU0RnTDlhYXltQUNBZFhTanVGMnlMQ3FlQVBkZHpSUnNwX3RrbHFWSjlqN0MyOFNlR3Nvb3JVYmpFR0hiZGNvb05Xa0xlTG4wU19CZ2FhLXRaeUViNDZjQXFuZldFWllmNDRfQTNsT1VocFlFOElJR2FjTFlwajRYNUZBZUzSAdsBQVVfeXFMT2pVeHpvTGJrcmZKX3hqODE2dWl2ZUpJUFpKQWJnQlZENDR0WktLMDRYc0dvVkNwUmU2WnVoMkhGcXRZZGx2MEY1NzVUT1ppOHlUNmJHQmlLcWdQbmtqZTNpd1BEeGJlVVZrcV85ejdlZTl5aFFHcm51Q0F1MjN1a1Q5R2RNRXZ1NHVERU8wRk1xOVFmRDdPSUc2OUhhNWtBZmxsM3ctSkN6bjcwZWFfcERKLTZSVnBSSkVUX3o5SUFQeXdjYnJja3YzYTlXRTBjbUdDOXhXUEo3dmpr?oc=5",
+      "image": "assets/news/auto_6ed6b99e.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "Infobae",
+      "title": "Marina Gold revela que sufrió bullying durante tres años en el Liceo Naval y usuarios señalan a Michelle Onetto",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZkJCVncxNmFxeGo0dWlLVzhtOHRLUGdzOEFkZ2FLYWEtckttTzYxbGNwQjdnU2pTREJlVFVGaThPa1JyM3NmSW5VUUwyVVJHb216LWM4Vl9INnVBN3JRZ0FxelJJcGZHNUctQ1ZHckdhUExGeWEwVXpTLTZxMDdiVDRCbzVRb09Ja05CVjh5em1RZFNmVHRZTnpKVDFPeXVtcjhNR040RkRkVjVIU1QzcXJyc0liV3ZPcWx0X0gtR2tiZ0t3YVRVNlhveWRpOERpa3U0LTlXM2RNbml4WGxFa3RPSjJJdnPSAYICQVVfeXFMTmJvWkxFY1YyU3lsTndHcW95VlhTTHdsdnE3Tk1lRFFzaGQzRVdUd1JSUkt5NmQ0ZjQ1TkRhWWhMYUhEWURETjBqZUdBWGJORGEzSjNOQU9qRjVPWDFJS2M3NEJEZDNuMFRHUFY5bUJxTFNLOUt3dDBUaGFxZ01OekZoemZSUUlmRHBuS3pIemFBTmc5bEhiTEMwbm9ISkFWdk92UXdHNmpKa0pWOHBmYmMwYURiUW5uMFp0ZlB6YUxQdjN5ZGVrczh2MmNKTmdITnRZYTRjWVVlcFNnT3Z5MmhMUlNteUlkdzMxRTl6WWVDYUpHcHl4c2hjMlZVVGhpaWJB?oc=5",
+      "image": "assets/news/auto_43241a43.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-19",
+      "media": "El Comercio Perú",
+      "title": "Un abandono sostenido",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1nNXVleFZKZm43VE1qU1R6RVo3TjNsYjVVMEU4a0pMWDBfckE5STBGcjZrMmRBOW5kZEY0WldzMWZoM1c3SkVPUWNNRUpkRlZoWmxiQnA2Mk9TR0c2dHBVbXNVbUJ4S3AtV0JiUTZMbnh3VUNOcGRqU1J30gGOAUFVX3lxTE1VUFNLRVNGTTl6cEFRd1hhdnVuN1lELXk3VkZ6bXBmelJMYWVRM1F4VFQ4MzFGdGJhX041VVJCSDZFb191TjRJOG02TXdYdGEwZzhLZlR2TjNSeXJSSnhnSXJlOHcwTFZvOVl5UkkxVk50dnNLazBPeC1lYnVHdnNvSVpaV0NwckpSN3pkS2c?oc=5",
+      "image": "assets/news/auto_7ff763f9.jpg",
       "auto": true
     }
   ],
-  "last_auto_update": "2026-09-19T14:12:22.746939+00:00"
+  "last_auto_update": "2026-09-20T14:32:08.077173+00:00"
 }
