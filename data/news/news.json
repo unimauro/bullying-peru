@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-20",
+  "retrieval_date": "2026-09-21",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,42 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-21",
+      "media": "Diario Correo",
+      "title": "Violencia escolar: Cada 30 minutos se reporta un caso",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa0FmLThjc01zNjJkNVVibWdrTnMyQVNfRDdabGh5b2FsTmF2d3gxTUZqeVhHWXlCWnY2SERUM2ZBVmd5S3ZwdXYySVBoZWdGWkRBT3paRnNpT3FQQk0tNE1uQkJxMFgwRXVHYVZ0UDVqOHl3cFRtcVVSOVFoMGxGWHhlbTBoclpOV3oteTQ4YTkzWVVEd2J3OXE2dE5oRDN5VWxaYWlxY3R1dTFfdGfSAa4BQVVfeXFMTmtBZi04Y3NNczYyZDVVYm1na05zMkFTX0Q3WmxoeW9hbE5hdnd4MU1GanlYR1l5Qlp2NkhEVDNmQVZneUt2cHV2MklQaGVnRlpEQU96WkZzaU9xUEJNLTRNbkJCcTBYMEV1R2FWdFA1ajh5d3BUbXFVUjlRaDBsRlh4ZW0waHJaTld6LXk0OGE5M1lVRHdidzlxNnROaEQzeVVsWmFpcWN0dXUxX3Rn?oc=5",
+      "image": "assets/news/auto_ad0bcd07.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-21",
+      "media": "elcomercio.pe",
+      "title": "Alfredo Bryce Echenique y el bullying escolar: el doloroso callejón oscuro de la niñez que nunca pudo olvidar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxOTTQwZlpYSDgzUkkwWDhUNlFKblFWMXpEWjZVaXdmVVlwMVNEeHJ4M294eGt4XzlNZTFuWGNMRzVhZklHVzk1VG4yT1JaQnhaenFNR25aRDQyRUF4Rmw3UGcydlUyQzU5MS00QVhaVVo4UnZUWmRfSE8tb2lqVVJvenR3WklDWkVNSVotYURxUVByRFF5enF0UGQxNFgzZGRITk5KV0tSMTUzV1hWajA1WGtqTEFscXhnTEl5M0hlQ3FFd2tOeVcwWFVydkVoQm5mQWNuTVlYSl96UXk0VWd5TDNpbUdoY3NpUFQ3RzBHOGdRTGFBQTMzdnFzTUNmVkdVT2liMVJTR1hONVNFcHZCS09vV242ZldvU0dXbDhCMDN5bGhQMDYxMNIBvAJBVV95cUxPZ3ZVc3dTc1pXNFlVX3VWenVFZkp1UVhsQnhDeDJscktfNEJMVnU0ZENXRklWN3BvMWkzN0d2bjM4QnVObC1wcFdDTFQ1WEd5emotZ3NtTHJlOTJxN0pLSzRYZGlMZVMtbGp4cWJ1aGpPeU9ZMUFka1B5UzhGYTU0VFlhVzVWSFJ0ZFJzZlc5ZWVuMzR3Znd0dzlIR1JaV1lFSkVONlVIUnlIMzIxMnJnX01sTi1vWkpiSm9uSEZ5N19PNjlJVDRTalpvY2lFTFEydzBfSEN0VkdTM1lUWmZtSXNHMzF2TXJRNS04a1R0RG9VNnlkc05IeHk1MUFVUUVWQTdLdzRGTkNYU1A0QU83YUNCMVBmRVEyTHVsdllLclkwR01EZmxkcXV2OUJvV01MbDRiSUVjX0tZNTU4?oc=5",
+      "image": "assets/news/auto_ebcce990.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-21",
+      "media": "La República",
+      "title": "Un antecedente al caso Liceo Naval: Milan, el escolar de 13 años que fue víctima de bullying y murió a manos de sus compañeros de clase en Huancayo",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPZlhqNG1SQ1VjajNKaTExSFFJakpuOFFYOXotVU10NnM1U1hnTGk3RVFDN3hGWW14c0RzOW9mcHJMQUFkeEx1dWcwTm9fOEllQTRRMkstTktjVWwyWXY1MTVpTlBYeEFRWGJmOVZTOUhVT0h6VnFXNGNoUVd5U20zUnhMT2tPSEVzYTNiblN3NEpwLTdGLWZHLU01TG5QS3N1MDFGN2U0eDRITzE2YmdNMEI2OHpmeXU0X05EZ0tzeFM2VDFIMFZROFpTWXRIM2dOQnVVT0RGdUxWRVo1djI4MTNHSVpyMlc0UXc2c0U5c1RvRUFTYlNwa2xmSDF1MmhvWTE5azQxTE95Wk9BZE9KNlRST1JoUlJQUWdsOU45azZNQdIBpwJBVV95cUxOMVBrWmtsWnBtSHE2ZDRIdk9TN1FXbEEzN3NZS2JXQ19qM1FXSkRSLXdlazJ4UHZteUlhRHR5S1FGLWNRcXlVTE5CY1JlMlhZTnJhaXJjVmQzX3FSbW44VVBSb2gtcy1Zc2hvdExpcVA0b3pWMS1VVkc5NzhUVHhWQXFlMDRqbzNGOGN1RzJyN0ZtQ19mSDFyb1NFTnV4OW1HdUF2c2JZWVg5YU8wSjBtQnNlcTRieFZyOFNtVllpaVhjdWpWdEhTUlBiTEZPS2lEeTdUVXFJYWFtNTlXdjRJaUFUSGh0VXFRcGNiM1BqTTNYa0RxTEREc1Q2Vi1ORkxzcFB0N0YyeVBJR2pmbTM5Rmk4Z3dmQVdyeW51WDRFbWdYbGJ6Vl8w?oc=5",
+      "image": "assets/news/auto_09781348.jpg",
+      "auto": true
+    },
     {
       "date": "2026-09-20",
       "media": "Perú 21",
@@ -43,6 +79,42 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQWURhcXJjazJ0UEFGNmdLSkdVeGZWeHdYMlYyWXJ2eTMza2lTM0tYWkxQTk12emh2eGFSblpUUEtOcGtGTGFrVDFkdjdmMGtHWmtHMHhOMGRrWjJ2N1o5SV9FTGVHa19sTTRZR1N4YWk1SmJLc29kMThDSXcySTN4VFkyYzVGYVc4WTBuY2RqMm92YnFUNTkwbUl3VkRuTkZmcG5KQjhCVDBQUlpTWFg1Vk1mTXRkT3RUNklMRWRucE9sWUJOZUdGVC1CS0pELTRucGo4UHNDMXfSAfMBQVVfeXFMT1VjU0E2XzNTdFRmekdYeGZhNTdFNjNiVkZkdXk1T1RMdkJMT3VJelA4SHlOVE9DNC1kam05RXhlT1dOdG5jbHB6c2tMZVhaQWJYOXhYMWhXdkJ4WkFLRW9hMUxXMmp3Q18xeXNmU0tIeVpyaWF0N1NjQlNLdURYdlRCY1BwcDNsVUk5RUZGcUV1cUdGcm5KZ25NaHVvb3dsZmMzS0lxS3lVdzNVa3I2M2pwOEFvNldEOGo3alVGTUZiMXFfaGgxdFdCVjltY09va09KQW1ta1k4SVB2NnVnemNzM3JZY051dlpFdVVNQ3o5TjFV?oc=5",
       "image": "assets/news/auto_0bf146fb.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-20",
+      "media": "La República",
+      "title": "Violencia sexual en colegios del Perú: más de 2.000 reportes en apenas ocho meses expone que caso Liceo Naval no es aislado",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPOE9vT2taYUtZbTdVN0tRd3VDWlBEckg0SjRXNkp6R3ROZUw4U0lNeUlyd3hhY3Bqd05YOElHTkNVV0xMYUp5WlVhMjR5SHBBazM1NHJxNzRCNHlrMUduU0tXRVlHV1hEVUFZUDhpdU55OWdURTcxVHNMR0lsdDFfdVl1VlJzU1R5R3Ftek9pRldMTlBEQjVmY2JuTW4tZ2NSYXBiQzV0WmVBOUFVeF80dFRtdGU0N01hbFdDWUZiblQzLTBQbVBvZThMYklFSUhobWF6Um5LdG9aNE9Tcm1PdHlxYm4wYUtLZUR6N1hXcVV6eVB1SE51bldrQmlHRjZI0gGGAkFVX3lxTFAzdzhxVmtSZGxHbXdpckZhbkktSkRCeGMta2RMTWRXc3pKRUZzdTBzTHd3QlQwZ3lwM25ZcFAtWVY1eE9kLVJxSkdoaEwtQlJaZmE0S0NVcW1FcDRFcDYtZ3R5U2RSLVZ6bk5JX2tETUtFbjJkY1pVdndvM0dYSkVPWHMwanVhcXhfRjhQODN4TS1wYlU2bXlzRVlmS3BnNHdvSWdCdkVLTGNjdS1Fcm1DRXpjNmFiME5fcjRvZE1GMmRvcmMzOEpnd1lyVVAweHV1TF9VTWJOUjZQZVozVWhqandFT1lRcF9DOHQtbFBKa3JWdDU4SEZ4d0hNZGFIVDdld1hlNmc?oc=5",
+      "image": "assets/news/auto_a2809de1.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-20",
+      "media": "Perú 21",
+      "title": "Liceo Naval: La historia previa a la agresión en manada",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQS1UxOHp2Y3ZDR0V2NGtub0NrVHpDeWlETlVUakRaWk5RSDNHa1lRcmtBUVo0MlY5bnJRODN4eXZpOGxDZmdITGx5aF9kMTgyQ1M4bFlLYkhpd1psVjlXWTRNb1dKSlJZc3RBaGV5MjJvTlRkS0JBMWVaY1JkeHR6c0N1VDF5RnZpRElqaGotTU9XNmRDQ3NDaklYZVJWdEE?oc=5",
+      "image": "assets/news/auto_d029dd08.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-20",
+      "media": "Infobae",
+      "title": "Caso Liceo Naval: Profesores en el bus donde se cometió la agresión sexual aún no son identificados por el colegio, según abogado",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNTVExS2dWTDYza3l1TjMwRkF4MlZjNEtkT2xybE5ncEVQZ3JxQjJfT3l0ZXhVMFR5ZWdtRjhweUM2Tk9GRExTNzA4Z19ieHllQjI4UFk2NkpRU0NLQ0JNbnM3bENWZ29Hd3VOMjh6UjJQclR0UkpWb3dQRUo5WHVORmt3TGVTaHdxbG5jQmtTME1rcnp3dmNvczFidU5NODRNOFg3QWdyN01QdThLOVhtQjY1OC0teldmTEp6UTNta01hYy1LMjZKMEdUMDctQTgzdlZ6Z0NZYzBRdTZvQU5hYTNUb3BMR2V3TlRDemNaMGRBZ2hwdVVtS214b3PSAZcCQVVfeXFMT01MNVlHWlNVM0g3bDd5Z1ZZRlFLLWFodl9ZdU1KVGFQcFdkR0lIMHhVVTBWcFFHWFlPdE5OdnNYVUFWQ3UycXJRX3RiWWZyanUwb2pQNEQzR3dacmJWUF9KNTIwNmNCdkJpZUplYkNwUC1PUTlzM0RuRDlkMmpnQWREZHZoaUd6X1JzcEFKdFQ1WnBGSEo1Vkp6QUszSDZYOHFPWlUwRl81VzFLMzRJQWVHbV9XSXhvbnpoNnRZVEtQQnp5Ql96RjZod0w5Q1FvNlItd3ZBOU80YklENTJDUm43UDdTS01IZHRKQzQ4Q2dPalpYNHVsX2V3cGtsbkhLS21MVFpTRnB4VjdUMUhJY29MSTNXTkFr?oc=5",
+      "image": "assets/news/auto_91db8fcf.jpg",
       "auto": true
     },
     {
@@ -104,79 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOUnNOcGVlNExSWW9CVjQ2UndteDZsTG4xTGM0WkRweGYxS3NOcnNmT0pVQmpkYlptc0kzLUplRzRMSFhvOUx3YjhTbGFuY29sLWp2VkJaNWcwRWNaWGZZbVh3WVVUbkdNbmhVUUYyM2toZVRGQjdMZGxjU3ZvNlY5MlozVDhBTFlZeG9qX0pSZlRYQ0Zzc1AzZERHTXJCYWVWYmRPblk5VjRVb2xLVmJsWnlENEMzSFFsWHZFdThIY0hQTUhUa1YwbWJURmlVdWM3ak8yNWttZmhTQzhpa0ZLeG92VUFxMVBzc01KZXVNUjlHbFBlMkY2ZWFVb1ZYME93bXdhN2NBSjbSAaMCQVVfeXFMUGE2TlBTX0RzcHFiRTlNM3NsMV9VcHh1ek1SMkV5bGlpQUI5czhpcm5ZWktVRzVSSE9oM1c5OXRrV3lpRVlvT09SUUJuQ0M2eExQa1U1WlFzVDNtcjh4UVZpa0NGVVlWNEhIUF9kWTFRRHFBVm9oeU45Y3lJRG10aF9qUnJDZzNMYVIwc2VqRnB4T3pDNzQxRjhTMFBZOFpfOTR0cW5WOFM4Z0tBc1B1WG05ek4zOTNjRzcyU0RGM3VjMFBsNDBFMjNjMFk2NEE0VTUza0h5SnU2azVTd0taaGpuSURueGtjMVo5dmFscmdaamFxMjh0N1VNNXJGa2cwdnhBQ1gtMW9iU0h2N3ZFNGhMdWx5UHZINVUtUU5SbTYxSzRV?oc=5",
       "image": "assets/news/auto_465a9f39.jpg",
       "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "infobae.com",
-      "title": "Los seis adolescentes del caso Liceo Naval en ‘Maranguita’: ¿qué es el centro donde pasarán 120 días y cómo funciona?",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOTGl5VnZkUmRlWWk4MVZ2U2N2Vjd0b3Nmb2JnOEQyWmY1c2wxWFYxaVdKRnZGNkxpMnVXVTFpaEtGVy1mZUw1ZERIb2syRVZxeTJWaEVyeERlSjFVdHMyUllSVTlvR0NsX1NXOVI1WU95S3lLbXdOVm50ajZtUjBac3Z3UnA4b1ZBWm1lVVl1VFhWMVJFOTZjYXUtcno2YkdvNzVHeEpxT3lWMnJuc21OdmhsbGxYV1lmVExhUGF2SzA2ZG5HVFNGNTFNZXBVQ0FFeUQtZHpuTmZCSm1aZE51akE3Z05ZeUFLOWZmSlJ30gGIAkFVX3lxTE9XcGt0VkpzUFQ1RkplTkdiTU9wZzlYVmtoeUlJSXhpWkwxNDd1eXZmZE5rM2xVSDNDakkwQkhyNldMNDNkY0c4blluVk91bFFKTFA5S2RjTVZuWlRHclo3WWJmLWNhZi01OGV0Qlc0UGNMS013TE4xd2RzaU96a0hIYVRjR3Rmbkx0MjE3b01Xc2FRcGxJMXR3M2RoZFVsdXNDZjdDRWJVc2FZVThCMmNXTUxUVkhJUjRLY3VzcGttXzZQdENKMFlpbUFWYk9pTVZKREdwSGR0aEp2ZHVtMXV2X1B0Rk1Yck56MGlWeEZaZ3FRM2tBVGhNSTBQZE53WmhWc2pBN0ZCRg?oc=5",
-      "image": "assets/news/auto_a5e5dc8d.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "Perú 21",
-      "title": "¡INDIGNANTE! Escolar fue golpeado por un compañero durante un ensayo de danza (VIDEO)",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxObVhfZUhNSW0zTzYyNDI4WlRCOGJYempRM3VZOVU5c195YTNFRVV5aVNPTnFQU3A5UzI3X3dqVVp0Qnp1WnJPcFBuZElQeWwwSE9pTFF3Q1dfcHVvUUROWXJTa24wWTZEX2NYT3dYSFU5cW9WWHF6d3pEQ2ZZUDlMVDloSnpSSnJMV21oYXI1dnZtakMzN2QwLWo4UE9Mdw?oc=5",
-      "image": "assets/news/auto_d239c67a.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "Infobae",
-      "title": "Milan también exige justicia: el escolar de 13 años que murió en manos de sus compañeros antes del caso Liceo Naval",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNS2FlMWtod3Z6cEtzZjdDaHpRbmc4OTEwaU9EbjNJV0dQMGQ1UGlZb0J1TEY2ZEZQV3hOVGVIQ01YeDcwM3Jjek1ZZUNad28yamJlYkUzaEpwTVdJZmpwTGJEeDVHejh4TjYwY0gwRkNyTXZKWWdRSUREYTQ4Wi1tZU1fQVNldGF2bldyOFhWbHVkZVFpNTB4akdnRzdVZVFyeGx1N1FfU254bjNQMWZMbWp4aDBOMDMwcFlTV2NYNWtzbHFsLVpmN18zTk5XWjZkYnl2WHJxQnpOTnBPUU81NzgyUC1XRWlLZklF0gGGAkFVX3lxTFBGZ3IwcUdJd1ZhZzI5OUNYU1dWdFo4QjJpYmhNWC04RUpxYXpGTjJZYi02NEZuX003VHJRUDFXYWg0ZVBtNTVVS3JjMldpaFFweEkxLVNWa3gtQkxRYkJ6aDhMVXV0eGN0c3REcTJGTmZIblc1MVBLeTYyRHBVU01jUWlxZ0FHOWQwMF9RX1htVmt4THNFSFYxTlUtWE9tcUNQaklfTUhWSHRuMmtxTG1oNmdzZGFPZk9hUEkyYnlmb2ZlZXR4MEZ2U2wxV3lYU3FxUFQxZU1CdHhKMzZPTFBFbTZ5bllnVk9RSlAwX0J6cm4xRHpJQlB0ZE5oU0R3QmpRNEF6cEE?oc=5",
-      "image": "assets/news/auto_6669e8da.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "Infobae",
-      "title": "Caso Liceo Naval: cronología de lo ocurrido y las acciones tomadas tras la denuncia",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMHZBQ2I1NFNXUkxLQlpZamgyZlFWXzcyb3otQkkza0QxZ0JISzVYZjVGUGFUcVl2V2xVWW5iM1pWeUJhU0RnTDlhYXltQUNBZFhTanVGMnlMQ3FlQVBkZHpSUnNwX3RrbHFWSjlqN0MyOFNlR3Nvb3JVYmpFR0hiZGNvb05Xa0xlTG4wU19CZ2FhLXRaeUViNDZjQXFuZldFWllmNDRfQTNsT1VocFlFOElJR2FjTFlwajRYNUZBZUzSAdsBQVVfeXFMT2pVeHpvTGJrcmZKX3hqODE2dWl2ZUpJUFpKQWJnQlZENDR0WktLMDRYc0dvVkNwUmU2WnVoMkhGcXRZZGx2MEY1NzVUT1ppOHlUNmJHQmlLcWdQbmtqZTNpd1BEeGJlVVZrcV85ejdlZTl5aFFHcm51Q0F1MjN1a1Q5R2RNRXZ1NHVERU8wRk1xOVFmRDdPSUc2OUhhNWtBZmxsM3ctSkN6bjcwZWFfcERKLTZSVnBSSkVUX3o5SUFQeXdjYnJja3YzYTlXRTBjbUdDOXhXUEo3dmpr?oc=5",
-      "image": "assets/news/auto_6ed6b99e.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "Infobae",
-      "title": "Marina Gold revela que sufrió bullying durante tres años en el Liceo Naval y usuarios señalan a Michelle Onetto",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNZkJCVncxNmFxeGo0dWlLVzhtOHRLUGdzOEFkZ2FLYWEtckttTzYxbGNwQjdnU2pTREJlVFVGaThPa1JyM3NmSW5VUUwyVVJHb216LWM4Vl9INnVBN3JRZ0FxelJJcGZHNUctQ1ZHckdhUExGeWEwVXpTLTZxMDdiVDRCbzVRb09Ja05CVjh5em1RZFNmVHRZTnpKVDFPeXVtcjhNR040RkRkVjVIU1QzcXJyc0liV3ZPcWx0X0gtR2tiZ0t3YVRVNlhveWRpOERpa3U0LTlXM2RNbml4WGxFa3RPSjJJdnPSAYICQVVfeXFMTmJvWkxFY1YyU3lsTndHcW95VlhTTHdsdnE3Tk1lRFFzaGQzRVdUd1JSUkt5NmQ0ZjQ1TkRhWWhMYUhEWURETjBqZUdBWGJORGEzSjNOQU9qRjVPWDFJS2M3NEJEZDNuMFRHUFY5bUJxTFNLOUt3dDBUaGFxZ01OekZoemZSUUlmRHBuS3pIemFBTmc5bEhiTEMwbm9ISkFWdk92UXdHNmpKa0pWOHBmYmMwYURiUW5uMFp0ZlB6YUxQdjN5ZGVrczh2MmNKTmdITnRZYTRjWVVlcFNnT3Z5MmhMUlNteUlkdzMxRTl6WWVDYUpHcHl4c2hjMlZVVGhpaWJB?oc=5",
-      "image": "assets/news/auto_43241a43.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "El Comercio Perú",
-      "title": "Un abandono sostenido",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1nNXVleFZKZm43VE1qU1R6RVo3TjNsYjVVMEU4a0pMWDBfckE5STBGcjZrMmRBOW5kZEY0WldzMWZoM1c3SkVPUWNNRUpkRlZoWmxiQnA2Mk9TR0c2dHBVbXNVbUJ4S3AtV0JiUTZMbnh3VUNOcGRqU1J30gGOAUFVX3lxTE1VUFNLRVNGTTl6cEFRd1hhdnVuN1lELXk3VkZ6bXBmelJMYWVRM1F4VFQ4MzFGdGJhX041VVJCSDZFb191TjRJOG02TXdYdGEwZzhLZlR2TjNSeXJSSnhnSXJlOHcwTFZvOVl5UkkxVk50dnNLazBPeC1lYnVHdnNvSVpaV0NwckpSN3pkS2c?oc=5",
-      "image": "assets/news/auto_7ff763f9.jpg",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-09-20T14:32:08.077173+00:00"
+  "last_auto_update": "2026-09-21T16:48:22.187940+00:00"
 }
