@@ -6,12 +6,19 @@ Registro **explícito** de lo que no existe, no se encontró o no es comparable.
 aquí es parte del rigor: el observatorio prefiere declarar un vacío antes que rellenarlo
 con una estimación disfrazada de dato oficial.
 
-## Resuelto con el Boletín oficial "SíseVe en cifras" (fuente A)
+## Resuelto (actualizado 2026-09-22)
 
 - ✅ **Serie 2013–2022** de violencia, **bullying y ciberbullying** por año: OFICIAL (Boletín SíseVe).
 - ✅ **2020 y 2021**: cifras oficiales (756 y 768) — caída por cierre de escuelas.
 - ✅ **Bullying 2013 = 53**: confirmado oficialmente.
 - ✅ **26 departamentos de 2022**: oficiales y completos (mapa por defecto en 2022).
+- ✅ **2024 y 2025**: oficiales del **tablero SíseVe** (19,297 y 19,531), no prensa.
+- ✅ **Datos MENSUALES 2024–2026**: del tablero oficial (sección estacionalidad).
+- ✅ **Colegios de Región Lima** (20, 2022–2026): SíseVe/DRELM vía transparencia (prensa).
+- ✅ **Crecimiento por tipo 2026** (sexual +35.4%, física +16.5%, psicológica +15.3%).
+
+Pendiente principal (ver ROADMAP): colegios de **otras regiones** vía pedido de transparencia
+Ley 27806 a MINEDU; confirmar 2023; tipología/nivel/género por año; UGEL con cifras.
 
 ## Datos buscados y no hallados
 

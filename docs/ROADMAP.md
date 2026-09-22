@@ -1,117 +1,90 @@
-# ROADMAP & BACKLOG — Observatorio Nacional del Bullying
+# ROADMAP, BACKLOG & MEJORAS — Observatorio Nacional del Bullying
 
-Última revisión: 2026-09-18 · Estado: **v1.0 desplegado y funcional** en
-https://unimauro.github.io/bullying-peru/
+Última actualización: 2026-09-22 · Estado: **v2 en producción** en
+https://unimauro.github.io/bullying-peru/ · Repo: github.com/unimauro/bullying-peru
 
-Validado headless (Playwright): 5/5 gráficos pintados, mapa con 28 polígonos y tiles,
-0 errores de consola.
-
----
-
-## Dónde estamos (v1.0)
-
-✅ Fase 1 (investigación de fuentes) completa · ✅ Dashboard estático · ✅ Mapa · ✅ Serie
-histórica · ✅ Territorio (absoluto vs tasa) · ✅ Prevalencia (ENARES + SSES) · ✅ Comparación
-de fuentes · ✅ Investigación académica · ✅ Noticias · ✅ Políticas · ✅ Explorador + CSV ·
-✅ Metodología/Fuentes/Limitaciones · ✅ Chatbot (gateway + fallback local).
-
-**Límite de datos reconocido:** SíseVe no tiene API abierta; las cifras 2019–2025 son de
-prensa (nivel B) y el desglose departamental es parcial. La vía para subir a fuente A (exacta)
-es el scraper headless de `/Web/App/MapaDetalle` (ya escrito, sin ejecutar).
+Validado en cada cambio con Playwright headless (desktop + móvil, 0 errores de consola).
 
 ---
 
-## Roadmap por fases
+## ✅ Lo que YA está hecho
 
-### Fase 2 — Datos de fuente A (rigor máximo)  ·  prioridad ALTA
-- [ ] Ejecutar `scripts/scrape_siseve.py --harvest` (Playwright) 2013→2026 × 26 regiones.
-- [ ] `clean_data.py`: parsear el HTML cosechado → reemplazar cifras B por A en
-      `timeseries.json` y `by_department.json`, con `reliability: "A"`.
-- [ ] Completar los 26 departamentos por año (hoy el mapa tiene cobertura parcial).
-- [ ] Serie de **ciberbullying** ("por Internet") por año, si el detalle la expone.
-- [ ] Desglose **departamento × tipo de violencia** (física/psicológica/sexual/…).
-- [ ] Cifras oficiales 2020/2021 (hoy `null`) si el portal las devuelve.
+### Datos (fuente A oficial salvo lo marcado)
+- **Serie SíseVe 2013–2026**: 2013–2022 Boletín "SíseVe en cifras" (oficial); **2024–2026 del
+  tablero oficial SíseVe** (leído de los gráficos Chart.js que el portal muestra); solo **2023**
+  es prensa (sombreado). Bullying y ciberbullying por año (2013–2022).
+- **Mensual/estacionalidad** 2024/2025/2026 (tablero oficial; sumas verifican).
+- **26 departamentos 2022** (oficial, completo) + 2024/2026 (prensa, parcial).
+- **Matrícula INEI 2024** (denominador de tasas).
+- **ENARES 2019** y **SSES 2023** (exposición medida).
+- **Perfil**: tipología/nivel/gestión/área (2022) + **crecimiento por tipo 2026** (sexual +35.4%).
+- **En el mundo**: 25 países PISA 2018 + contexto global + noticias internacionales.
+- **Colegios (Región Lima)**: 20 colegios/agrupaciones 2022–ago 2026 con reportes por año,
+  sedes, total y **casos/sede** (SíseVe/DRELM vía transparencia; difundido por ATV/El Comercio/
+  La República). Tabla ordenable por total o por sede.
+- **Libros** (10 + 3 recursos), **normativa**, **noticias** (con auto-update diario filtrado).
 
-### Fase 3 — Profundidad analítica  ·  prioridad MEDIA
-- [ ] **Índice de calidad/cobertura por región** (IIEE afiliadas, propensión a reportar) —
-      para advertir que más reportes ≠ más bullying.
-- [ ] Drill-down **Departamento → Provincia → Distrito** (si MapaDetalle lo permite).
-- [ ] **Análisis temporal mensual** y estacionalidad (meses con más reportes).
-- [ ] **Perfil de víctimas** (sexo, nivel, área, gestión) y **de agresores** (solo variables con dato).
-- [ ] **Urbano vs rural** y **público vs privado** con tasas normalizadas.
-- [ ] Sección **"Hallazgos automáticos"** (texto descriptivo, sin causalidad).
-- [ ] **Detección de cambios/anomalías** con "posibles explicaciones" (nunca hipótesis como hecho).
+### Producto / UX
+- **Sidebar** dashboard (drawer en móvil), tema **claro cálido peruano**, responsive sin overflow.
+- **Hero** con arte SVG + **rail de noticias vertical animado** (fotos reales og:image).
+- **Mapa** coroplético multicolor (cuantiles) con leyenda de rangos; GeoJSON vendorizado local.
+- **Barra de ayuda** superior (SíseVe, Línea 100, Chat 100, Denunciar).
+- **"Para las familias"** (señales, pasos, canales oficiales verificados).
+- **Chatbot IA "Pregúntale al Observatorio"** en producción vía gateway ai.tunky.net
+  (token público acotado por Origin), con guardarraíles + citación + fallback local.
+- **Yape/Plin 940584307 + PayPal** en el footer.
+- **Google Analytics** (G-YD3GKLZX0T), **favicon + Open Graph** (imagen 1200×630).
+- Gráficos ECharts estilizados (degradados, descarga PNG).
 
-### Fase 4 — Producto y experiencia  ·  prioridad MEDIA
-- [ ] **Chatbot IA en producción**: token del gateway `ai.tunky.net` (pedir a Carlos) en
-      `src/js/config.js`; verificar allowlist de Origin `unimauro.github.io`.
-- [ ] Páginas dedicadas `/metodologia` y `/fuentes` (hoy son secciones).
-- [ ] **Exportación por visualización**: PNG (toolbox de ECharts) y PDF; "descargar dataset".
-- [ ] **Accesibilidad WCAG**: contraste AA, navegación por teclado, `aria-label`, no depender
-      solo del color, foco visible.
-- [ ] Toggle de tema claro/oscuro manual (hoy sigue el sistema).
-- [ ] Meta/OG tags + favicon + og:image para compartir.
+### Rigor / seguridad / accesibilidad
+- Revisión **adversarial** (15 hallazgos) resuelta.
+- **Seguridad**: escape XSS de todo texto de JSON + validación de imágenes/URLs (crítico por el
+  cron que auto-publica noticias externas).
+- **A11y**: contraste ~AA, `:focus-visible`, `aria-hidden` en iconos, `aria-pressed` en toggles.
+- Distinción **bullying / ciberbullying / violencia escolar** y **registro (SíseVe) ≠ exposición
+  (encuestas)** en todo el sitio. Nada de rankings de "peores".
 
-### Fase 5 — Automatización y confianza  ·  prioridad BAJA
-- [ ] **GitHub Actions**: refresco periódico de noticias y datos; `last_updated_at` por fuente.
-- [ ] `data_quality.py` → `data_quality_report.html` (negativos, duplicados, %>100, totales≠subtotales).
-- [ ] Tests (validación de esquema de cada JSON, rangos, UBIGEO válidos).
-- [ ] Documentar cómo reproducir todo el pipeline (README "¿Cómo construimos estos datos?").
+### Infra
+- **Cron diario** (GitHub Actions `update-news.yml` + `scripts/update_news.py`): Google News RSS,
+  **filtrado por medios confiables**, con auto-commit. Funcionando.
+- Docs: SOURCE_CATALOG, METHODOLOGY, DATA_DICTIONARY, DATA_GAPS, ARCHITECTURE, este ROADMAP.
+- Scrapers documentados: `scrape_siseve.py` (método legítimo: leer los gráficos Chart.js del
+  tablero; NO descifrar AES ni resolver CAPTCHA; con moderación).
 
 ---
 
-## Backlog priorizado
+## 🔜 BACKLOG (prioridad)
 
-| # | Prioridad | Tipo | Ítem |
-|---|---|---|---|
-| B1 | **P0** | bug/UX | KPI de **bullying** desaparece si el último año (2026) no tiene valor; mostrar el último dato disponible con su año (2022: 2,498). |
-| B2 | **P0** | datos | Correr scraper SíseVe → subir 2019–2025 de nivel B a **A**. |
-| B3 | P1 | UX/mapa | Lima: el polígono usa solo "Lima Metropolitana"; unir con "Región Lima" o mostrar ambos en el tooltip. |
-| B4 | P1 | feature | Índice de calidad/cobertura por región. |
-| B5 | P1 | feature | Export PNG/PDF por gráfico + "descargar dataset de esta vista". |
-| B6 | P1 | producto | Token del chatbot en producción. |
-| B7 | P2 | a11y | Auditoría WCAG y correcciones. |
-| B8 | P2 | feature | Drill-down provincia/distrito. |
-| B9 | P2 | feature | Serie mensual y estacionalidad. |
-| B10 | P2 | infra | GitHub Actions de actualización + data_quality_report. |
+| # | Prioridad | Ítem |
+|---|---|---|
+| B1 | **P0** | **Pedido de transparencia (Ley 27806) a MINEDU** por reportes SíseVe por institución educativa 2022–2026 de TODAS las regiones (no solo Lima) → dato oficial completo por colegio. Redactar carta, presentar en Mesa de Partes Virtual, cargar el Excel al llegar. |
+| B2 | P1 | Confirmar 2023 (único año de prensa) con el tablero/boletín oficial. |
+| B3 | P1 | Scrapear del tablero (método legítimo, con moderación) **tipología/nivel/gestión/género por AÑO** (2024–2026) para actualizar el Perfil más allá del boletín 2022. |
+| B4 | P1 | **UGEL con cifras reales** (Lima Cercado, San Borja, Rímac…): el drill Región→UGEL necesita interacción del mapa; automatizar con Playwright. |
+| B5 | P2 | Colegios de **otras regiones** (cuando llegue B1) + buscador por nombre de colegio. |
+| B6 | P2 | Drill-down del mapa Departamento → Provincia/Distrito (si aparece el dato). |
+| B7 | P2 | Perfil de víctimas/agresores (sexo, nivel) y urbano/rural con tasas, si hay dato por año. |
+| B8 | P3 | Exportación PNG/PDF por sección + "descargar dataset de esta vista". |
+| B9 | P3 | `data_quality_report.html` + tests de esquema JSON en CI. |
+| B10 | P3 | Ampliar la allowlist de medios del cron si se desea (Willax, apnoticias, etc.). |
 
-## Solicitudes recientes (estado)
+---
 
-| Pedido | Estado |
-|---|---|
-| Google Analytics (gtag G-YD3GKLZX0T) | ✅ hecho |
-| Favicon + Open Graph (imagen 1200×630) | ✅ hecho |
-| Gráficos más estilizados (degradados, PNG) | ✅ hecho |
-| Más datos reales (Perfil: tipología/nivel/gestión/área) | ✅ hecho |
-| Enfoque a familias + arte | ✅ hecho |
-| Botón "Denunciar" (SíseVe) | ✅ hecho |
-| Marquee vertical de casos | ✅ hecho (miniaturas por medio) |
-| Footer con Yape | ⏳ falta **número/QR de Yape** (dármelo) |
-| Colores anti-bullying | ✅ hecho |
-| Mapa (fallaba: API key CARTO) | ✅ corregido |
-| **Miniaturas reales de noticias (OG scraping)** | 🔜 requiere Action/CORS-proxy |
-| **Cron para auto-actualizar y contar casos** | 🔜 GitHub Actions (a implementar) |
-| **Más bases: ONG, ONU/UNESCO/UNICEF, colegios** | 🔶 parcial (UNESCO/UNICEF ya); sumar OCDE/PISA, Bullying Sin Fronteras, etc. |
-| Teléfono gratuito de SíseVe | ⛔ NO publicado: fuentes en conflicto (0800 77090 vs 0800 76 888); verificar en portal |
-| Sidebar / navegación móvil tipo dashboard | 🔜 pendiente (hoy nav superior scrollable) |
+## 💡 MEJORAS / ideas futuras
+- **PWA** (instalable, offline) para familias.
+- **Comparador** de dos regiones/colegios lado a lado.
+- **"Hallazgos automáticos"** en texto descriptivo (sin causalidad) a partir de los datos.
+- Página `/metodologia` y `/fuentes` dedicadas (hoy son secciones).
+- Traducción a **quechua/aymara** de la sección "Para las familias".
+- **Alertas** de nuevos casos relevantes (opt-in) o boletín.
+- Índice de **calidad/cobertura de reporte por región** (para reforzar "más reportes ≠ más violencia").
+- Miniaturas reales para TODAS las noticias del cron (hoy og:image best-effort).
 
-## Revisión adversarial (2026-09-18) — 15 hallazgos, todos atendidos
+---
 
-**ALTA:** (1) tramo 2023–2026 de prensa ahora trazable con URL por año + sombreado; (2) KPI
-de prensa marcado "prensa · no oficial"; (3) **XSS del pipeline de noticias cerrado**
-(escape de todo texto JSON + validación de imágenes/URLs); (4) nota de fuente del mapa
-cambia por año (A/B/parcial/cobertura N/26); (5) ranking de tasa avisa "muestra incompleta".
-**MEDIA:** (6) serie sombrea el tramo B; (7) **bug de Lima corregido** (mapa suma Metro +
-Región Lima, coherente con la tabla); (8) tasa nacional usa el último año completo y oficial
-(2022); (9) contraste del texto de fuentes subido a ~AA; (10) etiqueta "oficial" derivada de
-reliability; (11) ENARES (violencia escolar) deslindada de SSES (acoso); (12) cifra MINSA
-corregida a su fuente. **BAJA:** (13) aria-hidden en iconos; (14) foco visible + aria-pressed;
-(15) GeoJSON vendorizado local (sin SPOF externo).
-
-Verificado por el revisor: aritmética interna cuadra (2022=12,099 = suma departamental;
-matrícula 9,332,063 = suma de 26 filas); reduced-motion, rel=noopener, deslinde PISA/SíseVe
-y chatbot con textContent ya estaban bien.
-
-## Quick wins (bajo esfuerzo, alto impacto)
-- B1 (KPI bullying con último dato) · B3 (tooltip Lima) · favicon + OG tags · toolbox de
-  export PNG en ECharts (una línea por gráfico).
+## ⚠️ Límites conocidos (no son pendientes, son la realidad del dato)
+- SíseVe **público llega hasta UGEL**; el dato por colegio solo por transparencia.
+- **API abierta oficial**: no existe (endpoints cifrados AES + reCAPTCHA v3). No se descifra.
+- **Datos mensuales** oficiales: solo desde el tablero (ya incorporados 2024–2026).
+- **Teléfono gratuito de SíseVe**: NO publicado (fuentes en conflicto: 0800 77090 vs 76 888).
+- SíseVe registra **reportes de presuntos hechos**, no la prevalencia real.
