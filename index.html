@@ -237,31 +237,34 @@
 <section id="colegios">
   <div class="wrap">
     <h2><svg class="ic"><use href="#ic-map"/></svg> ¿Y por colegio?</h2>
-    <p class="lead">La pregunta más frecuente de las familias. Esto es lo que existe — y lo que no.</p>
-    <div class="callout"><span>⚠️</span><span><b>Más denuncias en un colegio NO significa que sea "peor".</b> Suele reflejar que ese colegio <b>reporta mejor</b>. Un colegio sin reportes puede estar ocultando casos. Por eso <b>no publicamos un ranking de colegios</b>: castigaría justo a los que sí denuncian.</span></div>
+    <p class="lead">La pregunta más frecuente de las familias. La prensa publicó un ranking (SíseVe, 2022–ago 2026) — pero léelo con cuidado: dice más sobre <b>tamaño</b> que sobre "peores colegios".</p>
+    <div class="callout"><span>⚠️</span><span><b>Leer este ranking al revés es un error grave.</b> Los que encabezan son las <b>cadenas privadas más grandes</b> (Innova: 48 sedes; Trilce: 22). Más sedes = más estudiantes = más reportes. Y <b>más denuncias suele significar que el colegio reporta mejor</b>, no que sea peor. Un colegio con cero reportes puede estar <b>ocultando</b> casos. Por eso mostramos también los reportes <b>por sede</b>.</span></div>
     <div class="grid-2">
       <div class="panel">
-        <h3>Lo que NO existe</h3>
-        <ul style="color:var(--text-muted);font-size:.9rem;padding-left:18px">
-          <li>MINEDU/SíseVe <b>no publica datos por institución educativa</b> (protección de datos). Su máximo detalle público es la <b>UGEL</b>, no el colegio.</li>
-          <li>No hay dataset abierto ni descargable por colegio en datosabiertos.gob.pe.</li>
-          <li>No hay serie por colegio ni a nivel nacional.</li>
-        </ul>
+        <h3>Cadenas con más reportes acumulados (2022–ago 2026)</h3>
+        <div class="table-scroll">
+          <table class="data" id="schools-table">
+            <thead><tr><th>Cadena</th><th class="num">Sedes</th><th class="num">Reportes</th><th class="num">Por sede</th></tr></thead>
+            <tbody><tr><td colspan="4" class="loading">Cargando…</td></tr></tbody>
+          </table>
+        </div>
+        <p class="source" id="schools-source"></p>
       </div>
       <div class="panel">
-        <h3>Lo que SÍ hay (prensa, parcial)</h3>
+        <h3>Lo que hay que saber</h3>
         <ul style="color:var(--text-muted);font-size:.9rem;padding-left:18px">
-          <li>En <b>2023</b>, más de <b>60 colegios privados de Lima</b> acumularon <b>10 o más</b> reportes de violencia entre estudiantes (datos DRELM). <span class="badge b-C">C</span></li>
+          <li>MINEDU/SíseVe <b>no publica un dataset abierto por colegio</b>; estos datos vienen de <b>prensa</b> vía transparencia. <span class="badge b-C">C</span></li>
+          <li>Al normalizar <b>por sede</b>, las diferencias se achican mucho.</li>
+          <li>Un ranking así puede empujar a colegios a <b>NO denunciar</b> para no aparecer — lo contrario a lo que queremos.</li>
           <li>UGEL con más reportes en Lima: <b>Lima Cercado, San Borja y Rímac</b>.</li>
-          <li>Cifras <b>solo de Lima, solo privados, solo 2023</b> — no comparables ni completas.</li>
         </ul>
-        <p class="source">Consulta los nombres en los reportajes:
-          <a href="https://www.infobae.com/peru/2024/02/11/este-es-el-ranking-de-escuelas-privadas-en-lima-con-mas-casos-de-violencia-escolar/" target="_blank" rel="noopener">Infobae ↗</a> ·
+        <p class="source">Fuente periodística:
+          <a href="https://www.atv.pe/noticia/ranking-violencia-escolar-2026-innova-schools/" target="_blank" rel="noopener">ATV ↗</a> ·
           <a href="https://elcomercio.pe/ecdata/colegios-cuantas-denuncias-hay-por-violencia-escolar-bullying-abuso-sexual-psicologico-aulas-tus-hijos-seguridad-siseve-institucion-educativa-nivel-nacional-especdis-noticia/" target="_blank" rel="noopener">El Comercio – buscador por IE ↗</a>
         </p>
       </div>
     </div>
-    <div class="callout info"><span>💡</span><span>¿Quieres saber cómo está un colegio en particular? Pregunta directamente a la <b>dirección</b> por su <b>plan de convivencia</b> y sus reportes en SíseVe: por ley debe tener uno y atender los casos.</span></div>
+    <div class="callout info"><span>💡</span><span>¿Quieres saber cómo está un colegio en particular? Pregunta a la <b>dirección</b> por su <b>plan de convivencia</b> y cómo atiende los reportes de SíseVe: por ley debe tener uno. Un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
   </div>
 </section>
 
@@ -319,7 +322,12 @@
       <div class="panel"><h3>Gestión pública vs privada (2022)</h3><div class="chart sm" id="bd-gestion"></div></div>
       <div class="panel"><h3>Área urbana vs rural (2022)</h3><div class="chart sm" id="bd-area"></div></div>
     </div>
-    <div class="callout info"><span>ℹ️</span><span>La secundaria concentra la mayoría de reportes y la mayor parte ocurre en IE públicas y zonas urbanas — pero esto refleja también dónde hay más estudiantes y mayor uso del sistema, no solo dónde hay más violencia.</span></div>
+    <div class="panel" style="margin-top:16px">
+      <h3>Crecimiento por tipo (ene–ago 2026 vs 2025)</h3>
+      <div class="chart sm" id="bd-crecimiento"></div>
+      <p class="source" id="crecimiento-source"></p>
+    </div>
+    <div class="callout info"><span>ℹ️</span><span>La secundaria concentra la mayoría de reportes y la mayor parte ocurre en IE públicas y zonas urbanas — pero esto refleja también dónde hay más estudiantes y mayor uso del sistema, no solo dónde hay más violencia. En 2026 el tipo que <b>más creció fue el sexual (+35%)</b>.</span></div>
     <p class="source">Fuente: MINEDU — Boletín "SíseVe en cifras". <a href="https://repositorio.minedu.gob.pe/handle/20.500.12799/9786" target="_blank" rel="noopener">Ver fuente</a></p>
   </div>
 </section>

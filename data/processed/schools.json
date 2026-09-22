@@ -1,0 +1,16 @@
+{
+  "dataset": "Colegios/cadenas con más reportes de violencia escolar (prensa)",
+  "retrieval_date": "2026-09-22",
+  "reliability_level": "C",
+  "source": "ATV Noticias, con datos de SíseVe (MINEDU), acumulado 2022 – 31 ago 2026",
+  "source_url": "https://www.atv.pe/noticia/ranking-violencia-escolar-2026-innova-schools/",
+  "caveat": "Estas cifras NO miden qué colegio es 'peor'. Los que encabezan son las CADENAS PRIVADAS MÁS GRANDES del país (más sedes = más estudiantes = más reportes), y más denuncias suele reflejar MEJOR cultura de reporte. Un colegio con pocos o cero reportes puede estar ocultando casos. Por eso mostramos también los reportes POR SEDE. Dato de prensa (nivel C), no un ranking oficial de 'peores'.",
+  "note_sede": "Los reportes se reparten entre muchas sedes. Ej.: Innova Schools acumula 1,333 reportes pero en 48 sedes (≈28 por sede en ~4.7 años).",
+  "data": [
+    { "cadena": "Innova Schools", "sedes": 48, "total_2022_2026": 1333, "por_sede": 27.8, "por_anio": { "2022": 325, "2023": 414, "2024": 240, "2025": 220, "2026": 134 } },
+    { "cadena": "Trilce", "sedes": 22, "total_2022_2026": 394, "por_sede": 17.9 },
+    { "cadena": "Saco Oliveros", "sedes": null, "total_2022_2026": null, "rank": 2, "por_sede": null },
+    { "cadena": "Fe y Alegría", "sedes": 24, "total_2022_2026": null, "reportes_2026": 17 },
+    { "cadena": "San Agustín", "sedes": null, "total_2022_2026": null, "rank": 5 }
+  ]
+}

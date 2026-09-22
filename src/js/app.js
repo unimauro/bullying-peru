@@ -201,6 +201,22 @@
       `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
   }
 
+  /* ---------- Colegios (prensa) ---------- */
+  function renderSchools(sc) {
+    const tbody = document.querySelector("#schools-table tbody");
+    const src = document.getElementById("schools-source");
+    if (!tbody) return;
+    if (!sc || !sc.data) { tbody.innerHTML = '<tr><td colspan="4" class="loading">Sin datos.</td></tr>'; return; }
+    tbody.innerHTML = sc.data.map(d => `
+      <tr>
+        <td><b>${esc(d.cadena)}</b></td>
+        <td class="num">${d.sedes != null ? fmt(d.sedes) : "—"}</td>
+        <td class="num">${d.total_2022_2026 != null ? fmt(d.total_2022_2026) : (d.reportes_2026 != null ? fmt(d.reportes_2026) + " <span style='color:var(--text-soft)'>(2026)</span>" : "—")}</td>
+        <td class="num">${d.por_sede != null ? "<b style='color:var(--brand)'>" + d.por_sede + "</b>" : "—"}</td>
+      </tr>`).join("");
+    if (src) src.innerHTML = `Fuente: ${esc(sc.source)}. <a href="${safeUrl(sc.source_url)}" target="_blank" rel="noopener">Ver ↗</a> · <b>Reportes acumulados en ~4.7 años, repartidos entre todas las sedes.</b>`;
+  }
+
   /* ---------- Estacionalidad (mensual) ---------- */
   function renderMonthly(m) {
     const ch = mkChart("chart-monthly");
@@ -487,6 +503,22 @@
     hbar("bd-nivel", (bd.nivel_educativo_2013_2018 || []).map(x => ({ name: x.nivel, value: x.casos })), C.colors.violencia, "abs");
     pie("bd-gestion", (bd.gestion_2022 || bd.gestion_2013_2018 || []).map(x => ({ name: x.gestion, value: x.casos })), ["#2f80c4", "#f97316"]);
     pie("bd-area", (bd.area_2022 || bd.area_2013_2018 || []).map(x => ({ name: x.area, value: x.casos })), ["#12a594", "#e0b13a"]);
+    // Crecimiento por tipo 2026 vs 2025
+    const cg = bd.crecimiento_tipo_2026;
+    const chG = mkChart("bd-crecimiento");
+    if (chG && cg && cg.data) {
+      const colors = { "Sexual": "#cc3b52", "Física": "#ec9a4e", "Psicológica": "#e3cf5a" };
+      chG.setOption({
+        textStyle: t.textStyle, grid: { left: 90, right: 50, top: 8, bottom: 24 },
+        tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => "+" + v + "%" }, t.tooltip),
+        xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10, formatter: "+{value}%" } },
+        yAxis: { type: "category", inverse: true, data: cg.data.map(x => x.tipo), axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 11 } },
+        series: [{ type: "bar", barMaxWidth: 22, data: cg.data.map(x => ({ value: x.var_pct, itemStyle: { color: grad(colors[x.tipo] || C.colors.bullying, "h"), borderRadius: [0, 6, 6, 0] } })),
+          label: { show: true, position: "right", fontSize: 11, fontWeight: 700, color: t.textStyle.color, formatter: (p) => "+" + p.value + "%" } }]
+      });
+      const s = document.getElementById("crecimiento-source");
+      if (s) s.innerHTML = `Fuente: ${esc(cg.source)}. <a href="${safeUrl(cg.source_url)}" target="_blank" rel="noopener">Ver ↗</a>`;
+    }
   }
 
   const NEWS_PALETTE = ["#f97316", "#2f80c4", "#12a594", "#8b5cf6", "#d4553a", "#0e8a7d"];
@@ -673,13 +705,13 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
       loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books),
-      loadJSON(C.data.monthly)
+      loadJSON(C.data.monthly), loadJSON(C.data.schools)
     ]);
-    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly });
+    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly, schools });
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -693,6 +725,7 @@
     safe("KPIs", () => renderKPIs(ts));
     safe("serie", () => renderSeries(ts));
     safe("mensual", () => renderMonthly(monthly));
+    safe("colegios", () => renderSchools(schools));
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
     safe("desgloses", () => renderBreakdowns(breakdowns));

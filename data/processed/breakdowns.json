@@ -30,6 +30,16 @@
     { "sexo": "Mujer", "pct": 52.54 },
     { "sexo": "Varón", "pct": 47.46 }
   ],
+  "crecimiento_tipo_2026": {
+    "note": "Variación de reportes por tipo, enero–agosto 2026 frente al mismo periodo de 2025 (fuente: prensa citando SíseVe). El tipo sexual es el que más creció.",
+    "source": "Infobae/ATV citando SíseVe",
+    "source_url": "https://www.infobae.com/peru/2026/09/15/violencia-escolar-alcanza-un-record-en-peru-mas-de-11-mil-reportes-entre-enero-y-agosto-de-2026/",
+    "data": [
+      { "tipo": "Sexual", "var_pct": 35.4 },
+      { "tipo": "Física", "var_pct": 16.5 },
+      { "tipo": "Psicológica", "var_pct": 15.3 }
+    ]
+  },
   "tipo_reporte_2013_2018": [
     { "tipo": "Entre escolares", "casos": 14215, "pct": 54 },
     { "tipo": "De personal de la IE hacia escolar", "casos": 12070, "pct": 46 }
