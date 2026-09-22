@@ -237,34 +237,30 @@
 <section id="colegios">
   <div class="wrap">
     <h2><svg class="ic"><use href="#ic-map"/></svg> ¿Y por colegio?</h2>
-    <p class="lead">La pregunta más frecuente de las familias. La prensa publicó un ranking (SíseVe, 2022–ago 2026) — pero léelo con cuidado: dice más sobre <b>tamaño</b> que sobre "peores colegios".</p>
-    <div class="callout"><span>⚠️</span><span><b>Leer este ranking al revés es un error grave.</b> Los que encabezan son las <b>cadenas privadas más grandes</b> (Innova: 48 sedes; Trilce: 22). Más sedes = más estudiantes = más reportes. Y <b>más denuncias suele significar que el colegio reporta mejor</b>, no que sea peor. Un colegio con cero reportes puede estar <b>ocultando</b> casos. Por eso mostramos también los reportes <b>por sede</b>.</span></div>
-    <div class="grid-2">
-      <div class="panel">
-        <h3>Cadenas con más reportes acumulados (2022–ago 2026)</h3>
-        <div class="table-scroll">
-          <table class="data" id="schools-table">
-            <thead><tr><th>Cadena</th><th class="num">Sedes</th><th class="num">Reportes</th><th class="num">Por sede</th></tr></thead>
-            <tbody><tr><td colspan="4" class="loading">Cargando…</td></tr></tbody>
-          </table>
-        </div>
-        <p class="source" id="schools-source"></p>
-      </div>
-      <div class="panel">
-        <h3>Lo que hay que saber</h3>
-        <ul style="color:var(--text-muted);font-size:.9rem;padding-left:18px">
-          <li>MINEDU/SíseVe <b>no publica un dataset abierto por colegio</b>; estos datos vienen de <b>prensa</b> vía transparencia. <span class="badge b-C">C</span></li>
-          <li>Al normalizar <b>por sede</b>, las diferencias se achican mucho.</li>
-          <li>Un ranking así puede empujar a colegios a <b>NO denunciar</b> para no aparecer — lo contrario a lo que queremos.</li>
-          <li>UGEL con más reportes en Lima: <b>Lima Cercado, San Borja y Rímac</b>.</li>
-        </ul>
-        <p class="source">Fuente periodística:
-          <a href="https://www.atv.pe/noticia/ranking-violencia-escolar-2026-innova-schools/" target="_blank" rel="noopener">ATV ↗</a> ·
-          <a href="https://elcomercio.pe/ecdata/colegios-cuantas-denuncias-hay-por-violencia-escolar-bullying-abuso-sexual-psicologico-aulas-tus-hijos-seguridad-siseve-institucion-educativa-nivel-nacional-especdis-noticia/" target="_blank" rel="noopener">El Comercio – buscador por IE ↗</a>
-        </p>
+    <p class="lead">20 colegios/agrupaciones de <b>Región Lima</b> con más registros (SíseVe, 2022–ago 2026). Léelo con cuidado: ordenado por <b>total</b> lo encabezan las cadenas más grandes; ordenado <b>por sede</b> el cuadro cambia por completo.</p>
+    <div class="callout"><span>⚠️</span><span><b>Más registros NO significa "peor colegio".</b> Por <b>total</b>, arriba están las <b>cadenas grandes</b> (Innova: 48 sedes → 1,333 reportes ≈ solo <b>2.8 por sede en 2026</b>). Un colegio de <b>una sede</b> como Ntra. Sra. de la Merced tiene 32 en 2026 (más por sede). Y más denuncias suele reflejar <b>mejor cultura de reporte</b>; cero reportes puede ser <b>ocultamiento</b>. Usa el orden <b>"por sede"</b> para una lectura más justa.</span></div>
+    <div class="controls">
+      <span style="font-size:.85rem;color:var(--text-muted);font-weight:600">Ordenar por:</span>
+      <div class="seg" id="schools-sort">
+        <button data-sort="total" class="active">Total de registros</button>
+        <button data-sort="por_sede">Casos por sede (2026)</button>
       </div>
     </div>
-    <div class="callout info"><span>💡</span><span>¿Quieres saber cómo está un colegio en particular? Pregunta a la <b>dirección</b> por su <b>plan de convivencia</b> y cómo atiende los reportes de SíseVe: por ley debe tener uno. Un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
+    <div class="panel">
+      <div class="table-scroll">
+        <table class="data" id="schools-table">
+          <thead><tr>
+            <th>#</th><th>Colegio / agrupación</th><th>Tipo</th>
+            <th class="num">Sedes</th><th class="num">2022</th><th class="num">2023</th>
+            <th class="num">2024</th><th class="num">2025</th><th class="num">2026*</th>
+            <th class="num">Total</th><th class="num">Por sede*</th>
+          </tr></thead>
+          <tbody><tr><td colspan="11" class="loading">Cargando…</td></tr></tbody>
+        </table>
+      </div>
+      <p class="source" id="schools-source"></p>
+    </div>
+    <div class="callout info"><span>💡</span><span>SíseVe <b>público</b> llega hasta UGEL; este detalle por colegio proviene de <b>datos SíseVe/DRELM difundidos vía transparencia</b> (no del tablero abierto). *2026 es parcial (corte 31.08.2026); "por sede" usa el valor 2026. ¿Un colegio en particular? Pregunta a su <b>dirección</b> por el plan de convivencia: un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
   </div>
 </section>
 

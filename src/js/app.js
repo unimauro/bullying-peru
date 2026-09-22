@@ -201,20 +201,39 @@
       `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
   }
 
-  /* ---------- Colegios (prensa) ---------- */
+  /* ---------- Colegios (SíseVe Región Lima) ---------- */
+  let schoolsSort = "total";
   function renderSchools(sc) {
     const tbody = document.querySelector("#schools-table tbody");
     const src = document.getElementById("schools-source");
     if (!tbody) return;
-    if (!sc || !sc.data) { tbody.innerHTML = '<tr><td colspan="4" class="loading">Sin datos.</td></tr>'; return; }
-    tbody.innerHTML = sc.data.map(d => `
-      <tr>
-        <td><b>${esc(d.cadena)}</b></td>
-        <td class="num">${d.sedes != null ? fmt(d.sedes) : "—"}</td>
-        <td class="num">${d.total_2022_2026 != null ? fmt(d.total_2022_2026) : (d.reportes_2026 != null ? fmt(d.reportes_2026) + " <span style='color:var(--text-soft)'>(2026)</span>" : "—")}</td>
-        <td class="num">${d.por_sede != null ? "<b style='color:var(--brand)'>" + d.por_sede + "</b>" : "—"}</td>
-      </tr>`).join("");
-    if (src) src.innerHTML = `Fuente: ${esc(sc.source)}. <a href="${safeUrl(sc.source_url)}" target="_blank" rel="noopener">Ver ↗</a> · <b>Reportes acumulados en ~4.7 años, repartidos entre todas las sedes.</b>`;
+    if (!sc || !sc.data) { tbody.innerHTML = '<tr><td colspan="11" class="loading">Sin datos.</td></tr>'; return; }
+    const rows = sc.data.map(d => {
+      const s = d.sedes || 1;
+      const y2026 = (d.y && d.y[4]) || 0;
+      return Object.assign({}, d, { por_sede: Math.round((y2026 / s) * 100) / 100 });
+    });
+    rows.sort((a, b) => (b[schoolsSort] || 0) - (a[schoolsSort] || 0));
+    tbody.innerHTML = rows.map((d, i) => {
+      const chain = d.sedes > 3;
+      return `<tr>
+        <td>${i + 1}</td>
+        <td><b>${esc(d.colegio)}</b></td>
+        <td style="font-size:.78rem;color:var(--text-muted)">${esc(d.tipo || "")}</td>
+        <td class="num">${fmt(d.sedes)}</td>
+        ${(d.y || []).map(v => `<td class="num" style="color:var(--text-soft)">${fmt(v)}</td>`).join("")}
+        <td class="num"><b>${fmt(d.total)}</b></td>
+        <td class="num"><b style="color:${d.por_sede >= 10 ? "#cc3b52" : "var(--brand)"}">${d.por_sede.toFixed(2)}</b></td>
+      </tr>`;
+    }).join("");
+    if (src) src.innerHTML = `Fuente: ${esc(sc.source)}. Difundido por prensa (ATV, El Comercio ECData, La República) vía transparencia a la DRELM. ${esc(sc.period || "")}.`;
+    // Toggle de orden
+    document.querySelectorAll("#schools-sort button").forEach(b => {
+      b.onclick = () => {
+        document.querySelectorAll("#schools-sort button").forEach(x => x.classList.remove("active"));
+        b.classList.add("active"); schoolsSort = b.dataset.sort; renderSchools(sc);
+      };
+    });
   }
 
   /* ---------- Estacionalidad (mensual) ---------- */
