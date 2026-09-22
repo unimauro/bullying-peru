@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-21",
+  "retrieval_date": "2026-09-22",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-22",
+      "media": "TVPerú",
+      "title": "Ministro Chang pide a padres fortalecer la disciplina para prevenir el bullying",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYTBHZXhjN2Y5b0Y2Y3o3OEEwakg3RllPNDV3U3FnbU93QjZZZ3lOdDdlcno4dS1WMXowVU1LQVFjaVpOekI0Q3Y5ODU4Qk42QUhfbEt0VVF0NW9xazU0Z1gzM2Z1bVZUTGNWUmxMNWJUelpWNXRXMHRrakVRQ21tRE42aEdOMWV2anNfV3h6TXJZaDczNENXUHdEM282N29BRDktdy1FdjgxUWEyUlZSU3ZETm0xb3VCMTZsdm9ia2I?oc=5",
+      "image": "assets/news/auto_8cfcdf46.jpg",
+      "auto": true
+    },
     {
       "date": "2026-09-21",
       "media": "Diario Correo",
@@ -43,6 +55,30 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPZlhqNG1SQ1VjajNKaTExSFFJakpuOFFYOXotVU10NnM1U1hnTGk3RVFDN3hGWW14c0RzOW9mcHJMQUFkeEx1dWcwTm9fOEllQTRRMkstTktjVWwyWXY1MTVpTlBYeEFRWGJmOVZTOUhVT0h6VnFXNGNoUVd5U20zUnhMT2tPSEVzYTNiblN3NEpwLTdGLWZHLU01TG5QS3N1MDFGN2U0eDRITzE2YmdNMEI2OHpmeXU0X05EZ0tzeFM2VDFIMFZROFpTWXRIM2dOQnVVT0RGdUxWRVo1djI4MTNHSVpyMlc0UXc2c0U5c1RvRUFTYlNwa2xmSDF1MmhvWTE5azQxTE95Wk9BZE9KNlRST1JoUlJQUWdsOU45azZNQdIBpwJBVV95cUxOMVBrWmtsWnBtSHE2ZDRIdk9TN1FXbEEzN3NZS2JXQ19qM1FXSkRSLXdlazJ4UHZteUlhRHR5S1FGLWNRcXlVTE5CY1JlMlhZTnJhaXJjVmQzX3FSbW44VVBSb2gtcy1Zc2hvdExpcVA0b3pWMS1VVkc5NzhUVHhWQXFlMDRqbzNGOGN1RzJyN0ZtQ19mSDFyb1NFTnV4OW1HdUF2c2JZWVg5YU8wSjBtQnNlcTRieFZyOFNtVllpaVhjdWpWdEhTUlBiTEZPS2lEeTdUVXFJYWFtNTlXdjRJaUFUSGh0VXFRcGNiM1BqTTNYa0RxTEREc1Q2Vi1ORkxzcFB0N0YyeVBJR2pmbTM5Rmk4Z3dmQVdyeW51WDRFbWdYbGJ6Vl8w?oc=5",
       "image": "assets/news/auto_09781348.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-21",
+      "media": "Perú 21",
+      "title": "“¡Muérete, muérete!”: cuatro escolares golpean a una compañera de 15 años en colegio de Carabayllo",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcnlDMllpQXAxMDRhcjF1Q1BxYjB1S0ZqTmJxaUs0MWExc244bGhYSGt5bzRlNUc5TUlwRW5tRlFSYlNqT2ZKemlXYkpNN0dEalNLZ2lEM2pHVkpzY2ZBX0ZOaU1icmlwdEpGUjJVMEhkczNxQi1YWDVUc3ZZOVZISVBjSQ?oc=5",
+      "image": "assets/news/auto_1f9ed3c1.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-21",
+      "media": "Exitosa Noticias",
+      "title": "Agresión escolar en Huancayo: menor de 8 años termina hospitalizado tras sufrir presunta agresión en colegio",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQbS13OGVkX2JhY2RER3V1bnJUVkJZVXh1Q2VPS0ZmSUdSUm5JcnV5Vi1MU0VZc1l4elg4QmtMU1p2QXREYjd0aDFhN1ctYkNBdWw1Ym9zajNyc3g5U0h6b0ROdkNqTDhwWkw5cWJxUmVlWlBDaXNlNG9iTDhuY2ZhNDFNc0lqNzhESUd2OUFlSk9wNHowY1pFSjVWNmNVWU9WcnF0ZFF0N1NEMEstTVhvNEc3WGpxUmlDX2hScG5SeFdIMU1WcVFEb00zNFJWZzhPeUdMR2xSR0hFSy1waGR2RzFGSDU?oc=5",
+      "image": "assets/news/auto_d3f2b9a3.jpg",
       "auto": true
     },
     {
@@ -118,6 +154,18 @@
       "auto": true
     },
     {
+      "date": "2026-09-20",
+      "media": "La República",
+      "title": "Viralizan video de influencer Michelle Onetto, exintegrante de Zaca TV, donde cuenta cómo enfrentó a director de Liceo Naval: “No tuvieron nada que decirme”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxPc0ZNVzdZX2hnT3dQR1NSMVZ2eGtTMk9hYWpBU19VWHBfZUZGSjNvMWFyLWJDcGcxbFZxbVpvMnZKVzVfS3lsYW5UVWNLU24wUTZiZERWRkhIeFFTaWJZX1RCbWtEMC1jSC1fT0JZdWxRc1Jmd2FrcmtmenJjQ2ItT3RLV0xZeW8zMmp2MWxXSklfVlNpX2RDRWZtZEJsaU16LVUyanFuTXAxSGJFZm45ZE9zVWZWSXY1TnlTQlZCb1hFTVViSGpPdFJabjlFR3pfWUlGOU5vLW14YlFKMzhpWTZCUGRtNEhER1BVSnYxbnZQRTJGZHdJYXN4U2tqbzJBRmdyRWRLUUpEZjQ2T3NHZWhGYW9IYUlHeFJaZEkzY08zNmlSY0tmME5hMUsyMGfSAbQCQVVfeXFMUG5CR29mTDlQZTByZE56dnBoSXU2UXhlYjQ3TjZPdkN3LVBPU3ZMYTJxTkNmTVlQcUp1aUhGV1VlclZIbkZURlZmZ3V0VGpEZ1dsWFU4N1g3ZldSXzc2eFllaGxNY3hEVEV3UGpuSDFjbVZQLU9lRHlULWNUSkFpUXlpbWRVb0xHYzdVTmVwaGh5Q2Z1WTZRVFBka1RCY2ZHVHFRcmNGSjE0ZDdRWDlGUDYwdDg3U2MyM3RnYm1IOXoxckh2UUdMTGJEX2I4VU13dkZsSFFxdmZZQ0xzRV9hZEJCQWllZXU2QmliRWEtZDdxWFlkOW1XeFRpb3NlUWVQVVNKTlpxc2V5NUFsUnFpRElnUnhta19tOWloWWRoMllYZ281R0c1bm14c2thNVZ4bEJ4MEM?oc=5",
+      "image": "assets/news/auto_10d9903d.jpg",
+      "auto": true
+    },
+    {
       "date": "2026-09-19",
       "media": "Perú 21",
       "title": "¡Atentos padres de familia! Aprenda a reconocer las señales de bullying en niños y cómo abordarlas",
@@ -128,55 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSjJLSmdKQzlMSlg3VnVNZW5vQVFNMGs5c2N0Tm5wSS1GdlRkbmhZQzZKYWRVWmMzcm5fMHlOYkJKb0pmTzRNYXdrOXVzQUtwZVJMaUwtSnYtS19STXcycjB6ZExfMWlQaDNqd3QzMGdQTXU4Qkp3SXV6Z1FKa3NxaTRXcnlaVkxkTklQUmZiUWtsWUl1ZUVJ?oc=5",
       "image": "assets/news/auto_a22e99b1.jpg",
       "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "Agencia Andina",
-      "title": "Más de 11 mil casos de violencia escolar en lo que va del 2026: cifras por tipo y región",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSXFONUtUdEMtNHA1UVhmWk9xcGt0cnFHSUFlMFl5RTlLY2dTMW8zckZ1SFdkUzdYbG5OSzd1YnZVNGRCbURsajRtVW83bUxkaU9oNU9CUnFpemRnVnA2NHQ5djBoNVZiSzAtYmhfS3IwTWt5UHVDQzViVDJaNHM4ZzlXSG12bVoxWVFCZVhHaFZXME9QRkRpeE9uNlB0Mi1KRjRoMkp6RzU0RE8wUW1HTmtzQ0pWMkdF?oc=5",
-      "image": "assets/news/auto_44c83c54.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "latinanoticias.pe",
-      "title": "Violencia escolar en Perú: más de 11 mil casos fueron reportados entre enero y agosto de 2026",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNVzBIS1FPd012M3FrdXBnbUhvcG54RW5uaGZWU3hCclB5NGVPbFRSZkpXdE5VR3VvaVlJZkpUaWNxQzV3eFhmNlVaaVVMV1E5c3NpaVk2dDdoU3hfa3A4RmxWS1dJU2hDbGNUZm12Y2dqU0dDamRtaWlrZmNLM0tkRk9Ldm8xallzV0NnTGxFbW5KaVV4c3AyTkk1eHdQd3ZmN0ptM3p6Sl9sMHFHZ3ptYVd4MS1xSHREMExPTjZEVjhodHBTU3RFcEE2bUE1dw?oc=5",
-      "image": "assets/news/auto_a3509e51.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "infobae.com",
-      "title": "“Nico y las bolitas de arena”: Un cuento infantil propone hablar sobre exclusión, empatía, violencia escolar y el derecho de los niños a pertenecer",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPRURaZDh6dWFidkpDXzYtRXIxa015cl9CZ085ekRUbzFSTkNQZ3cwZG9DeF9VVldVM1g3cXJSZURYR0xPMFcybWM5cUtOSXFZc2ZaWWhrMktEOUx4NVp0dzAyWm5FRGRlMFY1NFp6dHdpbWI5bzF2VFV4SEt3aXNEVUNKOE1TNXpOUXpOcnRhYVAxTEdQNG02TkFXUWVLTnpHVElUTTBLNndRZHNnZEtQdFQ2V2VGZW9ua2VrT2ZyRzB1bEY2eDhfZlkzZDBzT3ZGdU9NN0JMWGgydEV0M2ZRQUoxSm5ILVpDSkpRdEpnZVZfMlVkQ0ZjdWdXaDhhLV81WV9pV3cxc08xUDJEZFRMeA?oc=5",
-      "image": "assets/news/auto_c5a0d770.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-19",
-      "media": "infobae.com",
-      "title": "Christopher Gianotti se pronuncia por caso del Liceo Naval y revela experiencia de bullying con sus hijas: “Tuve que cambiarlas de colegio”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOUnNOcGVlNExSWW9CVjQ2UndteDZsTG4xTGM0WkRweGYxS3NOcnNmT0pVQmpkYlptc0kzLUplRzRMSFhvOUx3YjhTbGFuY29sLWp2VkJaNWcwRWNaWGZZbVh3WVVUbkdNbmhVUUYyM2toZVRGQjdMZGxjU3ZvNlY5MlozVDhBTFlZeG9qX0pSZlRYQ0Zzc1AzZERHTXJCYWVWYmRPblk5VjRVb2xLVmJsWnlENEMzSFFsWHZFdThIY0hQTUhUa1YwbWJURmlVdWM3ak8yNWttZmhTQzhpa0ZLeG92VUFxMVBzc01KZXVNUjlHbFBlMkY2ZWFVb1ZYME93bXdhN2NBSjbSAaMCQVVfeXFMUGE2TlBTX0RzcHFiRTlNM3NsMV9VcHh1ek1SMkV5bGlpQUI5czhpcm5ZWktVRzVSSE9oM1c5OXRrV3lpRVlvT09SUUJuQ0M2eExQa1U1WlFzVDNtcjh4UVZpa0NGVVlWNEhIUF9kWTFRRHFBVm9oeU45Y3lJRG10aF9qUnJDZzNMYVIwc2VqRnB4T3pDNzQxRjhTMFBZOFpfOTR0cW5WOFM4Z0tBc1B1WG05ek4zOTNjRzcyU0RGM3VjMFBsNDBFMjNjMFk2NEE0VTUza0h5SnU2azVTd0taaGpuSURueGtjMVo5dmFscmdaamFxMjh0N1VNNXJGa2cwdnhBQ1gtMW9iU0h2N3ZFNGhMdWx5UHZINVUtUU5SbTYxSzRV?oc=5",
-      "image": "assets/news/auto_465a9f39.jpg",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-09-21T16:48:22.187940+00:00"
+  "last_auto_update": "2026-09-22T15:26:05.038774+00:00"
 }
