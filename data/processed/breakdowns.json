@@ -1,64 +1,163 @@
 {
   "dataset": "Desgloses de casos SíseVe (perfil)",
   "retrieval_date": "2026-09-18",
-  "note": "Datos oficiales (fuente A) del Informe SíseVe 2013-2018 (acumulado 26,285 casos) y del corte 2026 ene-ago (11,791). SíseVe registra reportes de presuntos hechos, no la prevalencia real. Respetamos la clasificación de la fuente.",
+  "note": "Datos oficiales (fuente A) del Informe SíseVe 2013-2018 (acumulado 26,285 casos) y del corte 2026 ene-ago (11,791). SíseVe registra reportes de presuntos hechos, no la prevalencia real. Respetamos la clasificación de la fuente. Tipología 2022 alineada al microdato oficial SíseVe (2026-09-24).",
   "source_2013_2018": "https://repositorio.minedu.gob.pe/handle/20.500.12799/6670",
   "source_2026": "https://www.infobae.com/peru/2026/09/15/el-mapa-de-la-violencia-escolar-en-peru-las-regiones-que-concentran-mas-reportes-en-2026/",
   "year": 2022,
   "tipologia": {
     "2022": [
-      { "tipo": "Física", "casos": 5150, "pct": 42.57 },
-      { "tipo": "Psicológica", "casos": 4511, "pct": 37.28 },
-      { "tipo": "Sexual", "casos": 2438, "pct": 20.15 }
+      {
+        "tipo": "Física",
+        "casos": 5129,
+        "pct": 42.65
+      },
+      {
+        "tipo": "Psicológica",
+        "casos": 4474,
+        "pct": 37.21
+      },
+      {
+        "tipo": "Sexual",
+        "casos": 2422,
+        "pct": 20.14
+      }
     ],
     "2013_2018": [
-      { "tipo": "Física", "casos": 13792, "pct": 52.5 },
-      { "tipo": "Psicológica", "casos": 5397, "pct": 20.5 },
-      { "tipo": "Sexual", "casos": 3738, "pct": 14.2 },
-      { "tipo": "Otros (verbal, internet, con armas, hurto)", "casos": 3358, "pct": 12.8 }
+      {
+        "tipo": "Física",
+        "casos": 13792,
+        "pct": 52.5
+      },
+      {
+        "tipo": "Psicológica",
+        "casos": 5397,
+        "pct": 20.5
+      },
+      {
+        "tipo": "Sexual",
+        "casos": 3738,
+        "pct": 14.2
+      },
+      {
+        "tipo": "Otros (verbal, internet, con armas, hurto)",
+        "casos": 3358,
+        "pct": 12.8
+      }
     ]
   },
   "gestion_2022": [
-    { "gestion": "Pública", "casos": 8628, "pct": 71.32 },
-    { "gestion": "Privada", "casos": 3471, "pct": 28.68 }
+    {
+      "gestion": "Pública",
+      "casos": 8628,
+      "pct": 71.32
+    },
+    {
+      "gestion": "Privada",
+      "casos": 3471,
+      "pct": 28.68
+    }
   ],
   "area_2022": [
-    { "area": "Urbana", "casos": 10275, "pct": 84.92 },
-    { "area": "Rural", "casos": 1824, "pct": 15.08 }
+    {
+      "area": "Urbana",
+      "casos": 10275,
+      "pct": 84.92
+    },
+    {
+      "area": "Rural",
+      "casos": 1824,
+      "pct": 15.08
+    }
   ],
   "sexo_agredido_2022": [
-    { "sexo": "Mujer", "pct": 52.54 },
-    { "sexo": "Varón", "pct": 47.46 }
+    {
+      "sexo": "Mujer",
+      "pct": 52.54
+    },
+    {
+      "sexo": "Varón",
+      "pct": 47.46
+    }
   ],
   "crecimiento_tipo_2026": {
     "note": "Variación de reportes por tipo, enero–agosto 2026 frente al mismo periodo de 2025 (fuente: prensa citando SíseVe). El tipo sexual es el que más creció.",
     "source": "Infobae/ATV citando SíseVe",
     "source_url": "https://www.infobae.com/peru/2026/09/15/violencia-escolar-alcanza-un-record-en-peru-mas-de-11-mil-reportes-entre-enero-y-agosto-de-2026/",
     "data": [
-      { "tipo": "Sexual", "var_pct": 35.4 },
-      { "tipo": "Física", "var_pct": 16.5 },
-      { "tipo": "Psicológica", "var_pct": 15.3 }
+      {
+        "tipo": "Sexual",
+        "var_pct": 35.4
+      },
+      {
+        "tipo": "Física",
+        "var_pct": 16.5
+      },
+      {
+        "tipo": "Psicológica",
+        "var_pct": 15.3
+      }
     ]
   },
   "tipo_reporte_2013_2018": [
-    { "tipo": "Entre escolares", "casos": 14215, "pct": 54 },
-    { "tipo": "De personal de la IE hacia escolar", "casos": 12070, "pct": 46 }
+    {
+      "tipo": "Entre escolares",
+      "casos": 14215,
+      "pct": 54
+    },
+    {
+      "tipo": "De personal de la IE hacia escolar",
+      "casos": 12070,
+      "pct": 46
+    }
   ],
   "nivel_educativo_2013_2018": [
-    { "nivel": "Secundaria", "casos": 14408 },
-    { "nivel": "Primaria", "casos": 9548 },
-    { "nivel": "Inicial", "casos": 2329 }
+    {
+      "nivel": "Secundaria",
+      "casos": 14408
+    },
+    {
+      "nivel": "Primaria",
+      "casos": 9548
+    },
+    {
+      "nivel": "Inicial",
+      "casos": 2329
+    }
   ],
   "gestion_2013_2018": [
-    { "gestion": "Pública", "casos": 22090, "pct": 84 },
-    { "gestion": "Privada", "casos": 4195, "pct": 16 }
+    {
+      "gestion": "Pública",
+      "casos": 22090,
+      "pct": 84
+    },
+    {
+      "gestion": "Privada",
+      "casos": 4195,
+      "pct": 16
+    }
   ],
   "area_2013_2018": [
-    { "area": "Urbana", "casos": 24369, "pct": 93 },
-    { "area": "Rural", "casos": 1916, "pct": 7 }
+    {
+      "area": "Urbana",
+      "casos": 24369,
+      "pct": 93
+    },
+    {
+      "area": "Rural",
+      "casos": 1916,
+      "pct": 7
+    }
   ],
   "sexo_victima_entre_escolares_2013_2018": [
-    { "sexo": "Varón", "pct": 57 },
-    { "sexo": "Mujer", "pct": 43 }
-  ]
+    {
+      "sexo": "Varón",
+      "pct": 57
+    },
+    {
+      "sexo": "Mujer",
+      "pct": 43
+    }
+  ],
+  "source_tipologia_2022": "MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública); consolidado de fiorellatl/observatorio-violencia-escolar"
 }

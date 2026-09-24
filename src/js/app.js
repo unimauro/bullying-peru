@@ -138,7 +138,8 @@
     grid.innerHTML = html || '<div class="callout">Sin datos para el último año.</div>';
     const pv = lastPoint("violencia");
     if (pv && ts.partial_year === pv.year) {
-      const w = document.getElementById("siseve-warning");
+      const w0 = document.getElementById("siseve-warning");
+      const w = w0 && (w0.querySelector("span:last-child") || w0);
       if (w) w.insertAdjacentHTML("beforeend",
         ` <br><b>${pv.year}</b> es un año <b>parcial</b> (enero–agosto); no es comparable con años completos.`);
     }
@@ -201,54 +202,216 @@
       `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
   }
 
-  /* ---------- Buscador nacional de colegios (microdato oficial) ---------- */
-  // El índice (3.8 MB, 22 569 colegios) se carga SOLO al primer uso del buscador.
-  let schoolsIdx = null, schoolsIdxLoading = false;
+  /* ---------- Colegios: top nacional + buscador + filtros (microdato oficial) ---------- */
+  // schools_top.json (300 colegios, pequeño) se carga al inicio; el índice completo
+  // (22 569 colegios, ~4.5 MB) SOLO cuando el usuario busca o filtra. Los detalles por
+  // tipo de los colegios fuera del top se cargan por shard de región al abrir la fila.
+  const YEARS = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+  const TIPO_LABELS = { fisica: "Física", psicologica: "Psicológica", sexual: "Sexual", bullying: "Bullying (etiqueta)", ciberacoso: "Ciberacoso (etiqueta)", entre_escolares: "Entre escolares", personal_ie: "De personal de la IE" };
   const _fold = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-  function initSchoolSearch() {
-    const input = document.getElementById("school-search");
-    const out = document.getElementById("school-results");
-    const src = document.getElementById("school-search-source");
-    if (!input || !out) return;
-    if (src) src.innerHTML = "Fuente: MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública; consolidado de fiorellatl/observatorio-violencia-escolar). Total = reportes acumulados; no es prevalencia ni ranking.";
+  const _slug = (s) => _fold(s).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  let schoolsIdx = null, schoolsIdxPromise = null, schoolsTop = null;
+  const shardCache = {};
+  const sf = { q: "", region: "", gestion: "", nivel: "", year: "" };
 
-    async function ensureIndex() {
-      if (schoolsIdx || schoolsIdxLoading) return;
-      schoolsIdxLoading = true;
-      out.innerHTML = '<p class="loading" style="margin:.4rem 0">Cargando índice nacional (una sola vez)…</p>';
-      schoolsIdx = (await loadJSON(C.data.schoolsIndex)) || [];
-      schoolsIdxLoading = false;
+  function sparkline(y, sortIdx) {
+    const max = Math.max(1, ...y);
+    const w = 8, gap = 0, h = 26;
+    return `<svg class="spark" viewBox="0 0 ${y.length * w} ${h}" preserveAspectRatio="none" aria-hidden="true">` +
+      y.map((v, i) => {
+        const bh = Math.max(v > 0 ? 2 : 0, Math.round((v / max) * (h - 2)));
+        const cls = YEARS[i] === 2026 ? "partial" : (i === sortIdx ? "hi" : "");
+        return `<rect x="${i * w + gap}" y="${h - bh}" width="${w - 1.5}" height="${bh}" class="${cls}"><title>${YEARS[i]}: ${v}</title></rect>`;
+      }).join("") + `</svg>`;
+  }
+
+  async function ensureSchoolsIndex() {
+    if (schoolsIdx) return schoolsIdx;
+    if (!schoolsIdxPromise) {
+      const st = document.getElementById("school-status");
+      if (st) st.textContent = "Cargando el índice nacional (22 569 colegios, una sola vez)…";
+      schoolsIdxPromise = loadJSON(C.data.schoolsIndex).then(d => { schoolsIdx = Array.isArray(d) ? d : []; return schoolsIdx; });
     }
-    const GESTION = { "Público": "Público", "Privado": "Privado" };
-    function render(q) {
-      const nq = _fold(q).trim();
-      if (nq.length < 2) { out.innerHTML = '<p class="loading" style="margin:.4rem 0">Escribe al menos 2 caracteres…</p>'; return; }
-      const digits = /^\d+$/.test(nq.replace(/\s/g, ""));
-      let hits = [];
-      for (const r of schoolsIdx) {
-        const hay = digits ? r.cm : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.r) + " " + r.cm);
-        if (hay.indexOf(nq) !== -1) { hits.push(r); if (hits.length > 400) break; }
+    return schoolsIdxPromise;
+  }
+
+  function schoolsFiltered() {
+    const useIndex = !!(sf.q || sf.region || sf.gestion || sf.nivel || sf.year);
+    const base = useIndex ? (schoolsIdx || []) : ((schoolsTop && schoolsTop.rows) || []);
+    const nq = _fold(sf.q).trim();
+    const digits = nq && /^\d+$/.test(nq.replace(/\s/g, ""));
+    const yi = sf.year ? YEARS.indexOf(+sf.year) : -1;
+    let hits = [];
+    for (const r of base) {
+      if (sf.region && r.r !== sf.region) continue;
+      if (sf.gestion && r.g !== sf.gestion) continue;
+      if (sf.nivel && r.nv !== sf.nivel) continue;
+      if (nq) {
+        const hay = digits ? r.cm : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.p) + " " + _fold(r.r) + " " + r.cm);
+        if (hay.indexOf(nq) === -1) continue;
       }
-      const total = hits.length;
-      hits.sort((a, b) => b.t - a.t);
-      hits = hits.slice(0, 50);
-      if (!hits.length) { out.innerHTML = '<p class="loading" style="margin:.4rem 0">Sin coincidencias. Prueba con otro nombre, el código modular o el distrito.</p>'; return; }
-      const cap = total > 50 ? `<p style="font-size:.8rem;color:var(--text-muted);margin:.2rem 0 .6rem">${fmt(total)} coincidencias; mostrando las 50 con más reportes. Afina la búsqueda para ver otras.</p>` : "";
-      out.innerHTML = cap + '<div class="table-scroll"><table class="data"><thead><tr>' +
-        '<th>Colegio</th><th>Distrito · Región</th><th>Gestión</th><th>Nivel</th><th class="num">Reportes 2013–2026</th>' +
-        '</tr></thead><tbody>' +
-        hits.map(r => `<tr>
-          <td><b>${esc(r.n)}</b><br><span style="font-size:.72rem;color:var(--text-muted)">C. modular ${esc(r.cm)}</span></td>
-          <td>${esc(r.d)} · ${esc(r.r)}</td>
-          <td>${esc(GESTION[r.g] || r.g || "")}</td>
-          <td style="font-size:.82rem">${esc(r.nv || "")}</td>
-          <td class="num"><b>${fmt(r.t)}</b></td>
-        </tr>`).join("") + '</tbody></table></div>';
+      if (yi >= 0 && !(r.y && r.y[yi] > 0)) continue;
+      hits.push(r);
     }
+    const val = (r) => (yi >= 0 && r.y) ? r.y[yi] : r.t;
+    hits.sort((a, b) => val(b) - val(a) || a.n.localeCompare(b.n));
+    return { hits, useIndex, yi, val };
+  }
+
+  function renderSchoolRows() {
+    const tbody = document.getElementById("school-results");
+    const st = document.getElementById("school-status");
+    const thTotal = document.getElementById("sf-total-th");
+    if (!tbody) return;
+    const { hits, useIndex, yi, val } = schoolsFiltered();
+    const LIMIT = 100;
+    const shown = hits.slice(0, LIMIT);
+    const yLabel = sf.year ? `Reportes ${sf.year}${sf.year === "2026" ? "*" : ""}` : "Total 2013–2026";
+    if (thTotal) thTotal.textContent = yLabel;
+    if (!shown.length) {
+      tbody.innerHTML = '<tr><td colspan="9" class="loading">Sin coincidencias. Prueba con otro nombre, el código modular o el distrito; o quita algún filtro.</td></tr>';
+      if (st) st.textContent = "";
+      return;
+    }
+    const i24 = YEARS.indexOf(2024), i25 = YEARS.indexOf(2025), i26 = YEARS.indexOf(2026);
+    tbody.innerHTML = shown.map((r, i) => {
+      const y = r.y || [];
+      return `<tr class="sc-row" data-slug="${esc(r.s)}" data-region="${esc(r.r)}" tabindex="0" role="button" aria-expanded="false">
+        <td>${i + 1}</td>
+        <td><span class="sc-name">${esc(r.n)}</span><span class="sc-sub">${esc(r.d)} · ${esc(r.p)} · ${esc(r.r)} · C.M. ${esc(r.cm)}</span></td>
+        <td><span class="sc-tag ${r.g === "Público" ? "pub" : "priv"}">${esc(r.g || "")}</span></td>
+        <td style="font-size:.78rem">${esc(r.nv || "")}</td>
+        <td>${y.length ? sparkline(y, yi) : ""}</td>
+        <td class="num ${yi === i24 ? "sort-col" : ""}">${fmt(y[i24] || 0)}</td>
+        <td class="num ${yi === i25 ? "sort-col" : ""}">${fmt(y[i25] || 0)}</td>
+        <td class="num ${yi === i26 ? "sort-col" : ""}">${fmt(y[i26] || 0)}</td>
+        <td class="num"><b class="${yi < 0 ? "sort-col" : ""}">${fmt(val(r))}</b></td>
+      </tr>`;
+    }).join("");
+    if (st) {
+      const nT = schoolsTop && schoolsTop.n_total ? fmt(schoolsTop.n_total) : "22 569";
+      st.textContent = useIndex
+        ? `${fmt(hits.length)} colegio(s) coinciden${hits.length > LIMIT ? `; se muestran los ${LIMIT} con más reportes — afina la búsqueda para ver otros` : ""}.`
+        : `Top ${shown.length} nacional por reportes acumulados 2013–2026, de ${nT} colegios con al menos un reporte. Escribe o filtra para buscar cualquier colegio.`;
+    }
+  }
+
+  async function schoolDetail(slug, region) {
+    const top = schoolsTop && schoolsTop.rows && schoolsTop.rows.find(r => r.s === slug);
+    if (top && top.tipos) return { y: top.y, tipos: top.tipos, ugel: top.ugel };
+    const key = _slug(region);
+    if (!shardCache[key]) shardCache[key] = loadJSON("data/processed/schools_detail/" + key + ".json").then(d => d || {});
+    const shard = await shardCache[key];
+    return shard[slug] || null;
+  }
+
+  function renderSchoolDetail(tr, r, det) {
+    const id = "scd-" + r.s.replace(/[^a-z0-9]/g, "");
+    const y = det.y || r.y || [];
+    const tp = det.tipos || {};
+    const keys = ["fisica", "psicologica", "sexual", "bullying", "ciberacoso"];
+    const rows = YEARS.map((yr, i) => ({ yr, t: y[i] || 0, v: keys.map(k => (tp[k] && tp[k][i]) || 0) })).filter(o => o.t > 0);
+    const html = `<tr class="sc-detail"><td colspan="9">
+      <p class="sc-meta"><b>${esc(r.n)}</b> · ${esc(r.d)}, ${esc(r.p)} (${esc(r.r)})${det.ugel ? " · " + esc(det.ugel) : ""} · ${esc(r.g || "")} · ${esc(r.nv || "")} · Código modular ${esc(r.cm)}</p>
+      <div class="sc-detail-grid">
+        <div class="chart" id="${id}"></div>
+        <div class="table-scroll" style="max-height:220px"><table class="data"><thead><tr><th>Año</th><th class="num">Total</th>${keys.map(k => `<th class="num">${esc(TIPO_LABELS[k].replace(" (etiqueta)", ""))}</th>`).join("")}</tr></thead>
+        <tbody>${rows.slice().reverse().map(o => `<tr><td>${o.yr}${o.yr === 2026 ? "*" : ""}</td><td class="num"><b>${fmt(o.t)}</b></td>${o.v.map(v => `<td class="num">${v ? fmt(v) : "—"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+      </div>
+      <p class="source" style="margin-top:8px">Física + psicológica + sexual = total del año; bullying y ciberacoso son etiquetas transversales (no se suman). *2026 parcial ene–ago. Registro administrativo, no prevalencia.</p>
+    </td></tr>`;
+    tr.insertAdjacentHTML("afterend", html);
+    const ch = mkChart(id);
+    if (!ch) return;
+    const t = echartsTheme();
+    const stack = ["fisica", "psicologica", "sexual"].map((k, j) => ({
+      name: TIPO_LABELS[k], type: "bar", stack: "t", data: YEARS.map((_, i) => (tp[k] && tp[k][i]) || 0),
+      itemStyle: { color: ["#d4553a", C.colors.violencia, C.colors.ciber][j] }, barMaxWidth: 22
+    }));
+    const hasTipos = stack.some(s => s.data.some(v => v > 0));
+    ch.setOption({
+      textStyle: t.textStyle, tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" } }, t.tooltip),
+      legend: { top: 0, textStyle: { fontSize: 10 } }, grid: { left: 36, right: 10, top: 28, bottom: 24 },
+      xAxis: { type: "category", data: YEARS.map(String), axisLabel: { fontSize: 9 } },
+      yAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 9 } },
+      series: hasTipos ? stack : [{ name: "Reportes", type: "bar", data: y, itemStyle: { color: C.colors.violencia }, barMaxWidth: 22 }]
+    });
+  }
+
+  function initSchools() {
+    const input = document.getElementById("school-search");
+    const tbody = document.getElementById("school-results");
+    if (!input || !tbody) return;
+    const src = document.getElementById("school-search-source");
+    if (src) src.innerHTML = "Fuente: MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública; consolidado de <a href=\"https://github.com/fiorellatl/observatorio-violencia-escolar\" target=\"_blank\" rel=\"noopener\">fiorellatl/observatorio-violencia-escolar</a>). Reportes acumulados por institución educativa; no es prevalencia ni ranking de calidad. Haz clic en una fila para ver el detalle por año y tipo.";
+
+    // Selectores: regiones (territory.json) y años
+    const selR = document.getElementById("sf-region"), selN = document.getElementById("sf-nivel"), selY = document.getElementById("sf-year"), selG = document.getElementById("sf-gestion");
+    const regions = (store.territory && store.territory.regiones || []).map(r => r.nombre).sort((a, b) => a.localeCompare(b));
+    if (selR) selR.innerHTML = '<option value="">Todas</option>' + regions.map(r => `<option>${esc(r)}</option>`).join("");
+    if (selY) selY.innerHTML = '<option value="">Total 2013–2026</option>' + YEARS.slice().reverse().map(y => `<option value="${y}">${y}${y === 2026 ? " (parcial)" : ""}</option>`).join("");
+    const fillNivel = (rows) => {
+      if (!selN) return;
+      const cur = selN.value;
+      const lv = Array.from(new Set(rows.map(r => r.nv).filter(Boolean))).sort();
+      selN.innerHTML = '<option value="">Todos</option>' + lv.map(n => `<option${n === cur ? " selected" : ""}>${esc(n)}</option>`).join("");
+    };
+    fillNivel((schoolsTop && schoolsTop.rows) || []);
+
+    const clearBtn = document.getElementById("sf-clear");
+    const syncClear = () => { if (clearBtn) clearBtn.hidden = !(sf.q || sf.region || sf.gestion || sf.nivel || sf.year); };
     let tmr = null;
-    const onType = () => { const v = input.value; if (tmr) clearTimeout(tmr); tmr = setTimeout(async () => { await ensureIndex(); render(v); }, 180); };
-    input.addEventListener("input", onType);
-    input.addEventListener("focus", ensureIndex, { once: true });
+    const apply = async () => {
+      syncClear();
+      if (sf.q || sf.region || sf.gestion || sf.nivel || sf.year) {
+        const had = !!schoolsIdx;
+        await ensureSchoolsIndex();
+        if (!had) fillNivel(schoolsIdx);
+      }
+      renderSchoolRows();
+    };
+    input.addEventListener("input", () => { sf.q = input.value; if (tmr) clearTimeout(tmr); tmr = setTimeout(apply, 160); });
+    input.addEventListener("focus", () => { ensureSchoolsIndex().then(() => fillNivel(schoolsIdx)); }, { once: true });
+    [[selR, "region"], [selG, "gestion"], [selN, "nivel"], [selY, "year"]].forEach(([el, k]) => { if (el) el.addEventListener("change", () => { sf[k] = el.value; apply(); }); });
+    if (clearBtn) clearBtn.addEventListener("click", () => {
+      sf.q = sf.region = sf.gestion = sf.nivel = sf.year = ""; input.value = "";
+      [selR, selG, selN, selY].forEach(el => { if (el) el.value = ""; });
+      apply();
+    });
+
+    // Vista: colegios (IE) vs redes (tabla de prensa Región Lima)
+    document.querySelectorAll("#school-view button").forEach(b => b.addEventListener("click", () => {
+      document.querySelectorAll("#school-view button").forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      const ie = b.dataset.view === "ie";
+      document.getElementById("school-view-ie").hidden = !ie;
+      document.getElementById("school-view-redes").hidden = ie;
+      document.querySelector(".school-toolbar .school-search-wrap").style.display = ie ? "" : "none";
+      document.querySelector(".school-toolbar .school-filters").style.display = ie ? "" : "none";
+    }));
+
+    // Detalle al hacer clic en una fila
+    const toggleRow = async (tr) => {
+      const open = tr.classList.contains("open");
+      const next = tr.nextElementSibling;
+      if (next && next.classList.contains("sc-detail")) next.remove();
+      tr.classList.toggle("open", !open); tr.setAttribute("aria-expanded", String(!open));
+      if (open) return;
+      const slug = tr.dataset.slug, region = tr.dataset.region;
+      const { hits } = schoolsFiltered();
+      const r = hits.find(x => x.s === slug) || ((schoolsTop && schoolsTop.rows) || []).find(x => x.s === slug);
+      if (!r) return;
+      tr.insertAdjacentHTML("afterend", '<tr class="sc-detail"><td colspan="9" class="loading">Cargando detalle…</td></tr>');
+      let det = null;
+      try { det = await schoolDetail(slug, region); } catch (e) { console.error("[obs] detalle colegio", e); }
+      const ph = tr.nextElementSibling; if (ph && ph.classList.contains("sc-detail")) ph.remove();
+      if (!tr.classList.contains("open")) return;
+      renderSchoolDetail(tr, r, det || { y: r.y });
+    };
+    tbody.addEventListener("click", (e) => { const tr = e.target.closest("tr.sc-row"); if (tr) toggleRow(tr); });
+    tbody.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { const tr = e.target.closest("tr.sc-row"); if (tr) { e.preventDefault(); toggleRow(tr); } } });
+
+    renderSchoolRows();
   }
 
   /* ---------- Composición por tipo (microdato oficial) ---------- */
@@ -298,41 +461,67 @@
   }
 
   /* ---------- Correlación física vs psicológica (anonimizado) ---------- */
+  let correlZoom = "near";
   function renderCorrelation(cor) {
     const ch = mkChart("chart-correl");
     if (!ch || !cor || !cor.anios) return;
     const sel = document.getElementById("correl-year");
+    const last = cor.anios[cor.anios.length - 1];
     if (sel && !sel.dataset.filled) {
-      sel.innerHTML = cor.anios.map(y => `<option value="${y}"${y === cor.anios[cor.anios.length - 1] ? " selected" : ""}>${y}${y === cor.anio_parcial ? " (parcial)" : ""}</option>`).join("");
+      sel.innerHTML = cor.anios.map(y => `<option value="${y}"${y === last ? " selected" : ""}>${y}${y === cor.anio_parcial ? " (parcial)" : ""}</option>`).join("");
       sel.dataset.filled = "1";
     }
+    const strength = (r) => Math.abs(r) >= .7 ? "fuerte" : Math.abs(r) >= .4 ? "moderada" : Math.abs(r) >= .2 ? "débil" : "muy débil";
     const draw = (year) => {
       const t = echartsTheme();
       const d = (cor.datos && cor.datos[year]) || {};
       const pts = (d.puntos || []).map(p => [p[0], p[1], p[2]]);
       const maxN = pts.reduce((m, p) => Math.max(m, p[2]), 1);
+      const maxX = pts.reduce((m, p) => Math.max(m, p[0]), 1), maxY = pts.reduce((m, p) => Math.max(m, p[1]), 1);
+      const lim = correlZoom === "near" ? 20 : Math.max(maxX, maxY);
+      const shownPts = correlZoom === "near" ? pts.filter(p => p[0] <= lim && p[1] <= lim) : pts;
+      const hidden = pts.length - shownPts.length;
+      const r = d.r, n = d.colegios || 0, ambos = d.ambos || 0;
+      const soloF = shownPts.filter(p => p[1] === 0).reduce((a, p) => a + p[2], 0);
       ch.setOption({
         textStyle: t.textStyle,
-        tooltip: Object.assign({ trigger: "item", formatter: (o) => `Física: ${o.value[0]} · Psicológica: ${o.value[1]}<br>${fmt(o.value[2])} colegio(s)` }, t.tooltip),
+        tooltip: Object.assign({ trigger: "item", formatter: (o) => `<b>${fmt(o.value[2])} colegio(s)</b><br>Reportes físicos: ${o.value[0]}<br>Reportes psicológicos: ${o.value[1]}` }, t.tooltip),
         toolbox: TOOLBOX,
-        grid: { left: 56, right: 24, top: 20, bottom: 48 },
-        xAxis: { type: "value", name: "Reportes físicos (colegio)", nameLocation: "middle", nameGap: 28, splitLine: t.splitLine },
-        yAxis: { type: "value", name: "Reportes psicológicos", splitLine: t.splitLine },
+        visualMap: { type: "continuous", dimension: 2, min: 1, max: maxN, calculable: false, orient: "horizontal", left: "center", bottom: 0, itemWidth: 10, itemHeight: 120, text: ["muchos colegios", "pocos"], textStyle: { fontSize: 10, color: t.textStyle.color }, inRange: { color: ["#93cdea", "#1f5f8b", "#14202e"] } },
+        grid: { left: 56, right: 24, top: 44, bottom: 72 },
+        xAxis: { type: "value", name: "Reportes físicos por colegio", nameLocation: "middle", nameGap: 28, min: 0, max: lim, splitLine: t.splitLine },
+        yAxis: { type: "value", name: "Reportes psicológicos por colegio", nameLocation: "middle", nameGap: 40, min: 0, max: lim, splitLine: t.splitLine },
         series: [{
-          type: "scatter", data: pts,
-          symbolSize: (v) => 6 + 22 * Math.sqrt(v[2] / maxN),
-          itemStyle: { color: "color-mix(in srgb," + C.colors.violencia + " 70%,transparent)", borderColor: C.colors.violencia, borderWidth: .6 }
+          type: "scatter", data: shownPts,
+          symbolSize: (v) => 5 + 30 * Math.sqrt(v[2] / maxN),
+          itemStyle: { opacity: .85, borderColor: "#fff", borderWidth: .6 },
+          markLine: { silent: true, symbol: "none", lineStyle: { type: "dashed", color: "#b3421f", width: 1.2 },
+            label: { formatter: "misma cantidad de ambos", position: "insideMiddleTop", fontSize: 10, color: "#b3421f" },
+            data: [[{ coord: [0, 0] }, { coord: [lim, lim] }]] }
         }]
       }, true);
-      const r = d.r;
-      const pill = document.getElementById("correl-r");
-      if (pill) pill.textContent = (r == null) ? "r = —" : `r = ${(+r).toFixed(2)} (${Math.abs(r) >= .7 ? "fuerte" : Math.abs(r) >= .4 ? "moderada" : "débil"})`;
+      const stats = document.getElementById("correl-stats");
+      if (stats) stats.innerHTML =
+        `<div class="stat"><div class="v">${r == null ? "—" : (+r).toFixed(2)}</div><div class="l">correlación r · ${r == null ? "" : strength(r)}</div></div>` +
+        `<div class="stat"><div class="v">${fmt(n)}</div><div class="l">colegios con reportes en ${year}</div></div>` +
+        `<div class="stat"><div class="v">${n ? Math.round(ambos / n * 100) : 0}%</div><div class="l">tienen reportes de <b>ambos</b> tipos</div></div>` +
+        `<div class="stat"><div class="v">${n ? Math.round((n - ambos) / n * 100) : 0}%</div><div class="l">solo un tipo (físico <i>o</i> psicológico)</div></div>`;
+      const rd = document.getElementById("correl-reading");
+      if (rd) rd.innerHTML = r == null ? "" :
+        `<b>Lectura:</b> en ${year}${year === cor.anio_parcial ? " (parcial)" : ""} la correlación es <b>${strength(r)}</b> (r = ${(+r).toFixed(2)}): saber que un colegio tiene reportes físicos <b>casi no permite predecir</b> cuántos psicológicos tendrá. La mayoría de colegios (${n ? Math.round((n - ambos) / n * 100) : 0}%) aparece con <b>un solo tipo</b>; las burbujas grandes se concentran cerca del origen (1–3 reportes). Las pocas que se alejan por el eje X son colegios con muchos reportes físicos y casi ninguno psicológico, y viceversa.` +
+        (hidden ? ` <span style="color:var(--text-muted)">(${hidden} combinación(es) con más de ${lim} reportes están fuera de esta vista; pulsa "Todo el rango").</span>` : "");
       const src = document.getElementById("correl-source");
-      if (src) src.innerHTML = `${esc(cor.note || "")} Fuente: ${esc(cor.source || "")}` +
-        (d.colegios ? ` · ${fmt(d.colegios)} colegios con reportes en ${year}.` : "");
+      if (src) src.innerHTML = `${esc(cor.note || "")} Fuente: ${esc(cor.source || "")}${soloF ? "" : ""}`;
     };
-    draw(sel ? sel.value : cor.anios[cor.anios.length - 1]);
-    if (sel && !sel.dataset.wired) { sel.addEventListener("change", (e) => draw(e.target.value)); sel.dataset.wired = "1"; }
+    const cur = () => (sel ? sel.value : last);
+    draw(cur());
+    if (sel && !sel.dataset.wired) {
+      sel.addEventListener("change", () => draw(cur())); sel.dataset.wired = "1";
+      document.querySelectorAll("#correl-zoom button").forEach(b => b.addEventListener("click", () => {
+        document.querySelectorAll("#correl-zoom button").forEach(x => x.classList.remove("active"));
+        b.classList.add("active"); correlZoom = b.dataset.zoom; draw(cur());
+      }));
+    }
   }
 
   /* ---------- Colegios (SíseVe Región Lima) ---------- */
@@ -457,6 +646,7 @@
     legend.onAdd = function () { const div = L.DomUtil.create("div", "legend"); div.id = "map-legend"; return div; };
     legend.addTo(map);
     updateLegend();
+    if (window.OBS_districts) { try { window.OBS_districts.init({ map, store, L, esc, fmt }); } catch (e) { console.error("[obs] distritos", e); } }
   }
 
   const _norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace("PROV. CONST. DEL ", "").trim();
@@ -523,6 +713,7 @@
 
   function drawMap() {
     if (!store.geo) return;
+    store.mapYear = mapYear; store.mapMetric = mapMetric;
     if (geoLayer) map.removeLayer(geoLayer);
     const scale = makeScale();
     geoLayer = L.geoJSON(store.geo, {
@@ -542,6 +733,7 @@
           { sticky: true });
         layer.on("mouseover", () => layer.setStyle({ weight: 2.5, color: "#14202e" }));
         layer.on("mouseout", () => geoLayer.resetStyle(layer));
+        layer.on("click", () => map.fire("obs:deptclick", { name }));
       }
     }).addTo(map);
     updateMapSource();
@@ -860,13 +1052,14 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation, schoolsTopData] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
       loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books),
-      loadJSON(C.data.monthly), loadJSON(C.data.schools), loadJSON(C.data.territory), loadJSON(C.data.correlation)
+      loadJSON(C.data.monthly), loadJSON(C.data.schools), loadJSON(C.data.territory), loadJSON(C.data.correlation), loadJSON(C.data.schoolsTop)
     ]);
     Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation });
+    schoolsTop = schoolsTopData;
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -883,7 +1076,7 @@
     safe("correlacion", () => renderCorrelation(correlation));
     safe("mensual", () => renderMonthly(monthly));
     safe("colegios", () => renderSchools(schools));
-    safe("buscador-colegios", () => initSchoolSearch());
+    safe("buscador-colegios", () => initSchools());
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
     safe("desgloses", () => renderBreakdowns(breakdowns));

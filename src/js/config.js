@@ -36,7 +36,8 @@ window.OBS_CONFIG = {
     schools: "data/processed/schools.json",
     territory: "data/processed/territory.json",
     correlation: "data/processed/correlation.json",
-    schoolsIndex: "data/processed/schools_index.json"
+    schoolsIndex: "data/processed/schools_index.json",
+    schoolsTop: "data/processed/schools_top.json"
   }
 };
 

@@ -26,7 +26,8 @@
   gtag('config', 'G-YD3GKLZX0T');
 </script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css">
+<link rel="stylesheet" href="src/css/styles.css?v=20260924b">
+<link rel="stylesheet" href="src/css/districts.css?v=20260924b">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
@@ -53,21 +54,25 @@
       <span>Observatorio<br><small>Bullying · Perú</small></span>
     </a>
     <nav class="side-nav" id="side-nav">
-      <a href="#familias"><svg class="ic"><use href="#ic-heart"/></svg> Para las familias</a>
-      <a href="#territorio"><svg class="ic"><use href="#ic-map"/></svg> Dónde ocurre</a>
+      <span class="nav-group">Datos</span>
       <a href="#resumen"><svg class="ic"><use href="#ic-chart"/></svg> Cifras clave</a>
-      <a href="#mapa"><svg class="ic"><use href="#ic-map"/></svg> Mapa</a>
       <a href="#colegios"><svg class="ic"><use href="#ic-alert"/></svg> ¿Y por colegio?</a>
-      <a href="#serie"><svg class="ic"><use href="#ic-chart"/></svg> Serie histórica</a>
       <a href="#correlacion"><svg class="ic"><use href="#ic-chart"/></svg> Física vs psicológica</a>
+      <a href="#mapa"><svg class="ic"><use href="#ic-map"/></svg> Mapa (regiones y distritos)</a>
+      <a href="#territorio"><svg class="ic"><use href="#ic-map"/></svg> Dónde ocurre</a>
+      <a href="#serie"><svg class="ic"><use href="#ic-chart"/></svg> Serie histórica y tipos</a>
       <a href="#estacional"><svg class="ic"><use href="#ic-chart"/></svg> Meses (estacionalidad)</a>
       <a href="#perfil"><svg class="ic"><use href="#ic-users"/></svg> Perfil de casos</a>
-      <a href="#prevalencia"><svg class="ic"><use href="#ic-scale"/></svg> Prevalencia</a>
+      <span class="nav-group">Familias</span>
+      <a href="#familias"><svg class="ic"><use href="#ic-heart"/></svg> Para las familias</a>
+      <a href="#prevalencia"><svg class="ic"><use href="#ic-scale"/></svg> Prevalencia real</a>
+      <span class="nav-group">Contexto</span>
       <a href="#mundo"><svg class="ic"><use href="#ic-globe"/></svg> En el mundo</a>
       <a href="#noticias"><svg class="ic"><use href="#ic-alert"/></svg> Noticias</a>
       <a href="#libros"><svg class="ic"><use href="#ic-book"/></svg> Libros</a>
       <a href="#politicas"><svg class="ic"><use href="#ic-scale"/></svg> Políticas</a>
-      <a href="#datos"><svg class="ic"><use href="#ic-chart"/></svg> Datos</a>
+      <span class="nav-group">Observatorio</span>
+      <a href="#datos"><svg class="ic"><use href="#ic-chart"/></svg> Datos abiertos</a>
       <a href="#metodologia"><svg class="ic"><use href="#ic-book"/></svg> Metodología</a>
     </nav>
     <a class="side-denuncia" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">🚨 Denunciar en SíseVe</a>
@@ -157,9 +162,7 @@
     <div class="kpi-grid" id="kpi-grid">
       <div class="loading">Cargando indicadores…</div>
     </div>
-    <div class="callout" id="siseve-warning">
-      <b>Importante:</b> SíseVe registra <b>reportes</b> (puede haber más de un reporte por caso y existe subregistro). Un aumento de reportes no equivale necesariamente a un aumento real de casos.
-    </div>
+    <div class="callout" id="siseve-warning"><span>ℹ️</span><span><b>Importante:</b> SíseVe registra <b>reportes</b> (puede haber más de un reporte por caso y existe subregistro). Un aumento de reportes no equivale necesariamente a un aumento real de casos.</span></div>
   </div>
 </section>
 
@@ -219,7 +222,7 @@
 <section id="mapa" class="section-tint">
   <div class="wrap">
     <h2>Mapa nacional</h2>
-    <p class="lead">Distribución territorial de los reportes. Distingue <b>número absoluto</b> de <b>tasa por 10,000 estudiantes</b>: una región grande tiende a más reportes solo por tener más estudiantes.</p>
+    <p class="lead">Distribución territorial de los reportes. Distingue <b>número absoluto</b> de <b>tasa por 10,000 estudiantes</b>: una región grande tiende a más reportes solo por tener más estudiantes. <b>Haz clic en una región</b> para bajar al detalle por <b>distrito</b>, o cambia a la vista distrital de todo el país.</p>
     <div class="controls">
       <label>Año
         <select id="map-year"></select>
@@ -238,44 +241,69 @@
 <section id="colegios">
   <div class="wrap">
     <h2><svg class="ic"><use href="#ic-map"/></svg> ¿Y por colegio?</h2>
+    <p class="lead">Los colegios con más reportes en SíseVe y un <b>buscador</b> para encontrar el tuyo. Serie completa <b>2013–2026</b> por institución (microdato oficial, 22,569 colegios). Empieza con el <b>top nacional</b> y ve filtrando por región, gestión, nivel o año; o escribe el nombre, el código modular o el distrito.</p>
+    <div class="callout"><span>⚠️</span><span><b>Léelo con cuidado: no es un ranking de "peores colegios".</b> Son <b>reportes registrados</b>, no la violencia real. Más reportes suele reflejar <b>mejor cultura de denuncia</b> (y los colegios grandes tienen más por tamaño); <b>cero reportes</b> puede significar ocultamiento, no ausencia de violencia. Un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
 
-    <h3 style="margin:.2rem 0 .4rem;font-size:1.1rem">Busca el colegio de tu hijo o hija</h3>
-    <p class="lead">Escribe el <b>nombre</b>, el <b>código modular</b> o el <b>distrito</b>. Verás los reportes registrados en SíseVe (acumulado 2013–2026) para cada colegio del país (22,569 instituciones).</p>
-    <div class="callout"><span>⚠️</span><span><b>Léelo con cuidado: no es un ranking de "peores colegios".</b> Son <b>reportes registrados</b>, no la violencia real. Más reportes suele reflejar <b>mejor cultura de denuncia</b> (y colegios más grandes tienen más por tamaño); <b>cero reportes</b> puede significar ocultamiento, no ausencia de violencia. Un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
-    <div class="panel">
-      <div class="controls">
-        <input id="school-search" type="search" placeholder="Ej.: Ntra. Sra. de la Merced, 0523472, San Borja…" autocomplete="off"
-          style="flex:1;min-width:260px;padding:.6rem .8rem;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:.95rem" />
+    <div class="panel school-panel">
+      <div class="school-toolbar">
+        <div class="school-search-wrap">
+          <svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="school-search" type="search" placeholder="Busca por nombre, código modular o distrito…" autocomplete="off" aria-label="Buscar colegio" />
+        </div>
+        <div class="school-filters">
+          <label>Región <select id="sf-region"><option value="">Todas</option></select></label>
+          <label>Gestión <select id="sf-gestion"><option value="">Todas</option><option>Público</option><option>Privado</option></select></label>
+          <label>Nivel <select id="sf-nivel"><option value="">Todos</option></select></label>
+          <label>Año <select id="sf-year"><option value="">Total 2013–2026</option></select></label>
+          <button id="sf-clear" type="button" class="btn-ghost" hidden>✕ Limpiar</button>
+        </div>
+        <div class="seg" id="school-view">
+          <button data-view="ie" class="active">Colegios (IE)</button>
+          <button data-view="redes">Redes de colegios · Lima</button>
+        </div>
       </div>
-      <div id="school-results" style="margin-top:.8rem"><p class="loading" style="margin:.4rem 0">Empieza a escribir para buscar…</p></div>
-      <p class="source" id="school-search-source"></p>
+
+      <div id="school-view-ie">
+        <p class="school-status" id="school-status"></p>
+        <div class="table-scroll table-scroll-tall">
+          <table class="data school-table" id="school-results-table">
+            <thead><tr>
+              <th>#</th><th>Colegio</th><th>Gestión</th><th>Nivel</th>
+              <th class="spark-th">2013–2026</th>
+              <th class="num">2024</th><th class="num">2025</th><th class="num">2026*</th>
+              <th class="num" id="sf-total-th">Total</th>
+            </tr></thead>
+            <tbody id="school-results"><tr><td colspan="9" class="loading">Cargando top nacional…</td></tr></tbody>
+          </table>
+        </div>
+        <p class="source" id="school-search-source"></p>
+      </div>
+
+      <div id="school-view-redes" hidden>
+        <p class="lead" style="margin-bottom:10px">20 colegios/agrupaciones de <b>Región Lima</b> con más registros (SíseVe/DRELM vía transparencia, 2022–ago 2026). Por <b>total</b> lo encabezan las <b>cadenas grandes</b> (Innova: 48 sedes → 1,333 reportes ≈ <b>2.8 por sede en 2026</b>); ordena <b>por sede</b> para una lectura más justa.</p>
+        <div class="controls">
+          <span style="font-size:.85rem;color:var(--text-muted);font-weight:600">Ordenar por:</span>
+          <div class="seg" id="schools-sort">
+            <button data-sort="total" class="active">Total de registros</button>
+            <button data-sort="por_sede">Casos por sede (2026)</button>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="data" id="schools-table">
+            <thead><tr>
+              <th>#</th><th>Colegio / agrupación</th><th>Tipo</th>
+              <th class="num">Sedes</th><th class="num">2022</th><th class="num">2023</th>
+              <th class="num">2024</th><th class="num">2025</th><th class="num">2026*</th>
+              <th class="num">Total</th><th class="num">Por sede*</th>
+            </tr></thead>
+            <tbody><tr><td colspan="11" class="loading">Cargando…</td></tr></tbody>
+          </table>
+        </div>
+        <p class="source" id="schools-source"></p>
+      </div>
     </div>
 
-    <h3 style="margin:1.8rem 0 .4rem;font-size:1.05rem">Detalle por año — Región Lima</h3>
-    <p class="lead">20 colegios/agrupaciones de <b>Región Lima</b> con más registros (SíseVe, 2022–ago 2026). Ordenado por <b>total</b> lo encabezan las cadenas más grandes; ordenado <b>por sede</b> el cuadro cambia por completo.</p>
-    <div class="callout"><span>⚠️</span><span><b>Más registros NO significa "peor colegio".</b> Por <b>total</b>, arriba están las <b>cadenas grandes</b> (Innova: 48 sedes → 1,333 reportes ≈ solo <b>2.8 por sede en 2026</b>). Un colegio de <b>una sede</b> como Ntra. Sra. de la Merced tiene 32 en 2026 (más por sede). Y más denuncias suele reflejar <b>mejor cultura de reporte</b>; cero reportes puede ser <b>ocultamiento</b>. Usa el orden <b>"por sede"</b> para una lectura más justa.</span></div>
-    <div class="controls">
-      <span style="font-size:.85rem;color:var(--text-muted);font-weight:600">Ordenar por:</span>
-      <div class="seg" id="schools-sort">
-        <button data-sort="total" class="active">Total de registros</button>
-        <button data-sort="por_sede">Casos por sede (2026)</button>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="table-scroll">
-        <table class="data" id="schools-table">
-          <thead><tr>
-            <th>#</th><th>Colegio / agrupación</th><th>Tipo</th>
-            <th class="num">Sedes</th><th class="num">2022</th><th class="num">2023</th>
-            <th class="num">2024</th><th class="num">2025</th><th class="num">2026*</th>
-            <th class="num">Total</th><th class="num">Por sede*</th>
-          </tr></thead>
-          <tbody><tr><td colspan="11" class="loading">Cargando…</td></tr></tbody>
-        </table>
-      </div>
-      <p class="source" id="schools-source"></p>
-    </div>
-    <div class="callout info"><span>💡</span><span>SíseVe <b>público</b> llega hasta UGEL; este detalle por colegio proviene de <b>datos SíseVe/DRELM difundidos vía transparencia</b> (no del tablero abierto). *2026 es parcial (corte 31.08.2026); "por sede" usa el valor 2026. ¿Un colegio en particular? Pregunta a su <b>dirección</b> por el plan de convivencia: un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
+    <div class="callout info"><span>💡</span><span>*2026 es parcial (enero–agosto). Haz clic en un colegio para ver su detalle <b>año por año y por tipo</b> (física, psicológica, sexual, bullying, ciberacoso). ¿Tu colegio no aparece? Significa que <b>no tiene reportes registrados</b> en SíseVe, no necesariamente que no haya violencia. Pregunta a su <b>dirección</b> por el plan de convivencia: un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
   </div>
 </section>
 
@@ -308,13 +336,18 @@
 <section id="correlacion" class="section-tint">
   <div class="wrap">
     <h2><svg class="ic"><use href="#ic-chart"/></svg> ¿Van juntas la violencia física y la psicológica?</h2>
-    <p class="lead">Cada punto agrupa <b>colegios</b> según cuántos reportes físicos (eje X) y psicológicos (eje Y) tienen; el tamaño indica cuántos colegios caen en esa combinación. <b>No se identifica ningún colegio</b> (registro ≠ exposición). Cuando los puntos suben en diagonal, ambas formas de violencia tienden a aparecer juntas.</p>
+    <p class="lead">Tomamos cada <b>colegio con reportes</b> y contamos cuántos son físicos (eje X) y cuántos psicológicos (eje Y). Cada burbuja agrupa a los colegios con esa misma combinación; cuanto más grande y oscura, más colegios. <b>No se identifica ningún colegio</b> (registro ≠ exposición).</p>
     <div class="panel">
       <div class="controls">
         <label>Año <select id="correl-year"></select></label>
-        <span class="pill" id="correl-r">r = —</span>
+        <div class="seg" id="correl-zoom">
+          <button data-zoom="near" class="active">Zona densa (0–20)</button>
+          <button data-zoom="all">Todo el rango</button>
+        </div>
       </div>
+      <div class="stat-row" id="correl-stats"></div>
       <div class="chart tall" id="chart-correl"></div>
+      <p class="reading" id="correl-reading"></p>
       <p class="source" id="correl-source"></p>
     </div>
   </div>
@@ -608,9 +641,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
-<script src="src/js/config.js"></script>
-<script src="src/js/app.js"></script>
-<script src="src/js/chatbot.js"></script>
+<script src="src/js/config.js?v=20260924b"></script>
+<script src="src/js/app.js?v=20260924b"></script>
+<script src="src/js/districts.js?v=20260924b"></script>
+<script src="src/js/chatbot.js?v=20260924b"></script>
 <script>
 (function(){
   // A11y: iconos SVG decorativos ocultos para lectores de pantalla

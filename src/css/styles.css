@@ -88,25 +88,26 @@ html, body { overflow-x: clip; }
 .main > .hero { order: 0; }
 .main > .helpbar { order: 1; }
 .main > #resumen { order: 2; }
-.main > #familias { order: 3; }
-.main > #territorio { order: 4; }
-.main > #mapa { order: 5; }
-.main > #colegios { order: 5; }
-.main > #serie { order: 6; }
-.main > #estacional { order: 6; }
-.main > #perfil { order: 7; }
-.main > #prevalencia { order: 8; }
-.main > #mundo { order: 9; }
-.main > #comparacion { order: 10; }
-.main > #academica { order: 11; }
-.main > #noticias { order: 12; }
-.main > #libros { order: 13; }
-.main > #politicas { order: 14; }
-.main > #datos { order: 15; }
-.main > #metodologia { order: 16; }
-.main > #limitaciones { order: 17; }
-.main > #apoyo { order: 18; }
-.main > .site-footer { order: 19; }
+.main > #colegios { order: 3; }
+.main > #correlacion { order: 4; }
+.main > #familias { order: 5; }
+.main > #mapa { order: 6; }
+.main > #territorio { order: 7; }
+.main > #serie { order: 8; }
+.main > #estacional { order: 9; }
+.main > #perfil { order: 10; }
+.main > #prevalencia { order: 11; }
+.main > #mundo { order: 12; }
+.main > #comparacion { order: 13; }
+.main > #academica { order: 14; }
+.main > #noticias { order: 15; }
+.main > #libros { order: 16; }
+.main > #politicas { order: 17; }
+.main > #datos { order: 18; }
+.main > #metodologia { order: 19; }
+.main > #limitaciones { order: 20; }
+.main > #apoyo { order: 21; }
+.main > .site-footer { order: 22; }
 .sidebar {
   position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto;
   background: var(--surface); border-right: 1px solid var(--border);
@@ -350,3 +351,83 @@ table.data tr:hover td { background: var(--surface-2); }
 .pill { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: .7rem; font-weight: 700; background: rgba(255,255,255,.16); color: #fff; }
 .loading { color: var(--text-soft); font-style: italic; padding: 20px; text-align: center; }
 [hidden] { display: none !important; }
+
+/* ---------- Nav groups ---------- */
+.nav-group { font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--text-soft); padding: 12px 11px 4px; }
+.nav-group:first-child { padding-top: 4px; }
+
+/* ---------- Colegios: panel integrado ---------- */
+.school-panel { padding: 16px; }
+.school-toolbar { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+.school-search-wrap { position: relative; display: flex; align-items: center; }
+.school-search-wrap .ic { position: absolute; left: 14px; width: 20px; height: 20px; color: var(--text-soft); pointer-events: none; }
+.school-search-wrap input { width: 100%; font: inherit; font-size: 1rem; padding: 12px 14px 12px 44px; border: 2px solid var(--border); border-radius: 14px; background: var(--surface); color: var(--text); outline: none; transition: border-color .15s, box-shadow .15s; }
+.school-search-wrap input:focus { border-color: var(--brand); box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 14%, transparent); }
+.school-filters { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.school-filters label { font-size: .8rem; color: var(--text-muted); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+.school-filters select { font: inherit; font-size: .84rem; padding: 6px 10px; border-radius: 30px; border: 1px solid var(--border); background: var(--surface); color: var(--text); max-width: 200px; }
+.btn-ghost { font: inherit; font-size: .8rem; padding: 6px 12px; border-radius: 30px; border: 1px solid var(--border); background: transparent; color: var(--text-muted); cursor: pointer; }
+.btn-ghost:hover { color: var(--brand); border-color: var(--brand); }
+.school-panel .seg { align-self: flex-start; display: inline-flex; border: 1px solid var(--border); border-radius: 30px; padding: 2px; gap: 2px; background: var(--surface); }
+.school-panel .seg button { font: inherit; font-size: .84rem; border: none; border-radius: 30px; background: transparent; padding: 6px 14px; cursor: pointer; color: var(--text); }
+.school-panel .seg button.active { background: var(--brand); color: #fff; }
+.school-status { font-size: .8rem; color: var(--text-muted); margin: 0 0 8px; min-height: 1.2em; }
+.table-scroll-tall { max-height: 640px; }
+.school-table td, .school-table th { padding: 8px 10px; vertical-align: middle; }
+.school-table tr.sc-row { cursor: pointer; }
+.school-table tr.sc-row.open td { background: color-mix(in srgb, var(--brand) 7%, transparent); }
+.school-table .sc-name { font-weight: 700; }
+.school-table .sc-sub { display: block; font-size: .72rem; color: var(--text-muted); font-weight: 500; }
+.school-table .sc-tag { display: inline-block; font-size: .68rem; font-weight: 700; padding: 1px 7px; border-radius: 20px; background: var(--surface-2); color: var(--text-muted); }
+.school-table .sc-tag.pub { background: #dff2e6; color: #1c6b3f; } .school-table .sc-tag.priv { background: #efe6fb; color: #5a3a9a; }
+.school-table .sort-col { color: var(--brand); }
+.spark { display: block; width: 112px; height: 26px; }
+.spark rect { fill: color-mix(in srgb, var(--brand) 55%, transparent); }
+.spark rect.hi { fill: var(--brand); }
+.spark rect.partial { fill: var(--orange); }
+.sc-detail td { background: var(--surface-2); padding: 12px 14px 16px; cursor: default; }
+.sc-detail .sc-detail-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.sc-detail .chart { height: 220px; }
+.sc-detail table.data { font-size: .78rem; }
+.sc-detail table.data th, .sc-detail table.data td { padding: 5px 8px; }
+.sc-detail .sc-meta { font-size: .8rem; color: var(--text-muted); margin: 0 0 8px; }
+.sc-detail .sc-meta b { color: var(--text); }
+@media (max-width: 860px) { .sc-detail .sc-detail-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Stat tiles ---------- */
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 4px 0 12px; }
+.stat { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; }
+.stat .v { font-size: 1.45rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
+.stat .l { font-size: .74rem; color: var(--text-muted); margin-top: 3px; }
+.reading { font-size: .9rem; margin: 10px 0 0; padding: 10px 14px; border-left: 3px solid var(--brand); background: color-mix(in srgb, var(--brand) 6%, transparent); border-radius: 0 10px 10px 0; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 640px) {
+  .wrap { padding-inline: 14px; }
+  .panel { padding: 14px; }
+  .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .kpi .value { font-size: 1.5rem; }
+  .controls { gap: 6px; }
+  .controls label { width: 100%; justify-content: space-between; }
+  .controls select { flex: 1; }
+  .school-filters label { width: calc(50% - 6px); justify-content: space-between; }
+  .school-filters select { flex: 1; max-width: none; }
+  .school-panel .seg { align-self: stretch; }
+  .school-panel .seg button { flex: 1; padding: 8px 6px; font-size: .78rem; }
+  table.data { font-size: .78rem; }
+  table.data th, table.data td { padding: 7px 8px; }
+  .school-table th:nth-child(3), .school-table td:nth-child(3), .school-table th:nth-child(4), .school-table td:nth-child(4) { display: none; }
+  .spark { width: 84px; }
+  .chart.tall { height: 300px; }
+  #map { height: 400px; }
+  .table-scroll { -webkit-overflow-scrolling: touch; }
+  .table-scroll-tall { max-height: 520px; }
+  section > .wrap > .lead { font-size: .92rem; }
+}
+@media (max-width: 480px) {
+  .school-filters label { width: 100%; }
+  .school-table th:nth-child(6), .school-table td:nth-child(6), .school-table th:nth-child(7), .school-table td:nth-child(7) { display: none; }
+  .school-table .sc-sub { font-size: .68rem; }
+  .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat .v { font-size: 1.2rem; }
+}

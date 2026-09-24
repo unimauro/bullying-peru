@@ -4,6 +4,8 @@ data/raw/*
 !data/raw/.gitkeep
 !data/raw/observatorio-escolar/
 !data/raw/observatorio-escolar/*.json
+# 14 MB, se regenera desde la fuente (ver scripts/build_schools_v2.py)
+data/raw/observatorio-escolar/schools_detail.json
 __pycache__/
 *.pyc
 .venv/

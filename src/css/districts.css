@@ -1,0 +1,45 @@
+/* Nivel distrital del mapa (src/js/districts.js). Reutiliza las variables de styles.css. */
+
+/* En modo distrital, la capa departamental de app.js y su leyenda quedan ocultas (no se tocan). */
+.obs-dist-mode .leaflet-overlay-pane path.leaflet-interactive:not(.obs-dist) { display: none; }
+.obs-dist-mode .legend:not(.obs-dist-legend) { display: none; }
+
+/* Control "Departamentos | Distritos" */
+.leaflet-bar.obs-dist-ctl {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 10px; box-shadow: var(--shadow-sm); padding: 6px; font-size: .74rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px; max-width: 320px;
+}
+.obs-dist-seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.obs-dist-btn {
+  appearance: none; border: 0; background: transparent; color: var(--text-muted);
+  font: inherit; font-weight: 600; padding: 5px 10px; cursor: pointer; line-height: 1.2;
+}
+.obs-dist-btn + .obs-dist-btn { border-left: 1px solid var(--border); }
+.obs-dist-btn:hover { background: var(--bg-tint); color: var(--text); }
+.obs-dist-btn.active { background: var(--brand); color: #fff; }
+.obs-dist-period {
+  font: inherit; font-size: .72rem; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 8px; padding: 4px 6px; max-width: 150px;
+}
+.obs-dist-back {
+  appearance: none; font: inherit; font-size: .72rem; font-weight: 600; cursor: pointer;
+  background: var(--bg-tint); color: var(--brand); border: 1px solid var(--border);
+  border-radius: 8px; padding: 4px 8px; line-height: 1.2;
+}
+.obs-dist-back:hover { background: var(--border); }
+.obs-dist-status { color: var(--text-soft); font-size: .7rem; flex-basis: 100%; }
+.obs-dist-status:empty { display: none; }
+
+/* Leyenda propia (hereda .legend de styles.css) */
+.obs-dist-legend .obs-dist-sub { color: var(--text-soft); font-size: .66rem; line-height: 1.4; margin-top: 3px; }
+
+/* Tooltip */
+.leaflet-tooltip.obs-dist-tooltip { font-size: .76rem; line-height: 1.5; }
+.obs-dist-tt-sub { color: #6d5f4d; font-size: .7rem; }
+.obs-dist-tt-src { color: #7a6a55; font-size: .64rem; margin-top: 4px; border-top: 1px solid #ecdfca; padding-top: 3px; }
+
+@media (max-width: 640px) {
+  .leaflet-bar.obs-dist-ctl { max-width: 240px; font-size: .7rem; }
+  .obs-dist-btn { padding: 4px 8px; }
+}
