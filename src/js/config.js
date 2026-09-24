@@ -33,7 +33,9 @@ window.OBS_CONFIG = {
     world: "data/processed/world.json",
     books: "data/processed/books.json",
     monthly: "data/processed/monthly.json",
-    schools: "data/processed/schools.json"
+    schools: "data/processed/schools.json",
+    territory: "data/processed/territory.json",
+    correlation: "data/processed/correlation.json"
   }
 };
 

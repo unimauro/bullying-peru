@@ -1,36 +1,245 @@
 {
-  "dataset": "Serie histórica de reportes SíseVe",
-  "source": "MINEDU — SíseVe (Boletín 'SíseVe en cifras', 2013–2022)",
-  "source_url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/9786",
-  "retrieval_date": "2026-09-18",
+  "dataset": "Serie histórica de reportes SíseVe (microdato oficial)",
+  "source": "MINEDU — SíseVe (microdato 2013–2026, acceso a la información pública)",
+  "source_url": "https://siseve.minedu.gob.pe/Web/App/Mapa",
+  "source_microdato": "MINEDU — SíseVe, microdato 2013–2026 obtenido vía solicitud de acceso a la información pública. Consolidado publicado por el Observatorio de Violencia Escolar (github.com/fiorellatl/observatorio-violencia-escolar).",
+  "retrieval_date": "2026-09-24",
   "partial_year": 2026,
-  "note": "SíseVe registra REPORTES de presuntos hechos, no la prevalencia real. La serie 2013–2022 es OFICIAL (Boletín 'SíseVe en cifras', fuente A) e incluye bullying y ciberbullying por año. 2020 y 2021 son cifras oficiales bajas por el cierre de escuelas (educación remota): la caída NO significa menos violencia real. Los años 2023–2026 provienen de prensa citando a MINEDU (B), pendientes del próximo boletín. 2026 es parcial (enero–agosto).",
-  "years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+  "note": "SíseVe registra REPORTES de presuntos hechos, no la prevalencia real. Serie completa 2013–2026 proveniente del MICRODATO OFICIAL de SíseVe (solicitud de acceso a la información pública): ya no dependemos de prensa para 2023–2026. 2020 y 2021 son cifras oficiales bajas por el cierre de escuelas (educación remota): la caída NO significa menos violencia real. 2026 es parcial (enero–agosto) y no es comparable con años completos.",
+  "years": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
   "series": {
-    "violencia":     [207, 2029, 3635, 5288, 5553, 9384, 13006, 756, 768, 12099, 19762, 19297, 19531, 11791],
-    "bullying":      [53,  574,  718,  1051, 1044, 1478, 2118,  54,  52,  2498,  null,  null,  null,  null],
-    "ciberbullying": [4,   33,   53,   66,   82,   122,  126,   58,  66,  140,   null,  null,  null,  null]
+    "violencia": [
+      207,
+      2029,
+      3635,
+      5288,
+      5552,
+      9383,
+      13001,
+      755,
+      768,
+      12025,
+      19722,
+      19297,
+      19531,
+      11791
+    ],
+    "bullying": [
+      2,
+      22,
+      60,
+      70,
+      53,
+      59,
+      284,
+      20,
+      12,
+      693,
+      1408,
+      1079,
+      1219,
+      786
+    ],
+    "ciberbullying": [
+      4,
+      55,
+      86,
+      153,
+      158,
+      220,
+      270,
+      97,
+      136,
+      313,
+      557,
+      449,
+      568,
+      564
+    ]
   },
   "reliability": {
-    "violencia":     ["A","A","A","A","A","A","A","A","A","A","B","A","A","A"],
-    "bullying":      ["A","A","A","A","A","A","A","A","A","A",null,null,null,null],
-    "ciberbullying": ["A","A","A","A","A","A","A","A","A","A",null,null,null,null]
+    "violencia": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "bullying": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ],
+    "ciberbullying": [
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A",
+      "A"
+    ]
   },
+  "tipos": {
+    "labels": {
+      "fisica": "Física",
+      "psicologica": "Psicológica",
+      "sexual": "Sexual"
+    },
+    "fisica": [
+      95,
+      1137,
+      2007,
+      2766,
+      2930,
+      4863,
+      6236,
+      88,
+      66,
+      5129,
+      7858,
+      7781,
+      8457,
+      5187
+    ],
+    "psicologica": [
+      96,
+      672,
+      1225,
+      1742,
+      1825,
+      3010,
+      4427,
+      408,
+      391,
+      4474,
+      8353,
+      7634,
+      7608,
+      4545
+    ],
+    "sexual": [
+      16,
+      220,
+      403,
+      780,
+      797,
+      1510,
+      2338,
+      259,
+      311,
+      2422,
+      3511,
+      3882,
+      3466,
+      2059
+    ]
+  },
+  "vinculo": {
+    "labels": {
+      "entre_escolares": "Entre escolares",
+      "personal_ie": "De personal de la IE hacia escolar"
+    },
+    "entre_escolares": [
+      107,
+      1303,
+      2190,
+      3023,
+      2890,
+      4670,
+      6451,
+      279,
+      310,
+      7529,
+      12525,
+      11686,
+      12907,
+      8156
+    ],
+    "personal_ie": [
+      100,
+      726,
+      1445,
+      2265,
+      2662,
+      4713,
+      6550,
+      476,
+      458,
+      4496,
+      7197,
+      7611,
+      6624,
+      3635
+    ]
+  },
+  "etiquetas_nota": "‘Bullying’ y ‘ciberacoso’ son etiquetas transversales del microdato SíseVe: un caso puede ser a la vez, p. ej., físico y bullying, por eso NO se suman con física/psicológica/sexual.",
   "year_notes": {
-    "2019": "13,006 casos (Boletín SíseVe). Máximo previo a la pandemia.",
-    "2020": "756 casos (oficial). Escuelas cerradas por COVID-19: la fuerte caída refleja la educación remota y menos mecanismos de reporte, no menos violencia real.",
-    "2021": "768 casos (oficial). Continúa la educación remota.",
-    "2022": "12,099 casos (Boletín 'SíseVe en cifras'). Retorno a la presencialidad; el bullying cerró en 2,498.",
-    "2023": "19,762 — cifra de prensa citando a MINEDU (pendiente de confirmar en el tablero oficial).",
-    "2024": "19,297 — dato del tablero oficial SíseVe (siseve.minedu.gob.pe). Verificado: la suma mensual del tablero da 19,297.",
-    "2025": "19,531 — dato del tablero oficial SíseVe. Verificado: suma mensual = 19,531.",
-    "2026": "11,791 — dato del tablero oficial SíseVe, parcial ene–ago (suma mensual ene–ago = 11,791). No comparable con años completos."
+    "2019": "13,001 reportes. Máximo previo a la pandemia.",
+    "2020": "755 reportes (oficial). Escuelas cerradas por COVID-19: la fuerte caída refleja la educación remota y menos mecanismos de reporte, no menos violencia real.",
+    "2021": "768 reportes (oficial). Continúa la educación remota.",
+    "2022": "12,025 reportes. Retorno a la presencialidad.",
+    "2023": "19,722 reportes — pico de la serie (microdato oficial; antes lo teníamos solo por prensa).",
+    "2024": "19,297 reportes (microdato oficial).",
+    "2025": "19,531 reportes (microdato oficial).",
+    "2026": "11,791 reportes, parcial ene–ago (microdato oficial). No comparable con años completos."
   },
-  "reliability_note": "'reliability' marca A (oficial: Boletín SíseVe 2013–2022 y tablero oficial SíseVe 2024–2026) vs B (prensa, solo 2023 pendiente de confirmar). Datos 2024–2026 leídos del tablero público oficial de SíseVe (gráficos que el propio portal muestra), no de prensa.",
+  "reliability_note": "Toda la serie es de nivel A (oficial). Antes 2023 era ‘B’ (prensa); ahora proviene del microdato oficial obtenido por acceso a la información pública.",
   "source_tablero": "https://siseve.minedu.gob.pe/Web/App/Mapa",
   "annotations": [
-    { "year": 2018, "label": "DS 004-2018 Lineamientos" },
-    { "year": 2020, "label": "Pandemia (escuelas cerradas)" },
-    { "year": 2023, "label": "Ley 31902" }
+    {
+      "year": 2018,
+      "label": "DS 004-2018 Lineamientos"
+    },
+    {
+      "year": 2020,
+      "label": "Pandemia (escuelas cerradas)"
+    },
+    {
+      "year": 2023,
+      "label": "Ley 31902"
+    }
   ]
 }

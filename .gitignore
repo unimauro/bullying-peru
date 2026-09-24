@@ -2,6 +2,8 @@ node_modules/
 .DS_Store
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/observatorio-escolar/
+!data/raw/observatorio-escolar/*.json
 __pycache__/
 *.pyc
 .venv/

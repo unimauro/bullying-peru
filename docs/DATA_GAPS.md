@@ -6,6 +6,14 @@ Registro **explícito** de lo que no existe, no se encontró o no es comparable.
 aquí es parte del rigor: el observatorio prefiere declarar un vacío antes que rellenarlo
 con una estimación disfrazada de dato oficial.
 
+## Resuelto (actualizado 2026-09-24)
+
+- ✅ **Serie completa 2013–2026 por MICRODATO OFICIAL SíseVe** (solicitud de acceso a la información pública): 2023–2026 dejan de ser prensa; toda la serie pasa a nivel **A**. Fuente vendorada en `data/raw/observatorio-escolar/` (consolidado de fiorellatl/observatorio-violencia-escolar) y transformada por `scripts/integrar_siseve_microdato.py`.
+- ✅ **Composición por tipo por año** (física + psicológica + sexual = total; entre escolares + personal de la IE = total; bullying y ciberacoso como etiquetas transversales) — nueva sección.
+- ✅ **Territorio 2024 oficial (25 regiones)** con tasa y serie por región (`territory.json`); mapa por defecto ahora en **2024**.
+- ✅ **Correlación física↔psicológica por colegio, anonimizada** (`correlation.json`) — sin identificar colegios (registro ≠ exposición).
+- ⚠️ **Sin cambios en la sección Colegios**: mantenemos nuestra postura de NO publicar rankings de colegios individuales, aunque la fuente sí lo hace.
+
 ## Resuelto (actualizado 2026-09-22)
 
 - ✅ **Serie 2013–2022** de violencia, **bullying y ciberbullying** por año: OFICIAL (Boletín SíseVe).
@@ -23,7 +31,7 @@ Ley 27806 a MINEDU; confirmar 2023; tipología/nivel/género por año; UGEL con 
 ## Datos buscados y no hallados
 
 - **API/endpoint JSON o CSV oficial de SíseVe:** NO EXISTE público. El dashboard tiene endpoints internos **cifrados en AES** y devuelven 403 sin sesión de navegador; el Excel solo se baja manualmente desde la UI. datosabiertos.gob.pe NO tiene SíseVe.
-- **Totales SíseVe 2023–2026:** aún sin boletín oficial; las cifras usadas son de prensa citando a MINEDU (nivel B), marcadas como tales en `timeseries.json`.
+- ~~**Totales SíseVe 2023–2026:** aún sin boletín oficial; cifras de prensa (nivel B).~~ **RESUELTO 2026-09-24**: microdato oficial 2013–2026 (acceso a la información pública) integrado; toda la serie es nivel A.
 - **Datos por INSTITUCIÓN EDUCATIVA / colegio:** NO EXISTE dataset abierto (protección de datos; el dashboard corta en UGEL). No hay ranking oficial de colegios.
 - **Datos MENSUALES:** NO EXISTE open dataset mensual.
 - **Detalle por departamento 2024/2026:** solo el top publicado en prensa; el resto queda 'sin dato' (no se estima). El nivel UGEL 2024/2025 existe en el dashboard pero solo por descarga manual de Excel.

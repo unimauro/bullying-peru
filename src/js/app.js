@@ -201,6 +201,90 @@
       `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
   }
 
+  /* ---------- Composición por tipo (microdato oficial) ---------- */
+  let tiposMode = "tipo";
+  function renderTipos(ts) {
+    const ch = mkChart("chart-tipos");
+    if (!ch || !ts || !ts.years) return;
+    const t = echartsTheme();
+    const yrs = ts.years.map(String);
+    const stackDef = tiposMode === "vinculo"
+      ? [
+          { name: "Entre escolares", key: "entre_escolares", src: ts.vinculo, color: C.colors.violencia },
+          { name: "De personal de la IE", key: "personal_ie", src: ts.vinculo, color: C.colors.bullying },
+        ]
+      : [
+          { name: "Física", key: "fisica", src: ts.tipos, color: "#d4553a" },
+          { name: "Psicológica", key: "psicologica", src: ts.tipos, color: C.colors.violencia },
+          { name: "Sexual", key: "sexual", src: ts.tipos, color: C.colors.ciber },
+        ];
+    const bars = stackDef.filter(s => s.src && s.src[s.key]).map(s => ({
+      name: s.name, type: "bar", stack: "total", data: s.src[s.key],
+      itemStyle: { color: s.color }, barMaxWidth: 30, emphasis: { focus: "series" }
+    }));
+    // Etiquetas transversales (subconjuntos) solo en modo "tipo": líneas superpuestas.
+    const lines = tiposMode === "tipo" ? [
+      { name: "Bullying (etiqueta)", type: "line", smooth: true, symbol: "circle", symbolSize: 6,
+        data: ts.series.bullying || [], itemStyle: { color: C.colors.bullying },
+        lineStyle: { width: 2.5, type: "dashed", color: C.colors.bullying } },
+      { name: "Ciberacoso (etiqueta)", type: "line", smooth: true, symbol: "circle", symbolSize: 6,
+        data: ts.series.ciberbullying || [], itemStyle: { color: C.colors.exposicion },
+        lineStyle: { width: 2.5, type: "dashed", color: C.colors.exposicion } },
+    ] : [];
+    ch.setOption({
+      textStyle: t.textStyle,
+      tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" } }, t.tooltip),
+      toolbox: TOOLBOX, legend: { top: 0 },
+      grid: { left: 56, right: 24, top: 36, bottom: 40 },
+      xAxis: { type: "category", data: yrs, axisLine: { lineStyle: { color: t.splitLine.lineStyle.color } } },
+      yAxis: { type: "value", name: "reportes", splitLine: t.splitLine },
+      series: bars.concat(lines)
+    }, true);
+    const src = document.getElementById("tipos-source");
+    if (src) src.innerHTML = `Microdato oficial SíseVe 2013–2026 (${esc(ts.source_microdato || "")}). ` +
+      (tiposMode === "tipo"
+        ? "Las barras (física + psicológica + sexual) suman el total del año; bullying y ciberacoso son etiquetas transversales (no se suman)."
+        : "‘Entre escolares’ + ‘de personal de la IE’ suman el total del año (vínculo agresor↔víctima).");
+  }
+
+  /* ---------- Correlación física vs psicológica (anonimizado) ---------- */
+  function renderCorrelation(cor) {
+    const ch = mkChart("chart-correl");
+    if (!ch || !cor || !cor.anios) return;
+    const sel = document.getElementById("correl-year");
+    if (sel && !sel.dataset.filled) {
+      sel.innerHTML = cor.anios.map(y => `<option value="${y}"${y === cor.anios[cor.anios.length - 1] ? " selected" : ""}>${y}${y === cor.anio_parcial ? " (parcial)" : ""}</option>`).join("");
+      sel.dataset.filled = "1";
+    }
+    const draw = (year) => {
+      const t = echartsTheme();
+      const d = (cor.datos && cor.datos[year]) || {};
+      const pts = (d.puntos || []).map(p => [p[0], p[1], p[2]]);
+      const maxN = pts.reduce((m, p) => Math.max(m, p[2]), 1);
+      ch.setOption({
+        textStyle: t.textStyle,
+        tooltip: Object.assign({ trigger: "item", formatter: (o) => `Física: ${o.value[0]} · Psicológica: ${o.value[1]}<br>${fmt(o.value[2])} colegio(s)` }, t.tooltip),
+        toolbox: TOOLBOX,
+        grid: { left: 56, right: 24, top: 20, bottom: 48 },
+        xAxis: { type: "value", name: "Reportes físicos (colegio)", nameLocation: "middle", nameGap: 28, splitLine: t.splitLine },
+        yAxis: { type: "value", name: "Reportes psicológicos", splitLine: t.splitLine },
+        series: [{
+          type: "scatter", data: pts,
+          symbolSize: (v) => 6 + 22 * Math.sqrt(v[2] / maxN),
+          itemStyle: { color: "color-mix(in srgb," + C.colors.violencia + " 70%,transparent)", borderColor: C.colors.violencia, borderWidth: .6 }
+        }]
+      }, true);
+      const r = d.r;
+      const pill = document.getElementById("correl-r");
+      if (pill) pill.textContent = (r == null) ? "r = —" : `r = ${(+r).toFixed(2)} (${Math.abs(r) >= .7 ? "fuerte" : Math.abs(r) >= .4 ? "moderada" : "débil"})`;
+      const src = document.getElementById("correl-source");
+      if (src) src.innerHTML = `${esc(cor.note || "")} Fuente: ${esc(cor.source || "")}` +
+        (d.colegios ? ` · ${fmt(d.colegios)} colegios con reportes en ${year}.` : "");
+    };
+    draw(sel ? sel.value : cor.anios[cor.anios.length - 1]);
+    if (sel && !sel.dataset.wired) { sel.addEventListener("change", (e) => draw(e.target.value)); sel.dataset.wired = "1"; }
+  }
+
   /* ---------- Colegios (SíseVe Región Lima) ---------- */
   let schoolsSort = "total";
   function renderSchools(sc) {
@@ -378,7 +462,9 @@
     const el = document.getElementById("map-source"); if (!el) return;
     const info = yearInfo(mapYear);
     let s = info.rel === "A"
-      ? `Fuente: MINEDU — Boletín "SíseVe en cifras" ${mapYear} (oficial, 26 regiones).`
+      ? (mapYear === 2024
+          ? `Fuente: MINEDU — SíseVe, microdato oficial ${mapYear} (25 regiones, acceso a la información pública).`
+          : `Fuente: MINEDU — Boletín "SíseVe en cifras" ${mapYear} (oficial).`)
       : `Fuente: prensa citando a MINEDU (nivel B)${info.partial ? ", " + mapYear + " parcial (ene–ago)" : ""}.`;
     if (info.incomplete) s += ` Cobertura parcial: ${info.n} de 26 regiones; el resto queda "sin dato".`;
     s += " Matrícula: INEI 2024 · GeoJSON: juaneladio/peru-geojson (MPL-2.0). Colores por cuantiles (ranking), no proporcionales.";
@@ -724,13 +810,13 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
       loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books),
-      loadJSON(C.data.monthly), loadJSON(C.data.schools)
+      loadJSON(C.data.monthly), loadJSON(C.data.schools), loadJSON(C.data.territory), loadJSON(C.data.correlation)
     ]);
-    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly, schools });
+    Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation });
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -743,6 +829,8 @@
     const safe = (label, fn) => { try { fn(); } catch (e) { console.error("[obs] fallo en " + label, e); } };
     safe("KPIs", () => renderKPIs(ts));
     safe("serie", () => renderSeries(ts));
+    safe("tipos", () => renderTipos(ts));
+    safe("correlacion", () => renderCorrelation(correlation));
     safe("mensual", () => renderMonthly(monthly));
     safe("colegios", () => renderSchools(schools));
     safe("prevalencia", () => renderPrevalence(ctx));
@@ -764,6 +852,11 @@
     document.querySelectorAll("#map-metric button").forEach(b => b.addEventListener("click", () => {
       document.querySelectorAll("#map-metric button").forEach(x => x.classList.remove("active"));
       b.classList.add("active"); mapMetric = b.dataset.metric; drawMap(); updateLegend();
+    }));
+    const tiposSeg = document.getElementById("tipos-mode");
+    if (tiposSeg) tiposSeg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      tiposSeg.querySelectorAll("button").forEach(x => x.classList.remove("active"));
+      b.classList.add("active"); tiposMode = b.dataset.mode; renderTipos(store.timeseries);
     }));
     document.getElementById("table-year").addEventListener("change", (e) => { renderTable(+e.target.value); renderTerritory(+e.target.value); });
     document.getElementById("export-csv").addEventListener("click", () => exportCSV(+document.getElementById("table-year").value));

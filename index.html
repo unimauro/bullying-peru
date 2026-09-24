@@ -59,6 +59,7 @@
       <a href="#mapa"><svg class="ic"><use href="#ic-map"/></svg> Mapa</a>
       <a href="#colegios"><svg class="ic"><use href="#ic-alert"/></svg> ¿Y por colegio?</a>
       <a href="#serie"><svg class="ic"><use href="#ic-chart"/></svg> Serie histórica</a>
+      <a href="#correlacion"><svg class="ic"><use href="#ic-chart"/></svg> Física vs psicológica</a>
       <a href="#estacional"><svg class="ic"><use href="#ic-chart"/></svg> Meses (estacionalidad)</a>
       <a href="#perfil"><svg class="ic"><use href="#ic-users"/></svg> Perfil de casos</a>
       <a href="#prevalencia"><svg class="ic"><use href="#ic-scale"/></svg> Prevalencia</a>
@@ -272,6 +273,35 @@
     <div class="panel">
       <div class="chart tall" id="chart-series"></div>
       <p class="source" id="series-source"></p>
+    </div>
+
+    <h3 style="margin:1.6rem 0 .4rem;font-size:1.05rem">Composición por tipo, año a año</h3>
+    <p class="lead">Cada año, ¿de qué está hecha la violencia reportada? Las tres barras suman el total (clasificación oficial SíseVe). <b>Bullying</b> y <b>ciberacoso</b> son etiquetas transversales: un mismo caso puede ser, por ejemplo, físico y bullying, por eso van como líneas aparte y no se suman.</p>
+    <div class="panel">
+      <div class="controls">
+        <div class="seg" id="tipos-mode">
+          <button data-mode="tipo" class="active">Tipo de agresión</button>
+          <button data-mode="vinculo">¿Quién agrede?</button>
+        </div>
+      </div>
+      <div class="chart tall" id="chart-tipos"></div>
+      <p class="source" id="tipos-source"></p>
+    </div>
+  </div>
+</section>
+
+<!-- CORRELACIÓN física vs psicológica -->
+<section id="correlacion" class="section-tint">
+  <div class="wrap">
+    <h2><svg class="ic"><use href="#ic-chart"/></svg> ¿Van juntas la violencia física y la psicológica?</h2>
+    <p class="lead">Cada punto agrupa <b>colegios</b> según cuántos reportes físicos (eje X) y psicológicos (eje Y) tienen; el tamaño indica cuántos colegios caen en esa combinación. <b>No se identifica ningún colegio</b> (registro ≠ exposición). Cuando los puntos suben en diagonal, ambas formas de violencia tienden a aparecer juntas.</p>
+    <div class="panel">
+      <div class="controls">
+        <label>Año <select id="correl-year"></select></label>
+        <span class="pill" id="correl-r">r = —</span>
+      </div>
+      <div class="chart tall" id="chart-correl"></div>
+      <p class="source" id="correl-source"></p>
     </div>
   </div>
 </section>
