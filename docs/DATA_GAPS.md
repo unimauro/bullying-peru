@@ -12,7 +12,7 @@ con una estimación disfrazada de dato oficial.
 - ✅ **Composición por tipo por año** (física + psicológica + sexual = total; entre escolares + personal de la IE = total; bullying y ciberacoso como etiquetas transversales) — nueva sección.
 - ✅ **Territorio 2024 oficial (25 regiones)** con tasa y serie por región (`territory.json`); mapa por defecto ahora en **2024**.
 - ✅ **Correlación física↔psicológica por colegio, anonimizada** (`correlation.json`) — sin identificar colegios (registro ≠ exposición).
-- ⚠️ **Sin cambios en la sección Colegios**: mantenemos nuestra postura de NO publicar rankings de colegios individuales, aunque la fuente sí lo hace.
+- ✅ **Buscador nacional por colegio** (22,569 IIEE, `schools_index.json`): a pedido de las familias, un padre/madre busca su colegio por nombre, código modular o distrito y ve los reportes acumulados 2013–2026. Decisión deliberada: es una **búsqueda** (pull), NO un ranking de "peores colegios" (push), con aviso anti-sesgo destacado (reportes ≠ prevalencia; más reportes puede ser mejor cultura de denuncia; cero reportes puede ser ocultamiento).
 
 ## Resuelto (actualizado 2026-09-22)
 

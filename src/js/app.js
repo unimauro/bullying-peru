@@ -201,6 +201,56 @@
       `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
   }
 
+  /* ---------- Buscador nacional de colegios (microdato oficial) ---------- */
+  // El índice (3.8 MB, 22 569 colegios) se carga SOLO al primer uso del buscador.
+  let schoolsIdx = null, schoolsIdxLoading = false;
+  const _fold = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  function initSchoolSearch() {
+    const input = document.getElementById("school-search");
+    const out = document.getElementById("school-results");
+    const src = document.getElementById("school-search-source");
+    if (!input || !out) return;
+    if (src) src.innerHTML = "Fuente: MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública; consolidado de fiorellatl/observatorio-violencia-escolar). Total = reportes acumulados; no es prevalencia ni ranking.";
+
+    async function ensureIndex() {
+      if (schoolsIdx || schoolsIdxLoading) return;
+      schoolsIdxLoading = true;
+      out.innerHTML = '<p class="loading" style="margin:.4rem 0">Cargando índice nacional (una sola vez)…</p>';
+      schoolsIdx = (await loadJSON(C.data.schoolsIndex)) || [];
+      schoolsIdxLoading = false;
+    }
+    const GESTION = { "Público": "Público", "Privado": "Privado" };
+    function render(q) {
+      const nq = _fold(q).trim();
+      if (nq.length < 2) { out.innerHTML = '<p class="loading" style="margin:.4rem 0">Escribe al menos 2 caracteres…</p>'; return; }
+      const digits = /^\d+$/.test(nq.replace(/\s/g, ""));
+      let hits = [];
+      for (const r of schoolsIdx) {
+        const hay = digits ? r.cm : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.r) + " " + r.cm);
+        if (hay.indexOf(nq) !== -1) { hits.push(r); if (hits.length > 400) break; }
+      }
+      const total = hits.length;
+      hits.sort((a, b) => b.t - a.t);
+      hits = hits.slice(0, 50);
+      if (!hits.length) { out.innerHTML = '<p class="loading" style="margin:.4rem 0">Sin coincidencias. Prueba con otro nombre, el código modular o el distrito.</p>'; return; }
+      const cap = total > 50 ? `<p style="font-size:.8rem;color:var(--text-muted);margin:.2rem 0 .6rem">${fmt(total)} coincidencias; mostrando las 50 con más reportes. Afina la búsqueda para ver otras.</p>` : "";
+      out.innerHTML = cap + '<div class="table-scroll"><table class="data"><thead><tr>' +
+        '<th>Colegio</th><th>Distrito · Región</th><th>Gestión</th><th>Nivel</th><th class="num">Reportes 2013–2026</th>' +
+        '</tr></thead><tbody>' +
+        hits.map(r => `<tr>
+          <td><b>${esc(r.n)}</b><br><span style="font-size:.72rem;color:var(--text-muted)">C. modular ${esc(r.cm)}</span></td>
+          <td>${esc(r.d)} · ${esc(r.r)}</td>
+          <td>${esc(GESTION[r.g] || r.g || "")}</td>
+          <td style="font-size:.82rem">${esc(r.nv || "")}</td>
+          <td class="num"><b>${fmt(r.t)}</b></td>
+        </tr>`).join("") + '</tbody></table></div>';
+    }
+    let tmr = null;
+    const onType = () => { const v = input.value; if (tmr) clearTimeout(tmr); tmr = setTimeout(async () => { await ensureIndex(); render(v); }, 180); };
+    input.addEventListener("input", onType);
+    input.addEventListener("focus", ensureIndex, { once: true });
+  }
+
   /* ---------- Composición por tipo (microdato oficial) ---------- */
   let tiposMode = "tipo";
   function renderTipos(ts) {
@@ -833,6 +883,7 @@
     safe("correlacion", () => renderCorrelation(correlation));
     safe("mensual", () => renderMonthly(monthly));
     safe("colegios", () => renderSchools(schools));
+    safe("buscador-colegios", () => initSchoolSearch());
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
     safe("desgloses", () => renderBreakdowns(breakdowns));
