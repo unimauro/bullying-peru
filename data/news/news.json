@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-23",
+  "retrieval_date": "2026-09-24",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,54 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-24",
+      "media": "Infobae",
+      "title": "“Un Fiscal en tu Colegio”: la estrategia del Ministerio Público para prevenir el bullying y otras formas de violencia escolar en Perú",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQajBCNDhQT0wwVnpFZnFCYURxODVuX3ZQT2ExeW9IQ3BhRjU2elZUYkdmemxFODNfak9tRVotUm1HZ1YzRkV4eUVkTTVQZENnWDRONU1odlhERkFLVmJBYThGTEd2bzQtSGFvVjRfdVJ0VFV0RjU1d2t1bU54eHNtclJ0WnpEQV90X2IyaFQtelpfMjhKR1hiNWxRcXlrRjFZN05Nam9WZ1gxQmpZUUFmWElYWlFEMndJelRkQlpZZnFkNFFCYUFqdWVDY0IxQmJmM3JKMTNJcmZscFRzOU1fRDVDSXc3NDR2bVluZmpyaDVwSUtRcFlfdkttM21JSTR30gGbAkFVX3lxTE9zSVloX2dSa1NNTTktQU10a2R2T1A3Wk1FeDVmZ3hYemNWWmxteUMxZ2VxMml3blJLMXB0d0tSYjJSQUxvZ3JJeG9CVWg5VXlhNEtEUXZqNXhuLTJ1ZzhUanFTMlpBVTI0ekt5VklPZ2VEblVBaDJ0TG80NkJPTy1ra2s1M3ZrRmFmM2JQLWJ5WDI1Mzdnc1VreFlOX2k4OTRyOXVyR0Z5OUF1QnFPb1ZvdVhWUmhpcndLQ2l5aE9MbU5PYUprNW5qdTd1U2s5dThOR1A2SkZYWTNRVlNyMU55MXF6N2RJLTByU0lLOEk0dmhHaDNXc1htckpvTlBmQTNzcW81dkh0VEV3OXNpVXppYy1FMGd3enhaeGs?oc=5",
+      "image": "assets/news/auto_8fa53514.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "elcomercio.pe",
+      "title": "Alfredo Bryce Echenique y el bullying escolar: el doloroso callejón oscuro de la niñez que nunca pudo olvidar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxOTTQwZlpYSDgzUkkwWDhUNlFKblFWMXpEWjZVaXdmVVlwMVNEeHJ4M294eGt4XzlNZTFuWGNMRzVhZklHVzk1VG4yT1JaQnhaenFNR25aRDQyRUF4Rmw3UGcydlUyQzU5MS00QVhaVVo4UnZUWmRfSE8tb2lqVVJvenR3WklDWkVNSVotYURxUVByRFF5enF0UGQxNFgzZGRITk5KV0tSMTUzV1hWajA1WGtqTEFscXhnTEl5M0hlQ3FFd2tOeVcwWFVydkVoQm5mQWNuTVlYSl96UXk0VWd5TDNpbUdoY3NpUFQ3RzBHOGdRTGFBQTMzdnFzTUNmVkdVT2liMVJTR1hONVNFcHZCS09vV242ZldvU0dXbDhCMDN5bGhQMDYxMNIBvAJBVV95cUxPZ3ZVc3dTc1pXNFlVX3VWenVFZkp1UVhsQnhDeDJscktfNEJMVnU0ZENXRklWN3BvMWkzN0d2bjM4QnVObC1wcFdDTFQ1WEd5emotZ3NtTHJlOTJxN0pLSzRYZGlMZVMtbGp4cWJ1aGpPeU9ZMUFka1B5UzhGYTU0VFlhVzVWSFJ0ZFJzZlc5ZWVuMzR3Znd0dzlIR1JaV1lFSkVONlVIUnlIMzIxMnJnX01sTi1vWkpiSm9uSEZ5N19PNjlJVDRTalpvY2lFTFEydzBfSEN0VkdTM1lUWmZtSXNHMzF2TXJRNS04a1R0RG9VNnlkc05IeHk1MUFVUUVWQTdLdzRGTkNYU1A0QU83YUNCMVBmRVEyTHVsdllLclkwR01EZmxkcXV2OUJvV01MbDRiSUVjX0tZNTU4?oc=5",
+      "image": "assets/news/auto_ebcce990.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "Infobae",
+      "title": "Abuso escolar: qué deben hacer los padres cuando descubren que su hijo agrede a otros y cómo detener esta conducta",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxObEozWDFYYTQ5d2VyLWxYcjhFcUYxSmdKbjVaUllramhxcnlMU2x0eThaMnJrU1dTN091RmV6VXd2MTI1bmMzR3NnR1FDcjZyTDljSDlydEYwVnZpT2t0dDhkQUU3VjIwU1pOV3pfUHRUM3lqVjhwb25Hckh6aVJJUW5vdHVfS3BGNFdldlpFWHhrdGZlRnNqclpQSFRVNGxIZ0kzNDNLSHp5MTNRdU9WdGszRllnVENhMzZGVG4wNUNwUFdXRFgyVFlrZ0haX2pScS1TRG04dUM4dFpWX01vVXVKemdPSy1HaVHSAYQCQVVfeXFMUGZoMzJodHhnVXNycGplZGNXaERFUk1mWWlKdkFEUTNOSkh2LTJ5NXEycGJnSXpiLWRoZ19ud3I3ZEFDNmQ3VWtYcmc3U05JTUJpdHBEUTdjV1pTQnpMc2VJaUVSRXJ4WllKZmEzZHZsNGI2SU82RkNjU3RsQWpSWlBMMTlGTmRHYlE3a1V4cjFDUElOSHRDd1VXUy1NZENiQktYRm9jSUFuQVJpZ0YzeXoyWGRSbmtlcUtVZF9jeHJiZVBkbndKU1h6NnJBWFQ2TFF0YWxtOGtIeFNSU04xYVFLRUI5WldsaXZGXy1wNkN5eVRCeEl2UnhfRXFvNFlUR1NucnA?oc=5",
+      "image": "assets/news/auto_8ba58469.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "Infobae",
+      "title": "Mónica Torres, Nelly Rossinelli y más influencers se unen contra el bullying: el video que nació tras el escándalo del Liceo Naval",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOaG9tZWR4WWNObHdacE53MUR4UDI4N1ZKalhnWk9XLW1nX1BnMnVNaDdydkYwRnpkZ3M3SHdPeWU0SC00WGFqOFc5dWFsT3c2dkZFZ2lMUmUxQWh6WTJYbUhMcFZEMXl0SU5qSGRJc0tCV3RxVHNNbTBVcGR6SVA5SVJQRkp4bEctNHIwVFlwdWQ1djJQcF9TZXAzUjB5QkF2V193RlBaNjVoNnFHOWJXNXdCUXdNbUZRNlhXTE9CMFpNUDQxMFJOVVF5MGgwTE5DcFVBVXIzNE5BdkttSzZDTzY2T2dxZWZDck15bVNmZHpWZ1Z1NVJybGd2T0pQZ9IBmAJBVV95cUxNOFZQVHQ0NmN4LWZKWThBZGNOc2JoVDJSRFAtS2tvYmYzVlZ5MjZLVktBdm1UeWNUYTVxalJOQy1SRGN2QXJpeXVXZVc5cDdRcENJeUtWVVZqUkNhb1VTT1dBNEU1N1JnX0xJdUhxNjdKOXhzLWREVWJwQWt4SnJVV2VsbjdhVk9iTnkyajYzanZNVDBmV0c2R3ltYXhiUFgtV0RZeE10b2lWSTFQcjhZTVh5VnpZajhGZTBhdlNCSHAxNDRZN3BkZ3FNZW1rNWZnVUx0b25tSW5xeUVBNWhONlAwd1lFMldSZ0JEWXhNSHg1STY4X0ktMTVSOHBpeklEWnB2UVBfZUVnRlFtb2Rmc1BOOWJkZlR4?oc=5",
+      "image": "assets/news/auto_40ac72e2.jpg",
+      "auto": true
+    },
     {
       "date": "2026-09-23",
       "media": "Infobae",
@@ -106,77 +154,29 @@
       "auto": true
     },
     {
-      "date": "2026-09-22",
-      "media": "TVPerú",
-      "title": "Ministro Chang pide a padres fortalecer la disciplina para prevenir el bullying",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYTBHZXhjN2Y5b0Y2Y3o3OEEwakg3RllPNDV3U3FnbU93QjZZZ3lOdDdlcno4dS1WMXowVU1LQVFjaVpOekI0Q3Y5ODU4Qk42QUhfbEt0VVF0NW9xazU0Z1gzM2Z1bVZUTGNWUmxMNWJUelpWNXRXMHRrakVRQ21tRE42aEdOMWV2anNfV3h6TXJZaDczNENXUHdEM282N29BRDktdy1FdjgxUWEyUlZSU3ZETm0xb3VCMTZsdm9ia2I?oc=5",
-      "image": "assets/news/auto_8cfcdf46.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-22",
+      "date": "2026-09-23",
       "media": "Infobae",
-      "title": "Adultos que estuvieron en bus del Liceo Naval donde ocurrió agresión sexual a menor podrían afrontar 30 años de prisión",
+      "title": "Bullying en Perú: cuándo deben intervenir la familia, la escuela y los servicios de salud ante un caso de acoso escolar",
       "department": "Nacional",
       "topic": "violencia_escolar",
       "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQV0RmeUpOek1aZEpoa25hVVh0OG1CWmZWWU5rY1Y0b1hTMUM0VDNqZ1ZCUlh4RzRISkc3SUxXTTVFT3Bjc3Z4MWJPLXpxSnhOSWgwaS1MVFNuaXctT3U1TG9BemZoZ0lKUElPV2NZeDQxY2xXQWY1bHptaVRHOEVjYVVGSEpvcm1EaTMxQnpkYmFtUF9DYVR6MUFCS1I3RTI3cll3NXhObk5qU1NHUnRERmt5RnRqdm1meFVmNFpFb2xjWHJ3U1VnS3NZUXhDcG1fMkU1M3ptNUZpUGFTajAtaW5lN0lFUG91ekJYemxrdmU3Z9IBjAJBVV95cUxNb1NlWTVLbDVYTVVKekNoUlpyRTJtZWdGVlY5UUVpSVhjaVYzT3R2SmFieDlmSkZGX3VnNDdLY1FqdWp3RGozaHA2cDBPVTZPUGFIZHVLQkZhbDQzOGdkOFpkemtkN0FtN0tweFpWd3M3WDVZeVlpN1lReWo0N3hMdkJyaWd1NUprUk9EUnJHX3hoUGJDb2JtWmRCQ1M0eG1jUFF3a0tZWWFCMDQ1WENQOTFBN3hjTGNIdjFZenhqc19ocFk4bDE1T3hHdXE4SDRfN2JYWlJVam9fUmdRZ0NUVnVyQUlxM3Zsd3Vjd1J0NnVfZzM2SWpfWEJGcHlVZXhpZXFPd2hqdzkxZjVr?oc=5",
-      "image": "assets/news/auto_242de5b8.jpg",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxObkl2c0lZa3hnQ2lWbDQtVktyWHh0a29vNzZrdHk4b1VSSFktRjB1M210MzkxQVA4c0tySW5rNFp0WXNkbG9tOGdPc1Z6dFFIZzZYWFdfMkQ1VzJpdTFmXy1ZYmVrOUg4S2pIVkJjaGxCSlJHcjhRMnRLSjhfWFdaREUwV2V5OE9LWmF6SzV6UkYtZ2llcDlOUTJLaDhSdTY0QzhKOFphN3pHQzJLWW1VNUMzWURtVGxqYlZiV1M0ZHEtOU9iSS1TeWxjWU03S2RhaGpzOVBXZjlxd1pYa2RWcm1LZEZuTjRfYkFKSmFDVdIBigJBVV95cUxOVFU3WmhZYTd3TGljSGk5VmVtVE1KSXNyVFl3d2dFalBOUDhIMHNFZHBnU0l5ZG1aZDU4dklsSWk1Y3Y3TmNRd3NxSU1vOGEzR3ZxYjg4LXgxWWpNcTBjbXdrb3VSMUlEY1ZZMHlqV1RhU2ZhRFBvTlhCR1JZZVF1R3o1cmlkeWlOMkc3LW5leWFFQXRkeEIyc1ZENFdxalVlajRYTzJhaW0tbGRtMm40NHE3NTN0Z3VLRzlwRTJBTlhCMnl2YTZuX19NUE1oSk5ldC11VVFHZ3M2R2pmdmpSbTVJeDJiSDhNWDhrMlEwd3JoN2swbzItU1NDMkdTT0lLRTV5MnkxQnhSUQ?oc=5",
+      "image": "assets/news/auto_ecd5533e.jpg",
       "auto": true
     },
     {
-      "date": "2026-09-22",
-      "media": "expreso.ec",
-      "title": "Caso Liceo Naval en Perú: víctima denuncia agresión e insultos racistas durante dos años",
+      "date": "2026-09-23",
+      "media": "La República",
+      "title": "Violencia en colegio de la PNP: madre es agredida por escolar que realizaría bullying a su hija en el Callao",
       "department": "Nacional",
       "topic": "violencia_escolar",
       "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPVGxZTXQxSjZlUnBIY0VnTlFINW5tcm95Q1RxODMxMml5RkRNRmszbGpCbi1iVHowLUZWQUd0OTRCQlgyT3JoeWNGcXE1LVhXNnVRanBQZFZYUlJFX2pEdElPS216VGUxbTgtdTg1TkljalFOZzM1N0Q5RDg3c3o0eUdQU09qaGktRzZZYjJIWXgwNDBYODRPR0tPbGVCTXJIWTFOT0dMd3NWQzcwS1I0dVFWYXd2NUR0T0NoMnFfUTR2UU9qQVpJV0dObnVraE9RVVE?oc=5",
-      "image": "assets/news/auto_00eb96a5.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-22",
-      "media": "Perú 21",
-      "title": "Lo que no ve SíSeVe | Por Roberto Lerner",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9ndXVZYlVOZTl0ZDJCUnZyYXlreE9ycXpzazA4VHNwYnBCeTNzS0U1bDN1SnVjS2RJam44OHFtbDAybmpVNVBvZHo3ZloxSGxtS1ZUbWZRZ25QMERISkVBSnJZb0NDUC1vYnBhWTdlaDc4T3PSAXhBVV95cUxOSzhMd1FYcFJfWmVjOEpUTEg3RU1pYzFzdlloNnhvb1BfZU9lTXBRMHVPbVdCU2Y2RkdJWmJfNEc5bGZNMk40d00zaXhVT0pNTlN5bDJjbmhiSW9yRV9uazNwUG5TTll4emdXXzN4cHN6VTFRdi0tZ2Y?oc=5",
-      "image": "assets/news/auto_3a1862c5.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-22",
-      "media": "El Comercio Perú",
-      "title": "Cuando dejamos de ver la violencia, por Carol Núñez Vélez",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRVdJRHRsTExWOFFpMFN1aUVDamdCa2M3REhQUEVicWJheWo1WUVhQ0xNWHVZSG8zMzMzU0toX1FhN0l6ZDB4RElqZHROY2NvRTZXWEwxV29GS1dnS1lDd3VGcDZ2R3V0VHFrdmZhd0I4bEJ6X25waHN2cW0yMzZjMUQ0MVZtSlNRVHNEcmFqazByQVlnN1Nv0gGrAUFVX3lxTE9LblVQUWJycnBYb2pXVkdyNVZOSDhEOTBGQzh2WTFPWjF5QWpkLXhhOUo2RWtvX0x5QnZSakYwYzJVQVI5OUtJU2NWMm1MYnZNWTB4bGRoTDdWZElORm9OLVE0N0h2c282YjdKOTdjOE5oSTZVSHpaem1XRGJWWXpvT1A0RUEySUxyQmdEYlZ2cWMyY25Kakc4T2tkWXJVenprSUZydEtaRS1KYw?oc=5",
-      "image": "assets/news/auto_f60273c5.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-21",
-      "media": "Diario Correo",
-      "title": "Violencia escolar: Cada 30 minutos se reporta un caso",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa0FmLThjc01zNjJkNVVibWdrTnMyQVNfRDdabGh5b2FsTmF2d3gxTUZqeVhHWXlCWnY2SERUM2ZBVmd5S3ZwdXYySVBoZWdGWkRBT3paRnNpT3FQQk0tNE1uQkJxMFgwRXVHYVZ0UDVqOHl3cFRtcVVSOVFoMGxGWHhlbTBoclpOV3oteTQ4YTkzWVVEd2J3OXE2dE5oRDN5VWxaYWlxY3R1dTFfdGfSAa4BQVVfeXFMTmtBZi04Y3NNczYyZDVVYm1na05zMkFTX0Q3WmxoeW9hbE5hdnd4MU1GanlYR1l5Qlp2NkhEVDNmQVZneUt2cHV2MklQaGVnRlpEQU96WkZzaU9xUEJNLTRNbkJCcTBYMEV1R2FWdFA1ajh5d3BUbXFVUjlRaDBsRlh4ZW0waHJaTld6LXk0OGE5M1lVRHdidzlxNnROaEQzeVVsWmFpcWN0dXUxX3Rn?oc=5",
-      "image": "assets/news/auto_ad0bcd07.jpg",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPNzI1ck5wX05ZMjJ5SjFHT0ZVYUJfX01mNmRoZW40SlpDZUE3MjN6RkV4LThqYnVJa3NJbUJzSUxPeXZYNkQ3VDdjbU13bVppU3ZGSS1sTWppREFPZUpRbDV4ZjhHeUNNU2l5bEkxVjdKbEhuR3A4WC0zdVB1VVhGZzNfbVFDbGgxTk1uNW5rX0xfUnlDU29GMl85c0o1Q3p2SlRLQ1FnbmhiVVJBN3gyWEhGY192SjQxRTR6TW9aUTNMczJNNi16eGRPMzQ5WUlBM2tNa1czaGZERENuUkp6dTZEYTFzdF9sMWZZckUza9IB9AFBVV95cUxNZUNUQlN4NXF2OWlXc3RUM3RXV1JFTERBTE8yTHcxQXVZdWQyekdQVzRNUTMtREEwaGdCUVRRRkdSZlZCRDUwVkxnQ2lfYmJQNFFQOUw1N0pUOGptUktYZW54LVZjY0hVdDhtYllKb2ZDVGkySUg1V1UwWl9WSHBTZ1hyQW9BVEZrb1IzTnY0Yl8zd2xXZmRBNTEzOG9FRzY1VTRRVlBnUk9tazBUVkJzNW5uY2NrV2VQOXJmcWlJMjhaM1hudEZYYUJIYzF5VGlnMVhqLTlRUVJJSy1MMXBrY1lpQ19fcEQwR29wQmp0N3VOOFNY?oc=5",
+      "image": "assets/news/auto_c7f67b0a.jpg",
       "auto": true
     }
   ],
-  "last_auto_update": "2026-09-23T15:19:18.474608+00:00"
+  "last_auto_update": "2026-09-24T15:43:29.786484+00:00"
 }
