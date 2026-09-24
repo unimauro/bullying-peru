@@ -431,3 +431,13 @@ table.data tr:hover td { background: var(--surface-2); }
   .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat .v { font-size: 1.2rem; }
 }
+
+/* ---------- Descargas ---------- */
+.dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.dl-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.dl-card .dl-title { font-weight: 700; font-size: .92rem; }
+.dl-card .dl-desc { font-size: .78rem; color: var(--text-muted); flex: 1; }
+.dl-card .dl-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.dl-card .dl-actions a, .dl-card .dl-actions button { font: inherit; font-size: .78rem; font-weight: 700; padding: 5px 11px; border-radius: 30px; border: 1px solid var(--border); background: var(--surface-2); color: var(--brand); text-decoration: none; cursor: pointer; }
+.dl-card .dl-actions a:hover, .dl-card .dl-actions button:hover { border-color: var(--brand); }
+.dl-card .dl-size { font-size: .7rem; color: var(--text-soft); align-self: center; }

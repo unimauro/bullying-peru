@@ -26,8 +26,8 @@
   gtag('config', 'G-YD3GKLZX0T');
 </script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css?v=20260924b">
-<link rel="stylesheet" href="src/css/districts.css?v=20260924b">
+<link rel="stylesheet" href="src/css/styles.css?v=20260924c">
+<link rel="stylesheet" href="src/css/districts.css?v=20260924c">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
@@ -256,6 +256,7 @@
           <label>Nivel <select id="sf-nivel"><option value="">Todos</option></select></label>
           <label>Año <select id="sf-year"><option value="">Total 2013–2026</option></select></label>
           <button id="sf-clear" type="button" class="btn-ghost" hidden>✕ Limpiar</button>
+          <button id="sf-csv" type="button" class="btn-ghost" title="Descarga en CSV los colegios que coinciden con la búsqueda y filtros actuales">⬇ CSV de estos resultados</button>
         </div>
         <div class="seg" id="school-view">
           <button data-view="ie" class="active">Colegios (IE)</button>
@@ -525,6 +526,11 @@
       </table>
     </div>
     <p class="source">Reportes: SíseVe · Matrícula: INEI 2024.</p>
+
+    <h3 style="margin:1.8rem 0 .4rem;font-size:1.05rem">Descargas (datos abiertos)</h3>
+    <p class="lead">Todos los datasets que alimentan este observatorio, en <b>JSON</b> (tal cual los usa el sitio) y en <b>CSV</b> (generado en tu navegador, listo para Excel). Cita la fuente al reutilizarlos.</p>
+    <div class="dl-grid" id="dl-grid"><p class="loading">Cargando catálogo…</p></div>
+    <p class="source">Fuente principal: MINEDU — SíseVe (microdato oficial 2013–2026 vía acceso a la información pública; consolidado de <a href="https://github.com/fiorellatl/observatorio-violencia-escolar" target="_blank" rel="noopener">fiorellatl/observatorio-violencia-escolar</a>). Matrícula: INEI/Censo Educativo. GeoJSON: juaneladio/peru-geojson (MPL-2.0). Código y ETL: <a href="https://github.com/unimauro/bullying-peru" target="_blank" rel="noopener">github.com/unimauro/bullying-peru</a>.</p>
   </div>
 </section>
 
@@ -641,10 +647,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
-<script src="src/js/config.js?v=20260924b"></script>
-<script src="src/js/app.js?v=20260924b"></script>
-<script src="src/js/districts.js?v=20260924b"></script>
-<script src="src/js/chatbot.js?v=20260924b"></script>
+<script src="src/js/config.js?v=20260924c"></script>
+<script src="src/js/app.js?v=20260924c"></script>
+<script src="src/js/districts.js?v=20260924c"></script>
+<script src="src/js/chatbot.js?v=20260924c"></script>
 <script>
 (function(){
   // A11y: iconos SVG decorativos ocultos para lectores de pantalla

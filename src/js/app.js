@@ -373,6 +373,8 @@
     input.addEventListener("input", () => { sf.q = input.value; if (tmr) clearTimeout(tmr); tmr = setTimeout(apply, 160); });
     input.addEventListener("focus", () => { ensureSchoolsIndex().then(() => fillNivel(schoolsIdx)); }, { once: true });
     [[selR, "region"], [selG, "gestion"], [selN, "nivel"], [selY, "year"]].forEach(([el, k]) => { if (el) el.addEventListener("change", () => { sf[k] = el.value; apply(); }); });
+    const csvBtn = document.getElementById("sf-csv");
+    if (csvBtn) csvBtn.addEventListener("click", async () => { if (sf.q || sf.region || sf.gestion || sf.nivel || sf.year) await ensureSchoolsIndex(); exportSchoolsCSV(); });
     if (clearBtn) clearBtn.addEventListener("click", () => {
       sf.q = sf.region = sf.gestion = sf.nivel = sf.year = ""; input.value = "";
       [selR, selG, selN, selY].forEach(el => { if (el) el.value = ""; });
@@ -412,6 +414,73 @@
     tbody.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { const tr = e.target.closest("tr.sc-row"); if (tr) { e.preventDefault(); toggleRow(tr); } } });
 
     renderSchoolRows();
+  }
+
+  /* ---------- Descargas: catálogo JSON + CSV al vuelo ---------- */
+  function toCSV(rows, cols) {
+    const q = (v) => { const s = v == null ? "" : String(v); return /[",;\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    return "\uFEFF" + cols.map(c => q(c.label)).join(",") + "\n" + rows.map(r => cols.map(c => q(typeof c.get === "function" ? c.get(r) : r[c.get])).join(",")).join("\n");
+  }
+  function downloadText(name, text, mime) {
+    const blob = new Blob([text], { type: mime || "text/csv;charset=utf-8" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+  const yearCols = (get) => YEARS.map((y, i) => ({ label: String(y) + (y === 2026 ? " (parcial)" : ""), get: (r) => get(r, i) }));
+  const DATASETS = [
+    { id: "timeseries", title: "Serie nacional 2013–2026 por tipo", desc: "Total, física/psicológica/sexual, entre escolares/personal IE, bullying y ciberacoso por año. Microdato oficial.", json: C.data.timeseries,
+      csv: () => { const ts = store.timeseries; if (!ts) return null; const rows = ts.years.map((y, i) => ({ y, i }));
+        return toCSV(rows, [{ label: "anio", get: r => r.y }, { label: "total", get: r => ts.series.violencia[r.i] }, { label: "fisica", get: r => ts.tipos.fisica[r.i] }, { label: "psicologica", get: r => ts.tipos.psicologica[r.i] }, { label: "sexual", get: r => ts.tipos.sexual[r.i] }, { label: "entre_escolares", get: r => ts.vinculo.entre_escolares[r.i] }, { label: "personal_ie", get: r => ts.vinculo.personal_ie[r.i] }, { label: "bullying_etiqueta", get: r => ts.series.bullying[r.i] }, { label: "ciberacoso_etiqueta", get: r => ts.series.ciberbullying[r.i] }, { label: "parcial", get: r => r.y === ts.partial_year ? "si" : "no" }]); } },
+    { id: "monthly", title: "Reportes mensuales 2024–2026", desc: "Serie mes a mes del tablero oficial SíseVe.", json: C.data.monthly,
+      csv: () => { const m = store.monthly; if (!m || !m.series) return null; const keys = Object.keys(m.series); const rows = (m.months || []).map((mo, i) => ({ mo, i }));
+        return toCSV(rows, [{ label: "mes", get: r => r.mo }].concat(keys.map(k => ({ label: k, get: r => m.series[k][r.i] })))); } },
+    { id: "territory", title: "Regiones 2024 (tasa y serie 2013–2026)", desc: "25 regiones: reportes, alumnos, tasa por 1,000, cobertura y serie anual.", json: C.data.territory,
+      csv: () => { const t = store.territory; if (!t) return null;
+        return toCSV(t.regiones, [{ label: "region", get: "nombre" }, { label: "reportes_2024", get: "reportes" }, { label: "alumnos_2024", get: "alumnos" }, { label: "tasa_x1000", get: "tasa_x1000" }, { label: "cobertura_denominador", get: "cobertura" }, { label: "tasa_aproximada", get: r => r.aproximada ? "si" : "no" }].concat(yearCols((r, i) => (r.serie || {})[YEARS[i]] || 0))); } },
+    { id: "by_department", title: "Departamentos por año (mapa)", desc: "Reportes por departamento 2022 (boletín), 2024 (microdato) y 2026 (prensa, parcial).", json: C.data.byDepartment,
+      csv: () => { const bd = store.byDepartment; if (!bd) return null; const yrs = Object.keys(bd).filter(k => /^\d{4}$/.test(k)).sort(); const rows = [];
+        yrs.forEach(y => Object.keys(bd[y]).forEach(dep => rows.push({ y, dep, cases: bd[y][dep].cases, rel: (bd.reliability_by_year || {})[y] || "" })));
+        return toCSV(rows, [{ label: "anio", get: "y" }, { label: "departamento", get: "dep" }, { label: "reportes", get: "cases" }, { label: "nivel_fuente", get: "rel" }]); } },
+    { id: "by_district", title: "Distritos (mapa distrital)", desc: "Reportes por distrito, total y por año 2013–2026, n.º de colegios con reportes; clave ubigeo.", json: "data/processed/by_district.json", lazy: true,
+      csv: async () => { const d = store.byDistrict || await loadJSON("data/processed/by_district.json"); if (!d) return null; const rows = Object.keys(d.distritos).map(k => Object.assign({ key: k }, d.distritos[k]));
+        return toCSV(rows, [{ label: "ubigeo", get: r => r.ubigeo || "" }, { label: "departamento", get: "departamento" }, { label: "provincia", get: "provincia" }, { label: "distrito", get: "nombre" }, { label: "reportes_2013_2026", get: "t" }, { label: "colegios_con_reportes", get: "n_colegios" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
+    { id: "schools_top", title: "Top 300 colegios (con tipos por año)", desc: "Los 300 colegios con más reportes acumulados; serie anual y desglose por tipo.", json: C.data.schoolsTop,
+      csv: () => { const s = schoolsTop; if (!s) return null; const cols = [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "ugel", get: "ugel" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => r.y[i]));
+        ["fisica", "psicologica", "sexual", "bullying", "ciberacoso"].forEach(k => YEARS.forEach((y, i) => cols.push({ label: k + "_" + y, get: r => ((r.tipos || {})[k] || [])[i] || 0 })));
+        return toCSV(s.rows, cols); } },
+    { id: "schools_index", title: "Todos los colegios (22,569 IIEE)", desc: "Índice nacional completo con reportes acumulados y por año. CSV de ~3 MB.", json: C.data.schoolsIndex, lazy: true,
+      csv: async () => { const idx = await ensureSchoolsIndex(); if (!idx) return null;
+        return toCSV(idx, [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
+    { id: "correlation", title: "Correlación física↔psicológica", desc: "Por año: r de Pearson, colegios con reportes, colegios con ambos tipos y la distribución (x, y, n colegios).", json: C.data.correlation,
+      csv: () => { const c = store.correlation; if (!c) return null; const rows = []; c.anios.forEach(y => (c.datos[y].puntos || []).forEach(p => rows.push({ y, x: p[0], py: p[1], n: p[2], r: c.datos[y].r, col: c.datos[y].colegios, ambos: c.datos[y].ambos })));
+        return toCSV(rows, [{ label: "anio", get: "y" }, { label: "reportes_fisicos", get: "x" }, { label: "reportes_psicologicos", get: "py" }, { label: "n_colegios", get: "n" }, { label: "r_pearson_anio", get: "r" }, { label: "colegios_con_reportes_anio", get: "col" }, { label: "colegios_ambos_tipos_anio", get: "ambos" }]); } },
+    { id: "breakdowns", title: "Desgloses (gestión, área, sexo, nivel)", desc: "Perfil de casos 2013–2018 y 2022, crecimiento por tipo 2026.", json: C.data.breakdowns },
+    { id: "population", title: "Matrícula por departamento (INEI 2024)", desc: "Denominador de las tasas.", json: C.data.population,
+      csv: () => { const p = store.population; if (!p) return null; return toCSV(p.data, [{ label: "departamento", get: "department" }, { label: "matricula", get: "students" }]); } },
+    { id: "context", title: "Prevalencia (ENARES, SSES) y contexto", desc: "Encuestas de exposición medida, para contrastar con el registro administrativo.", json: C.data.context },
+    { id: "sources", title: "Catálogo de fuentes", desc: "Todas las fuentes con URL, periodo y nivel de confiabilidad (A/B/C/D).", json: C.data.sources,
+      csv: () => { const s = store.sources; if (!s) return null; return toCSV(s.data, [{ label: "id", get: "source_id" }, { label: "fuente", get: "source_name" }, { label: "institucion", get: "institution" }, { label: "tipo", get: "source_type" }, { label: "url", get: "url" }, { label: "periodo", get: "data_period" }, { label: "ambito", get: "geographic_scope" }, { label: "nivel", get: "reliability_level" }, { label: "notas", get: "notes" }]); } },
+    { id: "geo_dist", title: "GeoJSON distrital del Perú", desc: "1,826 polígonos con ubigeo (juaneladio/peru-geojson, MPL-2.0), adelgazado.", json: "data/geo/peru-distrital.geojson" },
+    { id: "geo_dep", title: "GeoJSON departamental del Perú", desc: "25 departamentos (juaneladio/peru-geojson, MPL-2.0).", json: C.geojson },
+  ];
+  function renderDownloads() {
+    const grid = document.getElementById("dl-grid"); if (!grid) return;
+    grid.innerHTML = DATASETS.map(d => `<div class="dl-card"><div class="dl-title">${esc(d.title)}</div><div class="dl-desc">${esc(d.desc)}</div>
+      <div class="dl-actions"><a href="${esc(d.json)}" download target="_blank" rel="noopener">JSON</a>${d.csv ? `<button type="button" data-csv="${esc(d.id)}">CSV</button>` : ""}</div></div>`).join("");
+    grid.querySelectorAll("button[data-csv]").forEach(b => b.addEventListener("click", async () => {
+      const d = DATASETS.find(x => x.id === b.dataset.csv); if (!d) return;
+      const label = b.textContent; b.textContent = "Generando…"; b.disabled = true;
+      try { const txt = await d.csv(); if (txt) downloadText("bullying-peru-" + d.id + ".csv", txt); else alert("Este dataset aún no está cargado."); }
+      catch (e) { console.error("[obs] csv", e); }
+      b.textContent = label; b.disabled = false;
+    }));
+  }
+  function exportSchoolsCSV() {
+    const { hits, yi } = schoolsFiltered();
+    if (!hits.length) return;
+    const cols = [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => (r.y || [])[i] || 0));
+    const tag = [sf.q && "q-" + _slug(sf.q), sf.region && _slug(sf.region), sf.gestion && _slug(sf.gestion), sf.nivel && _slug(sf.nivel), sf.year && "anio-" + sf.year].filter(Boolean).join("_") || (yi >= 0 ? "anio-" + sf.year : "top");
+    downloadText("colegios-siseve-" + tag + ".csv", toCSV(hits, cols));
   }
 
   /* ---------- Composición por tipo (microdato oficial) ---------- */
@@ -1077,6 +1146,7 @@
     safe("mensual", () => renderMonthly(monthly));
     safe("colegios", () => renderSchools(schools));
     safe("buscador-colegios", () => initSchools());
+    safe("descargas", () => renderDownloads());
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
     safe("desgloses", () => renderBreakdowns(breakdowns));
