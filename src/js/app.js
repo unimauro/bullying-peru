@@ -113,7 +113,7 @@
       } else if (partial) {
         dHtml = `<span class="pill" style="background:var(--surface-2);color:var(--text-muted)">año parcial</span>`;
       } else if (rel === "A") {
-        dHtml = `<span style="color:var(--text-soft)">dato oficial (Boletín SíseVe)</span>`;
+        dHtml = `<span style="color:var(--text-soft)">dato oficial (microdato SíseVe)</span>`;
       }
       html += `<div class="kpi ${c.cls}"><span class="tag tag-${c.tag}">${c.tag}</span>
         <div class="label">${c.label}</div>
@@ -197,9 +197,7 @@
         return s;
       })
     });
-    src.innerHTML = `Fuente 2013–2022: ${esc(ts.source || "MINEDU — SíseVe")} ` +
-      (ts.source_url ? `<a href="${safeUrl(ts.source_url)}" target="_blank" rel="noopener">(oficial)</a>` : "") +
-      `. 2024–2026: <a href="${safeUrl(ts.source_tablero || "https://siseve.minedu.gob.pe/")}" target="_blank" rel="noopener">tablero oficial SíseVe</a> (2026 parcial). Solo <b>2023</b> (sombreado) es cifra de prensa por confirmar.`;
+    src.innerHTML = `Fuente: ${esc(ts.source || "MINEDU — SíseVe")} <a href="${safeUrl(ts.source_url)}" target="_blank" rel="noopener">(tablero oficial)</a>. Serie completa de nivel A (microdato oficial vía acceso a la información pública; consolidado de <a href="https://github.com/fiorellatl/observatorio-violencia-escolar" target="_blank" rel="noopener">fiorellatl</a>). 2020–2021: escuelas cerradas. 2026 parcial (ene–ago).`;
   }
 
   /* ---------- Colegios: top nacional + buscador + filtros (microdato oficial) ---------- */
@@ -268,7 +266,7 @@
       if (sf.gestion && r.g !== sf.gestion) continue;
       if (sf.nivel && r.nv !== sf.nivel) continue;
       if (nq) {
-        const hay = digits ? r.cm : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.p) + " " + _fold(r.r) + " " + r.cm);
+        const hay = digits ? (r.cm + " " + _fold(r.n)) : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.p) + " " + _fold(r.r) + " " + r.cm);
         if (hay.indexOf(nq) === -1) continue;
       }
       if (yi >= 0 && !(r.y && r.y[yi] > 0)) continue;
@@ -387,7 +385,7 @@
       if (sf.gestion && r.g !== sf.gestion) continue;
       if (sf.nivel && !(r.nv || []).some(n => n === sf.nivel)) continue;
       if (nq) {
-        const hay = digits ? (r.cm + " " + (r.ci || "")) : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.p) + " " + _fold(r.r) + " " + r.cm);
+        const hay = digits ? (r.cm + " " + (r.ci || "") + " " + _fold(r.n)) : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.p) + " " + _fold(r.r) + " " + r.cm);
         if (hay.indexOf(nq) === -1) continue;
       }
       if (yi >= 0 && !(r.y && r.y[yi] > 0)) continue;
@@ -712,8 +710,9 @@
         return toCSV(rows, [{ label: "region", get: "region" }, { label: "distrito", get: "distrito" }, { label: "privados_con_pension", get: "n_privados_con_pension" }, { label: "pension_mediana", get: r => r.pension.mediana }, { label: "pension_p25", get: r => r.pension.p25 }, { label: "pension_p75", get: r => r.pension.p75 }, { label: "reportes_x1000_con_pension_2024", get: r => r.tasa_2024.mediana_con_pension }, { label: "reportes_x1000_publicos_2024", get: r => r.tasa_2024.mediana_publicos }]); } },
     { id: "schools_geo", title: "Coordenadas y sede (local) por colegio", desc: "Lat/lon y código de local del Padrón ESCALE para los colegios con reportes (sin datos personales).", json: C.data.schoolsGeo },
     { id: "correlation", title: "Correlación física↔psicológica", desc: "Por año: r de Pearson, colegios con reportes, colegios con ambos tipos y la distribución (x, y, n colegios).", json: C.data.correlation,
-      csv: () => { const c = store.correlation; if (!c) return null; const rows = []; c.anios.forEach(y => (c.datos[y].puntos || []).forEach(p => rows.push({ y, x: p[0], py: p[1], n: p[2], r: c.datos[y].r, col: c.datos[y].colegios, ambos: c.datos[y].ambos })));
-        return toCSV(rows, [{ label: "anio", get: "y" }, { label: "reportes_fisicos", get: "x" }, { label: "reportes_psicologicos", get: "py" }, { label: "n_colegios", get: "n" }, { label: "r_pearson_anio", get: "r" }, { label: "colegios_con_reportes_anio", get: "col" }, { label: "colegios_ambos_tipos_anio", get: "ambos" }]); } },
+      csv: () => { const c = store.correlation; if (!c || !c.pares) return null; const rows = [];
+        Object.keys(c.pares).forEach(k => { const P = c.pares[k]; c.anios.forEach(y => ((P.datos[y] || {}).puntos || []).forEach(p => rows.push({ par: `${P.x} vs ${P.y}`, y, x: p[0], py: p[1], n: p[2], r: P.datos[y].r, col: P.datos[y].colegios, ambos: P.datos[y].ambos }))); });
+        return toCSV(rows, [{ label: "par", get: "par" }, { label: "anio", get: "y" }, { label: "reportes_x", get: "x" }, { label: "reportes_y", get: "py" }, { label: "n_colegios", get: "n" }, { label: "r_pearson_anio", get: "r" }, { label: "colegios_con_reportes_anio", get: "col" }, { label: "colegios_ambos_tipos_anio", get: "ambos" }]); } },
     { id: "breakdowns", title: "Desgloses (gestión, área, sexo, nivel)", desc: "Perfil de casos 2013–2018 y 2022, crecimiento por tipo 2026.", json: C.data.breakdowns },
     { id: "population", title: "Matrícula por departamento (INEI 2024)", desc: "Denominador de las tasas.", json: C.data.population,
       csv: () => { const p = store.population; if (!p) return null; return toCSV(p.data, [{ label: "departamento", get: "department" }, { label: "matricula", get: "students" }]); } },
@@ -789,21 +788,23 @@
         : "‘Entre escolares’ + ‘de personal de la IE’ suman el total del año (vínculo agresor↔víctima).");
   }
 
-  /* ---------- Correlación física vs psicológica (anonimizado) ---------- */
-  let correlZoom = "near";
+  /* ---------- Correlación entre tipos por colegio (cálculo propio) ---------- */
+  let correlZoom = "near", correlPair = "fisica_psicologica";
   function renderCorrelation(cor) {
     const ch = mkChart("chart-correl");
-    if (!ch || !cor || !cor.anios) return;
+    if (!ch || !cor || !cor.pares) return;
     const sel = document.getElementById("correl-year");
-    const last = cor.anios[cor.anios.length - 1];
+    const completos = (cor.anios || []).filter(a => a !== cor.anio_parcial);
+    const defYear = completos[completos.length - 1] || cor.anios[cor.anios.length - 1];
     if (sel && !sel.dataset.filled) {
-      sel.innerHTML = cor.anios.map(y => `<option value="${y}"${y === last ? " selected" : ""}>${y}${y === cor.anio_parcial ? " (parcial)" : ""}</option>`).join("");
+      sel.innerHTML = cor.anios.map(y => `<option value="${y}"${y === defYear ? " selected" : ""}>${y}${y === cor.anio_parcial ? " (parcial)" : ""}</option>`).join("");
       sel.dataset.filled = "1";
     }
-    const strength = (r) => Math.abs(r) >= .7 ? "fuerte" : Math.abs(r) >= .4 ? "moderada" : Math.abs(r) >= .2 ? "débil" : "muy débil";
+    const strength = (r) => { const v = Math.abs(r); return v >= .7 ? "fuerte" : v >= .4 ? "moderada" : v >= .2 ? "débil" : "muy débil"; };
     const draw = (year) => {
       const t = echartsTheme();
-      const d = (cor.datos && cor.datos[year]) || {};
+      const P = cor.pares[correlPair] || {}; const d = (P.datos && P.datos[year]) || {};
+      const lx = P.x || "X", ly = P.y || "Y";
       const pts = (d.puntos || []).map(p => [p[0], p[1], p[2]]);
       const maxN = pts.reduce((m, p) => Math.max(m, p[2]), 1);
       const maxX = pts.reduce((m, p) => Math.max(m, p[0]), 1), maxY = pts.reduce((m, p) => Math.max(m, p[1]), 1);
@@ -811,45 +812,47 @@
       const shownPts = correlZoom === "near" ? pts.filter(p => p[0] <= lim && p[1] <= lim) : pts;
       const hidden = pts.length - shownPts.length;
       const r = d.r, n = d.colegios || 0, ambos = d.ambos || 0;
-      const soloF = shownPts.filter(p => p[1] === 0).reduce((a, p) => a + p[2], 0);
       ch.setOption({
         textStyle: t.textStyle,
-        tooltip: Object.assign({ trigger: "item", formatter: (o) => `<b>${fmt(o.value[2])} colegio(s)</b><br>Reportes físicos: ${o.value[0]}<br>Reportes psicológicos: ${o.value[1]}` }, t.tooltip),
+        tooltip: Object.assign({ trigger: "item", formatter: (o) => `<b>${fmt(o.value[2])} colegio(s)</b><br>${esc(lx)}: ${o.value[0]}<br>${esc(ly)}: ${o.value[1]}` }, t.tooltip),
         toolbox: TOOLBOX,
         visualMap: { type: "continuous", dimension: 2, min: 1, max: maxN, calculable: false, orient: "horizontal", left: "center", bottom: 0, itemWidth: 10, itemHeight: 120, text: ["muchos colegios", "pocos"], textStyle: { fontSize: 10, color: t.textStyle.color }, inRange: { color: ["#93cdea", "#1f5f8b", "#14202e"] } },
         grid: { left: 56, right: 24, top: 44, bottom: 72 },
-        xAxis: { type: "value", name: "Reportes físicos por colegio", nameLocation: "middle", nameGap: 28, min: 0, max: lim, splitLine: t.splitLine },
-        yAxis: { type: "value", name: "Reportes psicológicos por colegio", nameLocation: "middle", nameGap: 40, min: 0, max: lim, splitLine: t.splitLine },
-        series: [{
-          type: "scatter", data: shownPts,
-          symbolSize: (v) => 5 + 30 * Math.sqrt(v[2] / maxN),
-          itemStyle: { opacity: .85, borderColor: "#fff", borderWidth: .6 },
-          markLine: { silent: true, symbol: "none", lineStyle: { type: "dashed", color: "#b3421f", width: 1.2 },
-            label: { formatter: "misma cantidad de ambos", position: "insideMiddleTop", fontSize: 10, color: "#b3421f" },
-            data: [[{ coord: [0, 0] }, { coord: [lim, lim] }]] }
-        }]
+        xAxis: { type: "value", name: `Reportes: ${lx} (por colegio)`, nameLocation: "middle", nameGap: 28, min: 0, max: lim, splitLine: t.splitLine },
+        yAxis: { type: "value", name: `Reportes: ${ly}`, nameLocation: "middle", nameGap: 40, min: 0, max: lim, splitLine: t.splitLine },
+        series: [{ type: "scatter", data: shownPts, symbolSize: (v) => 5 + 30 * Math.sqrt(v[2] / maxN), itemStyle: { opacity: .85, borderColor: "#fff", borderWidth: .6 },
+          markLine: { silent: true, symbol: "none", lineStyle: { type: "dashed", color: "#b3421f", width: 1.2 }, label: { formatter: "misma cantidad de ambos", position: "insideMiddleTop", fontSize: 10, color: "#b3421f" }, data: [[{ coord: [0, 0] }, { coord: [lim, lim] }]] } }]
       }, true);
+      const pct = (x) => n ? Math.round(x / n * 100) : 0;
       const stats = document.getElementById("correl-stats");
       if (stats) stats.innerHTML =
         `<div class="stat"><div class="v">${r == null ? "—" : (+r).toFixed(2)}</div><div class="l">correlación r · ${r == null ? "" : strength(r)}</div></div>` +
-        `<div class="stat"><div class="v">${fmt(n)}</div><div class="l">colegios con reportes en ${year}</div></div>` +
-        `<div class="stat"><div class="v">${n ? Math.round(ambos / n * 100) : 0}%</div><div class="l">tienen reportes de <b>ambos</b> tipos</div></div>` +
-        `<div class="stat"><div class="v">${n ? Math.round((n - ambos) / n * 100) : 0}%</div><div class="l">solo un tipo (físico <i>o</i> psicológico)</div></div>`;
+        `<div class="stat"><div class="v">${fmt(n)}</div><div class="l">colegios con reportes de alguno de los dos tipos (${year})</div></div>` +
+        `<div class="stat"><div class="v">${pct(ambos)}%</div><div class="l">tienen reportes de <b>ambos</b></div></div>` +
+        `<div class="stat"><div class="v">${pct(n - ambos)}%</div><div class="l">solo de uno de los dos</div></div>`;
       const rd = document.getElementById("correl-reading");
-      if (rd) rd.innerHTML = r == null ? "" :
-        `<b>Lectura:</b> en ${year}${year === cor.anio_parcial ? " (parcial)" : ""} la correlación es <b>${strength(r)}</b> (r = ${(+r).toFixed(2)}): saber que un colegio tiene reportes físicos <b>casi no permite predecir</b> cuántos psicológicos tendrá. La mayoría de colegios (${n ? Math.round((n - ambos) / n * 100) : 0}%) aparece con <b>un solo tipo</b>; las burbujas grandes se concentran cerca del origen (1–3 reportes). Las pocas que se alejan por el eje X son colegios con muchos reportes físicos y casi ninguno psicológico, y viceversa.` +
-        (hidden ? ` <span style="color:var(--text-muted)">(${hidden} combinación(es) con más de ${lim} reportes están fuera de esta vista; pulsa "Todo el rango").</span>` : "");
+      if (rd) {
+        let lectura = "";
+        if (r != null) {
+          const s = strength(r);
+          lectura = (s === "fuerte" || s === "moderada")
+            ? `los colegios con más reportes de ${lx.toLowerCase()} <b>tienden a tener también más</b> de ${ly.toLowerCase()}, aunque la relación es parcial (r = ${(+r).toFixed(2)}): el tamaño del colegio y su cultura de reporte explican buena parte.`
+            : (s === "débil")
+              ? `hay una <b>relación débil</b> (r = ${(+r).toFixed(2)}): saber cuántos reportes de ${lx.toLowerCase()} tiene un colegio dice poco sobre cuántos de ${ly.toLowerCase()} tendrá; la mayoría (${pct(n - ambos)}%) aparece con un solo tipo.`
+              : `prácticamente <b>no hay relación</b> (r = ${(+r).toFixed(2)}): son fenómenos que se registran por separado; ${pct(n - ambos)}% de los colegios tiene reportes de un solo tipo.`;
+        }
+        rd.innerHTML = r == null ? "" : `<b>Lectura (${year}${year === cor.anio_parcial ? ", parcial" : ""}):</b> ${lectura} No indica causalidad ni identifica colegios.` +
+          (hidden ? ` <span style="color:var(--text-muted)">(${hidden} combinación(es) con más de ${lim} reportes fuera de esta vista; pulsa "Todo el rango").</span>` : "");
+      }
       const src = document.getElementById("correl-source");
-      if (src) src.innerHTML = `${esc(cor.note || "")} Fuente: ${esc(cor.source || "")}${soloF ? "" : ""}`;
+      if (src) src.innerHTML = `${esc(cor.note || "")} Unidad: ${esc(cor.unidad || "")}. Fuente: ${esc(cor.source || "")}`;
     };
-    const cur = () => (sel ? sel.value : last);
+    const cur = () => (sel ? sel.value : defYear);
     draw(cur());
     if (sel && !sel.dataset.wired) {
       sel.addEventListener("change", () => draw(cur())); sel.dataset.wired = "1";
-      document.querySelectorAll("#correl-zoom button").forEach(b => b.addEventListener("click", () => {
-        document.querySelectorAll("#correl-zoom button").forEach(x => x.classList.remove("active"));
-        b.classList.add("active"); correlZoom = b.dataset.zoom; draw(cur());
-      }));
+      document.querySelectorAll("#correl-zoom button").forEach(b => b.addEventListener("click", () => { document.querySelectorAll("#correl-zoom button").forEach(x => x.classList.remove("active")); b.classList.add("active"); correlZoom = b.dataset.zoom; draw(cur()); }));
+      document.querySelectorAll("#correl-pair button").forEach(b => b.addEventListener("click", () => { document.querySelectorAll("#correl-pair button").forEach(x => x.classList.remove("active")); b.classList.add("active"); correlPair = b.dataset.pair; draw(cur()); }));
     }
   }
 
@@ -975,6 +978,13 @@
     legend.onAdd = function () { const div = L.DomUtil.create("div", "legend"); div.id = "map-legend"; return div; };
     legend.addTo(map);
     updateLegend();
+    if (window.matchMedia && matchMedia("(max-width: 640px)").matches) {
+      const aux = document.createElement("div"); aux.className = "map-aux";
+      document.getElementById("map").insertAdjacentElement("afterend", aux);
+      const lg = document.getElementById("map-legend"); if (lg) aux.appendChild(lg);
+      setTimeout(() => { const ctl = document.querySelector(".obs-dist-ctl"); if (ctl) aux.appendChild(ctl); }, 0);
+      map.dragging.disable(); map.on("focus", () => map.dragging.enable()); map.on("blur", () => map.dragging.disable());
+    }
     if (window.OBS_districts) { try { window.OBS_districts.init({ map, store, L, esc, fmt }); } catch (e) { console.error("[obs] distritos", e); } }
   }
 
@@ -1031,11 +1041,9 @@
     const el = document.getElementById("map-source"); if (!el) return;
     const info = yearInfo(mapYear);
     let s = info.rel === "A"
-      ? (mapYear === 2024
-          ? `Fuente: MINEDU — SíseVe, microdato oficial ${mapYear} (25 regiones, acceso a la información pública).`
-          : `Fuente: MINEDU — Boletín "SíseVe en cifras" ${mapYear} (oficial).`)
+      ? `Fuente: MINEDU — SíseVe, microdato oficial ${mapYear} agregado por región (25 regiones, acceso a la información pública)${info.partial ? "; " + mapYear + " es parcial (ene–ago)" : ""}${[2020, 2021].includes(+mapYear) ? "; escuelas cerradas por la pandemia: no comparable" : ""}.`
       : `Fuente: prensa citando a MINEDU (nivel B)${info.partial ? ", " + mapYear + " parcial (ene–ago)" : ""}.`;
-    if (info.incomplete) s += ` Cobertura parcial: ${info.n} de 26 regiones; el resto queda "sin dato".`;
+    if (info.incomplete) s += ` Cobertura parcial: ${info.n} de 25 regiones; el resto queda "sin dato".`;
     s += " Matrícula: INEI 2024 · GeoJSON: juaneladio/peru-geojson (MPL-2.0). Colores por cuantiles (ranking), no proporcionales.";
     el.textContent = s;
   }
@@ -1081,7 +1089,7 @@
       `<div style="display:flex;justify-content:space-between;width:150px;color:var(--text-soft);font-size:.68rem">` +
         `<span>${fmtV(lo)}</span><span>${fmtV(mid)}</span><span>${fmtV(hi)}</span></div>` +
       `<div style="margin-top:6px"><i style="background:#e7ded0"></i>sin dato</div>` +
-      `<div style="color:var(--text-soft);font-size:.66rem;margin-top:3px">Escala por cuantiles (ranking), ${vals.length}/26 regiones</div>`;
+      `<div style="color:var(--text-soft);font-size:.66rem;margin-top:3px">Escala por cuantiles (ranking), ${vals.length} de ${rows.length} regiones</div>`;
   }
 
   /* ---------- Prevalencia ---------- */
@@ -1095,7 +1103,7 @@
       textStyle: t.textStyle, grid: { left: 46, right: 20, top: 20, bottom: 96 },
       tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => v + "%" }, t.tooltip),
       toolbox: TOOLBOX,
-      xAxis: { type: "category", data: items.map(i => i.indicator.replace(/ en el entorno escolar/gi, "").replace(/violencia (psicológica y\/o física|física y psicológica)/gi, "").trim().slice(0, 30) + "…"), axisLabel: { interval: 0, rotate: 30, fontSize: 9 } },
+      xAxis: { type: "category", data: items.map(i => i.indicator.replace(/ en el entorno escolar/gi, "").replace(/violencia (psicológica y\/o física|física y psicológica)/gi, "").trim()), axisLabel: { interval: 0, fontSize: 9, width: 110, overflow: "break", lineHeight: 11 } },
       yAxis: { type: "value", max: 100, name: "%", splitLine: t.splitLine },
       series: [{ type: "bar", data: items.map(i => i.value_pct), itemStyle: { color: grad(C.colors.exposicion), borderRadius: [6, 6, 0, 0] }, barMaxWidth: 46,
         label: { show: true, position: "top", formatter: "{c}%", fontSize: 11, fontWeight: 700 } }]
@@ -1183,20 +1191,21 @@
     pie("bd-sexo", (bd.sexo_agredido_2022 || []).map(x => ({ name: x.sexo, value: x.casos != null ? x.casos : x.pct })), ["#cc3b52", "#2f80c4"]);
     pie("bd-sexo-escolares", (bd.sexo_victima_entre_escolares_2013_2018 || []).map(x => ({ name: x.sexo, value: x.casos != null ? x.casos : x.pct })), ["#2f80c4", "#cc3b52"]);
     // Crecimiento por tipo 2026 vs 2025
-    const cg = bd.crecimiento_tipo_2026;
+    const cg = bd.crecimiento_tipo || bd.crecimiento_tipo_2026;
     const chG = mkChart("bd-crecimiento");
     if (chG && cg && cg.data) {
       const colors = { "Sexual": "#cc3b52", "Física": "#ec9a4e", "Psicológica": "#e3cf5a" };
+      const sg = (v) => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v) + "%";
       chG.setOption({
-        textStyle: t.textStyle, grid: { left: 90, right: 50, top: 8, bottom: 24 },
-        tooltip: Object.assign({ trigger: "axis", valueFormatter: (v) => "+" + v + "%" }, t.tooltip),
-        xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10, formatter: "+{value}%" } },
+        textStyle: t.textStyle, grid: { left: 90, right: 56, top: 8, bottom: 24 },
+        tooltip: Object.assign({ trigger: "axis", formatter: (ps) => { const x = cg.data[ps[0].dataIndex]; return `<b>${esc(x.tipo)}</b>: ${sg(x.var_pct)}` + (x.casos_2024 != null ? `<br>${fmt(x.casos_2024)} (2024) → ${fmt(x.casos_2025)} (2025)` : ""); } }, t.tooltip),
+        xAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 10, formatter: (v) => sg(v) } },
         yAxis: { type: "category", inverse: true, data: cg.data.map(x => x.tipo), axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 11 } },
-        series: [{ type: "bar", barMaxWidth: 22, data: cg.data.map(x => ({ value: x.var_pct, itemStyle: { color: grad(colors[x.tipo] || C.colors.bullying, "h"), borderRadius: [0, 6, 6, 0] } })),
-          label: { show: true, position: "right", fontSize: 11, fontWeight: 700, color: t.textStyle.color, formatter: (p) => "+" + p.value + "%" } }]
+        series: [{ type: "bar", barMaxWidth: 22, data: cg.data.map(x => ({ value: x.var_pct, itemStyle: { color: grad(colors[x.tipo] || C.colors.bullying, "h"), borderRadius: x.var_pct >= 0 ? [0, 6, 6, 0] : [6, 0, 0, 6] } })),
+          label: { show: true, position: "right", fontSize: 11, fontWeight: 700, color: t.textStyle.color, formatter: (p) => sg(p.value) } }]
       });
       const s = document.getElementById("crecimiento-source");
-      if (s) s.innerHTML = `Fuente: ${esc(cg.source)}. <a href="${safeUrl(cg.source_url)}" target="_blank" rel="noopener">Ver ↗</a>`;
+      if (s) s.innerHTML = `${esc(cg.note || "")} Fuente: ${esc(cg.source)}. <a href="${safeUrl(cg.source_url)}" target="_blank" rel="noopener">Ver ↗</a>`;
     }
   }
 
@@ -1373,11 +1382,11 @@
       (ts && ts.years && ts.years.map(String)) || [];
     const sorted = years.map(Number).filter(n => !isNaN(n)).sort((a, b) => b - a);
     // Año por defecto: el más completo/oficial (default_year), si existe.
-    const def = (store.byDepartment && store.byDepartment.default_year) || sorted[0];
+    const def = +((store.byDepartment && store.byDepartment.default_year) || sorted[0]);
     ["map-year", "table-year"].forEach(id => {
       const sel = document.getElementById(id);
       if (!sel) return;
-      sel.innerHTML = sorted.map(y => `<option value="${y}"${y === def ? " selected" : ""}>${y}${y === def ? " ★" : ""}</option>`).join("") || '<option>—</option>';
+      sel.innerHTML = sorted.map(y => `<option value="${y}"${y === +def ? " selected" : ""}>${y}${y === +def ? " ★" : ""}${store.byDepartment && store.byDepartment.partial_year === y ? " (parcial)" : ""}</option>`).join("") || '<option>—</option>';
     });
     return def;
   }

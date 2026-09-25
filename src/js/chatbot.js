@@ -49,14 +49,14 @@
     return { anio: T.anio_transversal, n: R.length, total, byTasa, byRep, note: T.note, source: T.source };
   }
   function corrSummary(d) {
-    const c = d.correlation; if (!c || !c.datos) return null;
-    const anios = c.anios || Object.keys(c.datos);
+    const c = d.correlation; const P = c && c.pares && c.pares.fisica_psicologica; if (!P || !P.datos) return null;
+    const anios = c.anios || Object.keys(P.datos);
     const completos = anios.filter(a => a !== c.anio_parcial);
     const last = completos[completos.length - 1];
-    return { last, r: c.datos[last]?.r, colegios: c.datos[last]?.colegios,
-      parcial: c.anio_parcial, rParcial: c.datos[c.anio_parcial]?.r, colegiosParcial: c.datos[c.anio_parcial]?.colegios, source: c.source };
+    return { last, r: P.datos[last]?.r, colegios: P.datos[last]?.colegios,
+      parcial: c.anio_parcial, rParcial: P.datos[c.anio_parcial]?.r, colegiosParcial: P.datos[c.anio_parcial]?.colegios, source: c.source };
   }
-  const CORR_EXPLICACION = "En lenguaje sencillo: r va de 0 (sin relación) a 1 (relación total). Un r bajo significa que, a nivel de colegio, tener más reportes de violencia física apenas se asocia con tener más de violencia psicológica: son fenómenos que suelen registrarse por separado, y un tipo NO predice el otro. No identifica colegios ni indica causalidad.";
+  const CORR_EXPLICACION = "En lenguaje sencillo: r va de 0 (sin relación) a 1 (relación total). Un r de 0.3 es una relación débil-moderada: los colegios con más reportes de violencia física tienden a tener también más de psicológica, pero la relación es parcial (el tamaño del colegio y su cultura de reporte pesan mucho). Cálculo propio por servicio educativo sobre el microdato; no identifica colegios ni indica causalidad.";
 
   // Construye un contexto compacto y verificable a partir de los datasets cargados.
   function buildContext() {

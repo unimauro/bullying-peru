@@ -1,129 +1,872 @@
 {
   "dataset": "Reportes SíseVe por departamento",
-  "retrieval_date": "2026-09-18",
-  "note": "2022 y 2024 son OFICIALES. 2024 proviene del microdato SíseVe (25 regiones, acceso a la información pública); 2022 del Boletín ‘SíseVe en cifras’. 2026 sigue siendo prensa (fuente B) y parcial (ene–ago); sus regiones sin cifra quedan ‘sin dato’ y NO se estiman.",
+  "retrieval_date": "2026-09-24",
+  "note": "Todos los años (2013–2026) provienen del microdato oficial SíseVe agregado por región (25 regiones, acceso a la información pública) y cuadran con la serie nacional. 2026 es parcial (ene–ago). 2020–2021: cierre de escuelas, no comparables.",
   "reliability_by_year": {
+    "2013": "A",
+    "2014": "A",
+    "2015": "A",
+    "2016": "A",
+    "2017": "A",
+    "2018": "A",
+    "2019": "A",
+    "2020": "A",
+    "2021": "A",
     "2022": "A",
+    "2023": "A",
     "2024": "A",
-    "2026": "B"
+    "2025": "A",
+    "2026": "A"
   },
-  "default_year": "2024",
+  "default_year": 2024,
   "source_2022_url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/9786",
   "source_2026_url": "https://www.infobae.com/peru/2026/09/15/el-mapa-de-la-violencia-escolar-en-peru-las-regiones-que-concentran-mas-reportes-en-2026/",
   "source_2024_url": "https://siseve.minedu.gob.pe/Web/App/Mapa",
-  "2022": {
-    "Amazonas": {
-      "cases": 157
-    },
-    "Áncash": {
-      "cases": 483
-    },
-    "Apurímac": {
-      "cases": 65
+  "2013": {
+    "Lima": {
+      "cases": 91
     },
     "Arequipa": {
-      "cases": 602
+      "cases": 5
     },
-    "Ayacucho": {
-      "cases": 153
+    "Piura": {
+      "cases": 6
     },
-    "Cajamarca": {
-      "cases": 440
+    "Áncash": {
+      "cases": 2
     },
-    "Prov. Const. del Callao": {
-      "cases": 437
+    "La Libertad": {
+      "cases": 4
+    },
+    "Junín": {
+      "cases": 7
     },
     "Cusco": {
-      "cases": 472
+      "cases": 6
     },
-    "Huancavelica": {
-      "cases": 116
+    "Prov. Const. del Callao": {
+      "cases": 2
+    },
+    "Lambayeque": {
+      "cases": 4
+    },
+    "Ica": {
+      "cases": 6
+    },
+    "Tacna": {
+      "cases": 2
+    },
+    "Cajamarca": {
+      "cases": 1
+    },
+    "San Martín": {
+      "cases": 4
+    },
+    "Ucayali": {
+      "cases": 6
     },
     "Huánuco": {
-      "cases": 266
+      "cases": 8
+    },
+    "Amazonas": {
+      "cases": 1
+    },
+    "Loreto": {
+      "cases": 2
+    },
+    "Ayacucho": {
+      "cases": 33
+    },
+    "Puno": {
+      "cases": 6
+    },
+    "Huancavelica": {
+      "cases": 3
+    },
+    "Apurímac": {
+      "cases": 3
+    },
+    "Moquegua": {
+      "cases": 3
+    },
+    "Tumbes": {
+      "cases": 0
+    },
+    "Pasco": {
+      "cases": 1
+    },
+    "Madre de Dios": {
+      "cases": 1
+    }
+  },
+  "2014": {
+    "Lima": {
+      "cases": 1343
+    },
+    "Arequipa": {
+      "cases": 41
+    },
+    "Piura": {
+      "cases": 39
+    },
+    "Áncash": {
+      "cases": 37
+    },
+    "La Libertad": {
+      "cases": 74
+    },
+    "Junín": {
+      "cases": 72
+    },
+    "Cusco": {
+      "cases": 21
+    },
+    "Prov. Const. del Callao": {
+      "cases": 30
+    },
+    "Lambayeque": {
+      "cases": 43
+    },
+    "Ica": {
+      "cases": 28
+    },
+    "Tacna": {
+      "cases": 14
+    },
+    "Cajamarca": {
+      "cases": 20
+    },
+    "San Martín": {
+      "cases": 9
+    },
+    "Ucayali": {
+      "cases": 23
+    },
+    "Huánuco": {
+      "cases": 60
+    },
+    "Amazonas": {
+      "cases": 6
+    },
+    "Loreto": {
+      "cases": 15
+    },
+    "Ayacucho": {
+      "cases": 24
+    },
+    "Puno": {
+      "cases": 54
+    },
+    "Huancavelica": {
+      "cases": 34
+    },
+    "Apurímac": {
+      "cases": 6
+    },
+    "Moquegua": {
+      "cases": 16
+    },
+    "Tumbes": {
+      "cases": 2
+    },
+    "Pasco": {
+      "cases": 12
+    },
+    "Madre de Dios": {
+      "cases": 6
+    }
+  },
+  "2015": {
+    "Lima": {
+      "cases": 1038
+    },
+    "Arequipa": {
+      "cases": 175
+    },
+    "Piura": {
+      "cases": 219
+    },
+    "Áncash": {
+      "cases": 206
+    },
+    "La Libertad": {
+      "cases": 135
+    },
+    "Junín": {
+      "cases": 288
+    },
+    "Cusco": {
+      "cases": 162
+    },
+    "Prov. Const. del Callao": {
+      "cases": 113
+    },
+    "Lambayeque": {
+      "cases": 121
+    },
+    "Ica": {
+      "cases": 93
+    },
+    "Tacna": {
+      "cases": 90
+    },
+    "Cajamarca": {
+      "cases": 77
+    },
+    "San Martín": {
+      "cases": 110
+    },
+    "Ucayali": {
+      "cases": 58
+    },
+    "Huánuco": {
+      "cases": 156
+    },
+    "Amazonas": {
+      "cases": 104
+    },
+    "Loreto": {
+      "cases": 45
+    },
+    "Ayacucho": {
+      "cases": 77
+    },
+    "Puno": {
+      "cases": 174
+    },
+    "Huancavelica": {
+      "cases": 83
+    },
+    "Apurímac": {
+      "cases": 24
+    },
+    "Moquegua": {
+      "cases": 14
+    },
+    "Tumbes": {
+      "cases": 19
+    },
+    "Pasco": {
+      "cases": 47
+    },
+    "Madre de Dios": {
+      "cases": 7
+    }
+  },
+  "2016": {
+    "Lima": {
+      "cases": 1902
+    },
+    "Arequipa": {
+      "cases": 220
+    },
+    "Piura": {
+      "cases": 551
+    },
+    "Áncash": {
+      "cases": 217
+    },
+    "La Libertad": {
+      "cases": 237
+    },
+    "Junín": {
+      "cases": 243
+    },
+    "Cusco": {
+      "cases": 177
+    },
+    "Prov. Const. del Callao": {
+      "cases": 122
+    },
+    "Lambayeque": {
+      "cases": 185
+    },
+    "Ica": {
+      "cases": 73
+    },
+    "Tacna": {
+      "cases": 100
+    },
+    "Cajamarca": {
+      "cases": 153
+    },
+    "San Martín": {
+      "cases": 186
+    },
+    "Ucayali": {
+      "cases": 103
+    },
+    "Huánuco": {
+      "cases": 120
+    },
+    "Amazonas": {
+      "cases": 81
+    },
+    "Loreto": {
+      "cases": 104
+    },
+    "Ayacucho": {
+      "cases": 96
+    },
+    "Puno": {
+      "cases": 141
+    },
+    "Huancavelica": {
+      "cases": 56
+    },
+    "Apurímac": {
+      "cases": 66
+    },
+    "Moquegua": {
+      "cases": 19
+    },
+    "Tumbes": {
+      "cases": 54
+    },
+    "Pasco": {
+      "cases": 33
+    },
+    "Madre de Dios": {
+      "cases": 49
+    }
+  },
+  "2017": {
+    "Lima": {
+      "cases": 2354
+    },
+    "Arequipa": {
+      "cases": 231
+    },
+    "Piura": {
+      "cases": 314
+    },
+    "Áncash": {
+      "cases": 239
+    },
+    "La Libertad": {
+      "cases": 233
+    },
+    "Junín": {
+      "cases": 213
+    },
+    "Cusco": {
+      "cases": 181
+    },
+    "Prov. Const. del Callao": {
+      "cases": 207
+    },
+    "Lambayeque": {
+      "cases": 226
+    },
+    "Ica": {
+      "cases": 151
+    },
+    "Tacna": {
+      "cases": 72
+    },
+    "Cajamarca": {
+      "cases": 152
+    },
+    "San Martín": {
+      "cases": 254
+    },
+    "Ucayali": {
+      "cases": 100
+    },
+    "Huánuco": {
+      "cases": 85
+    },
+    "Amazonas": {
+      "cases": 73
+    },
+    "Loreto": {
+      "cases": 58
+    },
+    "Ayacucho": {
+      "cases": 100
+    },
+    "Puno": {
+      "cases": 92
+    },
+    "Huancavelica": {
+      "cases": 57
+    },
+    "Apurímac": {
+      "cases": 36
+    },
+    "Moquegua": {
+      "cases": 34
+    },
+    "Tumbes": {
+      "cases": 30
+    },
+    "Pasco": {
+      "cases": 26
+    },
+    "Madre de Dios": {
+      "cases": 34
+    }
+  },
+  "2018": {
+    "Lima": {
+      "cases": 3640
+    },
+    "Arequipa": {
+      "cases": 405
+    },
+    "Piura": {
+      "cases": 647
+    },
+    "Áncash": {
+      "cases": 356
+    },
+    "La Libertad": {
+      "cases": 417
+    },
+    "Junín": {
+      "cases": 430
+    },
+    "Cusco": {
+      "cases": 329
+    },
+    "Prov. Const. del Callao": {
+      "cases": 318
+    },
+    "Lambayeque": {
+      "cases": 326
+    },
+    "Ica": {
+      "cases": 263
+    },
+    "Tacna": {
+      "cases": 145
+    },
+    "Cajamarca": {
+      "cases": 332
+    },
+    "San Martín": {
+      "cases": 337
+    },
+    "Ucayali": {
+      "cases": 145
+    },
+    "Huánuco": {
+      "cases": 262
+    },
+    "Amazonas": {
+      "cases": 197
+    },
+    "Loreto": {
+      "cases": 119
+    },
+    "Ayacucho": {
+      "cases": 146
+    },
+    "Puno": {
+      "cases": 128
+    },
+    "Huancavelica": {
+      "cases": 109
+    },
+    "Apurímac": {
+      "cases": 79
+    },
+    "Moquegua": {
+      "cases": 60
+    },
+    "Tumbes": {
+      "cases": 63
+    },
+    "Pasco": {
+      "cases": 94
+    },
+    "Madre de Dios": {
+      "cases": 36
+    }
+  },
+  "2019": {
+    "Lima": {
+      "cases": 4918
+    },
+    "Arequipa": {
+      "cases": 692
+    },
+    "Piura": {
+      "cases": 912
+    },
+    "Áncash": {
+      "cases": 475
+    },
+    "La Libertad": {
+      "cases": 623
+    },
+    "Junín": {
+      "cases": 622
+    },
+    "Cusco": {
+      "cases": 376
+    },
+    "Prov. Const. del Callao": {
+      "cases": 484
+    },
+    "Lambayeque": {
+      "cases": 314
+    },
+    "Ica": {
+      "cases": 437
+    },
+    "Tacna": {
+      "cases": 207
+    },
+    "Cajamarca": {
+      "cases": 453
+    },
+    "San Martín": {
+      "cases": 408
+    },
+    "Ucayali": {
+      "cases": 157
+    },
+    "Huánuco": {
+      "cases": 366
+    },
+    "Amazonas": {
+      "cases": 247
+    },
+    "Loreto": {
+      "cases": 220
+    },
+    "Ayacucho": {
+      "cases": 310
+    },
+    "Puno": {
+      "cases": 193
+    },
+    "Huancavelica": {
+      "cases": 103
+    },
+    "Apurímac": {
+      "cases": 100
+    },
+    "Moquegua": {
+      "cases": 74
+    },
+    "Tumbes": {
+      "cases": 96
+    },
+    "Pasco": {
+      "cases": 117
+    },
+    "Madre de Dios": {
+      "cases": 97
+    }
+  },
+  "2020": {
+    "Lima": {
+      "cases": 315
+    },
+    "Arequipa": {
+      "cases": 52
+    },
+    "Piura": {
+      "cases": 54
+    },
+    "Áncash": {
+      "cases": 17
+    },
+    "La Libertad": {
+      "cases": 21
+    },
+    "Junín": {
+      "cases": 24
+    },
+    "Cusco": {
+      "cases": 44
+    },
+    "Prov. Const. del Callao": {
+      "cases": 30
+    },
+    "Lambayeque": {
+      "cases": 25
+    },
+    "Ica": {
+      "cases": 19
+    },
+    "Tacna": {
+      "cases": 11
+    },
+    "Cajamarca": {
+      "cases": 22
+    },
+    "San Martín": {
+      "cases": 17
+    },
+    "Ucayali": {
+      "cases": 5
+    },
+    "Huánuco": {
+      "cases": 12
+    },
+    "Amazonas": {
+      "cases": 10
+    },
+    "Loreto": {
+      "cases": 13
+    },
+    "Ayacucho": {
+      "cases": 19
+    },
+    "Puno": {
+      "cases": 12
+    },
+    "Huancavelica": {
+      "cases": 6
+    },
+    "Apurímac": {
+      "cases": 9
+    },
+    "Moquegua": {
+      "cases": 3
+    },
+    "Tumbes": {
+      "cases": 3
+    },
+    "Pasco": {
+      "cases": 8
+    },
+    "Madre de Dios": {
+      "cases": 4
+    }
+  },
+  "2021": {
+    "Lima": {
+      "cases": 261
+    },
+    "Arequipa": {
+      "cases": 38
+    },
+    "Piura": {
+      "cases": 54
+    },
+    "Áncash": {
+      "cases": 23
+    },
+    "La Libertad": {
+      "cases": 16
+    },
+    "Junín": {
+      "cases": 35
+    },
+    "Cusco": {
+      "cases": 38
+    },
+    "Prov. Const. del Callao": {
+      "cases": 18
+    },
+    "Lambayeque": {
+      "cases": 15
+    },
+    "Ica": {
+      "cases": 19
+    },
+    "Tacna": {
+      "cases": 6
+    },
+    "Cajamarca": {
+      "cases": 34
+    },
+    "San Martín": {
+      "cases": 14
+    },
+    "Ucayali": {
+      "cases": 51
+    },
+    "Huánuco": {
+      "cases": 18
+    },
+    "Amazonas": {
+      "cases": 35
+    },
+    "Loreto": {
+      "cases": 28
+    },
+    "Ayacucho": {
+      "cases": 11
+    },
+    "Puno": {
+      "cases": 20
+    },
+    "Huancavelica": {
+      "cases": 12
+    },
+    "Apurímac": {
+      "cases": 5
+    },
+    "Moquegua": {
+      "cases": 2
+    },
+    "Tumbes": {
+      "cases": 2
+    },
+    "Pasco": {
+      "cases": 10
+    },
+    "Madre de Dios": {
+      "cases": 3
+    }
+  },
+  "2022": {
+    "Lima": {
+      "cases": 4668
+    },
+    "Arequipa": {
+      "cases": 588
+    },
+    "Piura": {
+      "cases": 867
+    },
+    "Áncash": {
+      "cases": 482
+    },
+    "La Libertad": {
+      "cases": 522
+    },
+    "Junín": {
+      "cases": 441
+    },
+    "Cusco": {
+      "cases": 470
+    },
+    "Prov. Const. del Callao": {
+      "cases": 433
+    },
+    "Lambayeque": {
+      "cases": 293
     },
     "Ica": {
       "cases": 381
     },
-    "Junín": {
-      "cases": 443
+    "Tacna": {
+      "cases": 314
     },
-    "La Libertad": {
-      "cases": 523
+    "Cajamarca": {
+      "cases": 439
     },
-    "Lambayeque": {
-      "cases": 298
+    "San Martín": {
+      "cases": 464
     },
-    "Lima Metropolitana": {
-      "cases": 4321
+    "Ucayali": {
+      "cases": 250
     },
-    "Región Lima": {
-      "cases": 382
+    "Huánuco": {
+      "cases": 266
+    },
+    "Amazonas": {
+      "cases": 156
     },
     "Loreto": {
-      "cases": 200
+      "cases": 196
     },
-    "Madre de Dios": {
-      "cases": 71
-    },
-    "Moquegua": {
-      "cases": 87
-    },
-    "Pasco": {
-      "cases": 107
-    },
-    "Piura": {
-      "cases": 868
+    "Ayacucho": {
+      "cases": 153
     },
     "Puno": {
       "cases": 98
     },
-    "San Martín": {
-      "cases": 465
+    "Huancavelica": {
+      "cases": 116
     },
-    "Tacna": {
-      "cases": 315
+    "Apurímac": {
+      "cases": 65
+    },
+    "Moquegua": {
+      "cases": 87
     },
     "Tumbes": {
-      "cases": 99
+      "cases": 98
     },
-    "Ucayali": {
-      "cases": 250
-    }
-  },
-  "2026": {
-    "Lima Metropolitana": {
-      "cases": 4058
-    },
-    "Arequipa": {
-      "cases": 730
-    },
-    "Piura": {
-      "cases": 692
-    },
-    "Junín": {
-      "cases": 552
-    },
-    "Áncash": {
-      "cases": 540
-    },
-    "La Libertad": {
-      "cases": 530
-    },
-    "Lambayeque": {
-      "cases": 490
-    },
-    "Ica": {
-      "cases": 414
-    },
-    "Cusco": {
-      "cases": 411
-    },
-    "Región Lima": {
-      "cases": 379
+    "Pasco": {
+      "cases": 107
     },
     "Madre de Dios": {
-      "cases": 55
+      "cases": 71
+    }
+  },
+  "2023": {
+    "Lima": {
+      "cases": 8100
+    },
+    "Arequipa": {
+      "cases": 1112
+    },
+    "Piura": {
+      "cases": 1094
+    },
+    "Áncash": {
+      "cases": 847
+    },
+    "La Libertad": {
+      "cases": 850
+    },
+    "Junín": {
+      "cases": 752
+    },
+    "Cusco": {
+      "cases": 850
+    },
+    "Prov. Const. del Callao": {
+      "cases": 766
+    },
+    "Lambayeque": {
+      "cases": 654
+    },
+    "Ica": {
+      "cases": 668
+    },
+    "Tacna": {
+      "cases": 580
+    },
+    "Cajamarca": {
+      "cases": 610
+    },
+    "San Martín": {
+      "cases": 573
+    },
+    "Ucayali": {
+      "cases": 371
+    },
+    "Huánuco": {
+      "cases": 335
+    },
+    "Amazonas": {
+      "cases": 201
+    },
+    "Loreto": {
+      "cases": 199
+    },
+    "Ayacucho": {
+      "cases": 248
+    },
+    "Puno": {
+      "cases": 131
+    },
+    "Huancavelica": {
+      "cases": 160
+    },
+    "Apurímac": {
+      "cases": 120
+    },
+    "Moquegua": {
+      "cases": 128
+    },
+    "Tumbes": {
+      "cases": 181
+    },
+    "Pasco": {
+      "cases": 131
+    },
+    "Madre de Dios": {
+      "cases": 61
     }
   },
   "2024": {
@@ -202,5 +945,161 @@
     "Madre de Dios": {
       "cases": 83
     }
-  }
+  },
+  "2025": {
+    "Lima": {
+      "cases": 7179
+    },
+    "Arequipa": {
+      "cases": 1491
+    },
+    "Piura": {
+      "cases": 1130
+    },
+    "Áncash": {
+      "cases": 823
+    },
+    "La Libertad": {
+      "cases": 851
+    },
+    "Junín": {
+      "cases": 792
+    },
+    "Cusco": {
+      "cases": 753
+    },
+    "Prov. Const. del Callao": {
+      "cases": 690
+    },
+    "Lambayeque": {
+      "cases": 751
+    },
+    "Ica": {
+      "cases": 689
+    },
+    "Tacna": {
+      "cases": 545
+    },
+    "Cajamarca": {
+      "cases": 460
+    },
+    "San Martín": {
+      "cases": 482
+    },
+    "Ucayali": {
+      "cases": 354
+    },
+    "Huánuco": {
+      "cases": 513
+    },
+    "Amazonas": {
+      "cases": 338
+    },
+    "Loreto": {
+      "cases": 317
+    },
+    "Ayacucho": {
+      "cases": 293
+    },
+    "Puno": {
+      "cases": 213
+    },
+    "Huancavelica": {
+      "cases": 132
+    },
+    "Apurímac": {
+      "cases": 160
+    },
+    "Moquegua": {
+      "cases": 136
+    },
+    "Tumbes": {
+      "cases": 163
+    },
+    "Pasco": {
+      "cases": 166
+    },
+    "Madre de Dios": {
+      "cases": 110
+    }
+  },
+  "2026": {
+    "Lima": {
+      "cases": 4437
+    },
+    "Arequipa": {
+      "cases": 730
+    },
+    "Piura": {
+      "cases": 692
+    },
+    "Áncash": {
+      "cases": 540
+    },
+    "La Libertad": {
+      "cases": 530
+    },
+    "Junín": {
+      "cases": 552
+    },
+    "Cusco": {
+      "cases": 411
+    },
+    "Prov. Const. del Callao": {
+      "cases": 423
+    },
+    "Lambayeque": {
+      "cases": 490
+    },
+    "Ica": {
+      "cases": 414
+    },
+    "Tacna": {
+      "cases": 354
+    },
+    "Cajamarca": {
+      "cases": 246
+    },
+    "San Martín": {
+      "cases": 322
+    },
+    "Ucayali": {
+      "cases": 200
+    },
+    "Huánuco": {
+      "cases": 353
+    },
+    "Amazonas": {
+      "cases": 199
+    },
+    "Loreto": {
+      "cases": 123
+    },
+    "Ayacucho": {
+      "cases": 197
+    },
+    "Puno": {
+      "cases": 109
+    },
+    "Huancavelica": {
+      "cases": 57
+    },
+    "Apurímac": {
+      "cases": 67
+    },
+    "Moquegua": {
+      "cases": 97
+    },
+    "Tumbes": {
+      "cases": 93
+    },
+    "Pasco": {
+      "cases": 100
+    },
+    "Madre de Dios": {
+      "cases": 55
+    }
+  },
+  "partial_year": 2026,
+  "source": "MINEDU — SíseVe, microdato 2013–2026 obtenido vía solicitud de acceso a la información pública. Consolidado publicado por el Observatorio de Violencia Escolar (github.com/fiorellatl/observatorio-violencia-escolar)."
 }

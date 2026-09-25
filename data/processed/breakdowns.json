@@ -80,25 +80,6 @@
       "pct": 47.46
     }
   ],
-  "crecimiento_tipo_2026": {
-    "note": "Variación de reportes por tipo, enero–agosto 2026 frente al mismo periodo de 2025 (fuente: prensa citando SíseVe). El tipo sexual es el que más creció.",
-    "source": "Infobae/ATV citando SíseVe",
-    "source_url": "https://www.infobae.com/peru/2026/09/15/violencia-escolar-alcanza-un-record-en-peru-mas-de-11-mil-reportes-entre-enero-y-agosto-de-2026/",
-    "data": [
-      {
-        "tipo": "Sexual",
-        "var_pct": 35.4
-      },
-      {
-        "tipo": "Física",
-        "var_pct": 16.5
-      },
-      {
-        "tipo": "Psicológica",
-        "var_pct": 15.3
-      }
-    ]
-  },
   "tipo_reporte_2013_2018": [
     {
       "tipo": "Entre escolares",
@@ -159,5 +140,34 @@
       "pct": 43
     }
   ],
-  "source_tipologia_2022": "MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública); consolidado de fiorellatl/observatorio-violencia-escolar"
+  "source_tipologia_2022": "MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública); consolidado de fiorellatl/observatorio-violencia-escolar",
+  "crecimiento_tipo": {
+    "note": "Variación de reportes por tipo entre los dos últimos años completos (2025 vs 2024), microdato oficial. Sustituye a la cifra de prensa (+35 % sexual ene–ago 2026) que era aritméticamente incompatible con el crecimiento total oficial de ene–ago (+12.7 %).",
+    "source": "MINEDU — SíseVe, microdato 2013–2026 obtenido vía solicitud de acceso a la información pública. Consolidado publicado por el Observatorio de Violencia Escolar (github.com/fiorellatl/observatorio-violencia-escolar).",
+    "source_url": "https://siseve.minedu.gob.pe/Web/App/Mapa",
+    "years": [
+      2024,
+      2025
+    ],
+    "data": [
+      {
+        "tipo": "Física",
+        "casos_2024": 7781,
+        "casos_2025": 8457,
+        "var_pct": 8.7
+      },
+      {
+        "tipo": "Psicológica",
+        "casos_2024": 7634,
+        "casos_2025": 7608,
+        "var_pct": -0.3
+      },
+      {
+        "tipo": "Sexual",
+        "casos_2024": 3882,
+        "casos_2025": 3466,
+        "var_pct": -10.7
+      }
+    ]
+  }
 }

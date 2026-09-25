@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-# CONTROL DE DIVULGACIÓN ESTADÍSTICA (25-09-2026, revisión psicología/ética):
+# CONTROL DE DIVULGACIÓN ESTADÍSTICA (25-09-2026, revisión psicología/ética + seguridad):
 #   - `sexual` y `personal_ie` por colegio-año con valor 1–4 se publican como -1 (= "<5"),
 #     para no permitir reidentificar a una víctima o a un docente en colegios pequeños
 #     (Ley 29733 datos sensibles; CNA art. 6). Los totales anuales no cambian.
+#   - Supresión complementaria: al suprimir `sexual` se suprimen también `fisica` y
+#     `psicologica` ese año; al suprimir `personal_ie`, también `entre_escolares`
+#     (si no, total − publicados recupera la celda). Ver scripts/privacy.py.
 #   - En nivel Inicial no se publica ningún desglose por tipo (todo -1 si > 0).
-#   La función supress() se aplica a schools_top y a los shards schools_detail/.
+#   La regla se aplica a schools_top y a los shards schools_detail/.
 """
 Genera los datos de colegios v2 (con series por año y shards por región)
 a partir del microdato SíseVe 2013–2026 consolidado por
@@ -28,6 +31,9 @@ import re
 import sys
 import unicodedata
 import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from privacy import suprimir_tipos, verificar  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DIR = os.path.join(ROOT, "data", "raw", "observatorio-escolar")
@@ -89,13 +95,10 @@ def series(anios, key):
 
 
 def tipos_series(anios, nivel=None):
-    """Desglose por tipo con control de divulgación estadística (ver cabecera):
-    sexual/personal_ie 1-4 -> -1 ("<5"); en Inicial todo desglose > 0 -> -1."""
-    out = {t: series(anios, t) for t in TIPOS}
-    inicial = str(nivel or "").startswith("Inicial")
-    for t in TIPOS:
-        out[t] = [(-1 if (v > 0 and (inicial or (t in ("sexual", "personal_ie") and v < 5))) else v) for v in out[t]]
-    return out
+    """Desglose por tipo con control de divulgación estadística (ver cabecera y
+    scripts/privacy.py): sexual/personal_ie 1-4 -> -1 ("<5") más la partición
+    complementaria; en Inicial todo desglose > 0 -> -1."""
+    return suprimir_tipos({t: series(anios, t) for t in TIPOS}, nivel)
 
 
 def dump(path, obj):
@@ -210,11 +213,16 @@ def main():
                 f"colisión de slug de región {slug}: {region_names[slug]!r} vs {r['r']!r}"
             )
         d = detail[r["s"]]
+        tipos = tipos_series(d.get("anios") or {}, d.get("nivel"))
+        for i, particion, sup in verificar(tipos):
+            anomalies.append(
+                f"{r['s']} {YEARS[i]}: supresión parcial {sup} en {particion} (recuperable)"
+            )
         by_region.setdefault(slug, {})[r["s"]] = {
             "ugel": d.get("ugel"),
             "dre": d.get("dre"),
             "y": r["y"],
-            "tipos": tipos_series(d.get("anios") or {}, d.get("nivel")),
+            "tipos": tipos,
         }
 
     # limpiar shards viejos que ya no correspondan

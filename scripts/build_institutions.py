@@ -20,6 +20,9 @@ tasa vienen de la fuente y se copian tal cual, con su año.
 import json, os, sys, unicodedata, urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from privacy import suprimir_tipos, mascara_de, verificar  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw" / "observatorio-escolar"
 OUT = ROOT / "data" / "processed"
@@ -75,14 +78,19 @@ def main():
         }
         index.append(row)
         det = dict(row); det["servicios"] = servicios
-        det["tipos"] = {k: years_vec(v.get("anios", {}), k) for k in TIPOS}
-        # Control de divulgación estadística (25-09-2026): por institución-año, `sexual` y
-        # `personal_ie` con valor 1–4 se publican como -1 ("<5") para no reidentificar a
-        # víctimas ni docentes en colegios pequeños. Si la institución solo tiene Inicial,
-        # no se publica desglose por tipo. Los totales no cambian.
+        # Control de divulgación estadística (25-09-2026, scripts/privacy.py): por
+        # institución-año, `sexual` y `personal_ie` 1–4 se publican como -1 ("<5") junto con
+        # su partición complementaria (física/psicológica; entre_escolares). Si la
+        # institución solo tiene Inicial, no se publica desglose. Además, jerarquía: una
+        # celda suprimida en cualquiera de los servicios (misma regla que schools_detail/)
+        # se suprime también en la institución, si no inst − Σ servicios la recupera.
+        # Los totales no cambian.
         solo_inicial = all(str(n).startswith("Inicial") for n in (v.get("niveles") or [])) and bool(v.get("niveles"))
-        for k in TIPOS:
-            det["tipos"][k] = [(-1 if (val > 0 and (solo_inicial or (k in ("sexual", "personal_ie") and val < 5))) else val) for val in det["tipos"][k]]
+        sup_serv = [suprimir_tipos({k: years_vec(s.get("anios", {}), k) for k in TIPOS}, s.get("nivel"))
+                    for s in v.get("servicios", [])]
+        det["tipos"] = suprimir_tipos({k: years_vec(v.get("anios", {}), k) for k in TIPOS},
+                                      "Inicial" if solo_inicial else None, mascara_de(sup_serv))
+        assert not verificar(det["tipos"]), f"supresión parcial en {slug_i}"
         det["sup"] = True
         ctx = v.get("contexto") or {}
         det["contexto"] = {k: {"v": c.get("v"), "f": c.get("f"), "a": c.get("a")} for k, c in ctx.items() if isinstance(c, dict)}

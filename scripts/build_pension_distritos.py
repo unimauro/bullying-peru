@@ -94,7 +94,7 @@ def main():
                        "microdato SíseVe (acceso a la información pública) + Padrón/Censo 2024; consolidado de "
                        "fiorellatl/observatorio-violencia-escolar (cross_2024.json)."),
             "retrieval_date": "2026-09-25", "min_n": MIN_N,
-            "note": ("Solo colegios privados con pensión declarada (1,866 servicios en el país). Distritos con menos de "
+            "note": ("Solo colegios privados con pensión declarada (1,854 servicios en el país). Distritos con menos de "
                      f"{MIN_N} privados con dato no reciben estadísticas de pensión. La tasa es por 1,000 estudiantes "
                      "matriculados (2024). Registro ≠ prevalencia: más reportes suele reflejar mejor cultura de denuncia; "
                      "familias con más recursos escalan más los casos. Ninguna asociación admite lectura causal."),

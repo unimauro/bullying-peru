@@ -234,6 +234,17 @@ const q = (v) => {
 - Lista blanca ESCALE (verificada en 32,500 ítems de caché).
 - Ningún dato personal en `data/**`.
 
+## Addendum (mismo día, 13:20): la supresión que se está implementando en paralelo NO cierra #1
+
+Durante esta revisión otro hilo modificó `scripts/build_schools_v2.py` (`tipos_series`) y `scripts/build_institutions.py` para publicar `sexual`/`personal_ie` 1–4 como `-1` ("<5"). **Deja intactos `fisica`, `psicologica`, `entre_escolares` y el total del año**, así que la celda se recupera por resta. Verificado sobre los shards ya regenerados en el árbol de trabajo:
+
+- `sexual = -1`: 14,431 celdas → **14,345 (99.4 %) recuperables** como `total − física − psicológica`. Ej.: `faustino-maldonado-tambopata-0935668`, 2017: total 12, física 4, psicológica 5 → sexual = 3.
+- `personal_ie = -1`: 27,757 recuperables como `total − entre_escolares`.
+
+Corrección: aplicar la supresión complementaria de §1 (anular también `fisica`+`psicologica` cuando se suprime `sexual`, y `entre_escolares` cuando se suprime `personal_ie`), y no publicar el acumulado por tipo si la suma queda < 5. Sin eso, el "<5" en pantalla es cosmético y da falsa sensación de cumplimiento.
+
+**Cierre (13:45).** `datos-colegios` aplicó supresión por partición completa (incluidos ceros), jerárquica (la institución hereda la de sus servicios) y sin acumulados por tipo, en `scripts/privacy.py` + `build_schools_v2.py` + `build_institutions.py`. Re-verificado por mí sobre los archivos regenerados: 22,569 colegios (shards), top 300 y 17,185 instituciones → **0** particiones parciales, **0** celdas sexual/personal_ie 1–4 publicadas, **0** recuperables por `total − complemento`, **0** fugas `institución − Σ servicios`. Supresiones resultantes: 19,062 colegio-año (sexual) y 29,404 (vínculo). El hallazgo #1 queda cerrado en datos; siguen pendientes fuera de ese hilo: CSV de `app.js` exporta "<5" solo para 5 tipos (falta `entre_escolares`/`personal_ie`), `validate_data.py` asume particiones MECE y fallará con `-1`, nota de `correlation.json` desactualizada, y el párrafo de `docs/AUDITORIA-FUENTES.md:31`. Esta regla (K=5, partición, jerarquía) debe quedar escrita en METHODOLOGY/AUDITORIA como compromiso público.
+
 ## Top 5 a corregir ya
 
 1. **Supresión de celdas < 5 en sexual/personal_ie por colegio-año** (con complemento) en shards, top, instituciones y CSV; corregir AUDITORIA-FUENTES.md. Es el único hallazgo con daño real a un menor.

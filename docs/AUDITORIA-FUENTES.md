@@ -188,8 +188,10 @@ Solo **2023, 2024 y 2025** son años lectivos plenos y comparables entre sí.
 - **Tamaño del colegio** (correlaciona con conteo bruto). Por eso ofrecemos tasas
   donde hay denominador y sparkline por año en lugar de un solo número.
 - **Nivel educativo**: secundaria concentra la mayoría de reportes.
-- **Correlación física↔psicológica por colegio es muy débil** (r 0.03–0.18, verificado ✅
-  en `correlation.json`): no hay un "perfil de colegio violento" único.
+- **Correlación física↔psicológica por colegio: débil-moderada** (r 0.10–0.41 por servicio,
+  2022–2026; cálculo propio ✅ `scripts/build_correlation.py`). Corrección 25-09-2026: el
+  `correlacion.json` de la fuente medía "entre escolares × personal de la IE" (r ≈ 0.0–0.07) y
+  lo habíamos rotulado como física×psicológica; ahora calculamos ambos pares nosotros.
 - Ninguna asociación admite lectura causal: "se asocia con", nunca "provoca".
 
 ---

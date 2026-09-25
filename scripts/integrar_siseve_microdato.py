@@ -171,36 +171,55 @@ def build_by_department(terr):
     popkeys = [d["department"] for d in pop["data"]]
     popnorm = {norm(k): k for k in popkeys}   # p.ej. "CALLAO" -> "Prov. Const. del Callao"
 
-    y2024 = {}
+    # Todos los años 2013–2026 desde la serie por región del microdato (25 regiones, nivel A).
+    # Así el mapa, la tabla y el CSV cuadran con la serie nacional (revisión de datos 25-09-2026:
+    # antes 2022 venía del boletín = 12,099 vs 12,025 del microdato, y 2026 de prensa con 11 regiones).
     unmatched = []
-    for r in terr["regiones"]:
-        name = r["nombre"]
-        cases = r["serie"].get("2024", r["reportes"])
+    def keyfor(name):
         nkey = norm(name)
-        if nkey == "LIMA":
-            key = "Lima"           # deptRows agrega Metropolitana + Región vía /lima/
-        elif nkey in popnorm:
-            key = popnorm[nkey]    # Callao -> "Prov. Const. del Callao", etc.
-        else:
-            key = name
-            unmatched.append(name)
-        y2024[key] = {"cases": cases}
-
-    bd["2024"] = y2024
-    bd["reliability_by_year"]["2024"] = "A"
+        if nkey == "LIMA": return "Lima"            # deptRows agrega Metropolitana + Región vía /lima/
+        if nkey in popnorm: return popnorm[nkey]    # Callao -> "Prov. Const. del Callao", etc.
+        unmatched.append(name); return name
+    years = sorted({y for r in terr["regiones"] for y in r["serie"].keys()})
+    for k in [k for k in bd if k.isdigit()]: del bd[k]
+    bd["reliability_by_year"] = {}
+    for y in years:
+        bd[y] = {keyfor(r["nombre"]): {"cases": int(r["serie"].get(y, 0) or 0)} for r in terr["regiones"]}
+        bd["reliability_by_year"][y] = "A"
     bd["source_2024_url"] = "https://siseve.minedu.gob.pe/Web/App/Mapa"
-    bd["default_year"] = "2024"
-    bd["note"] = ("2022 y 2024 son OFICIALES. 2024 proviene del microdato SíseVe (25 "
-                  "regiones, acceso a la información pública); 2022 del Boletín ‘SíseVe en "
-                  "cifras’. 2026 sigue siendo prensa (fuente B) y parcial (ene–ago); sus "
-                  "regiones sin cifra quedan ‘sin dato’ y NO se estiman.")
-    if unmatched:
-        print("  ⚠ regiones sin match con population.json:", unmatched)
-    else:
-        print("  · 25 regiones 2024 mapeadas a population.json (tasas calculables)")
+    bd["default_year"] = 2024
+    bd["partial_year"] = 2026
+    bd["source"] = ATRIB
+    bd["retrieval_date"] = RETRIEVAL
+    bd["note"] = ("Todos los años (2013–2026) provienen del microdato oficial SíseVe agregado por región "
+                  "(25 regiones, acceso a la información pública) y cuadran con la serie nacional. "
+                  "2026 es parcial (ene–ago). 2020–2021: cierre de escuelas, no comparables.")
+    if unmatched: print("  ⚠ regiones sin match con population.json:", set(unmatched))
+    else: print(f"  · {len(years)} años × 25 regiones mapeados a population.json (tasas calculables)")
     dump("by_department.json", bd)
 
 # ---------------------------------------------------------------- correlation
+def build_breakdowns_growth():
+    """Reemplaza el crecimiento por tipo de prensa (+35 % sexual, incompatible con el total oficial:
+    revisión de datos 25-09-2026) por el crecimiento 2025 vs 2024 del microdato oficial."""
+    nat = sorted(load("national.json"), key=lambda r: int(r["anio"]))
+    by = {int(r["anio"]): r for r in nat}
+    a, b = by[2024], by[2025]
+    rows = [{"tipo": lab, "casos_2024": a[k], "casos_2025": b[k], "var_pct": round((b[k] - a[k]) / a[k] * 100, 1)}
+            for k, lab in (("sexual", "Sexual"), ("fisica", "Física"), ("psicologica", "Psicológica"))]
+    rows.sort(key=lambda r: -r["var_pct"])
+    p = OUT / "breakdowns.json"
+    bd = json.load(open(p, encoding="utf-8"))
+    bd["crecimiento_tipo"] = {
+        "note": ("Variación de reportes por tipo entre los dos últimos años completos (2025 vs 2024), microdato "
+                 "oficial. Sustituye a la cifra de prensa (+35 % sexual ene–ago 2026) que era aritméticamente "
+                 "incompatible con el crecimiento total oficial de ene–ago (+12.7 %)."),
+        "source": ATRIB, "source_url": "https://siseve.minedu.gob.pe/Web/App/Mapa",
+        "years": [2024, 2025], "data": rows}
+    bd.pop("crecimiento_tipo_2026", None)
+    json.dump(bd, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("  · crecimiento por tipo 2025 vs 2024:", ", ".join(f"{r['tipo']} {r['var_pct']:+}%" for r in rows))
+
 def build_correlation():
     cor = load("correlacion.json")
     out = {
@@ -222,5 +241,6 @@ if __name__ == "__main__":
     build_timeseries()
     terr = build_territory()
     build_by_department(terr)
-    build_correlation()
+    build_breakdowns_growth()
+    print("  · correlación: ver scripts/build_correlation.py (cálculo propio; el correlacion.json de la fuente mide otro par)")
     print("Listo.")
