@@ -211,8 +211,25 @@
   const _fold = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
   const _slug = (s) => _fold(s).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   let schoolsIdx = null, schoolsIdxPromise = null, schoolsTop = null;
+  let instIdx = null, instIdxPromise = null, schoolsGeo = null, schoolsGeoPromise = null, districtsGeoPromise = null;
+  let schoolView = "ie";
+  function ensureInstIndex() {
+    if (instIdx) return Promise.resolve(instIdx);
+    if (!instIdxPromise) instIdxPromise = loadJSON(C.data.institutionsIndex).then(d => { instIdx = (d && d.rows) || []; instIdx._meta = d || {}; return instIdx; });
+    return instIdxPromise;
+  }
+  function ensureSchoolsGeo() {
+    if (schoolsGeo) return Promise.resolve(schoolsGeo);
+    if (!schoolsGeoPromise) schoolsGeoPromise = loadJSON(C.data.schoolsGeo).then(d => { schoolsGeo = d || {}; return schoolsGeo; });
+    return schoolsGeoPromise;
+  }
+  function ensureDistrictsGeo() {
+    if (store.districtsGeo) return Promise.resolve(store.districtsGeo);
+    if (!districtsGeoPromise) districtsGeoPromise = loadJSON(C.data.districtsGeo).then(g => { store.districtsGeo = g; return g; });
+    return districtsGeoPromise;
+  }
   const shardCache = {};
-  const sf = { q: "", region: "", gestion: "", nivel: "", year: "" };
+  const sf = { q: "", region: "", distrito: "", gestion: "", nivel: "", year: "" };
 
   function sparkline(y, sortIdx) {
     const max = Math.max(1, ...y);
@@ -236,7 +253,7 @@
   }
 
   function schoolsFiltered() {
-    const useIndex = !!(sf.q || sf.region || sf.gestion || sf.nivel || sf.year);
+    const useIndex = !!(sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year);
     const base = useIndex ? (schoolsIdx || []) : ((schoolsTop && schoolsTop.rows) || []);
     const nq = _fold(sf.q).trim();
     const digits = nq && /^\d+$/.test(nq.replace(/\s/g, ""));
@@ -244,6 +261,7 @@
     let hits = [];
     for (const r of base) {
       if (sf.region && r.r !== sf.region) continue;
+      if (sf.distrito && r.d !== sf.distrito) continue;
       if (sf.gestion && r.g !== sf.gestion) continue;
       if (sf.nivel && r.nv !== sf.nivel) continue;
       if (nq) {
@@ -266,6 +284,20 @@
     const { hits, useIndex, yi, val } = schoolsFiltered();
     const LIMIT = 100;
     const shown = hits.slice(0, LIMIT);
+    const ds = document.getElementById("district-stats");
+    if (ds) {
+      if (sf.distrito && !sf.q) {
+        const i26 = YEARS.indexOf(2026), i25 = YEARS.indexOf(2025);
+        const tot = hits.reduce((s, r) => s + r.t, 0), t26 = hits.reduce((s, r) => s + ((r.y || [])[i26] || 0), 0), t25 = hits.reduce((s, r) => s + ((r.y || [])[i25] || 0), 0);
+        const pub = hits.filter(r => r.g === "Público").length;
+        ds.hidden = false;
+        ds.innerHTML = `<div class="stat"><div class="v">${fmt(hits.length)}</div><div class="l">colegios con reportes en <b>${esc(sf.distrito)}</b></div></div>` +
+          `<div class="stat"><div class="v">${fmt(tot)}</div><div class="l">reportes 2013–2026</div></div>` +
+          `<div class="stat"><div class="v">${fmt(t25)}</div><div class="l">reportes en 2025</div></div>` +
+          `<div class="stat"><div class="v">${fmt(t26)}</div><div class="l">reportes 2026 (ene–ago)</div></div>` +
+          `<div class="stat"><div class="v">${hits.length ? Math.round(pub / hits.length * 100) : 0}%</div><div class="l">públicos · ${100 - (hits.length ? Math.round(pub / hits.length * 100) : 0)}% privados</div></div>`;
+      } else { ds.hidden = true; ds.innerHTML = ""; }
+    }
     const yLabel = sf.year ? `Reportes ${sf.year}${sf.year === "2026" ? "*" : ""}` : "Total 2013–2026";
     if (thTotal) thTotal.textContent = yLabel;
     if (!shown.length) {
@@ -338,6 +370,132 @@
     });
   }
 
+  function instFiltered() {
+    const base = instIdx || [];
+    const nq = _fold(sf.q).trim();
+    const digits = nq && /^\d+$/.test(nq.replace(/\s/g, ""));
+    const yi = sf.year ? YEARS.indexOf(+sf.year) : -1;
+    const hits = [];
+    for (const r of base) {
+      if (sf.region && r.r !== sf.region) continue;
+      if (sf.distrito && r.d !== sf.distrito) continue;
+      if (sf.gestion && r.g !== sf.gestion) continue;
+      if (sf.nivel && !(r.nv || []).some(n => n === sf.nivel)) continue;
+      if (nq) {
+        const hay = digits ? (r.cm + " " + (r.ci || "")) : (_fold(r.n) + " " + _fold(r.d) + " " + _fold(r.p) + " " + _fold(r.r) + " " + r.cm);
+        if (hay.indexOf(nq) === -1) continue;
+      }
+      if (yi >= 0 && !(r.y && r.y[yi] > 0)) continue;
+      hits.push(r);
+    }
+    const val = (r) => (yi >= 0 && r.y) ? r.y[yi] : r.t;
+    hits.sort((a, b) => val(b) - val(a) || (a.n || "").localeCompare(b.n || ""));
+    return { hits, yi, val };
+  }
+  async function renderInstRows() {
+    const tbody = document.getElementById("inst-results"), st = document.getElementById("inst-status"), th = document.getElementById("inst-total-th");
+    if (!tbody) return;
+    await ensureInstIndex();
+    const { hits, yi, val } = instFiltered();
+    const LIMIT = 100, shown = hits.slice(0, LIMIT), i26 = YEARS.indexOf(2026);
+    if (th) th.textContent = sf.year ? `Reportes ${sf.year}${sf.year === "2026" ? "*" : ""}` : "Total 2013–2026";
+    if (!shown.length) { tbody.innerHTML = '<tr><td colspan="9" class="loading">Sin coincidencias.</td></tr>'; if (st) st.textContent = ""; return; }
+    tbody.innerHTML = shown.map((r, i) => `<tr class="sc-row inst-row" data-slug="${esc(r.s)}" data-region="${esc(r.r)}" tabindex="0" role="button" aria-expanded="false">
+        <td>${i + 1}</td>
+        <td><span class="sc-name">${esc(r.n)}</span><span class="sc-sub">${esc(r.d)} · ${esc(r.p)} · ${esc(r.r)}${r.ugel ? " · " + esc(r.ugel) : ""} · ${r.ns} servicio(s)</span></td>
+        <td><span class="sc-tag ${r.g === "Público" ? "pub" : "priv"}">${esc(r.g || "")}</span></td>
+        <td>${(r.nv || []).map(n => `<span class="nv-chip">${esc(n)}</span>`).join("")}</td>
+        <td>${r.y ? sparkline(r.y, yi) : ""}</td>
+        <td class="num">${r.mat != null ? fmt(r.mat) : "—"}</td>
+        <td class="num">${(r.tasa_2024 != null && r.mat_ok) ? (+r.tasa_2024).toFixed(1) : "—"}</td>
+        <td class="num">${fmt((r.y || [])[i26] || 0)}</td>
+        <td class="num"><b class="sort-col">${fmt(val(r))}</b></td>
+      </tr>`).join("");
+    const meta = instIdx._meta || {};
+    if (st) st.textContent = (sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year)
+      ? `${fmt(hits.length)} institución(es) coinciden${hits.length > LIMIT ? `; se muestran las ${LIMIT} con más reportes` : ""}.`
+      : `Top ${shown.length} nacional de colegios completos (inicial + primaria + secundaria sumados), de ${fmt(meta.n_instituciones || 0)} instituciones con reportes.`;
+    const src = document.getElementById("inst-source");
+    if (src) src.innerHTML = "Institución = agrupación oficial por <code>codinst</code> del Padrón ESCALE; reportes y matrícula se suman; la tasa 2024 (por 1,000 estudiantes) solo se muestra si todos los niveles tienen matrícula. Fuente: " + esc(meta.source || "") + ". *2026 parcial ene–ago.";
+  }
+  function renderInstDetail(tr, r, det) {
+    const id = "insd-" + r.s.replace(/[^a-z0-9]/g, "");
+    const serv = (det && det.servicios) || [];
+    const tp = (det && det.tipos) || {};
+    const ctx = (det && det.contexto) || {};
+    const ctxTxt = Object.keys(ctx).filter(k => ctx[k] && ctx[k].v != null && ctx[k].v !== "").map(k => `${esc(k.replace(/_/g, " "))}: <b>${esc(String(ctx[k].v))}</b> <i>(${esc(ctx[k].f || "")} ${esc(ctx[k].a || "")})</i>`).join(" · ");
+    const html = `<tr class="sc-detail"><td colspan="9">
+      <p class="sc-meta"><b>${esc(r.n)}</b> · ${esc(r.d)}, ${esc(r.p)} (${esc(r.r)})${r.ugel ? " · " + esc(r.ugel) : ""} · ${esc(r.g || "")} · codinst ${esc(r.ci || "—")}</p>
+      <div class="sc-detail-grid">
+        <div class="chart" id="${id}"></div>
+        <div class="table-scroll" style="max-height:220px"><table class="data"><thead><tr><th>Servicio (nivel)</th><th>C. modular</th><th class="num">Reportes</th><th class="num">Matrícula</th><th class="num">Tasa 2024</th></tr></thead>
+        <tbody>${serv.map(s => `<tr><td>${esc(s.nivel || "")}</td><td>${esc(s.cm)}</td><td class="num"><b>${fmt(s.t)}</b></td><td class="num">${s.matricula != null ? fmt(s.matricula) : "—"}</td><td class="num">${s.tasa_2024 != null ? (+s.tasa_2024).toFixed(1) : "—"}</td></tr>`).join("")}</tbody></table></div>
+      </div>
+      ${ctxTxt ? `<p class="source" style="margin-top:8px">Contexto: ${ctxTxt}.</p>` : ""}
+      <p class="source" style="margin-top:6px">Física + psicológica + sexual = total del año; bullying y ciberacoso son etiquetas transversales. *2026 parcial. Registro administrativo, no prevalencia.</p>
+    </td></tr>`;
+    tr.insertAdjacentHTML("afterend", html);
+    const ch = mkChart(id); if (!ch) return;
+    const t = echartsTheme();
+    const stack = ["fisica", "psicologica", "sexual"].map((k, j) => ({ name: TIPO_LABELS[k], type: "bar", stack: "t", data: YEARS.map((_, i) => (tp[k] && tp[k][i]) || 0), itemStyle: { color: ["#d4553a", C.colors.violencia, C.colors.ciber][j] }, barMaxWidth: 22 }));
+    const has = stack.some(s => s.data.some(v => v > 0));
+    ch.setOption({ textStyle: t.textStyle, tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" } }, t.tooltip), legend: { top: 0, textStyle: { fontSize: 10 } }, grid: { left: 36, right: 10, top: 28, bottom: 24 },
+      xAxis: { type: "category", data: YEARS.map(String), axisLabel: { fontSize: 9 } }, yAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 9 } },
+      series: has ? stack : [{ name: "Reportes", type: "bar", data: r.y || [], itemStyle: { color: C.colors.violencia }, barMaxWidth: 22 }] });
+  }
+  const instShardCache = {};
+  async function instDetail(slug, region) {
+    const key = _slug(region);
+    if (!instShardCache[key]) instShardCache[key] = loadJSON("data/processed/institutions/" + key + ".json").then(d => d || {});
+    return (await instShardCache[key])[slug] || null;
+  }
+
+  /* ---------- Mapa de sedes por distrito ---------- */
+  let dmap = null, dmapLayer = null;
+  async function renderDistrictMap() {
+    const wrap = document.getElementById("district-map-wrap"); if (!wrap) return;
+    if (!sf.distrito || schoolView === "redes") { wrap.hidden = true; return; }
+    const [geo, dgeo] = await Promise.all([ensureSchoolsGeo(), ensureDistrictsGeo()]);
+    const { hits } = schoolsFiltered();                    // servicios del distrito (con filtros activos)
+    const fold = (s) => _fold(s).replace("prov. const. del ", "").trim();
+    const feats = ((dgeo && dgeo.features) || []).filter(f => fold(f.properties.NOMBDIST) === fold(sf.distrito) && fold(f.properties.NOMBDEP) === fold(sf.region).replace(/^lima$/, "lima"));
+    // sedes: agrupar servicios por local (cl); sin cl → por código modular
+    const sedes = {};
+    let sinGeo = 0;
+    for (const r of hits) {
+      const g = geo[r.cm]; if (!g) { sinGeo++; continue; }
+      const key = g.cl || ("cm-" + r.cm);
+      const s = sedes[key] || (sedes[key] = { la: g.la, lo: g.lo, cl: g.cl, n: r.n, g: r.g, serv: [], t: 0, t26: 0 });
+      s.serv.push({ nv: r.nv, cm: r.cm, t: r.t }); s.t += r.t; s.t26 += (r.y || [])[YEARS.indexOf(2026)] || 0;
+    }
+    const list = Object.values(sedes).sort((x, y) => y.t - x.t);
+    wrap.hidden = false;
+    const title = document.getElementById("district-map-title"), cnt = document.getElementById("district-map-count"), note = document.getElementById("district-map-note");
+    if (title) title.textContent = `Sedes con reportes en ${sf.distrito}`;
+    if (cnt) cnt.textContent = list.length ? `${fmt(list.length)} sede(s) · ${fmt(hits.length)} servicio(s)` : "sin coordenadas aún";
+    if (!dmap) {
+      dmap = L.map("district-map", { scrollWheelZoom: false, attributionControl: true });
+      dmap.attributionControl.setPrefix("Coordenadas: Padrón ESCALE (MINEDU) · GeoJSON: juaneladio/peru-geojson");
+    }
+    if (dmapLayer) { dmap.removeLayer(dmapLayer); dmapLayer = null; }
+    const layers = [];
+    if (feats.length) layers.push(L.geoJSON({ type: "FeatureCollection", features: feats }, { style: { color: "#1f5f8b", weight: 1.5, fillColor: "#dbeafe", fillOpacity: .45 } }));
+    const maxT = list.reduce((m, s) => Math.max(m, s.t), 1);
+    list.forEach(s => {
+      const rad = 6 + 16 * Math.sqrt(s.t / maxT);
+      const m = L.circleMarker([s.la, s.lo], { radius: rad, color: "#fff", weight: 1, fillColor: s.g === "Público" ? "#1f5f8b" : "#7c5cbf", fillOpacity: .85 });
+      m.bindTooltip(`<b>${esc(s.n)}</b><br>${fmt(s.t)} reportes 2013–2026 · 2026: ${fmt(s.t26)}`, { sticky: true });
+      m.bindPopup(`<div class="sede-pop"><b>${esc(s.n)}</b><br>${esc(s.g || "")}${s.cl ? " · local " + esc(s.cl) : ""}<br>` +
+        s.serv.map(x => `<span class="lv">${esc(x.nv || "")}: ${fmt(x.t)}</span>`).join("") +
+        `<br><b>${fmt(s.t)}</b> reportes 2013–2026 · <b>${fmt(s.t26)}</b> en 2026* · <a href="https://www.openstreetmap.org/?mlat=${s.la}&mlon=${s.lo}#map=17/${s.la}/${s.lo}" target="_blank" rel="noopener">ver en OpenStreetMap</a></div>`);
+      layers.push(m);
+    });
+    dmapLayer = L.featureGroup(layers).addTo(dmap);
+    setTimeout(() => { dmap.invalidateSize(); try { dmap.fitBounds(dmapLayer.getBounds(), { padding: [16, 16], maxZoom: 15 }); } catch (e) {} }, 60);
+    if (note) note.innerHTML = `Cada burbuja es una <b>sede física</b> (local del Padrón ESCALE); su tamaño es el total de reportes 2013–2026 de los niveles que comparten ese local. Azul = público, morado = privado.` +
+      (sinGeo ? ` ${fmt(sinGeo)} servicio(s) del distrito aún sin coordenadas.` : "") + ` Registro ≠ prevalencia: más reportes suele reflejar mejor cultura de denuncia.`;
+  }
+
   function initSchools() {
     const input = document.getElementById("school-search");
     const tbody = document.getElementById("school-results");
@@ -346,7 +504,15 @@
     if (src) src.innerHTML = "Fuente: MINEDU — SíseVe, microdato oficial 2013–2026 (acceso a la información pública; consolidado de <a href=\"https://github.com/fiorellatl/observatorio-violencia-escolar\" target=\"_blank\" rel=\"noopener\">fiorellatl/observatorio-violencia-escolar</a>). Reportes acumulados por institución educativa; no es prevalencia ni ranking de calidad. Haz clic en una fila para ver el detalle por año y tipo.";
 
     // Selectores: regiones (territory.json) y años
-    const selR = document.getElementById("sf-region"), selN = document.getElementById("sf-nivel"), selY = document.getElementById("sf-year"), selG = document.getElementById("sf-gestion");
+    const selR = document.getElementById("sf-region"), selN = document.getElementById("sf-nivel"), selY = document.getElementById("sf-year"), selG = document.getElementById("sf-gestion"), selD = document.getElementById("sf-distrito");
+    const fillDistritos = async (region, keep) => {
+      if (!selD) return;
+      if (!region) { selD.innerHTML = '<option value="">Todos</option>'; selD.disabled = true; sf.distrito = ""; return; }
+      const idx = await ensureSchoolsIndex();
+      const ds = Array.from(new Set(idx.filter(r => r.r === region).map(r => r.d))).sort((x, y) => x.localeCompare(y));
+      selD.innerHTML = '<option value="">Todos</option>' + ds.map(x => `<option${x === keep ? " selected" : ""}>${esc(x)}</option>`).join("");
+      selD.disabled = false; sf.distrito = (keep && ds.includes(keep)) ? keep : "";
+    };
     const regions = (store.territory && store.territory.regiones || []).map(r => r.nombre).sort((a, b) => a.localeCompare(b));
     if (selR) selR.innerHTML = '<option value="">Todas</option>' + regions.map(r => `<option>${esc(r)}</option>`).join("");
     if (selY) selY.innerHTML = '<option value="">Total 2013–2026</option>' + YEARS.slice().reverse().map(y => `<option value="${y}">${y}${y === 2026 ? " (parcial)" : ""}</option>`).join("");
@@ -359,37 +525,58 @@
     fillNivel((schoolsTop && schoolsTop.rows) || []);
 
     const clearBtn = document.getElementById("sf-clear");
-    const syncClear = () => { if (clearBtn) clearBtn.hidden = !(sf.q || sf.region || sf.gestion || sf.nivel || sf.year); };
+    const syncClear = () => { if (clearBtn) clearBtn.hidden = !(sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year); };
     let tmr = null;
     const apply = async () => {
       syncClear();
-      if (sf.q || sf.region || sf.gestion || sf.nivel || sf.year) {
+      if (sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year) {
         const had = !!schoolsIdx;
         await ensureSchoolsIndex();
         if (!had) fillNivel(schoolsIdx);
       }
-      renderSchoolRows();
+      if (schoolView === "inst") await renderInstRows(); else renderSchoolRows();
+      renderDistrictMap();
     };
     input.addEventListener("input", () => { sf.q = input.value; if (tmr) clearTimeout(tmr); tmr = setTimeout(apply, 160); });
     input.addEventListener("focus", () => { ensureSchoolsIndex().then(() => fillNivel(schoolsIdx)); }, { once: true });
-    [[selR, "region"], [selG, "gestion"], [selN, "nivel"], [selY, "year"]].forEach(([el, k]) => { if (el) el.addEventListener("change", () => { sf[k] = el.value; apply(); }); });
+    [[selG, "gestion"], [selN, "nivel"], [selY, "year"], [selD, "distrito"]].forEach(([el, k]) => { if (el) el.addEventListener("change", () => { sf[k] = el.value; apply(); }); });
+    if (selR) selR.addEventListener("change", async () => { sf.region = selR.value; await fillDistritos(sf.region, ""); apply(); });
+    // API pública: el mapa distrital (districts.js) salta aquí con un distrito concreto.
+    window.OBS_schools = {
+      showDistrict: async (region, distrito) => {
+        const fold = (s) => _fold(s).replace("prov. const. del ", "").trim();
+        const idx = await ensureSchoolsIndex();
+        const reg = (regions.find(r => fold(r) === fold(region)) || regions.find(r => fold(region).indexOf(fold(r)) === 0) || region);
+        const dist = (Array.from(new Set(idx.filter(r => r.r === reg).map(r => r.d))).find(x => fold(x) === fold(distrito))) || distrito;
+        // vista IE + limpiar búsqueda de texto
+        const ieBtn = document.querySelector('#school-view button[data-view="ie"]'); if (ieBtn && !ieBtn.classList.contains("active")) ieBtn.click();
+        sf.q = ""; input.value = ""; sf.region = reg; if (selR) selR.value = reg;
+        await fillDistritos(reg, dist); if (selD) selD.value = sf.distrito;
+        await apply();
+        const sec = document.getElementById("colegios"); if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
     const csvBtn = document.getElementById("sf-csv");
-    if (csvBtn) csvBtn.addEventListener("click", async () => { if (sf.q || sf.region || sf.gestion || sf.nivel || sf.year) await ensureSchoolsIndex(); exportSchoolsCSV(); });
+    if (csvBtn) csvBtn.addEventListener("click", async () => { if (sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year) await ensureSchoolsIndex(); exportSchoolsCSV(); });
     if (clearBtn) clearBtn.addEventListener("click", () => {
-      sf.q = sf.region = sf.gestion = sf.nivel = sf.year = ""; input.value = "";
-      [selR, selG, selN, selY].forEach(el => { if (el) el.value = ""; });
+      sf.q = sf.region = sf.distrito = sf.gestion = sf.nivel = sf.year = ""; input.value = "";
+      [selR, selG, selN, selY, selD].forEach(el => { if (el) el.value = ""; }); if (selD) selD.disabled = true;
       apply();
     });
 
     // Vista: colegios (IE) vs redes (tabla de prensa Región Lima)
-    document.querySelectorAll("#school-view button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll("#school-view button").forEach(b => b.addEventListener("click", async () => {
       document.querySelectorAll("#school-view button").forEach(x => x.classList.remove("active"));
       b.classList.add("active");
-      const ie = b.dataset.view === "ie";
-      document.getElementById("school-view-ie").hidden = !ie;
-      document.getElementById("school-view-redes").hidden = ie;
-      document.querySelector(".school-toolbar .school-search-wrap").style.display = ie ? "" : "none";
-      document.querySelector(".school-toolbar .school-filters").style.display = ie ? "" : "none";
+      schoolView = b.dataset.view;
+      document.getElementById("school-view-ie").hidden = schoolView !== "ie";
+      document.getElementById("school-view-inst").hidden = schoolView !== "inst";
+      document.getElementById("school-view-redes").hidden = schoolView !== "redes";
+      const tools = schoolView !== "redes";
+      document.querySelector(".school-toolbar .school-search-wrap").style.display = tools ? "" : "none";
+      document.querySelector(".school-toolbar .school-filters").style.display = tools ? "" : "none";
+      if (schoolView === "inst") await renderInstRows();
+      renderDistrictMap();
     }));
 
     // Detalle al hacer clic en una fila
@@ -411,6 +598,20 @@
       renderSchoolDetail(tr, r, det || { y: r.y });
     };
     tbody.addEventListener("click", (e) => { const tr = e.target.closest("tr.sc-row"); if (tr) toggleRow(tr); });
+    const itb = document.getElementById("inst-results");
+    const toggleInst = async (tr) => {
+      const open = tr.classList.contains("open"); const next = tr.nextElementSibling;
+      if (next && next.classList.contains("sc-detail")) next.remove();
+      tr.classList.toggle("open", !open); tr.setAttribute("aria-expanded", String(!open));
+      if (open) return;
+      const r = (instIdx || []).find(x => x.s === tr.dataset.slug); if (!r) return;
+      tr.insertAdjacentHTML("afterend", '<tr class="sc-detail"><td colspan="9" class="loading">Cargando detalle…</td></tr>');
+      let det = null; try { det = await instDetail(r.s, r.r); } catch (e) { console.error("[obs] detalle institución", e); }
+      const ph = tr.nextElementSibling; if (ph && ph.classList.contains("sc-detail")) ph.remove();
+      if (tr.classList.contains("open")) renderInstDetail(tr, r, det);
+    };
+    if (itb) { itb.addEventListener("click", (e) => { const tr = e.target.closest("tr.inst-row"); if (tr) toggleInst(tr); });
+      itb.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { const tr = e.target.closest("tr.inst-row"); if (tr) { e.preventDefault(); toggleInst(tr); } } }); }
     tbody.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { const tr = e.target.closest("tr.sc-row"); if (tr) { e.preventDefault(); toggleRow(tr); } } });
 
     renderSchoolRows();
@@ -451,6 +652,10 @@
     { id: "schools_index", title: "Todos los colegios (22,569 IIEE)", desc: "Índice nacional completo con reportes acumulados y por año. CSV de ~3 MB.", json: C.data.schoolsIndex, lazy: true,
       csv: async () => { const idx = await ensureSchoolsIndex(); if (!idx) return null;
         return toCSV(idx, [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
+    { id: "institutions", title: "Colegios completos (instituciones, 17,185)", desc: "Agrupación oficial por codinst: niveles, matrícula 2024, tasa por 1,000 y serie 2013–2026.", json: C.data.institutionsIndex, lazy: true,
+      csv: async () => { const idx = await ensureInstIndex(); if (!idx) return null;
+        return toCSV(idx, [{ label: "codinst", get: "ci" }, { label: "institucion", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "ugel", get: "ugel" }, { label: "gestion", get: "g" }, { label: "niveles", get: r => (r.nv || []).join(" | ") }, { label: "n_servicios", get: "ns" }, { label: "matricula_2024", get: "mat" }, { label: "matricula_completa", get: r => r.mat_ok ? "si" : "no" }, { label: "tasa_2024_x1000", get: "tasa_2024" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
+    { id: "schools_geo", title: "Coordenadas y sede (local) por colegio", desc: "Lat/lon y código de local del Padrón ESCALE para los colegios con reportes (sin datos personales).", json: C.data.schoolsGeo },
     { id: "correlation", title: "Correlación física↔psicológica", desc: "Por año: r de Pearson, colegios con reportes, colegios con ambos tipos y la distribución (x, y, n colegios).", json: C.data.correlation,
       csv: () => { const c = store.correlation; if (!c) return null; const rows = []; c.anios.forEach(y => (c.datos[y].puntos || []).forEach(p => rows.push({ y, x: p[0], py: p[1], n: p[2], r: c.datos[y].r, col: c.datos[y].colegios, ambos: c.datos[y].ambos })));
         return toCSV(rows, [{ label: "anio", get: "y" }, { label: "reportes_fisicos", get: "x" }, { label: "reportes_psicologicos", get: "py" }, { label: "n_colegios", get: "n" }, { label: "r_pearson_anio", get: "r" }, { label: "colegios_con_reportes_anio", get: "col" }, { label: "colegios_ambos_tipos_anio", get: "ambos" }]); } },
@@ -479,7 +684,7 @@
     const { hits, yi } = schoolsFiltered();
     if (!hits.length) return;
     const cols = [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => (r.y || [])[i] || 0));
-    const tag = [sf.q && "q-" + _slug(sf.q), sf.region && _slug(sf.region), sf.gestion && _slug(sf.gestion), sf.nivel && _slug(sf.nivel), sf.year && "anio-" + sf.year].filter(Boolean).join("_") || (yi >= 0 ? "anio-" + sf.year : "top");
+    const tag = [sf.q && "q-" + _slug(sf.q), sf.region && _slug(sf.region), sf.distrito && _slug(sf.distrito), sf.gestion && _slug(sf.gestion), sf.nivel && _slug(sf.nivel), sf.year && "anio-" + sf.year].filter(Boolean).join("_") || (yi >= 0 ? "anio-" + sf.year : "top");
     downloadText("colegios-siseve-" + tag + ".csv", toCSV(hits, cols));
   }
 

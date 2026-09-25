@@ -26,8 +26,8 @@
   gtag('config', 'G-YD3GKLZX0T');
 </script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css?v=20260924c">
-<link rel="stylesheet" href="src/css/districts.css?v=20260924c">
+<link rel="stylesheet" href="src/css/styles.css?v=20260925b">
+<link rel="stylesheet" href="src/css/districts.css?v=20260925b">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
@@ -252,6 +252,7 @@
         </div>
         <div class="school-filters">
           <label>Región <select id="sf-region"><option value="">Todas</option></select></label>
+          <label>Distrito <select id="sf-distrito" disabled><option value="">Todos</option></select></label>
           <label>Gestión <select id="sf-gestion"><option value="">Todas</option><option>Público</option><option>Privado</option></select></label>
           <label>Nivel <select id="sf-nivel"><option value="">Todos</option></select></label>
           <label>Año <select id="sf-year"><option value="">Total 2013–2026</option></select></label>
@@ -259,13 +260,20 @@
           <button id="sf-csv" type="button" class="btn-ghost" title="Descarga en CSV los colegios que coinciden con la búsqueda y filtros actuales">⬇ CSV de estos resultados</button>
         </div>
         <div class="seg" id="school-view">
-          <button data-view="ie" class="active">Colegios (IE)</button>
+          <button data-view="ie" class="active">Servicios (código modular)</button>
+          <button data-view="inst">Colegios completos (instituciones)</button>
           <button data-view="redes">Redes de colegios · Lima</button>
         </div>
       </div>
 
       <div id="school-view-ie">
         <p class="school-status" id="school-status"></p>
+        <div class="stat-row" id="district-stats" hidden></div>
+        <div id="district-map-wrap" hidden>
+          <div class="district-map-head"><b id="district-map-title">Sedes en el distrito</b><span class="pill" id="district-map-count"></span></div>
+          <div id="district-map" aria-label="Mapa de sedes de colegios del distrito"></div>
+          <p class="source" id="district-map-note"></p>
+        </div>
         <div class="table-scroll table-scroll-tall">
           <table class="data school-table" id="school-results-table">
             <thead><tr>
@@ -278,6 +286,22 @@
           </table>
         </div>
         <p class="source" id="school-search-source"></p>
+      </div>
+
+      <div id="school-view-inst" hidden>
+        <p class="school-status" id="inst-status"></p>
+        <div class="table-scroll table-scroll-tall">
+          <table class="data school-table" id="inst-table">
+            <thead><tr>
+              <th>#</th><th>Institución (colegio completo)</th><th>Gestión</th><th>Niveles</th>
+              <th class="spark-th">2013–2026</th>
+              <th class="num">Matrícula 2024</th><th class="num">Tasa 2024 /1,000</th><th class="num">2026*</th>
+              <th class="num" id="inst-total-th">Total</th>
+            </tr></thead>
+            <tbody id="inst-results"><tr><td colspan="9" class="loading">Cargando…</td></tr></tbody>
+          </table>
+        </div>
+        <p class="source" id="inst-source"></p>
       </div>
 
       <div id="school-view-redes" hidden>
@@ -527,6 +551,7 @@
     </div>
     <p class="source">Reportes: SíseVe · Matrícula: INEI 2024.</p>
 
+    <div class="callout info" id="credito-oe"><span>🤝</span><span><b>Crédito y colaboración.</b> El microdato oficial de SíseVe por colegio (2013–2026) fue obtenido vía solicitud de acceso a la información pública por el equipo del <a href="https://observatorioescolar.netlify.app/" target="_blank" rel="noopener"><b>Observatorio de Violencia Escolar</b></a>, que publicó su capa agregada y anonimizada en <a href="https://github.com/fiorellatl/observatorio-violencia-escolar" target="_blank" rel="noopener">GitHub</a>. Este observatorio la reutiliza con atribución, la valida de forma independiente y devuelve el trabajo como datos abiertos. Dos observatorios, una misma base: mejor para las familias.</span></div>
     <h3 style="margin:1.8rem 0 .4rem;font-size:1.05rem">Descargas (datos abiertos)</h3>
     <p class="lead">Todos los datasets que alimentan este observatorio, en <b>JSON</b> (tal cual los usa el sitio) y en <b>CSV</b> (generado en tu navegador, listo para Excel). Cita la fuente al reutilizarlos.</p>
     <div class="dl-grid" id="dl-grid"><p class="loading">Cargando catálogo…</p></div>
@@ -615,7 +640,7 @@
     </div>
     <div>
       <b style="color:#fff">Fuentes</b>
-      <p><a href="https://siseve.minedu.gob.pe/">SíseVe MINEDU</a> · <a href="https://www.inei.gob.pe/">INEI</a> · <a href="https://www.defensoria.gob.pe/">Defensoría del Pueblo</a></p>
+      <p><a href="https://siseve.minedu.gob.pe/">SíseVe MINEDU</a> · <a href="https://www.inei.gob.pe/">INEI</a> · <a href="https://www.defensoria.gob.pe/">Defensoría del Pueblo</a><br>Microdato por colegio: <a href="https://observatorioescolar.netlify.app/" target="_blank" rel="noopener">Observatorio de Violencia Escolar</a> (vía Ley 27806)</p>
     </div>
     <div>
       <b style="color:#fff">Documentación</b>
@@ -647,10 +672,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
-<script src="src/js/config.js?v=20260924c"></script>
-<script src="src/js/app.js?v=20260924c"></script>
-<script src="src/js/districts.js?v=20260924c"></script>
-<script src="src/js/chatbot.js?v=20260924c"></script>
+<script src="src/js/config.js?v=20260925b"></script>
+<script src="src/js/app.js?v=20260925b"></script>
+<script src="src/js/districts.js?v=20260925b"></script>
+<script src="src/js/chatbot.js?v=20260925b"></script>
 <script>
 (function(){
   // A11y: iconos SVG decorativos ocultos para lectores de pantalla

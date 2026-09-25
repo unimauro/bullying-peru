@@ -441,3 +441,15 @@ table.data tr:hover td { background: var(--surface-2); }
 .dl-card .dl-actions a, .dl-card .dl-actions button { font: inherit; font-size: .78rem; font-weight: 700; padding: 5px 11px; border-radius: 30px; border: 1px solid var(--border); background: var(--surface-2); color: var(--brand); text-decoration: none; cursor: pointer; }
 .dl-card .dl-actions a:hover, .dl-card .dl-actions button:hover { border-color: var(--brand); }
 .dl-card .dl-size { font-size: .7rem; color: var(--text-soft); align-self: center; }
+
+/* ---------- Mapa de sedes por distrito ---------- */
+#district-map-wrap { margin: 4px 0 14px; }
+.district-map-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: .9rem; }
+#district-map { height: 380px; border-radius: 12px; border: 1px solid var(--border); background: linear-gradient(180deg, #eef4f8, #e3edf4); z-index: 1; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) #district-map { background: linear-gradient(180deg, #0f2231, #0c1a26); } }
+@media (max-width: 640px) { #district-map { height: 300px; } }
+.sede-pop { font-size: .8rem; line-height: 1.45; max-width: 260px; }
+.sede-pop b { font-size: .86rem; }
+.sede-pop .lv { display: inline-block; font-size: .68rem; padding: 1px 6px; border-radius: 20px; background: var(--surface-2); color: var(--text-muted); margin: 2px 2px 0 0; }
+.sede-pop a { color: var(--brand); }
+.nv-chip { display: inline-block; font-size: .66rem; padding: 1px 6px; border-radius: 20px; background: var(--surface-2); color: var(--text-muted); margin: 1px 2px 1px 0; white-space: nowrap; }

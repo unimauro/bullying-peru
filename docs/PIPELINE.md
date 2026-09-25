@@ -28,6 +28,8 @@ Ningún archivo caso-por-caso existe en este repo. Ver `AUDITORIA-FUENTES.md` §
 | 4 | `scripts/scrape_siseve.py` | tablero oficial | `monthly.json` (y validación de totales) |
 | 5 | `scripts/build_indicators.py` | `timeseries.json`, `population.json` | `indicators.json` |
 | 6 | `scripts/update_news.py` | RSS | `data/news/news.json` (cron) |
+| 7 | `scripts/build_institutions.py` | `institutions.json` (raw, git-ignored, 20 MB) | `institutions_index.json`, `institutions/<región>.json` (colegio completo por `codinst`) |
+| 8 | `scripts/bajar_coordenadas_escale.py [prefijos]` | API REST pública del Padrón ESCALE (lista blanca: `codMod, anexo, codlocal, codinst, nlatIE, nlongIE, estado`) | `schools_geo.json` (coordenadas + local/sede por código modular con reportes); caché en `data/raw/escale/` |
 
 **El orden importa**: 3 depende de 2 (necesita `y[14]`); 5 depende de 1. Los pasos
 1–3 son deterministas y se pueden re-ejecutar siempre.
@@ -37,6 +39,8 @@ python3 scripts/integrar_siseve_microdato.py
 python3 scripts/build_schools_v2.py
 python3 scripts/build_by_district.py
 python3 scripts/build_indicators.py
+python3 scripts/build_institutions.py
+python3 scripts/bajar_coordenadas_escale.py        # lento (~2,400 páginas); reanudable
 ```
 
 ## La trampa

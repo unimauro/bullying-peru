@@ -11,3 +11,6 @@ __pycache__/
 .venv/
 venv/
 .env
+
+data/raw/escale/
+data/raw/observatorio-escolar/institutions.json

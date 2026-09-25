@@ -43,3 +43,5 @@
   .leaflet-bar.obs-dist-ctl { max-width: 240px; font-size: .7rem; }
   .obs-dist-btn { padding: 4px 8px; }
 }
+
+.obs-dist-hint { margin-top: 4px; font-size: .7rem; color: #1f5f8b; font-weight: 700; }

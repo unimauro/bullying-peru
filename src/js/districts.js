@@ -108,7 +108,7 @@
       if (y !== 2026 && iLast >= 0 && e.y[iLast]) h += `<br>2026 (ene–ago, parcial): ${fmt(e.y[iLast])}`;
     }
     h += `<div class="obs-dist-tt-src">Microdato SíseVe (MINEDU); registro ≠ prevalencia</div>`;
-    return h;
+    const _hint = (mode === "one") ? '<div class="obs-dist-hint">Clic: ver los colegios de este distrito</div>' : ""; return (h) + _hint;
   }
 
   function render() {
@@ -124,6 +124,7 @@
         ly.on("mouseover", () => { ly.setStyle({ weight: 2.5, color: "#14202e" }); ly.bringToFront(); });
         ly.on("mouseout", () => layer && layer.resetStyle(ly));
         if (mode === "all") ly.on("click", () => showDepartment(f.properties.NOMBDEP));
+        if (mode === "one") ly.on("click", () => { if (window.OBS_schools) window.OBS_schools.showDistrict(f.properties.NOMBDEP, f.properties.NOMBDIST); });
       }
     }).addTo(map);
     map.getContainer().classList.add(MODE_CLASS);

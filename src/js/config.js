@@ -37,7 +37,10 @@ window.OBS_CONFIG = {
     territory: "data/processed/territory.json",
     correlation: "data/processed/correlation.json",
     schoolsIndex: "data/processed/schools_index.json",
-    schoolsTop: "data/processed/schools_top.json"
+    schoolsTop: "data/processed/schools_top.json",
+    institutionsIndex: "data/processed/institutions_index.json",
+    schoolsGeo: "data/processed/schools_geo.json",
+    districtsGeo: "data/geo/peru-distrital.geojson"
   }
 };
 
