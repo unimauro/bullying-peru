@@ -74,6 +74,20 @@ la IE; nombres o datos de denunciantes; y cualquier texto libre (`MOTIVO_VIOLENC
 u observaciones). Esta solicitud se limita a atributos de la **institución educativa**
 y a la categorización administrativa del reporte.
 
+### Petitorio complementario: tablas agregadas por sexo (sin datos personales)
+Dado que **no solicito** el sexo ni la edad de personas concretas, pido adicionalmente
+**tablas agregadas** (conteos, no registros) que sí permiten análisis de género sin
+identificar a nadie:
+
+| Tabla | Dimensiones |
+|---|---|
+| A | `ANIO` × `REGION` × `TIPO_VIOLENCIA` × **sexo del estudiante agredido** |
+| B | `ANIO` × `REGION` × `TIPO_REPORTE` × **sexo del presunto agresor** |
+| C | `ANIO` × `NIVEL_EDUCATIVO` × `TIPO_VIOLENCIA` × sexo del agredido × sexo del presunto agresor |
+
+Con **supresión de celdas menores a 5** si la entidad lo considera necesario. Estas
+tablas son estadística agregada y no contienen datos personales.
+
 ### Documentación complementaria
 Solicito adjuntar el **diccionario de datos** (definición de cada campo, catálogo de
 valores de los campos categóricos y criterio de cierre de casos) y, de existir, la

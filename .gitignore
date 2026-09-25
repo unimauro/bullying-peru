@@ -14,3 +14,4 @@ venv/
 
 data/raw/escale/
 data/raw/observatorio-escolar/institutions.json
+data/raw/observatorio-escolar/cross_2024.json

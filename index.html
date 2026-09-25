@@ -26,8 +26,8 @@
   gtag('config', 'G-YD3GKLZX0T');
 </script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css?v=20260925b">
-<link rel="stylesheet" href="src/css/districts.css?v=20260925b">
+<link rel="stylesheet" href="src/css/styles.css?v=20260925c">
+<link rel="stylesheet" href="src/css/districts.css?v=20260925c">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
@@ -328,6 +328,18 @@
       </div>
     </div>
 
+    <h3 id="costo" style="margin:2rem 0 .4rem;font-size:1.1rem">¿Cuánto cuestan los colegios y cuántos reportes tienen?</h3>
+    <p class="lead">Pensión mensual <b>declarada</b> por los colegios privados (Identicole 2024–2025) frente a los reportes SíseVe de 2024 por cada 1,000 estudiantes. Primero por tramo de pensión a nivel nacional; luego por distrito (solo distritos con al menos 5 privados con pensión declarada).</p>
+    <div class="callout"><span>⚠️</span><span><b>Léelo como descripción, nunca como causa.</b> Los colegios más caros están donde las familias tienen más recursos para <b>escalar una denuncia</b>, más cobertura de UGEL y mejor cultura de reporte; la pensión es <b>declarativa</b> (la informa el propio colegio) y solo cubre 1,866 servicios privados con ficha. Más reportes por 1,000 no significa más violencia real.</span></div>
+    <div class="grid-2">
+      <div class="panel"><h3>Reportes por 1,000 estudiantes según tramo de pensión (2024, nacional)</h3><div class="chart" id="chart-pension-tramos"></div><p class="source" id="pension-tramos-note"></p></div>
+      <div class="panel"><h3>Distritos por pensión mediana</h3>
+        <div class="controls"><label>Región <select id="pen-region"><option value="">Todas</option></select></label><button id="pen-csv" type="button" class="btn-ghost">⬇ CSV</button></div>
+        <div class="table-scroll" style="max-height:420px"><table class="data" id="pension-table"><thead><tr><th>Distrito</th><th class="num">Privados c/ pensión</th><th class="num">Pensión mediana</th><th class="num">Rango p25–p75</th><th class="num">Reportes /1,000 (c/ pensión)</th><th class="num">Reportes /1,000 (públicos)</th></tr></thead><tbody></tbody></table></div>
+        <p class="source" id="pension-source"></p>
+      </div>
+    </div>
+
     <div class="callout info"><span>💡</span><span>*2026 es parcial (enero–agosto). Haz clic en un colegio para ver su detalle <b>año por año y por tipo</b> (física, psicológica, sexual, bullying, ciberacoso). ¿Tu colegio no aparece? Significa que <b>no tiene reportes registrados</b> en SíseVe, no necesariamente que no haya violencia. Pregunta a su <b>dirección</b> por el plan de convivencia: un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
   </div>
 </section>
@@ -419,7 +431,10 @@
       <div class="panel"><h3>Nivel educativo (2013–2018)</h3><div class="chart sm" id="bd-nivel"></div></div>
       <div class="panel"><h3>Gestión pública vs privada (2022)</h3><div class="chart sm" id="bd-gestion"></div></div>
       <div class="panel"><h3>Área urbana vs rural (2022)</h3><div class="chart sm" id="bd-area"></div></div>
+      <div class="panel"><h3>Sexo del estudiante agredido (2022)</h3><div class="chart sm" id="bd-sexo"></div></div>
+      <div class="panel"><h3>Sexo de la víctima, violencia entre escolares (2013–2018)</h3><div class="chart sm" id="bd-sexo-escolares"></div></div>
     </div>
+    <div class="callout"><span>⚠️</span><span><b>Lo que no existe en fuentes abiertas:</b> el <b>sexo del presunto agresor</b> (ni por colegio, ni por región) y el sexo de la víctima <b>por colegio</b>. El microdato entregado por Transparencia sí registra ambos campos, pero son datos personales de menores y no se publican caso a caso. Por eso nuestra <a href="https://github.com/unimauro/bullying-peru/blob/main/docs/SOLICITUD-TRANSPARENCIA.md" target="_blank" rel="noopener">solicitud de transparencia</a> pide <b>tablas agregadas</b> por año × región × tipo × sexo del agredido × sexo del presunto agresor, que no identifican a nadie.</span></div>
     <div class="panel" style="margin-top:16px">
       <h3>Crecimiento por tipo (ene–ago 2026 vs 2025)</h3>
       <div class="chart sm" id="bd-crecimiento"></div>
@@ -672,10 +687,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
-<script src="src/js/config.js?v=20260925b"></script>
-<script src="src/js/app.js?v=20260925b"></script>
-<script src="src/js/districts.js?v=20260925b"></script>
-<script src="src/js/chatbot.js?v=20260925b"></script>
+<script src="src/js/config.js?v=20260925c"></script>
+<script src="src/js/app.js?v=20260925c"></script>
+<script src="src/js/districts.js?v=20260925c"></script>
+<script src="src/js/chatbot.js?v=20260925c"></script>
 <script>
 (function(){
   // A11y: iconos SVG decorativos ocultos para lectores de pantalla

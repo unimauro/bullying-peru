@@ -295,7 +295,9 @@
           `<div class="stat"><div class="v">${fmt(tot)}</div><div class="l">reportes 2013–2026</div></div>` +
           `<div class="stat"><div class="v">${fmt(t25)}</div><div class="l">reportes en 2025</div></div>` +
           `<div class="stat"><div class="v">${fmt(t26)}</div><div class="l">reportes 2026 (ene–ago)</div></div>` +
-          `<div class="stat"><div class="v">${hits.length ? Math.round(pub / hits.length * 100) : 0}%</div><div class="l">públicos · ${100 - (hits.length ? Math.round(pub / hits.length * 100) : 0)}% privados</div></div>`;
+          `<div class="stat"><div class="v">${hits.length ? Math.round(pub / hits.length * 100) : 0}%</div><div class="l">públicos · ${100 - (hits.length ? Math.round(pub / hits.length * 100) : 0)}% privados</div></div>` +
+          (() => { const pd = store.pensionDistritos && (store.pensionDistritos.distritos || []).find(x => x.distrito === sf.distrito && x.region === sf.region);
+                   return pd && pd.pension ? `<div class="stat"><div class="v">S/ ${fmt(pd.pension.mediana)}</div><div class="l">pensión mediana · ${pd.n_privados_con_pension} privados con dato (${(pd.pension.anios || []).join("/")})</div></div>` : ""; })();
       } else { ds.hidden = true; ds.innerHTML = ""; }
     }
     const yLabel = sf.year ? `Reportes ${sf.year}${sf.year === "2026" ? "*" : ""}` : "Total 2013–2026";
@@ -402,7 +404,7 @@
     if (!shown.length) { tbody.innerHTML = '<tr><td colspan="9" class="loading">Sin coincidencias.</td></tr>'; if (st) st.textContent = ""; return; }
     tbody.innerHTML = shown.map((r, i) => `<tr class="sc-row inst-row" data-slug="${esc(r.s)}" data-region="${esc(r.r)}" tabindex="0" role="button" aria-expanded="false">
         <td>${i + 1}</td>
-        <td><span class="sc-name">${esc(r.n)}</span><span class="sc-sub">${esc(r.d)} · ${esc(r.p)} · ${esc(r.r)}${r.ugel ? " · " + esc(r.ugel) : ""} · ${r.ns} servicio(s)</span></td>
+        <td><span class="sc-name">${esc(r.n)}</span><span class="sc-sub">${esc(r.d)} · ${esc(r.p)} · ${esc(r.r)}${r.ugel ? " · " + esc(r.ugel) : ""} · ${r.ns} servicio(s)${r.pen ? ` · <b>Pensión S/ ${fmt(r.pen)}</b> (${esc(r.pen_a || "")}, declarada)` : ""}</span></td>
         <td><span class="sc-tag ${r.g === "Público" ? "pub" : "priv"}">${esc(r.g || "")}</span></td>
         <td>${(r.nv || []).map(n => `<span class="nv-chip">${esc(n)}</span>`).join("")}</td>
         <td>${r.y ? sparkline(r.y, yi) : ""}</td>
@@ -428,8 +430,8 @@
       <p class="sc-meta"><b>${esc(r.n)}</b> · ${esc(r.d)}, ${esc(r.p)} (${esc(r.r)})${r.ugel ? " · " + esc(r.ugel) : ""} · ${esc(r.g || "")} · codinst ${esc(r.ci || "—")}</p>
       <div class="sc-detail-grid">
         <div class="chart" id="${id}"></div>
-        <div class="table-scroll" style="max-height:220px"><table class="data"><thead><tr><th>Servicio (nivel)</th><th>C. modular</th><th class="num">Reportes</th><th class="num">Matrícula</th><th class="num">Tasa 2024</th></tr></thead>
-        <tbody>${serv.map(s => `<tr><td>${esc(s.nivel || "")}</td><td>${esc(s.cm)}</td><td class="num"><b>${fmt(s.t)}</b></td><td class="num">${s.matricula != null ? fmt(s.matricula) : "—"}</td><td class="num">${s.tasa_2024 != null ? (+s.tasa_2024).toFixed(1) : "—"}</td></tr>`).join("")}</tbody></table></div>
+        <div class="table-scroll" style="max-height:220px"><table class="data"><thead><tr><th>Servicio (nivel)</th><th>C. modular</th><th class="num">Reportes</th><th class="num">Matrícula</th><th class="num">Tasa 2024</th><th class="num">Pensión</th></tr></thead>
+        <tbody>${serv.map(s => `<tr><td>${esc(s.nivel || "")}</td><td>${esc(s.cm)}</td><td class="num"><b>${fmt(s.t)}</b></td><td class="num">${s.matricula != null ? fmt(s.matricula) : "—"}</td><td class="num">${s.tasa_2024 != null ? (+s.tasa_2024).toFixed(1) : "—"}</td><td class="num">${s.pension ? "S/ " + fmt(s.pension) + " <span style='color:var(--text-soft)'>" + esc(s.anio_pension || "") + "</span>" : (s.pension_estado === "no_aplica" ? "—" : "s/d")}</td></tr>`).join("")}</tbody></table></div>
       </div>
       ${ctxTxt ? `<p class="source" style="margin-top:8px">Contexto: ${ctxTxt}.</p>` : ""}
       <p class="source" style="margin-top:6px">Física + psicológica + sexual = total del año; bullying y ciberacoso son etiquetas transversales. *2026 parcial. Registro administrativo, no prevalencia.</p>
@@ -494,6 +496,46 @@
     setTimeout(() => { dmap.invalidateSize(); try { dmap.fitBounds(dmapLayer.getBounds(), { padding: [16, 16], maxZoom: 15 }); } catch (e) {} }, 60);
     if (note) note.innerHTML = `Cada burbuja es una <b>sede física</b> (local del Padrón ESCALE); su tamaño es el total de reportes 2013–2026 de los niveles que comparten ese local. Azul = público, morado = privado.` +
       (sinGeo ? ` ${fmt(sinGeo)} servicio(s) del distrito aún sin coordenadas.` : "") + ` Registro ≠ prevalencia: más reportes suele reflejar mejor cultura de denuncia.`;
+  }
+
+  /* ---------- Costo (pensión) por distrito vs reportes ---------- */
+  let penRegion = "";
+  function renderPension() {
+    const pd = store.pensionDistritos; if (!pd) return;
+    const t = echartsTheme();
+    const ch = mkChart("chart-pension-tramos");
+    if (ch && pd.tramos) {
+      ch.setOption({
+        textStyle: t.textStyle, grid: { left: 100, right: 60, top: 10, bottom: 28 },
+        tooltip: Object.assign({ trigger: "axis", formatter: (ps) => { const p = ps[0]; const tr = pd.tramos[p.dataIndex]; return `<b>${esc(tr.tramo)}</b><br>${fmt(tr.n)} servicios privados · ${fmt(tr.reportes)} reportes 2024<br>${fmt(tr.matricula)} estudiantes → <b>${tr.reportes_x1000}</b> por 1,000`; } }, t.tooltip),
+        xAxis: { type: "value", name: "reportes por 1,000 (2024)", nameLocation: "middle", nameGap: 22, splitLine: t.splitLine, axisLabel: { fontSize: 10 } },
+        yAxis: { type: "category", inverse: true, data: pd.tramos.map(x => x.tramo), axisLine: { show: false }, axisTick: { show: false }, axisLabel: { fontSize: 11 } },
+        series: [{ type: "bar", barMaxWidth: 22, data: pd.tramos.map(x => x.reportes_x1000), itemStyle: { color: grad(C.colors.ciber, "h"), borderRadius: [0, 6, 6, 0] },
+          label: { show: true, position: "right", fontSize: 11, fontWeight: 700, color: t.textStyle.color, formatter: (p) => p.value + " · n=" + fmt(pd.tramos[p.dataIndex].n) } }]
+      });
+      const n = document.getElementById("pension-tramos-note");
+      if (n) n.textContent = "Tasa agregada por tramo = Σ reportes 2024 / Σ matrícula 2024 × 1,000, solo colegios privados con pensión declarada. La relación sube hasta S/ 1,001–2,500 y baja en el tramo más caro: compatible con más capacidad de denunciar, no con más violencia.";
+    }
+    const sel = document.getElementById("pen-region"), tbody = document.querySelector("#pension-table tbody"), src = document.getElementById("pension-source");
+    const rows = (pd.distritos || []).filter(d => d.pension);
+    if (sel && !sel.dataset.filled) {
+      const regs = Array.from(new Set(rows.map(d => d.region))).sort();
+      sel.innerHTML = '<option value="">Todas</option>' + regs.map(r => `<option${r === "Lima" ? " selected" : ""}>${esc(r)}</option>`).join("");
+      penRegion = regs.includes("Lima") ? "Lima" : ""; sel.dataset.filled = "1";
+      sel.addEventListener("change", () => { penRegion = sel.value; renderPension(); });
+      const csv = document.getElementById("pen-csv");
+      if (csv) csv.addEventListener("click", () => downloadText("pension-distritos-2024.csv", toCSV(rows, [{ label: "region", get: "region" }, { label: "distrito", get: "distrito" }, { label: "privados_con_pension", get: "n_privados_con_pension" }, { label: "pension_mediana", get: r => r.pension.mediana }, { label: "pension_p25", get: r => r.pension.p25 }, { label: "pension_p75", get: r => r.pension.p75 }, { label: "pension_min", get: r => r.pension.min }, { label: "pension_max", get: r => r.pension.max }, { label: "reportes_x1000_con_pension_2024", get: r => r.tasa_2024.mediana_con_pension }, { label: "reportes_x1000_publicos_2024", get: r => r.tasa_2024.mediana_publicos }, { label: "reportes_2024_privados_con_pension", get: r => r.reportes_2024.privados_con_pension }, { label: "reportes_2024_publicos", get: r => r.reportes_2024.publicos }])));
+    }
+    const shown = rows.filter(d => !penRegion || d.region === penRegion);
+    if (tbody) tbody.innerHTML = shown.length ? shown.map(d => `<tr>
+        <td><b>${esc(d.distrito)}</b><span class="sc-sub">${esc(d.region)}</span></td>
+        <td class="num">${fmt(d.n_privados_con_pension)}</td>
+        <td class="num"><b>S/ ${fmt(d.pension.mediana)}</b></td>
+        <td class="num">S/ ${fmt(d.pension.p25)} – ${fmt(d.pension.p75)}</td>
+        <td class="num">${d.tasa_2024.mediana_con_pension != null ? d.tasa_2024.mediana_con_pension.toFixed(1) : "—"}</td>
+        <td class="num">${d.tasa_2024.mediana_publicos != null ? d.tasa_2024.mediana_publicos.toFixed(1) : "—"}</td>
+      </tr>`).join("") : '<tr><td colspan="6" class="loading">Sin distritos con ≥ 5 privados con pensión declarada en esta región.</td></tr>';
+    if (src) src.textContent = `${esc(pd.note || "")} Fuente: ${pd.source || ""}`;
   }
 
   function initSchools() {
@@ -655,6 +697,9 @@
     { id: "institutions", title: "Colegios completos (instituciones, 17,185)", desc: "Agrupación oficial por codinst: niveles, matrícula 2024, tasa por 1,000 y serie 2013–2026.", json: C.data.institutionsIndex, lazy: true,
       csv: async () => { const idx = await ensureInstIndex(); if (!idx) return null;
         return toCSV(idx, [{ label: "codinst", get: "ci" }, { label: "institucion", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "ugel", get: "ugel" }, { label: "gestion", get: "g" }, { label: "niveles", get: r => (r.nv || []).join(" | ") }, { label: "n_servicios", get: "ns" }, { label: "matricula_2024", get: "mat" }, { label: "matricula_completa", get: r => r.mat_ok ? "si" : "no" }, { label: "tasa_2024_x1000", get: "tasa_2024" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
+    { id: "pension_distritos", title: "Pensión por distrito vs reportes 2024", desc: "Pensión declarada (mediana, p25–p75) por distrito y tasa de reportes por 1,000; tramos nacionales.", json: C.data.pensionDistritos,
+      csv: () => { const pd = store.pensionDistritos; if (!pd) return null; const rows = (pd.distritos || []).filter(d => d.pension);
+        return toCSV(rows, [{ label: "region", get: "region" }, { label: "distrito", get: "distrito" }, { label: "privados_con_pension", get: "n_privados_con_pension" }, { label: "pension_mediana", get: r => r.pension.mediana }, { label: "pension_p25", get: r => r.pension.p25 }, { label: "pension_p75", get: r => r.pension.p75 }, { label: "reportes_x1000_con_pension_2024", get: r => r.tasa_2024.mediana_con_pension }, { label: "reportes_x1000_publicos_2024", get: r => r.tasa_2024.mediana_publicos }]); } },
     { id: "schools_geo", title: "Coordenadas y sede (local) por colegio", desc: "Lat/lon y código de local del Padrón ESCALE para los colegios con reportes (sin datos personales).", json: C.data.schoolsGeo },
     { id: "correlation", title: "Correlación física↔psicológica", desc: "Por año: r de Pearson, colegios con reportes, colegios con ambos tipos y la distribución (x, y, n colegios).", json: C.data.correlation,
       csv: () => { const c = store.correlation; if (!c) return null; const rows = []; c.anios.forEach(y => (c.datos[y].puntos || []).forEach(p => rows.push({ y, x: p[0], py: p[1], n: p[2], r: c.datos[y].r, col: c.datos[y].colegios, ambos: c.datos[y].ambos })));
@@ -1124,6 +1169,9 @@
     hbar("bd-nivel", (bd.nivel_educativo_2013_2018 || []).map(x => ({ name: x.nivel, value: x.casos })), C.colors.violencia, "abs");
     pie("bd-gestion", (bd.gestion_2022 || bd.gestion_2013_2018 || []).map(x => ({ name: x.gestion, value: x.casos })), ["#2f80c4", "#f97316"]);
     pie("bd-area", (bd.area_2022 || bd.area_2013_2018 || []).map(x => ({ name: x.area, value: x.casos })), ["#12a594", "#e0b13a"]);
+    // Sexo (solo agregados nacionales oficiales; los pies aceptan % cuando no hay conteo)
+    pie("bd-sexo", (bd.sexo_agredido_2022 || []).map(x => ({ name: x.sexo, value: x.casos != null ? x.casos : x.pct })), ["#cc3b52", "#2f80c4"]);
+    pie("bd-sexo-escolares", (bd.sexo_victima_entre_escolares_2013_2018 || []).map(x => ({ name: x.sexo, value: x.casos != null ? x.casos : x.pct })), ["#2f80c4", "#cc3b52"]);
     // Crecimiento por tipo 2026 vs 2025
     const cg = bd.crecimiento_tipo_2026;
     const chG = mkChart("bd-crecimiento");
@@ -1326,14 +1374,14 @@
 
   /* ---------- Init ---------- */
   async function init() {
-    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation, schoolsTopData] = await Promise.all([
+    const [ts, byDep, pop, ctx, leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation, schoolsTopData, pensionDistritos] = await Promise.all([
       loadJSON(C.data.timeseries), loadJSON(C.data.byDepartment), loadJSON(C.data.population),
       loadJSON(C.data.context), loadJSON(C.data.legislation), loadJSON(C.data.news), loadJSON(C.data.sources),
       loadJSON(C.data.studies), loadJSON(C.data.breakdowns), loadJSON(C.data.world), loadJSON(C.data.books),
-      loadJSON(C.data.monthly), loadJSON(C.data.schools), loadJSON(C.data.territory), loadJSON(C.data.correlation), loadJSON(C.data.schoolsTop)
+      loadJSON(C.data.monthly), loadJSON(C.data.schools), loadJSON(C.data.territory), loadJSON(C.data.correlation), loadJSON(C.data.schoolsTop), loadJSON(C.data.pensionDistritos)
     ]);
     Object.assign(store, { timeseries: ts, byDepartment: byDep, population: pop, context: ctx, legislation: leg, news, sources, studies, breakdowns, world, books, monthly, schools, territory, correlation });
-    schoolsTop = schoolsTopData;
+    schoolsTop = schoolsTopData; store.pensionDistritos = pensionDistritos;
 
     // fecha de actualización
     const dates = [ts, byDep, pop, ctx, news].filter(Boolean).map(d => d.retrieval_date || (d.source && d.source.retrieval_date)).filter(Boolean);
@@ -1352,6 +1400,7 @@
     safe("colegios", () => renderSchools(schools));
     safe("buscador-colegios", () => initSchools());
     safe("descargas", () => renderDownloads());
+    safe("pension", () => renderPension());
     safe("prevalencia", () => renderPrevalence(ctx));
     safe("sses", () => renderSSES(ctx));
     safe("desgloses", () => renderBreakdowns(breakdowns));

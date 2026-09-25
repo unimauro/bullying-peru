@@ -57,8 +57,13 @@ def main():
         assert sum(y) == t, f"sum(y)!=total en {slug_i}"
         tot_rep += t
         servicios = [{"cm": s["cm"], "nivel": s.get("nivel"), "t": int(s.get("total", 0) or 0),
-                      "matricula": s.get("matricula"), "tasa_2024": s.get("tasa_2024")}
+                      "matricula": s.get("matricula"), "tasa_2024": s.get("tasa_2024"),
+                      "pension": s.get("pension"), "anio_pension": s.get("anio_pension"),
+                      "pension_estado": s.get("pension_estado")}
                      for s in v.get("servicios", [])]
+        # Pensión declarada (Identicole, declarativa): máxima entre los niveles con dato, y su año.
+        pens = [(s["pension"], s["anio_pension"]) for s in servicios if s.get("pension")]
+        pen_max, pen_anio = (max(pens)[0], max(pens)[1]) if pens else (None, None)
         row = {
             "s": slug_i, "ci": v.get("codinst"), "cm": v.get("cm"), "n": v.get("nombre"),
             "d": v.get("distrito"), "p": v.get("provincia"), "r": v.get("departamento"),
@@ -66,6 +71,7 @@ def main():
             "nv": v.get("niveles", []), "ns": len(servicios), "t": t, "y": y,
             "mat": v.get("matricula"), "mat_ok": bool(v.get("matricula_completa")),
             "tasa_2024": v.get("tasa_2024"),
+            "pen": pen_max, "pen_a": pen_anio,
         }
         index.append(row)
         det = dict(row); det["servicios"] = servicios
