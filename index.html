@@ -26,8 +26,8 @@
   gtag('config', 'G-YD3GKLZX0T');
 </script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css?v=20260925d">
-<link rel="stylesheet" href="src/css/districts.css?v=20260925d">
+<link rel="stylesheet" href="src/css/styles.css?v=20260925e">
+<link rel="stylesheet" href="src/css/districts.css?v=20260925e">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 </head>
 <body>
@@ -149,8 +149,9 @@
     <span class="hb-label">🆘 ¿Necesitas ayuda?</span>
     <a class="hb-chip" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">📱 SíseVe</a>
     <span class="hb-chip">☎️ Línea <b>100</b> (MIMP)</span>
+    <span class="hb-chip" title="Salud mental, MINSA, gratuito 24 h">🧠 Línea <b>113</b> op. 5</span>
     <a class="hb-chip" href="https://chat100.aurora.gob.pe/" target="_blank" rel="noopener">💬 Chat 100</a>
-    <a class="hb-denuncia" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">🚨 Denunciar ahora</a>
+    <a class="hb-denuncia" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">📝 Reportar en SíseVe</a>
   </div>
 </div>
 
@@ -204,7 +205,10 @@
           <li><b>Línea 100</b> (MIMP) — marca <b>100</b>, gratuito 24 h, en español/quechua/aymara.</li>
           <li><b><a href="https://chat100.aurora.gob.pe/" target="_blank" rel="noopener">Chat 100</a></b> (MIMP) — orientación en línea para adolescentes.</li>
           <li><b><a href="https://www.gob.pe/479" target="_blank" rel="noopener">CEM</a></b> — Centro Emergencia Mujer (vía Línea 100).</li>
-          <li>La <b>institución educativa</b> y su responsable de convivencia.</li>
+          <li><b>Línea 113, opción 5</b> (MINSA) — orientación en <b>salud mental</b>, gratuita 24 h. Si tu hijo/a habla de no querer vivir: llama hoy y no lo dejes solo/a; en peligro inmediato, <b>106</b> (SAMU).</li>
+          <li>La <b>institución educativa</b> y su responsable de convivencia (deben activar los protocolos del DS 004-2018-MINEDU).</li>
+          <li><b>Si el colegio no actúa</b>: reporta tú mismo/a en SíseVe, acude a la <b>UGEL</b> de tu zona, a la <b>Defensoría del Pueblo</b> o a la <b>DEMUNA</b> de tu municipio. En violencia sexual o física grave, también a la <b>Policía (105)</b> o la Fiscalía.</li>
+          <li><b>Qué no hacer</b>: no confrontes al otro niño ni a su familia por tu cuenta; no expongas a tu hijo/a en redes; no le pidas que "se defienda pegando"; no le prometas guardar el secreto si hay riesgo. Si tu hijo/a es quien agrede, también necesita ayuda: pide el acompañamiento del colegio y de un psicólogo.</li>
         </ul>
         <a class="hero-cta" style="display:inline-block;margin-top:10px" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener"><span class="primary" style="display:inline-block;padding:9px 15px;border-radius:30px;color:#fff;font-weight:700">🚨 Denunciar en SíseVe</span></a>
       </div>
@@ -328,14 +332,14 @@
       </div>
     </div>
 
-    <h3 id="costo" style="margin:2rem 0 .4rem;font-size:1.1rem">¿Cuánto cuestan los colegios y cuántos reportes tienen?</h3>
+    <h3 id="costo" style="margin:2rem 0 .4rem;font-size:1.1rem">Pensión declarada y reportes: una descripción, no una causa</h3>
     <p class="lead">Pensión mensual <b>declarada</b> por los colegios privados (Identicole 2024–2025) frente a los reportes SíseVe de 2024 por cada 1,000 estudiantes. Primero por tramo de pensión a nivel nacional; luego por distrito (solo distritos con al menos 5 privados con pensión declarada).</p>
-    <div class="callout"><span>⚠️</span><span><b>Léelo como descripción, nunca como causa.</b> Los colegios más caros están donde las familias tienen más recursos para <b>escalar una denuncia</b>, más cobertura de UGEL y mejor cultura de reporte; la pensión es <b>declarativa</b> (la informa el propio colegio) y solo cubre 1,866 servicios privados con ficha. Más reportes por 1,000 no significa más violencia real.</span></div>
+    <div class="callout"><span>⚠️</span><span><b>Esta comparación no dice si en los colegios caros hay más o menos violencia.</b> Podría ser que las familias con más recursos reporten más, que esos distritos tengan UGEL con más cobertura, que los colegios sean más grandes, o que sí haya diferencias reales: <b>con estos datos no se puede saber</b>. La pensión la declara el propio colegio y solo 1,866 servicios privados la publican (la mayoría en Lima), así que el cuadro describe a ese grupo, no a "los privados".</span></div>
     <div class="grid-2">
       <div class="panel"><h3>Reportes por 1,000 estudiantes según tramo de pensión (2024, nacional)</h3><div class="chart" id="chart-pension-tramos"></div><p class="source" id="pension-tramos-note"></p></div>
       <div class="panel"><h3>Distritos por pensión mediana</h3>
         <div class="controls"><label>Región <select id="pen-region"><option value="">Todas</option></select></label><button id="pen-csv" type="button" class="btn-ghost">⬇ CSV</button></div>
-        <div class="table-scroll" style="max-height:420px"><table class="data" id="pension-table"><thead><tr><th>Distrito</th><th class="num">Privados c/ pensión</th><th class="num">Pensión mediana</th><th class="num">Rango p25–p75</th><th class="num">Reportes /1,000 (c/ pensión)</th><th class="num">Reportes /1,000 (públicos)</th></tr></thead><tbody></tbody></table></div>
+        <div class="table-scroll" style="max-height:420px"><table class="data" id="pension-table"><thead><tr><th>Distrito</th><th class="num">Privados c/ pensión</th><th class="num">Pensión mediana</th><th class="num">Rango p25–p75</th><th class="num">Reportes /1,000 (2024, privados con pensión)</th></tr></thead><tbody></tbody></table></div>
         <p class="source" id="pension-source"></p>
       </div>
     </div>
@@ -672,7 +676,7 @@
 <div class="chat-panel" id="chat-panel" hidden>
   <header>Pregúntale al Observatorio <button id="chat-close" aria-label="Cerrar">×</button></header>
   <div class="chat-log" id="chat-log">
-    <div class="msg bot">Hola 👋 Puedo responder sobre los datos de bullying y violencia escolar en el Perú, citando la fuente. No invento cifras: si un dato no está en el observatorio, te lo diré.</div>
+    <div class="msg bot">Hola 👋 Respondo sobre los datos del observatorio, citando la fuente. <b>No soy un canal de ayuda ni de denuncia</b>: si necesitas ayuda ahora, llama gratis al <b>113 (opción 5)</b> o al <b>100</b>. No escribas nombres ni datos personales. No invento cifras.</div>
   </div>
   <div class="chat-suggestions" id="chat-suggestions">
     <button>¿Cómo evolucionó el bullying en el Perú?</button>
@@ -687,10 +691,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
-<script src="src/js/config.js?v=20260925d"></script>
-<script src="src/js/app.js?v=20260925d"></script>
-<script src="src/js/districts.js?v=20260925d"></script>
-<script src="src/js/chatbot.js?v=20260925d"></script>
+<script src="src/js/config.js?v=20260925e"></script>
+<script src="src/js/app.js?v=20260925e"></script>
+<script src="src/js/districts.js?v=20260925e"></script>
+<script src="src/js/chatbot.js?v=20260925e"></script>
 <script>
 (function(){
   // A11y: iconos SVG decorativos ocultos para lectores de pantalla

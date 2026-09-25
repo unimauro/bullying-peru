@@ -85,3 +85,20 @@ cobertura del sistema o mayor propensión a reportar.
 
 `REPORTADO` · `INVESTIGACIÓN PERIODÍSTICA` · `CONFIRMADO POR FUENTE OFICIAL` · `NO VERIFICADO`.
 Un caso "reportado" nunca se presenta como "confirmado".
+
+## Control de divulgación estadística por colegio (desde 25-09-2026)
+
+Publicamos reportes por colegio (código modular) y año, pero **no** cifras que permitan
+reidentificar a una víctima o a un docente en colegios pequeños:
+
+1. `sexual` y `personal de la IE` por colegio-año con valor **1–4 se publican como "<5"**
+   (`-1` en los JSON/CSV). Los totales anuales no cambian.
+2. En **Inicial** no se publica desglose por tipo (solo totales).
+3. La misma regla rige la web, las descargas JSON/CSV y las fichas por institución.
+4. Las sedes del mapa muestran nombre del colegio y totales, nunca tipo; sin enlace
+   externo de geolocalización.
+5. El chatbot no identifica personas, prioriza protocolos de crisis (113 op. 5, 100,
+   Chat 100, 106, 105) y no produce rankings.
+
+Base: Ley 29733 (datos sensibles), Ley 27337 CNA art. 6, Ley 27806 art. 17; revisión
+adversarial de psicología/ética `docs/reviews/2026-09-25-psicologia-etica.md`.

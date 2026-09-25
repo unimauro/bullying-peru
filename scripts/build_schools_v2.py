@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# CONTROL DE DIVULGACIÓN ESTADÍSTICA (25-09-2026, revisión psicología/ética):
+#   - `sexual` y `personal_ie` por colegio-año con valor 1–4 se publican como -1 (= "<5"),
+#     para no permitir reidentificar a una víctima o a un docente en colegios pequeños
+#     (Ley 29733 datos sensibles; CNA art. 6). Los totales anuales no cambian.
+#   - En nivel Inicial no se publica ningún desglose por tipo (todo -1 si > 0).
+#   La función supress() se aplica a schools_top y a los shards schools_detail/.
 """
 Genera los datos de colegios v2 (con series por año y shards por región)
 a partir del microdato SíseVe 2013–2026 consolidado por
@@ -82,8 +88,14 @@ def series(anios, key):
     return [int((anios.get(y) or {}).get(key, 0) or 0) for y in YEAR_KEYS]
 
 
-def tipos_series(anios):
-    return {t: series(anios, t) for t in TIPOS}
+def tipos_series(anios, nivel=None):
+    """Desglose por tipo con control de divulgación estadística (ver cabecera):
+    sexual/personal_ie 1-4 -> -1 ("<5"); en Inicial todo desglose > 0 -> -1."""
+    out = {t: series(anios, t) for t in TIPOS}
+    inicial = str(nivel or "").startswith("Inicial")
+    for t in TIPOS:
+        out[t] = [(-1 if (v > 0 and (inicial or (t in ("sexual", "personal_ie") and v < 5))) else v) for v in out[t]]
+    return out
 
 
 def dump(path, obj):
@@ -172,7 +184,7 @@ def main():
         rows.append({
             "s": r["s"], "n": r["n"], "cm": r["cm"], "d": r["d"], "p": r["p"],
             "r": r["r"], "g": r["g"], "nv": r["nv"], "ugel": d.get("ugel"),
-            "t": r["t"], "y": r["y"], "tipos": tipos_series(anios),
+            "t": r["t"], "y": r["y"], "tipos": tipos_series(anios, r["nv"]),
         })
     top_obj = {
         "dataset": "Top nacional de colegios por reportes SíseVe (microdato oficial)",
@@ -202,7 +214,7 @@ def main():
             "ugel": d.get("ugel"),
             "dre": d.get("dre"),
             "y": r["y"],
-            "tipos": tipos_series(d.get("anios") or {}),
+            "tipos": tipos_series(d.get("anios") or {}, d.get("nivel")),
         }
 
     # limpiar shards viejos que ya no correspondan

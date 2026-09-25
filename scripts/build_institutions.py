@@ -76,6 +76,14 @@ def main():
         index.append(row)
         det = dict(row); det["servicios"] = servicios
         det["tipos"] = {k: years_vec(v.get("anios", {}), k) for k in TIPOS}
+        # Control de divulgación estadística (25-09-2026): por institución-año, `sexual` y
+        # `personal_ie` con valor 1–4 se publican como -1 ("<5") para no reidentificar a
+        # víctimas ni docentes en colegios pequeños. Si la institución solo tiene Inicial,
+        # no se publica desglose por tipo. Los totales no cambian.
+        solo_inicial = all(str(n).startswith("Inicial") for n in (v.get("niveles") or [])) and bool(v.get("niveles"))
+        for k in TIPOS:
+            det["tipos"][k] = [(-1 if (val > 0 and (solo_inicial or (k in ("sexual", "personal_ie") and val < 5))) else val) for val in det["tipos"][k]]
+        det["sup"] = True
         ctx = v.get("contexto") or {}
         det["contexto"] = {k: {"v": c.get("v"), "f": c.get("f"), "a": c.get("a")} for k, c in ctx.items() if isinstance(c, dict)}
         by_region.setdefault(slug(v.get("departamento")), []).append(det)

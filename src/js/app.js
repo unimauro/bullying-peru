@@ -207,6 +207,9 @@
   // (22 569 colegios, ~4.5 MB) SOLO cuando el usuario busca o filtra. Los detalles por
   // tipo de los colegios fuera del top se cargan por shard de región al abrir la fila.
   const YEARS = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
+  // Control de divulgación: -1 en los desgloses por tipo = "<5" (cifra omitida para proteger la identidad).
+  const SUP = (v) => v === -1 ? '<span title="Se omite el número exacto (menor a 5) para proteger la identidad de los estudiantes">&lt;5</span>' : (v ? fmt(v) : "—");
+  const SUPN = (v) => v === -1 ? 0 : (v || 0);
   const TIPO_LABELS = { fisica: "Física", psicologica: "Psicológica", sexual: "Sexual", bullying: "Bullying (etiqueta)", ciberacoso: "Ciberacoso (etiqueta)", entre_escolares: "Entre escolares", personal_ie: "De personal de la IE" };
   const _fold = (s) => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
   const _slug = (s) => _fold(s).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -350,16 +353,16 @@
       <div class="sc-detail-grid">
         <div class="chart" id="${id}"></div>
         <div class="table-scroll" style="max-height:220px"><table class="data"><thead><tr><th>Año</th><th class="num">Total</th>${keys.map(k => `<th class="num">${esc(TIPO_LABELS[k].replace(" (etiqueta)", ""))}</th>`).join("")}</tr></thead>
-        <tbody>${rows.slice().reverse().map(o => `<tr><td>${o.yr}${o.yr === 2026 ? "*" : ""}</td><td class="num"><b>${fmt(o.t)}</b></td>${o.v.map(v => `<td class="num">${v ? fmt(v) : "—"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
+        <tbody>${rows.slice().reverse().map(o => `<tr><td>${o.yr}${o.yr === 2026 ? "*" : ""}</td><td class="num"><b>${fmt(o.t)}</b></td>${o.v.map(v => `<td class="num">${SUP(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>
       </div>
-      <p class="source" style="margin-top:8px">Física + psicológica + sexual = total del año; bullying y ciberacoso son etiquetas transversales (no se suman). *2026 parcial ene–ago. Registro administrativo, no prevalencia.</p>
+      <p class="source" style="margin-top:8px">Física + psicológica + sexual = total del año; bullying y ciberacoso son etiquetas transversales (no se suman). <b>&lt;5</b>: se omite el número exacto de violencia sexual (y de personal de la IE) cuando es menor a 5, para proteger la identidad de los estudiantes; en Inicial no se desglosa por tipo. *2026 parcial ene–ago. Registro administrativo, no prevalencia.</p>
     </td></tr>`;
     tr.insertAdjacentHTML("afterend", html);
     const ch = mkChart(id);
     if (!ch) return;
     const t = echartsTheme();
     const stack = ["fisica", "psicologica", "sexual"].map((k, j) => ({
-      name: TIPO_LABELS[k], type: "bar", stack: "t", data: YEARS.map((_, i) => (tp[k] && tp[k][i]) || 0),
+      name: TIPO_LABELS[k], type: "bar", stack: "t", data: YEARS.map((_, i) => SUPN(tp[k] && tp[k][i])),
       itemStyle: { color: ["#d4553a", C.colors.violencia, C.colors.ciber][j] }, barMaxWidth: 22
     }));
     const hasTipos = stack.some(s => s.data.some(v => v > 0));
@@ -439,7 +442,7 @@
     tr.insertAdjacentHTML("afterend", html);
     const ch = mkChart(id); if (!ch) return;
     const t = echartsTheme();
-    const stack = ["fisica", "psicologica", "sexual"].map((k, j) => ({ name: TIPO_LABELS[k], type: "bar", stack: "t", data: YEARS.map((_, i) => (tp[k] && tp[k][i]) || 0), itemStyle: { color: ["#d4553a", C.colors.violencia, C.colors.ciber][j] }, barMaxWidth: 22 }));
+    const stack = ["fisica", "psicologica", "sexual"].map((k, j) => ({ name: TIPO_LABELS[k], type: "bar", stack: "t", data: YEARS.map((_, i) => SUPN(tp[k] && tp[k][i])), itemStyle: { color: ["#d4553a", C.colors.violencia, C.colors.ciber][j] }, barMaxWidth: 22 }));
     const has = stack.some(s => s.data.some(v => v > 0));
     ch.setOption({ textStyle: t.textStyle, tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" } }, t.tooltip), legend: { top: 0, textStyle: { fontSize: 10 } }, grid: { left: 36, right: 10, top: 28, bottom: 24 },
       xAxis: { type: "category", data: YEARS.map(String), axisLabel: { fontSize: 9 } }, yAxis: { type: "value", splitLine: t.splitLine, axisLabel: { fontSize: 9 } },
@@ -489,7 +492,7 @@
       m.bindTooltip(`<b>${esc(s.n)}</b><br>${fmt(s.t)} reportes 2013–2026 · 2026: ${fmt(s.t26)}`, { sticky: true });
       m.bindPopup(`<div class="sede-pop"><b>${esc(s.n)}</b><br>${esc(s.g || "")}${s.cl ? " · local " + esc(s.cl) : ""}<br>` +
         s.serv.map(x => `<span class="lv">${esc(x.nv || "")}: ${fmt(x.t)}</span>`).join("") +
-        `<br><b>${fmt(s.t)}</b> reportes 2013–2026 · <b>${fmt(s.t26)}</b> en 2026* · <a href="https://www.openstreetmap.org/?mlat=${s.la}&mlon=${s.lo}#map=17/${s.la}/${s.lo}" target="_blank" rel="noopener">ver en OpenStreetMap</a></div>`);
+        `<br><b>${fmt(s.t)}</b> reportes 2013–2026 · <b>${fmt(s.t26)}</b> en 2026*</div>`);
       layers.push(m);
     });
     dmapLayer = L.featureGroup(layers).addTo(dmap);
@@ -514,7 +517,7 @@
           label: { show: true, position: "right", fontSize: 11, fontWeight: 700, color: t.textStyle.color, formatter: (p) => p.value + " · n=" + fmt(pd.tramos[p.dataIndex].n) } }]
       });
       const n = document.getElementById("pension-tramos-note");
-      if (n) n.textContent = "Tasa agregada por tramo = Σ reportes 2024 / Σ matrícula 2024 × 1,000, solo colegios privados con pensión declarada. La relación sube hasta S/ 1,001–2,500 y baja en el tramo más caro: compatible con más capacidad de denunciar, no con más violencia.";
+      if (n) n.textContent = "Tasa agregada por tramo = Σ reportes 2024 / Σ matrícula 2024 × 1,000, solo colegios privados con pensión declarada (muestra autoseleccionada, mayoritariamente Lima). Describe a ese grupo; no permite atribuir causas.";
     }
     const sel = document.getElementById("pen-region"), tbody = document.querySelector("#pension-table tbody"), src = document.getElementById("pension-source");
     const rows = (pd.distritos || []).filter(d => d.pension);
@@ -533,8 +536,7 @@
         <td class="num"><b>S/ ${fmt(d.pension.mediana)}</b></td>
         <td class="num">S/ ${fmt(d.pension.p25)} – ${fmt(d.pension.p75)}</td>
         <td class="num">${d.tasa_2024.mediana_con_pension != null ? d.tasa_2024.mediana_con_pension.toFixed(1) : "—"}</td>
-        <td class="num">${d.tasa_2024.mediana_publicos != null ? d.tasa_2024.mediana_publicos.toFixed(1) : "—"}</td>
-      </tr>`).join("") : '<tr><td colspan="6" class="loading">Sin distritos con ≥ 5 privados con pensión declarada en esta región.</td></tr>';
+      </tr>`).join("") : '<tr><td colspan="5" class="loading">Sin distritos con ≥ 5 privados con pensión declarada en esta región.</td></tr>';
     if (src) src.textContent = `${esc(pd.note || "")} Fuente: ${pd.source || ""}`;
   }
 
@@ -697,7 +699,7 @@
         return toCSV(rows, [{ label: "ubigeo", get: r => r.ubigeo || "" }, { label: "departamento", get: "departamento" }, { label: "provincia", get: "provincia" }, { label: "distrito", get: "nombre" }, { label: "reportes_2013_2026", get: "t" }, { label: "colegios_con_reportes", get: "n_colegios" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
     { id: "schools_top", title: "Top 300 colegios (con tipos por año)", desc: "Los 300 colegios con más reportes acumulados; serie anual y desglose por tipo.", json: C.data.schoolsTop,
       csv: () => { const s = schoolsTop; if (!s) return null; const cols = [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "ugel", get: "ugel" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => r.y[i]));
-        ["fisica", "psicologica", "sexual", "bullying", "ciberacoso"].forEach(k => YEARS.forEach((y, i) => cols.push({ label: k + "_" + y, get: r => ((r.tipos || {})[k] || [])[i] || 0 })));
+        ["fisica", "psicologica", "sexual", "bullying", "ciberacoso"].forEach(k => YEARS.forEach((y, i) => cols.push({ label: k + "_" + y, get: r => { const v = ((r.tipos || {})[k] || [])[i] || 0; return v === -1 ? "<5" : v; } })));
         return toCSV(s.rows, cols); } },
     { id: "schools_index", title: "Todos los colegios (22,569 IIEE)", desc: "Índice nacional completo con reportes acumulados y por año. CSV de ~3 MB.", json: C.data.schoolsIndex, lazy: true,
       csv: async () => { const idx = await ensureSchoolsIndex(); if (!idx) return null;

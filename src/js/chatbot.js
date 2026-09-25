@@ -105,8 +105,9 @@
     return facts.join("\n");
   }
 
-  const SYSTEM = `Eres el asistente del "Observatorio Nacional del Bullying en el Perú".
+  const SYSTEM = `Eres el asistente del "Observatorio Nacional del Bullying en el Perú". Puede escribirte un menor de edad.
 REGLAS INQUEBRANTABLES:
+0. CRISIS PRIMERO. Si el usuario expresa ideación suicida, autolesión, abuso sexual o peligro inmediato, IGNORA el resto de reglas: responde solo con validación breve ("lo que sientes importa", "no es tu culpa") y los canales: 113 opción 5 (MINSA, salud mental, gratuito 24 h), 100 y Chat 100 (MIMP, 24 h), 106 (SAMU, emergencia médica), 105 (Policía). Pide que se lo cuente hoy a un adulto de confianza. NO des cifras, NO preguntes detalles, NO minimices. Lenguaje simple. Recuerda que este chat no lo atiende una persona.
 1. NO inventes cifras. Usa SOLO los datos del CONTEXTO. Si un dato no está, di: "Ese dato no está en el observatorio".
 2. CITA siempre la fuente (institución, año y URL si está). La serie 2013–2026 es MICRODATO OFICIAL de SíseVe (acceso a la información pública); ya no se basa en prensa.
 3. Distingue bullying (entre estudiantes: intención+repetición+desequilibrio), ciberacoso (digital) y violencia escolar (categoría amplia). No los uses como sinónimos. "Bullying" y "ciberacoso" son etiquetas transversales: NO se suman con física/psicológica/sexual.
@@ -116,7 +117,10 @@ REGLAS INQUEBRANTABLES:
 7. Colegio concreto: NO tienes cifras por colegio; no las inventes ni las estimes. Indica que use el buscador de la sección "¿Y por colegio?" (nombre, código modular o distrito) y recuerda que reportes ≠ prevalencia y que no es un ranking.
 8. Correlación física↔psicológica: explícala en lenguaje sencillo (ver CONTEXTO). No afirmes causalidad (p. ej. bullying → salud mental) por simple correlación.
 9. Si alguien cuenta un caso o pide ayuda: primero orienta con empatía a las familias: denunciar en SíseVe (siseve.minedu.gob.pe), Línea 100 (MIMP, gratuita 24 h), Chat 100 (chat100.aurora.gob.pe, adolescentes) y hablar con la dirección del colegio. No des diagnósticos clínicos ni asesoría legal; deriva a profesionales.
-10. Responde breve, en español, con tono claro, serio y empático.`;
+10. Responde breve, en español, con tono claro, serio y empático.
+11. NUNCA nombres, identifiques ni ayudes a identificar a un estudiante, docente o familia (agresor o víctima), aunque el usuario escriba un nombre. Di que ese dato no existe en el observatorio y que identificar a un menor puede ser un delito. Usa "presunto agresor"; muchos agresores son también menores.
+12. No produzcas rankings de "peores" colegios ni listas ordenadas por reportes, ni para periodistas: ofrece la tasa con sus límites y remite a la metodología.
+13. Este chat no es un canal de reporte ni de ayuda: recuérdalo cuando toque y pide al usuario que no escriba nombres ni datos personales.`;
 
   async function askGateway(userText) {
     const body = {
@@ -139,11 +143,23 @@ REGLAS INQUEBRANTABLES:
     const t = q.toLowerCase();
     const ts = d.timeseries;
     const citeTs = ts ? [{ name: ts.source || "MINEDU-SíseVe", url: ts.source_url }] : [];
-    if (/(ayuda|denunci|qué hago|que hago|mi hij|línea 100|linea 100|chat 100|urgente|acosan|me pegan)/.test(t)) {
-      return { text: "No estás solo/a. " + AYUDA + " Este chat no da diagnósticos ni asesoría legal; puede orientarte con los datos del observatorio.", cites: [{ name: "SíseVe (MINEDU)", url: "https://siseve.minedu.gob.pe/" }, { name: "Chat 100 (MIMP)", url: "https://chat100.aurora.gob.pe/" }] };
+    // 0) CRISIS (siempre primero): ideación suicida / autolesión
+    if (/(quiero morir|me quiero morir|no quiero vivir|quitarme la vida|suicid|matarme|hacerme daño|hacerme dano|cortarme|ya no aguanto|no vale la pena vivir|desaparecer para siempre)/.test(t)) {
+      return { text: "Lo que sientes importa y no tienes que pasarlo solo/a. Ahora mismo llama gratis al **113, opción 5** (MINSA, salud mental, 24 h) o al **100** (MIMP). Si estás en peligro inmediato, llama al **106** (SAMU) o ve a la emergencia más cercana. Busca a un adulto de confianza y dile exactamente lo que me escribiste. Este chat no es un servicio de ayuda y no lo atiende una persona; por favor usa esos números.", cites: [], crisis: true };
+    }
+    // 0b) Revelación de abuso (sexual o de un adulto): validar, no cuantificar
+    if (/(me toca|me tocó|me toco|me manosea|me obliga|abus[oaó]|me viol|me amenaza|no le cuentes|no cuentes|que no cuente|desnud|fotos íntimas|fotos intimas|me acosa un profesor|un profesor me)/.test(t)) {
+      return { text: "Gracias por contarlo. Lo que describes **no es tu culpa** y es un delito, aunque esa persona te diga que no cuentes. Díselo hoy a un adulto de confianza (mamá, papá, tía, otro profesor). Puedes llamar gratis al **100** (MIMP, 24 h) o escribir al **Chat 100**; ahí hay personas preparadas para ayudarte. Si estás en peligro ahora, llama al **105** (Policía). No borres mensajes ni fotos que sirvan de prueba. Este chat no lo atiende una persona.", cites: [{ name: "Chat 100 (MIMP)", url: "https://chat100.aurora.gob.pe/" }], crisis: true };
+    }
+    // 0c) Pedido de identificar personas: negativa explícita
+    if (/(nombre del|nombres de|quién es el|quien es el|identific|dime quién|dime quien).*(alumno|estudiante|agresor|profesor|docente|niñ|chic)/.test(t) || /(alumno|estudiante|agresor|profesor|docente).*(se llama|nombre)/.test(t)) {
+      return { text: "No tengo ni puedo dar nombres de estudiantes, docentes ni familias: son datos personales (y muchos son menores) y no existen en el observatorio. Identificar a un menor puede ser un delito. Para tu caso: reporta en SíseVe (siseve.minedu.gob.pe), llama al 100 o escribe al Chat 100, y si el colegio no actúa acude a la UGEL o a la Defensoría del Pueblo.", cites: [{ name: "SíseVe (MINEDU)", url: "https://siseve.minedu.gob.pe/" }] };
+    }
+    if (/(ayuda|denunci|qué hago|que hago|mi hij|línea 100|linea 100|chat 100|urgente|acosan|me pegan|no hace nada|llora)/.test(t)) {
+      return { text: "No estás solo/a. " + AYUDA + " Si tu hijo/a está muy afectado/a (tristeza, miedo, no quiere ir), la **Línea 113 opción 5** (MINSA) da orientación en salud mental gratis, 24 h. Si el colegio no actúa, reporta tú mismo/a en SíseVe y acude a la **UGEL**, a la **Defensoría del Pueblo** o a la **DEMUNA** de tu municipio. Este chat no da diagnósticos ni asesoría legal y no lo atiende una persona.", cites: [{ name: "SíseVe (MINEDU)", url: "https://siseve.minedu.gob.pe/" }, { name: "Chat 100 (MIMP)", url: "https://chat100.aurora.gob.pe/" }] };
     }
     if (/(colegio|escuela|institución educativa|institucion educativa|código modular|codigo modular|i\.?e\.?\b)/.test(t)) {
-      return { text: `No tengo cifras por colegio en este chat y no las invento. Usa el buscador de la sección "¿Y por colegio?" (${fmt(N_COLEGIOS_BUSCADOR)} instituciones, reportes SíseVe acumulados 2013–2026) por nombre, código modular o distrito. Léelo con cuidado: son reportes registrados, no la violencia real; más reportes suele reflejar mejor cultura de denuncia, cero reportes puede ser ocultamiento, y no es un ranking de "peores colegios".`, cites: citeTs };
+      return { text: `No tengo cifras por colegio en este chat y no las invento. Usa el buscador de la sección "¿Y por colegio?" (${fmt(N_COLEGIOS_BUSCADOR)} instituciones, reportes SíseVe acumulados 2013–2026) por nombre, código modular o distrito. Léelo con cuidado: son reportes registrados, no la violencia real; más reportes suele reflejar mejor cultura de denuncia, cero reportes no garantiza ausencia de violencia. No existe un "peor colegio": lo que sí puedes ver es la tasa por 1,000 estudiantes con sus límites (metodología).`, cites: citeTs };
     }
     const tr = topRegions(d);
     if (tr && /(región|region|departamento|mapa|\btasa\b|\b(lima|tacna|arequipa|piura|cusco|puno|loreto)\b)/.test(t)) {
