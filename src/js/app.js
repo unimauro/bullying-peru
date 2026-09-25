@@ -1,7 +1,7 @@
 /* Observatorio Nacional del Bullying — Perú · lógica principal */
 (function () {
   const C = window.OBS_CONFIG;
-  const fmt = (n) => (n == null ? "—" : n.toLocaleString("es-PE"));
+  const fmt = (n) => { const x = Number(n); return (n == null || n === "" || Number.isNaN(x)) ? "—" : x.toLocaleString("es-PE"); };
   const store = window.OBS_DATA = {}; // datasets cargados (usados por el chatbot)
 
   // Seguridad: escapa TODO texto proveniente de JSON antes de inyectarlo con innerHTML
@@ -18,6 +18,7 @@
   };
   // Solo enlaces http(s) (evita javascript: en href)
   const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//i.test(u.trim())) ? u.trim() : "#";
+  window.OBS_UTIL = { esc, safeUrl };
 
   // Banderas para el ranking mundial
   const FLAGS = {
@@ -239,7 +240,7 @@
       y.map((v, i) => {
         const bh = Math.max(v > 0 ? 2 : 0, Math.round((v / max) * (h - 2)));
         const cls = YEARS[i] === 2026 ? "partial" : (i === sortIdx ? "hi" : "");
-        return `<rect x="${i * w + gap}" y="${h - bh}" width="${w - 1.5}" height="${bh}" class="${cls}"><title>${YEARS[i]}: ${v}</title></rect>`;
+        return `<rect x="${i * w + gap}" y="${h - bh}" width="${w - 1.5}" height="${bh}" class="${cls}"><title>${YEARS[i]}: ${Number(v) || 0}</title></rect>`;
       }).join("") + `</svg>`;
   }
 
@@ -669,7 +670,7 @@
 
   /* ---------- Descargas: catálogo JSON + CSV al vuelo ---------- */
   function toCSV(rows, cols) {
-    const q = (v) => { const s = v == null ? "" : String(v); return /[",;\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+    const q = (v) => { let s = v == null ? "" : String(v); if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; return /[",;\n\r\t]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
     return "\uFEFF" + cols.map(c => q(c.label)).join(",") + "\n" + rows.map(r => cols.map(c => q(typeof c.get === "function" ? c.get(r) : r[c.get])).join(",")).join("\n");
   }
   function downloadText(name, text, mime) {
@@ -697,7 +698,7 @@
         return toCSV(rows, [{ label: "ubigeo", get: r => r.ubigeo || "" }, { label: "departamento", get: "departamento" }, { label: "provincia", get: "provincia" }, { label: "distrito", get: "nombre" }, { label: "reportes_2013_2026", get: "t" }, { label: "colegios_con_reportes", get: "n_colegios" }].concat(yearCols((r, i) => (r.y || [])[i] || 0))); } },
     { id: "schools_top", title: "Top 300 colegios (con tipos por año)", desc: "Los 300 colegios con más reportes acumulados; serie anual y desglose por tipo.", json: C.data.schoolsTop,
       csv: () => { const s = schoolsTop; if (!s) return null; const cols = [{ label: "codigo_modular", get: "cm" }, { label: "colegio", get: "n" }, { label: "distrito", get: "d" }, { label: "provincia", get: "p" }, { label: "region", get: "r" }, { label: "ugel", get: "ugel" }, { label: "gestion", get: "g" }, { label: "nivel", get: "nv" }, { label: "total_2013_2026", get: "t" }].concat(yearCols((r, i) => r.y[i]));
-        ["fisica", "psicologica", "sexual", "bullying", "ciberacoso"].forEach(k => YEARS.forEach((y, i) => cols.push({ label: k + "_" + y, get: r => { const v = ((r.tipos || {})[k] || [])[i] || 0; return v === -1 ? "<5" : v; } })));
+        ["fisica", "psicologica", "sexual", "entre_escolares", "personal_ie", "bullying", "ciberacoso"].forEach(k => YEARS.forEach((y, i) => cols.push({ label: k + "_" + y, get: r => { const v = ((r.tipos || {})[k] || [])[i] || 0; return v === -1 ? "<5" : v; } })));
         return toCSV(s.rows, cols); } },
     { id: "schools_index", title: "Todos los colegios (22,569 IIEE)", desc: "Índice nacional completo con reportes acumulados y por año. CSV de ~3 MB.", json: C.data.schoolsIndex, lazy: true,
       csv: async () => { const idx = await ensureSchoolsIndex(); if (!idx) return null;
@@ -1109,7 +1110,7 @@
         label: { show: true, position: "top", formatter: "{c}%", fontSize: 11, fontWeight: 700 } }]
     });
     const s = ctx.sources && ctx.sources.inei_enares_2019;
-    if (s) src.innerHTML = `Fuente: ${s.name} — ${s.institution}. <a href="${s.url}" target="_blank" rel="noopener">Ver fuente</a>`;
+    if (s) src.innerHTML = `Fuente: ${esc(s.name)} — ${esc(s.institution)}. <a href="${safeUrl(s.url)}" target="_blank" rel="noopener">Ver fuente</a>`;
   }
 
   /* ---------- SSES (roles) ---------- */
@@ -1350,7 +1351,7 @@
       return ((va ?? -1) - (vb ?? -1)) * tableSort.dir;
     });
     tbody.innerHTML = rows.map(r => `
-      <tr><td>${r.department}</td>
+      <tr><td>${esc(r.department)}</td>
         <td class="num">${fmt(r.cases)}</td>
         <td class="num">${fmt(r.students)}</td>
         <td class="num">${r.rate == null ? "—" : r.rate.toFixed(1)}</td></tr>`).join("");
@@ -1359,7 +1360,7 @@
   function exportCSV(year) {
     const rows = store._tableRows || deptRows(year);
     const head = "departamento,reportes,matricula,tasa_10000\n";
-    const body = rows.map(r => `"${r.department}",${r.cases},${r.students ?? ""},${r.rate == null ? "" : r.rate.toFixed(2)}`).join("\n");
+    const body = toCSV(rows, [{ label: "departamento", get: "department" }, { label: "reportes", get: "cases" }, { label: "matricula", get: r => r.students ?? "" }, { label: "tasa_x10000", get: r => r.rate == null ? "" : r.rate.toFixed(2) }]).split("\n").slice(1).join("\n");
     const blob = new Blob([head + body], { type: "text/csv;charset=utf-8" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob); a.download = `bullying-peru-departamentos-${year}.csv`; a.click();

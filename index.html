@@ -18,17 +18,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1f6fb2">
 <!-- Google tag (gtag.js) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://ai.tunky.net https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD3GKLZX0T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-YD3GKLZX0T');
-</script>
+<script src="src/js/analytics.js?v=20260925g"></script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css?v=20260925f">
-<link rel="stylesheet" href="src/css/districts.css?v=20260925f">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="src/css/styles.css?v=20260925g">
+<link rel="stylesheet" href="src/css/districts.css?v=20260925g">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb" crossorigin="anonymous">
 </head>
 <body>
 
@@ -74,6 +70,7 @@
       <span class="nav-group">Observatorio</span>
       <a href="#datos"><svg class="ic"><use href="#ic-chart"/></svg> Explorador de datos</a>
       <a href="#metodologia"><svg class="ic"><use href="#ic-book"/></svg> Metodología</a>
+      <a href="#privacidad"><svg class="ic"><use href="#ic-shield"/></svg> Privacidad</a>
     </nav>
     <a class="side-denuncia" href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">🚨 Denunciar en SíseVe</a>
   </aside>
@@ -675,6 +672,27 @@
 </div>
 <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
 
+<!-- PRIVACIDAD -->
+<section id="privacidad">
+  <div class="wrap">
+    <h2>Privacidad</h2>
+    <p class="lead">Qué datos publica este sitio y qué datos recoge de ti.</p>
+    <div class="panel">
+      <ul style="margin:0;padding-left:18px;font-size:.9rem;line-height:1.6">
+        <li><b>Lo que publicamos</b>: reportes SíseVe agregados por región, distrito, colegio (código modular) y año; nunca registros individuales ni datos de estudiantes, docentes o familias. Por colegio-año, las celdas pequeñas de violencia sexual y "de personal de la IE" se muestran como "&lt;5" (ver <a href="#metodologia">Metodología</a>).</li>
+        <li><b>Lo que no publicamos</b>: edad, sexo, grado o turno de personas; nombres; direcciones; texto de los reportes.</li>
+        <li><b>Analítica</b>: usamos Google Analytics <b>solo si aceptas</b> (sin cookies hasta entonces, IP anonimizada). Puedes cambiarlo en la barra inferior.</li>
+        <li><b>Chat</b>: tus preguntas se envían a un servicio externo de IA (ai.tunky.net) para responder; no escribas nombres, colegio ni detalles de un caso. No lo atiende una persona y no es un canal de ayuda ni de reporte.</li>
+        <li><b>Contacto</b>: <a href="https://github.com/unimauro/bullying-peru/issues" target="_blank" rel="noopener">issues del repositorio</a>. Si crees que un dato publicado permite identificar a una persona, escríbenos y lo retiramos.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div id="privacy-bar" role="region" aria-label="Privacidad" hidden>
+  <span>Usamos Google Analytics <b>solo si aceptas</b> (sin cookies hasta entonces). <a href="#privacidad">Más info</a></span>
+  <span><button type="button" id="ga-ok">Aceptar</button> <button type="button" id="ga-no" class="btn-ghost">No, gracias</button></span>
+</div>
+
 <!-- CHATBOT -->
 <button class="chat-fab" id="chat-fab" aria-label="Pregúntale al Observatorio">💬<span class="fab-label"> Pregúntale al Observatorio</span></button>
 <div class="chat-panel" id="chat-panel" hidden>
@@ -687,40 +705,19 @@
     <button>¿Qué diferencia hay entre reporte y prevalencia?</button>
     <button>¿Qué dice ENARES?</button>
   </div>
+  <p class="chat-notice">Este chat envía tu pregunta a un servicio externo de IA. No escribas nombres, colegio ni detalles de un caso. Si necesitas ayuda: <a href="tel:100">Línea 100</a> · <a href="tel:113">113 op. 5</a> · <a href="https://siseve.minedu.gob.pe/" target="_blank" rel="noopener">SíseVe</a>.</p>
   <div class="chat-input">
-    <input id="chat-input" type="text" placeholder="Escribe tu pregunta…" autocomplete="off">
+    <input id="chat-input" type="text" maxlength="500" placeholder="Escribe tu pregunta…" autocomplete="off">
     <button id="chat-send">Enviar</button>
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js"></script>
-<script src="src/js/config.js?v=20260925f"></script>
-<script src="src/js/app.js?v=20260925f"></script>
-<script src="src/js/districts.js?v=20260925f"></script>
-<script src="src/js/chatbot.js?v=20260925f"></script>
-<script>
-(function(){
-  // A11y: iconos SVG decorativos ocultos para lectores de pantalla
-  document.querySelectorAll('svg.ic').forEach(function(s){ s.setAttribute('aria-hidden','true'); s.setAttribute('focusable','false'); });
-  // A11y: estado de los toggles de segmento
-  function syncSeg(){ document.querySelectorAll('.seg').forEach(function(seg){ seg.setAttribute('role','group'); seg.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'); }); }); }
-  syncSeg();
-  document.querySelectorAll('.seg button').forEach(function(b){ b.addEventListener('click', function(){ setTimeout(syncSeg, 0); }); });
-  var sb = document.getElementById('sidebar'), tg = document.getElementById('menu-toggle'), bd = document.getElementById('sidebar-backdrop');
-  function open(){ sb.classList.add('open'); bd.hidden = false; }
-  function close(){ sb.classList.remove('open'); bd.hidden = true; }
-  if (tg) tg.addEventListener('click', function(){ sb.classList.contains('open') ? close() : open(); });
-  if (bd) bd.addEventListener('click', close);
-  document.querySelectorAll('.side-nav a').forEach(function(a){ a.addEventListener('click', function(){ if (window.innerWidth <= 960) close(); }); });
-  // Resaltar sección activa en el scroll
-  var links = [].slice.call(document.querySelectorAll('.side-nav a'));
-  var map = {}; links.forEach(function(a){ var id = a.getAttribute('href').slice(1); var s = document.getElementById(id); if (s) map[id] = a; });
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if (e.isIntersecting){ links.forEach(function(l){ l.classList.remove('active'); }); var a = map[e.target.id]; if (a) a.classList.add('active'); } });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  Object.keys(map).forEach(function(id){ obs.observe(document.getElementById(id)); });
-})();
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js" integrity="sha384-pPi0zxBAoDu6+JXW/C68UZLvBUUtU+7zonhif43rqj7pxsGyqyqzcian2Rj37Rss" crossorigin="anonymous"></script>
+<script src="src/js/config.js?v=20260925g"></script>
+<script src="src/js/app.js?v=20260925g"></script>
+<script src="src/js/districts.js?v=20260925g"></script>
+<script src="src/js/chatbot.js?v=20260925g"></script>
+<script src="src/js/inline.js?v=20260925g"></script>
 </body>
 </html>

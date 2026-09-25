@@ -233,7 +233,7 @@
     opts = opts || {};
     map = opts.map; store = opts.store || window.OBS_DATA || {}; L = opts.L || window.L;
     esc = opts.esc || ((s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])));
-    fmt = opts.fmt || ((n) => (n == null ? "—" : n.toLocaleString("es-PE")));
+    fmt = opts.fmt || ((n) => { const x = Number(n); return (n == null || Number.isNaN(x)) ? "—" : x.toLocaleString("es-PE"); });
     if (!map || !L) { console.warn("[obs districts] falta map o L"); return; }
     try { deptBounds = store.geo ? L.geoJSON(store.geo).getBounds() : map.getBounds(); } catch (e) { deptBounds = null; }
     buildControl();

@@ -32,9 +32,16 @@ TRUSTED_MEDIA = [
     "wayka", "idl", "la encerrona", "diario correo", "correo", "expreso",
     "ipe", "unicef", "unesco", "defensoria",
 ]
-CTX = ssl.create_default_context()
-CTX.check_hostname = False
-CTX.verify_mode = ssl.CERT_NONE
+CTX = ssl.create_default_context()          # verificación TLS normal (revisión seguridad 25-09-2026)
+MAX_IMG = 2_000_000
+MAGIC = {b"\xff\xd8\xff": ".jpg", b"\x89PNG": ".png", b"RIFF": ".webp"}
+TRUSTED_DOMAINS = {
+    "rpp.pe", "elcomercio.pe", "larepublica.pe", "infobae.com", "andina.pe", "gestion.pe",
+    "peru21.pe", "tvperu.gob.pe", "americatv.com.pe", "latina.pe", "atv.pe", "ojo-publico.com",
+    "convoca.pe", "exitosanoticias.pe", "canaln.pe", "elperuano.pe", "wayka.pe", "idl.org.pe",
+    "laencerrona.pe", "diariocorreo.pe", "expreso.com.pe", "ipe.org.pe", "unicef.org", "unesco.org",
+    "defensoria.gob.pe",
+}
 
 
 def fetch(url, timeout=25):
@@ -86,9 +93,31 @@ def _strip(s):
     return "".join(c for c in s if unicodedata.category(c) != "Mn").lower()
 
 
-def is_trusted(media):
-    m = re.sub(r"[^a-z0-9]", "", _strip(media))  # solo alfanumérico, sin espacios/acentos
-    return any(re.sub(r"[^a-z0-9]", "", t) in m for t in TRUSTED_MEDIA)
+def is_trusted(media, url=""):
+    """Nombre EXACTO (ya no por subcadena: 'Wikipedia' contenía 'ipe') o dominio final del enlace."""
+    m = re.sub(r"[^a-z0-9]", "", _strip(media))
+    names = {re.sub(r"[^a-z0-9]", "", t) for t in TRUSTED_MEDIA}
+    if m in names or m in {n + "noticias" for n in names} or m in {n + "peru" for n in names}:
+        return True
+    host = urllib.parse.urlparse(resolve(url)).netloc.lower()
+    host = host[4:] if host.startswith("www.") else host
+    return bool(host) and any(host == d or host.endswith("." + d) for d in TRUSTED_DOMAINS)
+
+
+_RESOLVED = {}
+def resolve(url):
+    """Sigue el redirect de Google News hasta el artículo (necesario para comprobar el dominio y para og:image)."""
+    if not url: return ""
+    if url in _RESOLVED: return _RESOLVED[url]
+    final = url
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=20, context=CTX) as r:
+            final = r.geturl()
+    except Exception:
+        pass
+    _RESOLVED[url] = final
+    return final
 
 
 def og_image(url):
@@ -102,16 +131,26 @@ def og_image(url):
 
 
 def download_img(url, ref, dest_base):
+    url = resolve(url)
     img = og_image(url)
     if not img:
         return None
     img = urllib.parse.urljoin(url, img)
+    if urllib.parse.urlparse(img).scheme != "https":
+        return None
     try:
-        data = fetch(img, timeout=20)
+        req = urllib.request.Request(img, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=20, context=CTX) as r:
+            if int(r.headers.get("Content-Length") or 0) > MAX_IMG:
+                return None
+            data = r.read(MAX_IMG + 1)
     except Exception:
         return None
-    ext = re.search(r"\.(jpg|jpeg|png|webp)", img.split("?")[0].lower())
-    ext = "." + (ext.group(1).replace("jpeg", "jpg") if ext else "jpg")
+    if len(data) > MAX_IMG:
+        return None
+    ext = next((e for mg, e in MAGIC.items() if data.startswith(mg)), None)   # tipo por firma, no por extensión
+    if not ext:
+        return None
     os.makedirs(IMGDIR, exist_ok=True)
     fn = dest_base + ext
     with open(os.path.join(IMGDIR, fn), "wb") as f:
@@ -124,7 +163,7 @@ def main():
     items = doc.get("data", [])
     # Limpia items automáticos previos de medios no confiables (los curados a mano se conservan).
     before = len(items)
-    items = [x for x in items if (not x.get("auto")) or is_trusted(x.get("media"))]
+    items = [x for x in items if (not x.get("auto")) or is_trusted(x.get("media"), x.get("url", ""))]
     if before != len(items):
         print(f"[limpieza] removidos {before - len(items)} items auto de medios no confiables")
     seen = {norm(x.get("title")) for x in items} | {x.get("url") for x in items}
@@ -137,7 +176,7 @@ def main():
             key = norm(it["title"])
             if key in seen or it["url"] in seen:
                 continue
-            if not is_trusted(it["media"]):
+            if not is_trusted(it["media"], it.get("url", "")):
                 skipped += 1
                 continue
             seen.add(key); seen.add(it["url"])

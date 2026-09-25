@@ -93,6 +93,14 @@ reidentificar a una víctima o a un docente en colegios pequeños:
 
 1. `sexual` y `personal de la IE` por colegio-año con valor **1–4 se publican como "<5"**
    (`-1` en los JSON/CSV). Los totales anuales no cambian.
+1b. **Supresión complementaria**: como física + psicológica + sexual = total (y entre
+   escolares + personal de la IE = total), una celda tapada se recuperaría por resta.
+   Por eso, si cualquier miembro de una partición queda suprimido en un año, se suprime
+   **la partición completa** ese año (incluidos los ceros).
+1c. **Jerarquía**: una institución (varios niveles) publica una celda solo si ninguno de
+   sus servicios la tiene suprimida; y no se publican acumulados por tipo calculados del
+   dato crudo. Implementación única en `scripts/privacy.py` (K = 5), verificada por
+   ataque de resta: 0 celdas recuperables (revisión de seguridad 25-09-2026).
 2. En **Inicial** no se publica desglose por tipo (solo totales).
 3. La misma regla rige la web, las descargas JSON/CSV y las fichas por institución.
 4. Las sedes del mapa muestran nombre del colegio y totales, nunca tipo; sin enlace

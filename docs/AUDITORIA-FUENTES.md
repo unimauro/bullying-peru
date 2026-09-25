@@ -28,8 +28,13 @@ anonimizar. Reglas que igualmente imponemos:
 3. Si algún día obtenemos la base por Transparencia (ver `SOLICITUD-TRANSPARENCIA.md`),
    la pediremos **sin** columnas del agredido ni del agresor, y el archivo vivirá
    fuera del repo (`data/raw/` está en `.gitignore`).
-4. Supresión de celdas < 5 en cualquier corte que combine violencia sexual con nivel,
-   grado o edad (hoy no publicamos ninguno de esos cortes).
+4. **Control de divulgación por colegio-año (desde 25-09-2026, `scripts/privacy.py`)**:
+   `sexual` y `personal de la IE` con 1–4 reportes → "<5"; supresión **complementaria**
+   (si una celda de la partición se tapa, se tapa la partición completa ese año, ceros
+   incluidos) y **jerárquica** (la institución hereda la supresión de sus servicios);
+   Inicial sin desglose; sin acumulados por tipo desde el crudo. Verificado: 0 celdas
+   1–4 publicadas y 0 recuperables por resta en 22,569 servicios, top 300 y 17,185
+   instituciones. Coste: ~35 % de colegio-años sin desglose por tipo.
 
 ---
 

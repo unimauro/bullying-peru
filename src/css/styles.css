@@ -106,8 +106,9 @@ html, body { overflow-x: clip; }
 .main > #datos { order: 18; }
 .main > #metodologia { order: 19; }
 .main > #limitaciones { order: 20; }
-.main > #apoyo { order: 21; }
-.main > .site-footer { order: 22; }
+.main > #privacidad { order: 21; }
+.main > #apoyo { order: 22; }
+.main > .site-footer { order: 23; }
 .sidebar {
   position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto;
   background: var(--surface); border-right: 1px solid var(--border);
@@ -469,3 +470,12 @@ table.data tr:hover td { background: var(--surface-2); }
   .leaflet-touch .leaflet-bar a { width: 40px; height: 40px; line-height: 40px; }
   .controls .seg button, .school-panel .seg button, .btn-ghost { min-height: 40px; }
 }
+
+/* ---------- Privacidad ---------- */
+#privacy-bar { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom,0px)); z-index: 45; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; justify-content: space-between; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 10px 14px; font-size: .84rem; max-width: 720px; margin: 0 auto; }
+#privacy-bar[hidden] { display: none; }
+#privacy-bar button { font: inherit; font-size: .82rem; font-weight: 700; padding: 7px 12px; border-radius: 30px; border: 1px solid var(--border); background: var(--brand); color: #fff; cursor: pointer; }
+#privacy-bar button.btn-ghost { background: transparent; color: var(--text-muted); }
+.chat-notice { font-size: .72rem; color: var(--text-muted); margin: 4px 12px 6px; line-height: 1.4; }
+.chat-notice a { color: var(--brand); }
+@media (max-width: 640px) { #privacy-bar { bottom: calc(80px + env(safe-area-inset-bottom,0px)); } }

@@ -26,7 +26,8 @@
     if (cites && cites.length) {
       const c = document.createElement("span");
       c.className = "cite";
-      c.innerHTML = "Fuente: " + cites.map(x => x.url ? `<a href="${x.url}" target="_blank" rel="noopener">${x.name}</a>` : x.name).join(" · ");
+      const U = window.OBS_UTIL || { esc: (s) => String(s), safeUrl: (u) => "#" };
+      c.innerHTML = "Fuente: " + cites.map(x => x.url ? `<a href="${U.safeUrl(x.url)}" target="_blank" rel="noopener">${U.esc(x.name)}</a>` : U.esc(x.name)).join(" · ");
       div.appendChild(c);
     }
     log.appendChild(div);
@@ -134,7 +135,8 @@ REGLAS INQUEBRANTABLES:
     if (!r.ok) throw new Error("gateway " + r.status);
     const j = await r.json();
     // Tolerante a distintos formatos de respuesta del gateway
-    return j.reply || j.content || j.message || (j.choices && j.choices[0] && (j.choices[0].message?.content || j.choices[0].text)) || JSON.stringify(j);
+    const out = j.reply || j.content || j.message || (j.choices && j.choices[0] && (j.choices[0].message?.content || j.choices[0].text));
+    return (typeof out === "string" && out.length > 0 && out.length < 4000) ? out : null;   // nunca volcar JSON crudo
   }
 
   // Modo local (fallback): responde desde los datasets con cita, sin inventar.
@@ -197,8 +199,13 @@ REGLAS INQUEBRANTABLES:
     return { text: "Puedo responder sobre la serie oficial de SíseVe 2013–2026 (totales, tipos y vínculo), el mapa por región 2024, la correlación física↔psicológica, la exposición según ENARES/SSES, la matrícula y la normativa; y orientarte al buscador de colegios. No invento cifras que no estén en el observatorio.", cites: [] };
   }
 
+  const MAX_Q = 500; let busy = false;
   async function send(text) {
-    if (!text.trim()) return;
+    text = String(text || "").trim().slice(0, MAX_Q);
+    if (!text || busy) return; busy = true;
+    try { await _send(text); } finally { busy = false; }
+  }
+  async function _send(text) {
     add("user", text);
     input.value = "";
     const thinking = add("bot", "…");
@@ -211,7 +218,8 @@ REGLAS INQUEBRANTABLES:
       thinking.textContent = a.text;
       if (a.cites && a.cites.length) {
         const c = document.createElement("span"); c.className = "cite";
-        c.innerHTML = "Fuente: " + a.cites.filter(x=>x).map(x => x.url ? `<a href="${x.url}" target="_blank" rel="noopener">${x.name}</a>` : x.name).join(" · ");
+        const U = window.OBS_UTIL || { esc: (s) => String(s), safeUrl: (u) => "#" };
+        c.innerHTML = "Fuente: " + a.cites.filter(x=>x).map(x => x.url ? `<a href="${U.safeUrl(x.url)}" target="_blank" rel="noopener">${U.esc(x.name)}</a>` : U.esc(x.name)).join(" · ");
         thinking.appendChild(c);
       }
     }
