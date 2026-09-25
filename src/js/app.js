@@ -473,7 +473,7 @@
     const list = Object.values(sedes).sort((x, y) => y.t - x.t);
     wrap.hidden = false;
     const title = document.getElementById("district-map-title"), cnt = document.getElementById("district-map-count"), note = document.getElementById("district-map-note");
-    if (title) title.textContent = `Sedes con reportes en ${sf.distrito}`;
+    if (title) title.innerHTML = `Sedes con reportes en ${esc(sf.distrito)} <a class="dl-link" href="?region=${encodeURIComponent(sf.region)}&distrito=${encodeURIComponent(sf.distrito)}#colegios" title="Enlace directo a este distrito para compartir">🔗 enlace</a>`;
     if (cnt) cnt.textContent = list.length ? `${fmt(list.length)} sede(s) · ${fmt(hits.length)} servicio(s)` : "sin coordenadas aún";
     if (!dmap) {
       dmap = L.map("district-map", { scrollWheelZoom: false, attributionControl: true });
@@ -657,6 +657,14 @@
     tbody.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { const tr = e.target.closest("tr.sc-row"); if (tr) { e.preventDefault(); toggleRow(tr); } } });
 
     renderSchoolRows();
+    // Enlace profundo: ?region=Lima&distrito=San%20Isidro[&vista=inst]#colegios  (para compartir un distrito)
+    try {
+      const qs = new URLSearchParams(location.search);
+      const qd = qs.get("distrito"), qr = qs.get("region"), qv = qs.get("vista");
+      if (qv === "inst") { const b = document.querySelector('#school-view button[data-view="inst"]'); if (b) b.click(); }
+      if (qd && qr) window.OBS_schools.showDistrict(qr, qd);
+      else if (qs.get("q")) { input.value = qs.get("q"); sf.q = input.value; apply(); }
+    } catch (e) { console.error("[obs] deep link", e); }
   }
 
   /* ---------- Descargas: catálogo JSON + CSV al vuelo ---------- */

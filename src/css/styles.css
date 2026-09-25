@@ -453,3 +453,6 @@ table.data tr:hover td { background: var(--surface-2); }
 .sede-pop .lv { display: inline-block; font-size: .68rem; padding: 1px 6px; border-radius: 20px; background: var(--surface-2); color: var(--text-muted); margin: 2px 2px 0 0; }
 .sede-pop a { color: var(--brand); }
 .nv-chip { display: inline-block; font-size: .66rem; padding: 1px 6px; border-radius: 20px; background: var(--surface-2); color: var(--text-muted); margin: 1px 2px 1px 0; white-space: nowrap; }
+
+.dl-link { font-size: .74rem; font-weight: 600; color: var(--brand); text-decoration: none; margin-left: 6px; }
+.dl-link:hover { text-decoration: underline; }
