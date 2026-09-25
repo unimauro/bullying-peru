@@ -68,3 +68,9 @@ y documentan todas las fuentes. Ver [`docs/`](docs/):
 Los datos pertenecen a sus fuentes originales (MINEDU/SíseVe, INEI, Defensoría, etc.);
 este repositorio solo los reorganiza de forma agregada y citada. **Nunca** se publican
 datos personales de menores.
+
+### Documentación adicional (25-09-2026)
+- `docs/AUDITORIA-FUENTES.md` — auditoría de fuentes S1–S6, cadena de custodia del microdato SíseVe y qué verificamos nosotros.
+- `docs/MODELO-INSTITUCIONAL.md` — institución vs servicio (código modular) vs local; reglas de agregación y de territorio.
+- `docs/PIPELINE.md` — orden de los scripts, verificaciones y privacidad como puerta.
+- `docs/SOLICITUD-TRANSPARENCIA.md` — solicitud lista para presentar al MINEDU (Ley 27806), sin datos personales.
