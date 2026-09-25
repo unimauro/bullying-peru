@@ -124,10 +124,11 @@ REGLAS INQUEBRANTABLES:
 13. Este chat no es un canal de reporte ni de ayuda: recuérdalo cuando toque y pide al usuario que no escriba nombres ni datos personales.`;
 
   async function askGateway(userText) {
+    // El gateway fija modelo y system del lado servidor para este token (política "bullying-peru");
+    // se envía el system solo como respaldo si algún día el token no estuviera vinculado.
     const body = {
-      model: C.gateway.model,
-      system: SYSTEM,
-      messages: [{ role: "user", content: `CONTEXTO (datos del observatorio):\n${buildContext()}\n\nPREGUNTA: ${userText}` }]
+      project: C.gateway.project || "bullying-peru",
+      messages: [{ role: "system", content: SYSTEM }, { role: "user", content: `CONTEXTO (datos del observatorio):\n${buildContext()}\n\nPREGUNTA: ${userText}` }]
     };
     const headers = { "Content-Type": "application/json" };
     if (C.gateway.clientToken) headers["X-Client-Token"] = C.gateway.clientToken;

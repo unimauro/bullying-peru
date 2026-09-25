@@ -1,13 +1,13 @@
 /* Configuración global del Observatorio */
 window.OBS_CONFIG = {
   // Gateway de IA para el chatbot "Pregúntale al Observatorio".
-  // clientToken es un token PÚBLICO de front acotado por allowlist de Origin
-  // (unimauro.github.io), el mismo que usan los otros observatorios. No es un secreto:
-  // el gateway solo acepta peticiones desde los orígenes permitidos.
+  // clientToken es un token PÚBLICO de front (va embebido), acotado por allowlist de Origin
+  // (unimauro.github.io) y VINCULADO en el gateway al proyecto "bullying-peru": modelo (NVIDIA
+  // Nemotron gratuito con fallback), system prompt, límites y rate-limit se fijan del lado servidor.
   gateway: {
     url: "https://ai.tunky.net/v1/chat",
-    clientToken: "obs_5356ba138c2761b3c84faf38bd82e4e4",
-    model: "claude-haiku-4-5"
+    clientToken: "bull_aabf3428fb1d47d42f76030218ad40b3",
+    project: "bullying-peru"   // el modelo y el system prompt los fija el gateway (política server-side)
   },
   // Paleta semántica (coincide con styles.css)
   colors: {
