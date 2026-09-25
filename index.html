@@ -20,10 +20,10 @@
 <!-- Google tag (gtag.js) -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://ai.tunky.net https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.g.doubleclick.net; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD3GKLZX0T"></script>
-<script src="src/js/analytics.js?v=20260925g"></script>
+<script src="src/js/analytics.js?v=20260925h"></script>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="stylesheet" href="src/css/styles.css?v=20260925g">
-<link rel="stylesheet" href="src/css/districts.css?v=20260925g">
+<link rel="stylesheet" href="src/css/styles.css?v=20260925h">
+<link rel="stylesheet" href="src/css/districts.css?v=20260925h">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha384-c6Rcwz4e4CITMbu/NBmnNS8yN2sC3cUElMEMfP3vqqKFp7GOYaaBBCqmaWBjmkjb" crossorigin="anonymous">
 </head>
 <body>
@@ -132,11 +132,6 @@
         <g><rect x="224" y="220" width="22" height="34" rx="11" fill="#1f6fb2"/><circle cx="235" cy="205" r="10" fill="#f0b892"/><path d="M226 205 a9 9 0 0 1 18 0 a9 9 0 0 0 -18 0 z" fill="#c98a3a"/></g>
       </svg>
     </div>
-    <aside class="news-rail hero-rail" aria-label="Últimos casos en medios">
-      <div class="rail-head">🔴 Últimos casos en medios</div>
-      <div class="rail-viewport"><div class="rail-track" id="rail-track"><div class="loading">Cargando…</div></div></div>
-      <div class="rail-foot">🔄 Se actualiza a diario</div>
-    </aside>
   </div>
 </header>
 
@@ -242,7 +237,7 @@
 <section id="colegios">
   <div class="wrap">
     <h2><svg class="ic"><use href="#ic-map"/></svg> ¿Y por colegio?</h2>
-    <p class="lead">Los colegios con más reportes en SíseVe y un <b>buscador</b> para encontrar el tuyo. Serie completa <b>2013–2026</b> por institución (microdato oficial, 22,569 colegios). Empieza con el <b>top nacional</b> y ve filtrando por región, gestión, nivel o año; o escribe el nombre, el código modular o el distrito.</p>
+    <p class="lead">Busca tu colegio y mira su historial de reportes en SíseVe 2013–2026 (22,569 instituciones con al menos un reporte). No hay un "top": el orden sale de cuántos reportes se registraron, y eso depende del tamaño del colegio, de cuánto se usa SíseVe en esa UGEL y de si las familias saben reportar. Por eso mostramos la <b>tasa por 1,000 estudiantes</b> al lado del conteo.</p>
     <div class="callout"><span>⚠️</span><span><b>Léelo con cuidado: no es un ranking de "peores colegios".</b> Son <b>reportes registrados</b>, no la violencia real. Más reportes suele reflejar <b>mejor cultura de denuncia</b> (y los colegios grandes tienen más por tamaño); <b>cero reportes</b> puede significar ocultamiento, no ausencia de violencia. Un colegio que denuncia y actúa es <b>mejor señal</b> que uno "sin casos".</span></div>
 
     <div class="panel school-panel">
@@ -268,6 +263,9 @@
       </div>
 
       <div id="school-view-ie">
+        <div class="school-empty" id="school-empty">
+          <button type="button" id="show-top" class="btn-ghost">Ver los 100 colegios con más reportes registrados (léelo con el aviso de arriba)</button>
+        </div>
         <p class="school-status" id="school-status"></p>
         <div class="stat-row" id="district-stats" hidden></div>
         <div id="district-map-wrap" hidden>
@@ -278,12 +276,13 @@
         <div class="table-scroll table-scroll-tall">
           <table class="data school-table" id="school-results-table">
             <thead><tr>
-              <th>#</th><th>Colegio</th><th>Gestión</th><th>Nivel</th>
+              <th></th><th>Colegio</th><th>Gestión</th><th>Nivel</th>
               <th class="spark-th">2013–2026</th>
-              <th class="num">2024</th><th class="num">2025</th><th class="num">2026*</th>
+              <th class="num" title="Matrícula 2024 (Censo Educativo)">Matrícula</th><th class="num" title="Reportes 2024 por cada 1,000 estudiantes">Tasa 2024 /1,000</th>
+              <th class="num">2025</th><th class="num">2026*</th>
               <th class="num" id="sf-total-th">Total</th>
             </tr></thead>
-            <tbody id="school-results"><tr><td colspan="9" class="loading">Cargando top nacional…</td></tr></tbody>
+            <tbody id="school-results"><tr><td colspan="10" class="loading">Escribe el nombre de tu colegio, su código modular o tu distrito; o usa los filtros.</td></tr></tbody>
           </table>
         </div>
         <p class="source" id="school-search-source"></p>
@@ -535,7 +534,12 @@
 <section id="noticias">
   <div class="wrap">
     <h2>Actualidad</h2>
-    <p class="lead">Casos y reportajes recientes en medios. Nivel de verificación explícito; nada "reportado" se presenta como "confirmado".</p>
+    <p class="lead">Reportajes recientes en medios. Nivel de verificación explícito: lo "reportado por prensa" no es un hecho confirmado. En el carrusel omitimos titulares con detalles de violencia sexual, muertes o nombres de personas.</p>
+    <aside class="news-rail" aria-label="En los medios" style="margin-bottom:16px">
+      <div class="rail-head">📰 En los medios</div>
+      <div class="rail-viewport"><div class="rail-track" id="rail-track"><div class="loading">Cargando…</div></div></div>
+      <div class="rail-foot">🔄 Se actualiza a diario · medios verificados</div>
+    </aside>
     <div class="news-list" id="news-list"><div class="loading">Cargando…</div></div>
   </div>
 </section>
@@ -714,10 +718,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha384-NElt3Op+9NBMCYaef5HxeJmU4Xeard/Lku8ek6hoPTvYkQPh3zLIrJP7KiRocsxO" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.6.0/echarts.min.js" integrity="sha384-pPi0zxBAoDu6+JXW/C68UZLvBUUtU+7zonhif43rqj7pxsGyqyqzcian2Rj37Rss" crossorigin="anonymous"></script>
-<script src="src/js/config.js?v=20260925g"></script>
-<script src="src/js/app.js?v=20260925g"></script>
-<script src="src/js/districts.js?v=20260925g"></script>
-<script src="src/js/chatbot.js?v=20260925g"></script>
-<script src="src/js/inline.js?v=20260925g"></script>
+<script src="src/js/config.js?v=20260925h"></script>
+<script src="src/js/app.js?v=20260925h"></script>
+<script src="src/js/districts.js?v=20260925h"></script>
+<script src="src/js/chatbot.js?v=20260925h"></script>
+<script src="src/js/inline.js?v=20260925h"></script>
 </body>
 </html>

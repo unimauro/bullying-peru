@@ -214,7 +214,12 @@
   const _slug = (s) => _fold(s).replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   let schoolsIdx = null, schoolsIdxPromise = null, schoolsTop = null;
   let instIdx = null, instIdxPromise = null, schoolsGeo = null, schoolsGeoPromise = null, districtsGeoPromise = null;
-  let schoolView = "ie";
+  let schoolView = "ie", topShown = false, schoolsMat = null, schoolsMatPromise = null;
+  function ensureSchoolsMat() {
+    if (schoolsMat) return Promise.resolve(schoolsMat);
+    if (!schoolsMatPromise) schoolsMatPromise = loadJSON(C.data.schoolsMatricula).then(d => { schoolsMat = (d && d.data) || {}; return schoolsMat; });
+    return schoolsMatPromise;
+  }
   function ensureInstIndex() {
     if (instIdx) return Promise.resolve(instIdx);
     if (!instIdxPromise) instIdxPromise = loadJSON(C.data.institutionsIndex).then(d => { instIdx = (d && d.rows) || []; instIdx._meta = d || {}; return instIdx; });
@@ -284,6 +289,14 @@
     const thTotal = document.getElementById("sf-total-th");
     if (!tbody) return;
     const { hits, useIndex, yi, val } = schoolsFiltered();
+    const emptyBox = document.getElementById("school-empty");
+    if (!useIndex && !topShown) {
+      tbody.innerHTML = '<tr><td colspan="10" class="loading">Escribe el nombre de tu colegio, su código modular o tu distrito; o usa los filtros.</td></tr>';
+      if (st) st.textContent = ""; if (emptyBox) emptyBox.hidden = false;
+      const ds0 = document.getElementById("district-stats"); if (ds0) { ds0.hidden = true; ds0.innerHTML = ""; }
+      return;
+    }
+    if (emptyBox) emptyBox.hidden = true;
     const LIMIT = 100;
     const shown = hits.slice(0, LIMIT);
     const ds = document.getElementById("district-stats");
@@ -305,30 +318,33 @@
     const yLabel = sf.year ? `Reportes ${sf.year}${sf.year === "2026" ? "*" : ""}` : "Total 2013–2026";
     if (thTotal) thTotal.textContent = yLabel;
     if (!shown.length) {
-      tbody.innerHTML = '<tr><td colspan="9" class="loading">Sin coincidencias. Prueba con otro nombre, el código modular o el distrito; o quita algún filtro.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="10" class="loading">Sin coincidencias. Prueba con otro nombre, el código modular o el distrito; o quita algún filtro.</td></tr>';
       if (st) st.textContent = "";
       return;
     }
-    const i24 = YEARS.indexOf(2024), i25 = YEARS.indexOf(2025), i26 = YEARS.indexOf(2026);
-    tbody.innerHTML = shown.map((r, i) => {
-      const y = r.y || [];
+    const i25 = YEARS.indexOf(2025), i26 = YEARS.indexOf(2026);
+    const M = schoolsMat || {};
+    tbody.innerHTML = shown.map((r) => {
+      const y = r.y || []; const m = M[r.cm];
       return `<tr class="sc-row" data-slug="${esc(r.s)}" data-region="${esc(r.r)}" tabindex="0" role="button" aria-expanded="false">
-        <td>${i + 1}</td>
+        <td class="sc-dot">•</td>
         <td><span class="sc-name">${esc(r.n)}</span><span class="sc-sub">${esc(r.d)} · ${esc(r.p)} · ${esc(r.r)} · C.M. ${esc(r.cm)}</span></td>
         <td><span class="sc-tag ${r.g === "Público" ? "pub" : "priv"}">${esc(r.g || "")}</span></td>
         <td style="font-size:.78rem">${esc(r.nv || "")}</td>
         <td>${y.length ? sparkline(y, yi) : ""}</td>
-        <td class="num ${yi === i24 ? "sort-col" : ""}">${fmt(y[i24] || 0)}</td>
+        <td class="num">${m ? fmt(m[0]) : "—"}</td>
+        <td class="num">${m && m[1] != null ? (+m[1]).toFixed(1) : "—"}</td>
         <td class="num ${yi === i25 ? "sort-col" : ""}">${fmt(y[i25] || 0)}</td>
         <td class="num ${yi === i26 ? "sort-col" : ""}">${fmt(y[i26] || 0)}</td>
         <td class="num"><b class="${yi < 0 ? "sort-col" : ""}">${fmt(val(r))}</b></td>
       </tr>`;
     }).join("");
+    if (!schoolsMat) ensureSchoolsMat().then(() => renderSchoolRows());
     if (st) {
       const nT = schoolsTop && schoolsTop.n_total ? fmt(schoolsTop.n_total) : "22 569";
       st.textContent = useIndex
         ? `${fmt(hits.length)} colegio(s) coinciden${hits.length > LIMIT ? `; se muestran los ${LIMIT} con más reportes — afina la búsqueda para ver otros` : ""}.`
-        : `Top ${shown.length} nacional por reportes acumulados 2013–2026, de ${nT} colegios con al menos un reporte. Escribe o filtra para buscar cualquier colegio.`;
+        : `Los ${shown.length} colegios con más reportes registrados 2013–2026 (de ${nT} con al menos un reporte). El conteo depende del tamaño del colegio y de su cultura de reporte: mira la tasa por 1,000. Escribe o filtra para buscar cualquier colegio.`;
     }
   }
 
@@ -347,7 +363,7 @@
     const tp = det.tipos || {};
     const keys = ["fisica", "psicologica", "sexual", "bullying", "ciberacoso"];
     const rows = YEARS.map((yr, i) => ({ yr, t: y[i] || 0, v: keys.map(k => (tp[k] && tp[k][i]) || 0) })).filter(o => o.t > 0);
-    const html = `<tr class="sc-detail"><td colspan="9">
+    const html = `<tr class="sc-detail"><td colspan="10">
       <p class="sc-meta"><b>${esc(r.n)}</b> · ${esc(r.d)}, ${esc(r.p)} (${esc(r.r)})${det.ugel ? " · " + esc(det.ugel) : ""} · ${esc(r.g || "")} · ${esc(r.nv || "")} · Código modular ${esc(r.cm)}</p>
       <div class="sc-detail-grid">
         <div class="chart" id="${id}"></div>
@@ -567,6 +583,8 @@
     };
     fillNivel((schoolsTop && schoolsTop.rows) || []);
 
+    const showTop = document.getElementById("show-top");
+    if (showTop) showTop.addEventListener("click", () => { topShown = true; renderSchoolRows(); });
     const clearBtn = document.getElementById("sf-clear");
     const syncClear = () => { if (clearBtn) clearBtn.hidden = !(sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year); };
     let tmr = null;
@@ -602,7 +620,7 @@
     const csvBtn = document.getElementById("sf-csv");
     if (csvBtn) csvBtn.addEventListener("click", async () => { if (sf.q || sf.region || sf.distrito || sf.gestion || sf.nivel || sf.year) await ensureSchoolsIndex(); exportSchoolsCSV(); });
     if (clearBtn) clearBtn.addEventListener("click", () => {
-      sf.q = sf.region = sf.distrito = sf.gestion = sf.nivel = sf.year = ""; input.value = "";
+      sf.q = sf.region = sf.distrito = sf.gestion = sf.nivel = sf.year = ""; input.value = ""; topShown = false;
       [selR, selG, selN, selY, selD].forEach(el => { if (el) el.value = ""; }); if (selD) selD.disabled = true;
       apply();
     });
@@ -633,7 +651,7 @@
       const { hits } = schoolsFiltered();
       const r = hits.find(x => x.s === slug) || ((schoolsTop && schoolsTop.rows) || []).find(x => x.s === slug);
       if (!r) return;
-      tr.insertAdjacentHTML("afterend", '<tr class="sc-detail"><td colspan="9" class="loading">Cargando detalle…</td></tr>');
+      tr.insertAdjacentHTML("afterend", '<tr class="sc-detail"><td colspan="10" class="loading">Cargando detalle…</td></tr>');
       let det = null;
       try { det = await schoolDetail(slug, region); } catch (e) { console.error("[obs] detalle colegio", e); }
       const ph = tr.nextElementSibling; if (ph && ph.classList.contains("sc-detail")) ph.remove();
@@ -1303,7 +1321,10 @@
     const card = (n, i) => `<a class="rail-item" href="${safeUrl(n.url)}" target="_blank" rel="noopener">
         ${newsThumb(n, i, "rail-thumb")}
         <div class="rail-body"><div class="t">${esc(n.title)}</div><div class="m">${esc(n.media)} · ${esc(n.date)} · ${esc(n.department)}</div></div></a>`;
-    const items = news.data.map(card).join("");
+    const SENSIBLE = /(viol[oaó]|abus|sexual|suicid|muert|asesin|mat[óo]\b|falleci|cad[áa]ver)/i;
+    const NOMBRE = /\b[A-ZÁÉÍÓÚÑ][a-záéíóúñ]+ [A-ZÁÉÍÓÚÑ][a-záéíóúñ]+ (es|fue|ser[áa]|denunci|acus|separad|detenid)/;
+    const items = news.data.filter(n => !SENSIBLE.test(n.title || "") && !NOMBRE.test(n.title || "")).map(card).join("");
+    if (!items) { track.innerHTML = '<div class="loading">Sin titulares aptos para el carrusel; ver la lista completa abajo.</div>'; return; }
     // Duplicado para el bucle vertical continuo.
     track.innerHTML = items + items;
     // Duración proporcional al número de casos (más suave).
@@ -1316,11 +1337,12 @@
     if (!news || !news.data) { el.innerHTML = '<div class="loading">Sin noticias.</div>'; return; }
     el.innerHTML = news.data.map((n, i) => {
       const lv = /^[A-Z_]+$/.test(n.verification_level || "") ? n.verification_level : "REPORTADO";
+      const LV_TXT = { REPORTADO: "Reportado por prensa · sin verificar", INVESTIGACION_PERIODISTICA: "Investigación periodística", CONFIRMADO_OFICIAL: "Confirmado oficialmente" };
       return `
       <a class="news-item" href="${safeUrl(n.url)}" target="_blank" rel="noopener">
         ${newsThumb(n, i, "news-thumb")}
         <div class="news-body">
-          <div class="meta"><span class="badge lv-${lv}">${esc(lv.replace(/_/g, " "))}</span>
+          <div class="meta"><span class="badge lv-${lv}">${esc(LV_TXT[lv] || lv.replace(/_/g, " "))}</span>
             <span>${esc(n.date)}</span> · <span>${esc(n.media)}</span> · <span>${esc(n.department)}</span></div>
           <h4>${esc(n.title)}</h4>
           <p style="margin:0;font-size:.85rem;color:var(--text-muted)">${esc(n.summary)}</p>

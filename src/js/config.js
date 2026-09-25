@@ -41,7 +41,8 @@ window.OBS_CONFIG = {
     institutionsIndex: "data/processed/institutions_index.json",
     schoolsGeo: "data/processed/schools_geo.json",
     districtsGeo: "data/geo/peru-distrital.geojson",
-    pensionDistritos: "data/processed/pension_distritos.json"
+    pensionDistritos: "data/processed/pension_distritos.json",
+    schoolsMatricula: "data/processed/schools_matricula_2024.json"
   }
 };
 
