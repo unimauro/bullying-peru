@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-24",
+  "retrieval_date": "2026-09-25",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-25",
+      "media": "Infobae",
+      "title": "Michelle Onetto es separada de su agencia tras acusaciones de bullying: “Rechazamos cualquier hostigamiento, violencia o maltrato”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOekhiby13ZWFTem1hZmJ0VEpnRVV3MlBmdG9XbWg3MXg1eENETzlZM3VrV2NCdU1mNVZoWm41clJwVGJwU1lrWG9nYnlKWVhGQ2g0Vzd1UktlS29EaUk1eG1mdXV6bXdWYUViNllHS3E0SC1QdHdfSmxTdGQwLWZqMVpGNnh0RExLVFdvUXNZUGdYb3duZ0xJTVJvTVJEMWpFQXJuYVE1MTR1MUszbUU2cmxudEdTaFVKSV9kdnB2WHNmRk94WDNRTHBkNHh0TExLRjFoWkJsZExSdm11NkdtN0JvWk1FMGdRYTNuNmFsTVhFRnhzNUJDeUN3eGc4WW9GS04zQ3RzakgxZ21yYjFzcldWdHDSAa8CQVVfeXFMUHM2X2xzc0NNOExKNXlvWXpEczF1OU9lLUQ0anIwMUx3a2Rtcmp0VjRTdGRCNHF4bU91YndDNm11WE1ReGR3ellLbkUxNFhDak9YU0xZNDN0TVBFZDRud3VHNVVZQktBVUc3cFdQTmRKbFd2dDluZkxVelZfd1RVTWg3T1pLYlFtdUdET1VTSmFyM3Y4WUNWYy1ITmNRR2t3LWZwN19EMGNoeFRpcUNXazcwV0N4ZFprT2R3ZHhtRC1WUGhTeHFWcU1hWDVrbmZIOG1OelhWTEkwbW1wTk5VVXlOM0lPa05yMk0zRHhxeWxxTVExYk1scHpWdTJqS183dWlaOWY1S3ZoOFpDeWJMUThtbXBDOEZnU0ROX2VqQzctUW80WFFlamZMSUxsaGVJ?oc=5",
+      "image": "assets/news/auto_44c049b0.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-25",
+      "media": "Exitosa Noticias",
+      "title": "Michelle Onetto: despiden de agencia a \"Ñengo\" tras presunto caso de bullying a Marina Gold",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObEl5Vnl4SjVhZUEtamJnTUFLaDVNVUstOHRlc1hvQmlCT0hFVTRES1lXZzVSOTVBVUxwMDRjUE1YSTNSY1FJRmFvVWI2YTlWRHlXdVpXOExQUTUwUEJZY3BYTFNVZS10Y2NMQjlRQjZQSTNCcWlWLUdXOGZLdlJLYVoxTVFWXzc4bUNEdFNFR2lSUkt6a0U0Nnh5RGlSNEE0LW5aYUZiWXBqQVczcl9FNWk2TFdyY0dqMXZqVVZHQUhBZlZNUm5MYg?oc=5",
+      "image": "assets/news/auto_89ceaecc.jpg",
+      "auto": true
+    },
     {
       "date": "2026-09-24",
       "media": "Infobae",
@@ -58,6 +82,66 @@
       "auto": true
     },
     {
+      "date": "2026-09-24",
+      "media": "Infobae",
+      "title": "Menor de 13 años teme volver al colegio tras recibir amenazas de compañero con antecedentes de agresión a otros alumnos",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOMkI1ZGY1a1hJb3FxeTlZNG9OaHJxdDNDN0RIZWxRTVFrbnJnRklNdEdWRGQ3WmxQRzl3NGVQb213c09RVUlJSHdwRi1RU3hKVENveEt3YzlHTWFEcFpBSUszVVRPOTBXMDU3aHJTcWpzODdTV2lFaVAxUG02LWlKVjZwd1laZU96Y3ZjU2R5SjZTZENXbEY0c0hKbnpTbFMzcWRkM0FKanNIWU1Mem4zYm5tYkxVVzBFb2tIMDU1OGRwclo1d0RxWS14NUg1WjAwSmoxdTVmQ3ZEMFhtRmctX0h6Sk00NXlIOHY1X2dtVjdhQdIBjAJBVV95cUxQenhfZUJaMnc1d05tVVJVWXkzWUg4amtQQ0pKWVNvVkVsdmNPVFExXzY4dkU5NFktNVFDVnZqa1FKaTJua2x4U3laaWF2d210WWVBcDVXUHlLdmRJQkNlZkRMREs2bVotLXhON2o2YkJxVWJ4dENrb0lRZTc2elJfQVNUNkxUS0w4bGxhdUFLUWh1Yld0UWlySF91QzNGakhmSTJhWWpKc050NzBRcktHa003dXFsdElUNE40ZlBtbTQtanVJRHY3MmZnbzRWdUt4WFVGdVdzVjNraFpMWHY5bEtRNUotWUZ2d3lzdF9fZjlOQXI2WUJaS3F3ZDJ4Q05JTjBMQ1hweFhaRmlT?oc=5",
+      "image": "assets/news/auto_9600e11c.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "El Comercio Perú",
+      "title": "Agencia de representación rompe vínculo con “Ñengo” Onetto tras acusaciones de bullying escolar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQMU81TEE0SVg3ZllwLXVsT1ltVWdQQ1hmM3NDakYwSlh2bWlaNWw4OVFoWlRLY1VYT3dnNFpVbzJKRUVJMzBYQk5Ocmh0Ql8tWlVmZGJLVFJaZ3lQYnFCNWU5SEhQVHlUSXdQNTVKcmtEaTVrNExHTE5YZWVmZjh2NlpFWnZKcjhxdzltekxTdEdFLVVwdUF5MFJjN3lrX0hOVkVFRmNlVHFfakdyT3VoSjNCZnRMSHR5NUlUTVZSbW82Tm9QMUI5aU5CMG9kaVNzRGg2NjlhYjdGY0hDTmxfRlhoTzBRQ2ZxdkowTnNhbzZOX2xsaXZlbklhWU5qM2dwU0N1UnQwcng5Tk9zd2p6Nw?oc=5",
+      "image": "assets/news/auto_f546a890.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "La República",
+      "title": "'Ñengo' Onetto es expulsada de su agencia de representación tras las acusaciones de bullying: “Rechazamos cualquier tipo de hostigamiento”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOVzNoT0xiMHBFdHIxYjFXeXZCWGxkSUxRb2w2MWNTVzVjMjhwbUM3dkVXVW5wVlNpeURBbFBlMm54SjZMYW9QMUptQzdSU2hrTFpxNnBIQ1JVZlNZYTV4MFJDODBiRUhkeFd4X05KVk4tS21DWlhELUFCUHE3NXhpcVZlaFY1RFQtNTllano2T0J1anZhdkoyZ2dzbElGSkJzVGREQjA4YjlJbWZ3Z3RFQ2xnV1hxWDFZZ2hsQ1pCVHFXMHVEYTVsOTRrbHYxdTZqbDZJbllpTGZtSVhMal9RRllSNkhrUE12a3NBckJXaFNPVW14d05aaXhYRHJlRW9kZkZzUFhNYm1qTDRreEtjSXlubXdEWm_SAZwCQVVfeXFMTmxwd1F1RTlXNEdsUms0RGdBYzA2NGxUZDFoanE5OXJNWXlkalBMRmxNcnoyeVpEbEt2TzY4eEJuUFJLRjJ0NWtJblhlRzhua2dMZ05qTVh4MFVaV3Jtb0o2TkpkdmZkeEJrQlRSbl9pMTh1SnZ4UTlGWG5WeVFsNnZtNTlwMzJxWThuTXd5S3o4a3JaODRfMzdhbXY2YXpwcDRMVTVxX2lGYVAzNVp0bUZ2ZEtJc2oyYVpjMF84YUlOYWNmQ3BTMFNlN2taTFdPRlhwMW5zQUI3akRocVBLTlI5ekJNT3hGLUtxVWpWVFNSMEFmSFE0eHJnUFd6ZjhLMjRRemtET1J2eXFBUWU2WGRQUTJKd0FSQWhTbW4?oc=5",
+      "image": "assets/news/auto_1777a9cd.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "La República",
+      "title": "Exalumna de Liceo Naval acusa a influencer 'Ñengo' Onetto de haberle hecho bullying escolar: “Me hacías la vida imposible”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQdDJpdnpBNVlWVTZteS1UclRBemtiaFZ1dFFLQUFCczNicVlaMDNzbXZrQjBnUVZoWkFpUVZ0ZlUzZzVIdHdfMm1Zb1NpUDhBUmd4TDJkRE1KTlg3bFdxMm5pRGJjVmpnbktxbzN2M2xBMWZnRW5TTmd6ck1SRUxwM1p0T3A4aWJOOWREX2JGYTVsQlZkZVlZb1JoRjVjVlZqMUQwU19tRlBZNHZNRXVQazZwVGFrWURjVWFjUkFxRWF0SmxINEhUdC1lOXFlZDRxcUhLazJWbHRPVl9hVm42bXVkNXlaN2VzcjVTSDBqNHVBeldQeWNOTmlhdHM3N2Nv0gGGAkFVX3lxTFBlUHZCWTNwcHZCR0Q4dDRnNDBYWlNiWXc2TnFXZmhCZ2xfWkpXZFdhWWpONlNQUU5lVHBILUNuX3c0TTAxamRfSkd2anhod2gzVTBOeVY3aUJsRWhzSjFOOHhDbEd6elJWRGxtZThpTFE4c1AxMDB2alNSaU9NSjdkNmVkeVR5Z01uTDl1ZF8wYTQxSmEwMWxiTlU2S0h6WEt6Ung5M04wR214UzNEdmFXSmljSDNBU1VFaU00UXNSdGJfQWRMVzF6RGtWdEU0X1VtR0VrRWFFdzNMdUhyWE9fR1JpRGUxZW9SWkk3TXlvX3duSWFTV1ZIS0hmUlBERnNYUEp1Vmc?oc=5",
+      "image": "assets/news/auto_437a8ba3.jpg",
+      "auto": true
+    },
+    {
+      "date": "2026-09-24",
+      "media": "Perú 21",
+      "title": "Marina Gold confronta versión de ‘Ñengo’ sobre bullying en el Liceo Naval: “Es la misma de hace siete años”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTFZaMUY1Z21IMnhqaktKYVozYzBUUGt2aDhySW1namVQNGJ2SXRHQTItb0t0Xy1SNW5vUGJYNHE5Y3U0WXE2RkdTTy1yY1ZnUEhBWHhDdFZVRmJuWkVXdHN1SW13Y0REUUVHdFJENXkwaDJEcVVHYUZOTW94aUd1QlRvYWV4TEZwdE5kd0F3dnV3XzZ5NFk4?oc=5",
+      "image": "assets/news/auto_49c91264.jpg",
+      "auto": true
+    },
+    {
       "date": "2026-09-23",
       "media": "Infobae",
       "title": "Actriz afirma que sufrió acoso en la escuela donde menor fue violado en grupo en Perú",
@@ -92,91 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObWN5Tl90V0VsT2g2d3Y1czI4XzRMOVlXTFZIQVc1TnlRVWZxN2RUejZBRl9MSW1Vd0FVR0hpTDNlYXNFUG9fOTg2ZXNHQ19uaG1zXzlqVG9Za29hcjNLbHE5Q01KanFiWEtKWmY3OW5BcFNnYzFJd28yUE0zVjMtTlZLc2JkOWx2OXpGMWRKcUlZaEpjUGltb1dnWG42dXpXS1ZzYjJEYzcyUk13TUowVjlUaldXWEVfZnVzT2xjVU9ZX3I0MXhVdVItSmwxOXVpa1dTdHdKM1Z1dHdi0gH3AUFVX3lxTE5zOEt6bkF2QnJhZTZ6OGUxS0Q0NVJqSU9FZ2N0R0NVMXloRGdzVXlHT1d0dVg1SDhmSmFlYXNwNU5tTmFETVdwb0RJaFgyTjhjbk1hZ0lYYnZxZnFmZnZVMTR6RXhNXzdmakhGUFgtNmVFTGduM2VqU05uTEI2NU1uSEh3em5RdFRNZUxVRC1hS1pOVW1hS2hycjFIVjAyN0RJUDhmemZQVkRKczY4bnF3VGpfa0M3WW1zdFNvc0RZckpEekRrQmhrNVExWmZhejRKb2R5cDFCUnV6U21aeDNybUtnaEVZckl3RW5wN1BYbWZodHFJNEk?oc=5",
       "image": "assets/news/auto_817c83b1.jpg",
       "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "ATV.pe",
-      "title": "Marina Gold tras video de 'Ñengo' negando bullying: \"Ese miedo que inculcaban en los estudiantes era real\"",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8wc3lCUHJUQVZwb01fNEZuLVdxVW41WW0yRXZWY3lPRENPZjJuVENFcGFQa2o2UkFOYWNleEZELTFIUEZETEpPcExFd1FBcGdpTFZNd3Y1bDd5b2F2Q3JHcENBSGZhc3h6N2NJOTNR?oc=5",
-      "image": "assets/news/auto_1968678c.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Diario Correo",
-      "title": "Lambayeque registra 490 casos de violencia escolar y 113 de bullying en lo que va del año",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNc3pKTHBHNWRIZU5ZMWU1OHVkcG51dW5IVnlWdzJqUnYtQjRDRW5oZWJoU0RzTXpyT2NLVnlXSGM2eFp3VlNxLUpON0JIWTlJT3BmTkI4QVVLeFB1QzBKYVFzUUUyV2ZxVzhub01CbjlucDhYRUE4S3lJOF81WTlDZloydEVqUEJkUkdvMVBQOWRaYWxkSTVhaENsOE5sM1RPSHdOb0JkZVZYbnJ6TGN3YkRDYlFFX2EtcFRKM3hTZkdQM2lFMWltYmRQSkxLb1E1Y1VkNDFRb2IzUXIzbFJqSTkyR1BfTTZiVW1jT9IB7AFBVV95cUxNc3pKTHBHNWRIZU5ZMWU1OHVkcG51dW5IVnlWdzJqUnYtQjRDRW5oZWJoU0RzTXpyT2NLVnlXSGM2eFp3VlNxLUpON0JIWTlJT3BmTkI4QVVLeFB1QzBKYVFzUUUyV2ZxVzhub01CbjlucDhYRUE4S3lJOF81WTlDZloydEVqUEJkUkdvMVBQOWRaYWxkSTVhaENsOE5sM1RPSHdOb0JkZVZYbnJ6TGN3YkRDYlFFX2EtcFRKM3hTZkdQM2lFMWltYmRQSkxLb1E1Y1VkNDFRb2IzUXIzbFJqSTkyR1BfTTZiVW1jTw?oc=5",
-      "image": "assets/news/auto_f8125c8b.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Expreso",
-      "title": "El colegio no termina en la puerta",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPc0NnbXFXcEEyM2JNLTRWVC1YaW80RWcycUNieVFta1JERFFLQV9Na0pBUDRJQk5PeHRoMThsaUlDR0JOc1hXSmJ1VlNYVnRKYUtoTllkODFKdVpWTV9fM1Y1R2N1ZXp6WUw3U01reWp5TG5FSzk1WFVFM28yQjJaa0QzQ2FGZXItVEczZmlJVFQ5Q2NrYVJudlp6endPVGNVZHV3?oc=5",
-      "image": "assets/news/auto_56ffeed4.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Infobae",
-      "title": "Michelle Onetto, ex Zaca TV, niega acusaciones de bullying a Marina Gold y otras alumnas de Liceo Naval",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxONUNUYWROa0JBSExuenhDQXVlWGpfMHh5ZDNwaS1GMk1CNkZIM2pvemswNkFDN3B4Q3dyRmhUQ0JYX1J5RGZ6Z0dGODc1MDNsWUFRVVp5WW91c0F5ZG5WYVVVZGxJV2FTcUliTVpVeFhlYnVkVzZ6TklrN2duN1ZmZnBDdkpNQkdjS3NOeW1ObVkwZzRWbnpsdDZHUXJibmR3a0JxZnlSTVhRUGljQ01fWDROWjdnZzc3MFo1c1ZmWHo2dWpjOHEtRVo4bHZKdFlubmxlUzVOTmJUM01oc09Jc3E2U29Ua0lR0gGDAkFVX3lxTE5MVnJFZGtOaTEzWWhZaURXVDk3cEVKUUJNU0NlcFBQcURieEljamh0N2JDeVFpVXhtdnFKOWF6aGVLNy1RWmw5X2JDX2s2NUs5UGtad2pIMjREOHhud1ZnQkJ2amlISDQwNU1EZ2V6WFlFcVd6Z3o2NmdsOEFrTWY3SG5XX0tmeHk3LXdXOGY4aTMtQ2NDS25MVk5nT2V1UmdqQmlocjJ3QUpLTUE2ZDNLTm9FRVdIaU55WkloTkJUZ2tORmpGMDZ2NHprZWwwRlp0OEZia2I4LXdhUWF2ZHZjM0NFczBhMDVUNFE2TVBUY2NFSkJ5UDFKQlREdzk5LUpWYVU?oc=5",
-      "image": "assets/news/auto_1bc346f7.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Infobae",
-      "title": "Marina Gold se quiebra al hablar de Michelle Onetto y reafirma bullying: “Me tiemblan las manos, así me sentía en el colegio”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQSjNXRWV0VWNrOVNDM2NITEVnMDNlZk9xSWRURHVTYUJBLUZ5aFV6dF9FM0xHejhybmI1bWl5NFBVRy1LeWZqOF9pSzlsdFk1RGdJQnRFa2QzcFVCYkZrZ3NwM2NEUDV3bkd0b2EzLXBjZXV2aWlFd3hsdFBlajdZZTdhTm03YVllY0tPRFU1b1lXWUlZeG5KaEQ3SnVDSXduMEtteURpSkE0Q2dLVjBMM3NyVUNBdWotLS0zclVfQWEwX0pzODItSUhHaDNvZVVHcldUM1hjSURCQTFwclNTcEpVZWVrcVRCcjBrR2pqOEF1aDlz0gGPAkFVX3lxTE9XbFQ5RUE1U29tbm5mTmV5NUstYjZlMjRxbHliVUI5RjNXdkRoVkcyRkw1WGJTYXFvUW1BRjJMZ2lUVE5TR0prZjJ3amFoNGZ5dm5ZcEdMT0prRHItM0tiVVBWb1pvMDJuQkVMdVhZMVR1bnBuRHppLUZTMi13Tm9zOXI2RWlySWxmRTBYY2ZIVVYzQ3lISm1pc0REM01RdHJPcFZPa1pmZTh0OHJYWGVLZnJYcnNZMWNxRzNGOUNFd3dVU3BxQkNyTWpTUUt4R3J4bWt5aDRCLVIyakZGMTFzbEItYXM4UGp2YVI3U1VBUWM4RmZrT3VYWkVlS2V6ZmhyRVJId09LRGNBZlhENWc?oc=5",
-      "image": "assets/news/auto_f169e565.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Infobae",
-      "title": "Bullying en Perú: cuándo deben intervenir la familia, la escuela y los servicios de salud ante un caso de acoso escolar",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxObkl2c0lZa3hnQ2lWbDQtVktyWHh0a29vNzZrdHk4b1VSSFktRjB1M210MzkxQVA4c0tySW5rNFp0WXNkbG9tOGdPc1Z6dFFIZzZYWFdfMkQ1VzJpdTFmXy1ZYmVrOUg4S2pIVkJjaGxCSlJHcjhRMnRLSjhfWFdaREUwV2V5OE9LWmF6SzV6UkYtZ2llcDlOUTJLaDhSdTY0QzhKOFphN3pHQzJLWW1VNUMzWURtVGxqYlZiV1M0ZHEtOU9iSS1TeWxjWU03S2RhaGpzOVBXZjlxd1pYa2RWcm1LZEZuTjRfYkFKSmFDVdIBigJBVV95cUxOVFU3WmhZYTd3TGljSGk5VmVtVE1KSXNyVFl3d2dFalBOUDhIMHNFZHBnU0l5ZG1aZDU4dklsSWk1Y3Y3TmNRd3NxSU1vOGEzR3ZxYjg4LXgxWWpNcTBjbXdrb3VSMUlEY1ZZMHlqV1RhU2ZhRFBvTlhCR1JZZVF1R3o1cmlkeWlOMkc3LW5leWFFQXRkeEIyc1ZENFdxalVlajRYTzJhaW0tbGRtMm40NHE3NTN0Z3VLRzlwRTJBTlhCMnl2YTZuX19NUE1oSk5ldC11VVFHZ3M2R2pmdmpSbTVJeDJiSDhNWDhrMlEwd3JoN2swbzItU1NDMkdTT0lLRTV5MnkxQnhSUQ?oc=5",
-      "image": "assets/news/auto_ecd5533e.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "La República",
-      "title": "Violencia en colegio de la PNP: madre es agredida por escolar que realizaría bullying a su hija en el Callao",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPNzI1ck5wX05ZMjJ5SjFHT0ZVYUJfX01mNmRoZW40SlpDZUE3MjN6RkV4LThqYnVJa3NJbUJzSUxPeXZYNkQ3VDdjbU13bVppU3ZGSS1sTWppREFPZUpRbDV4ZjhHeUNNU2l5bEkxVjdKbEhuR3A4WC0zdVB1VVhGZzNfbVFDbGgxTk1uNW5rX0xfUnlDU29GMl85c0o1Q3p2SlRLQ1FnbmhiVVJBN3gyWEhGY192SjQxRTR6TW9aUTNMczJNNi16eGRPMzQ5WUlBM2tNa1czaGZERENuUkp6dTZEYTFzdF9sMWZZckUza9IB9AFBVV95cUxNZUNUQlN4NXF2OWlXc3RUM3RXV1JFTERBTE8yTHcxQXVZdWQyekdQVzRNUTMtREEwaGdCUVRRRkdSZlZCRDUwVkxnQ2lfYmJQNFFQOUw1N0pUOGptUktYZW54LVZjY0hVdDhtYllKb2ZDVGkySUg1V1UwWl9WSHBTZ1hyQW9BVEZrb1IzTnY0Yl8zd2xXZmRBNTEzOG9FRzY1VTRRVlBnUk9tazBUVkJzNW5uY2NrV2VQOXJmcWlJMjhaM1hudEZYYUJIYzF5VGlnMVhqLTlRUVJJSy1MMXBrY1lpQ19fcEQwR29wQmp0N3VOOFNY?oc=5",
-      "image": "assets/news/auto_c7f67b0a.jpg",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-09-24T15:43:29.786484+00:00"
+  "last_auto_update": "2026-09-25T15:44:33.623732+00:00"
 }
