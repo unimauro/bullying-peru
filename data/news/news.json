@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-25",
+  "retrieval_date": "2026-09-26",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-26",
+      "media": "Infobae",
+      "title": "Marcas se desvinculan de colaboraciones con Michelle Onetto luego de acusaciones de bullying en Liceo Naval",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPOVgwQkIxRzBMZ1BsUFA0TmFKZ0lqSGJSbnJFbGlfMnJjalFLSzJScGtFV0NweW5KQnQtanBuNUFrN1p6VDhVRGZNd0NEcWNBWVBqTEN4M05FekxlOHk1RFo2eWdEblRWc2RHWFVXVjBjQXd1MU03NVFhRE4wVS15Nzc0R2lncElDZEQweklwbXN2LWlIRkp3dGc0Zlg3V0RQNUNyclhubk5hZ2oxUHk1bF9jZHk2Qy0xMVhuZ0pyUERCZThKZUNEb1NwZExHcXdCLWZKSXBBcnRpeHNYWHlPdDJn0gH8AUFVX3lxTFBJUGdhMDdyUnh3YVM1QkdibjhIMTBHamdGdkNQV01JUTBCVHQ3ckFkbTFldmRjME5pOGN1YVJDZlVmUnFkV3VlQlVUX3YwOG9teVBhZllQbmtYOF9ieVJBM0hZNE5yV0plaE95X2Z1NENEZ3JrX2FsSmZmTVNPQ1JVWlJrMjhiaG5Lc1duamVSRHp5bDh6cTNmNGFsX1c4aGd3WlB0NTRJRzdQaVhvM2tLM3NfV3FLZ2ZRY1RaLUFZVDEwSXF6ZFNNanNYb3BqLXk2LXE2YnlaeWZLUlpxOW9RNGxReWVMVHRwRWI3TkZHUjlIQmhWLUpac0RVUg?oc=5",
+      "image": "assets/news/auto_263e30d4.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-26",
+      "media": "Infobae",
+      "title": "Mario Hart defiende a Michelle Onetto y cuestiona a marcas que rompieron vínculos con ella: “¿Por qué cortar contratos por algo que pasó hace años?”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNclFfR3hTR3JjUzlmY01JdThkQklSUjZ5YllOVERCenFaS0Z1elVtM1B5LWxFTjVYRlc4ZGpaZk5KdGJlSEhuOUJaQ0t2RWZMNS1HbWd0OFBHeUMxZDdxQ0ZBTG0wWEo0UWVJSzlMRGJKMk42LXJkWEEwRFYxZWhlVkgzWmdNX01ZQzZHVHhta3Z5ZjM5c0NFU0xOUEdWYVlkN0p3YzBSN1Bvc0NyV1ExMDlpRzY5alhvUHk2V3FIelkxZk1CZ1ZYQkZPOEtlUU9hT1o4MXNMd3k5eXhBRWQwSE9QMWNfQmgyZ0dzV2JPQi1Hck5Ed1NIMXRnVzgtT0o5dmpvQ0JlSmtmbmVqeGNzRW9n0gGsAkFVX3lxTE1kVEMwLTY3aDdWVFBBQkttTFdfNm9KaExtQW1JSFJLMVVKRFNSbUZSbV9FbUhyWWlwNjBuQ0RBTi1UMWVsczJhNERWWEtBMkxBY0kxTktqTzhxNDU1WTNZUGZxVHpYZUw5elZFLWtMMTE3eE9lRVBmN09Ed0JFa2c1TmRUYjU3VFZQSngwdllsVHBzS1A5a0s1RG5Cejhjcmc1ajZZcU9wM3NKczU2b3IyX2c0SnRGSjZ2TmlCZEFlcEV5TG1wT1FORmFPTEFJbHREOFMyemtPZzhteEQtb25vZ29UN0tYWFBpLWg5NGV4NjRieThsd0RTMGpORjlnd21UeTl2ZWtMdm5QSjJqMEZ0a21lZzAxb3BjSzRsbktGeU5ReFYwaVN2YjZEZg?oc=5",
+      "image": "assets/news/auto_366ebf29.webp",
+      "auto": true
+    },
     {
       "date": "2026-09-25",
       "media": "Infobae",
@@ -34,6 +58,30 @@
       "auto": true
     },
     {
+      "date": "2026-09-25",
+      "media": "Gestión",
+      "title": "Congreso: Plantean separar definitivamente a escolares que cometan actos de violencia",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOODR3SkhNbTE1NGtqTGV5WkV4TUNYcUJhMjdXZW0wZmxzRUEtV29zZS1RTUt2NFdac0x2MU83eFRpbndTZ3V2dnZkRXVadF9SRExDdkpaN1JFX25rRXM0SWVjUFRQOWRTTlJGc0dtVWJTaVFiMnl1bHphUktGVnp5d2w4UFFudUQzRU5BdV9Nb2Q0bFc1dWM3U2x3b3ZpVldCLXJ2Z0J3UUdIMVpYN202R1Jia0kyLXJjckEzNU1TRE5ta3NC?oc=5",
+      "image": "assets/news/auto_4d951135.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-25",
+      "media": "La República",
+      "title": "‘Ñengo’ Onetto en la cuerda floja: conocida marca anuncia que no volverá a contratarla tras acusaciones de bullying en Liceo Naval",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPUnBUcU9oYWJaamdTTGVtbUVpbjFNSGFGbHluRWI1QXBaam5XVDJSSG56V2FJRElYV0RCU3VSU1lHLThscm5kUENYSHVGbms5a0phRzZLcHlqeXV3RWdHRGtzblRFSDZYVjg2UUFqM1dNMVdWNmlMd2JyRjV1VHhYaDljWlMwZl9CZGYxY2N5bWY0aU9tM3prUEIzdG9Ld1R4YXByd3ExcTN3NklILXY2NWNrdDdKOXFJUnlGOUw0U0VoRlhBVU03LUdsajQyUkhEODYwdEFWZTZtMzgtTEpWU1JTWXIyUnVnMTN2N3NuY3JpenBQU3M3UkJR0gH_AUFVX3lxTFBZRDMzWl9ubUlYd0dGUlhaQkVZdVA2TDIxOTlORkRvZ3lkaXFJZWdwX20yemowTFhLNW4xYnM3bVJZWFA3emFFeVhubFdESVBRdHE2dFJIM1dELTlJMEtyaHhKS1dDV09hZ0xJZnpDVW9NeEtfZFZxemlFZERIRnlyLWF2OERkd05fTGl5akstOEs4dlJETnZQSFo4eWlQdHVwbF81TDN0RFp5T2x6TzFZNjFiUUphM1ZRTVZGVll2NVpwVFNoRzZmeEZBbjNXdXBKRVlRazd6NFpmUElsRjllQmdjUW1XZzFtdFF4cHZzOFYwdnc3VDFCMy05dmhoZw?oc=5",
+      "image": "assets/news/auto_631f7b00.webp",
+      "auto": true
+    },
+    {
       "date": "2026-09-24",
       "media": "Infobae",
       "title": "“Un Fiscal en tu Colegio”: la estrategia del Ministerio Público para prevenir el bullying y otras formas de violencia escolar en Perú",
@@ -43,18 +91,6 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQajBCNDhQT0wwVnpFZnFCYURxODVuX3ZQT2ExeW9IQ3BhRjU2elZUYkdmemxFODNfak9tRVotUm1HZ1YzRkV4eUVkTTVQZENnWDRONU1odlhERkFLVmJBYThGTEd2bzQtSGFvVjRfdVJ0VFV0RjU1d2t1bU54eHNtclJ0WnpEQV90X2IyaFQtelpfMjhKR1hiNWxRcXlrRjFZN05Nam9WZ1gxQmpZUUFmWElYWlFEMndJelRkQlpZZnFkNFFCYUFqdWVDY0IxQmJmM3JKMTNJcmZscFRzOU1fRDVDSXc3NDR2bVluZmpyaDVwSUtRcFlfdkttM21JSTR30gGbAkFVX3lxTE9zSVloX2dSa1NNTTktQU10a2R2T1A3Wk1FeDVmZ3hYemNWWmxteUMxZ2VxMml3blJLMXB0d0tSYjJSQUxvZ3JJeG9CVWg5VXlhNEtEUXZqNXhuLTJ1ZzhUanFTMlpBVTI0ekt5VklPZ2VEblVBaDJ0TG80NkJPTy1ra2s1M3ZrRmFmM2JQLWJ5WDI1Mzdnc1VreFlOX2k4OTRyOXVyR0Z5OUF1QnFPb1ZvdVhWUmhpcndLQ2l5aE9MbU5PYUprNW5qdTd1U2s5dThOR1A2SkZYWTNRVlNyMU55MXF6N2RJLTByU0lLOEk0dmhHaDNXc1htckpvTlBmQTNzcW81dkh0VEV3OXNpVXppYy1FMGd3enhaeGs?oc=5",
       "image": "assets/news/auto_8fa53514.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "elcomercio.pe",
-      "title": "Alfredo Bryce Echenique y el bullying escolar: el doloroso callejón oscuro de la niñez que nunca pudo olvidar",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxOTTQwZlpYSDgzUkkwWDhUNlFKblFWMXpEWjZVaXdmVVlwMVNEeHJ4M294eGt4XzlNZTFuWGNMRzVhZklHVzk1VG4yT1JaQnhaenFNR25aRDQyRUF4Rmw3UGcydlUyQzU5MS00QVhaVVo4UnZUWmRfSE8tb2lqVVJvenR3WklDWkVNSVotYURxUVByRFF5enF0UGQxNFgzZGRITk5KV0tSMTUzV1hWajA1WGtqTEFscXhnTEl5M0hlQ3FFd2tOeVcwWFVydkVoQm5mQWNuTVlYSl96UXk0VWd5TDNpbUdoY3NpUFQ3RzBHOGdRTGFBQTMzdnFzTUNmVkdVT2liMVJTR1hONVNFcHZCS09vV242ZldvU0dXbDhCMDN5bGhQMDYxMNIBvAJBVV95cUxPZ3ZVc3dTc1pXNFlVX3VWenVFZkp1UVhsQnhDeDJscktfNEJMVnU0ZENXRklWN3BvMWkzN0d2bjM4QnVObC1wcFdDTFQ1WEd5emotZ3NtTHJlOTJxN0pLSzRYZGlMZVMtbGp4cWJ1aGpPeU9ZMUFka1B5UzhGYTU0VFlhVzVWSFJ0ZFJzZlc5ZWVuMzR3Znd0dzlIR1JaV1lFSkVONlVIUnlIMzIxMnJnX01sTi1vWkpiSm9uSEZ5N19PNjlJVDRTalpvY2lFTFEydzBfSEN0VkdTM1lUWmZtSXNHMzF2TXJRNS04a1R0RG9VNnlkc05IeHk1MUFVUUVWQTdLdzRGTkNYU1A0QU83YUNCMVBmRVEyTHVsdllLclkwR01EZmxkcXV2OUJvV01MbDRiSUVjX0tZNTU4?oc=5",
-      "image": "assets/news/auto_ebcce990.jpg",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTFZaMUY1Z21IMnhqaktKYVozYzBUUGt2aDhySW1namVQNGJ2SXRHQTItb0t0Xy1SNW5vUGJYNHE5Y3U0WXE2RkdTTy1yY1ZnUEhBWHhDdFZVRmJuWkVXdHN1SW13Y0REUUVHdFJENXkwaDJEcVVHYUZOTW94aUd1QlRvYWV4TEZwdE5kd0F3dnV3XzZ5NFk4?oc=5",
       "image": "assets/news/auto_49c91264.jpg",
       "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Infobae",
-      "title": "Actriz afirma que sufrió acoso en la escuela donde menor fue violado en grupo en Perú",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSEVxQzB2NU12N3BhbzF2UDlTdldXb3MtSEJFeEhScGU3ZDhlcUJkZm5tc2s1ZlZpaHc0enp5X0tleXFJdG44M3FKcXVkcW01WDRvakJZcTBRc2Rzd3ZZb0kxU0lsSmliQXVDSkE3eXN1TGVWTlQzcmtqblFhcWNmWlJCdTF6WmZqNzJyeGhFclRLdl9YWTBGZV9SZ2hXTGtjeDlJcDA2anFISEp3VWNReTgzcHhmbnB1eUlSZ2oyNGNMdlNuTnl4eTFoY0hPcVE3ZHM0Y9IB7wFBVV95cUxPRkxZbHhLR21NYkxVaWtfNlN2TloycFBuTkxuVGxKczViZFMyZHB6Tko3eUpUWkZQNXdReE5pR0pSUHBpcGtFdFo5dDBNUDRSdUdoUTJ4NTR2bFcwV2NjSS1DdmwxR1ZlOEpKdmxIVHR2V3dwcllBc1VVenRwamU5eW5PLWJob2VyT3ppcmZNb0ZUdkxncWJiZHdqNjRHLXFIc3FZY3hzOEJLaVp2b1ZfdmNpYmZHdHlHaEo2NzdpcnVVTUctQ1dubDE1WWdBWVlJYTFZblF0U05oWUNDelNROFNCMklPTlBzdF84NFB6NA?oc=5",
-      "image": "assets/news/auto_e6ff7088.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Gestión",
-      "title": "Violencia escolar: casi 20,000 denuncias al año, mientras recursos para prevención caen",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxONDFTWDRnc2tvS0I3NkJYWFBSWVFDc1NKQ0JyM05Ra1NhN2tRUWQtNXZURFkzcjBEenBGUFdKRXM5emFOSFE4YXhLZFA4VDZJZU5KS3VDaDVWR0hXdE5LQ0lkZ21PRF9pN3V5QkpWMXRrWlY3WjF4ODZwQkllejJXOU5ZemdxUURMb1I1YWlFRGwzNGlCX3QxeTNqVTNhRHM1cEt3YzVZdVNWd3VKUS1SaG1kUXJRUVVvd3ZaV1B6Z2pHbHItMHE1alBHUQ?oc=5",
-      "image": "assets/news/auto_5382696e.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-23",
-      "media": "Infobae",
-      "title": "Andrea Noriega, conductora de Zaca TV, desmiente denuncias de bullying en su contra: “Yo no soy esa persona”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxObWN5Tl90V0VsT2g2d3Y1czI4XzRMOVlXTFZIQVc1TnlRVWZxN2RUejZBRl9MSW1Vd0FVR0hpTDNlYXNFUG9fOTg2ZXNHQ19uaG1zXzlqVG9Za29hcjNLbHE5Q01KanFiWEtKWmY3OW5BcFNnYzFJd28yUE0zVjMtTlZLc2JkOWx2OXpGMWRKcUlZaEpjUGltb1dnWG42dXpXS1ZzYjJEYzcyUk13TUowVjlUaldXWEVfZnVzT2xjVU9ZX3I0MXhVdVItSmwxOXVpa1dTdHdKM1Z1dHdi0gH3AUFVX3lxTE5zOEt6bkF2QnJhZTZ6OGUxS0Q0NVJqSU9FZ2N0R0NVMXloRGdzVXlHT1d0dVg1SDhmSmFlYXNwNU5tTmFETVdwb0RJaFgyTjhjbk1hZ0lYYnZxZnFmZnZVMTR6RXhNXzdmakhGUFgtNmVFTGduM2VqU05uTEI2NU1uSEh3em5RdFRNZUxVRC1hS1pOVW1hS2hycjFIVjAyN0RJUDhmemZQVkRKczY4bnF3VGpfa0M3WW1zdFNvc0RZckpEekRrQmhrNVExWmZhejRKb2R5cDFCUnV6U21aeDNybUtnaEVZckl3RW5wN1BYbWZodHFJNEk?oc=5",
-      "image": "assets/news/auto_817c83b1.jpg",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-09-25T15:44:33.623732+00:00"
+  "last_auto_update": "2026-09-26T14:53:39.637084+00:00"
 }
