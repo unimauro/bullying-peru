@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-26",
+  "retrieval_date": "2026-09-27",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-27",
+      "media": "Diario Correo",
+      "title": "Reportan 530 casos de violencia escolar en La Libertad",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOM0R2TkdxdThTMHU1WEcta1hUaVJCV0Z0RENLeElpZ3pUWGFpNnQzUTZjN2N3VDZPWTlGaGN5Ump5ZFhzbVpWUzV5dkhBWEw5UUdTV1dWNS1UTjB4US10a2JwM0poaHBFaEFDS1NDQmtXRGdnb2lyNy15aVRxTmFDaDFpcExfYXVZQVU1Uk9XVDVVRmdVWlNicjhzY1NZUW5RM245eTFvSFdzOEZ0TG8yNDQtOTVQR3loZHB3R0t30gHSAUFVX3lxTE9lSHNGMDJPcWdOSFVvY19DVUtNOU1PdDJJcjJSNFdjQktPRWg5eVkzV3ZONEFtY3ItcjIxckdtZXZ5Q2lPYlhtT1lNSng0bjFQRWZTdUluWmVDRXkyQzVTXzY5b21oTlpOR2llanVqUkltdENBaEZoTGVaWVJXdmRZLWQxYjdiaFdWMkJ1RUNjZDRCYmZLQWJ5WGhlSngtZlJnclFQNzZ1Q2tvM0pfUU9MZG9wTmhrWThlOUNsbXN2T2hYQkQ4TE9DQUlYQV9JV1QzZw?oc=5",
+      "image": "assets/news/auto_6260d03f.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-27",
+      "media": "La República",
+      "title": "Francisca Aronsson confiesa que fue víctima de agresiones por Internet y exige medidas contra el bullying: “Me duele el nivel de violencia y crueldad”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQdm41eEFfejhsb05UYXh5Y3VVbjV4dlpfa2pkbDU2NTRMYWUwVGtDR0dOWGlEamtONU9JTVJqN0RZNnA5ZzVVeXRQbDIxbVU3clRIYVNLb012OVpyQnBjRXRpVDJGTEpqYi1QTDB2Umx3SkRsdFpTS3VnZ1ZGSXVNeHl6cVFDcXlRYlkwd1lEQlBaTUtkMTZDTHBMWTM5Rm8zRm13UDQ0R0I2c3ByalY5emRwX28zUGtHc2Vvd2s2VDVOSDcxeHdoem1fTGEzbEt6SVE4a0o5LUk4X191T0NzY0ZUSVlGQ2JaZmFNeGJLS3NOSnRWNmlwTEw2clBPMlZHckVhUVdSYkQ3Z1huWVg3MEtFc2d0TTFHblJyUHFIcTdoUjJYUEFBaNIBrgJBVV95cUxOWWhRTjZCU1lDSGVhLUFXVDU2Vy1pYnl3ZV9ZaU5UMXE5MHZrMjhjUTVuaVRkRWgzUlI0VjNnQTBCQmRFQWluTUlXZko2cVFndmlnOE1fakxFc1ZreU1wMVQ3dVp2XzdmUTJFR0ZLVTRIbUprSlRadXIwVTlLeG9hY0xKV2lGRFpYNWxQS256OW5DMU1YeWQ1UUxHODkxY1dyY0JmMUY5U0pjS0tWSkhXU2s0a2pIY1Uxcm9zWlVQVnpTUEN3d0poS2IzQzhoTzlxQURvNDhpcDV5bXhZa1BCUk9hUGxGanVfUFRCNzFTNks5Z2lRZ0k2bE93Z1pfcFFGUU5YQWhFSGZiU19kTF9sdENEV2JNYlBfc09SZEFHRWZMVWhzRE9sY2hkdmc2UQ?oc=5",
+      "image": "assets/news/auto_366034c5.webp",
+      "auto": true
+    },
     {
       "date": "2026-09-26",
       "media": "Infobae",
@@ -82,6 +106,18 @@
       "auto": true
     },
     {
+      "date": "2026-09-25",
+      "media": "Gestión",
+      "title": "Violencia escolar en Perú se evidencia cada vez más, pero Gobierno “quita” dinero para prevención",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxONDFTWDRnc2tvS0I3NkJYWFBSWVFDc1NKQ0JyM05Ra1NhN2tRUWQtNXZURFkzcjBEenBGUFdKRXM5emFOSFE4YXhLZFA4VDZJZU5KS3VDaDVWR0hXdE5LQ0lkZ21PRF9pN3V5QkpWMXRrWlY3WjF4ODZwQkllejJXOU5ZemdxUURMb1I1YWlFRGwzNGlCX3QxeTNqVTNhRHM1cEt3YzVZdVNWd3VKUS1SaG1kUXJRUVVvd3ZaV1B6Z2pHbHItMHE1alBHUQ?oc=5",
+      "image": "assets/news/auto_5382696e.webp",
+      "auto": true
+    },
+    {
       "date": "2026-09-24",
       "media": "Infobae",
       "title": "“Un Fiscal en tu Colegio”: la estrategia del Ministerio Público para prevenir el bullying y otras formas de violencia escolar en Perú",
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQMU81TEE0SVg3ZllwLXVsT1ltVWdQQ1hmM3NDakYwSlh2bWlaNWw4OVFoWlRLY1VYT3dnNFpVbzJKRUVJMzBYQk5Ocmh0Ql8tWlVmZGJLVFJaZ3lQYnFCNWU5SEhQVHlUSXdQNTVKcmtEaTVrNExHTE5YZWVmZjh2NlpFWnZKcjhxdzltekxTdEdFLVVwdUF5MFJjN3lrX0hOVkVFRmNlVHFfakdyT3VoSjNCZnRMSHR5NUlUTVZSbW82Tm9QMUI5aU5CMG9kaVNzRGg2NjlhYjdGY0hDTmxfRlhoTzBRQ2ZxdkowTnNhbzZOX2xsaXZlbklhWU5qM2dwU0N1UnQwcng5Tk9zd2p6Nw?oc=5",
       "image": "assets/news/auto_f546a890.jpg",
       "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "La República",
-      "title": "'Ñengo' Onetto es expulsada de su agencia de representación tras las acusaciones de bullying: “Rechazamos cualquier tipo de hostigamiento”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOVzNoT0xiMHBFdHIxYjFXeXZCWGxkSUxRb2w2MWNTVzVjMjhwbUM3dkVXVW5wVlNpeURBbFBlMm54SjZMYW9QMUptQzdSU2hrTFpxNnBIQ1JVZlNZYTV4MFJDODBiRUhkeFd4X05KVk4tS21DWlhELUFCUHE3NXhpcVZlaFY1RFQtNTllano2T0J1anZhdkoyZ2dzbElGSkJzVGREQjA4YjlJbWZ3Z3RFQ2xnV1hxWDFZZ2hsQ1pCVHFXMHVEYTVsOTRrbHYxdTZqbDZJbllpTGZtSVhMal9RRllSNkhrUE12a3NBckJXaFNPVW14d05aaXhYRHJlRW9kZkZzUFhNYm1qTDRreEtjSXlubXdEWm_SAZwCQVVfeXFMTmxwd1F1RTlXNEdsUms0RGdBYzA2NGxUZDFoanE5OXJNWXlkalBMRmxNcnoyeVpEbEt2TzY4eEJuUFJLRjJ0NWtJblhlRzhua2dMZ05qTVh4MFVaV3Jtb0o2TkpkdmZkeEJrQlRSbl9pMTh1SnZ4UTlGWG5WeVFsNnZtNTlwMzJxWThuTXd5S3o4a3JaODRfMzdhbXY2YXpwcDRMVTVxX2lGYVAzNVp0bUZ2ZEtJc2oyYVpjMF84YUlOYWNmQ3BTMFNlN2taTFdPRlhwMW5zQUI3akRocVBLTlI5ekJNT3hGLUtxVWpWVFNSMEFmSFE0eHJnUFd6ZjhLMjRRemtET1J2eXFBUWU2WGRQUTJKd0FSQWhTbW4?oc=5",
-      "image": "assets/news/auto_1777a9cd.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "La República",
-      "title": "Exalumna de Liceo Naval acusa a influencer 'Ñengo' Onetto de haberle hecho bullying escolar: “Me hacías la vida imposible”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQdDJpdnpBNVlWVTZteS1UclRBemtiaFZ1dFFLQUFCczNicVlaMDNzbXZrQjBnUVZoWkFpUVZ0ZlUzZzVIdHdfMm1Zb1NpUDhBUmd4TDJkRE1KTlg3bFdxMm5pRGJjVmpnbktxbzN2M2xBMWZnRW5TTmd6ck1SRUxwM1p0T3A4aWJOOWREX2JGYTVsQlZkZVlZb1JoRjVjVlZqMUQwU19tRlBZNHZNRXVQazZwVGFrWURjVWFjUkFxRWF0SmxINEhUdC1lOXFlZDRxcUhLazJWbHRPVl9hVm42bXVkNXlaN2VzcjVTSDBqNHVBeldQeWNOTmlhdHM3N2Nv0gGGAkFVX3lxTFBlUHZCWTNwcHZCR0Q4dDRnNDBYWlNiWXc2TnFXZmhCZ2xfWkpXZFdhWWpONlNQUU5lVHBILUNuX3c0TTAxamRfSkd2anhod2gzVTBOeVY3aUJsRWhzSjFOOHhDbEd6elJWRGxtZThpTFE4c1AxMDB2alNSaU9NSjdkNmVkeVR5Z01uTDl1ZF8wYTQxSmEwMWxiTlU2S0h6WEt6Ung5M04wR214UzNEdmFXSmljSDNBU1VFaU00UXNSdGJfQWRMVzF6RGtWdEU0X1VtR0VrRWFFdzNMdUhyWE9fR1JpRGUxZW9SWkk3TXlvX3duSWFTV1ZIS0hmUlBERnNYUEp1Vmc?oc=5",
-      "image": "assets/news/auto_437a8ba3.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "Perú 21",
-      "title": "Marina Gold confronta versión de ‘Ñengo’ sobre bullying en el Liceo Naval: “Es la misma de hace siete años”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTFZaMUY1Z21IMnhqaktKYVozYzBUUGt2aDhySW1namVQNGJ2SXRHQTItb0t0Xy1SNW5vUGJYNHE5Y3U0WXE2RkdTTy1yY1ZnUEhBWHhDdFZVRmJuWkVXdHN1SW13Y0REUUVHdFJENXkwaDJEcVVHYUZOTW94aUd1QlRvYWV4TEZwdE5kd0F3dnV3XzZ5NFk4?oc=5",
-      "image": "assets/news/auto_49c91264.jpg",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-09-26T14:53:39.637084+00:00"
+  "last_auto_update": "2026-09-27T15:32:26.747346+00:00"
 }
