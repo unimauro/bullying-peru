@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-27",
+  "retrieval_date": "2026-09-28",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-28",
+      "media": "Diario Correo",
+      "title": "Violencia escolar en Perú: cinco claves para prevenir el bullying desde la familia y escuela",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQYnBPVzdhdTMwNDdONHNSS3p1ZlJ4MUpsSVctQTNpRGpjbi15T3l2NGJybFQ4S1laQ3J4M1RpSHJrV011b2ItREd3SnRqR0E1aHJ5Zm9XUG8zcjlScHkwTW12VlFJX2RPTERmb0sxVHIxaXV5SF9FVUNKVEh0dGxVU01pdE8xSml2c1BBVUY0WmlmMmhocmlMTWNUbWNyOVZicUd5aFF6TTFvMV81dnJkR2c2dmsyWWpTTUVjRDYwSFV5ZmY1WlFPMdIB3AFBVV95cUxNbVM1cF9rM3hLQVNpdjVPSFdSRG9fcDg1Q1ZDc05LSXNpU0hMbUtjQTY3eVZLb05tMl9PRnZWRkswaWgtajE1c2dEM1lCd2oxM1JLV1RWYTFaR2FzdXZfaFFEa1duRU8tVTh0cVNrNG5FQjRieFNBeklpN2lqOE9KZHNMeGY0QVNOTzZ5cHhNb1lJTVdTOW1ock12TlU4cUJTYXBsbFBJQm0wbk45cnRCZFF4RTN4RjhJWGgwMGpIcW1BaEdZNnlEbUE2d3loZURnd2FPbXBIMFhDZVot?oc=5",
+      "image": "assets/news/auto_28df8f75.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-28",
+      "media": "Infobae",
+      "title": "Giacomo Benavides deja de seguir a Michelle Onetto tras polémica por acusaciones de bullying",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZW5CR0RMM0dBN01lYlRuVGdzblVMT1RFSDl5aVNnTlZMaHRUa28tclFDVUJSTWNUNGprMmRUejVFQVE0NXhBdmZ4VFctWDlwQi1WZFNFaGRQMWpkQ1JmbU5lRUxuamVHR2dWMVJKM1hCb2VqNF9vWGw5VmUwdllKbUpkQzl3bVFhZlFBWUN4bXZVTVZCaVIwSE5hd1R5eUp1RklkMXZWWnZVNmd1TjZpWTctblVpR3NvSEd1dFpMemtVVmxRZXhpMG1ybXFaQdIB6AFBVV95cUxQcGNDSXVWc0tTcGR0czNWRjZyYXZubk8yYVprZ0dBd0ZId0hpeGJqRDdtc0tvTTYwN0dVeWY1Ujl5YXpTQmpMWG1DRnUwaVQ5ck14ZzhQY1ZuZFQtTkdrLUMwOU5zM0w5M2h0bndWV01vVk5ac25zSDBDUF9NQlJKeEpZQXdWV2liT2liXzdXS0RMZ1ZHWHRqR0oxM1VwbDd5c0E2Y2NHMTRsZXJiSTg2TDZJT3JUWnFueFZfZHZOVGlITUJCb1k1SG04VWtpbkgzN1A0WUF1MkhKRDVkZVNBNlYyMkRVRE5j?oc=5",
+      "image": "assets/news/auto_8a502d56.webp",
+      "auto": true
+    },
     {
       "date": "2026-09-27",
       "media": "Diario Correo",
@@ -31,6 +55,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQdm41eEFfejhsb05UYXh5Y3VVbjV4dlpfa2pkbDU2NTRMYWUwVGtDR0dOWGlEamtONU9JTVJqN0RZNnA5ZzVVeXRQbDIxbVU3clRIYVNLb012OVpyQnBjRXRpVDJGTEpqYi1QTDB2Umx3SkRsdFpTS3VnZ1ZGSXVNeHl6cVFDcXlRYlkwd1lEQlBaTUtkMTZDTHBMWTM5Rm8zRm13UDQ0R0I2c3ByalY5emRwX28zUGtHc2Vvd2s2VDVOSDcxeHdoem1fTGEzbEt6SVE4a0o5LUk4X191T0NzY0ZUSVlGQ2JaZmFNeGJLS3NOSnRWNmlwTEw2clBPMlZHckVhUVdSYkQ3Z1huWVg3MEtFc2d0TTFHblJyUHFIcTdoUjJYUEFBaNIBrgJBVV95cUxOWWhRTjZCU1lDSGVhLUFXVDU2Vy1pYnl3ZV9ZaU5UMXE5MHZrMjhjUTVuaVRkRWgzUlI0VjNnQTBCQmRFQWluTUlXZko2cVFndmlnOE1fakxFc1ZreU1wMVQ3dVp2XzdmUTJFR0ZLVTRIbUprSlRadXIwVTlLeG9hY0xKV2lGRFpYNWxQS256OW5DMU1YeWQ1UUxHODkxY1dyY0JmMUY5U0pjS0tWSkhXU2s0a2pIY1Uxcm9zWlVQVnpTUEN3d0poS2IzQzhoTzlxQURvNDhpcDV5bXhZa1BCUk9hUGxGanVfUFRCNzFTNks5Z2lRZ0k2bE93Z1pfcFFGUU5YQWhFSGZiU19kTF9sdENEV2JNYlBfc09SZEFHRWZMVWhzRE9sY2hkdmc2UQ?oc=5",
       "image": "assets/news/auto_366034c5.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-27",
+      "media": "Infobae",
+      "title": "Michelle Onetto reaparece y hace mea culpa tras acusaciones de bullying en su etapa escolar: “Lo siento sinceramente”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPc1RaMUxHc1dNOS1UZFRRdThXUUFoaVFudTQtalgybjBaVVgzWDFoQkgwYjd5bF9aRmFMU3RBQ2M0RG10YnZuQVRXaG1uWHpzTlpIM19IM3hnYWpxeFdMalpud1ZXN05zWkoyZ3ZWM0cyTVM1TkZWR3YxWXg4aWI1cUNVMWVGbEp1UEZldGNuNjJMZkk0ZDN6dGZaMmdHZzhPSmhFLV91cHZVSzJ3YXlNRHpVVWZPTGc1RW1XbHFxRTJrQzNCZUI0V1dWdWx0MEgycnMzLTEwdVN0VGVTNWsweDNwZHg0NVZtY3M40gGGAkFVX3lxTE9McHVPa0xYRkVXVXhieEY1NjB3Q2ZjR196WmV3RlBNQVNlRHlhMC0wcFNSSHZjejU1NWdwd3hnRG5ycThzLXpBMjhTUHd0MTlwUmJyUUgxWXpXVXctS0Jtc05Yd1dSc1VDbmRNWnpkV2lUaXZMaWdOOEgxM3h0b09PMmZLaFdxZ2FtX2RvWUFybHpyNkRTTkJYaDMtRTBlTklxM1U4MnV3VGVYeDhKOGUyWWNiUUktN1Q2bkhvN2dMcW9YbHVGd1FVNVdfcEQyQXFFZGhwcXBLQUN0akZ2Ykp5N2NKcjBQV3Rrd2swSkdPbHVCSk5IY2Myaml3Zk9WQVc0bnZNWFE?oc=5",
+      "image": "assets/news/auto_8a6d8999.webp",
       "auto": true
     },
     {
@@ -118,6 +154,18 @@
       "auto": true
     },
     {
+      "date": "2026-09-25",
+      "media": "La República",
+      "title": "Exalumna de Liceo Naval acusa a influencer 'Ñengo' Onetto de haberle hecho bullying y conmueve con su testimonio: “Me hacías la vida imposible”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQdDJpdnpBNVlWVTZteS1UclRBemtiaFZ1dFFLQUFCczNicVlaMDNzbXZrQjBnUVZoWkFpUVZ0ZlUzZzVIdHdfMm1Zb1NpUDhBUmd4TDJkRE1KTlg3bFdxMm5pRGJjVmpnbktxbzN2M2xBMWZnRW5TTmd6ck1SRUxwM1p0T3A4aWJOOWREX2JGYTVsQlZkZVlZb1JoRjVjVlZqMUQwU19tRlBZNHZNRXVQazZwVGFrWURjVWFjUkFxRWF0SmxINEhUdC1lOXFlZDRxcUhLazJWbHRPVl9hVm42bXVkNXlaN2VzcjVTSDBqNHVBeldQeWNOTmlhdHM3N2Nv0gGGAkFVX3lxTFBlUHZCWTNwcHZCR0Q4dDRnNDBYWlNiWXc2TnFXZmhCZ2xfWkpXZFdhWWpONlNQUU5lVHBILUNuX3c0TTAxamRfSkd2anhod2gzVTBOeVY3aUJsRWhzSjFOOHhDbEd6elJWRGxtZThpTFE4c1AxMDB2alNSaU9NSjdkNmVkeVR5Z01uTDl1ZF8wYTQxSmEwMWxiTlU2S0h6WEt6Ung5M04wR214UzNEdmFXSmljSDNBU1VFaU00UXNSdGJfQWRMVzF6RGtWdEU0X1VtR0VrRWFFdzNMdUhyWE9fR1JpRGUxZW9SWkk3TXlvX3duSWFTV1ZIS0hmUlBERnNYUEp1Vmc?oc=5",
+      "image": "assets/news/auto_437a8ba3.webp",
+      "auto": true
+    },
+    {
       "date": "2026-09-24",
       "media": "Infobae",
       "title": "“Un Fiscal en tu Colegio”: la estrategia del Ministerio Público para prevenir el bullying y otras formas de violencia escolar en Perú",
@@ -128,55 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQajBCNDhQT0wwVnpFZnFCYURxODVuX3ZQT2ExeW9IQ3BhRjU2elZUYkdmemxFODNfak9tRVotUm1HZ1YzRkV4eUVkTTVQZENnWDRONU1odlhERkFLVmJBYThGTEd2bzQtSGFvVjRfdVJ0VFV0RjU1d2t1bU54eHNtclJ0WnpEQV90X2IyaFQtelpfMjhKR1hiNWxRcXlrRjFZN05Nam9WZ1gxQmpZUUFmWElYWlFEMndJelRkQlpZZnFkNFFCYUFqdWVDY0IxQmJmM3JKMTNJcmZscFRzOU1fRDVDSXc3NDR2bVluZmpyaDVwSUtRcFlfdkttM21JSTR30gGbAkFVX3lxTE9zSVloX2dSa1NNTTktQU10a2R2T1A3Wk1FeDVmZ3hYemNWWmxteUMxZ2VxMml3blJLMXB0d0tSYjJSQUxvZ3JJeG9CVWg5VXlhNEtEUXZqNXhuLTJ1ZzhUanFTMlpBVTI0ekt5VklPZ2VEblVBaDJ0TG80NkJPTy1ra2s1M3ZrRmFmM2JQLWJ5WDI1Mzdnc1VreFlOX2k4OTRyOXVyR0Z5OUF1QnFPb1ZvdVhWUmhpcndLQ2l5aE9MbU5PYUprNW5qdTd1U2s5dThOR1A2SkZYWTNRVlNyMU55MXF6N2RJLTByU0lLOEk0dmhHaDNXc1htckpvTlBmQTNzcW81dkh0VEV3OXNpVXppYy1FMGd3enhaeGs?oc=5",
       "image": "assets/news/auto_8fa53514.jpg",
       "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "Infobae",
-      "title": "Abuso escolar: qué deben hacer los padres cuando descubren que su hijo agrede a otros y cómo detener esta conducta",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxObEozWDFYYTQ5d2VyLWxYcjhFcUYxSmdKbjVaUllramhxcnlMU2x0eThaMnJrU1dTN091RmV6VXd2MTI1bmMzR3NnR1FDcjZyTDljSDlydEYwVnZpT2t0dDhkQUU3VjIwU1pOV3pfUHRUM3lqVjhwb25Hckh6aVJJUW5vdHVfS3BGNFdldlpFWHhrdGZlRnNqclpQSFRVNGxIZ0kzNDNLSHp5MTNRdU9WdGszRllnVENhMzZGVG4wNUNwUFdXRFgyVFlrZ0haX2pScS1TRG04dUM4dFpWX01vVXVKemdPSy1HaVHSAYQCQVVfeXFMUGZoMzJodHhnVXNycGplZGNXaERFUk1mWWlKdkFEUTNOSkh2LTJ5NXEycGJnSXpiLWRoZ19ud3I3ZEFDNmQ3VWtYcmc3U05JTUJpdHBEUTdjV1pTQnpMc2VJaUVSRXJ4WllKZmEzZHZsNGI2SU82RkNjU3RsQWpSWlBMMTlGTmRHYlE3a1V4cjFDUElOSHRDd1VXUy1NZENiQktYRm9jSUFuQVJpZ0YzeXoyWGRSbmtlcUtVZF9jeHJiZVBkbndKU1h6NnJBWFQ2TFF0YWxtOGtIeFNSU04xYVFLRUI5WldsaXZGXy1wNkN5eVRCeEl2UnhfRXFvNFlUR1NucnA?oc=5",
-      "image": "assets/news/auto_8ba58469.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "Infobae",
-      "title": "Mónica Torres, Nelly Rossinelli y más influencers se unen contra el bullying: el video que nació tras el escándalo del Liceo Naval",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOaG9tZWR4WWNObHdacE53MUR4UDI4N1ZKalhnWk9XLW1nX1BnMnVNaDdydkYwRnpkZ3M3SHdPeWU0SC00WGFqOFc5dWFsT3c2dkZFZ2lMUmUxQWh6WTJYbUhMcFZEMXl0SU5qSGRJc0tCV3RxVHNNbTBVcGR6SVA5SVJQRkp4bEctNHIwVFlwdWQ1djJQcF9TZXAzUjB5QkF2V193RlBaNjVoNnFHOWJXNXdCUXdNbUZRNlhXTE9CMFpNUDQxMFJOVVF5MGgwTE5DcFVBVXIzNE5BdkttSzZDTzY2T2dxZWZDck15bVNmZHpWZ1Z1NVJybGd2T0pQZ9IBmAJBVV95cUxNOFZQVHQ0NmN4LWZKWThBZGNOc2JoVDJSRFAtS2tvYmYzVlZ5MjZLVktBdm1UeWNUYTVxalJOQy1SRGN2QXJpeXVXZVc5cDdRcENJeUtWVVZqUkNhb1VTT1dBNEU1N1JnX0xJdUhxNjdKOXhzLWREVWJwQWt4SnJVV2VsbjdhVk9iTnkyajYzanZNVDBmV0c2R3ltYXhiUFgtV0RZeE10b2lWSTFQcjhZTVh5VnpZajhGZTBhdlNCSHAxNDRZN3BkZ3FNZW1rNWZnVUx0b25tSW5xeUVBNWhONlAwd1lFMldSZ0JEWXhNSHg1STY4X0ktMTVSOHBpeklEWnB2UVBfZUVnRlFtb2Rmc1BOOWJkZlR4?oc=5",
-      "image": "assets/news/auto_40ac72e2.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "Infobae",
-      "title": "Menor de 13 años teme volver al colegio tras recibir amenazas de compañero con antecedentes de agresión a otros alumnos",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOMkI1ZGY1a1hJb3FxeTlZNG9OaHJxdDNDN0RIZWxRTVFrbnJnRklNdEdWRGQ3WmxQRzl3NGVQb213c09RVUlJSHdwRi1RU3hKVENveEt3YzlHTWFEcFpBSUszVVRPOTBXMDU3aHJTcWpzODdTV2lFaVAxUG02LWlKVjZwd1laZU96Y3ZjU2R5SjZTZENXbEY0c0hKbnpTbFMzcWRkM0FKanNIWU1Mem4zYm5tYkxVVzBFb2tIMDU1OGRwclo1d0RxWS14NUg1WjAwSmoxdTVmQ3ZEMFhtRmctX0h6Sk00NXlIOHY1X2dtVjdhQdIBjAJBVV95cUxQenhfZUJaMnc1d05tVVJVWXkzWUg4amtQQ0pKWVNvVkVsdmNPVFExXzY4dkU5NFktNVFDVnZqa1FKaTJua2x4U3laaWF2d210WWVBcDVXUHlLdmRJQkNlZkRMREs2bVotLXhON2o2YkJxVWJ4dENrb0lRZTc2elJfQVNUNkxUS0w4bGxhdUFLUWh1Yld0UWlySF91QzNGakhmSTJhWWpKc050NzBRcktHa003dXFsdElUNE40ZlBtbTQtanVJRHY3MmZnbzRWdUt4WFVGdVdzVjNraFpMWHY5bEtRNUotWUZ2d3lzdF9fZjlOQXI2WUJaS3F3ZDJ4Q05JTjBMQ1hweFhaRmlT?oc=5",
-      "image": "assets/news/auto_9600e11c.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-24",
-      "media": "El Comercio Perú",
-      "title": "Agencia de representación rompe vínculo con “Ñengo” Onetto tras acusaciones de bullying escolar",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQMU81TEE0SVg3ZllwLXVsT1ltVWdQQ1hmM3NDakYwSlh2bWlaNWw4OVFoWlRLY1VYT3dnNFpVbzJKRUVJMzBYQk5Ocmh0Ql8tWlVmZGJLVFJaZ3lQYnFCNWU5SEhQVHlUSXdQNTVKcmtEaTVrNExHTE5YZWVmZjh2NlpFWnZKcjhxdzltekxTdEdFLVVwdUF5MFJjN3lrX0hOVkVFRmNlVHFfakdyT3VoSjNCZnRMSHR5NUlUTVZSbW82Tm9QMUI5aU5CMG9kaVNzRGg2NjlhYjdGY0hDTmxfRlhoTzBRQ2ZxdkowTnNhbzZOX2xsaXZlbklhWU5qM2dwU0N1UnQwcng5Tk9zd2p6Nw?oc=5",
-      "image": "assets/news/auto_f546a890.jpg",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-09-27T15:32:26.747346+00:00"
+  "last_auto_update": "2026-09-28T18:30:49.444993+00:00"
 }
