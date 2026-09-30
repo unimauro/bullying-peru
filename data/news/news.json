@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-09-29",
+  "retrieval_date": "2026-09-30",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-09-30",
+      "media": "La República",
+      "title": "Tumbes: Corte sensibiliza a escolares sobre prevención de la violencia",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNNUowT0N6aTQzdW1Rc2hDMGVST3VJcXgzZ3k5U1pWakgzbUhkUy1LR1NhNlRpRUxTRGRfTHpRRTVDT0ZkU1JDcTQtdVlqcW1YTGlnVHBSRUFfeE45SFc2WGc0RVRvTXZTUHNZTXZycE5HLTU4bTBRSjl1dlFpQ3pzYmtYMXQ1T3J5S28yVWducmpKdldyS2c3QW5aSDQwNVhPLU1rMWJVNGt3S0R4Y1hTOWFlWTVkSXp1bXZnZUZn0gHDAUFVX3lxTE1BMUJydUpleEtkQ01DVUFVNExMcDlEZVdqTHBTU05PMU90TTNFMkdXcEdXUDVwRXNpX1JZSjQ5M0U4dEY1aGtZQkVWdEQwNXNNay1qSHY5R002SHJYVVFBeFdnbE1Ranl1cEFkTWFHbTY1dVJuV3F4WlVWN2pJQnRkdGZ3QVFyYlJONEk5aTFKYzRWcE1kZTZSa0JTZXB3VlQ3VjJwMkRHNWhmaXowUEVXd1I3VzQwa3RpSlBORzRVRzhwbw?oc=5",
+      "image": "assets/news/auto_3b5a30f6.webp",
+      "auto": true
+    },
     {
       "date": "2026-09-29",
       "media": "Infobae",
@@ -67,6 +79,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPbmpnNTN3X005RmNzLU1nSjN6UEdCUnZDcGZwNkl6RElfTjFRUEZINENBc3R4OEdNQndWRllfd0RocHRrRTF6SENzdTZRMnFTaFZyVnVOWUVJTG83RjdtSF9YdFpTeExQMThVa1ZMTmk0RF9oSmpNV3BqYmdvZkJNU1hDd0ZCMmpGaUZ6VUhMNG1vQlcwSXExR0NfS2JxSlQ2LTBnTXJpd2d0TVEwd2kzdzRxY3EtMk1VQ1B0VXN6WkJlcWZmdlFDWDBzR3dlYk5nQnlGdk5qTC1EcUNDOUd1dkV5MkFDMS03bHZSYVFZVG9ubVp5eXdTSU50YnphdUFya3VfREFzaVNiTVI0Yk1v0gGUAkFVX3lxTE5Vb2phbmdnd2M1UnZ0b3E4bGFVWEtDVjdHamVOUl9xbHl6U291Mk05Q05aVmdBYWtNRjFsSElQZDk3VHlybkc0dVdXZm5nbk9ZY3hCTHhwRnJ5cndUNHBYTEdZcG51cm1FcGw1ekF1ZkdKVWdhTjBPVkczVUJwdnQxVzcyYkFMc3lfc0lMdVVBYnZmbk81WDh2TmVHeUVNeXZlM0dfNnBfRUwyTUdId3NLZkN3bFBHOWtsbTV1RXFCUDJTWUg5T1lUTl9qTzRRelVDeFkxQUlkVUllUDEwdUhXUU9vUFhjV2VOb3V2LWUyOENDNW5ZWV9Jb2xkRUJXcGhyNjl0Y0xVRGs2X01zeWd6eHZaUg?oc=5",
       "image": "assets/news/auto_cf4913f2.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-28",
+      "media": "La República",
+      "title": "Acoso en las aulas: pantallas, redes y el nuevo rostro del bullying escolar en el mundo",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQjlrRllwanU4OXpfc3d1R19zZzlHYjZ4cDN3dkFXcGZKazdUS1VNVGh6YlgxT3NIMTRDOTZPYi1kdDhEbGNNMDJDNm4yLTR2MFpQOVdTWnJNbjlrcGZTVVZ4c1BfYUkzaXJIX3FmRDhHQ0xmcGFRLUZwTHBRYzU4d29URTJucGhpVG1vc1ViM01IbkNMUGsybUxZaGRfYnpRRzY1R2RTWmxjWUdlelk1a2NDTE5BSlRZYkNfVDNlMW8wN3VLdWo5UThzajFHZ9IB0wFBVV95cUxOeWlXZEgyT0xLVEdQeEwtRFZ2Y0kxdWI2YmszLW9nMTlPVXdBUGdnNW5zMkJEWW5RYWVTQ0ZrZ1BGUURtSnVoT2VnZkc3YkJTeEJmWWtCRHVkbURoQ2FRR3pjVmpLLUR2b0FaT2Ztbk1qb05uMEt4MkhxU1hiVWo0eDdhLWt3ZWg1T1BEZ1BaLW82MHJKTk9NNEJzV0RpX2tNZUV1cUwxd3FxVXZHZzlJVUF0eXJ0M2E0ekZrZVV5Z2R6UFJYYzVEd1ktVlBQNjNZSFQw?oc=5",
+      "image": "assets/news/auto_59650cba.webp",
       "auto": true
     },
     {
@@ -142,41 +166,17 @@
       "auto": true
     },
     {
-      "date": "2026-09-25",
-      "media": "Infobae",
-      "title": "Michelle Onetto es separada de su agencia tras acusaciones de bullying: “Rechazamos cualquier hostigamiento, violencia o maltrato”",
+      "date": "2026-09-26",
+      "media": "La República",
+      "title": "¡Se le van las marcas! Reconocida empresa anuncia que no volverá a contratar a ‘Ñengo’ Onetto tras acusaciones de bullying",
       "department": "Nacional",
       "topic": "violencia_escolar",
       "summary": "",
       "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOekhiby13ZWFTem1hZmJ0VEpnRVV3MlBmdG9XbWg3MXg1eENETzlZM3VrV2NCdU1mNVZoWm41clJwVGJwU1lrWG9nYnlKWVhGQ2g0Vzd1UktlS29EaUk1eG1mdXV6bXdWYUViNllHS3E0SC1QdHdfSmxTdGQwLWZqMVpGNnh0RExLVFdvUXNZUGdYb3duZ0xJTVJvTVJEMWpFQXJuYVE1MTR1MUszbUU2cmxudEdTaFVKSV9kdnB2WHNmRk94WDNRTHBkNHh0TExLRjFoWkJsZExSdm11NkdtN0JvWk1FMGdRYTNuNmFsTVhFRnhzNUJDeUN3eGc4WW9GS04zQ3RzakgxZ21yYjFzcldWdHDSAa8CQVVfeXFMUHM2X2xzc0NNOExKNXlvWXpEczF1OU9lLUQ0anIwMUx3a2Rtcmp0VjRTdGRCNHF4bU91YndDNm11WE1ReGR3ellLbkUxNFhDak9YU0xZNDN0TVBFZDRud3VHNVVZQktBVUc3cFdQTmRKbFd2dDluZkxVelZfd1RVTWg3T1pLYlFtdUdET1VTSmFyM3Y4WUNWYy1ITmNRR2t3LWZwN19EMGNoeFRpcUNXazcwV0N4ZFprT2R3ZHhtRC1WUGhTeHFWcU1hWDVrbmZIOG1OelhWTEkwbW1wTk5VVXlOM0lPa05yMk0zRHhxeWxxTVExYk1scHpWdTJqS183dWlaOWY1S3ZoOFpDeWJMUThtbXBDOEZnU0ROX2VqQzctUW80WFFlamZMSUxsaGVJ?oc=5",
-      "image": "assets/news/auto_44c049b0.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-25",
-      "media": "Exitosa Noticias",
-      "title": "Michelle Onetto: despiden de agencia a \"Ñengo\" tras presunto caso de bullying a Marina Gold",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxObEl5Vnl4SjVhZUEtamJnTUFLaDVNVUstOHRlc1hvQmlCT0hFVTRES1lXZzVSOTVBVUxwMDRjUE1YSTNSY1FJRmFvVWI2YTlWRHlXdVpXOExQUTUwUEJZY3BYTFNVZS10Y2NMQjlRQjZQSTNCcWlWLUdXOGZLdlJLYVoxTVFWXzc4bUNEdFNFR2lSUkt6a0U0Nnh5RGlSNEE0LW5aYUZiWXBqQVczcl9FNWk2TFdyY0dqMXZqVVZHQUhBZlZNUm5MYg?oc=5",
-      "image": "assets/news/auto_89ceaecc.jpg",
-      "auto": true
-    },
-    {
-      "date": "2026-09-25",
-      "media": "Gestión",
-      "title": "Congreso: Plantean separar definitivamente a escolares que cometan actos de violencia",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOODR3SkhNbTE1NGtqTGV5WkV4TUNYcUJhMjdXZW0wZmxzRUEtV29zZS1RTUt2NFdac0x2MU83eFRpbndTZ3V2dnZkRXVadF9SRExDdkpaN1JFX25rRXM0SWVjUFRQOWRTTlJGc0dtVWJTaVFiMnl1bHphUktGVnp5d2w4UFFudUQzRU5BdV9Nb2Q0bFc1dWM3U2x3b3ZpVldCLXJ2Z0J3UUdIMVpYN202R1Jia0kyLXJjckEzNU1TRE5ta3NC?oc=5",
-      "image": "assets/news/auto_4d951135.webp",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPUnBUcU9oYWJaamdTTGVtbUVpbjFNSGFGbHluRWI1QXBaam5XVDJSSG56V2FJRElYV0RCU3VSU1lHLThscm5kUENYSHVGbms5a0phRzZLcHlqeXV3RWdHRGtzblRFSDZYVjg2UUFqM1dNMVdWNmlMd2JyRjV1VHhYaDljWlMwZl9CZGYxY2N5bWY0aU9tM3prUEIzdG9Ld1R4YXByd3ExcTN3NklILXY2NWNrdDdKOXFJUnlGOUw0U0VoRlhBVU03LUdsajQyUkhEODYwdEFWZTZtMzgtTEpWU1JTWXIyUnVnMTN2N3NuY3JpenBQU3M3UkJR0gH_AUFVX3lxTFBZRDMzWl9ubUlYd0dGUlhaQkVZdVA2TDIxOTlORkRvZ3lkaXFJZWdwX20yemowTFhLNW4xYnM3bVJZWFA3emFFeVhubFdESVBRdHE2dFJIM1dELTlJMEtyaHhKS1dDV09hZ0xJZnpDVW9NeEtfZFZxemlFZERIRnlyLWF2OERkd05fTGl5akstOEs4dlJETnZQSFo4eWlQdHVwbF81TDN0RFp5T2x6TzFZNjFiUUphM1ZRTVZGVll2NVpwVFNoRzZmeEZBbjNXdXBKRVlRazd6NFpmUElsRjllQmdjUW1XZzFtdFF4cHZzOFYwdnc3VDFCMy05dmhoZw?oc=5",
+      "image": "assets/news/auto_631f7b00.webp",
       "auto": true
     }
   ],
-  "last_auto_update": "2026-09-29T16:48:50.381419+00:00"
+  "last_auto_update": "2026-09-30T16:41:16.278571+00:00"
 }
