@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-01",
+  "retrieval_date": "2026-10-02",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -178,5 +178,5 @@
       "auto": true
     }
   ],
-  "last_auto_update": "2026-10-01T17:17:22.276244+00:00"
+  "last_auto_update": "2026-10-02T16:31:03.314790+00:00"
 }
