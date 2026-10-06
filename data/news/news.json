@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-04",
+  "retrieval_date": "2026-10-06",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-06",
+      "media": "La República",
+      "title": "Violencia escolar se dispara en 2026: casos de agresiones aumentan 33% y septiembre marca récord histórico",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQjU0MVBBR0J5QjZtXzd0a29mWnFhWjFaRlNMMG53SlZqQTBmMjNOaHZKbVpLalY3QmltaS16WU9xd2ZIQzZtX3JVV3hCOGZOcUVzNE9PbnBrSjhFOHU4TURVaTdoYm9VUHdzalhmUUY3M1JhT1JXWkdfSk9XMXZha0VvcDJRX2JUR2RsWGZhYWo1Rm1uOHYyZTE5c1JsSl9pR21pYjZ4WFhaRmF5YnVXeC1ra3JvdGtUSzZySlFzNHItMGNiZTRGWXl6RXBka3lNSWF6T2JWQS15YWxuWl90UFdySU5FUTlZ0gHuAUFVX3lxTE9vU2xvdndxanNQLVVLZy10V3otWkl1NTdJNDd6SjdXbDdaaFNqdFRRNXpsZkFSVjNwbGdac2hRSXZMUnlUY3hhY2FFelVpRTVsT3RwZGQtbk9idUxIb3pXZVdsMlkydjBrd2s5ck9DTUp0bmFtWFUtaVdNb0JScmFWcDE4LUdQZlJ4NzJHclRpMFJyMzVLT2NmRUgyVlZPUzc5WjF4bFF5YVZfcHVhM19SdFVuSFhrNEo1MzZqbEpTS1ppcmwtWWNmcElxTWpEVm5vdFhxQmlJSzMtWXItRzV1bkpxc092eFgyWDhleVE?oc=5",
+      "image": "assets/news/auto_47e86d6d.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-06",
+      "media": "Diario Correo",
+      "title": "Huancayo: Buscan firmas para expulsar a escolares agresores",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTmlIZy1SM0NiYk1MSnN4R2R5cTNDajhZZy1TcTR5OVdVWFktcWE3NFU3RC16aFhEaTQzamczdFJjakNTbjd6VXliN280UldTaDdRUURyOUF2VmxDYmY0Y0ZmdF9Ddl80WmhnQ0o1S2t0Y3VfZ1hNd2F1Z1dXR3hFYWo4LWpzeWtBWTFNUl9KcGhaTkpKRlU4N3ZrWmR0RDBOSk1GRHB1QjloQVpU0gHAAUFVX3lxTFAxd2JPdWZHbTBVSktCLTAxOHhIUlMzRkRVaWpSN3hVRzVnQy1NZjlXX21tQjdkeWpod3MydjNCQ193VVRUb1RZZ0VNZWhKUzhhRUZwXzA3THU4dkpNOHZhTjZRVHBUMzlLNl9qS0xkU1NCUVpaRlpuZWFHYVdoREVNS21NcUk5VFA3UjZiMDREcWw0U3Y5cEg0WkdWSmJ2NXJnTlVSaVJjTmVEMlVwcEdNX1RZV2VPQ3lxZVU2cWkxRA?oc=5",
+      "image": "assets/news/auto_103fbad7.webp",
+      "auto": true
+    },
     {
       "date": "2026-09-30",
       "media": "La República",
@@ -31,6 +55,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQanVnQXcxZnB6Zmxjb0c0ZTZuZGFOelp6YWRNNGo1ZUtoN0djUm1NM1ZuWlA2ZWpySFdCUm13ZGJKeVA5enFzMHA4emVwSXRTakh4eVlBSk92aGtTbldnQkVPRjhySEctdURWZm9sY09welZhS2tKQWxKYzBDN3dVbFdLQW1VUWVJRkhiNnpBRnNSamRNVm80bG5kUGloNmtvUmRwTy1LQUJsd1VzeE5wR9IBywFBVV95cUxNN0l5UFdnLTZXVlBxbjdZVDhNLWdrTG1RYUpGQVJUcW5mT054WVhSM2dNbFFmczNOOFdFaGFEZ1hBT3QtbHVkcHBtUndVcTRVMHpQSHd2aEdLcFB1QkZ1Z2lRQjRMNnhUWmZxY3huQ0c0QXhLamNKVG5rOWVCeWhWNGZudm1xUW9rdERYcklTZTZQdFh4dXdMY3RoeGhSa1pYanc0VG1ua2hrOXNpNUEybW5uS25LUGFqOVFTaHhuV2JBU3F5TE10YkgtUQ?oc=5",
       "image": "assets/news/auto_864df2bb.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-09-29",
+      "media": "El Comercio Perú",
+      "title": "¿Problemas en el colegio de tu hijo? Señales de alerta ante bullying que todo padre debe conocer",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTTg0RUxzQXZ3OURlU2FRUU5JWkV5MmQ4TTQ4TVNiejJLempqTHdqRWJ2XzBENmRDVVJDNjU3di1JYlUwak1iMWRpRUlmc2RncmF6UTczaFFMQXJWZ3d2Q2NudmdMXzFqSjE3VUQxYlk3a2ktSDBvbVR5NWppS1NpOVJ4RnJYQVhuYnJ6ZlBST3MxUmZ20gGoAUFVX3lxTE9SMUprNWUwUTV2c05jRkdFWTl5T1JoVktrc2tQdkhXS1BkRTZwbFEzS3pvRnZzR0ZwOEs3NmtWODN0bWFVWko5WVZPZlFPNGpXZ3lfa0hOQng3ZGlJWm1fblVWVUJUU3R0OUdiNWJHajktYnQ1b0taNVBONjJScGNpZ1V5eEc3YVJxVnY3TFBiUUZIVmQ4eEZoOFM2b0duUHNSb0N5TEJKRA?oc=5",
+      "image": "assets/news/auto_00d760af.webp",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcVJ2Y29wdWl5WUJVUDBNckFYZ2dkTzIxY1huSXN2VnJqVjdOVHgxeFlNOTVUa1Q2QVVvNzZJOUdCSGh1cXk4Y1R3ZmNRUW9zMHg3cC1td05KdjNUY0lOR21ldmQzSnhRZ0NjTFpMNkMxT056T2JUQmtNdnNWWVNDMktmb255UU9nWk9JNFZNU1RnSFI1THN0bkdLNDU5Q1pKdnd3?oc=5",
       "image": "assets/news/auto_26ad92e0.webp",
       "auto": true
-    },
-    {
-      "date": "2026-09-26",
-      "media": "Infobae",
-      "title": "Marcas se desvinculan de colaboraciones con Michelle Onetto luego de acusaciones de bullying en Liceo Naval",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPOVgwQkIxRzBMZ1BsUFA0TmFKZ0lqSGJSbnJFbGlfMnJjalFLSzJScGtFV0NweW5KQnQtanBuNUFrN1p6VDhVRGZNd0NEcWNBWVBqTEN4M05FekxlOHk1RFo2eWdEblRWc2RHWFVXVjBjQXd1MU03NVFhRE4wVS15Nzc0R2lncElDZEQweklwbXN2LWlIRkp3dGc0Zlg3V0RQNUNyclhubk5hZ2oxUHk1bF9jZHk2Qy0xMVhuZ0pyUERCZThKZUNEb1NwZExHcXdCLWZKSXBBcnRpeHNYWHlPdDJn0gH8AUFVX3lxTFBJUGdhMDdyUnh3YVM1QkdibjhIMTBHamdGdkNQV01JUTBCVHQ3ckFkbTFldmRjME5pOGN1YVJDZlVmUnFkV3VlQlVUX3YwOG9teVBhZllQbmtYOF9ieVJBM0hZNE5yV0plaE95X2Z1NENEZ3JrX2FsSmZmTVNPQ1JVWlJrMjhiaG5Lc1duamVSRHp5bDh6cTNmNGFsX1c4aGd3WlB0NTRJRzdQaVhvM2tLM3NfV3FLZ2ZRY1RaLUFZVDEwSXF6ZFNNanNYb3BqLXk2LXE2YnlaeWZLUlpxOW9RNGxReWVMVHRwRWI3TkZHUjlIQmhWLUpac0RVUg?oc=5",
-      "image": "assets/news/auto_263e30d4.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-26",
-      "media": "Infobae",
-      "title": "Mario Hart defiende a Michelle Onetto y cuestiona a marcas que rompieron vínculos con ella: “¿Por qué cortar contratos por algo que pasó hace años?”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNclFfR3hTR3JjUzlmY01JdThkQklSUjZ5YllOVERCenFaS0Z1elVtM1B5LWxFTjVYRlc4ZGpaZk5KdGJlSEhuOUJaQ0t2RWZMNS1HbWd0OFBHeUMxZDdxQ0ZBTG0wWEo0UWVJSzlMRGJKMk42LXJkWEEwRFYxZWhlVkgzWmdNX01ZQzZHVHhta3Z5ZjM5c0NFU0xOUEdWYVlkN0p3YzBSN1Bvc0NyV1ExMDlpRzY5alhvUHk2V3FIelkxZk1CZ1ZYQkZPOEtlUU9hT1o4MXNMd3k5eXhBRWQwSE9QMWNfQmgyZ0dzV2JPQi1Hck5Ed1NIMXRnVzgtT0o5dmpvQ0JlSmtmbmVqeGNzRW9n0gGsAkFVX3lxTE1kVEMwLTY3aDdWVFBBQkttTFdfNm9KaExtQW1JSFJLMVVKRFNSbUZSbV9FbUhyWWlwNjBuQ0RBTi1UMWVsczJhNERWWEtBMkxBY0kxTktqTzhxNDU1WTNZUGZxVHpYZUw5elZFLWtMMTE3eE9lRVBmN09Ed0JFa2c1TmRUYjU3VFZQSngwdllsVHBzS1A5a0s1RG5Cejhjcmc1ajZZcU9wM3NKczU2b3IyX2c0SnRGSjZ2TmlCZEFlcEV5TG1wT1FORmFPTEFJbHREOFMyemtPZzhteEQtb25vZ29UN0tYWFBpLWg5NGV4NjRieThsd0RTMGpORjlnd21UeTl2ZWtMdm5QSjJqMEZ0a21lZzAxb3BjSzRsbktGeU5ReFYwaVN2YjZEZg?oc=5",
-      "image": "assets/news/auto_366ebf29.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-26",
-      "media": "La República",
-      "title": "¡Se le van las marcas! Reconocida empresa anuncia que no volverá a contratar a ‘Ñengo’ Onetto tras acusaciones de bullying",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPUnBUcU9oYWJaamdTTGVtbUVpbjFNSGFGbHluRWI1QXBaam5XVDJSSG56V2FJRElYV0RCU3VSU1lHLThscm5kUENYSHVGbms5a0phRzZLcHlqeXV3RWdHRGtzblRFSDZYVjg2UUFqM1dNMVdWNmlMd2JyRjV1VHhYaDljWlMwZl9CZGYxY2N5bWY0aU9tM3prUEIzdG9Ld1R4YXByd3ExcTN3NklILXY2NWNrdDdKOXFJUnlGOUw0U0VoRlhBVU03LUdsajQyUkhEODYwdEFWZTZtMzgtTEpWU1JTWXIyUnVnMTN2N3NuY3JpenBQU3M3UkJR0gH_AUFVX3lxTFBZRDMzWl9ubUlYd0dGUlhaQkVZdVA2TDIxOTlORkRvZ3lkaXFJZWdwX20yemowTFhLNW4xYnM3bVJZWFA3emFFeVhubFdESVBRdHE2dFJIM1dELTlJMEtyaHhKS1dDV09hZ0xJZnpDVW9NeEtfZFZxemlFZERIRnlyLWF2OERkd05fTGl5akstOEs4dlJETnZQSFo4eWlQdHVwbF81TDN0RFp5T2x6TzFZNjFiUUphM1ZRTVZGVll2NVpwVFNoRzZmeEZBbjNXdXBKRVlRazd6NFpmUElsRjllQmdjUW1XZzFtdFF4cHZzOFYwdnc3VDFCMy05dmhoZw?oc=5",
-      "image": "assets/news/auto_631f7b00.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-04T15:41:07.784516+00:00"
+  "last_auto_update": "2026-10-06T17:03:33.789418+00:00"
 }
