@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-06",
+  "retrieval_date": "2026-10-07",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -31,6 +31,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTmlIZy1SM0NiYk1MSnN4R2R5cTNDajhZZy1TcTR5OVdVWFktcWE3NFU3RC16aFhEaTQzamczdFJjakNTbjd6VXliN280UldTaDdRUURyOUF2VmxDYmY0Y0ZmdF9Ddl80WmhnQ0o1S2t0Y3VfZ1hNd2F1Z1dXR3hFYWo4LWpzeWtBWTFNUl9KcGhaTkpKRlU4N3ZrWmR0RDBOSk1GRHB1QjloQVpU0gHAAUFVX3lxTFAxd2JPdWZHbTBVSktCLTAxOHhIUlMzRkRVaWpSN3hVRzVnQy1NZjlXX21tQjdkeWpod3MydjNCQ193VVRUb1RZZ0VNZWhKUzhhRUZwXzA3THU4dkpNOHZhTjZRVHBUMzlLNl9qS0xkU1NCUVpaRlpuZWFHYVdoREVNS21NcUk5VFA3UjZiMDREcWw0U3Y5cEg0WkdWSmJ2NXJnTlVSaVJjTmVEMlVwcEdNX1RZV2VPQ3lxZVU2cWkxRA?oc=5",
       "image": "assets/news/auto_103fbad7.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-06",
+      "media": "RPP Noticias",
+      "title": "SíseVe registró 4 759 reportes de violencia escolar en septiembre, la cifra mensual más alta desde 2024",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQdHd4NlZqeW5tX3NXYnZGNThCVXoyWjY1NFpPS01NUmItek1qU19HaVNOX0lrNVhRS1VJR0h2NklUa0dmVmc3a3Y5V2daTnM0NElyUTZlcXNJMElvTXdhVW9USkw1MzdyVzBJTEpDb1g2dTA2YzBTZVdOX2hXeGU5Q2FsdGNIMmRjQ241cmlFVGZ6WnpKQ195LWVjd3oyY2J2UHcweEFHOGFBUjZVUGhlYVFDWUsxaXBSSS0wWmhsTjdGckVuQUNibXptQUZVc3dydVozeVBKU3ZCZFp6dEFUbGoxZw?oc=5",
+      "image": "assets/news/auto_d4a30f6a.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPc1RaMUxHc1dNOS1UZFRRdThXUUFoaVFudTQtalgybjBaVVgzWDFoQkgwYjd5bF9aRmFMU3RBQ2M0RG10YnZuQVRXaG1uWHpzTlpIM19IM3hnYWpxeFdMalpud1ZXN05zWkoyZ3ZWM0cyTVM1TkZWR3YxWXg4aWI1cUNVMWVGbEp1UEZldGNuNjJMZkk0ZDN6dGZaMmdHZzhPSmhFLV91cHZVSzJ3YXlNRHpVVWZPTGc1RW1XbHFxRTJrQzNCZUI0V1dWdWx0MEgycnMzLTEwdVN0VGVTNWsweDNwZHg0NVZtY3M40gGGAkFVX3lxTE9McHVPa0xYRkVXVXhieEY1NjB3Q2ZjR196WmV3RlBNQVNlRHlhMC0wcFNSSHZjejU1NWdwd3hnRG5ycThzLXpBMjhTUHd0MTlwUmJyUUgxWXpXVXctS0Jtc05Yd1dSc1VDbmRNWnpkV2lUaXZMaWdOOEgxM3h0b09PMmZLaFdxZ2FtX2RvWUFybHpyNkRTTkJYaDMtRTBlTklxM1U4MnV3VGVYeDhKOGUyWWNiUUktN1Q2bkhvN2dMcW9YbHVGd1FVNVdfcEQyQXFFZGhwcXBLQUN0akZ2Ykp5N2NKcjBQV3Rrd2swSkdPbHVCSk5IY2Myaml3Zk9WQVc0bnZNWFE?oc=5",
       "image": "assets/news/auto_8a6d8999.webp",
       "auto": true
-    },
-    {
-      "date": "2026-09-27",
-      "media": "Perú 21",
-      "title": "Marcas se desligan de colaboraciones con Michelle Onetto tras ser acusada de bullying",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcVJ2Y29wdWl5WUJVUDBNckFYZ2dkTzIxY1huSXN2VnJqVjdOVHgxeFlNOTVUa1Q2QVVvNzZJOUdCSGh1cXk4Y1R3ZmNRUW9zMHg3cC1td05KdjNUY0lOR21ldmQzSnhRZ0NjTFpMNkMxT056T2JUQmtNdnNWWVNDMktmb255UU9nWk9JNFZNU1RnSFI1THN0bkdLNDU5Q1pKdnd3?oc=5",
-      "image": "assets/news/auto_26ad92e0.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-06T17:03:33.789418+00:00"
+  "last_auto_update": "2026-10-07T17:41:19.816872+00:00"
 }
