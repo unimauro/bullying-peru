@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-07",
+  "retrieval_date": "2026-10-08",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-07",
+      "media": "Diario Correo",
+      "title": "Arequipa registra más de 117 casos de violencia sexual en colegios en lo que va del año, según SíseVe (VIDEO)",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWVVpS3lqN2RnNzZ3M0hhOHdFVUh6bERzaXNJN1hkX29TaTBxa20tcHhpajhsNEp5NXVuMGp4MElUN002YU4zTTBoazlFZXZjQlVyZnRFazhJaEpxX3V1ZGxxZEpCUVIzYWlWREp5MVZ4T3g3Nlpjd1NtQjIwUEFEbUJGbHgtR1NhVnZ6eno0RjlOdnoyMjd6OGQ3WGQ0c0QwbmhpcjhkLTlmcktDMTdyLU8tbUgwejkyWno5TkdUcFNxWUtON3MtdDNMeFBvZ05qY0NzcUg2TXZjQ2tsaXBxWjVVczBQY0NFcGViUVJpM1NNbmk2M1MzYnBLMnI3eEJK0gGAAkFVX3lxTFBZVWlLeWo3ZGc3NnczSGE4d0VVSHpsRHNpc0k3WGRfb1NpMHFrbS1weGlqOGw0Snk1dW4wangwSVQ3TTZhTjNNMGhrOUVldmNCVXJmdEVrOEloSnFfdXVkbHFkSkJRUjNhaVZESnkxVnhPeDc2WmN3U21CMjBQQURtQkZseC1HU2FWdnp6ejRGOU52ejIyN3o4ZDdYZDRzRDBuaGlyOGQtOWZyS0MxN3ItTy1tSDB6OTJaejlOR1RwU3FZS043cy10M0x4UG9nTmpjQ3NxSDZNdmNDa2xpcHFaNVVzMFBjQ0VwZWJRUmkzU01uaTYzUzNicEsycjd4Qko?oc=5",
+      "image": "assets/news/auto_0f13a1bf.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-06",
       "media": "La República",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQdm41eEFfejhsb05UYXh5Y3VVbjV4dlpfa2pkbDU2NTRMYWUwVGtDR0dOWGlEamtONU9JTVJqN0RZNnA5ZzVVeXRQbDIxbVU3clRIYVNLb012OVpyQnBjRXRpVDJGTEpqYi1QTDB2Umx3SkRsdFpTS3VnZ1ZGSXVNeHl6cVFDcXlRYlkwd1lEQlBaTUtkMTZDTHBMWTM5Rm8zRm13UDQ0R0I2c3ByalY5emRwX28zUGtHc2Vvd2s2VDVOSDcxeHdoem1fTGEzbEt6SVE4a0o5LUk4X191T0NzY0ZUSVlGQ2JaZmFNeGJLS3NOSnRWNmlwTEw2clBPMlZHckVhUVdSYkQ3Z1huWVg3MEtFc2d0TTFHblJyUHFIcTdoUjJYUEFBaNIBrgJBVV95cUxOWWhRTjZCU1lDSGVhLUFXVDU2Vy1pYnl3ZV9ZaU5UMXE5MHZrMjhjUTVuaVRkRWgzUlI0VjNnQTBCQmRFQWluTUlXZko2cVFndmlnOE1fakxFc1ZreU1wMVQ3dVp2XzdmUTJFR0ZLVTRIbUprSlRadXIwVTlLeG9hY0xKV2lGRFpYNWxQS256OW5DMU1YeWQ1UUxHODkxY1dyY0JmMUY5U0pjS0tWSkhXU2s0a2pIY1Uxcm9zWlVQVnpTUEN3d0poS2IzQzhoTzlxQURvNDhpcDV5bXhZa1BCUk9hUGxGanVfUFRCNzFTNks5Z2lRZ0k2bE93Z1pfcFFGUU5YQWhFSGZiU19kTF9sdENEV2JNYlBfc09SZEFHRWZMVWhzRE9sY2hkdmc2UQ?oc=5",
       "image": "assets/news/auto_366034c5.webp",
       "auto": true
-    },
-    {
-      "date": "2026-09-27",
-      "media": "Infobae",
-      "title": "Michelle Onetto reaparece y hace mea culpa tras acusaciones de bullying en su etapa escolar: “Lo siento sinceramente”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPc1RaMUxHc1dNOS1UZFRRdThXUUFoaVFudTQtalgybjBaVVgzWDFoQkgwYjd5bF9aRmFMU3RBQ2M0RG10YnZuQVRXaG1uWHpzTlpIM19IM3hnYWpxeFdMalpud1ZXN05zWkoyZ3ZWM0cyTVM1TkZWR3YxWXg4aWI1cUNVMWVGbEp1UEZldGNuNjJMZkk0ZDN6dGZaMmdHZzhPSmhFLV91cHZVSzJ3YXlNRHpVVWZPTGc1RW1XbHFxRTJrQzNCZUI0V1dWdWx0MEgycnMzLTEwdVN0VGVTNWsweDNwZHg0NVZtY3M40gGGAkFVX3lxTE9McHVPa0xYRkVXVXhieEY1NjB3Q2ZjR196WmV3RlBNQVNlRHlhMC0wcFNSSHZjejU1NWdwd3hnRG5ycThzLXpBMjhTUHd0MTlwUmJyUUgxWXpXVXctS0Jtc05Yd1dSc1VDbmRNWnpkV2lUaXZMaWdOOEgxM3h0b09PMmZLaFdxZ2FtX2RvWUFybHpyNkRTTkJYaDMtRTBlTklxM1U4MnV3VGVYeDhKOGUyWWNiUUktN1Q2bkhvN2dMcW9YbHVGd1FVNVdfcEQyQXFFZGhwcXBLQUN0akZ2Ykp5N2NKcjBQV3Rrd2swSkdPbHVCSk5IY2Myaml3Zk9WQVc0bnZNWFE?oc=5",
-      "image": "assets/news/auto_8a6d8999.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-07T17:41:19.816872+00:00"
+  "last_auto_update": "2026-10-08T17:45:35.409782+00:00"
 }
