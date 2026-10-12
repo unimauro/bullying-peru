@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-11",
+  "retrieval_date": "2026-10-12",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,42 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-12",
+      "media": "El Comercio Perú",
+      "title": "¿Cuándo podría un colegio expulsar a un alumno? Minedu abre la puerta a reformas para abordar casos de violencia grave",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNTlM2TXlKQUFVOTJNbUF0VWZ6QjlQa2pCclFuc2l2OUVQQzNxWUdKYTR6YTMwSzJBOUppTkl6Z3JkNmc1d2t6Y1dZU3FnVU1SbEMyUmtBdWFtQ1FvSTVJVmxUNDZyM0V0dXRvT3hiNFVvM1AzeVhWYjJKQTEzS0tDNEt6UzM0dDA4WFJJOTFPOHJSRkpfTWNMM3duZzhFZ0dzY2pVeFU1eXhhRXR3RnJfM3VMVmROOTZLWHRUMGl2X2VsbTVzMFo2dTg1NEk0OERYVWQ4SWFOcXNkcmJBc29mZXZQaHRzWlJhYU5nbEo0cW1BeElveEVHNW11ZkQ4WjDSAZMCQVVfeXFMTlBPUHExVUk0ZDZUY19tdWpEa3pQWUhlTE94bEtsbmFGVHVERUdXcVpWN3o4RHJLb2lQSnU0cjk3Y0V3SEtKNHhCY1BtV1RrbDNhc2pLV3BybFRZNVlidnYxWjZyX24xSmNKSjBLNEhDMDQ3ZFdfYzB3bHBpZXVrVXYxMlNCZFpCOVFMQlBRVWRWWExfTW9QRzJPdmNlVTBaVjlMLTJYRy0yX1hmNUJHaE9pNnJfQWFmVFIwZzl5ZUdjQ0htSWJrdklTTlh5VExSWW9yQnhFY0FxN0FTLThDdDB4cmc0VnFQazNBVUhQX3lwX1dBYXd1Sl9DMlJZcUhJUmpteXVZdnpidlN0Njg3bExhWVU?oc=5",
+      "image": "assets/news/auto_b017dd1e.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-12",
+      "media": "Perú 21",
+      "title": "¡ATENCIÓN, PADRES! Estos son las 10 medidas disciplinarias que propone el Minedu para los colegios",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZzFSR0h4Q1h6VDJoclJ4cjJZWFRvaHRUUExJVmZxQVdWRVZWYnVhOGYtVEpsUEZ1M0NseXZBSVVCVk5mMW9kaXFld1lNcUJ2ck9OSjEwYVJOTEdRR056ckZXbTZDclU4eURiczZOWXE3TWFaY21wSHplT1VLeDFXdnJhOEhyQTU1X1F6NA?oc=5",
+      "image": "assets/news/auto_873b9c29.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-12",
+      "media": "Exitosa Noticias",
+      "title": "Plantean derogar el SíseVe y crear una nueva unidad para proteger a la comunidad educativa",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPd01QdUZVelhHMUZHRFJnRXVoNHJCZWZYMkxZaE4yTzZCSEs1Ujk5UlhNcWh5UjdRUDFIX2JYUDNkUXg3eGU4c3ljRzZyaGgxZzc1cGV2Q2ViTURmVERpWlNqYXMwRVhTVXVZTVlnYWFUTGR2UU0xUmY0SnBmMjRYMjd4LTRldDYxdWtQWVVia3FxSEtuTGpnb2hmUEVHT2ZQSUFBSUhveXRPNlNMOFJmajdsOVdKTlNHTW1YejNiY2pXSm8?oc=5",
+      "image": "assets/news/auto_35d9df59.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-10",
       "media": "El Comercio Perú",
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZTVMRWlWUzJwWWZ2RUduQll3V2xDOU0tdnZ6UEl3N28wYmNldXdGMUNPRzNuQVVrV0wwVHFwVW5GYnA0WVRsSEpIODVTOGpzWUNVa01uaTJxbTlqbkNvLWswTEVXWTU5TW9HYkF3T1prVk05bkJzTWpVMUt0bGs3UWNOZFBsQVQxdmpyaU1iek5hVTBuOEoxYVV6N0M?oc=5",
       "image": "assets/news/auto_641c361f.webp",
       "auto": true
-    },
-    {
-      "date": "2026-09-28",
-      "media": "La República",
-      "title": "Influencer Michelle Onetto admite que hizo bullying y pide disculpas a víctimas tras perder auspiciadores: “No medía mis acciones”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxPbmpnNTN3X005RmNzLU1nSjN6UEdCUnZDcGZwNkl6RElfTjFRUEZINENBc3R4OEdNQndWRllfd0RocHRrRTF6SENzdTZRMnFTaFZyVnVOWUVJTG83RjdtSF9YdFpTeExQMThVa1ZMTmk0RF9oSmpNV3BqYmdvZkJNU1hDd0ZCMmpGaUZ6VUhMNG1vQlcwSXExR0NfS2JxSlQ2LTBnTXJpd2d0TVEwd2kzdzRxY3EtMk1VQ1B0VXN6WkJlcWZmdlFDWDBzR3dlYk5nQnlGdk5qTC1EcUNDOUd1dkV5MkFDMS03bHZSYVFZVG9ubVp5eXdTSU50YnphdUFya3VfREFzaVNiTVI0Yk1v0gGUAkFVX3lxTE5Vb2phbmdnd2M1UnZ0b3E4bGFVWEtDVjdHamVOUl9xbHl6U291Mk05Q05aVmdBYWtNRjFsSElQZDk3VHlybkc0dVdXZm5nbk9ZY3hCTHhwRnJ5cndUNHBYTEdZcG51cm1FcGw1ekF1ZkdKVWdhTjBPVkczVUJwdnQxVzcyYkFMc3lfc0lMdVVBYnZmbk81WDh2TmVHeUVNeXZlM0dfNnBfRUwyTUdId3NLZkN3bFBHOWtsbTV1RXFCUDJTWUg5T1lUTl9qTzRRelVDeFkxQUlkVUllUDEwdUhXUU9vUFhjV2VOb3V2LWUyOENDNW5ZWV9Jb2xkRUJXcGhyNjl0Y0xVRGs2X01zeWd6eHZaUg?oc=5",
-      "image": "assets/news/auto_cf4913f2.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-28",
-      "media": "La República",
-      "title": "Acoso en las aulas: pantallas, redes y el nuevo rostro del bullying escolar en el mundo",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQjlrRllwanU4OXpfc3d1R19zZzlHYjZ4cDN3dkFXcGZKazdUS1VNVGh6YlgxT3NIMTRDOTZPYi1kdDhEbGNNMDJDNm4yLTR2MFpQOVdTWnJNbjlrcGZTVVZ4c1BfYUkzaXJIX3FmRDhHQ0xmcGFRLUZwTHBRYzU4d29URTJucGhpVG1vc1ViM01IbkNMUGsybUxZaGRfYnpRRzY1R2RTWmxjWUdlelk1a2NDTE5BSlRZYkNfVDNlMW8wN3VLdWo5UThzajFHZ9IB0wFBVV95cUxOeWlXZEgyT0xLVEdQeEwtRFZ2Y0kxdWI2YmszLW9nMTlPVXdBUGdnNW5zMkJEWW5RYWVTQ0ZrZ1BGUURtSnVoT2VnZkc3YkJTeEJmWWtCRHVkbURoQ2FRR3pjVmpLLUR2b0FaT2Ztbk1qb05uMEt4MkhxU1hiVWo0eDdhLWt3ZWg1T1BEZ1BaLW82MHJKTk9NNEJzV0RpX2tNZUV1cUwxd3FxVXZHZzlJVUF0eXJ0M2E0ekZrZVV5Z2R6UFJYYzVEd1ktVlBQNjNZSFQw?oc=5",
-      "image": "assets/news/auto_59650cba.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-27",
-      "media": "Diario Correo",
-      "title": "Reportan 530 casos de violencia escolar en La Libertad",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOM0R2TkdxdThTMHU1WEcta1hUaVJCV0Z0RENLeElpZ3pUWGFpNnQzUTZjN2N3VDZPWTlGaGN5Ump5ZFhzbVpWUzV5dkhBWEw5UUdTV1dWNS1UTjB4US10a2JwM0poaHBFaEFDS1NDQmtXRGdnb2lyNy15aVRxTmFDaDFpcExfYXVZQVU1Uk9XVDVVRmdVWlNicjhzY1NZUW5RM245eTFvSFdzOEZ0TG8yNDQtOTVQR3loZHB3R0t30gHSAUFVX3lxTE9lSHNGMDJPcWdOSFVvY19DVUtNOU1PdDJJcjJSNFdjQktPRWg5eVkzV3ZONEFtY3ItcjIxckdtZXZ5Q2lPYlhtT1lNSng0bjFQRWZTdUluWmVDRXkyQzVTXzY5b21oTlpOR2llanVqUkltdENBaEZoTGVaWVJXdmRZLWQxYjdiaFdWMkJ1RUNjZDRCYmZLQWJ5WGhlSngtZlJnclFQNzZ1Q2tvM0pfUU9MZG9wTmhrWThlOUNsbXN2T2hYQkQ4TE9DQUlYQV9JV1QzZw?oc=5",
-      "image": "assets/news/auto_6260d03f.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-11T16:34:23.966383+00:00"
+  "last_auto_update": "2026-10-12T20:08:00.406190+00:00"
 }
