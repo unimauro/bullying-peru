@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-12",
+  "retrieval_date": "2026-10-13",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-13",
+      "media": "Infobae",
+      "title": "Bullying, retos virales y expulsión tras tres suspensiones: así funcionará el nuevo régimen de disciplina escolar del Minedu",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxObGsyOFMwOEJLc0tlTnc1RmJ0VGxTbXdtM1VkRTZfc1FzSGExRVpkVEN1dU0wcjM0Vkl6THlxWDlwNlFOc1U4eWNGUFdrX0pOT2hWTk1YaGxMLTlDR0xWdWJjdmdzV1R1LTFNZEZRUXV1LUFRMmlUSGNsdkVqcWREbGVSWmIzWVdwUGpSMUVOQ20tUGRSUEFwY0FCTHBRR2xhYk43OENvbXhqci1LMXRhUUJuRmVrd2ZuMlhtYkVOWWNqMGoxa3NmRExSMTliVy1jXzZGWnU3dlduM3c3NmliYVU1RlhYVk9PckRIUWZsZFBySjBYaHfSAZACQVVfeXFMUDFJS0pSaHhTZEtIRDVfNHlzQnZBaWluU19zbTl1Nk10d2M4Q1JjR2NCQmNLQlVpU3lFcVFPYXBudXROb2Z2WGV6ckp6T0pNOENiR0QySXZ1TkxVWGNtZzdJeHU1MGZvNGswaVN0VkhqVUg5c2hBNVBJQ1pScEZuTS1oY2ExMklwQzFJVHhoVjZiVlFYU1hpbW9adklVdmN5UG5JRW1NVWl2ak5xZ0pERVNkY2JMMW9hMjY0UW1sbVZOSS1iYjRzbHU2REx1NXN5WlRhNDV3d2tadkthQVE2clpWMjgwOEVjZXhwXzZWRVhCVUl2dGJpSy1iU2NrdG1NeUdlY2lTT0xpc25mR1U1ZDM?oc=5",
+      "image": "assets/news/auto_bf967f12.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-13",
+      "media": "Latina Noticias",
+      "title": "Keiko Fujimori anuncia nuevos lineamientos de disciplina escolar que habilita la expulsión",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQ3RjRXRrWlZUbHRvbXFsalFmSU9oUWM0N0U0ZkZ5Rmd3VkZWcDJTRldhMGNwbEhwV1I1ei1uQmFLbFBicnRDQW5IZW5pMFJBRW9iM3k5ZndVWVh0Q25WUy1DRUFpa3RhNG1UZTZheGtBdmNQLXZWZnJXTDlTMXAxRmFGU1BBUjVPWGJETEtENl94MXNoLVFNR1h2QXJabnlmMjZXSFQ4U1BFSVJ0YmV5RlYxU0sya25ybV9HWmtKODVTSTlodl93ajZVSQ?oc=5",
+      "image": "assets/news/auto_dbe44876.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-12",
       "media": "El Comercio Perú",
@@ -43,6 +67,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPd01QdUZVelhHMUZHRFJnRXVoNHJCZWZYMkxZaE4yTzZCSEs1Ujk5UlhNcWh5UjdRUDFIX2JYUDNkUXg3eGU4c3ljRzZyaGgxZzc1cGV2Q2ViTURmVERpWlNqYXMwRVhTVXVZTVlnYWFUTGR2UU0xUmY0SnBmMjRYMjd4LTRldDYxdWtQWVVia3FxSEtuTGpnb2hmUEVHT2ZQSUFBSUhveXRPNlNMOFJmajdsOVdKTlNHTW1YejNiY2pXSm8?oc=5",
       "image": "assets/news/auto_35d9df59.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-12",
+      "media": "El Peruano",
+      "title": "Presidenta Fujimori presenta nuevos lineamientos educativos para recuperar el orden en las escuelas",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONjIxQ3B0QzB2QU1abzhRN09jNlh3cEV1LWVleWpWVVc3ZHFXekFkR2tjU1pSUElMTkYwY3NjbjBPRHNVck92S01naXJydnp0SDRsTHlfODVWak9ITU0xamgtSENHVGJnRWt0bG84NDBqUm9rR3pHQ1RtTVRSUHRNVkRSQU9xc18tTmdaLVo5UmdUcVZDYndTbURGam9VN0lVY2dTVkVQVXh0RVdrY0FEYUt0VDdyUzdDbVBFRXpwVFFXcWpBNW9aZ01ia1VsNTh2?oc=5",
+      "image": "assets/news/auto_adfecf08.webp",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTTg0RUxzQXZ3OURlU2FRUU5JWkV5MmQ4TTQ4TVNiejJLempqTHdqRWJ2XzBENmRDVVJDNjU3di1JYlUwak1iMWRpRUlmc2RncmF6UTczaFFMQXJWZ3d2Q2NudmdMXzFqSjE3VUQxYlk3a2ktSDBvbVR5NWppS1NpOVJ4RnJYQVhuYnJ6ZlBST3MxUmZ20gGoAUFVX3lxTE9SMUprNWUwUTV2c05jRkdFWTl5T1JoVktrc2tQdkhXS1BkRTZwbFEzS3pvRnZzR0ZwOEs3NmtWODN0bWFVWko5WVZPZlFPNGpXZ3lfa0hOQng3ZGlJWm1fblVWVUJUU3R0OUdiNWJHajktYnQ1b0taNVBONjJScGNpZ1V5eEc3YVJxVnY3TFBiUUZIVmQ4eEZoOFM2b0duUHNSb0N5TEJKRA?oc=5",
       "image": "assets/news/auto_00d760af.webp",
       "auto": true
-    },
-    {
-      "date": "2026-09-28",
-      "media": "Diario Correo",
-      "title": "Violencia escolar en Perú: cinco claves para prevenir el bullying desde la familia y escuela",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQYnBPVzdhdTMwNDdONHNSS3p1ZlJ4MUpsSVctQTNpRGpjbi15T3l2NGJybFQ4S1laQ3J4M1RpSHJrV011b2ItREd3SnRqR0E1aHJ5Zm9XUG8zcjlScHkwTW12VlFJX2RPTERmb0sxVHIxaXV5SF9FVUNKVEh0dGxVU01pdE8xSml2c1BBVUY0WmlmMmhocmlMTWNUbWNyOVZicUd5aFF6TTFvMV81dnJkR2c2dmsyWWpTTUVjRDYwSFV5ZmY1WlFPMdIB3AFBVV95cUxNbVM1cF9rM3hLQVNpdjVPSFdSRG9fcDg1Q1ZDc05LSXNpU0hMbUtjQTY3eVZLb05tMl9PRnZWRkswaWgtajE1c2dEM1lCd2oxM1JLV1RWYTFaR2FzdXZfaFFEa1duRU8tVTh0cVNrNG5FQjRieFNBeklpN2lqOE9KZHNMeGY0QVNOTzZ5cHhNb1lJTVdTOW1ock12TlU4cUJTYXBsbFBJQm0wbk45cnRCZFF4RTN4RjhJWGgwMGpIcW1BaEdZNnlEbUE2d3loZURnd2FPbXBIMFhDZVot?oc=5",
-      "image": "assets/news/auto_28df8f75.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-28",
-      "media": "Infobae",
-      "title": "Giacomo Benavides deja de seguir a Michelle Onetto tras polémica por acusaciones de bullying",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQZW5CR0RMM0dBN01lYlRuVGdzblVMT1RFSDl5aVNnTlZMaHRUa28tclFDVUJSTWNUNGprMmRUejVFQVE0NXhBdmZ4VFctWDlwQi1WZFNFaGRQMWpkQ1JmbU5lRUxuamVHR2dWMVJKM1hCb2VqNF9vWGw5VmUwdllKbUpkQzl3bVFhZlFBWUN4bXZVTVZCaVIwSE5hd1R5eUp1RklkMXZWWnZVNmd1TjZpWTctblVpR3NvSEd1dFpMemtVVmxRZXhpMG1ybXFaQdIB6AFBVV95cUxQcGNDSXVWc0tTcGR0czNWRjZyYXZubk8yYVprZ0dBd0ZId0hpeGJqRDdtc0tvTTYwN0dVeWY1Ujl5YXpTQmpMWG1DRnUwaVQ5ck14ZzhQY1ZuZFQtTkdrLUMwOU5zM0w5M2h0bndWV01vVk5ac25zSDBDUF9NQlJKeEpZQXdWV2liT2liXzdXS0RMZ1ZHWHRqR0oxM1VwbDd5c0E2Y2NHMTRsZXJiSTg2TDZJT3JUWnFueFZfZHZOVGlITUJCb1k1SG04VWtpbkgzN1A0WUF1MkhKRDVkZVNBNlYyMkRVRE5j?oc=5",
-      "image": "assets/news/auto_8a502d56.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-28",
-      "media": "Perú 21",
-      "title": "Violencia escolar en Tarapoto: estudiante hospitalizado tras agresión",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQZTVMRWlWUzJwWWZ2RUduQll3V2xDOU0tdnZ6UEl3N28wYmNldXdGMUNPRzNuQVVrV0wwVHFwVW5GYnA0WVRsSEpIODVTOGpzWUNVa01uaTJxbTlqbkNvLWswTEVXWTU5TW9HYkF3T1prVk05bkJzTWpVMUt0bGs3UWNOZFBsQVQxdmpyaU1iek5hVTBuOEoxYVV6N0M?oc=5",
-      "image": "assets/news/auto_641c361f.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-12T20:08:00.406190+00:00"
+  "last_auto_update": "2026-10-13T17:57:42.029482+00:00"
 }
