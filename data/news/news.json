@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-13",
+  "retrieval_date": "2026-10-14",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -31,6 +31,66 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQ3RjRXRrWlZUbHRvbXFsalFmSU9oUWM0N0U0ZkZ5Rmd3VkZWcDJTRldhMGNwbEhwV1I1ei1uQmFLbFBicnRDQW5IZW5pMFJBRW9iM3k5ZndVWVh0Q25WUy1DRUFpa3RhNG1UZTZheGtBdmNQLXZWZnJXTDlTMXAxRmFGU1BBUjVPWGJETEtENl94MXNoLVFNR1h2QXJabnlmMjZXSFQ4U1BFSVJ0YmV5RlYxU0sya25ybV9HWmtKODVTSTlodl93ajZVSQ?oc=5",
       "image": "assets/news/auto_dbe44876.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-13",
+      "media": "Infobae",
+      "title": "La expulsión de alumnos no basta para frenar la violencia escolar: especialista pide prevenir agresiones y revisar qué ocurre en los colegios",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPSjZoNGZocWxZbTZUdU04Q0hyZHhTN0dnX2tBUUVua05ya3lmM1ZQYnVwemdNLUo3YXBpMkhUdU5tUzhoRW5EWGlhZ1JjU18zTDM0Q2VNblB4MTJwSDV6TDYyQU5RS2o3RXB4OWJXd2FXaGlXWmNSTThqMkVtV2J2aVRMY3B4cWo3WHlSdTBqQ2c3S0c1M3ZNdDNwQnAzVlBJSEhIbl9ObTFoLXFuTVZ3ZUp6Mi1tWEZzMmxpOUJaRlZzRHpySzlvWjJ1N2t1TzhUQ0pPVG1nLUFsZ1NFb2pySFRsVHhlam1BWjRWZHZXbkRvZFpvZy1GQjFOQWhjbWVodlhaWm1tNThGaFpXTEHSAagCQVVfeXFMT3A3Sm1zV3JhUnhEdmt6R2RybWFVRERzUXNiYnk2Smd5MnQ1QVBUNmdNOFZLRjA5bUVzclZkbVdUTnM3RXM0dVpCMENzVUVQbkhTYTlHd2RsYXB4TjctVU5xRWhYVVNWWHlFUG9DNzl5V3hsSkdBZXl0T0JZWTQ1NFJic05KSzRrRkM5SVRqenBmSG5IQnE0Y2VEQk0ydGlIVGZxX0lQZmZNYzNvdGM5WEJGdnhkY0hzX2tWNnR1bXZhY0tpYmNrNHU5YVM2SkdZdE5MMW1iNV9KZmJvcXZHdXNWWU80cjNuSTREUnZlaFNIYWdrV1pXNEdCbGg3NkdiNnc1RWJfbk9KZndJMFJSakl0NUJLb3hqNE03Z0FpbXRoQXlMaHM3Tms?oc=5",
+      "image": "assets/news/auto_6a1336af.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-13",
+      "media": "El Peruano",
+      "title": "¿Qué faltas pueden causar la expulsión escolar? Minedu incluye acoso, extorsión, violencia y uso de armas",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPak9jUDZMbFEwNUpNSHlMZ0dudWdfYkt5blpBaTR3T0NzblczUEs1QlJtWWRYZFhYRE9xZmluOEhYeWkxUDYtbEtGUWpUTjU0TUdVNXNzWWJ0dG9Za2E3TG5rMWZIQVJxT1k4dWlrbnZ1amRkQlRzMGNMNXBYbGNlVVk2LTA3cFBBNmxwcEZmRE4ydjcxRldORVhYNGVJQVBVZnpHblBKYUZ6andXdms3VUZJRGFzb2VOZm1aaUI5OU11YS1mQmFZRVFJdzFRaEx5Q3RhQw?oc=5",
+      "image": "assets/news/auto_3814273d.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-13",
+      "media": "El Comercio",
+      "title": "Keiko Fujimori anuncia normas estrictas en escuelas de Perú",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNN1pZT3htQVRkY1E2ZWd6ZHh3Y2FyUFJDMG13WGR6cHptS0hhUGxHa0xhRTl6WXlOeXBQc0F5MllEUVpqeHlIQTlZWkVmb2RIWk82R0tuZWpaN1RtbXRSN0NyQ3pYQzdiVktKZnVGMWhLZUxBWFdoWEJqWmUzazVtWlI0bEUyMGtTUDdDYVM4WkVBdlozRU1UMUhZWElxamc?oc=5",
+      "image": "assets/news/auto_b6d2ea5f.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-13",
+      "media": "Infobae",
+      "title": "Keiko Fujimori se inspira en Bukele para llevar su modelo a colegios: “Hombrecitos con pelo corto y prohibido maquillarse”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxORmFLWVFWbEVBSVZZUFQ0eURHTjNZSlZTUDhraWxhZUxNRm9xZnRnMUtnV2pQUWZCR1NFYjdRcVhsVS1VaHNpbGtvWl9PUFFNMlZVNDBBQ3c1VFBPQW8tZDg4TWcwbEhMdmxhaXRVbnJMaXROdkEzZGZaZGVaVWdiSmdfaTJTaS1OX25heERFZElZbk5SQ3ZZRjZrNWlyM3dTTmw5aXp3VXZySkpWdnUxYWpWSUtJam1Wbk9zZVNHclNRM3BKSG1CbzJlekV1X3JSTjVMQ3piaC1tSWpkMVpRS0txa2VhWTFFQ09DZ29kMNIBigJBVV95cUxOdWZWUU53MF9vVkNEdXcxZlBqMmttLXVEalduQ0EyS1BWcVlubWNSRGNadG5BdmtDU3dJUzZRMVFKNWJLWllOQmpoWFpoVVZCdTM4eEZsZnBvUlNwTWR4VE5MeDlJbENRVXFKR1dDZl9OOEhMd0pFNzBtYWxCTGZpZllUT0F6bEFNRHVXaW5JNzBfZFdfODcydnhtNlFENlhRaUdZUEVhRVRsUVZYZ1ZCYW5ZcjRJQnRneHpjWjJ5LXZCdkRQb1Y4YjM1V0xqSmVfNkVuUHVyWHQwblFXczNUaVA5N3NvN1RkdFFrb3pxeHNkRklnclVSUzhFOGRhTXFyOEFOVV93LWJzdw?oc=5",
+      "image": "assets/news/auto_08479a23.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-13",
+      "media": "Infobae",
+      "title": "Minedu: todo lo que sabe de las nuevas reglas propuestas para recuperar la disciplina escolar en colegios",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPdzViN25YZW9Ya1ptNUVUcmhySVZqM1h4UVlxTEFsLWJNNVFkMEgzQXFSdlhtS2dqNkpDOEpaX2F1c2dZbk1DanhCd1ZTUlMzcUNhMHlaYnlZWXRTdHFzRERLdmFpbk9VQ2lpMmxQSHV1UkhucFMtNGlEYmtXdTNCd0VYM1VyUUdiOGxhOGo1dFRmQkFVd2VkN3gtd05KdHBoelhaZURZM0NhZW1XcFhRQ1hBZlNyLTZ2aXRCb2pnN1ZXZExqLUR0VTE4QzB6N1pnNEQtS3ctYmJIRG9fd1HSAfgBQVVfeXFMT2hpUVNYMGZIMUxPZG5GcU1ZRXc1Nnhqc1BvQWNITkhwczRkUzdVc0gxRDJMYmFEcXVCbmJMcFFXZEt6RWJaQVNPT0lQRXBweUxvNndNR2Jic0JZeXZDaTNEaVZEbnB6RXVVYjlwczA5Q2h4ZWFBdkM1V0ZScDdTRGltSXh1SjdyOXJjUG93WkhkNkg3Ni1HUzQ4XzhzaktnWWhHUXkxRzE3c2cwMUZ4WDhTNkNnQ1JrclFRWXdaNkpuNTFKdHo1LUR6clRyNXEwZ1Z2WkdPM2pvUlFIQ2hPYnItUkp3eFh0WVB1clhBOG9NMzJVUlNQdXc?oc=5",
+      "image": "assets/news/auto_ce65c7cb.webp",
       "auto": true
     },
     {
@@ -116,67 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQjU0MVBBR0J5QjZtXzd0a29mWnFhWjFaRlNMMG53SlZqQTBmMjNOaHZKbVpLalY3QmltaS16WU9xd2ZIQzZtX3JVV3hCOGZOcUVzNE9PbnBrSjhFOHU4TURVaTdoYm9VUHdzalhmUUY3M1JhT1JXWkdfSk9XMXZha0VvcDJRX2JUR2RsWGZhYWo1Rm1uOHYyZTE5c1JsSl9pR21pYjZ4WFhaRmF5YnVXeC1ra3JvdGtUSzZySlFzNHItMGNiZTRGWXl6RXBka3lNSWF6T2JWQS15YWxuWl90UFdySU5FUTlZ0gHuAUFVX3lxTE9vU2xvdndxanNQLVVLZy10V3otWkl1NTdJNDd6SjdXbDdaaFNqdFRRNXpsZkFSVjNwbGdac2hRSXZMUnlUY3hhY2FFelVpRTVsT3RwZGQtbk9idUxIb3pXZVdsMlkydjBrd2s5ck9DTUp0bmFtWFUtaVdNb0JScmFWcDE4LUdQZlJ4NzJHclRpMFJyMzVLT2NmRUgyVlZPUzc5WjF4bFF5YVZfcHVhM19SdFVuSFhrNEo1MzZqbEpTS1ppcmwtWWNmcElxTWpEVm5vdFhxQmlJSzMtWXItRzV1bkpxc092eFgyWDhleVE?oc=5",
       "image": "assets/news/auto_47e86d6d.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-06",
-      "media": "Diario Correo",
-      "title": "Huancayo: Buscan firmas para expulsar a escolares agresores",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOTmlIZy1SM0NiYk1MSnN4R2R5cTNDajhZZy1TcTR5OVdVWFktcWE3NFU3RC16aFhEaTQzamczdFJjakNTbjd6VXliN280UldTaDdRUURyOUF2VmxDYmY0Y0ZmdF9Ddl80WmhnQ0o1S2t0Y3VfZ1hNd2F1Z1dXR3hFYWo4LWpzeWtBWTFNUl9KcGhaTkpKRlU4N3ZrWmR0RDBOSk1GRHB1QjloQVpU0gHAAUFVX3lxTFAxd2JPdWZHbTBVSktCLTAxOHhIUlMzRkRVaWpSN3hVRzVnQy1NZjlXX21tQjdkeWpod3MydjNCQ193VVRUb1RZZ0VNZWhKUzhhRUZwXzA3THU4dkpNOHZhTjZRVHBUMzlLNl9qS0xkU1NCUVpaRlpuZWFHYVdoREVNS21NcUk5VFA3UjZiMDREcWw0U3Y5cEg0WkdWSmJ2NXJnTlVSaVJjTmVEMlVwcEdNX1RZV2VPQ3lxZVU2cWkxRA?oc=5",
-      "image": "assets/news/auto_103fbad7.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-06",
-      "media": "RPP Noticias",
-      "title": "SíseVe registró 4 759 reportes de violencia escolar en septiembre, la cifra mensual más alta desde 2024",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQdHd4NlZqeW5tX3NXYnZGNThCVXoyWjY1NFpPS01NUmItek1qU19HaVNOX0lrNVhRS1VJR0h2NklUa0dmVmc3a3Y5V2daTnM0NElyUTZlcXNJMElvTXdhVW9USkw1MzdyVzBJTEpDb1g2dTA2YzBTZVdOX2hXeGU5Q2FsdGNIMmRjQ241cmlFVGZ6WnpKQ195LWVjd3oyY2J2UHcweEFHOGFBUjZVUGhlYVFDWUsxaXBSSS0wWmhsTjdGckVuQUNibXptQUZVc3dydVozeVBKU3ZCZFp6dEFUbGoxZw?oc=5",
-      "image": "assets/news/auto_d4a30f6a.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-30",
-      "media": "La República",
-      "title": "Tumbes: Corte sensibiliza a escolares sobre prevención de la violencia",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNNUowT0N6aTQzdW1Rc2hDMGVST3VJcXgzZ3k5U1pWakgzbUhkUy1LR1NhNlRpRUxTRGRfTHpRRTVDT0ZkU1JDcTQtdVlqcW1YTGlnVHBSRUFfeE45SFc2WGc0RVRvTXZTUHNZTXZycE5HLTU4bTBRSjl1dlFpQ3pzYmtYMXQ1T3J5S28yVWducmpKdldyS2c3QW5aSDQwNVhPLU1rMWJVNGt3S0R4Y1hTOWFlWTVkSXp1bXZnZUZn0gHDAUFVX3lxTE1BMUJydUpleEtkQ01DVUFVNExMcDlEZVdqTHBTU05PMU90TTNFMkdXcEdXUDVwRXNpX1JZSjQ5M0U4dEY1aGtZQkVWdEQwNXNNay1qSHY5R002SHJYVVFBeFdnbE1Ranl1cEFkTWFHbTY1dVJuV3F4WlVWN2pJQnRkdGZ3QVFyYlJONEk5aTFKYzRWcE1kZTZSa0JTZXB3VlQ3VjJwMkRHNWhmaXowUEVXd1I3VzQwa3RpSlBORzRVRzhwbw?oc=5",
-      "image": "assets/news/auto_3b5a30f6.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-29",
-      "media": "Infobae",
-      "title": "Más allá de la indignación: una responsabilidad como sociedad educadora",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQanVnQXcxZnB6Zmxjb0c0ZTZuZGFOelp6YWRNNGo1ZUtoN0djUm1NM1ZuWlA2ZWpySFdCUm13ZGJKeVA5enFzMHA4emVwSXRTakh4eVlBSk92aGtTbldnQkVPRjhySEctdURWZm9sY09welZhS2tKQWxKYzBDN3dVbFdLQW1VUWVJRkhiNnpBRnNSamRNVm80bG5kUGloNmtvUmRwTy1LQUJsd1VzeE5wR9IBywFBVV95cUxNN0l5UFdnLTZXVlBxbjdZVDhNLWdrTG1RYUpGQVJUcW5mT054WVhSM2dNbFFmczNOOFdFaGFEZ1hBT3QtbHVkcHBtUndVcTRVMHpQSHd2aEdLcFB1QkZ1Z2lRQjRMNnhUWmZxY3huQ0c0QXhLamNKVG5rOWVCeWhWNGZudm1xUW9rdERYcklTZTZQdFh4dXdMY3RoeGhSa1pYanc0VG1ua2hrOXNpNUEybW5uS25LUGFqOVFTaHhuV2JBU3F5TE10YkgtUQ?oc=5",
-      "image": "assets/news/auto_864df2bb.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-09-29",
-      "media": "El Comercio Perú",
-      "title": "¿Problemas en el colegio de tu hijo? Señales de alerta ante bullying que todo padre debe conocer",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTTg0RUxzQXZ3OURlU2FRUU5JWkV5MmQ4TTQ4TVNiejJLempqTHdqRWJ2XzBENmRDVVJDNjU3di1JYlUwak1iMWRpRUlmc2RncmF6UTczaFFMQXJWZ3d2Q2NudmdMXzFqSjE3VUQxYlk3a2ktSDBvbVR5NWppS1NpOVJ4RnJYQVhuYnJ6ZlBST3MxUmZ20gGoAUFVX3lxTE9SMUprNWUwUTV2c05jRkdFWTl5T1JoVktrc2tQdkhXS1BkRTZwbFEzS3pvRnZzR0ZwOEs3NmtWODN0bWFVWko5WVZPZlFPNGpXZ3lfa0hOQng3ZGlJWm1fblVWVUJUU3R0OUdiNWJHajktYnQ1b0taNVBONjJScGNpZ1V5eEc3YVJxVnY3TFBiUUZIVmQ4eEZoOFM2b0duUHNSb0N5TEJKRA?oc=5",
-      "image": "assets/news/auto_00d760af.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-13T17:57:42.029482+00:00"
+  "last_auto_update": "2026-10-14T15:43:12.692483+00:00"
 }
