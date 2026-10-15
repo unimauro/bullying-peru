@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-14",
+  "retrieval_date": "2026-10-15",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-15",
+      "media": "Infobae",
+      "title": "Expulsión para niños y adolescentes: Cuáles son las principales faltas graves que provocarían este escenario y por qué muchos padres están en contra",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQQXlXaHNWcUI1MkJiRFdwVjdLaUhzakJfUDZzcXpiLVNEQVNtbUtldUt4cGZaaXkzZ192cGUyNFhYTVlzNXdqQzZKWmczUjREejlrWjhyNUVKeXRVc0d3bFFfOU1xdTRPVmx0V0k1ZW1DSTFSQ3hxRlduY3JDdXN5TEdFUXlvM19GaURnbGs1ZWVteDlWTHNiVE91REdyQ1hzX1ZlaFFWZEFKcE8xeDRXMjN1MVJKSUVKNlVDMzFBX1ZBa2tHUFM3anN4MUxhV3J3QUNxc2RRRFhFTFR3ZG5tOFBGLWUzRkdqc1dqcVowa0ZaQ3hmQUlqZFZuRFZGT25PYTF0SU9PY3ZsZHpfX0NNcGU5UkIteVXSAbICQVVfeXFMUHlrUEpOcmhaaHdNZUxwek5nZmdBUVR5SUUyMjRtT3dKNDRwT0tCbDhrQmNLUUl4Q0NVb1FyRUl5eVppNlpSTTNoWk5ocW9CdjRycTdieDVhbVg3aWxoUnlHaThjVlZaWjJubU53UFBQLXlaWUM2aDR1b08yQmpYWFZFX25yd0lrNFc2UGtGS0RNTC11aldLUXZTdXloT1NaNHhucnZ6Skk1akU2X3RJVzU2blZWUVpwMGRRNUVYZ3gySFVROGZuZF91Z1JQNkF6N0JJeU04anRaSzFQNURCamJXdC1FS24zN053d1VUQ1VjRGVTTk1DOGpOV0FTdXdQMHpvc2Etb21CVG9KbF9jVWllTTgtY3haRHVyVFN5MVlBT2V6MjBFT2VpVkRuYzdLVDRB?oc=5",
+      "image": "assets/news/auto_a75b14e2.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-15",
+      "media": "Infobae",
+      "title": "APAFAs rechazan expulsión de alumnos por tardanzas reiteradas propuesta por el Minedu: “no soluciona la violencia”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQWU44aEU4UXpWRS1xQVVOZVo2QjhfZTFzSXlZa0xPaXBBNzhYSTEzTjZpeUMtbUhQS2MtNHF0Y0ZYZ2hDNDl6MFFMY0hRcnNSakVRcTdiWGtScm81T3hib2tTd1RWMEhoZ1FKUW9uWnBmY1dabXBNektnbzRURkVodmdvTUV4RHdwZS1iVjFldkN0VV9UbjdUbEJkdTluQ1VoV1F2YVNnbk9od1JibkZ4aWdETURyaERpRGVNTzZPempQVkI4MUZyWDF4RWdnZFA4TkNPckJaeWJWdHotLTdZX25PQzFOeG_SAYICQVVfeXFMUGVqMDd3cHV0QlI2bi1RSFdNRGNfQk8tX1dpeVpGdmFrbFNoYjhENy1Nemw1RVljRk1yR3dLSWlGVDJQbG5pRXNvVzZHTkFBdV90M1JfWWNhMVpQSXV0VzV3S1VzSW1hWFF5QmM4LUctQlpwaWhlOFgwYm9ySmFpLWRzemJGNjJnY3pJdjBPaVRNYUpBYzMtZWxJcXl1eWhrZGJaQzV5bko0VGhCdUNXTEpUSng0YU1BNEZDM1hRNjczVjdHemJySzlMTVhzU01nb1U3SFBNYUNOT3VwSFZjenJiZUdqWTlnQmN1RkRERUJKSDkzZUd1VnFJemtlUGJqTWt3?oc=5",
+      "image": "assets/news/auto_e159b82e.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-13",
       "media": "Infobae",
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSk9ZWlowSHJ5UFBqcUxrOXhKYmxvbXFZd3N5ZEFFZXg5cVhLWl9ONEpwRS1EN1A4UWlCTTdTVm9mQjlqRWYwOFdiR1puSUFTeHFpZlNrM1dZTWRsTXV4TjZNQjNBWkE5VjZyVzBZQzNZTWo2OHR3X0ljeDk1c1ZiRmJfZGVaQkREbmwyUjA0RGVlMU13RW1BckcyYmFpMGFpWVdsMENLekpNNFo2dS0tOFE1N04wMzZibWxlVkFNdTlGWXVlUExoMTJMV2RLazVucHJQY1E1NnU4eHZNZGdGc2ZBZ29naU0?oc=5",
       "image": "assets/news/auto_6b9a1693.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-07",
-      "media": "Diario Correo",
-      "title": "Arequipa registra más de 117 casos de violencia sexual en colegios en lo que va del año, según SíseVe (VIDEO)",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWVVpS3lqN2RnNzZ3M0hhOHdFVUh6bERzaXNJN1hkX29TaTBxa20tcHhpajhsNEp5NXVuMGp4MElUN002YU4zTTBoazlFZXZjQlVyZnRFazhJaEpxX3V1ZGxxZEpCUVIzYWlWREp5MVZ4T3g3Nlpjd1NtQjIwUEFEbUJGbHgtR1NhVnZ6eno0RjlOdnoyMjd6OGQ3WGQ0c0QwbmhpcjhkLTlmcktDMTdyLU8tbUgwejkyWno5TkdUcFNxWUtON3MtdDNMeFBvZ05qY0NzcUg2TXZjQ2tsaXBxWjVVczBQY0NFcGViUVJpM1NNbmk2M1MzYnBLMnI3eEJK0gGAAkFVX3lxTFBZVWlLeWo3ZGc3NnczSGE4d0VVSHpsRHNpc0k3WGRfb1NpMHFrbS1weGlqOGw0Snk1dW4wangwSVQ3TTZhTjNNMGhrOUVldmNCVXJmdEVrOEloSnFfdXVkbHFkSkJRUjNhaVZESnkxVnhPeDc2WmN3U21CMjBQQURtQkZseC1HU2FWdnp6ejRGOU52ejIyN3o4ZDdYZDRzRDBuaGlyOGQtOWZyS0MxN3ItTy1tSDB6OTJaejlOR1RwU3FZS043cy10M0x4UG9nTmpjQ3NxSDZNdmNDa2xpcHFaNVVzMFBjQ0VwZWJRUmkzU01uaTYzUzNicEsycjd4Qko?oc=5",
-      "image": "assets/news/auto_0f13a1bf.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-06",
-      "media": "La República",
-      "title": "Violencia escolar se dispara en 2026: casos de agresiones aumentan 33% y septiembre marca récord histórico",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQjU0MVBBR0J5QjZtXzd0a29mWnFhWjFaRlNMMG53SlZqQTBmMjNOaHZKbVpLalY3QmltaS16WU9xd2ZIQzZtX3JVV3hCOGZOcUVzNE9PbnBrSjhFOHU4TURVaTdoYm9VUHdzalhmUUY3M1JhT1JXWkdfSk9XMXZha0VvcDJRX2JUR2RsWGZhYWo1Rm1uOHYyZTE5c1JsSl9pR21pYjZ4WFhaRmF5YnVXeC1ra3JvdGtUSzZySlFzNHItMGNiZTRGWXl6RXBka3lNSWF6T2JWQS15YWxuWl90UFdySU5FUTlZ0gHuAUFVX3lxTE9vU2xvdndxanNQLVVLZy10V3otWkl1NTdJNDd6SjdXbDdaaFNqdFRRNXpsZkFSVjNwbGdac2hRSXZMUnlUY3hhY2FFelVpRTVsT3RwZGQtbk9idUxIb3pXZVdsMlkydjBrd2s5ck9DTUp0bmFtWFUtaVdNb0JScmFWcDE4LUdQZlJ4NzJHclRpMFJyMzVLT2NmRUgyVlZPUzc5WjF4bFF5YVZfcHVhM19SdFVuSFhrNEo1MzZqbEpTS1ppcmwtWWNmcElxTWpEVm5vdFhxQmlJSzMtWXItRzV1bkpxc092eFgyWDhleVE?oc=5",
-      "image": "assets/news/auto_47e86d6d.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-14T15:43:12.692483+00:00"
+  "last_auto_update": "2026-10-15T15:31:01.954418+00:00"
 }
