@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-15",
+  "retrieval_date": "2026-10-16",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -31,6 +31,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQWU44aEU4UXpWRS1xQVVOZVo2QjhfZTFzSXlZa0xPaXBBNzhYSTEzTjZpeUMtbUhQS2MtNHF0Y0ZYZ2hDNDl6MFFMY0hRcnNSakVRcTdiWGtScm81T3hib2tTd1RWMEhoZ1FKUW9uWnBmY1dabXBNektnbzRURkVodmdvTUV4RHdwZS1iVjFldkN0VV9UbjdUbEJkdTluQ1VoV1F2YVNnbk9od1JibkZ4aWdETURyaERpRGVNTzZPempQVkI4MUZyWDF4RWdnZFA4TkNPckJaeWJWdHotLTdZX25PQzFOeG_SAYICQVVfeXFMUGVqMDd3cHV0QlI2bi1RSFdNRGNfQk8tX1dpeVpGdmFrbFNoYjhENy1Nemw1RVljRk1yR3dLSWlGVDJQbG5pRXNvVzZHTkFBdV90M1JfWWNhMVpQSXV0VzV3S1VzSW1hWFF5QmM4LUctQlpwaWhlOFgwYm9ySmFpLWRzemJGNjJnY3pJdjBPaVRNYUpBYzMtZWxJcXl1eWhrZGJaQzV5bko0VGhCdUNXTEpUSng0YU1BNEZDM1hRNjczVjdHemJySzlMTVhzU01nb1U3SFBNYUNOT3VwSFZjenJiZUdqWTlnQmN1RkRERUJKSDkzZUd1VnFJemtlUGJqTWt3?oc=5",
       "image": "assets/news/auto_e159b82e.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-15",
+      "media": "Perú 21",
+      "title": "\"Estamos criando personalidades psicopáticas\": La DURA ADVERTENCIA de Gonzalo Elías sobre la violencia escolar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQbFJFcGF5ckZlSFNvbFQ3RnZyaDh0SG9ySE5BUlo0Z0YyaWtrQVpSRy14NDYtRy1TeUNpYjVUOW83ODZEQXRaeUZoUUxrTFZNUlozcGRSZGxobW1maHB0SzEtTmUyZ210SkJtOVU1V3A5cThXaVJnMDRMeVBCbHNMTEktbHFFS3piQjE4ZHBEYWh4XzQ?oc=5",
+      "image": "assets/news/auto_965382a2.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONjIxQ3B0QzB2QU1abzhRN09jNlh3cEV1LWVleWpWVVc3ZHFXekFkR2tjU1pSUElMTkYwY3NjbjBPRHNVck92S01naXJydnp0SDRsTHlfODVWak9ITU0xamgtSENHVGJnRWt0bG84NDBqUm9rR3pHQ1RtTVRSUHRNVkRSQU9xc18tTmdaLVo5UmdUcVZDYndTbURGam9VN0lVY2dTVkVQVXh0RVdrY0FEYUt0VDdyUzdDbVBFRXpwVFFXcWpBNW9aZ01ia1VsNTh2?oc=5",
       "image": "assets/news/auto_adfecf08.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-10",
-      "media": "El Comercio Perú",
-      "title": "Caso Liceo Naval: Cuatro gráficos interactivos para conocer los tipos de violencia escolar más reportados",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSk9ZWlowSHJ5UFBqcUxrOXhKYmxvbXFZd3N5ZEFFZXg5cVhLWl9ONEpwRS1EN1A4UWlCTTdTVm9mQjlqRWYwOFdiR1puSUFTeHFpZlNrM1dZTWRsTXV4TjZNQjNBWkE5VjZyVzBZQzNZTWo2OHR3X0ljeDk1c1ZiRmJfZGVaQkREbmwyUjA0RGVlMU13RW1BckcyYmFpMGFpWVdsMENLekpNNFo2dS0tOFE1N04wMzZibWxlVkFNdTlGWXVlUExoMTJMV2RLazVucHJQY1E1NnU4eHZNZGdGc2ZBZ29naU0?oc=5",
-      "image": "assets/news/auto_6b9a1693.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-15T15:31:01.954418+00:00"
+  "last_auto_update": "2026-10-16T15:14:51.938420+00:00"
 }
