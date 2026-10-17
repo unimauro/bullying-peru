@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-16",
+  "retrieval_date": "2026-10-17",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-16",
+      "media": "La República",
+      "title": "Violencia escolar en Perú: ¿por qué los colegios no logran prevenirla?",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNc19aWEZzRGxOeTdHRkZwSm5ra2ZhWm1fb1FabllRbkdKTVNKdzFQT0E2d1otU2FOWFpDVldSUlZoVWxfM29FNGdGaEhrVzVoaDdDVzh3MVk5b01KWGZ1TTQ2NkRJWVZucE81eFVKOVUtM183NjI1OW14SWZpT25jLU5nZ0xNWnA3SEVNQm1ES3g1dkNnUTc3RW9xU0ZaN3ZjRVMtZXZjSVVhMDVLVWVXa2stTEtsWmlyZTVGNkNvVURLWTN1RVc4bm9VSDNhRS01aFd0ekVVX3VEdzV5R2pYQ0xGQUhZTktEN1l4SXp2ajc5QWlsRkxmaUZLN2hCRDlwcjNGNTFjOW03Vm1qTzFN?oc=5",
+      "image": "assets/news/auto_d65b3d24.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-15",
       "media": "Infobae",
@@ -130,6 +142,18 @@
       "auto": true
     },
     {
+      "date": "2026-10-13",
+      "media": "El Comercio Perú",
+      "title": "Caso Liceo Naval: Cuatro gráficos interactivos para conocer los tipos de violencia escolar más reportados",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSk9ZWlowSHJ5UFBqcUxrOXhKYmxvbXFZd3N5ZEFFZXg5cVhLWl9ONEpwRS1EN1A4UWlCTTdTVm9mQjlqRWYwOFdiR1puSUFTeHFpZlNrM1dZTWRsTXV4TjZNQjNBWkE5VjZyVzBZQzNZTWo2OHR3X0ljeDk1c1ZiRmJfZGVaQkREbmwyUjA0RGVlMU13RW1BckcyYmFpMGFpWVdsMENLekpNNFo2dS0tOFE1N04wMzZibWxlVkFNdTlGWXVlUExoMTJMV2RLazVucHJQY1E1NnU4eHZNZGdGc2ZBZ29naU0?oc=5",
+      "image": "assets/news/auto_6b9a1693.webp",
+      "auto": true
+    },
+    {
       "date": "2026-10-12",
       "media": "El Comercio Perú",
       "title": "¿Cuándo podría un colegio expulsar a un alumno? Minedu abre la puerta a reformas para abordar casos de violencia grave",
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZzFSR0h4Q1h6VDJoclJ4cjJZWFRvaHRUUExJVmZxQVdWRVZWYnVhOGYtVEpsUEZ1M0NseXZBSVVCVk5mMW9kaXFld1lNcUJ2ck9OSjEwYVJOTEdRR056ckZXbTZDclU4eURiczZOWXE3TWFaY21wSHplT1VLeDFXdnJhOEhyQTU1X1F6NA?oc=5",
       "image": "assets/news/auto_873b9c29.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-12",
-      "media": "Exitosa Noticias",
-      "title": "Plantean derogar el SíseVe y crear una nueva unidad para proteger a la comunidad educativa",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPd01QdUZVelhHMUZHRFJnRXVoNHJCZWZYMkxZaE4yTzZCSEs1Ujk5UlhNcWh5UjdRUDFIX2JYUDNkUXg3eGU4c3ljRzZyaGgxZzc1cGV2Q2ViTURmVERpWlNqYXMwRVhTVXVZTVlnYWFUTGR2UU0xUmY0SnBmMjRYMjd4LTRldDYxdWtQWVVia3FxSEtuTGpnb2hmUEVHT2ZQSUFBSUhveXRPNlNMOFJmajdsOVdKTlNHTW1YejNiY2pXSm8?oc=5",
-      "image": "assets/news/auto_35d9df59.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-12",
-      "media": "El Peruano",
-      "title": "Presidenta Fujimori presenta nuevos lineamientos educativos para recuperar el orden en las escuelas",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONjIxQ3B0QzB2QU1abzhRN09jNlh3cEV1LWVleWpWVVc3ZHFXekFkR2tjU1pSUElMTkYwY3NjbjBPRHNVck92S01naXJydnp0SDRsTHlfODVWak9ITU0xamgtSENHVGJnRWt0bG84NDBqUm9rR3pHQ1RtTVRSUHRNVkRSQU9xc18tTmdaLVo5UmdUcVZDYndTbURGam9VN0lVY2dTVkVQVXh0RVdrY0FEYUt0VDdyUzdDbVBFRXpwVFFXcWpBNW9aZ01ia1VsNTh2?oc=5",
-      "image": "assets/news/auto_adfecf08.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-16T15:14:51.938420+00:00"
+  "last_auto_update": "2026-10-17T14:04:54.834611+00:00"
 }
