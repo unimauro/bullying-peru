@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-17",
+  "retrieval_date": "2026-10-18",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,42 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-18",
+      "media": "Infobae",
+      "title": "Control o formación: una crítica a los lineamientos de disciplina escolar del Minedu desde el desarrollo socioemocional",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOblVVbEFLbG5vbm5jYUZpbGZjWHlFT3pfZy1tSTNkdjdBWVdxWmFhaXNpOXhZUktJZ25wZnhURnFVWnpGM0lCYl81aTI0eTIzVW5NSUJnLUVtbzVaYldjVk5kQi1RQlNoU2V6S3p3Vm1jcGQ0RTQyUnBSZmIteFVaVVliOWtPQ0N0Q2tubGRDb3hWbUQ2eEdyS3FwTXhwZUg0ZU5pYTRQQ0drQ0N1UWZYamdOeDBfMGxHLVB0SkNjekEzV3FPTFNEaVFWSWtwRFFNMEZjdkxCYU4wRG5OOWRDZ00zN3VJYVg5ZzhHcHowWDPSAYsCQVVfeXFMTW1MUF82bmNpYkdHRFBueFpFUGFRaXN5Z2tTSm8yRE11SkJLNlRxSXJXZzlfc1Z1ankxSHItV2M3ek1EYm1famJZOWR6LU0ycWthTld0a1pPNVFhanBMNlRpVFkyanpBT2lwQnFhNTZSZEdZandqbmNGd1N5c2c4a2NpNGVxcldTbmx2ejZWWDJXdk9naVpObVpJbi0xbzhEU1J6dlRvQ1RHWGpaQkpkemxzQUlMd3lWb2NlX1pDOUU3UFdvT05oOGxrTkV4MU9MQ2tJa1Nibi13a0NENFNIeDlHMUozcE9tTFREdHc1UFotREFsbGJCRk1nU240TUx5cWtlTnZscDBuck5v?oc=5",
+      "image": "assets/news/auto_6a00d585.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-18",
+      "media": "La República",
+      "title": "De sufrir bullying escolar a ganar la final de Yo Soy: la historia de superación de Nikólas Bujahico, artista de Huaral, que triunfó imitando a Adrián Barilari",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxQM0cwQnpfV0hjSDlTWnNPUDh4LXV2T19VSGlndnJPbC1fd1NwWGZhemxhX2lHMW5aLVlnZUFtNXEwaFBONDNyX25SZFlFSGtzdHFEckhTdlhpNXNIbENmc1lmbzN1LXdIdXlxOUF4TkR6eXZVUzllaUVoMzY5Qk1lcWJaRUs1TlJCcHY4NmxQZ2Jfa1NpbURiYTdZcUlZWXYyd0lyYWJUWC1qLURIREtCQV9ETDlTaUlWWTJ5ZElMTEJMY3EzS0NQWWc4MWEyS19ERHJYTkF3ZWVLTzJjZVY5MVI2TDlfWEZiakZxQ1o0c1RwZzNSNENOTnUzQ2pyM29UMW9Wb2l0TzB3WE9ZTmE4eTh1NHA4TmdEcmZsalZLWndkQlo0QlRBNENxT2RLblpjempMUzB0QkHSAb4CQVVfeXFMT0Z4WFJEY2tvRGFqd29vcFRTSldmOFFVNXR4a0pNM0g2cTVPOVNnWTlyNXVOcFBScUhSMzF0Y0pWQmU4QTBGc2U1cGZITm9sZFlwWmdUMHVKUXJoU2xZZHZZekZqT2pRWTNrMktYZlIyNjE2T2wxS1dzSkZ1cVk3Q2REQTc4ZXN0bGltcGlnYTFpNHJSZmU2VG1nSFhpOF9RZWMwaHRqQ0RDdHFrTExKZUNMbndEbEd3ZEVXamdLcExaVklyZ3dZb21VZ2k2UUViRWpkTFJhNldkc2pkZ3A5RjRLNWdzZ05SVTREQTFDdlpHX0lrTE9PVThKZENINGMwSHYzTFgxR0otaUg0WDMxTTFCVUowNWozZ2REZEtpS1FWSnhPN0R6dGFwM1pCcTFHbjcxNUMwLWVvYkpleW1B?oc=5",
+      "image": "assets/news/auto_831c395b.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-17",
+      "media": "Latina Noticias",
+      "title": "Escolares cortan rostro de compañera con una navaja en colegio de Piura",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMTA0elZIS3V6WVpDTFVHcms1NFN2bDNGbHZFdTZ6Tl9SREdERzlXSl9aTzFRcEZRRzdSTTRZRUJwRWJHYlRKcXNVdTBONl9NOUgxMGdDMUd3QmVDUGhMbDgzTldkWDdndnRkWllWN1ZERkxzM0p4cXVtTnljN2dvV3R4a0w3ZE1FTkIzWWVkckRDVXhnZDNpeXhJWk92NnpFNm0tNEhqdGhqY2ozdDdVYm9B?oc=5",
+      "image": "assets/news/auto_635f8c6f.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-16",
       "media": "La República",
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPdzViN25YZW9Ya1ptNUVUcmhySVZqM1h4UVlxTEFsLWJNNVFkMEgzQXFSdlhtS2dqNkpDOEpaX2F1c2dZbk1DanhCd1ZTUlMzcUNhMHlaYnlZWXRTdHFzRERLdmFpbk9VQ2lpMmxQSHV1UkhucFMtNGlEYmtXdTNCd0VYM1VyUUdiOGxhOGo1dFRmQkFVd2VkN3gtd05KdHBoelhaZURZM0NhZW1XcFhRQ1hBZlNyLTZ2aXRCb2pnN1ZXZExqLUR0VTE4QzB6N1pnNEQtS3ctYmJIRG9fd1HSAfgBQVVfeXFMT2hpUVNYMGZIMUxPZG5GcU1ZRXc1Nnhqc1BvQWNITkhwczRkUzdVc0gxRDJMYmFEcXVCbmJMcFFXZEt6RWJaQVNPT0lQRXBweUxvNndNR2Jic0JZeXZDaTNEaVZEbnB6RXVVYjlwczA5Q2h4ZWFBdkM1V0ZScDdTRGltSXh1SjdyOXJjUG93WkhkNkg3Ni1HUzQ4XzhzaktnWWhHUXkxRzE3c2cwMUZ4WDhTNkNnQ1JrclFRWXdaNkpuNTFKdHo1LUR6clRyNXEwZ1Z2WkdPM2pvUlFIQ2hPYnItUkp3eFh0WVB1clhBOG9NMzJVUlNQdXc?oc=5",
       "image": "assets/news/auto_ce65c7cb.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "El Comercio Perú",
-      "title": "Caso Liceo Naval: Cuatro gráficos interactivos para conocer los tipos de violencia escolar más reportados",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSk9ZWlowSHJ5UFBqcUxrOXhKYmxvbXFZd3N5ZEFFZXg5cVhLWl9ONEpwRS1EN1A4UWlCTTdTVm9mQjlqRWYwOFdiR1puSUFTeHFpZlNrM1dZTWRsTXV4TjZNQjNBWkE5VjZyVzBZQzNZTWo2OHR3X0ljeDk1c1ZiRmJfZGVaQkREbmwyUjA0RGVlMU13RW1BckcyYmFpMGFpWVdsMENLekpNNFo2dS0tOFE1N04wMzZibWxlVkFNdTlGWXVlUExoMTJMV2RLazVucHJQY1E1NnU4eHZNZGdGc2ZBZ29naU0?oc=5",
-      "image": "assets/news/auto_6b9a1693.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-12",
-      "media": "El Comercio Perú",
-      "title": "¿Cuándo podría un colegio expulsar a un alumno? Minedu abre la puerta a reformas para abordar casos de violencia grave",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNTlM2TXlKQUFVOTJNbUF0VWZ6QjlQa2pCclFuc2l2OUVQQzNxWUdKYTR6YTMwSzJBOUppTkl6Z3JkNmc1d2t6Y1dZU3FnVU1SbEMyUmtBdWFtQ1FvSTVJVmxUNDZyM0V0dXRvT3hiNFVvM1AzeVhWYjJKQTEzS0tDNEt6UzM0dDA4WFJJOTFPOHJSRkpfTWNMM3duZzhFZ0dzY2pVeFU1eXhhRXR3RnJfM3VMVmROOTZLWHRUMGl2X2VsbTVzMFo2dTg1NEk0OERYVWQ4SWFOcXNkcmJBc29mZXZQaHRzWlJhYU5nbEo0cW1BeElveEVHNW11ZkQ4WjDSAZMCQVVfeXFMTlBPUHExVUk0ZDZUY19tdWpEa3pQWUhlTE94bEtsbmFGVHVERUdXcVpWN3o4RHJLb2lQSnU0cjk3Y0V3SEtKNHhCY1BtV1RrbDNhc2pLV3BybFRZNVlidnYxWjZyX24xSmNKSjBLNEhDMDQ3ZFdfYzB3bHBpZXVrVXYxMlNCZFpCOVFMQlBRVWRWWExfTW9QRzJPdmNlVTBaVjlMLTJYRy0yX1hmNUJHaE9pNnJfQWFmVFIwZzl5ZUdjQ0htSWJrdklTTlh5VExSWW9yQnhFY0FxN0FTLThDdDB4cmc0VnFQazNBVUhQX3lwX1dBYXd1Sl9DMlJZcUhJUmpteXVZdnpidlN0Njg3bExhWVU?oc=5",
-      "image": "assets/news/auto_b017dd1e.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-12",
-      "media": "Perú 21",
-      "title": "¡ATENCIÓN, PADRES! Estos son las 10 medidas disciplinarias que propone el Minedu para los colegios",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZzFSR0h4Q1h6VDJoclJ4cjJZWFRvaHRUUExJVmZxQVdWRVZWYnVhOGYtVEpsUEZ1M0NseXZBSVVCVk5mMW9kaXFld1lNcUJ2ck9OSjEwYVJOTEdRR056ckZXbTZDclU4eURiczZOWXE3TWFaY21wSHplT1VLeDFXdnJhOEhyQTU1X1F6NA?oc=5",
-      "image": "assets/news/auto_873b9c29.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-17T14:04:54.834611+00:00"
+  "last_auto_update": "2026-10-18T14:20:15.122902+00:00"
 }
