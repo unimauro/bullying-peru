@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-18",
+  "retrieval_date": "2026-10-19",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -31,6 +31,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxQM0cwQnpfV0hjSDlTWnNPUDh4LXV2T19VSGlndnJPbC1fd1NwWGZhemxhX2lHMW5aLVlnZUFtNXEwaFBONDNyX25SZFlFSGtzdHFEckhTdlhpNXNIbENmc1lmbzN1LXdIdXlxOUF4TkR6eXZVUzllaUVoMzY5Qk1lcWJaRUs1TlJCcHY4NmxQZ2Jfa1NpbURiYTdZcUlZWXYyd0lyYWJUWC1qLURIREtCQV9ETDlTaUlWWTJ5ZElMTEJMY3EzS0NQWWc4MWEyS19ERHJYTkF3ZWVLTzJjZVY5MVI2TDlfWEZiakZxQ1o0c1RwZzNSNENOTnUzQ2pyM29UMW9Wb2l0TzB3WE9ZTmE4eTh1NHA4TmdEcmZsalZLWndkQlo0QlRBNENxT2RLblpjempMUzB0QkHSAb4CQVVfeXFMT0Z4WFJEY2tvRGFqd29vcFRTSldmOFFVNXR4a0pNM0g2cTVPOVNnWTlyNXVOcFBScUhSMzF0Y0pWQmU4QTBGc2U1cGZITm9sZFlwWmdUMHVKUXJoU2xZZHZZekZqT2pRWTNrMktYZlIyNjE2T2wxS1dzSkZ1cVk3Q2REQTc4ZXN0bGltcGlnYTFpNHJSZmU2VG1nSFhpOF9RZWMwaHRqQ0RDdHFrTExKZUNMbndEbEd3ZEVXamdLcExaVklyZ3dZb21VZ2k2UUViRWpkTFJhNldkc2pkZ3A5RjRLNWdzZ05SVTREQTFDdlpHX0lrTE9PVThKZENINGMwSHYzTFgxR0otaUg0WDMxTTFCVUowNWozZ2REZEtpS1FWSnhPN0R6dGFwM1pCcTFHbjcxNUMwLWVvYkpleW1B?oc=5",
       "image": "assets/news/auto_831c395b.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-18",
+      "media": "El Peruano",
+      "title": "Poder Judicial capacita a más de 1,200 docentes de colegios para prevenir el bullying escolar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZHRhLWtSdHRjRHVVeHNtM0pubTBtczRBYklPdlVLdWUxV3VrMjRKZUNNeUphM3BwWU9qMHBKbU9Ua2VnTTBZMFdEcEQtU3dJa3BJN18zaV9HdkczbThIS25xb1p4aUVHWTk5RmwweEl5dnZWY2w2dE1QdkJnYkZ5bGlBa0VIaThna2dGbEVjRXo5TjBqOGdpMVFNYVhxaXc3QTZ1YVMzcThIeUxPQzZ6QndSbkJsbDRFQXZTMC03WWlkRnVpaS1aS2J6YTE?oc=5",
+      "image": "assets/news/auto_d3c45a69.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxORmFLWVFWbEVBSVZZUFQ0eURHTjNZSlZTUDhraWxhZUxNRm9xZnRnMUtnV2pQUWZCR1NFYjdRcVhsVS1VaHNpbGtvWl9PUFFNMlZVNDBBQ3c1VFBPQW8tZDg4TWcwbEhMdmxhaXRVbnJMaXROdkEzZGZaZGVaVWdiSmdfaTJTaS1OX25heERFZElZbk5SQ3ZZRjZrNWlyM3dTTmw5aXp3VXZySkpWdnUxYWpWSUtJam1Wbk9zZVNHclNRM3BKSG1CbzJlekV1X3JSTjVMQ3piaC1tSWpkMVpRS0txa2VhWTFFQ09DZ29kMNIBigJBVV95cUxOdWZWUU53MF9vVkNEdXcxZlBqMmttLXVEalduQ0EyS1BWcVlubWNSRGNadG5BdmtDU3dJUzZRMVFKNWJLWllOQmpoWFpoVVZCdTM4eEZsZnBvUlNwTWR4VE5MeDlJbENRVXFKR1dDZl9OOEhMd0pFNzBtYWxCTGZpZllUT0F6bEFNRHVXaW5JNzBfZFdfODcydnhtNlFENlhRaUdZUEVhRVRsUVZYZ1ZCYW5ZcjRJQnRneHpjWjJ5LXZCdkRQb1Y4YjM1V0xqSmVfNkVuUHVyWHQwblFXczNUaVA5N3NvN1RkdFFrb3pxeHNkRklnclVSUzhFOGRhTXFyOEFOVV93LWJzdw?oc=5",
       "image": "assets/news/auto_08479a23.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "Infobae",
-      "title": "Minedu: todo lo que sabe de las nuevas reglas propuestas para recuperar la disciplina escolar en colegios",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPdzViN25YZW9Ya1ptNUVUcmhySVZqM1h4UVlxTEFsLWJNNVFkMEgzQXFSdlhtS2dqNkpDOEpaX2F1c2dZbk1DanhCd1ZTUlMzcUNhMHlaYnlZWXRTdHFzRERLdmFpbk9VQ2lpMmxQSHV1UkhucFMtNGlEYmtXdTNCd0VYM1VyUUdiOGxhOGo1dFRmQkFVd2VkN3gtd05KdHBoelhaZURZM0NhZW1XcFhRQ1hBZlNyLTZ2aXRCb2pnN1ZXZExqLUR0VTE4QzB6N1pnNEQtS3ctYmJIRG9fd1HSAfgBQVVfeXFMT2hpUVNYMGZIMUxPZG5GcU1ZRXc1Nnhqc1BvQWNITkhwczRkUzdVc0gxRDJMYmFEcXVCbmJMcFFXZEt6RWJaQVNPT0lQRXBweUxvNndNR2Jic0JZeXZDaTNEaVZEbnB6RXVVYjlwczA5Q2h4ZWFBdkM1V0ZScDdTRGltSXh1SjdyOXJjUG93WkhkNkg3Ni1HUzQ4XzhzaktnWWhHUXkxRzE3c2cwMUZ4WDhTNkNnQ1JrclFRWXdaNkpuNTFKdHo1LUR6clRyNXEwZ1Z2WkdPM2pvUlFIQ2hPYnItUkp3eFh0WVB1clhBOG9NMzJVUlNQdXc?oc=5",
-      "image": "assets/news/auto_ce65c7cb.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-18T14:20:15.122902+00:00"
+  "last_auto_update": "2026-10-19T17:21:21.116702+00:00"
 }
