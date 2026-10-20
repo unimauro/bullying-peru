@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-19",
+  "retrieval_date": "2026-10-20",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-20",
+      "media": "Expreso",
+      "title": "Ada Gallegos, presidenta del Consejo Nacional de Educación, pide revisar plataforma SíseVe frente a casos de violencia",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPSG54RGE4ZVdLZWtmVGZUalByRk1kMnlvQ002YmltMXJXenVDVFJzTS1BYTFVdkVkODNKdWI2ZlpKZVEwNF81VHJwWFk3dF9fMlgzTDJIV1FjWTBpNk1sZ1ZURy1kYmdnZENaTkFxM1NqVVZndm1qeEJvUUh0Q3lDekxMaWNTN0kxTGRpdEdza3RaWFdIT28zTlFSdmpkVm1MTmxoRWkzaENWZ3BGUUdMNHFkc0RCNm1CTjlPUlZwSWsyNlk1WUZoYko5a2Q0THR4eGJaTTNMZ2xkQ0JXRmNPV2RKS3VZOWdwNXRrQUkxZWRraC1RYmFvNU9vU2poMWlS?oc=5",
+      "image": "assets/news/auto_bc979817.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-19",
+      "media": "Exitosa Noticias",
+      "title": "Consejo Nacional de Educación solicita evaluar la eficacia de la plataforma SíseVe ante casos de violencia",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOLWlOd2RfVWpIanpkMnUxTW9pZVBlYlVSeU1fcUktZkJZQWk0Y2VTTUZpaVhqc2lLQ2hOWV81UmU1dnlHS2RsbTRFdlpzOHdibGRiM0VKQ0RMZjBiN0pqRmNzS3dkMlBlSFpsUEZFaVQxS0JJQTAzYXZTeW81OHhlY3BveldQeFl2WTN6djBsWkxhajdiYXBXS2I0OFQwek1XYkVNOVk2S1U1dlpYSnJ3Nl81d1NIS1lqUHpySXVWeTdZWVpsOEhUUGxFLVctTUtmNUE?oc=5",
+      "image": "assets/news/auto_3dbe0d93.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-18",
       "media": "Infobae",
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPak9jUDZMbFEwNUpNSHlMZ0dudWdfYkt5blpBaTR3T0NzblczUEs1QlJtWWRYZFhYRE9xZmluOEhYeWkxUDYtbEtGUWpUTjU0TUdVNXNzWWJ0dG9Za2E3TG5rMWZIQVJxT1k4dWlrbnZ1amRkQlRzMGNMNXBYbGNlVVk2LTA3cFBBNmxwcEZmRE4ydjcxRldORVhYNGVJQVBVZnpHblBKYUZ6andXdms3VUZJRGFzb2VOZm1aaUI5OU11YS1mQmFZRVFJdzFRaEx5Q3RhQw?oc=5",
       "image": "assets/news/auto_3814273d.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "El Comercio",
-      "title": "Keiko Fujimori anuncia normas estrictas en escuelas de Perú",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNN1pZT3htQVRkY1E2ZWd6ZHh3Y2FyUFJDMG13WGR6cHptS0hhUGxHa0xhRTl6WXlOeXBQc0F5MllEUVpqeHlIQTlZWkVmb2RIWk82R0tuZWpaN1RtbXRSN0NyQ3pYQzdiVktKZnVGMWhLZUxBWFdoWEJqWmUzazVtWlI0bEUyMGtTUDdDYVM4WkVBdlozRU1UMUhZWElxamc?oc=5",
-      "image": "assets/news/auto_b6d2ea5f.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "Infobae",
-      "title": "Keiko Fujimori se inspira en Bukele para llevar su modelo a colegios: “Hombrecitos con pelo corto y prohibido maquillarse”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxORmFLWVFWbEVBSVZZUFQ0eURHTjNZSlZTUDhraWxhZUxNRm9xZnRnMUtnV2pQUWZCR1NFYjdRcVhsVS1VaHNpbGtvWl9PUFFNMlZVNDBBQ3c1VFBPQW8tZDg4TWcwbEhMdmxhaXRVbnJMaXROdkEzZGZaZGVaVWdiSmdfaTJTaS1OX25heERFZElZbk5SQ3ZZRjZrNWlyM3dTTmw5aXp3VXZySkpWdnUxYWpWSUtJam1Wbk9zZVNHclNRM3BKSG1CbzJlekV1X3JSTjVMQ3piaC1tSWpkMVpRS0txa2VhWTFFQ09DZ29kMNIBigJBVV95cUxOdWZWUU53MF9vVkNEdXcxZlBqMmttLXVEalduQ0EyS1BWcVlubWNSRGNadG5BdmtDU3dJUzZRMVFKNWJLWllOQmpoWFpoVVZCdTM4eEZsZnBvUlNwTWR4VE5MeDlJbENRVXFKR1dDZl9OOEhMd0pFNzBtYWxCTGZpZllUT0F6bEFNRHVXaW5JNzBfZFdfODcydnhtNlFENlhRaUdZUEVhRVRsUVZYZ1ZCYW5ZcjRJQnRneHpjWjJ5LXZCdkRQb1Y4YjM1V0xqSmVfNkVuUHVyWHQwblFXczNUaVA5N3NvN1RkdFFrb3pxeHNkRklnclVSUzhFOGRhTXFyOEFOVV93LWJzdw?oc=5",
-      "image": "assets/news/auto_08479a23.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-19T17:21:21.116702+00:00"
+  "last_auto_update": "2026-10-20T15:34:25.511945+00:00"
 }
