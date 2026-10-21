@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-20",
+  "retrieval_date": "2026-10-21",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -19,6 +19,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPSG54RGE4ZVdLZWtmVGZUalByRk1kMnlvQ002YmltMXJXenVDVFJzTS1BYTFVdkVkODNKdWI2ZlpKZVEwNF81VHJwWFk3dF9fMlgzTDJIV1FjWTBpNk1sZ1ZURy1kYmdnZENaTkFxM1NqVVZndm1qeEJvUUh0Q3lDekxMaWNTN0kxTGRpdEdza3RaWFdIT28zTlFSdmpkVm1MTmxoRWkzaENWZ3BGUUdMNHFkc0RCNm1CTjlPUlZwSWsyNlk1WUZoYko5a2Q0THR4eGJaTTNMZ2xkQ0JXRmNPV2RKS3VZOWdwNXRrQUkxZWRraC1RYmFvNU9vU2poMWlS?oc=5",
       "image": "assets/news/auto_bc979817.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-20",
+      "media": "Gestión",
+      "title": "Congreso: Renovación Popular propone proteger a profesores del bullying escolar: los detalles | PERU",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWkExZ1Nhc205VVA3LUdIbTR6alg5VjZIQzVwUXZMNzkyTUNTMkNVS2M0bVE2Tk5zN0tPUFRiWF85VmVfVE1VWWF5RzRuVVNsUFpEeXRZVzdyb1dBMXVjRWlXVWpmb1hWZGNkazFEZUtfMFZ2QnQ2M2UwSjVDX2ttdVEtY2x4MlZFYVFjcEVXbkVvTjBhNWptdUVVYlV5alBSS0JxT3NIS2prRkN0UUhlWlg0NkYtOXFaOVhhd3RrNWRnZw?oc=5",
+      "image": "assets/news/auto_ef962ac0.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPSjZoNGZocWxZbTZUdU04Q0hyZHhTN0dnX2tBUUVua05ya3lmM1ZQYnVwemdNLUo3YXBpMkhUdU5tUzhoRW5EWGlhZ1JjU18zTDM0Q2VNblB4MTJwSDV6TDYyQU5RS2o3RXB4OWJXd2FXaGlXWmNSTThqMkVtV2J2aVRMY3B4cWo3WHlSdTBqQ2c3S0c1M3ZNdDNwQnAzVlBJSEhIbl9ObTFoLXFuTVZ3ZUp6Mi1tWEZzMmxpOUJaRlZzRHpySzlvWjJ1N2t1TzhUQ0pPVG1nLUFsZ1NFb2pySFRsVHhlam1BWjRWZHZXbkRvZFpvZy1GQjFOQWhjbWVodlhaWm1tNThGaFpXTEHSAagCQVVfeXFMT3A3Sm1zV3JhUnhEdmt6R2RybWFVRERzUXNiYnk2Smd5MnQ1QVBUNmdNOFZLRjA5bUVzclZkbVdUTnM3RXM0dVpCMENzVUVQbkhTYTlHd2RsYXB4TjctVU5xRWhYVVNWWHlFUG9DNzl5V3hsSkdBZXl0T0JZWTQ1NFJic05KSzRrRkM5SVRqenBmSG5IQnE0Y2VEQk0ydGlIVGZxX0lQZmZNYzNvdGM5WEJGdnhkY0hzX2tWNnR1bXZhY0tpYmNrNHU5YVM2SkdZdE5MMW1iNV9KZmJvcXZHdXNWWU80cjNuSTREUnZlaFNIYWdrV1pXNEdCbGg3NkdiNnc1RWJfbk9KZndJMFJSakl0NUJLb3hqNE03Z0FpbXRoQXlMaHM3Tms?oc=5",
       "image": "assets/news/auto_6a1336af.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "El Peruano",
-      "title": "¿Qué faltas pueden causar la expulsión escolar? Minedu incluye acoso, extorsión, violencia y uso de armas",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPak9jUDZMbFEwNUpNSHlMZ0dudWdfYkt5blpBaTR3T0NzblczUEs1QlJtWWRYZFhYRE9xZmluOEhYeWkxUDYtbEtGUWpUTjU0TUdVNXNzWWJ0dG9Za2E3TG5rMWZIQVJxT1k4dWlrbnZ1amRkQlRzMGNMNXBYbGNlVVk2LTA3cFBBNmxwcEZmRE4ydjcxRldORVhYNGVJQVBVZnpHblBKYUZ6andXdms3VUZJRGFzb2VOZm1aaUI5OU11YS1mQmFZRVFJdzFRaEx5Q3RhQw?oc=5",
-      "image": "assets/news/auto_3814273d.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-20T15:34:25.511945+00:00"
+  "last_auto_update": "2026-10-21T15:50:43.259919+00:00"
 }
