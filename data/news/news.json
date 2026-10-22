@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-21",
+  "retrieval_date": "2026-10-22",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-22",
+      "media": "Infobae",
+      "title": "Multan con 8 UIT a colegio que no frenó acoso escolar contra niña con epilepsia y omitió registrar su matrícula",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQLVFjWEd3ZDg5MVp4UUpUZUpaWEdWZmdrcnBZNGR6d3RQbzBva1V4cHFKNGFSUHg3UDFZVEV0TWJHX0x1Ry1FOF85b3hyejZzOXJqZW1PR2JCSEZvdHRNamFmbTlaZU81dzhTaHl2RGlYQW1fN2t2UmktYWNPVUZ3cnNyanA3bVc1MGxlVVVXM3BQV1BzLTZsUFZ1MHphT19qVWhCSWhfbTlqZUhiZnVuTm4zMTNfajdCeW00S3BORmM0ZnpFVm9yTDh5d2tnWTc3ZXpwYWw2RmpyaC1xakd5alJVdkc2elHSAYICQVVfeXFMUHpMTUJXejQzUlVtOVYwVFVsVGRLbnQ3N1JfMUQ5T01ybHItb0d4N0d5cU9URnFEcHJhQW1ySG90WEZLWWg2S2RQdmtCUnc1c3ZONEl0NlI3TE42WFRCSElIcW1zWTlIWEhXU0VrVlNXem5LcGxmWGFNWGFJTFBYZTdzZUljOUJwakl2OVdRQkRZY3lXVW43Rl94NXgzVVFkYjEySDc5ZUt2OG41eTJhM0E4Y2lfWU4zX1A5UlVtaW5EVUw0b3pQQnc2R0FWN0Q1c1R6NkNJOXR1MlFuakRpeE5GdHJveV9ybmxucFo3dUlZQVJiNkg0dUY2R0hBMHZRX3B3?oc=5",
+      "image": "assets/news/auto_bb2cfaa1.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-20",
       "media": "Expreso",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQ3RjRXRrWlZUbHRvbXFsalFmSU9oUWM0N0U0ZkZ5Rmd3VkZWcDJTRldhMGNwbEhwV1I1ei1uQmFLbFBicnRDQW5IZW5pMFJBRW9iM3k5ZndVWVh0Q25WUy1DRUFpa3RhNG1UZTZheGtBdmNQLXZWZnJXTDlTMXAxRmFGU1BBUjVPWGJETEtENl94MXNoLVFNR1h2QXJabnlmMjZXSFQ4U1BFSVJ0YmV5RlYxU0sya25ybV9HWmtKODVTSTlodl93ajZVSQ?oc=5",
       "image": "assets/news/auto_dbe44876.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "Infobae",
-      "title": "La expulsión de alumnos no basta para frenar la violencia escolar: especialista pide prevenir agresiones y revisar qué ocurre en los colegios",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPSjZoNGZocWxZbTZUdU04Q0hyZHhTN0dnX2tBUUVua05ya3lmM1ZQYnVwemdNLUo3YXBpMkhUdU5tUzhoRW5EWGlhZ1JjU18zTDM0Q2VNblB4MTJwSDV6TDYyQU5RS2o3RXB4OWJXd2FXaGlXWmNSTThqMkVtV2J2aVRMY3B4cWo3WHlSdTBqQ2c3S0c1M3ZNdDNwQnAzVlBJSEhIbl9ObTFoLXFuTVZ3ZUp6Mi1tWEZzMmxpOUJaRlZzRHpySzlvWjJ1N2t1TzhUQ0pPVG1nLUFsZ1NFb2pySFRsVHhlam1BWjRWZHZXbkRvZFpvZy1GQjFOQWhjbWVodlhaWm1tNThGaFpXTEHSAagCQVVfeXFMT3A3Sm1zV3JhUnhEdmt6R2RybWFVRERzUXNiYnk2Smd5MnQ1QVBUNmdNOFZLRjA5bUVzclZkbVdUTnM3RXM0dVpCMENzVUVQbkhTYTlHd2RsYXB4TjctVU5xRWhYVVNWWHlFUG9DNzl5V3hsSkdBZXl0T0JZWTQ1NFJic05KSzRrRkM5SVRqenBmSG5IQnE0Y2VEQk0ydGlIVGZxX0lQZmZNYzNvdGM5WEJGdnhkY0hzX2tWNnR1bXZhY0tpYmNrNHU5YVM2SkdZdE5MMW1iNV9KZmJvcXZHdXNWWU80cjNuSTREUnZlaFNIYWdrV1pXNEdCbGg3NkdiNnc1RWJfbk9KZndJMFJSakl0NUJLb3hqNE03Z0FpbXRoQXlMaHM3Tms?oc=5",
-      "image": "assets/news/auto_6a1336af.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-21T15:50:43.259919+00:00"
+  "last_auto_update": "2026-10-22T15:48:09.920064+00:00"
 }
