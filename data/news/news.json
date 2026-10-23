@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-22",
+  "retrieval_date": "2026-10-23",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-23",
+      "media": "RPP Noticias",
+      "title": "El Perú registra más de 70 casos de violencia escolar por día: Gobierno apuesta por restablecer la autoridad en las aulas [INFORME]",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPVDU3YXFONkNhTjZWM29VUVM3cG04WWIwSlhtYmg2Y0pSbWVBblpLSkpodGdTS3daRkpvTGFTQVVQMFhGck9xMzNZN2lSSXdDWmNVblg5SHJET00xTGxsVlhiRF9lU0pwOHgySG1ZM2dweWxfX0dhcWRGUjctV003OERYbEtqZi1LYmVBaUJRRi1DN25mWDZURVpRTWZoMDNKX240dGVlR1BENEtTYU9HREpGem1KZkZybFk0dmlNYVNHdkRNWDNrYzJ6OGJ1Qld1em1qZ3RIYnVEaUhOZlRlOVljV1FBVUJobmdtcEs2UEliN2pNRlNEWl9Sdi1ENGRldlJNTjd3?oc=5",
+      "image": "assets/news/auto_a7a984d5.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-23",
+      "media": "Infobae",
+      "title": "Escolar agredido brutalmente por sus compañeros en el colegio",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeTk2RFpjMllzbmFJRUlsZDRZUFFKM3RZM1duNVREVUVWMVlQd3ZwanJpMWdHOWdfRlJnd2oxbGttelpLOU5qay1Tblk0X0RMUHBBLUgxR0xnV0tYOUZLSVdjSEIzZHM0SlhHbVlPN1BzbnBPaWFCRmJPLUNIVk9Zc2Q3Tkc2TGozd3FvVV80Zk9tVzVYQ2FZQUJwdXhfczdqSTROTXRhODhKUQ?oc=5",
+      "image": "assets/news/auto_d075095c.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-22",
       "media": "Infobae",
@@ -43,6 +67,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWkExZ1Nhc205VVA3LUdIbTR6alg5VjZIQzVwUXZMNzkyTUNTMkNVS2M0bVE2Tk5zN0tPUFRiWF85VmVfVE1VWWF5RzRuVVNsUFpEeXRZVzdyb1dBMXVjRWlXVWpmb1hWZGNkazFEZUtfMFZ2QnQ2M2UwSjVDX2ttdVEtY2x4MlZFYVFjcEVXbkVvTjBhNWptdUVVYlV5alBSS0JxT3NIS2prRkN0UUhlWlg0NkYtOXFaOVhhd3RrNWRnZw?oc=5",
       "image": "assets/news/auto_ef962ac0.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-20",
+      "media": "El Comercio Perú",
+      "title": "¿Por qué los escolares víctimas de bullying guardan silencio? El miedo a ser señalados como soplones",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVjlKelhnaG1QYkdwcEhnS3V0T2JDNTNvZHFGMFh6NkxJb2RpSTZiOHU4LUlWZ3gyRy11WmhxeExNdjlZWEVzeWFFNTJFNnRzMzZIQVNtM2NDLVh2MjVRdWZFam05QV9GOTZ6Q3M2el9KbnY4SFA5d200dzQzaFdJLVM5R0toR0ZkRkdDR216OGhHek9Da2xaeGk1RUZZSmVxaFJQRm15ZW5fTjM2bVNsSkNRUjVCdi0yYzZpWU85cy1mdi1UeEhZaHlPQ0xDN0ZFdU9PN0w2Tzg0UdIB7gFBVV95cUxQRzF6WXlSZmRaeERjWFQtVUlyYnBZcWI1Z0d3WTFjM2szUmdsd3EzblZ2SjM5NG9KMmh0VGJRTUhQNzRLTjJ2dUdCcWlGSXJ1dkVDamxuaGY4U1c2cFdOR1h0X0g5M3NZcGk1MV9NSkZ1MjMwNTBvUEhNVDdHSjVGbDVQWEg0NDhzY1I4NzFfaDNWN25STk9uUE1QRlBGMHltQXNhVHNVelNQNEV4UENYWVktMDhpY0Ztd25kUkNXa21PVmdzQ2t6TzJwNEU4aGZRT3I1VUlUcEJwZXRpaWpyMDRkcS1HdFJISnp3V2V3?oc=5",
+      "image": "assets/news/auto_73806814.webp",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQWU44aEU4UXpWRS1xQVVOZVo2QjhfZTFzSXlZa0xPaXBBNzhYSTEzTjZpeUMtbUhQS2MtNHF0Y0ZYZ2hDNDl6MFFMY0hRcnNSakVRcTdiWGtScm81T3hib2tTd1RWMEhoZ1FKUW9uWnBmY1dabXBNektnbzRURkVodmdvTUV4RHdwZS1iVjFldkN0VV9UbjdUbEJkdTluQ1VoV1F2YVNnbk9od1JibkZ4aWdETURyaERpRGVNTzZPempQVkI4MUZyWDF4RWdnZFA4TkNPckJaeWJWdHotLTdZX25PQzFOeG_SAYICQVVfeXFMUGVqMDd3cHV0QlI2bi1RSFdNRGNfQk8tX1dpeVpGdmFrbFNoYjhENy1Nemw1RVljRk1yR3dLSWlGVDJQbG5pRXNvVzZHTkFBdV90M1JfWWNhMVpQSXV0VzV3S1VzSW1hWFF5QmM4LUctQlpwaWhlOFgwYm9ySmFpLWRzemJGNjJnY3pJdjBPaVRNYUpBYzMtZWxJcXl1eWhrZGJaQzV5bko0VGhCdUNXTEpUSng0YU1BNEZDM1hRNjczVjdHemJySzlMTVhzU01nb1U3SFBNYUNOT3VwSFZjenJiZUdqWTlnQmN1RkRERUJKSDkzZUd1VnFJemtlUGJqTWt3?oc=5",
       "image": "assets/news/auto_e159b82e.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-15",
-      "media": "Perú 21",
-      "title": "\"Estamos criando personalidades psicopáticas\": La DURA ADVERTENCIA de Gonzalo Elías sobre la violencia escolar",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQbFJFcGF5ckZlSFNvbFQ3RnZyaDh0SG9ySE5BUlo0Z0YyaWtrQVpSRy14NDYtRy1TeUNpYjVUOW83ODZEQXRaeUZoUUxrTFZNUlozcGRSZGxobW1maHB0SzEtTmUyZ210SkJtOVU1V3A5cThXaVJnMDRMeVBCbHNMTEktbHFFS3piQjE4ZHBEYWh4XzQ?oc=5",
-      "image": "assets/news/auto_965382a2.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "Infobae",
-      "title": "Bullying, retos virales y expulsión tras tres suspensiones: así funcionará el nuevo régimen de disciplina escolar del Minedu",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxObGsyOFMwOEJLc0tlTnc1RmJ0VGxTbXdtM1VkRTZfc1FzSGExRVpkVEN1dU0wcjM0Vkl6THlxWDlwNlFOc1U4eWNGUFdrX0pOT2hWTk1YaGxMLTlDR0xWdWJjdmdzV1R1LTFNZEZRUXV1LUFRMmlUSGNsdkVqcWREbGVSWmIzWVdwUGpSMUVOQ20tUGRSUEFwY0FCTHBRR2xhYk43OENvbXhqci1LMXRhUUJuRmVrd2ZuMlhtYkVOWWNqMGoxa3NmRExSMTliVy1jXzZGWnU3dlduM3c3NmliYVU1RlhYVk9PckRIUWZsZFBySjBYaHfSAZACQVVfeXFMUDFJS0pSaHhTZEtIRDVfNHlzQnZBaWluU19zbTl1Nk10d2M4Q1JjR2NCQmNLQlVpU3lFcVFPYXBudXROb2Z2WGV6ckp6T0pNOENiR0QySXZ1TkxVWGNtZzdJeHU1MGZvNGswaVN0VkhqVUg5c2hBNVBJQ1pScEZuTS1oY2ExMklwQzFJVHhoVjZiVlFYU1hpbW9adklVdmN5UG5JRW1NVWl2ak5xZ0pERVNkY2JMMW9hMjY0UW1sbVZOSS1iYjRzbHU2REx1NXN5WlRhNDV3d2tadkthQVE2clpWMjgwOEVjZXhwXzZWRVhCVUl2dGJpSy1iU2NrdG1NeUdlY2lTT0xpc25mR1U1ZDM?oc=5",
-      "image": "assets/news/auto_bf967f12.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-13",
-      "media": "Latina Noticias",
-      "title": "Keiko Fujimori anuncia nuevos lineamientos de disciplina escolar que habilita la expulsión",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNQ3RjRXRrWlZUbHRvbXFsalFmSU9oUWM0N0U0ZkZ5Rmd3VkZWcDJTRldhMGNwbEhwV1I1ei1uQmFLbFBicnRDQW5IZW5pMFJBRW9iM3k5ZndVWVh0Q25WUy1DRUFpa3RhNG1UZTZheGtBdmNQLXZWZnJXTDlTMXAxRmFGU1BBUjVPWGJETEtENl94MXNoLVFNR1h2QXJabnlmMjZXSFQ4U1BFSVJ0YmV5RlYxU0sya25ybV9HWmtKODVTSTlodl93ajZVSQ?oc=5",
-      "image": "assets/news/auto_dbe44876.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-22T15:48:09.920064+00:00"
+  "last_auto_update": "2026-10-23T15:39:23.534872+00:00"
 }
