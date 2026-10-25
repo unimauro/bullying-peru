@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-24",
+  "retrieval_date": "2026-10-25",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-24",
+      "media": "Expreso",
+      "title": "Psicólogos en las escuelas, ¿para qué?: Su importancia ante casos crecientes de bullying y problemas de salud mental de escolares",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQTVYxV19Kc1lRTlVDTUhWWG95V01KT2E4LWR1ZjBKbFpId1F0QTVKNG5kV2VzbWZKVEVJQWF0MGRBYmpfTmVBZzQyYVJ5NGkyUGdtdkFDYjIycXBuVHdndnpadHM3OVJueHhGSk5kY0YxR0NtMmVzVU9IRGJCMlFxMHRJcGpYZjJTeEtpNURKWUVNTXVrWUpsZFBFaXpFUEVHcy1iYmlCVUtWZlFYTjdFVGN3bzd2b2NwZDNvcXJHTGRIVnYzSlY0QzR0eVpjek5kemMxRkhvZU12eWtDSm1KWEFIblRSZHh0LVo1QWVFS0poQ05iaVkxQjVuYmE4d2RYeEpHakhKMVFzRldobUMyVk9zMlNKUnljdnVzOF9TUlFhblBvUmpxajVmS0JQa0xZT3ZhZXNBVENzenFTenZtUXVHMXdfYjA?oc=5",
+      "image": "assets/news/auto_d1cc36db.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-23",
       "media": "RPP Noticias",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQQXlXaHNWcUI1MkJiRFdwVjdLaUhzakJfUDZzcXpiLVNEQVNtbUtldUt4cGZaaXkzZ192cGUyNFhYTVlzNXdqQzZKWmczUjREejlrWjhyNUVKeXRVc0d3bFFfOU1xdTRPVmx0V0k1ZW1DSTFSQ3hxRlduY3JDdXN5TEdFUXlvM19GaURnbGs1ZWVteDlWTHNiVE91REdyQ1hzX1ZlaFFWZEFKcE8xeDRXMjN1MVJKSUVKNlVDMzFBX1ZBa2tHUFM3anN4MUxhV3J3QUNxc2RRRFhFTFR3ZG5tOFBGLWUzRkdqc1dqcVowa0ZaQ3hmQUlqZFZuRFZGT25PYTF0SU9PY3ZsZHpfX0NNcGU5UkIteVXSAbICQVVfeXFMUHlrUEpOcmhaaHdNZUxwek5nZmdBUVR5SUUyMjRtT3dKNDRwT0tCbDhrQmNLUUl4Q0NVb1FyRUl5eVppNlpSTTNoWk5ocW9CdjRycTdieDVhbVg3aWxoUnlHaThjVlZaWjJubU53UFBQLXlaWUM2aDR1b08yQmpYWFZFX25yd0lrNFc2UGtGS0RNTC11aldLUXZTdXloT1NaNHhucnZ6Skk1akU2X3RJVzU2blZWUVpwMGRRNUVYZ3gySFVROGZuZF91Z1JQNkF6N0JJeU04anRaSzFQNURCamJXdC1FS24zN053d1VUQ1VjRGVTTk1DOGpOV0FTdXdQMHpvc2Etb21CVG9KbF9jVWllTTgtY3haRHVyVFN5MVlBT2V6MjBFT2VpVkRuYzdLVDRB?oc=5",
       "image": "assets/news/auto_a75b14e2.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-15",
-      "media": "Infobae",
-      "title": "APAFAs rechazan expulsión de alumnos por tardanzas reiteradas propuesta por el Minedu: “no soluciona la violencia”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQWU44aEU4UXpWRS1xQVVOZVo2QjhfZTFzSXlZa0xPaXBBNzhYSTEzTjZpeUMtbUhQS2MtNHF0Y0ZYZ2hDNDl6MFFMY0hRcnNSakVRcTdiWGtScm81T3hib2tTd1RWMEhoZ1FKUW9uWnBmY1dabXBNektnbzRURkVodmdvTUV4RHdwZS1iVjFldkN0VV9UbjdUbEJkdTluQ1VoV1F2YVNnbk9od1JibkZ4aWdETURyaERpRGVNTzZPempQVkI4MUZyWDF4RWdnZFA4TkNPckJaeWJWdHotLTdZX25PQzFOeG_SAYICQVVfeXFMUGVqMDd3cHV0QlI2bi1RSFdNRGNfQk8tX1dpeVpGdmFrbFNoYjhENy1Nemw1RVljRk1yR3dLSWlGVDJQbG5pRXNvVzZHTkFBdV90M1JfWWNhMVpQSXV0VzV3S1VzSW1hWFF5QmM4LUctQlpwaWhlOFgwYm9ySmFpLWRzemJGNjJnY3pJdjBPaVRNYUpBYzMtZWxJcXl1eWhrZGJaQzV5bko0VGhCdUNXTEpUSng0YU1BNEZDM1hRNjczVjdHemJySzlMTVhzU01nb1U3SFBNYUNOT3VwSFZjenJiZUdqWTlnQmN1RkRERUJKSDkzZUd1VnFJemtlUGJqTWt3?oc=5",
-      "image": "assets/news/auto_e159b82e.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-24T14:17:13.153296+00:00"
+  "last_auto_update": "2026-10-25T14:51:49.302502+00:00"
 }
