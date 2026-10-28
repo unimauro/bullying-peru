@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-10-27",
+  "retrieval_date": "2026-10-28",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-10-28",
+      "media": "El Comercio Perú",
+      "title": "¿Control superficial o disciplina real? Qué hay detrás de las nuevas normas de conducta escolar del Perú",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaG1LdW93ZDByY1RBX3ZxSWp0ZmtJcEx2b1NqSWlNZWFMYm8wZXFhYTcyS3E3S2dkTnNkQV9FOGhCVHI2ZDZPd1ZuclpUQlg5c2hicUg4Yld3VGdQLXpYbVYzaFFaNloxOUNZTk12NUtHLW5FTldZS1R6NG1fMUt3MjVrbE00NUJPNWZPT0JVclM5Z19Bd2JYRTAzTUI0bHpvbEVfYzNYcGJZMlNwNktDUDRBVGJCMndjTHowTll0bVZjcnk3VXdSc2VNYlRaaW10bHh2X0Zva2llSk5YZ2kw0gHzAUFVX3lxTE1NWlB2UVZBQUF5QVpNQlNqTUZPQ2pDcVNvWDVWcFdNR0NCdl9RU1ZMVTBfYzdybUJwU295UjFMNGlQUHNyb2w5VGRqV09BMTY2ZFZXVUdvaVN3QXNtOWwweFpnRjlOaGJVUkNLeWMyTlVlU2w4M1pDRDlwM00xYlJrZnk3Yy0tZzhJd3puQVRXcjQ4WHdreFRLeExoNzFKbDlNcGRuVllWSHBOOU1wWmVBb1JxdUs1NmRIQnpNcFBRM1pQbERUT3dIcl9wdkFjUXZGYnNJUERYclNmb2lsN1ozVkRfeVFQRnBxOEREVlJsU09fMA?oc=5",
+      "image": "assets/news/auto_cadfd1c0.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-26",
+      "media": "RPP Noticias",
+      "title": "Violencia sexual escolar alcanza cifra histórica en 2026: ¿qué colegios tienen más reportes?",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQZ243Wks5UnJPaDVpMnlGOWVPdWd0bnZDclRnRkpyRlhHU0pMR1gtNnZ6dDNQZDVnRU5VZURTWWxYZ0FDR3BiOU5VYTl2WklwaEV2RnQzTzlJOGhjUEh2VzZoNlM1c0h3TkNOd05ad29KVW1sV3Ayd0JBUXBVeG1feVFxQ29HZDFZYWJLVEU1RGJzYWtpNVc4RTB0aFJXdXlOWk5qNmFEc3RmYnhpbHVDRHJiZldpMmp6WHNPYl9CeTBSdHRaZGdDMjUwdC02dzI1NjM4OXBPMElYZmJqX2JZcDBoYWZTZm8?oc=5",
+      "image": "assets/news/auto_c063f252.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-24",
       "media": "Expreso",
@@ -43,6 +67,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeTk2RFpjMllzbmFJRUlsZDRZUFFKM3RZM1duNVREVUVWMVlQd3ZwanJpMWdHOWdfRlJnd2oxbGttelpLOU5qay1Tblk0X0RMUHBBLUgxR0xnV0tYOUZLSVdjSEIzZHM0SlhHbVlPN1BzbnBPaWFCRmJPLUNIVk9Zc2Q3Tkc2TGozd3FvVV80Zk9tVzVYQ2FZQUJwdXhfczdqSTROTXRhODhKUQ?oc=5",
       "image": "assets/news/auto_d075095c.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-10-23",
+      "media": "Infobae",
+      "title": "Toman medidas drásticas contra los cuatro escolares que golpearon brutalmente a un menor de 14 años en colegio de San Miguel",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPbmdROFQ2Q0JQdm4yTm5EdlFRbkZqOE0wbHhXTkw3N0txcTlKSDA0M1R5S0lfMG1hUU9TdUN1WGZfZDdKdGVmNUpYZC1EaGhIVXpTVlY4WTJlQ3dRLW54c3AxUHJCdktiVnAzSG83STYxTFlWdnU1ZlBlUXhrVDBnX2VzYm9hOHJJLVNIQ24xdjNBZS1nQ19WclFfOTNmZEdWOHhRSE5sYzFKNWRNbTBrcVRKeUktOEVmVmpmaHRQdnJOWjhSS0FIUjZZQWpjaE0yeUJ5c2ZNSEI3RDRWWDV5ellSUlJFZGFRc0o1ejM0NGQ4T0hVWHBISdIBkwJBVV95cUxQMVU3a1FybGV5U3A1anI3TUIxcGpaRVdmYWY2M1FTOGdKT2RBTWd3OUhaOGRyVHFWNC1yZjJhX05BbHY2Y1Jyc210TXF3RURnanBidkJPa0NPY3F4Wk9oRldSUnFkQTlLMjVYR2lVNWJ4RzRxM0ZIQjQ4bE1XeUI5Wk9mVS1UaTFxYXVYVzZaVVZnSVNrcHVpVjFaY3pjZkZ5WTI1Yi1QU2FQeDZsTVNwTXBYUUpodjBqLXVza2J3djROVzg5bmNyb2Y3azBkTGt2aF9UeWZsRHIxQm94c0Nvby16UTJXUFBiU1d6Vk9qNzEweGRfam9YNUdQMk9sTDM5WXNWMWZoWEx2Z25uMnRiRjktVQ?oc=5",
+      "image": "assets/news/auto_a2b06d0f.webp",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZHRhLWtSdHRjRHVVeHNtM0pubTBtczRBYklPdlVLdWUxV3VrMjRKZUNNeUphM3BwWU9qMHBKbU9Ua2VnTTBZMFdEcEQtU3dJa3BJN18zaV9HdkczbThIS25xb1p4aUVHWTk5RmwweEl5dnZWY2w2dE1QdkJnYkZ5bGlBa0VIaThna2dGbEVjRXo5TjBqOGdpMVFNYVhxaXc3QTZ1YVMzcThIeUxPQzZ6QndSbkJsbDRFQXZTMC03WWlkRnVpaS1aS2J6YTE?oc=5",
       "image": "assets/news/auto_d3c45a69.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-17",
-      "media": "Latina Noticias",
-      "title": "Escolares cortan rostro de compañera con una navaja en colegio de Piura",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMTA0elZIS3V6WVpDTFVHcms1NFN2bDNGbHZFdTZ6Tl9SREdERzlXSl9aTzFRcEZRRzdSTTRZRUJwRWJHYlRKcXNVdTBONl9NOUgxMGdDMUd3QmVDUGhMbDgzTldkWDdndnRkWllWN1ZERkxzM0p4cXVtTnljN2dvV3R4a0w3ZE1FTkIzWWVkckRDVXhnZDNpeXhJWk92NnpFNm0tNEhqdGhqY2ozdDdVYm9B?oc=5",
-      "image": "assets/news/auto_635f8c6f.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-16",
-      "media": "La República",
-      "title": "Violencia escolar en Perú: ¿por qué los colegios no logran prevenirla?",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNc19aWEZzRGxOeTdHRkZwSm5ra2ZhWm1fb1FabllRbkdKTVNKdzFQT0E2d1otU2FOWFpDVldSUlZoVWxfM29FNGdGaEhrVzVoaDdDVzh3MVk5b01KWGZ1TTQ2NkRJWVZucE81eFVKOVUtM183NjI1OW14SWZpT25jLU5nZ0xNWnA3SEVNQm1ES3g1dkNnUTc3RW9xU0ZaN3ZjRVMtZXZjSVVhMDVLVWVXa2stTEtsWmlyZTVGNkNvVURLWTN1RVc4bm9VSDNhRS01aFd0ekVVX3VEdzV5R2pYQ0xGQUhZTktEN1l4SXp2ajc5QWlsRkxmaUZLN2hCRDlwcjNGNTFjOW03Vm1qTzFN?oc=5",
-      "image": "assets/news/auto_d65b3d24.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-15",
-      "media": "Infobae",
-      "title": "Expulsión para niños y adolescentes: Cuáles son las principales faltas graves que provocarían este escenario y por qué muchos padres están en contra",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQQXlXaHNWcUI1MkJiRFdwVjdLaUhzakJfUDZzcXpiLVNEQVNtbUtldUt4cGZaaXkzZ192cGUyNFhYTVlzNXdqQzZKWmczUjREejlrWjhyNUVKeXRVc0d3bFFfOU1xdTRPVmx0V0k1ZW1DSTFSQ3hxRlduY3JDdXN5TEdFUXlvM19GaURnbGs1ZWVteDlWTHNiVE91REdyQ1hzX1ZlaFFWZEFKcE8xeDRXMjN1MVJKSUVKNlVDMzFBX1ZBa2tHUFM3anN4MUxhV3J3QUNxc2RRRFhFTFR3ZG5tOFBGLWUzRkdqc1dqcVowa0ZaQ3hmQUlqZFZuRFZGT25PYTF0SU9PY3ZsZHpfX0NNcGU5UkIteVXSAbICQVVfeXFMUHlrUEpOcmhaaHdNZUxwek5nZmdBUVR5SUUyMjRtT3dKNDRwT0tCbDhrQmNLUUl4Q0NVb1FyRUl5eVppNlpSTTNoWk5ocW9CdjRycTdieDVhbVg3aWxoUnlHaThjVlZaWjJubU53UFBQLXlaWUM2aDR1b08yQmpYWFZFX25yd0lrNFc2UGtGS0RNTC11aldLUXZTdXloT1NaNHhucnZ6Skk1akU2X3RJVzU2blZWUVpwMGRRNUVYZ3gySFVROGZuZF91Z1JQNkF6N0JJeU04anRaSzFQNURCamJXdC1FS24zN053d1VUQ1VjRGVTTk1DOGpOV0FTdXdQMHpvc2Etb21CVG9KbF9jVWllTTgtY3haRHVyVFN5MVlBT2V6MjBFT2VpVkRuYzdLVDRB?oc=5",
-      "image": "assets/news/auto_a75b14e2.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-10-27T16:13:40.260273+00:00"
+  "last_auto_update": "2026-10-28T17:00:27.296186+00:00"
 }
