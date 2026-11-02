@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-01",
+  "retrieval_date": "2026-11-02",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-02",
+      "media": "El Peruano",
+      "title": "Día contra el Acoso Escolar: Poder Judicial llama a proteger a niñas, niños y adolescentes",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNUk45cl9FMFJoYVJ5M1Jna2FZSDFnMnBDV3hrczFfcnhYWnJwZ096eUhiUUh4ZE4yRzRqVEF3bTlfZ1VLQ0pBSFdRYS0tOGZHN1l5UWktWmVLMlAxdjRrQnp6Q2Y4STE4RHdLNThKbkRYX3FXNUp1bHhxMThmbU8tRUp0eXA4U3ZMb18yZUZQMzNFVklQQXRENWJZdDZUQnVHNWRvSDdaTXVlT3hSU1ZuR1o0SlhIcWN3RzZvclRFZ29tWjFEWHgw?oc=5",
+      "image": "assets/news/auto_3228846e.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-01",
+      "media": "Diario Correo",
+      "title": "Autoridades refuerzan acciones para frenar la violencia escolar en Piura",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejRRV3pvZXUyYmxXV0RmbVF5Ujl3cWZNTUVmQVRSZFNOZW55RExnVGJCM2tJOVJSQXhKdE9CMnhVY2NkM2M3VHAyUm9ObDFfVGNEdEY5T040SHpiUzJfa0xvUUh3bkE3TjUtc0czbWVrT2RQNkZvLUpEX3VNdkVXcDJxbUN2d2VyTk96UmpVTFFyeTQwU3lSekoxd3ZvSjFRV3RBR0wwU3RKR1A3SzVzTjFmazZMQl9qZXVn0gHPAUFVX3lxTE1nVG1HNkNURGRSZ0JOVTR4c1ZvVktrUmF5SVgyS2YyazNtLS0xZFY4MzJkbTgxblVDOWFIOGgydXdtSnBNWFNBSTRldHlDaUNxWUQtVXZXQ1VoSHZsMXJkWU9oMlF4X3g4emNBX2dnNTFPZkFrZFFnQ2JWbGJDLVhZVkVyUjhKY0ZtUmhfQTNGLVdKZzRJaHRlZ0ttMklUYTdRaW1tRks5LXFuZzBESXJtT2FobnFsVWZyM3dvMjFLWmZZcWNRWFhrMHh1RXNTYw?oc=5",
+      "image": "assets/news/auto_ee6609a7.webp",
+      "auto": true
+    },
     {
       "date": "2026-10-28",
       "media": "El Comercio Perú",
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOblVVbEFLbG5vbm5jYUZpbGZjWHlFT3pfZy1tSTNkdjdBWVdxWmFhaXNpOXhZUktJZ25wZnhURnFVWnpGM0lCYl81aTI0eTIzVW5NSUJnLUVtbzVaYldjVk5kQi1RQlNoU2V6S3p3Vm1jcGQ0RTQyUnBSZmIteFVaVVliOWtPQ0N0Q2tubGRDb3hWbUQ2eEdyS3FwTXhwZUg0ZU5pYTRQQ0drQ0N1UWZYamdOeDBfMGxHLVB0SkNjekEzV3FPTFNEaVFWSWtwRFFNMEZjdkxCYU4wRG5OOWRDZ00zN3VJYVg5ZzhHcHowWDPSAYsCQVVfeXFMTW1MUF82bmNpYkdHRFBueFpFUGFRaXN5Z2tTSm8yRE11SkJLNlRxSXJXZzlfc1Z1ankxSHItV2M3ek1EYm1famJZOWR6LU0ycWthTld0a1pPNVFhanBMNlRpVFkyanpBT2lwQnFhNTZSZEdZandqbmNGd1N5c2c4a2NpNGVxcldTbmx2ejZWWDJXdk9naVpObVpJbi0xbzhEU1J6dlRvQ1RHWGpaQkpkemxzQUlMd3lWb2NlX1pDOUU3UFdvT05oOGxrTkV4MU9MQ2tJa1Nibi13a0NENFNIeDlHMUozcE9tTFREdHc1UFotREFsbGJCRk1nU240TUx5cWtlTnZscDBuck5v?oc=5",
       "image": "assets/news/auto_6a00d585.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-18",
-      "media": "La República",
-      "title": "De sufrir bullying escolar a ganar la final de Yo Soy: la historia de superación de Nikólas Bujahico, artista de Huaral, que triunfó imitando a Adrián Barilari",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxQM0cwQnpfV0hjSDlTWnNPUDh4LXV2T19VSGlndnJPbC1fd1NwWGZhemxhX2lHMW5aLVlnZUFtNXEwaFBONDNyX25SZFlFSGtzdHFEckhTdlhpNXNIbENmc1lmbzN1LXdIdXlxOUF4TkR6eXZVUzllaUVoMzY5Qk1lcWJaRUs1TlJCcHY4NmxQZ2Jfa1NpbURiYTdZcUlZWXYyd0lyYWJUWC1qLURIREtCQV9ETDlTaUlWWTJ5ZElMTEJMY3EzS0NQWWc4MWEyS19ERHJYTkF3ZWVLTzJjZVY5MVI2TDlfWEZiakZxQ1o0c1RwZzNSNENOTnUzQ2pyM29UMW9Wb2l0TzB3WE9ZTmE4eTh1NHA4TmdEcmZsalZLWndkQlo0QlRBNENxT2RLblpjempMUzB0QkHSAb4CQVVfeXFMT0Z4WFJEY2tvRGFqd29vcFRTSldmOFFVNXR4a0pNM0g2cTVPOVNnWTlyNXVOcFBScUhSMzF0Y0pWQmU4QTBGc2U1cGZITm9sZFlwWmdUMHVKUXJoU2xZZHZZekZqT2pRWTNrMktYZlIyNjE2T2wxS1dzSkZ1cVk3Q2REQTc4ZXN0bGltcGlnYTFpNHJSZmU2VG1nSFhpOF9RZWMwaHRqQ0RDdHFrTExKZUNMbndEbEd3ZEVXamdLcExaVklyZ3dZb21VZ2k2UUViRWpkTFJhNldkc2pkZ3A5RjRLNWdzZ05SVTREQTFDdlpHX0lrTE9PVThKZENINGMwSHYzTFgxR0otaUg0WDMxTTFCVUowNWozZ2REZEtpS1FWSnhPN0R6dGFwM1pCcTFHbjcxNUMwLWVvYkpleW1B?oc=5",
-      "image": "assets/news/auto_831c395b.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-18",
-      "media": "El Peruano",
-      "title": "Poder Judicial capacita a más de 1,200 docentes de colegios para prevenir el bullying escolar",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZHRhLWtSdHRjRHVVeHNtM0pubTBtczRBYklPdlVLdWUxV3VrMjRKZUNNeUphM3BwWU9qMHBKbU9Ua2VnTTBZMFdEcEQtU3dJa3BJN18zaV9HdkczbThIS25xb1p4aUVHWTk5RmwweEl5dnZWY2w2dE1QdkJnYkZ5bGlBa0VIaThna2dGbEVjRXo5TjBqOGdpMVFNYVhxaXc3QTZ1YVMzcThIeUxPQzZ6QndSbkJsbDRFQXZTMC03WWlkRnVpaS1aS2J6YTE?oc=5",
-      "image": "assets/news/auto_d3c45a69.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-01T17:00:25.198649+00:00"
+  "last_auto_update": "2026-11-02T20:38:48.231707+00:00"
 }
