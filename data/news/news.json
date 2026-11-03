@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-02",
+  "retrieval_date": "2026-11-03",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -19,6 +19,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNUk45cl9FMFJoYVJ5M1Jna2FZSDFnMnBDV3hrczFfcnhYWnJwZ096eUhiUUh4ZE4yRzRqVEF3bTlfZ1VLQ0pBSFdRYS0tOGZHN1l5UWktWmVLMlAxdjRrQnp6Q2Y4STE4RHdLNThKbkRYX3FXNUp1bHhxMThmbU8tRUp0eXA4U3ZMb18yZUZQMzNFVklQQXRENWJZdDZUQnVHNWRvSDdaTXVlT3hSU1ZuR1o0SlhIcWN3RzZvclRFZ29tWjFEWHgw?oc=5",
       "image": "assets/news/auto_3228846e.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-02",
+      "media": "RPP Noticias",
+      "title": "Lilian Schiappa-Pietra denuncia presunto acoso sexual por parte del director de teatro Édgar Saba",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNd09KVVNqalB5UnZheUcwQ2dqZE1xUXlfcEJHcW5GRk5nYWhocFFLNjd3NGY3RmEtdTZBUmVSdkFieVpWTXBfUU5uTlFoVXJwMlRRS3ZOdmpMdVR4Qk1WQnl5Ui1pZ0VIQVAwV2UyZVkzRUY4b19BVTloUXRGd1RVWDNTWFRYWWx0bEtSdnZvTzdZcEl1M0hNMGNrNDB2M1JvbW1ZRlNNNElaYjNPRVZoX1dTZFVGeEFZbkhuZGxTMWRTUmx4YlZrMDktZ2FuMGNxVEdyaENmV1VSVFU3eEdv?oc=5",
+      "image": "assets/news/auto_ca6f3d3f.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOLWlOd2RfVWpIanpkMnUxTW9pZVBlYlVSeU1fcUktZkJZQWk0Y2VTTUZpaVhqc2lLQ2hOWV81UmU1dnlHS2RsbTRFdlpzOHdibGRiM0VKQ0RMZjBiN0pqRmNzS3dkMlBlSFpsUEZFaVQxS0JJQTAzYXZTeW81OHhlY3BveldQeFl2WTN6djBsWkxhajdiYXBXS2I0OFQwek1XYkVNOVk2S1U1dlpYSnJ3Nl81d1NIS1lqUHpySXVWeTdZWVpsOEhUUGxFLVctTUtmNUE?oc=5",
       "image": "assets/news/auto_3dbe0d93.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-18",
-      "media": "Infobae",
-      "title": "Control o formación: una crítica a los lineamientos de disciplina escolar del Minedu desde el desarrollo socioemocional",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOblVVbEFLbG5vbm5jYUZpbGZjWHlFT3pfZy1tSTNkdjdBWVdxWmFhaXNpOXhZUktJZ25wZnhURnFVWnpGM0lCYl81aTI0eTIzVW5NSUJnLUVtbzVaYldjVk5kQi1RQlNoU2V6S3p3Vm1jcGQ0RTQyUnBSZmIteFVaVVliOWtPQ0N0Q2tubGRDb3hWbUQ2eEdyS3FwTXhwZUg0ZU5pYTRQQ0drQ0N1UWZYamdOeDBfMGxHLVB0SkNjekEzV3FPTFNEaVFWSWtwRFFNMEZjdkxCYU4wRG5OOWRDZ00zN3VJYVg5ZzhHcHowWDPSAYsCQVVfeXFMTW1MUF82bmNpYkdHRFBueFpFUGFRaXN5Z2tTSm8yRE11SkJLNlRxSXJXZzlfc1Z1ankxSHItV2M3ek1EYm1famJZOWR6LU0ycWthTld0a1pPNVFhanBMNlRpVFkyanpBT2lwQnFhNTZSZEdZandqbmNGd1N5c2c4a2NpNGVxcldTbmx2ejZWWDJXdk9naVpObVpJbi0xbzhEU1J6dlRvQ1RHWGpaQkpkemxzQUlMd3lWb2NlX1pDOUU3UFdvT05oOGxrTkV4MU9MQ2tJa1Nibi13a0NENFNIeDlHMUozcE9tTFREdHc1UFotREFsbGJCRk1nU240TUx5cWtlTnZscDBuck5v?oc=5",
-      "image": "assets/news/auto_6a00d585.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-02T20:38:48.231707+00:00"
+  "last_auto_update": "2026-11-03T18:15:02.700404+00:00"
 }
