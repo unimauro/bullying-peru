@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-03",
+  "retrieval_date": "2026-11-04",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-04",
+      "media": "Infobae",
+      "title": "Más de 11.800 reportes de violencia escolar en Perú: especialistas advierten que endurecer las sanciones no basta para frenar el bullying",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNV2VreDJQTFBEc25YbUFuZ1hPNkt6OHpfa2ItQVdxSkpfRWFYVmM3U3lWd2xTVUxVNTZGQ3IyY3MxRWVHWW5oY3JOU2F2WWhSY29OUEhGQVNkeXJQQU9KTDl5YjNNZ25UUVNCRnNYbDJGQlNET3llWElzLVNJUWk1RVA2R2dMNzZ4dEx1WUFMTTZwQmc4ekMyMlRNanYyaXE5UVdWUUFVaGhGdzdpazNQVHM1S2JQR3J6Y0pkeUFxNnY0NHNlMU5TRWNwZTF2T29SVzNaQTdvTWdueUozcXo5M0pSbWFvZTZ0dkQ2LUVQOUhSRU82Wkp6NWVmeGdIV2hHbkFMT00tQdIBogJBVV95cUxPR1RpZW91N3JWSUtsVURoLWN5QzQ1Yjg4cmVEWnduMFFpeF9uR01EaTFKVXV0Xy1jcFM2STg3MFZOV0ZCZllFX2Q5bGRmc2huWlZRMFJQeDdMWXAta0xMOWJ1WFZRd1JnTkJSTnJxZzBUbzZlR2R3RmEyZGxYQ3VuNFNsNk5rTTkwamctUl83ankyeDZoQWdxT21heUQyY09RM29TS3picTQ3OFQ1UEhUZDNrcmNCUVZuck5BSVUxT2xjWFhzWk16RDUwWk82Ty1qaFNkUXdIanhKYlB5OXBFY0pnRVpBYlpGTTFYYmd3OVNyLVNyWU9Wb1FUZnIxRW5rVXE3YXFqbGc2RGJJTzFNTGw2UFZUaGpSM2VFMjN1dkdoQQ?oc=5",
+      "image": "assets/news/auto_4dba92b4.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-02",
       "media": "El Peruano",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVjlKelhnaG1QYkdwcEhnS3V0T2JDNTNvZHFGMFh6NkxJb2RpSTZiOHU4LUlWZ3gyRy11WmhxeExNdjlZWEVzeWFFNTJFNnRzMzZIQVNtM2NDLVh2MjVRdWZFam05QV9GOTZ6Q3M2el9KbnY4SFA5d200dzQzaFdJLVM5R0toR0ZkRkdDR216OGhHek9Da2xaeGk1RUZZSmVxaFJQRm15ZW5fTjM2bVNsSkNRUjVCdi0yYzZpWU85cy1mdi1UeEhZaHlPQ0xDN0ZFdU9PN0w2Tzg0UdIB7gFBVV95cUxQRzF6WXlSZmRaeERjWFQtVUlyYnBZcWI1Z0d3WTFjM2szUmdsd3EzblZ2SjM5NG9KMmh0VGJRTUhQNzRLTjJ2dUdCcWlGSXJ1dkVDamxuaGY4U1c2cFdOR1h0X0g5M3NZcGk1MV9NSkZ1MjMwNTBvUEhNVDdHSjVGbDVQWEg0NDhzY1I4NzFfaDNWN25STk9uUE1QRlBGMHltQXNhVHNVelNQNEV4UENYWVktMDhpY0Ztd25kUkNXa21PVmdzQ2t6TzJwNEU4aGZRT3I1VUlUcEJwZXRpaWpyMDRkcS1HdFJISnp3V2V3?oc=5",
       "image": "assets/news/auto_73806814.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-19",
-      "media": "Exitosa Noticias",
-      "title": "Consejo Nacional de Educación solicita evaluar la eficacia de la plataforma SíseVe ante casos de violencia",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOLWlOd2RfVWpIanpkMnUxTW9pZVBlYlVSeU1fcUktZkJZQWk0Y2VTTUZpaVhqc2lLQ2hOWV81UmU1dnlHS2RsbTRFdlpzOHdibGRiM0VKQ0RMZjBiN0pqRmNzS3dkMlBlSFpsUEZFaVQxS0JJQTAzYXZTeW81OHhlY3BveldQeFl2WTN6djBsWkxhajdiYXBXS2I0OFQwek1XYkVNOVk2S1U1dlpYSnJ3Nl81d1NIS1lqUHpySXVWeTdZWVpsOEhUUGxFLVctTUtmNUE?oc=5",
-      "image": "assets/news/auto_3dbe0d93.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-03T18:15:02.700404+00:00"
+  "last_auto_update": "2026-11-04T18:29:23.835406+00:00"
 }
