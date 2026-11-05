@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-04",
+  "retrieval_date": "2026-11-05",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -19,6 +19,30 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNV2VreDJQTFBEc25YbUFuZ1hPNkt6OHpfa2ItQVdxSkpfRWFYVmM3U3lWd2xTVUxVNTZGQ3IyY3MxRWVHWW5oY3JOU2F2WWhSY29OUEhGQVNkeXJQQU9KTDl5YjNNZ25UUVNCRnNYbDJGQlNET3llWElzLVNJUWk1RVA2R2dMNzZ4dEx1WUFMTTZwQmc4ekMyMlRNanYyaXE5UVdWUUFVaGhGdzdpazNQVHM1S2JQR3J6Y0pkeUFxNnY0NHNlMU5TRWNwZTF2T29SVzNaQTdvTWdueUozcXo5M0pSbWFvZTZ0dkQ2LUVQOUhSRU82Wkp6NWVmeGdIV2hHbkFMT00tQdIBogJBVV95cUxPR1RpZW91N3JWSUtsVURoLWN5QzQ1Yjg4cmVEWnduMFFpeF9uR01EaTFKVXV0Xy1jcFM2STg3MFZOV0ZCZllFX2Q5bGRmc2huWlZRMFJQeDdMWXAta0xMOWJ1WFZRd1JnTkJSTnJxZzBUbzZlR2R3RmEyZGxYQ3VuNFNsNk5rTTkwamctUl83ankyeDZoQWdxT21heUQyY09RM29TS3picTQ3OFQ1UEhUZDNrcmNCUVZuck5BSVUxT2xjWFhzWk16RDUwWk82Ty1qaFNkUXdIanhKYlB5OXBFY0pnRVpBYlpGTTFYYmd3OVNyLVNyWU9Wb1FUZnIxRW5rVXE3YXFqbGc2RGJJTzFNTGw2UFZUaGpSM2VFMjN1dkdoQQ?oc=5",
       "image": "assets/news/auto_4dba92b4.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-04",
+      "media": "La República",
+      "title": "Uno de cada cuatro escolares peruanos sufre bullying: especialistas advierten que las sanciones no bastan",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNbUc3dGxRMVZFVzlRVWdQRERMaHNJb1l2X2RieVNlRmV2UWV0R1VhYkJnWXZjOEtvbTZUYlllQWVWMFBHWDNsWkFlN0hacC1jNjdwQUgteVRiRXY3bElHQjhEVDh1OXZwREZYaUlDYU94b3JEQ1M3TnY1SzFQS2V0LTJvRDBRMWxJM3g1RFljUllVbW1FakEyYmpzWW91Q18zVjZoU29DZ1ZKd1NxODVyZG1tZTI5TzRXODlCSk9nTkV4TXRBUUJsME5QRS1Sd1lDVE53V1JDRk56UjY5dFI2djgtTFdfNElLcVHSAe8BQVVfeXFMT0Z1R19YZmpjMWtNZjFRNFVIYlYyc19JTkRtSXVNWWppM0ZfXzNPM0xUYVdsSm9BWHlXeV9nZi1NOF9iV1UyT2hyQzJMM0Y2S3FRUndudVd3ZVJLc1l4RGtvZ1ZXRkNCdWxVZnRSUy1PNVY5UWVUWWM2VUJ1dTdSaTkzTVNtSTFFUzlRT2VyRWJNRkUya25GcDQ1UXNkaVdwcElkUmg2bmdTVGtIUEdyMmlRRUtua0Y2UHh3bllQN3g2dk40Z1FJWnVFQUx6T0tGd284YjhlNEIwN29sbEZGejhCSkt5b0JfLTN0WU05OEE?oc=5",
+      "image": "assets/news/auto_5602b681.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-04",
+      "media": "La República",
+      "title": "Día Internacional contra la Violencia y el Acoso Escolar: ¿por qué se conmemora?",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOdVQzTERndmlvQzJDbGdoeExoMkNmbE5STWphbTVLMnBnTnUzNDczZWw1Y2dPUVhDRS1pQk9xSkFLRXcwSFVNN3BhN09ua0Q2N0hhOTk5UE1hdkw5QVdsdlhXbXhXQ0RtRzI2QzJULXlxOS1hbm1OaFBNQVNoVk90eWJLNlZaQTlocWp5Sno2SmRMZC1LN3JHeC1sM1dQX1lhdm1LWUQ4WWRHU3lEek9NVDBZNHptUFZqZnRfQThWRU1yTVFycFFLc2w1T0JoR3BfeGtwYWtrRmo2d2hGWnhZRnZyNjNFRzhDTlJsc0RUd3J4UDZ3WElUN2hzdFkySWlkOElF?oc=5",
+      "image": "assets/news/auto_9be4b9cb.webp",
       "auto": true
     },
     {
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPSG54RGE4ZVdLZWtmVGZUalByRk1kMnlvQ002YmltMXJXenVDVFJzTS1BYTFVdkVkODNKdWI2ZlpKZVEwNF81VHJwWFk3dF9fMlgzTDJIV1FjWTBpNk1sZ1ZURy1kYmdnZENaTkFxM1NqVVZndm1qeEJvUUh0Q3lDekxMaWNTN0kxTGRpdEdza3RaWFdIT28zTlFSdmpkVm1MTmxoRWkzaENWZ3BGUUdMNHFkc0RCNm1CTjlPUlZwSWsyNlk1WUZoYko5a2Q0THR4eGJaTTNMZ2xkQ0JXRmNPV2RKS3VZOWdwNXRrQUkxZWRraC1RYmFvNU9vU2poMWlS?oc=5",
       "image": "assets/news/auto_bc979817.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-20",
-      "media": "Gestión",
-      "title": "Congreso: Renovación Popular propone proteger a profesores del bullying escolar: los detalles | PERU",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWkExZ1Nhc205VVA3LUdIbTR6alg5VjZIQzVwUXZMNzkyTUNTMkNVS2M0bVE2Tk5zN0tPUFRiWF85VmVfVE1VWWF5RzRuVVNsUFpEeXRZVzdyb1dBMXVjRWlXVWpmb1hWZGNkazFEZUtfMFZ2QnQ2M2UwSjVDX2ttdVEtY2x4MlZFYVFjcEVXbkVvTjBhNWptdUVVYlV5alBSS0JxT3NIS2prRkN0UUhlWlg0NkYtOXFaOVhhd3RrNWRnZw?oc=5",
-      "image": "assets/news/auto_ef962ac0.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-20",
-      "media": "El Comercio Perú",
-      "title": "¿Por qué los escolares víctimas de bullying guardan silencio? El miedo a ser señalados como soplones",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQVjlKelhnaG1QYkdwcEhnS3V0T2JDNTNvZHFGMFh6NkxJb2RpSTZiOHU4LUlWZ3gyRy11WmhxeExNdjlZWEVzeWFFNTJFNnRzMzZIQVNtM2NDLVh2MjVRdWZFam05QV9GOTZ6Q3M2el9KbnY4SFA5d200dzQzaFdJLVM5R0toR0ZkRkdDR216OGhHek9Da2xaeGk1RUZZSmVxaFJQRm15ZW5fTjM2bVNsSkNRUjVCdi0yYzZpWU85cy1mdi1UeEhZaHlPQ0xDN0ZFdU9PN0w2Tzg0UdIB7gFBVV95cUxQRzF6WXlSZmRaeERjWFQtVUlyYnBZcWI1Z0d3WTFjM2szUmdsd3EzblZ2SjM5NG9KMmh0VGJRTUhQNzRLTjJ2dUdCcWlGSXJ1dkVDamxuaGY4U1c2cFdOR1h0X0g5M3NZcGk1MV9NSkZ1MjMwNTBvUEhNVDdHSjVGbDVQWEg0NDhzY1I4NzFfaDNWN25STk9uUE1QRlBGMHltQXNhVHNVelNQNEV4UENYWVktMDhpY0Ztd25kUkNXa21PVmdzQ2t6TzJwNEU4aGZRT3I1VUlUcEJwZXRpaWpyMDRkcS1HdFJISnp3V2V3?oc=5",
-      "image": "assets/news/auto_73806814.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-04T18:29:23.835406+00:00"
+  "last_auto_update": "2026-11-05T18:32:11.571235+00:00"
 }
