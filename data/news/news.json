@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-06",
+  "retrieval_date": "2026-11-07",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-07",
+      "media": "Infobae",
+      "title": "Efemérides hoy 7 de noviembre: Perú conmemora el Día Internacional contra la Violencia, el Acoso y el ciberacoso en la Escuela",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNRzU1OUE0amd2bkQ0UkNvdHFoVUQ2TjZTMTlhVXozUFd6bTFQOVlWdnZDS1lTclIwd2RQU1BFaFhGcGJ3ckVWZ21PZHdNRzAxQlprdWQySzF3UkYtMzJBZUJjVm83OGJ6Sms1MmdSZ3ZlcHJRY1hLRnFtVEVNdndiS01pMjY0WEpYb2R0WkVubTVhX2dJVkEwRzBFZmdkZ1dUQ0xoZ1BjTE5vbmxueExwdkNtdDFncE1iM2lPdm0xZDQzUHlVWmQzNElZMUxHYy1vS05lZC1MMXBpRWQ4MENzbVZfV3hPQ1NVa1puZ042TVZKeU10eEJ5UNIBkwJBVV95cUxOVTUtbFV6UVh0dmxvWW01aDhyb1Q4N2ptVTQ5Y3VaNWF2NjhMd2VRWU1wRGx3VHNwZjlpclRrNjhpdW5zdTFYUVJleEgwQzh6ZUI3QlFlLUdVUXViVEhKa2pYWHAtUmdLTzdHb0YxbWlzS3UwQXU2WmlObWxGUl9Ha0FVTUMwZmpsYlkwbmp3YWdDczR1XzFOQ1E1cXkxalBVY0JwTHZ6SkpiS3dycWdrd21QOU5yajVMTTh4bVlJblFOdXlEOEQ5dDNUcm55YWdTRUdDWVhRUjJzS0VEZXNvMGZGSk5QRW5MV1htY0gtbDdBVE9kZjVYYThTVHJwclpOTGh5X3JxNzZtRVF5TlpUWkptUQ?oc=5",
+      "image": "assets/news/auto_8d3ba8f3.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-04",
       "media": "Infobae",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQLVFjWEd3ZDg5MVp4UUpUZUpaWEdWZmdrcnBZNGR6d3RQbzBva1V4cHFKNGFSUHg3UDFZVEV0TWJHX0x1Ry1FOF85b3hyejZzOXJqZW1PR2JCSEZvdHRNamFmbTlaZU81dzhTaHl2RGlYQW1fN2t2UmktYWNPVUZ3cnNyanA3bVc1MGxlVVVXM3BQV1BzLTZsUFZ1MHphT19qVWhCSWhfbTlqZUhiZnVuTm4zMTNfajdCeW00S3BORmM0ZnpFVm9yTDh5d2tnWTc3ZXpwYWw2RmpyaC1xakd5alJVdkc2elHSAYICQVVfeXFMUHpMTUJXejQzUlVtOVYwVFVsVGRLbnQ3N1JfMUQ5T01ybHItb0d4N0d5cU9URnFEcHJhQW1ySG90WEZLWWg2S2RQdmtCUnc1c3ZONEl0NlI3TE42WFRCSElIcW1zWTlIWEhXU0VrVlNXem5LcGxmWGFNWGFJTFBYZTdzZUljOUJwakl2OVdRQkRZY3lXVW43Rl94NXgzVVFkYjEySDc5ZUt2OG41eTJhM0E4Y2lfWU4zX1A5UlVtaW5EVUw0b3pQQnc2R0FWN0Q1c1R6NkNJOXR1MlFuakRpeE5GdHJveV9ybmxucFo3dUlZQVJiNkg0dUY2R0hBMHZRX3B3?oc=5",
       "image": "assets/news/auto_bb2cfaa1.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-20",
-      "media": "Expreso",
-      "title": "Ada Gallegos, presidenta del Consejo Nacional de Educación, pide revisar plataforma SíseVe frente a casos de violencia",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPSG54RGE4ZVdLZWtmVGZUalByRk1kMnlvQ002YmltMXJXenVDVFJzTS1BYTFVdkVkODNKdWI2ZlpKZVEwNF81VHJwWFk3dF9fMlgzTDJIV1FjWTBpNk1sZ1ZURy1kYmdnZENaTkFxM1NqVVZndm1qeEJvUUh0Q3lDekxMaWNTN0kxTGRpdEdza3RaWFdIT28zTlFSdmpkVm1MTmxoRWkzaENWZ3BGUUdMNHFkc0RCNm1CTjlPUlZwSWsyNlk1WUZoYko5a2Q0THR4eGJaTTNMZ2xkQ0JXRmNPV2RKS3VZOWdwNXRrQUkxZWRraC1RYmFvNU9vU2poMWlS?oc=5",
-      "image": "assets/news/auto_bc979817.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-06T17:49:24.495734+00:00"
+  "last_auto_update": "2026-11-07T16:45:30.682663+00:00"
 }
