@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-09",
+  "retrieval_date": "2026-11-10",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-08",
+      "media": "El Peruano",
+      "title": "Decreto Supremo que aprueba los “Lineamientos para la gestión de la disciplina escolar en la Educación Básica”",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrbUp4M1Z6R1JYa3J2NEEtZnQtb0l4WFMtWGlLbE4xb1BQWk5wdnhoRTlZWkpRMmNLcnh4NnJuTDVUQ2JQdF9iTWxoNkxMTThjVE1FbGVSTE8wbmRZR1puQU1OYlJ0QQ?oc=5",
+      "image": "assets/news/auto_9944e7d1.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-07",
       "media": "Infobae",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPbmdROFQ2Q0JQdm4yTm5EdlFRbkZqOE0wbHhXTkw3N0txcTlKSDA0M1R5S0lfMG1hUU9TdUN1WGZfZDdKdGVmNUpYZC1EaGhIVXpTVlY4WTJlQ3dRLW54c3AxUHJCdktiVnAzSG83STYxTFlWdnU1ZlBlUXhrVDBnX2VzYm9hOHJJLVNIQ24xdjNBZS1nQ19WclFfOTNmZEdWOHhRSE5sYzFKNWRNbTBrcVRKeUktOEVmVmpmaHRQdnJOWjhSS0FIUjZZQWpjaE0yeUJ5c2ZNSEI3RDRWWDV5ellSUlJFZGFRc0o1ejM0NGQ4T0hVWHBISdIBkwJBVV95cUxQMVU3a1FybGV5U3A1anI3TUIxcGpaRVdmYWY2M1FTOGdKT2RBTWd3OUhaOGRyVHFWNC1yZjJhX05BbHY2Y1Jyc210TXF3RURnanBidkJPa0NPY3F4Wk9oRldSUnFkQTlLMjVYR2lVNWJ4RzRxM0ZIQjQ4bE1XeUI5Wk9mVS1UaTFxYXVYVzZaVVZnSVNrcHVpVjFaY3pjZkZ5WTI1Yi1QU2FQeDZsTVNwTXBYUUpodjBqLXVza2J3djROVzg5bmNyb2Y3azBkTGt2aF9UeWZsRHIxQm94c0Nvby16UTJXUFBiU1d6Vk9qNzEweGRfam9YNUdQMk9sTDM5WXNWMWZoWEx2Z25uMnRiRjktVQ?oc=5",
       "image": "assets/news/auto_a2b06d0f.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-22",
-      "media": "Infobae",
-      "title": "Multan con 8 UIT a colegio que no frenó acoso escolar contra niña con epilepsia y omitió registrar su matrícula",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQLVFjWEd3ZDg5MVp4UUpUZUpaWEdWZmdrcnBZNGR6d3RQbzBva1V4cHFKNGFSUHg3UDFZVEV0TWJHX0x1Ry1FOF85b3hyejZzOXJqZW1PR2JCSEZvdHRNamFmbTlaZU81dzhTaHl2RGlYQW1fN2t2UmktYWNPVUZ3cnNyanA3bVc1MGxlVVVXM3BQV1BzLTZsUFZ1MHphT19qVWhCSWhfbTlqZUhiZnVuTm4zMTNfajdCeW00S3BORmM0ZnpFVm9yTDh5d2tnWTc3ZXpwYWw2RmpyaC1xakd5alJVdkc2elHSAYICQVVfeXFMUHpMTUJXejQzUlVtOVYwVFVsVGRLbnQ3N1JfMUQ5T01ybHItb0d4N0d5cU9URnFEcHJhQW1ySG90WEZLWWg2S2RQdmtCUnc1c3ZONEl0NlI3TE42WFRCSElIcW1zWTlIWEhXU0VrVlNXem5LcGxmWGFNWGFJTFBYZTdzZUljOUJwakl2OVdRQkRZY3lXVW43Rl94NXgzVVFkYjEySDc5ZUt2OG41eTJhM0E4Y2lfWU4zX1A5UlVtaW5EVUw0b3pQQnc2R0FWN0Q1c1R6NkNJOXR1MlFuakRpeE5GdHJveV9ybmxucFo3dUlZQVJiNkg0dUY2R0hBMHZRX3B3?oc=5",
-      "image": "assets/news/auto_bb2cfaa1.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-09T21:18:35.614072+00:00"
+  "last_auto_update": "2026-11-10T18:29:25.510225+00:00"
 }
