@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-10",
+  "retrieval_date": "2026-11-11",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -31,6 +31,30 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNRzU1OUE0amd2bkQ0UkNvdHFoVUQ2TjZTMTlhVXozUFd6bTFQOVlWdnZDS1lTclIwd2RQU1BFaFhGcGJ3ckVWZ21PZHdNRzAxQlprdWQySzF3UkYtMzJBZUJjVm83OGJ6Sms1MmdSZ3ZlcHJRY1hLRnFtVEVNdndiS01pMjY0WEpYb2R0WkVubTVhX2dJVkEwRzBFZmdkZ1dUQ0xoZ1BjTE5vbmxueExwdkNtdDFncE1iM2lPdm0xZDQzUHlVWmQzNElZMUxHYy1vS05lZC1MMXBpRWQ4MENzbVZfV3hPQ1NVa1puZ042TVZKeU10eEJ5UNIBkwJBVV95cUxOVTUtbFV6UVh0dmxvWW01aDhyb1Q4N2ptVTQ5Y3VaNWF2NjhMd2VRWU1wRGx3VHNwZjlpclRrNjhpdW5zdTFYUVJleEgwQzh6ZUI3QlFlLUdVUXViVEhKa2pYWHAtUmdLTzdHb0YxbWlzS3UwQXU2WmlObWxGUl9Ha0FVTUMwZmpsYlkwbmp3YWdDczR1XzFOQ1E1cXkxalBVY0JwTHZ6SkpiS3dycWdrd21QOU5yajVMTTh4bVlJblFOdXlEOEQ5dDNUcm55YWdTRUdDWVhRUjJzS0VEZXNvMGZGSk5QRW5MV1htY0gtbDdBVE9kZjVYYThTVHJwclpOTGh5X3JxNzZtRVF5TlpUWkptUQ?oc=5",
       "image": "assets/news/auto_8d3ba8f3.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-07",
+      "media": "El Peruano",
+      "title": "Presidenta Fujimori suscribe decreto que aprueba las nuevas reglas de disciplina escolar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNmNEOHpyUXNGdmk1QmY3WW9vZlYySEJTZXRzTHN4eWRUUFZqRzZyeHZyRDNpbzAtVFh0dUZWVUJQSW5QeW1PMTlncU1wcTZsT25jUDk0cVdGSTJvUmxMWW5wcS11d1VnUTFGbHRhWjB5eXBPUW91RDBoUEQ5bEFOOE1va3N0a2hneFRYeFdtRTJiYkN6eFgzVUNlNG5JTUh4Ym1iVk9JWi1QN1lsUlFLWDdOUlhRUFFzenZUajZmNzJaUQ?oc=5",
+      "image": "assets/news/auto_ff8def36.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-06",
+      "media": "Infobae",
+      "title": "Escolar denunció a su profesor por abuso sexual dentro de un colegio de Huancayo: Fiscalía investiga el caso",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPaDRadzVBeFNMaVFOSE81SGo4NTc1aFB2VUdBOE02SmtIbUxfczVSN2dkV0djX1IxamZyblpCaGxIZ01DdXdrb0VoNmxBZDFYSGFhd19xamFhckJGWFRISkRoVFlNYXFITE1RNi1pd19md21tWEpmNDFKelN1cGlQblhSUDFDWl9NbW5CQjYxNm5NNk5XampNY3VHWHV6eHFhUDRqNzduSmhWQmVqOHVZNllxZ3h5Q1RvUWZnc19lUm5ubUxwWDQ3M3hZTlM0SEszMTZqTmh5VFA2LU10TlI5Z21n0gH8AUFVX3lxTFBGYnhCNHBjZ3Z4UjRNQllNOW84RHJJZ0tEVjQ0cTRSa3pIaDZ4V1dCZXF0T2tNRmhsS1dYRHFhN3pYUXZkUDFiRXdoa3puZFBQS0s3RFUtaXVVYmJuUFNFenNmeE5PQVhCMUU5T2xnNVB5anNSLXJuUC1YbGJFcUNOcWlteTQ4bEJQYUtTU1l2Y1FPSjZYSkgwWXFIT0ZJdjJGSjFUSktsQURDNlFkTUVrdjRwQ29yWUVyUk1YY3ZBY2tBSmJ4NEtrUnlYbkpVZ0xVSTBJRHhhbFBmYTdkSU1nUzdsRDNDNnV6dkVIMW5YN3hoVUZDTVVOQy1rbw?oc=5",
+      "image": "assets/news/auto_78d157b9.webp",
       "auto": true
     },
     {
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPVDU3YXFONkNhTjZWM29VUVM3cG04WWIwSlhtYmg2Y0pSbWVBblpLSkpodGdTS3daRkpvTGFTQVVQMFhGck9xMzNZN2lSSXdDWmNVblg5SHJET00xTGxsVlhiRF9lU0pwOHgySG1ZM2dweWxfX0dhcWRGUjctV003OERYbEtqZi1LYmVBaUJRRi1DN25mWDZURVpRTWZoMDNKX240dGVlR1BENEtTYU9HREpGem1KZkZybFk0dmlNYVNHdkRNWDNrYzJ6OGJ1Qld1em1qZ3RIYnVEaUhOZlRlOVljV1FBVUJobmdtcEs2UEliN2pNRlNEWl9Sdi1ENGRldlJNTjd3?oc=5",
       "image": "assets/news/auto_a7a984d5.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-23",
-      "media": "Infobae",
-      "title": "Escolar agredido brutalmente por sus compañeros en el colegio",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQeTk2RFpjMllzbmFJRUlsZDRZUFFKM3RZM1duNVREVUVWMVlQd3ZwanJpMWdHOWdfRlJnd2oxbGttelpLOU5qay1Tblk0X0RMUHBBLUgxR0xnV0tYOUZLSVdjSEIzZHM0SlhHbVlPN1BzbnBPaWFCRmJPLUNIVk9Zc2Q3Tkc2TGozd3FvVV80Zk9tVzVYQ2FZQUJwdXhfczdqSTROTXRhODhKUQ?oc=5",
-      "image": "assets/news/auto_d075095c.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-23",
-      "media": "Infobae",
-      "title": "Toman medidas drásticas contra los cuatro escolares que golpearon brutalmente a un menor de 14 años en colegio de San Miguel",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPbmdROFQ2Q0JQdm4yTm5EdlFRbkZqOE0wbHhXTkw3N0txcTlKSDA0M1R5S0lfMG1hUU9TdUN1WGZfZDdKdGVmNUpYZC1EaGhIVXpTVlY4WTJlQ3dRLW54c3AxUHJCdktiVnAzSG83STYxTFlWdnU1ZlBlUXhrVDBnX2VzYm9hOHJJLVNIQ24xdjNBZS1nQ19WclFfOTNmZEdWOHhRSE5sYzFKNWRNbTBrcVRKeUktOEVmVmpmaHRQdnJOWjhSS0FIUjZZQWpjaE0yeUJ5c2ZNSEI3RDRWWDV5ellSUlJFZGFRc0o1ejM0NGQ4T0hVWHBISdIBkwJBVV95cUxQMVU3a1FybGV5U3A1anI3TUIxcGpaRVdmYWY2M1FTOGdKT2RBTWd3OUhaOGRyVHFWNC1yZjJhX05BbHY2Y1Jyc210TXF3RURnanBidkJPa0NPY3F4Wk9oRldSUnFkQTlLMjVYR2lVNWJ4RzRxM0ZIQjQ4bE1XeUI5Wk9mVS1UaTFxYXVYVzZaVVZnSVNrcHVpVjFaY3pjZkZ5WTI1Yi1QU2FQeDZsTVNwTXBYUUpodjBqLXVza2J3djROVzg5bmNyb2Y3azBkTGt2aF9UeWZsRHIxQm94c0Nvby16UTJXUFBiU1d6Vk9qNzEweGRfam9YNUdQMk9sTDM5WXNWMWZoWEx2Z25uMnRiRjktVQ?oc=5",
-      "image": "assets/news/auto_a2b06d0f.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-10T18:29:25.510225+00:00"
+  "last_auto_update": "2026-11-11T18:24:31.704197+00:00"
 }
