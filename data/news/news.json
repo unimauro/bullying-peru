@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-17",
+  "retrieval_date": "2026-11-18",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -19,6 +19,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNc1lMbE5CQUQ3TENKUk1MdW9WZ3B6NzRJVXZVem45T0hwVUhHYWFsVWRvc3hpMjBrd1hUOWoweXZ5dXFOX2NGOTFXWURwa1k2UUM4cTFBNGRZeU9XMVFwdFNRX094eWZzaWk4M1MtR3BRVXEwMjQ4akJ3akZ3a1BRSUwzTldOQzlxNUNjaUU1ZXpleXMza0p5TDIzMWd3X2xlelFVWE5uN29IVndYYlJHb3Q1d1ZuQnhTZHBrUVB2WmpsWEMxYXVTM205Z3RGdEd5d0d0MFFLcjVudGZRcWNjOWtvTmVyZ0lKSFBTdF9UWHp5Z0hjQU5DWDY0ZFkwd2F5SHFUNlB6eFctMTZ2RmfSAZMCQVVfeXFMTUdlWnRiSEFMTWNLN2RCOVZ4NFVvbmZfT2ZKZ2h3X21rT2JvUW1DV0pkRVdDdTBJT0YxZTBXbXloSFZfeVJaZlVJUmQ2VlBBTzRxeVJLVS1PWmtjVFRmR3RuNTZLUmtGNXMxSEhHS1dNRUc2WHplQmdBQ1hpNGZVSWhYUXBhaFpVelVxallfVk1xRXNieUE4M3VUQVJNQlZlY3ZwTGRnLUpfdmdvR1RUNFVsSXpHQ19Od3pFc245MkMybzJFMTgzaFZlb29mRFFYMDFWQ09zTlBBbmVRdGVYVmdBV2I0MzhJVFRoQXJmVWFHSDhHQ1ItR1dGem8wbF9wNTJ3Yk51Z1FsbWtadkRMUDFEOXc?oc=5",
       "image": "assets/news/auto_ec90c1a7.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-10",
+      "media": "Latina Noticias",
+      "title": "“Hay colegios que ya no los reciben”: padres preocupados por nuevo decreto de expulsión",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZVVVZjdfdWNxRElRYTZQa05tZTZFX3pZZG5zSFlyNzBSclM4TVE1TmtMYnpkclp0YXpsV1NCQkIySjU5eG5RUVFDZU1qcjNfTWlFOER3ZEZ1eGgyR2JXQnRSanhGREtqN2I3eUtPRTN2Mm1IUlNXdktVb1V1bzlMTHFwOG1YRk9vSXJmUzVReW9nN0tNaWNNTEttWk1DVmY3ZjFOcV9JNl9uamdXNXY3aUFKWlA1UWpNSGRNRkFZSk0zZ3M?oc=5",
+      "image": "assets/news/auto_fe94f849.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQZ243Wks5UnJPaDVpMnlGOWVPdWd0bnZDclRnRkpyRlhHU0pMR1gtNnZ6dDNQZDVnRU5VZURTWWxYZ0FDR3BiOU5VYTl2WklwaEV2RnQzTzlJOGhjUEh2VzZoNlM1c0h3TkNOd05ad29KVW1sV3Ayd0JBUXBVeG1feVFxQ29HZDFZYWJLVEU1RGJzYWtpNVc4RTB0aFJXdXlOWk5qNmFEc3RmYnhpbHVDRHJiZldpMmp6WHNPYl9CeTBSdHRaZGdDMjUwdC02dzI1NjM4OXBPMElYZmJqX2JZcDBoYWZTZm8?oc=5",
       "image": "assets/news/auto_c063f252.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-24",
-      "media": "Expreso",
-      "title": "Psicólogos en las escuelas, ¿para qué?: Su importancia ante casos crecientes de bullying y problemas de salud mental de escolares",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMixwJBVV95cUxQTVYxV19Kc1lRTlVDTUhWWG95V01KT2E4LWR1ZjBKbFpId1F0QTVKNG5kV2VzbWZKVEVJQWF0MGRBYmpfTmVBZzQyYVJ5NGkyUGdtdkFDYjIycXBuVHdndnpadHM3OVJueHhGSk5kY0YxR0NtMmVzVU9IRGJCMlFxMHRJcGpYZjJTeEtpNURKWUVNTXVrWUpsZFBFaXpFUEVHcy1iYmlCVUtWZlFYTjdFVGN3bzd2b2NwZDNvcXJHTGRIVnYzSlY0QzR0eVpjek5kemMxRkhvZU12eWtDSm1KWEFIblRSZHh0LVo1QWVFS0poQ05iaVkxQjVuYmE4d2RYeEpHakhKMVFzRldobUMyVk9zMlNKUnljdnVzOF9TUlFhblBvUmpxajVmS0JQa0xZT3ZhZXNBVENzenFTenZtUXVHMXdfYjA?oc=5",
-      "image": "assets/news/auto_d1cc36db.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-17T19:38:26.275363+00:00"
+  "last_auto_update": "2026-11-18T19:15:22.312807+00:00"
 }
