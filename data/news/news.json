@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-19",
+  "retrieval_date": "2026-11-20",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -154,6 +154,18 @@
       "auto": true
     },
     {
+      "date": "2026-10-30",
+      "media": "RPP Noticias",
+      "title": "El Perú registra más de 70 casos de violencia escolar por día: Gobierno apuesta por restablecer la autoridad en las aulas [INFORME]",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPVDU3YXFONkNhTjZWM29VUVM3cG04WWIwSlhtYmg2Y0pSbWVBblpLSkpodGdTS3daRkpvTGFTQVVQMFhGck9xMzNZN2lSSXdDWmNVblg5SHJET00xTGxsVlhiRF9lU0pwOHgySG1ZM2dweWxfX0dhcWRGUjctV003OERYbEtqZi1LYmVBaUJRRi1DN25mWDZURVpRTWZoMDNKX240dGVlR1BENEtTYU9HREpGem1KZkZybFk0dmlNYVNHdkRNWDNrYzJ6OGJ1Qld1em1qZ3RIYnVEaUhOZlRlOVljV1FBVUJobmdtcEs2UEliN2pNRlNEWl9Sdi1ENGRldlJNTjd3?oc=5",
+      "image": "assets/news/auto_a7a984d5.webp",
+      "auto": true
+    },
+    {
       "date": "2026-10-28",
       "media": "El Comercio Perú",
       "title": "¿Control superficial o disciplina real? Qué hay detrás de las nuevas normas de conducta escolar del Perú",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaG1LdW93ZDByY1RBX3ZxSWp0ZmtJcEx2b1NqSWlNZWFMYm8wZXFhYTcyS3E3S2dkTnNkQV9FOGhCVHI2ZDZPd1ZuclpUQlg5c2hicUg4Yld3VGdQLXpYbVYzaFFaNloxOUNZTk12NUtHLW5FTldZS1R6NG1fMUt3MjVrbE00NUJPNWZPT0JVclM5Z19Bd2JYRTAzTUI0bHpvbEVfYzNYcGJZMlNwNktDUDRBVGJCMndjTHowTll0bVZjcnk3VXdSc2VNYlRaaW10bHh2X0Zva2llSk5YZ2kw0gHzAUFVX3lxTE1NWlB2UVZBQUF5QVpNQlNqTUZPQ2pDcVNvWDVWcFdNR0NCdl9RU1ZMVTBfYzdybUJwU295UjFMNGlQUHNyb2w5VGRqV09BMTY2ZFZXVUdvaVN3QXNtOWwweFpnRjlOaGJVUkNLeWMyTlVlU2w4M1pDRDlwM00xYlJrZnk3Yy0tZzhJd3puQVRXcjQ4WHdreFRLeExoNzFKbDlNcGRuVllWSHBOOU1wWmVBb1JxdUs1NmRIQnpNcFBRM1pQbERUT3dIcl9wdkFjUXZGYnNJUERYclNmb2lsN1ozVkRfeVFQRnBxOEREVlJsU09fMA?oc=5",
       "image": "assets/news/auto_cadfd1c0.webp",
       "auto": true
-    },
-    {
-      "date": "2026-10-26",
-      "media": "RPP Noticias",
-      "title": "Violencia sexual escolar alcanza cifra histórica en 2026: ¿qué colegios tienen más reportes?",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQZ243Wks5UnJPaDVpMnlGOWVPdWd0bnZDclRnRkpyRlhHU0pMR1gtNnZ6dDNQZDVnRU5VZURTWWxYZ0FDR3BiOU5VYTl2WklwaEV2RnQzTzlJOGhjUEh2VzZoNlM1c0h3TkNOd05ad29KVW1sV3Ayd0JBUXBVeG1feVFxQ29HZDFZYWJLVEU1RGJzYWtpNVc4RTB0aFJXdXlOWk5qNmFEc3RmYnhpbHVDRHJiZldpMmp6WHNPYl9CeTBSdHRaZGdDMjUwdC02dzI1NjM4OXBPMElYZmJqX2JZcDBoYWZTZm8?oc=5",
-      "image": "assets/news/auto_c063f252.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-19T19:22:09.963790+00:00"
+  "last_auto_update": "2026-11-20T18:58:23.139039+00:00"
 }
