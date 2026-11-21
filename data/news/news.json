@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-20",
+  "retrieval_date": "2026-11-21",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,42 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-21",
+      "media": "Infobae",
+      "title": "Violencia infantil en Perú: 6 de cada 10 niños y adolescentes sufrieron agresiones en casa y la mayoría no pide ayuda",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOc3k2TUxjUXRxYjdlRUVxaVFaOEtVaVBfdlM0eFROdGt0bG1FV1I0a01KejktVHY1RzhKZW9iVU40VzFoSkNSMERPaFBkZTk4dTlZWHEzSVBSbjRfc2FuNjdFSXZ5T0tPYWx3SGVYdkg4TUl6Y2FVbkFpSmt0RXBDRS0wUFBiZ3lneGlaY09fUjQ4RzJmQkdwMjlZUVYtYi1mdVJJZUlFcjY3dWsxeTl2WEl3X1pKYkU0TkdSUmFBZUlmc1Uyc29aRkVzODlGLUNzRXNuTk9uWjNMdDFaTnlLaF9YYjFXRldPSWxlZ1Zn0gGIAkFVX3lxTFBkZk03SUc5NUV5LTA5S2tDZ2kwLTlpU1pzUWhweGVyX1V3RTBHaUhjbTlZeTF4T05DTDJJeFVoQVJYTUhMZXlzamczMVFlSFV4WFJsbE1qMTNNbWxWXzhfZWg5d3RDTWswMzFybkhwdmJLeFdjNzdad005bFZrUkp0YW9mWXQ3UXc0RGNjZUdiNDViMVNSajVPSW1ZYUN0cm5hdkZadkotdFFzdVptTHBFQWlVa1N1aXU0d1pQRWozdnVlZ1kzc3ZETERpYWJORTBSSTRFakxUaEhjUjdzd1R4YkVSZkZWTEEtYmxNOENtaG1rU0xhQkJZUHFCaHFXREh1aUVkd2ptZw?oc=5",
+      "image": "assets/news/auto_c6db4738.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-20",
+      "media": "El Peruano",
+      "title": "Perú enfrenta desafíos persistentes en la infancia: anemia, violencia escolar y trabajo infantil",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUlk4U09tNFJjeFJsMkx6a0dWMkVxRV9RVEgtUmU5NkF5X0lYNXB3YjBSZkg2eDFTZVJkNGtKZG41Vl9QSE9oM0tCdHBXRHhiS3J2aUt0Sk4xQlJxZmJWS2dja0dVNUF3MkFkamRhcko1eF9pb3MyS0l2cG01VGxzWjRVcHItSVVsbW9pSGZINnMzTHVnTXpHckdkMzMxRXpaR1hpS3FxSmxkWF9QV1lmajdVZDhMaFIyVlJyX2g4eE9MSGtHU2VCeEZR?oc=5",
+      "image": "assets/news/auto_329550cd.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-20",
+      "media": "Infobae",
+      "title": "Riña entre escolares acaba en tragedia: adolescente murió apuñalado con una tijera a una cuadra de su colegio en SJM",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPLTNJMXNJZXo5VkE4NmZNbjlOdlNXYkRRMjdZVGZaX2o5MjFocHFfaU5pLXd1X05ldko2VTQyYzl2WEl6M04zU2txcW5NcjBwTm1OODNfTmo4dEJ6OU9BYW93Zl95b0ExZkFaZ3NUNzY0ZER5MVJtdnZlejJQbEdFVzdGZ1JfTEVQOXJ2MTBQZmtuNVJtN1V6dEJmelpFSXhVNmlWNVpkeEZEdWxiY3VWbWFjWkNIblZ4czNqLW1IUGtzZTBlSWQ4OTlJOExkbTgxZkpERk4tZEtPQWtQNlQ4Zzdmd3RCN1FSOFY5Y9IBhwJBVV95cUxQT2R4bTZlR0ZHU1A2TC1qc0FiU09TNVlNd29UOFZvVGpvY19CeHl1ZmdXLXozMElvZ29XQ2dkMGkwcVhqcHFNRzk5X09wY3pGY0FuZ2ROSU1zSnV4MFhCOVQyTFBCX2dzeGN3TGwwVVhINGJBVHRSZVJEbTM1N3E2ekE3OUxXUE85SjF4dExHeDJLTGt6c0JUbWVuelF4cEQ4RzB6N0g0VV9pUFJvOTcwdTBjRmdfX3lQZXNieEpjSDRMVk9DSkc0dzdEQkdPWXFOUkJzYXdTNnJQbnNfS0dtbl93SUwtdFhFZHZnaV9NZGtnZEVneUszOHJycXFfNXJ3MGtEeEFoYw?oc=5",
+      "image": "assets/news/auto_8b606af5.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-14",
       "media": "La República",
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNd09KVVNqalB5UnZheUcwQ2dqZE1xUXlfcEJHcW5GRk5nYWhocFFLNjd3NGY3RmEtdTZBUmVSdkFieVpWTXBfUU5uTlFoVXJwMlRRS3ZOdmpMdVR4Qk1WQnl5Ui1pZ0VIQVAwV2UyZVkzRUY4b19BVTloUXRGd1RVWDNTWFRYWWx0bEtSdnZvTzdZcEl1M0hNMGNrNDB2M1JvbW1ZRlNNNElaYjNPRVZoX1dTZFVGeEFZbkhuZGxTMWRTUmx4YlZrMDktZ2FuMGNxVEdyaENmV1VSVFU3eEdv?oc=5",
       "image": "assets/news/auto_ca6f3d3f.webp",
       "auto": true
-    },
-    {
-      "date": "2026-11-01",
-      "media": "Diario Correo",
-      "title": "Autoridades refuerzan acciones para frenar la violencia escolar en Piura",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOejRRV3pvZXUyYmxXV0RmbVF5Ujl3cWZNTUVmQVRSZFNOZW55RExnVGJCM2tJOVJSQXhKdE9CMnhVY2NkM2M3VHAyUm9ObDFfVGNEdEY5T040SHpiUzJfa0xvUUh3bkE3TjUtc0czbWVrT2RQNkZvLUpEX3VNdkVXcDJxbUN2d2VyTk96UmpVTFFyeTQwU3lSekoxd3ZvSjFRV3RBR0wwU3RKR1A3SzVzTjFmazZMQl9qZXVn0gHPAUFVX3lxTE1nVG1HNkNURGRSZ0JOVTR4c1ZvVktrUmF5SVgyS2YyazNtLS0xZFY4MzJkbTgxblVDOWFIOGgydXdtSnBNWFNBSTRldHlDaUNxWUQtVXZXQ1VoSHZsMXJkWU9oMlF4X3g4emNBX2dnNTFPZkFrZFFnQ2JWbGJDLVhZVkVyUjhKY0ZtUmhfQTNGLVdKZzRJaHRlZ0ttMklUYTdRaW1tRks5LXFuZzBESXJtT2FobnFsVWZyM3dvMjFLWmZZcWNRWFhrMHh1RXNTYw?oc=5",
-      "image": "assets/news/auto_ee6609a7.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-30",
-      "media": "RPP Noticias",
-      "title": "El Perú registra más de 70 casos de violencia escolar por día: Gobierno apuesta por restablecer la autoridad en las aulas [INFORME]",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxPVDU3YXFONkNhTjZWM29VUVM3cG04WWIwSlhtYmg2Y0pSbWVBblpLSkpodGdTS3daRkpvTGFTQVVQMFhGck9xMzNZN2lSSXdDWmNVblg5SHJET00xTGxsVlhiRF9lU0pwOHgySG1ZM2dweWxfX0dhcWRGUjctV003OERYbEtqZi1LYmVBaUJRRi1DN25mWDZURVpRTWZoMDNKX240dGVlR1BENEtTYU9HREpGem1KZkZybFk0dmlNYVNHdkRNWDNrYzJ6OGJ1Qld1em1qZ3RIYnVEaUhOZlRlOVljV1FBVUJobmdtcEs2UEliN2pNRlNEWl9Sdi1ENGRldlJNTjd3?oc=5",
-      "image": "assets/news/auto_a7a984d5.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-10-28",
-      "media": "El Comercio Perú",
-      "title": "¿Control superficial o disciplina real? Qué hay detrás de las nuevas normas de conducta escolar del Perú",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNaG1LdW93ZDByY1RBX3ZxSWp0ZmtJcEx2b1NqSWlNZWFMYm8wZXFhYTcyS3E3S2dkTnNkQV9FOGhCVHI2ZDZPd1ZuclpUQlg5c2hicUg4Yld3VGdQLXpYbVYzaFFaNloxOUNZTk12NUtHLW5FTldZS1R6NG1fMUt3MjVrbE00NUJPNWZPT0JVclM5Z19Bd2JYRTAzTUI0bHpvbEVfYzNYcGJZMlNwNktDUDRBVGJCMndjTHowTll0bVZjcnk3VXdSc2VNYlRaaW10bHh2X0Zva2llSk5YZ2kw0gHzAUFVX3lxTE1NWlB2UVZBQUF5QVpNQlNqTUZPQ2pDcVNvWDVWcFdNR0NCdl9RU1ZMVTBfYzdybUJwU295UjFMNGlQUHNyb2w5VGRqV09BMTY2ZFZXVUdvaVN3QXNtOWwweFpnRjlOaGJVUkNLeWMyTlVlU2w4M1pDRDlwM00xYlJrZnk3Yy0tZzhJd3puQVRXcjQ4WHdreFRLeExoNzFKbDlNcGRuVllWSHBOOU1wWmVBb1JxdUs1NmRIQnpNcFBRM1pQbERUT3dIcl9wdkFjUXZGYnNJUERYclNmb2lsN1ozVkRfeVFQRnBxOEREVlJsU09fMA?oc=5",
-      "image": "assets/news/auto_cadfd1c0.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-20T18:58:23.139039+00:00"
+  "last_auto_update": "2026-11-21T17:53:09.154249+00:00"
 }
