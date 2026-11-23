@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-22",
+  "retrieval_date": "2026-11-23",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-23",
+      "media": "Expreso",
+      "title": "Mininter fortalece prevención de violencia en 174 colegios y protege a escolares en entornos de riesgo",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxQeTJBQ09NcmFEZEhHMUNEQTJ2UHJWQTJEM3dxUE1oQUpsejQ3LXlkNjdEZ1pWYzczRklQNGhFTFhHN3ZIR01OQXVqUFRWTnVGbkx6MUlRWWRwVXd6UEVyMG1Ia0FmY0dtZ0lORWtEQllFWDJhWGVfNlc4OHNfSXJzd2ljTFppbU9uVjNLQXRfQkxuVlN0TEg0U0tlb25EUTB1VFhWNWJLWGdpSVJLRGJtSDFRMUxXWEFONmdzbGJvbnlTRnljTEJXSE9LaVhBbHlqbzhxX1BWdnVtRU05cHYzb0RxREtMamNESGRKSk81X2x6cWpMa3M2ZnpVZXRjeWFZWDRaWGhQdDRqdzJQWGdid3NVT1ppVUU3SFByZEswNUFBMDdoQlN3T0RuR1ZGalk?oc=5",
+      "image": "assets/news/auto_572a2f54.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-21",
       "media": "Infobae",
@@ -55,6 +67,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNc1lMbE5CQUQ3TENKUk1MdW9WZ3B6NzRJVXZVem45T0hwVUhHYWFsVWRvc3hpMjBrd1hUOWoweXZ5dXFOX2NGOTFXWURwa1k2UUM4cTFBNGRZeU9XMVFwdFNRX094eWZzaWk4M1MtR3BRVXEwMjQ4akJ3akZ3a1BRSUwzTldOQzlxNUNjaUU1ZXpleXMza0p5TDIzMWd3X2xlelFVWE5uN29IVndYYlJHb3Q1d1ZuQnhTZHBrUVB2WmpsWEMxYXVTM205Z3RGdEd5d0d0MFFLcjVudGZRcWNjOWtvTmVyZ0lKSFBTdF9UWHp5Z0hjQU5DWDY0ZFkwd2F5SHFUNlB6eFctMTZ2RmfSAZMCQVVfeXFMTUdlWnRiSEFMTWNLN2RCOVZ4NFVvbmZfT2ZKZ2h3X21rT2JvUW1DV0pkRVdDdTBJT0YxZTBXbXloSFZfeVJaZlVJUmQ2VlBBTzRxeVJLVS1PWmtjVFRmR3RuNTZLUmtGNXMxSEhHS1dNRUc2WHplQmdBQ1hpNGZVSWhYUXBhaFpVelVxallfVk1xRXNieUE4M3VUQVJNQlZlY3ZwTGRnLUpfdmdvR1RUNFVsSXpHQ19Od3pFc245MkMybzJFMTgzaFZlb29mRFFYMDFWQ09zTlBBbmVRdGVYVmdBV2I0MzhJVFRoQXJmVWFHSDhHQ1ItR1dGem8wbF9wNTJ3Yk51Z1FsbWtadkRMUDFEOXc?oc=5",
       "image": "assets/news/auto_ec90c1a7.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-12",
+      "media": "Infobae",
+      "title": "El papa ante 60.000 jóvenes en Perú: Hoy son ustedes un signo de esperanza",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOam1pSHkwbkszRzBWb0w1MDU5STJxbUVWSHdVR29kVU9vOGVyeGxlbnJLcUE2WGp3dVBpVnBYbTNPckJMQlBSNU9PMnlNekdkUmxaaUtFTXlOWWZnZ25DWGJnTU8wS3lXanI3TkcxVmUyOVdfSEE1TjE1NkdNZ0U4X0pZM1VDNTI2NzJfWk14Wmt6Y3NSeU1kTHpjYkxDZUtUcXBFcHU1MHhXblVVajhkaF9MNGVpVnVzdEpGS09PLWRoWTDSAd4BQVVfeXFMUFQxUjQwWUd4eWpyTmdLUEZPZndBa3VzLWs3UG1pa29mSzBYNlptRHNhTDU0OVltNXI2eF9iRkFJNUZ6YWdlV3VxVTFaSklMTm8ycHFnNDBQb1QyR0Vra2loLTR6ak5pU1lKYnByc3lKODA2UTY1RW9TOW81Z3FwT0pjSkpnaTRPRHRabUtncjAzNk82NjdhdV94dGotOVFMR0hCZEtXM0VSNkxPeHU2SDBOUzdaSGtfY21wUFZ2VWRndGQ2YkRLalE0djhkUlhMY19TcGNMaFN5OXg0SEhn?oc=5",
+      "image": "assets/news/auto_8bba7ba6.webp",
       "auto": true
     },
     {
@@ -152,31 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOdVQzTERndmlvQzJDbGdoeExoMkNmbE5STWphbTVLMnBnTnUzNDczZWw1Y2dPUVhDRS1pQk9xSkFLRXcwSFVNN3BhN09ua0Q2N0hhOTk5UE1hdkw5QVdsdlhXbXhXQ0RtRzI2QzJULXlxOS1hbm1OaFBNQVNoVk90eWJLNlZaQTlocWp5Sno2SmRMZC1LN3JHeC1sM1dQX1lhdm1LWUQ4WWRHU3lEek9NVDBZNHptUFZqZnRfQThWRU1yTVFycFFLc2w1T0JoR3BfeGtwYWtrRmo2d2hGWnhZRnZyNjNFRzhDTlJsc0RUd3J4UDZ3WElUN2hzdFkySWlkOElF?oc=5",
       "image": "assets/news/auto_9be4b9cb.webp",
       "auto": true
-    },
-    {
-      "date": "2026-11-02",
-      "media": "El Peruano",
-      "title": "Día contra el Acoso Escolar: Poder Judicial llama a proteger a niñas, niños y adolescentes",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNUk45cl9FMFJoYVJ5M1Jna2FZSDFnMnBDV3hrczFfcnhYWnJwZ096eUhiUUh4ZE4yRzRqVEF3bTlfZ1VLQ0pBSFdRYS0tOGZHN1l5UWktWmVLMlAxdjRrQnp6Q2Y4STE4RHdLNThKbkRYX3FXNUp1bHhxMThmbU8tRUp0eXA4U3ZMb18yZUZQMzNFVklQQXRENWJZdDZUQnVHNWRvSDdaTXVlT3hSU1ZuR1o0SlhIcWN3RzZvclRFZ29tWjFEWHgw?oc=5",
-      "image": "assets/news/auto_3228846e.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-11-02",
-      "media": "RPP Noticias",
-      "title": "Lilian Schiappa-Pietra denuncia presunto acoso sexual por parte del director de teatro Édgar Saba",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNd09KVVNqalB5UnZheUcwQ2dqZE1xUXlfcEJHcW5GRk5nYWhocFFLNjd3NGY3RmEtdTZBUmVSdkFieVpWTXBfUU5uTlFoVXJwMlRRS3ZOdmpMdVR4Qk1WQnl5Ui1pZ0VIQVAwV2UyZVkzRUY4b19BVTloUXRGd1RVWDNTWFRYWWx0bEtSdnZvTzdZcEl1M0hNMGNrNDB2M1JvbW1ZRlNNNElaYjNPRVZoX1dTZFVGeEFZbkhuZGxTMWRTUmx4YlZrMDktZ2FuMGNxVEdyaENmV1VSVFU3eEdv?oc=5",
-      "image": "assets/news/auto_ca6f3d3f.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-22T18:15:09.136346+00:00"
+  "last_auto_update": "2026-11-23T22:28:13.765324+00:00"
 }
