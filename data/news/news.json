@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-23",
+  "retrieval_date": "2026-11-24",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-24",
+      "media": "Diario Correo",
+      "title": "Denuncian por acoso sexual a candidato al Gobierno Regional de La Libertad",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxON3VZOHlxOXFPZVRNNlRxQnZYcmRqZ19HOWJsZFJvNGtFejU5OTRDQUF5Q1RHT0dDXzBxN044MVFnV25xaHdvLW92Nk5IZm9lU0tVUHNlVXZUVFBVTTNpYUZGV2NLMkJtZHdnTVNIWnZfeWdrYVFaaWtVZE9iOEV0RzBJQmFjYm5JaVo0S3hRVi1Xbm1qU0d1eVA3eWlJSXlCNkVtdDJPRW56eE9UeHp2ZTc1RElHbHZyZ2lreXVyQTRwR0VKaTVlanRsLVdUTzMxTnVOaXgwQ27SAewBQVVfeXFMUHpkOG9KcFdFeXo5bTRPeFI5RXVoV0tGUTNuNlJmaVlLRF9md25fbDdDNUFDenlWYVByaXI1b1p6bG9oTjZ1RTUwME9valg1ZHNPTGpIY0l6dHhMM09UVHp2SEtBclVKVE5HWGl6a2RFS2hEV0RaSnF1SC01NTNtZDgwbG45S2pRMGlVcU9JODFOUGpSNWNqdXBrd2FQV0FQWGV6dmlWZkFXVlJ0TDlBRFl3eGljTW8tbXJQNm9wQllRT0ZZalJxS1c4S1dYb090VHF5bnlqZnBTUDFUWm5qblZ0T1czNndZay1VVG0?oc=5",
+      "image": "assets/news/auto_ff114cc5.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-23",
       "media": "Expreso",
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNbUc3dGxRMVZFVzlRVWdQRERMaHNJb1l2X2RieVNlRmV2UWV0R1VhYkJnWXZjOEtvbTZUYlllQWVWMFBHWDNsWkFlN0hacC1jNjdwQUgteVRiRXY3bElHQjhEVDh1OXZwREZYaUlDYU94b3JEQ1M3TnY1SzFQS2V0LTJvRDBRMWxJM3g1RFljUllVbW1FakEyYmpzWW91Q18zVjZoU29DZ1ZKd1NxODVyZG1tZTI5TzRXODlCSk9nTkV4TXRBUUJsME5QRS1Sd1lDVE53V1JDRk56UjY5dFI2djgtTFdfNElLcVHSAe8BQVVfeXFMT0Z1R19YZmpjMWtNZjFRNFVIYlYyc19JTkRtSXVNWWppM0ZfXzNPM0xUYVdsSm9BWHlXeV9nZi1NOF9iV1UyT2hyQzJMM0Y2S3FRUndudVd3ZVJLc1l4RGtvZ1ZXRkNCdWxVZnRSUy1PNVY5UWVUWWM2VUJ1dTdSaTkzTVNtSTFFUzlRT2VyRWJNRkUya25GcDQ1UXNkaVdwcElkUmg2bmdTVGtIUEdyMmlRRUtua0Y2UHh3bllQN3g2dk40Z1FJWnVFQUx6T0tGd284YjhlNEIwN29sbEZGejhCSkt5b0JfLTN0WU05OEE?oc=5",
       "image": "assets/news/auto_5602b681.webp",
       "auto": true
-    },
-    {
-      "date": "2026-11-04",
-      "media": "La República",
-      "title": "Día Internacional contra la Violencia y el Acoso Escolar: ¿por qué se conmemora?",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOdVQzTERndmlvQzJDbGdoeExoMkNmbE5STWphbTVLMnBnTnUzNDczZWw1Y2dPUVhDRS1pQk9xSkFLRXcwSFVNN3BhN09ua0Q2N0hhOTk5UE1hdkw5QVdsdlhXbXhXQ0RtRzI2QzJULXlxOS1hbm1OaFBNQVNoVk90eWJLNlZaQTlocWp5Sno2SmRMZC1LN3JHeC1sM1dQX1lhdm1LWUQ4WWRHU3lEek9NVDBZNHptUFZqZnRfQThWRU1yTVFycFFLc2w1T0JoR3BfeGtwYWtrRmo2d2hGWnhZRnZyNjNFRzhDTlJsc0RUd3J4UDZ3WElUN2hzdFkySWlkOElF?oc=5",
-      "image": "assets/news/auto_9be4b9cb.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-23T22:28:13.765324+00:00"
+  "last_auto_update": "2026-11-24T21:00:00.432603+00:00"
 }
