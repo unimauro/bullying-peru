@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-25",
+  "retrieval_date": "2026-11-26",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,30 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-25",
+      "media": "Infobae",
+      "title": "Escolar de 12 años desapareció tras salir rumbo a su colegio en Chiclayo y docente fue detenido por la Policía",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQc1lnd25XUE5HcXROdFlfR2Ezc2JYODZDeVg2WWNkSkhIc1VyREZpQ3doOVA1SjRyOWwyaWlTd3dfUWlHR1ZENmc4V0MxWVBseXNMU3hXQW5fSXdyblZJbWxjcmZ1ZnNzdDhrSkFvRWl0NndmRzdfMklpd0J0cm1WVTVCYmFRak41YzZwQ1FOU3BaeUVWVDZZR3JDbW9wQUxlTmZ4S08tRzM4aTJGWExSc0Nqd1F1N1EyUDhZb1hXN3hzdVdDTG1ERW9uOTd2SzJJcjkyRl82dnpzbWRfY2NjWDczcFVtQdIBgAJBVV95cUxOSmtTWFJ0Wk12VkdmUnk4bDNjSzlFeUd5WEduUFNSWGtUbGFFNHB1V1JzX3Bzd0RoVnM0Z1RISnNsY1duRXVIZldUMDZrczNiWkczbE1NRU1vcXhJOFQwTHF3THlNb1BlcVZZWGpkYTZXNUlVVHlzbi1BY1FIb0lKWTlEdnV4Um94YUw3MWZIbzMzbmk5X3RsUFRwWUkyb3ZHV29QcWlUSUFQV3hWM3oyMU9yYUUwVGxpY1ppU0ZTYmR2Nm44dVA4MFRMa0ZuTlpGNTNBS00yYlFFSmJyNktCenNzdjJiR1F6c3VpTzVONjRFVkpWdXk1WTU4Rjl2LTdy?oc=5",
+      "image": "assets/news/auto_79339bf2.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-25",
+      "media": "La República",
+      "title": "Escolar es detenido por presuntos tocamientos a niño de 5 años en colegio de Los Olivos: padres exigen justicia",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNN1ZyQVlvUkl3bk11X1RRVDYzNnc0OVhUSENYc1NWS0psQUNxdW90UV9qTWpuRFp1RmJQY09LLUE3WXZ1RmJweG5MWF9Wbm1YbjhXVnJlUHJXVWtPeXhOLW1GZ1pNdW1qaUw4dXdHVUd4TjktU055YTAwVXFJVHNRcWNlSGJoR1h1MmxPbnZNQ1hmNWVFRERPNk9UeG1qcGJocFdxbmRCRW8tQy1EczNNdHVpYnRscG0zRmVTSXRxRm5uWWRYbjVQSFI0ZVNGWjVCUHYwNWlkYkVyTmdSa01fN2o5Q09UV0tSRVdPemFxTURhQVHSAfgBQVVfeXFMTUdxdC1XMkk4dUwyYWo0VTU4QUt3UHBjR3N3VVlaa3lnVGRRc3pxZV9Ja0lLQ1NIN1h3aWN4RnVQejBIb0lHbnhEQ01QZUxiOXdKa0FRTGo5YmRDWno0dWFZUlVIOENkbjhCZ2xaeGR4Q053UXpTZlJKQjQ3WDlEV3hjOTByQ2JuXzBad1BJUnVaSVpkVzFPM3dpLUM3WHVpanc4bTFJVi00a3VTUjQxRlNnUTRHc3gwS2UzaC0xTDlNWVdVMWF5M2lrU25VSC1QdEwyMlBRSkVZV1d4c3kyTkpZS0ZzSGdSU0ZuNm8yRmRZcFlyLUtndkE?oc=5",
+      "image": "assets/news/auto_575f6bc1.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-24",
       "media": "Diario Correo",
@@ -67,6 +91,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPLTNJMXNJZXo5VkE4NmZNbjlOdlNXYkRRMjdZVGZaX2o5MjFocHFfaU5pLXd1X05ldko2VTQyYzl2WEl6M04zU2txcW5NcjBwTm1OODNfTmo4dEJ6OU9BYW93Zl95b0ExZkFaZ3NUNzY0ZER5MVJtdnZlejJQbEdFVzdGZ1JfTEVQOXJ2MTBQZmtuNVJtN1V6dEJmelpFSXhVNmlWNVpkeEZEdWxiY3VWbWFjWkNIblZ4czNqLW1IUGtzZTBlSWQ4OTlJOExkbTgxZkpERk4tZEtPQWtQNlQ4Zzdmd3RCN1FSOFY5Y9IBhwJBVV95cUxQT2R4bTZlR0ZHU1A2TC1qc0FiU09TNVlNd29UOFZvVGpvY19CeHl1ZmdXLXozMElvZ29XQ2dkMGkwcVhqcHFNRzk5X09wY3pGY0FuZ2ROSU1zSnV4MFhCOVQyTFBCX2dzeGN3TGwwVVhINGJBVHRSZVJEbTM1N3E2ekE3OUxXUE85SjF4dExHeDJLTGt6c0JUbWVuelF4cEQ4RzB6N0g0VV9pUFJvOTcwdTBjRmdfX3lQZXNieEpjSDRMVk9DSkc0dzdEQkdPWXFOUkJzYXdTNnJQbnNfS0dtbl93SUwtdFhFZHZnaV9NZGtnZEVneUszOHJycXFfNXJ3MGtEeEFoYw?oc=5",
       "image": "assets/news/auto_8b606af5.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-20",
+      "media": "La República",
+      "title": "MIMP, INEI y UNICEF: 6 de cada 10 niños, niñas y adolescentes peruanos han sufrido violencia psicológica o física en su hogar",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxPVDJaWHVXTjlWdFVqdmxPZjZUNkt2YTVGVV9kQ1dWci11ZlZHbi1aNXZwd3NmT3RDc3AxMzBETXVwWUR1ZnNDczVPYVVhbHAzbnU3cnlqQjBtSUVDNFFEcFdkZlY2TElWWm8xNG10bkZOd19FdWtwODhDOGNxRVhOa1g3akV5MGdwcjVHbWRZS0h0aERxUUdwTEthMDZKeU1RU25GQTV1ZU1faHJXZzBjV0E0MVhrRVJXOVBOaTBrV1FQcjhHOXRHV0R4YjBVbWlXcDRSQkQwX3FhMmRPdFkybEMwQUVpVGo1bUFjRHlxQUdzQmF3Z3BPVnFuVi1iNWU2YUlma0dyLU5rQmpJSHVqcTlzNzN6ekotTGN1a2NKbFJsQWp6aHRfRHljWEIyd1g1YjZNbVB3?oc=5",
+      "image": "assets/news/auto_8c6056ac.webp",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNmNEOHpyUXNGdmk1QmY3WW9vZlYySEJTZXRzTHN4eWRUUFZqRzZyeHZyRDNpbzAtVFh0dUZWVUJQSW5QeW1PMTlncU1wcTZsT25jUDk0cVdGSTJvUmxMWW5wcS11d1VnUTFGbHRhWjB5eXBPUW91RDBoUEQ5bEFOOE1va3N0a2hneFRYeFdtRTJiYkN6eFgzVUNlNG5JTUh4Ym1iVk9JWi1QN1lsUlFLWDdOUlhRUFFzenZUajZmNzJaUQ?oc=5",
       "image": "assets/news/auto_ff8def36.webp",
       "auto": true
-    },
-    {
-      "date": "2026-11-06",
-      "media": "Infobae",
-      "title": "Escolar denunció a su profesor por abuso sexual dentro de un colegio de Huancayo: Fiscalía investiga el caso",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPaDRadzVBeFNMaVFOSE81SGo4NTc1aFB2VUdBOE02SmtIbUxfczVSN2dkV0djX1IxamZyblpCaGxIZ01DdXdrb0VoNmxBZDFYSGFhd19xamFhckJGWFRISkRoVFlNYXFITE1RNi1pd19md21tWEpmNDFKelN1cGlQblhSUDFDWl9NbW5CQjYxNm5NNk5XampNY3VHWHV6eHFhUDRqNzduSmhWQmVqOHVZNllxZ3h5Q1RvUWZnc19lUm5ubUxwWDQ3M3hZTlM0SEszMTZqTmh5VFA2LU10TlI5Z21n0gH8AUFVX3lxTFBGYnhCNHBjZ3Z4UjRNQllNOW84RHJJZ0tEVjQ0cTRSa3pIaDZ4V1dCZXF0T2tNRmhsS1dYRHFhN3pYUXZkUDFiRXdoa3puZFBQS0s3RFUtaXVVYmJuUFNFenNmeE5PQVhCMUU5T2xnNVB5anNSLXJuUC1YbGJFcUNOcWlteTQ4bEJQYUtTU1l2Y1FPSjZYSkgwWXFIT0ZJdjJGSjFUSktsQURDNlFkTUVrdjRwQ29yWUVyUk1YY3ZBY2tBSmJ4NEtrUnlYbkpVZ0xVSTBJRHhhbFBmYTdkSU1nUzdsRDNDNnV6dkVIMW5YN3hoVUZDTVVOQy1rbw?oc=5",
-      "image": "assets/news/auto_78d157b9.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-11-04",
-      "media": "Infobae",
-      "title": "Más de 11.800 reportes de violencia escolar en Perú: especialistas advierten que endurecer las sanciones no basta para frenar el bullying",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNV2VreDJQTFBEc25YbUFuZ1hPNkt6OHpfa2ItQVdxSkpfRWFYVmM3U3lWd2xTVUxVNTZGQ3IyY3MxRWVHWW5oY3JOU2F2WWhSY29OUEhGQVNkeXJQQU9KTDl5YjNNZ25UUVNCRnNYbDJGQlNET3llWElzLVNJUWk1RVA2R2dMNzZ4dEx1WUFMTTZwQmc4ekMyMlRNanYyaXE5UVdWUUFVaGhGdzdpazNQVHM1S2JQR3J6Y0pkeUFxNnY0NHNlMU5TRWNwZTF2T29SVzNaQTdvTWdueUozcXo5M0pSbWFvZTZ0dkQ2LUVQOUhSRU82Wkp6NWVmeGdIV2hHbkFMT00tQdIBogJBVV95cUxPR1RpZW91N3JWSUtsVURoLWN5QzQ1Yjg4cmVEWnduMFFpeF9uR01EaTFKVXV0Xy1jcFM2STg3MFZOV0ZCZllFX2Q5bGRmc2huWlZRMFJQeDdMWXAta0xMOWJ1WFZRd1JnTkJSTnJxZzBUbzZlR2R3RmEyZGxYQ3VuNFNsNk5rTTkwamctUl83ankyeDZoQWdxT21heUQyY09RM29TS3picTQ3OFQ1UEhUZDNrcmNCUVZuck5BSVUxT2xjWFhzWk16RDUwWk82Ty1qaFNkUXdIanhKYlB5OXBFY0pnRVpBYlpGTTFYYmd3OVNyLVNyWU9Wb1FUZnIxRW5rVXE3YXFqbGc2RGJJTzFNTGw2UFZUaGpSM2VFMjN1dkdoQQ?oc=5",
-      "image": "assets/news/auto_4dba92b4.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-11-04",
-      "media": "La República",
-      "title": "Uno de cada cuatro escolares peruanos sufre bullying: especialistas advierten que las sanciones no bastan",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNbUc3dGxRMVZFVzlRVWdQRERMaHNJb1l2X2RieVNlRmV2UWV0R1VhYkJnWXZjOEtvbTZUYlllQWVWMFBHWDNsWkFlN0hacC1jNjdwQUgteVRiRXY3bElHQjhEVDh1OXZwREZYaUlDYU94b3JEQ1M3TnY1SzFQS2V0LTJvRDBRMWxJM3g1RFljUllVbW1FakEyYmpzWW91Q18zVjZoU29DZ1ZKd1NxODVyZG1tZTI5TzRXODlCSk9nTkV4TXRBUUJsME5QRS1Sd1lDVE53V1JDRk56UjY5dFI2djgtTFdfNElLcVHSAe8BQVVfeXFMT0Z1R19YZmpjMWtNZjFRNFVIYlYyc19JTkRtSXVNWWppM0ZfXzNPM0xUYVdsSm9BWHlXeV9nZi1NOF9iV1UyT2hyQzJMM0Y2S3FRUndudVd3ZVJLc1l4RGtvZ1ZXRkNCdWxVZnRSUy1PNVY5UWVUWWM2VUJ1dTdSaTkzTVNtSTFFUzlRT2VyRWJNRkUya25GcDQ1UXNkaVdwcElkUmg2bmdTVGtIUEdyMmlRRUtua0Y2UHh3bllQN3g2dk40Z1FJWnVFQUx6T0tGd284YjhlNEIwN29sbEZGejhCSkt5b0JfLTN0WU05OEE?oc=5",
-      "image": "assets/news/auto_5602b681.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-25T20:23:16.493479+00:00"
+  "last_auto_update": "2026-11-26T20:00:02.569478+00:00"
 }
