@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-26",
+  "retrieval_date": "2026-11-27",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -9,6 +9,18 @@
   ],
   "note": "Fuente C (periodística). Ningún caso 'reportado' se presenta como 'confirmado'. No se publican datos personales de menores.",
   "data": [
+    {
+      "date": "2026-11-26",
+      "media": "Expreso",
+      "title": "Madre denuncia presunta violencia sexual contra su hijo en el Colegio Franco Peruano",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMilwJBVV95cUxOdlh5YzFNdzJXVlhMMVh5QnJUMU5sZVBXdHBtYmhYZ0RXNm9nNkdQU1cwdUFvM1p5WklUQ1prYXo1TDhwRW00ckY2cnYtZWliQ2xPVUJxQlk3SFZVWHdhdkRMWHZYd1RtWElFNThFN0xaZm5wX2F6Q0VNOHNMN3BVd0swZGZnX01RUUFuSTlTb0tyMkRrSXZhaWdRaktXaTUxdW9vOXVJR0dSOGl6VWFqVjNDLWJLMDZ1NERvak82UUNaX04zZUNXcTRWdVhwa0VXRmxxZUw1Rk1yaHktb2h1LTNBYlMyVzJQOVg4b3ZWNmVLRDdzMl9JbEVvQmhMSWg4VG03TnNJQWU2bVBSUzM5QzBqUnlPT2s?oc=5",
+      "image": "assets/news/auto_529b90be.webp",
+      "auto": true
+    },
     {
       "date": "2026-11-25",
       "media": "Infobae",
@@ -46,6 +58,18 @@
       "auto": true
     },
     {
+      "date": "2026-11-24",
+      "media": "El Peruano",
+      "title": "Suplemento Jurídica: Conoce las nuevas reglas que deben cumplir los colegios al sancionar faltas de estudiantes",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQREZfcDRNWXJndkFzTU1SbU9YOVhJbXR3WEE0NWEyajFMVUhJbUsyeU1aZms3cjZOMFN5SEs5Q0NaZk1HM2pYWEJ5eU1TZldHUkZGOTlHQmRIVWhQMzdfMFFqTWo1clloWGNNc0psWUhtVnQ2X25Ccm9scHJHY1dCN05yWWVfZ0JUMVhJdm5SRzgwY1RfSFFtaEFWNk5oY2VzZjZFbzBjMkZwZDJPZDZsVzlBM0xRcnliQTlqcTZwNnBEcEJaMFdkUkt5MUFtdkdSV0FkRGhURU9FbHJjRTU0MFBETXU?oc=5",
+      "image": "assets/news/auto_3b893415.webp",
+      "auto": true
+    },
+    {
       "date": "2026-11-23",
       "media": "Expreso",
       "title": "Mininter fortalece prevención de violencia en 174 colegios y protege a escolares en entornos de riesgo",
@@ -55,6 +79,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxQeTJBQ09NcmFEZEhHMUNEQTJ2UHJWQTJEM3dxUE1oQUpsejQ3LXlkNjdEZ1pWYzczRklQNGhFTFhHN3ZIR01OQXVqUFRWTnVGbkx6MUlRWWRwVXd6UEVyMG1Ia0FmY0dtZ0lORWtEQllFWDJhWGVfNlc4OHNfSXJzd2ljTFppbU9uVjNLQXRfQkxuVlN0TEg0U0tlb25EUTB1VFhWNWJLWGdpSVJLRGJtSDFRMUxXWEFONmdzbGJvbnlTRnljTEJXSE9LaVhBbHlqbzhxX1BWdnVtRU05cHYzb0RxREtMamNESGRKSk81X2x6cWpMa3M2ZnpVZXRjeWFZWDRaWGhQdDRqdzJQWGdid3NVT1ppVUU3SFByZEswNUFBMDdoQlN3T0RuR1ZGalk?oc=5",
       "image": "assets/news/auto_572a2f54.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-23",
+      "media": "Infobae",
+      "title": "Tesorera deja sin fiesta de promoción a escolares: padres denuncian que se gastó los fondos en batallas de TikTok",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQMnVhdUVsVF9LeXN0Zm9ISVl6OHBGbW5pZ0NSckVvY1g2YjUxMnhvV2RpMzZXdzJiVW1PS2JHUlZESElLc0dqakhsbXIzOENYUEo4a3N0dS15N25ZZW10S2V4VEEtX0JfRTlsSHQxM01lb1d0OG1RM2sxTl9mVHppbTdmUndEbGdlS19TUmJ0MVJNamp2a2ZXX0lyVFFjcGRvdWd1Q29wS0txMHhNMmM2YTA4MHFkaDVFLTR5eDhNckN6QXVDNktGWlhXQ1dPbHc3RlAzT2lobU9SZmhVV21mS2xLdl9DR24w0gGDAkFVX3lxTE9pQldpMjlhZVJMMlJiU0VSb1ZRbG0tTlF3UVBGdTBDUUF6R2NucUtubGl1bkdIUEVZREg2bFFuRnFGT25TVVFwRXU5YXUwZVEzYWJ2MmF3RHlSOWxVOGNKOGpXTnk4dGxYeU9FTGJRNzhiTzhEMFVCdlVNYS0xUnB1cjBXeTh0d0FVai1vbjNybnpYRjc3Q3hKWkFXcl9PeDJNUlYyNE5UWklBbHBvTVVtREk2RnU5VWhqMVVHY3hacGpOaXZ2N2JqZ1ZOQTdkN1lHMTlybDBIcERtOGxNVzVjYzFhY2NGZ2dBTVlRUnpJd3F0NndoWEtheXJLXzBHX0R4TzA?oc=5",
+      "image": "assets/news/auto_491714a4.webp",
       "auto": true
     },
     {
@@ -140,43 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZVVVZjdfdWNxRElRYTZQa05tZTZFX3pZZG5zSFlyNzBSclM4TVE1TmtMYnpkclp0YXpsV1NCQkIySjU5eG5RUVFDZU1qcjNfTWlFOER3ZEZ1eGgyR2JXQnRSanhGREtqN2I3eUtPRTN2Mm1IUlNXdktVb1V1bzlMTHFwOG1YRk9vSXJmUzVReW9nN0tNaWNNTEttWk1DVmY3ZjFOcV9JNl9uamdXNXY3aUFKWlA1UWpNSGRNRkFZSk0zZ3M?oc=5",
       "image": "assets/news/auto_fe94f849.webp",
       "auto": true
-    },
-    {
-      "date": "2026-11-08",
-      "media": "El Peruano",
-      "title": "Decreto Supremo que aprueba los “Lineamientos para la gestión de la disciplina escolar en la Educación Básica”",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrbUp4M1Z6R1JYa3J2NEEtZnQtb0l4WFMtWGlLbE4xb1BQWk5wdnhoRTlZWkpRMmNLcnh4NnJuTDVUQ2JQdF9iTWxoNkxMTThjVE1FbGVSTE8wbmRZR1puQU1OYlJ0QQ?oc=5",
-      "image": "assets/news/auto_9944e7d1.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-11-07",
-      "media": "Infobae",
-      "title": "Efemérides hoy 7 de noviembre: Perú conmemora el Día Internacional contra la Violencia, el Acoso y el ciberacoso en la Escuela",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNRzU1OUE0amd2bkQ0UkNvdHFoVUQ2TjZTMTlhVXozUFd6bTFQOVlWdnZDS1lTclIwd2RQU1BFaFhGcGJ3ckVWZ21PZHdNRzAxQlprdWQySzF3UkYtMzJBZUJjVm83OGJ6Sms1MmdSZ3ZlcHJRY1hLRnFtVEVNdndiS01pMjY0WEpYb2R0WkVubTVhX2dJVkEwRzBFZmdkZ1dUQ0xoZ1BjTE5vbmxueExwdkNtdDFncE1iM2lPdm0xZDQzUHlVWmQzNElZMUxHYy1vS05lZC1MMXBpRWQ4MENzbVZfV3hPQ1NVa1puZ042TVZKeU10eEJ5UNIBkwJBVV95cUxOVTUtbFV6UVh0dmxvWW01aDhyb1Q4N2ptVTQ5Y3VaNWF2NjhMd2VRWU1wRGx3VHNwZjlpclRrNjhpdW5zdTFYUVJleEgwQzh6ZUI3QlFlLUdVUXViVEhKa2pYWHAtUmdLTzdHb0YxbWlzS3UwQXU2WmlObWxGUl9Ha0FVTUMwZmpsYlkwbmp3YWdDczR1XzFOQ1E1cXkxalBVY0JwTHZ6SkpiS3dycWdrd21QOU5yajVMTTh4bVlJblFOdXlEOEQ5dDNUcm55YWdTRUdDWVhRUjJzS0VEZXNvMGZGSk5QRW5MV1htY0gtbDdBVE9kZjVYYThTVHJwclpOTGh5X3JxNzZtRVF5TlpUWkptUQ?oc=5",
-      "image": "assets/news/auto_8d3ba8f3.webp",
-      "auto": true
-    },
-    {
-      "date": "2026-11-07",
-      "media": "El Peruano",
-      "title": "Presidenta Fujimori suscribe decreto que aprueba las nuevas reglas de disciplina escolar",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNmNEOHpyUXNGdmk1QmY3WW9vZlYySEJTZXRzTHN4eWRUUFZqRzZyeHZyRDNpbzAtVFh0dUZWVUJQSW5QeW1PMTlncU1wcTZsT25jUDk0cVdGSTJvUmxMWW5wcS11d1VnUTFGbHRhWjB5eXBPUW91RDBoUEQ5bEFOOE1va3N0a2hneFRYeFdtRTJiYkN6eFgzVUNlNG5JTUh4Ym1iVk9JWi1QN1lsUlFLWDdOUlhRUFFzenZUajZmNzJaUQ?oc=5",
-      "image": "assets/news/auto_ff8def36.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-26T20:00:02.569478+00:00"
+  "last_auto_update": "2026-11-27T19:48:38.448755+00:00"
 }
