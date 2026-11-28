@@ -1,6 +1,6 @@
 {
   "dataset": "Noticias y casos relevantes (2025-2026)",
-  "retrieval_date": "2026-11-27",
+  "retrieval_date": "2026-11-28",
   "verification_levels": [
     "REPORTADO",
     "INVESTIGACION_PERIODISTICA",
@@ -67,6 +67,18 @@
       "verification_level": "REPORTADO",
       "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQREZfcDRNWXJndkFzTU1SbU9YOVhJbXR3WEE0NWEyajFMVUhJbUsyeU1aZms3cjZOMFN5SEs5Q0NaZk1HM2pYWEJ5eU1TZldHUkZGOTlHQmRIVWhQMzdfMFFqTWo1clloWGNNc0psWUhtVnQ2X25Ccm9scHJHY1dCN05yWWVfZ0JUMVhJdm5SRzgwY1RfSFFtaEFWNk5oY2VzZjZFbzBjMkZwZDJPZDZsVzlBM0xRcnliQTlqcTZwNnBEcEJaMFdkUkt5MUFtdkdSV0FkRGhURU9FbHJjRTU0MFBETXU?oc=5",
       "image": "assets/news/auto_3b893415.webp",
+      "auto": true
+    },
+    {
+      "date": "2026-11-24",
+      "media": "La República",
+      "title": "Carlos Bromley: Detrás de la violencia contra la mujer hay un factor estructural conocido como machismo",
+      "department": "Nacional",
+      "topic": "violencia_escolar",
+      "summary": "",
+      "verification_level": "REPORTADO",
+      "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPQVJxYTBycUJvQWhYWlZoZmJ1cXVsN1RQbk1pdm9uZF9WY3dfZThUM2VzVG1sd20tRE5KS213SXpVYnF3Mk5WLVBuWklib0RlYjJxX29ka3VDWjRYZ1lndkFSemNjODdqM1hwUlMwT0VsQ0U0Zl9hcVZyYkc1eFFnSE1xc1dpT0d0bE1mbWZnWHI5VVhQLTg1OUY5TkVKWkgxd1p2eUR6V29aM1VDZnQ5UkgtUWlnczJGN29aaXNNcjgyczR2LTdEbFd4VTZ2c0JzZlNxMVAzbENOMHgwSVNsWVJtMlpCOVVyUE5BRHREOXpOUkN3UXotYTQxVXpLa0tw0gGGAkFVX3lxTE1OdEdyNE5kMVZOQl95TDRmcGc3MDNLcDdSSXlqOW9mejhMM3dBazlRUEgyMldOZW00cGp1cUVmcTdIUGl4TzdRVTJjSTVEYUluQ1RYcFZrYjVpdXBZQmRqY1dZMUxrcmY2ODQ2Mmd4eTRsRF9ZaHhsUUsxWmZ6Q05RYWwwamdNTGUtWDZNLXEwMERZOVllZS1kQ2J4cmpYSEtKOXFmblNzTnpKeVNOMjhiSDFCdzJ2X0sxNC0xWkw3bFJ6U3VMN0VaNjFhdl8yelhQMEx3WmhHY003bG5qRVVEOUJ0cFZxdURvc2pFa2VfOVRZZ1Z6eW9KaWhxZzA3RWdQay13M0E?oc=5",
+      "image": "assets/news/auto_885f16f5.webp",
       "auto": true
     },
     {
@@ -164,19 +176,7 @@
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOam1pSHkwbkszRzBWb0w1MDU5STJxbUVWSHdVR29kVU9vOGVyeGxlbnJLcUE2WGp3dVBpVnBYbTNPckJMQlBSNU9PMnlNekdkUmxaaUtFTXlOWWZnZ25DWGJnTU8wS3lXanI3TkcxVmUyOVdfSEE1TjE1NkdNZ0U4X0pZM1VDNTI2NzJfWk14Wmt6Y3NSeU1kTHpjYkxDZUtUcXBFcHU1MHhXblVVajhkaF9MNGVpVnVzdEpGS09PLWRoWTDSAd4BQVVfeXFMUFQxUjQwWUd4eWpyTmdLUEZPZndBa3VzLWs3UG1pa29mSzBYNlptRHNhTDU0OVltNXI2eF9iRkFJNUZ6YWdlV3VxVTFaSklMTm8ycHFnNDBQb1QyR0Vra2loLTR6ak5pU1lKYnByc3lKODA2UTY1RW9TOW81Z3FwT0pjSkpnaTRPRHRabUtncjAzNk82NjdhdV94dGotOVFMR0hCZEtXM0VSNkxPeHU2SDBOUzdaSGtfY21wUFZ2VWRndGQ2YkRLalE0djhkUlhMY19TcGNMaFN5OXg0SEhn?oc=5",
       "image": "assets/news/auto_8bba7ba6.webp",
       "auto": true
-    },
-    {
-      "date": "2026-11-10",
-      "media": "Latina Noticias",
-      "title": "“Hay colegios que ya no los reciben”: padres preocupados por nuevo decreto de expulsión",
-      "department": "Nacional",
-      "topic": "violencia_escolar",
-      "summary": "",
-      "verification_level": "REPORTADO",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPZVVVZjdfdWNxRElRYTZQa05tZTZFX3pZZG5zSFlyNzBSclM4TVE1TmtMYnpkclp0YXpsV1NCQkIySjU5eG5RUVFDZU1qcjNfTWlFOER3ZEZ1eGgyR2JXQnRSanhGREtqN2I3eUtPRTN2Mm1IUlNXdktVb1V1bzlMTHFwOG1YRk9vSXJmUzVReW9nN0tNaWNNTEttWk1DVmY3ZjFOcV9JNl9uamdXNXY3aUFKWlA1UWpNSGRNRkFZSk0zZ3M?oc=5",
-      "image": "assets/news/auto_fe94f849.webp",
-      "auto": true
     }
   ],
-  "last_auto_update": "2026-11-27T19:48:38.448755+00:00"
+  "last_auto_update": "2026-11-28T18:41:36.359347+00:00"
 }
